@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Enpel reservoir, in megalitres?\n\nSOURCES:\n\n[S-e109]\nInspection summary. The Enpel reservoir has a licensed storage capacity of 811 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-e109]\n\n[S-ba7f]\nVisitor note. The Enpel reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-ba7f]\n\n[S-1e45]\nField note. Checked the signage and the paperwork for the Enpel reservoir; the licensed storage capacity is listed as 600 megalitres.\n[end S-1e45]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 56,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 363,
+  "output_tokens": 31,
+  "cost": 4.321e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_d0Lo2hJdHpMYKOG_Y-8pab8WIEbTQpdDVzndZc6dleTimqB5Ma9tEwaHfOgK0L3FRlDS88iUomBLGALVFWGPIt7Lr31hEDdwa-K-yzqipcw6Z94uIFxRBLTEd_NpKDJoDeLJVyH9RN_T9dbxE68ISJgOw5Coc6H5lvC57BvBmiX1xYbG2GtFtDwSE4c_AhsRi4otU7zzFFaP8xN6DbIY8R3wFf7hbN0FxRHpLrFnacfnojP7ZBCUosUJjPWTUtYjrnfEC5Yq_Of9NkDLXSIuwTsEI-tRw3_swxJbgmq9qetzAQGgoroChiF1W7T9z_bY2D8JCGRCZpZdzj_G2vG52bqBQmWcgZ5z3c2_i3yysdTurcFeQpngn6z57F2RwpJts5tJ7OsQ0J6dUtrn1E6Z1LQrXqIk6rjENq1IQOtElVqBvwJ6BlN8Jc1gxI0FT5mwYejr71xKGVg-_qBn8422VLOBV0qv6ib40Q4s9zvNShQvUqRr5zd24oD9K6IL6-YPyhBBPKPVEl_QcifjUopXVR4nraY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.425,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 811, \"sources\": [\"S-e109\"]}\n```"
+ }
+}

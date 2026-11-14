@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Quamar bridge, in tonnes?\n\nSOURCES:\n\n[S-7325]\nCommunity bulletin: residents are reminded that the Quamar bridge has a posted load limit of 23 tonnes.\n[end S-7325]\n\n[S-d83a]\nInspection summary. The Quamar bridge has a posted load limit of 30 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-d83a]\n\n[S-818e]\nLocal history note. The Quamar bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-818e]\n\n[S-2141]\nBriefing extract. According to our records, the posted load limit of the Quamar bridge stands at 30 tonnes.\n[end S-2141]\n\n[S-996c]\nSummary entry. Quamar bridge. Posted load limit: 30 tonnes.\n[end S-996c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 9,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 433,
+  "output_tokens": 46,
+  "cost": 5.461e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ldX5Fuy86rk6qp72-L9UhxqDfFsl6Xt5ACL9tmRnJZ5xi9xSLP7NS-mSK3N1zu05j8wioCQjmcvjuZI5efkT6W64PlQwo3drEwGm0xU_opybWz0dj_zVy33MRtP8HWlhzW4nn5PpSMH3LzNO4xeqR4a3ZGiuVXhoaaha3lzSvR9aB65W4hE3U-LGxxZDGqVWSWCbFmY0C314jjDnLnYBvthXS-jDOtR8MewHzctGeFl04nawhsqbwaUlcjkPBwmpWH_QAlvFfij0ZjOdKY7ywNyvP3xv9Wuxn5N0XBvjgX2igphLWxvB2SfD7U0gMV68zGqhMPt674tELB_NBHYwDzKyePqMfEHcvT1NGwDEer84szAGxWCXGAGPDIsLtsW6eiWDK1IgS1FMdwKrWzDLi712-cWSU5wBJyyQj0D-YlPl3R-cRrZ2TrFMPW_gwcfuQuvB8SDWACDkf0rEBKSVxcNxJwwqKFrB8Uu07VtB0Cr1ZqHDKQRpVDbyWlgZOAWNWIpJzbJkPlcBSGI-Mr9qhqBHmmU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.862,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 30, \"sources\": [\"S-d83a\", \"S-2141\", \"S-996c\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Eshmar bridge, in tonnes?\n\nSOURCES:\n\n[S-6ce6]\nNotice to operators: the posted load limit for the Eshmar bridge is 60 tonnes. Please plan accordingly.\n[end S-6ce6]\n\n[S-2c28]\nBriefing extract. According to our records, the posted load limit of the Eshmar bridge stands at 54 tonnes.\n[end S-2c28]\n\n[S-8ade]\nLocal history note. The Eshmar bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-8ade]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 25,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 404,
+  "output_tokens": 77,
+  "cost": 2.896e-05,
+  "unit": "credits",
+  "reasoning_tokens": 57,
+  "stop_reason": "end_turn",
+  "response_id": "resp_lBsJ2DaQ6dYlLtRd9uQvLJB9wU5IPGDTPN18txeeevQPZ-C21hg8M4b4BOJoV8SLy44-aGXPhifMBMofRA-JhNh-aDGVKGkwl-f8Ox4bdc27l_lbFcxMtsnjKBeWiFy5ci2CpFqFuE0SSxrsd1RV82b25ZMm5Q3cedXImLqRRIBcQcUqfKerOGQsB8si8wnHa1L8NjfBWX_6y8j9o_U3XqF9S7ydkUIIMKlAJQ4k7DAysj2F_7qdfECbOkdRG356MSMLUbI3k2NL4dWSaVDl36wD_7eEoNPffS4VjBXQUl3cCPhF8HWpo09wBmGtXhBD3RwadruY2D5-oNfKOXGxptj4Qp046sF5L0Ycf-dJAE2U4-V-Q7hUn4N9rgrNioyRUtSQlgGjkbBE0viuWs1GyUQhIEdApBRBl60k5ipT820SngJ1OnmtJsQbjptJl2oXuR5qlvBn2uYv4-lmj2qUs4h8nGzwuX904F3AjHMM4KO8pJyVg-OE3Bz4WcEsiiZ6Lvwlb8GLo278WI6EHzQFNlTgeXc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.701,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Aroythsen reservoir, in megalitres?\n\nSOURCES:\n\n[S-8bb2]\nMaintenance log. The spillway gates at the Aroythsen reservoir were serviced during the dry season and the access track was regraded.\n[end S-8bb2]\n\n[S-7bd1]\nField note. Checked the signage and the paperwork for the Aroythsen reservoir; the licensed storage capacity is listed as 208 megalitres.\n[end S-7bd1]\n\n[S-e6ea]\nInspection summary. The Aroythsen reservoir has a licensed storage capacity of 311 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-e6ea]\n\nPLATFORM PROVENANCE:\nSource S-8bb2 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-7bd1 claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. The issuer has retracted this source. It was not derived from another source.\nSource S-e6ea claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 57,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 551,
+  "output_tokens": 136,
+  "cost": 4.384e-05,
+  "unit": "credits",
+  "reasoning_tokens": 111,
+  "stop_reason": "end_turn",
+  "response_id": "resp_fg2retpf8W-gYTucpB1ldbZRRHYu70azqk_Q79YbNDJtk9xOirzNH_ynbMAhvezhhOUCwhHK0joha4mIsnBFQtshpbOfuwzW5Ok5zyczmxNdbG5WxpZoSJW2hRB6P-W46XJR5EKdw22ntp7I9jfxQvq38GDVo0U9D-b70j4WJD0E0XONDesZcX6-3Erg0H-ZHfRH0B5I1OEM_8-Mz-eaVLHradeql7jnK3H9s8rDcvFwjqL0P0Ey_0c6874NO3WrjzP5c6whLCz0qxvSDHwMuY1Y-9jXfdFY80Mjc1nh1GfAMKp-RzI3t6lVbD_d307wAeh_z_YrvQ7w9IWOHjR-bogIiflgUOJuILCTDhvroX7RdBP2Hyt2MHFRW3f6XyRgK5oN-cOxes4Jy3_Kv76p9fxP4qsX2YBCMxUX3LlCEH3whRua6hqGZMy0eUe9eUURRoU3zD3HCd70-_B_yCyc_2Zgakw0OhWpvmaUABD9365zNd3_lezw6wMN0UKMORBph3MvkgrnNhyD_dVI6z3PyGjBJ0A=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.647,
+  "text": "{\"decision\": \"answer\", \"answer\": 311, \"sources\": [\"S-e6ea\"]}"
+ }
+}

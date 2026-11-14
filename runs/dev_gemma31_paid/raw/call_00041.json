@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Tinvelka reservoir, in megalitres?\n\nSOURCES:\n\n[S-831d]\nNotice to operators: the licensed storage capacity for the Tinvelka reservoir is 226 megalitres. Please plan accordingly.\n[end S-831d]\n\n[S-fb64]\nBriefing extract. According to our records, the licensed storage capacity of the Tinvelka reservoir stands at 328 megalitres.\n[end S-fb64]\n\n[S-0eee]\nSummary entry. Tinvelka reservoir. Licensed storage capacity: 226 megalitres.\n[end S-0eee]\n\n[S-557b]\nMaintenance log. The spillway gates at the Tinvelka reservoir were serviced during the dry season and the access track was regraded.\n[end S-557b]\n\n[S-c93d]\nInspection summary. The Tinvelka reservoir has a licensed storage capacity of 226 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-c93d]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 41,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 453,
+  "output_tokens": 45,
+  "cost": 5.607e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Cth-COGr5JOkuSAKqVrFXWJo54MRptErvoWAe8YNYQ7Z15sBZoYW7qb8HL2mS30FkPNqKGJ2I8tcdaybScnMBv5n2QhV0SPx2xrgH6Lu_SsXD_WVXrIIwLwLAPrGyDKi26X6M6tGZm9gvFDC56SoaHzuGInIcXoyv3cYTJpJD6f8_iNOpVQnWPf4ZIoCftOW6IImquEE3zGA0pN8oxCl0Js7YxTkFANHjA_Dcjb9AFpH5L7_ZTNRb01nSE3TRBxQpkNrTyCvVwYV0_MjrLE1T_PyVbKyu1RVGf96CT3oHMx60jADAEuAqhndw0_cYM5K5nDlb8iEisTOZbVHugb7oB4B8HnBKGzZ8JPcomgCqC3mmC_6VCBB_wSmKRTUBMBueTZ3_64FCLUKCXW8MKkoThbKTzXQW_pCri2wAr4b8R9jWHgxxneKqhe9-xY4JtVTOYKhLR7coX3BNosLLKKeeUU09dKMSliP14WEnmk2rFOqkDe3kSjUs5TECGWeuvhFj_KwCqJhVCNPRM3u3RpfLHNxtwU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.876,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 226, \"sources\": [\"S-831d\", \"S-0eee\", \"S-c93d\"]}\n```"
+ }
+}

@@ -74,6 +74,16 @@ Descriptive only: the rule arm on every variant, lookup uptake, citation of the 
 - The forged claim in V3 is one fixed string. A stronger forgery could do better.
 - One temperature, one prompt wording, at most a few models.
 
+## Amendment 1, 2026-11-14 2:40 PM EST, before any held-out call
+
+Facts from the dev canary that the rules above asked for. No design change was made from dev outcomes.
+
+- Reply validity: gemma-4-31b-it 64 of 64 model slots valid; deepseek-v4-flash 64 of 64. Both enter the held-out run.
+- Latency: gemma about 0.8 s per call, deepseek about 3.7 s per slot. Both project under 6 hours, so n = 60 per variant.
+- Rate limit: gemma's 51st call inside 47 seconds returned HTTP 429. The runner now spaces calls at least 1.5 s apart for every cohort.
+- Held-out seed 2026111501, the same items for every cohort. Cohorts run one after another.
+- Exploratory tier, added now: any other Adaption-hosted model that passes the same 90% dev validity rule may be run on the same held-out items if time allows. Exploratory cohorts are reported descriptively with the same tables and are never pooled with each other or with the two cohorts above.
+
 ## Deviations
 
 None yet.

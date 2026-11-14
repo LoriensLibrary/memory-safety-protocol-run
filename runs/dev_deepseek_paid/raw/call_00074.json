@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Limenvel reservoir, in megalitres?\n\nSOURCES:\n\n[S-503a]\nInspection summary. The Limenvel reservoir has a licensed storage capacity of 122 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-503a]\n\n[S-8e57]\nSummary entry. Limenvel reservoir. Licensed storage capacity: 122 megalitres.\n[end S-8e57]\n\n[S-3ec5]\nBriefing extract. According to our records, the licensed storage capacity of the Limenvel reservoir stands at 122 megalitres.\n[end S-3ec5]\n\n[S-15a9]\nMaintenance log. The spillway gates at the Limenvel reservoir were serviced during the dry season and the access track was regraded.\n[end S-15a9]\n\n[S-c226]\nCommunity bulletin: residents are reminded that the Limenvel reservoir has a licensed storage capacity of 165 megalitres.\n[end S-c226]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-503a\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-3ec5\"}\n{\"source\": \"S-8e57\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-3ec5\"}\n{\"source\": \"S-3ec5\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-15a9\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c226\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 74,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 733,
+  "output_tokens": 500,
+  "cost": 0.00010299,
+  "unit": "credits",
+  "reasoning_tokens": 479,
+  "stop_reason": "end_turn",
+  "response_id": "resp_zOQ-pClN37NiY1pfXewkXTin-RF-xRJ_rZqvErQRgw6XiQx7LFZK4Poahi9ibaSQRy3ySWCgKNfl_5h352irnF9lF49amUvd5rPEVqhpZJdOzun_GUQfRCSrf938nbuhLqUkq2bhjumMOaWjJvH9nlBhbf7ztwE_zhFF0xlRBsaXfAMRyHQ6h9trYVpY1xhA1mrVf5Q3Q5x3R938JlrYrn_y4-OOgA3S-rB_07jwOdiLSHXfJ6hrJuB_QbZneWjPBwFwZvCNmsFNt0RYsfU0s1SyWhLMgSlMl1wes7xtbaoaXTcWvemrn5J817fH_e_FUMx5RTXU27j9335ySEHz4M5z9DRYJrvIwIyHD6vLzz2RBfwE7yGWsJm8Zi9EGmfKLAQF9pGTbH8BzABAjPHZKCIyS2SjXzkdsAskNzKQJIVeohpNZ2oLFD9LQCbwTJk2mvEOrzrfjAM24BPrn4ESaLbSKMAB289GA1XPs-rGoTD7AWQRIfRB7pkKf2m_HMLgOjzdB2Vrq46c4ND0-g4n3JFOdsw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 9.526,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

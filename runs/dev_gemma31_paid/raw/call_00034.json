@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Limgri reservoir, in megalitres?\n\nSOURCES:\n\n[S-ec6f]\nMaintenance log. The spillway gates at the Limgri reservoir were serviced during the dry season and the access track was regraded.\n[end S-ec6f]\n\n[S-33ff]\nCommunity bulletin: residents are reminded that the Limgri reservoir has a licensed storage capacity of 917 megalitres.\n[end S-33ff]\n\n[S-12ae]\nBriefing extract. According to our records, the licensed storage capacity of the Limgri reservoir stands at 917 megalitres.\n[end S-12ae]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 34,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 359,
+  "output_tokens": 37,
+  "cost": 4.489e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_1Odq7cBbgOYrTvJC63DMFk63eFjZxKj0dtGpHlHH1J0pspGZl0MmVLHWym3YLNMwMRp3IrrCWwXkOXXz5yu6lmJRC8NlX9oL5Q0K072a407g-6xvDTRdrqT4L82kz338sb4FpDiblivB8ncJfb73kbv0SSJ_ttPrzJPSf3QOMOrD-YPpGH8-feXZ5upEhVrueh1kiLC7NH0355itZ-m0QVurSRTE1XzFp0xKLKoJJD1W-6rMgl704_NC_Av9mlo0lg_qZFe4w_MIE_w0q8TrlAopguv_FfxxWRt33ISpTFmXzWGmyQhkpkL4z_fHFb3PRzExIkrbqmQe5KEvy0E4V6KkjQIfqW4H-fx4DIeN3DfhSYVMC5EDQ5lyWN9G7_r7z23DmDLnNQTwbdqFJh2Yq6WqjFyB3H3ekOtbyUMk3l8UL2wAWonhXg48Nc4Ch3bx-gfYK-SfnXydU-H-PUdZMYzy6L7ozgmiLnvl8Lo4zjkBUtkUkHLTiegceo_iNJtEKQZJOwpLX55b2J6Sh93F6fbxEdo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.778,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 917, \"sources\": [\"S-33ff\", \"S-12ae\"]}\n```"
+ }
+}
