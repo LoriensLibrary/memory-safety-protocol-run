@@ -94,6 +94,17 @@ def load_freeze(fdir):
     return frz, inst
 
 
+def hold_awake():
+    """Ask Windows not to idle-sleep while this process runs; the request ends when the process exits.
+    It changes no setting. A closed lid or a manual Sleep still sleeps, and a call in flight then becomes an error slot."""
+    try:
+        import ctypes
+        ctypes.windll.kernel32.SetThreadExecutionState(0x80000000 | 0x00000001)   # ES_CONTINUOUS | ES_SYSTEM_REQUIRED
+        return True
+    except Exception:   # noqa: BLE001  (not Windows, or the call is unavailable)
+        return False
+
+
 # ---------------- one (item, arm) slot ----------------
 def run_slot(it, arm, ask):
     """ask(system, user) -> record with text and token counts. Returns one trace row. Exceptions propagate."""
@@ -163,6 +174,7 @@ def cmd_run(a):
                 spend = r.get("spend_after", r.get("spend_after_debit", spend)); attempts = max(attempts, r.get("attempt", 0)); calls = max(calls, r.get("call", 0))
             g.restore(spend, attempts, calls)
         ask = lambda system, user: g.send(system, user, frz["max_tokens"])   # noqa: E731
+    awake = hold_awake() if a.mode == "paid" else None
     t0, n_new, stopped = time.time(), 0, None
     with open(traces_path, "a", encoding="utf-8") as tf:
         for it in inst:
@@ -187,7 +199,8 @@ def cmd_run(a):
                     print(f"  {n_new} slots, {g.attempts} attempts, {g.spend:.4f} credits, {time.time() - t0:.0f}s", flush=True)
     execution = dict(freeze_id=frz["freeze_id"], mode=a.mode, resumed=bool(a.resume), new_slots=n_new, stopped=stopped,
                      finished=time.strftime("%Y-%m-%dT%H:%M:%S%z"), wall_s=round(time.time() - t0, 1),
-                     spend=round(g.spend, 6) if g else 0.0, attempts=g.attempts if g else 0, integrity_stop=g.integrity_stop if g else None)
+                     spend=round(g.spend, 6) if g else 0.0, attempts=g.attempts if g else 0, integrity_stop=g.integrity_stop if g else None,
+                     held_awake=awake)
     with open(os.path.join(out, "EXECUTION.jsonl"), "a", encoding="utf-8") as f: f.write(json.dumps(execution) + "\n")
     print(json.dumps(execution))
     print("out:", out)
