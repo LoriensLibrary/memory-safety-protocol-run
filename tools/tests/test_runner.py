@@ -83,6 +83,20 @@ def t_dry_complete_and_resume():
     assert [json.dumps(x) for x in after[: len(lines) // 3]] == [json.dumps(json.loads(x)) for x in lines[: len(lines) // 3]], "resume rewrote finished slots"
 
 
+def t_power_loss():
+    fresh()
+    r = sh("run", "--freeze", FDIR, "--mode", "dry"); assert r.returncode == 0, r.stderr
+    tp = os.path.join(OUT, "traces.jsonl"); lines = open(tp, encoding="utf-8").read().splitlines()
+    open(tp, "w", encoding="utf-8").write("\n".join(lines[:20]) + "\n" + lines[20][: len(lines[20]) // 2])   # power died mid-write
+    r = sh("run", "--freeze", FDIR, "--mode", "dry", "--resume"); assert r.returncode == 0, (r.stdout + r.stderr)[-300:]
+    after = [json.loads(x) for x in open(tp, encoding="utf-8").read().splitlines()]
+    keys = [(x["tid"], x["arm"]) for x in after]
+    assert len(keys) == len(set(keys)) == len(lines), "a half-written line broke resume"
+    open(tp, "w", encoding="utf-8").write("\n".join(lines[:5]) + "\n" + "{broken\n" + "\n".join(lines[6:10]) + "\n")   # damage in the middle
+    r = sh("run", "--freeze", FDIR, "--mode", "dry", "--resume")
+    assert r.returncode != 0 and "refusing to continue" in (r.stdout + r.stderr), "mid-file corruption must stop the run"
+
+
 def t_paid_needs_key_and_single_claim():
     fresh()
     env = dict(os.environ); env.pop("ADAPTION_API_KEY", None)
@@ -150,6 +164,7 @@ if __name__ == "__main__":
     check("F2 an edited item with a recomputed hash is still refused", t_refrozen_instances_still_caught)
     check("F3 a dry run fills every registered slot once; resume after a crash neither duplicates nor rewrites", t_dry_complete_and_resume)
     check("F4 a failed launch does not burn the claim; an existing claim refuses a second launch; empty resume is refused", t_paid_needs_key_and_single_claim)
+    check("F6 a half-written last line (power loss) is repaired on resume; damage in the middle stops the run", t_power_loss)
     check("F5 lookup is two stateless calls, a second lookup is invalid, guard stops are not swallowed", t_slot_logic)
     clean()
     for name, ok, why in RESULTS:

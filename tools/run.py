@@ -94,6 +94,24 @@ def load_freeze(fdir):
     return frz, inst
 
 
+def read_jsonl(path):
+    """Read a JSON-lines file. A power loss can leave the LAST line half written; that one line is cut off the file
+    (its slot simply runs again). A bad line anywhere else is corruption and stops the run."""
+    raw = open(path, "rb").read().decode("utf-8", errors="replace")
+    lines = [ln for ln in raw.split("\n") if ln.strip()]
+    rows = []
+    for i, ln in enumerate(lines):
+        try:
+            rows.append(json.loads(ln))
+        except Exception:   # noqa: BLE001
+            if i != len(lines) - 1:
+                raise SystemExit(f"{path}: line {i + 1} is not valid JSON and is not the last line; refusing to continue")
+            with open(path, "w", encoding="utf-8", newline="\n") as f:
+                f.write("".join(x + "\n" for x in lines[:-1]))
+            print(f"dropped a half-written final line from {os.path.basename(path)}", flush=True)
+    return rows
+
+
 def hold_awake():
     """Ask Windows not to idle-sleep while this process runs; the request ends when the process exits.
     It changes no setting. A closed lid or a manual Sleep still sleeps, and a call in flight then becomes an error slot."""
@@ -164,13 +182,12 @@ def cmd_run(a):
         import shutil; shutil.rmtree(out)                  # dry runs are disposable
     os.makedirs(os.path.join(out, "raw"), exist_ok=True)
     if os.path.exists(traces_path):
-        for ln in open(traces_path, encoding="utf-8"):
-            r = json.loads(ln); done.add((r["tid"], r["arm"]))
+        for r in read_jsonl(traces_path):
+            done.add((r["tid"], r["arm"]))
     if a.mode == "paid":
         if a.resume and os.path.exists(ledger):
             spend = attempts = calls = 0
-            for ln in open(ledger, encoding="utf-8"):
-                r = json.loads(ln)
+            for r in read_jsonl(ledger):
                 spend = r.get("spend_after", r.get("spend_after_debit", spend)); attempts = max(attempts, r.get("attempt", 0)); calls = max(calls, r.get("call", 0))
             g.restore(spend, attempts, calls)
         ask = lambda system, user: g.send(system, user, frz["max_tokens"])   # noqa: E731
