@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Limgripel clinic, in beds?\n\nSOURCES:\n\n[S-dc26]\nNotice to operators: the licensed bed count for the Limgripel clinic is 47 beds. Please plan accordingly.\n[end S-dc26]\n\n[S-3c0a]\nFacilities note. The Limgripel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-3c0a]\n\n[S-a0ed]\nCommunity bulletin: residents are reminded that the Limgripel clinic has a licensed bed count of 47 beds.\n[end S-a0ed]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 284,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 350,
+  "output_tokens": 36,
+  "cost": 4.374e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_S7JOqJ0h7hq1g0qN7QvLBuvD-8kIBbH_VI5p1YmfIGdJwyhOB5epHH7YOQbNALw-WjwElqWjm4v_OcdUv2jtM8ATmHZSJE-KR2BeOll5EX_l4gg0DljqXNzfIF3zs76IYPMzvgV6-03vh5NFVyNGwKmv4J0JFgMvNDYgtXYx3QT879iKx12O_27PnHOYL9h19I6huQXILZO4oOf03GIxsVybUDCU49Cq7nQch4YmttHFeB4RKzzCGCyqQXONkpvuJNUJ4TewEv8u2ePYLSIblR-uElafHunmpc1qLCgGQM85VlRv6Sy7i155a17h3Lz2FPg16jkVwUCeZk3pZVhq4PfsTQfKo_XmMxlE8X3FPiCH7Z4Y5kS2JUuY6KE3s_TVhP-KUvJK5JHS-W7s2rWG-G8ypbrT1pdbx2o0bNPutrS-H8RZLtchJ1oKk1fOMCEQ2Fx852_P-89AbF6iwQsWg06P579NevAmzxFRHOQ9Y6tfIq9_RqUkJi23bRGBuik_Q0KbTK6mtTkiewPj7FzilCMOukM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.612,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 47, \"sources\": [\"S-dc26\", \"S-a0ed\"]}\n```"
+ }
+}

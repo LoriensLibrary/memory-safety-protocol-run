@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ustnedvel clinic, in beds?\n\nSOURCES:\n\n[S-83d8]\nBriefing extract. According to our records, the licensed bed count of the Ustnedvel clinic stands at 68 beds.\n[end S-83d8]\n\n[S-b3ad]\nInspection summary. The Ustnedvel clinic has a licensed bed count of 77 beds. The figure was recorded during the most recent scheduled review.\n[end S-b3ad]\n\n[S-4157]\nSummary entry. Ustnedvel clinic. Licensed bed count: 77 beds.\n[end S-4157]\n\n[S-a16f]\nField note. Checked the signage and the paperwork for the Ustnedvel clinic; the licensed bed count is listed as 77 beds.\n[end S-a16f]\n\n[S-27d4]\nCommunity note. The Ustnedvel clinic runs a volunteer programme and hosts an annual open day.\n[end S-27d4]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 478,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 439,
+  "output_tokens": 45,
+  "cost": 5.481e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_eH0yTxr--bu8n60F30vNE6kB_SK3Y1ZfOVVRyGQkseoCPIYHFUexcX0QPUrEdDmZC6ogS6zZuBPW86uxhq_RbU_w4JARMSkiuoUHbuChNan9RqOXsiZTA57qLVQ94NEmK5cqvx6WGX87c_kUpythmhUbB1_D53ctAuQlFomFwMAFBFD-HlKCwH7Fx7IcWtEmPoKOrayGEESv_NwX2dZZxmpiNIhyWJeN0KrVXJqKiOY5VP7yxXMWrj1BEi0ZnFRd9NgfXtJsnNLG07PZB9EZI7aLQVq5Xt8QI9SXqEcs-1FyFci73Wh2_StVqADhcIwo9AyDmyvFDLPZqBFzSbmLq-42umhCPZsbgJiiU5vmmNVrUJ_q9BFjo0A2eMHqnxxHRTsY933xbtRWVEC_PCdIQA4QeOQcDGnwn0SskwphsYRhmUH3qyUh8KbiHP-l7tPxBV4a0dUACYb2MJX1RLzzHTFZ-oQ0TNTG0k6AODY7T6BIE_52YdUaKx9O3YsFwnKLYD0wVfp1SVgyWoug-JfkBACFuz4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.548,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 77, \"sources\": [\"S-b3ad\", \"S-4157\", \"S-a16f\"]}\n```"
+ }
+}

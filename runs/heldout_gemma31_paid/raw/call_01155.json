@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ixnedvel bridge, in tonnes?\n\nSOURCES:\n\n[S-60f0]\nField note. Checked the signage and the paperwork for the Ixnedvel bridge; the posted load limit is listed as 32 tonnes.\n[end S-60f0]\n\n[S-281d]\nMaintenance log. The Ixnedvel bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-281d]\n\n[S-bfc5]\nInspection summary. The Ixnedvel bridge has a posted load limit of 32 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-bfc5]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1155,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 359,
+  "output_tokens": 36,
+  "cost": 4.455e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_EMSSBH99oEC2hMCFa5katYpCFxUUsd-gDxPy0genrU1L8EN7tUKb2ED3Exmi-kAH7vfx59frn18wdvkDCnK8gNRrIbY1myrTj7T1eLhfOPHGztDcGOYIDmz7qtpPW6rav9VfW2BlvnrWC_pmQhaMZXdcXnGCuB9AwiGJNMOmj2aW1Pq6h-kXE9HJ3TJwGIXRmupl5HKpIqSBFP8NiV8Of1rVTKj2ps-QsRs_IYZrrPbOymUUCickcBpe4riLxfkeA5Wv-woqRJX6_TBs1Rm3MtPT_7pn6n8-s66mcgJqFA3fgbUTuO603uQrjLZ-TaGgb2K_8mhJSuo-lBxy15Fv461XDBydH2IBKaFv35hCg1FQhC4zgEBWY8SSIKZiz66x-oF_a7CtVEndym4U4t_QbGLdzB8PHISyIPJe7evxEjC6-_toDBqOXejrlK8UEVo9wZ4hvmHHtDA7WxEzcLcR1Mp9zodBdeEhQ2BEqKDGlL-k0X1amBqpVa0kdb-e1aCaJXxWhGxxkSe4ohR_uP7_6zP8b80=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.731,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 32, \"sources\": [\"S-60f0\", \"S-bfc5\"]}\n```"
+ }
+}

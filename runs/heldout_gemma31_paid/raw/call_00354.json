@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Limustned clinic, in beds?\n\nSOURCES:\n\n[S-5e22]\nSummary entry. Limustned clinic. Licensed bed count: 204 beds.\n[end S-5e22]\n\n[S-a722]\nCommunity note. The Limustned clinic runs a volunteer programme and hosts an annual open day.\n[end S-a722]\n\n[S-0279]\nInspection summary. The Limustned clinic has a licensed bed count of 204 beds. The figure was recorded during the most recent scheduled review.\n[end S-0279]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 354,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 349,
+  "output_tokens": 39,
+  "cost": 4.467e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_JDJkY2ejz0OZ9zxqaaOlrXdIqmitzyyW0KZ-8CmnW3JV5havWF3hx5G4fxINaVssmDaiKmXEbLo5jIUDlqD2HhRv6YLMufvZPUjQddAJ00fl5thwe3cmhLXe28ajwLEGy3EccgH5kHi3vF3CG2eCcNjE0bHsF44_YSMG0XJh939fRCZmetYHkMLs5iknpIvhZ-e6e8uAADqsRaGqpQLhlpFMKnO1RPlWm5x4rdRuEBQLQAZ8WQgyhI4s3bSG-J2nhTpwfAUEeHKmBvgAii9H6Qun5LuNEG34MsgoNAmGag7Vf77aq-Hcethb3j3prCVWRetK0JasRBAy2YCej7ptv4KEC4EyKhxlJtzaka6LaSzytWy0znnmt0CCooaOqAV89KjKOboQobu9QiBPaG15TcnvXxOsdG5IEbpI0_lQstpeBbVzhILf0vY5elxoHKIYQTDXt0JhZcXPEBFnxByxzIkNWbg4HU_KUTAgYQTeF4aG7tdpRY-j4KYmUug-4v2hzZhmaSmTGqI5pe4oOkFwYd0hoFg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.372,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 204, \"sources\": [\"S-5e22\", \"S-0279\"]}\n```"
+ }
+}

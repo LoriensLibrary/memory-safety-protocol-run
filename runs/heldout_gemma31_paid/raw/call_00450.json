@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Velnedmar clinic, in beds?\n\nSOURCES:\n\n[S-c102]\nFacilities note. The Velnedmar clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-c102]\n\n[S-2d77]\nCommunity bulletin: residents are reminded that the Velnedmar clinic has a licensed bed count of 44 beds.\n[end S-2d77]\n\n[S-790b]\nInspection summary. The Velnedmar clinic has a licensed bed count of 44 beds. The figure was recorded during the most recent scheduled review.\n[end S-790b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 450,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 356,
+  "output_tokens": 38,
+  "cost": 4.496e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_msdq7J9fxhKu9xvVl07SnqnOKP-qn55PLjlL23SwZ6GEVo3ePnwkohzfWb1fyx8BYaYFEA0PV2gYCXQKm7zt6VOSL8PLvNkPdwUSwor2qc7Jvn6T7wVWJ5WjzrArX1jQ73Nyed3iaV7hUBBcviyfjnVJ0UlsunG9aY-8PIew_ynro_0QnL9S3IwNBHQd4ZcBsFUb6gKbqC0nudFnWk71wlqMPYjvrTQkM4HnwvKIBrIFs0VpCdCGEvyAjBq2SGvRYtzxejnJSTgpBEnKehVFqhbitE3O-DcgpsHfFNsoNlN3RF_f-scRiVxMrh2c5NgZ-IxYojKDoo2fPaZahApUM-vZmlwZOOPt1iAkgULuNVoVeLdsEShFVsznkO-5Gpd6tnGkKpAJr21J4zmi9AzkkujKRKszW45eDWTxzV1xUfbBq6sqBfk126gj2rrTcX3FDKGpacZFxhlxs6bP2BGo2x-nI__DsKtHCNqCAXbVsPqyTerSNZQk6Wvg2kezgHrXQn2V8b2qFSGjtERXaev-gzClJgA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.564,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 44, \"sources\": [\"S-2d77\", \"S-790b\"]}\n```"
+ }
+}

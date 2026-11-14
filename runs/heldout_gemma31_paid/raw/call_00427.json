@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Braustsen reservoir, in megalitres?\n\nSOURCES:\n\n[S-8a2f]\nBriefing extract. According to our records, the licensed storage capacity of the Braustsen reservoir stands at 641 megalitres.\n[end S-8a2f]\n\n[S-5243]\nMaintenance log. The spillway gates at the Braustsen reservoir were serviced during the dry season and the access track was regraded.\n[end S-5243]\n\n[S-1023]\nField note. Checked the signage and the paperwork for the Braustsen reservoir; the licensed storage capacity is listed as 641 megalitres.\n[end S-1023]\n\n[S-adaf]\nNotice to operators: the licensed storage capacity for the Braustsen reservoir is 800 megalitres. Please plan accordingly.\n[end S-adaf]\n\n[S-14fc]\nCommunity bulletin: residents are reminded that the Braustsen reservoir has a licensed storage capacity of 641 megalitres.\n[end S-14fc]\n\nPLATFORM PROVENANCE:\nSource S-8a2f claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-1023.\nSource S-5243 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-1023 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-adaf claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-14fc claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-1023.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 427,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 677,
+  "output_tokens": 29,
+  "cost": 7.079e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_9CgtFKCf71QFZ8y1zIOnvmKSlFjG_jTDjWvVPddOit3uLa6tNZi_hEhA7I0mUAX9oZMYmEv42kvKre7-mPn3BWmCK2FUH5iWm9qKFt6bmLiwKxNnKVA2t1B-pTfbzWwiw1jzaX_vAGr-X5yfJB360WXm9PstOXeHboyvjtK0Uqm1OnCUoVhAHw1GYjxPBZNeQeXVba3wnVSToRmr-2vx5yYbC4_czt5v7eG1HyqkfwRiRLGuFbNpEZJj7VaSaKVQKjMmD7wkGp9dc6Du5dHeptVRYFM6_bWt-G8XX_9gMJ_QcB-3Fkzl8xQBx0gIEFXMz15xcVIhktfLORgrD-YHPGsJS5VGnqon0irenB_cBFeKEzdNlY0mFPozSo3UVP0k5irqh077-_cw9-rMX-Hya0CC5era2lYd_GccsKlnmcZrBNA1GH2VCeZQVpHdzEdThdtKGBwwnjG_A1azeOJTmOP9b7FL5Y8c_vxUJG1RPPXnJ_GlrmjZsmeBv8dhHbwQU1_NrzMs8PCI6yKD3cEa0BHNU5M=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.332,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 800, \"sources\": [\"S-adaf\"]}\n```"
+ }
+}

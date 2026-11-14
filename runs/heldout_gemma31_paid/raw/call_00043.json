@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedtin reservoir, in megalitres?\n\nSOURCES:\n\n[S-859b]\nMaintenance log. The spillway gates at the Nedtin reservoir were serviced during the dry season and the access track was regraded.\n[end S-859b]\n\n[S-a9ee]\nInspection summary. The Nedtin reservoir has a licensed storage capacity of 507 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-a9ee]\n\n[S-5456]\nCommunity bulletin: residents are reminded that the Nedtin reservoir has a licensed storage capacity of 507 megalitres.\n[end S-5456]\n\n[S-1ef4]\nSummary entry. Nedtin reservoir. Licensed storage capacity: 726 megalitres.\n[end S-1ef4]\n\n[S-4dda]\nField note. Checked the signage and the paperwork for the Nedtin reservoir; the licensed storage capacity is listed as 507 megalitres.\n[end S-4dda]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 43,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 446,
+  "output_tokens": 44,
+  "cost": 5.51e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_YHpl2m94tDGMk5JzHAkq6KAHu5EtafQfI1T-B9a46kXNji8EWtv6WhuFxRkGyRFqieBDzIuB9EXi4hSgblMpzZQa-pWCVDIv0COl2e4eeiGrXvBg0gmYbnU6EqHtdLLDUAbnlWU-o3NefobqrfP0QKnOs4QfL--l-jptKY_v1Oc7U1CuFmP6uMFUGIHwxJKX7EhBm1rqjb95PTlFnybza65j4QZT5yLblTjduYWOdl3_72Wsg5OJA-WMoGklriCUoOFtSwZoIbpz9Qt4jt338u-RnzA8oauCcjMMzKPG8jTRwGhMFhiXceKuxvS1KqC3t6zU--oJqdzHZ7ZTEtZlCUoHp18m-0zF3wynWu51LnTpSHoyLL99xxF7RMh_R-RiIAzc_LOGKMVW5IsgoHpas8H38ex09qwvxRaATrJk9W5IC_mr9MSpjE7YBsKxh92ONrrqSa68seuPu8ofgT7t1aABZh4vllXOfnInfJuVMYqiFXg61dpkVrPSMxNmZuOtBiOOzE8Aibj4LTIGe0aVzaBn1ls=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.623,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 507, \"sources\": [\"S-a9ee\", \"S-5456\", \"S-4dda\"]}\n```"
+ }
+}

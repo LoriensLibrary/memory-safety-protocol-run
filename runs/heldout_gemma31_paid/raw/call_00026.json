@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Pellim bridge, in tonnes?\n\nSOURCES:\n\n[S-42a1]\nNotice to operators: the posted load limit for the Pellim bridge is 65 tonnes. Please plan accordingly.\n[end S-42a1]\n\n[S-7ea7]\nSummary entry. Pellim bridge. Posted load limit: 65 tonnes.\n[end S-7ea7]\n\n[S-9aa9]\nLocal history note. The Pellim bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-9aa9]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 26,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 336,
+  "output_tokens": 37,
+  "cost": 4.282e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wVr0VpahX-dZPriXWGz_txtOtesdky3XhTB73R1-Nb3OiLUy3b8f0EZshSSKMHqzy2ByeILBGs4KacKh50iSEUQn75JKbbRvzJEkg3VW6hfoiznBNgYJcpidUEhWJAMDNkdBNqZJMBUip2_GBYUJtoSIi9nFthtuAR0hXEebLxJk488knc7c6Y4NDbH5OhdrkSAfHfQ3NCSqAQ-hboROwsK5VqLbZjD7pyN6QKVCHSU6ye4zcX1rVFMYEYmHq1FNAvjlcf8QFuvZ2vSOu7kuI0Zr1-x10xNoKrM_fKNvbzZtiUs0rNsqM0SW8OIBb7wJnZV4FkW5z0gN6oCfX1IQdZPsNN5vsNoEPyBMK15LIbG6fXFYoabFpRruoqp9MyXK3r7FABMw7wzXXtIrPGeiXg2QOM6vsGM_bnIWwEhOgSfYPzbgjz_EvoludYGEoqS3EA1zfMllFop4eRR87YdR9iZ9Q6a-jvxWtzAky7F80Apd9BZM66pUQ6xWAlGuohPrxraTF_2JYtuviiyu8lS5lrO-ZT8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.468,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 65, \"sources\": [\"S-42a1\", \"S-7ea7\"]}\n```"
+ }
+}

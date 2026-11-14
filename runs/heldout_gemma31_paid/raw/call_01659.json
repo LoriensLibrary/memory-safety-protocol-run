@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Voreshtin bridge, in tonnes?\n\nSOURCES:\n\n[S-e7a5]\nSummary entry. Voreshtin bridge. Posted load limit: 36 tonnes.\n[end S-e7a5]\n\n[S-b497]\nMaintenance log. The Voreshtin bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-b497]\n\n[S-d685]\nField note. Checked the signage and the paperwork for the Voreshtin bridge; the posted load limit is listed as 36 tonnes.\n[end S-d685]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1659,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 354,
+  "output_tokens": 33,
+  "cost": 4.308e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_D4Izq6udVKUR0M6oK7FgkfdO1EbxWEp49GN7a9VhEejwMK9c-a6wNt-U2r1KcqBIo7m7gxNnfwPd1meNpP0r_XN7G7oG2eu5PqRuU_FstMix1vG78mtsvxwbgMP9RFlehJqlTi1UQd_cjkb6JbCIlm75phtK9fJFhk0XV5-eJFHZ3CI7-MQepy69wVLb_DnBi1OjWgQOw6lWtPjYNYPJKGpf48SIfmS5YC9mBjTDrg8npkJizPW92Wpib309kwiKb5-sYY5p25uBfIoGmW-uA3qZ9Ylokx8eaWlVEj22TkSJRwlL6ZLlCmTz3r_3BM5IU7S-7NkZS5u-w8XaGV3QbUvxfrqpFDIAsLDHZfkh8U4dwHobHG5HlHzBZ9gegn9_U5xQLk3YP7ylM04yelakCnyqnMzSst-pJ2XtF3l5LKZZX6rqtzvX0OPdzUPz1Hzn2hZMYsCRUCmy2UPHnGZbrZM_wexaGKx4U90tMOnm4u8I3ENGJqv9YOIggunPQU2_0f9gNEQzBtL5L89WYeXy30fNXJU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.417,
+  "text": "{\"decision\": \"answer\", \"answer\": 36, \"sources\": [\"S-e7a5\", \"S-d685\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Quagri bridge, in tonnes?\n\nSOURCES:\n\n[S-c2a7]\nBriefing extract. According to our records, the posted load limit of the Quagri bridge stands at 39 tonnes.\n[end S-c2a7]\n\n[S-7357]\nMaintenance log. The Quagri bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-7357]\n\n[S-e883]\nCommunity bulletin: residents are reminded that the Quagri bridge has a posted load limit of 39 tonnes.\n[end S-e883]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1537,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 354,
+  "output_tokens": 38,
+  "cost": 4.478e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_happZkXoVOS1zDerGS_5xbn-HveUb2c2wEjiGctaFePaPO9cKQDBx0ENhJZRuA4DQCO3HAAw4Ml5mE6mDtUSLhvDL3T5-rEWIJYsF2HpZ-NM0BfJD55MgjuqMQUlIxlJDJDctJoVzy0DRjRqmyz5VuNU-pktQ7ccJNgLhNQyA8pm-NLErTqj_7NrFmHPr3nCsUmWRsVsB9COj9jxPTSDY5u4EFHelKvmfwav42ZTFGGvReO7B7O0ex4FK0gYtKSIRBeromjTqs3Dpht3k3wMU46znWBVscXfCR5vnR5ThNUeH-f2PpRiyNK_ZFteVuA1aAGYOB-lwLT_RzaKxWFwpWDig-bO6jqFeFxO6u24kF59n8WWBUoJeR31u7v05cTrbosvOVP-SvRxOm_W1sv1cqDpqDxCzVa58p6OfiQOuZwXJS8W8m8GMSGSLf32FMlDUPbQ_fq52Iw835Y2etiDdIugGwt2DwZilL_r1kslEdZdJG60eroCkGtTsMjDbtwhvq1MXCwloAR6jbvOOqFYALdFlgw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.376,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 39, \"sources\": [\"S-c2a7\", \"S-e883\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Ythomeen bridge, in tonnes?\n\nSOURCES:\n\n[S-d75b]\nSummary entry. Ythomeen bridge. Posted load limit: 58 tonnes.\n[end S-d75b]\n\n[S-28ff]\nField note. Checked the signage and the paperwork for the Ythomeen bridge; the posted load limit is listed as 48 tonnes.\n[end S-28ff]\n\n[S-76a8]\nLocal history note. The Ythomeen bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-76a8]\n\n[S-22fd]\nCommunity bulletin: residents are reminded that the Ythomeen bridge has a posted load limit of 48 tonnes.\n[end S-22fd]\n\n[S-1668]\nBriefing extract. According to our records, the posted load limit of the Ythomeen bridge stands at 48 tonnes.\n[end S-1668]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-d75b\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-28ff\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-1668\"}\n{\"source\": \"S-76a8\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-22fd\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-1668\"}\n{\"source\": \"S-1668\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1853,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 688,
+  "output_tokens": 44,
+  "cost": 7.688e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_36oFiYILYFDfHtSbESTV4KsaHBzLPEPN-1ZonweYjcIvY-nNsV2DA_aXhBFE2hjWF-2BhE9zO8FcLn8MoWs63eaJWP5GbKxzdgkNTOfeM8fEJwN4QjXUFSo_HOInnkR1NGLJUX6KjXdL6psQClS2cPmZHELyGAC5OZDKBDbE4RQnAr06D4wgQB_NB_dFkBObixuwmxlWjA5J8JAArgmzF9aQ7yDHWnjyulZyhEHuafJ7CpJR5B-MLrE8959lOdgqbNX8vw0KcTd2KbHSKdcoQrHVsqF2xFhnO4mb68LZV3YdzpXXK8-g5SOnOnmeLdPbtY3bHRitu9C7BRKoDRlXcsDTPf7DPRWQE3yctNHAdgCqMUjrD3VroVUjMkw4PDapdeUUrzHRZVb8PcSKL-iai9-b_Ah1clzF6xAW2C5yuCj0FehdIAiJ_9FR-tBSSDMutO9Px-371qJNPcfhcCwlK6SpSUQ9lqfkqJNuUY8AcVnvlMNF3sm8PjI0TrJVVy4-6pPFVbrOzpvQcU42hST_HIfycuQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.6,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 48, \"sources\": [\"S-28ff\", \"S-22fd\", \"S-1668\"]}\n```"
+ }
+}

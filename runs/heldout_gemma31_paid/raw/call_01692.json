@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Eshka reservoir, in megalitres?\n\nSOURCES:\n\n[S-4342]\nSummary entry. Eshka reservoir. Licensed storage capacity: 543 megalitres.\n[end S-4342]\n\n[S-1421]\nVisitor note. The Eshka reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-1421]\n\n[S-f9bf]\nField note. Checked the signage and the paperwork for the Eshka reservoir; the licensed storage capacity is listed as 543 megalitres.\n[end S-f9bf]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1692,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 350,
+  "output_tokens": 38,
+  "cost": 4.442e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Q9-1uqccFssmxWro8CQi6By2R4QUUumhFzEuUepXPKE9lHmM_A6Mvg1polONfbKhP_6AEtVs16C5VUuXHiXXWpl75TKlZIQiJ5owcVa-UzpDsE7hqkEhl9uD5wiTPJJFps5AVKjCljEO-HXKX7MLrYmIbSbqWreodVfXXFKl5H10-QeDwkegvIWrevYIQRagb6U3BJUnyzyg1U8Xwan_1B3hJf77sHWJ4PXdzpTGa6X40FJs9wWbBpVXv_S-aydz-auMkCjKcBV-_nVYFAHQJd9pO3lDdrsiBigpwJVQNcaV3kbzXyD4eMK3X-Xyisr1dhkXZHyI0pVF1ZJ8QJ-ce8qNtXdstcxixky2LaqpcmRkKdlKF1fVPt2opFZ6NTZcdpFrUVK9E93M7IOC7Hb3Ug8CA3bLrFQCk60j5pPiwl8HaQsl0tRSssu_RThTwVXvvwYWYQiJe8jCvHOcCe-gQIFidAOIsiRMnVllV6c58w8DtumAmwaKF4Uqj0oVXnYpnPaT6nGUDMmpSBFv4s4FMTpFF5k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.564,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 543, \"sources\": [\"S-4342\", \"S-f9bf\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Robraol clinic, in beds?\n\nSOURCES:\n\n[S-da2d]\nSummary entry. Robraol clinic. Licensed bed count: 118 beds.\n[end S-da2d]\n\n[S-9319]\nInspection summary. The Robraol clinic has a licensed bed count of 118 beds. The figure was recorded during the most recent scheduled review.\n[end S-9319]\n\n[S-b6db]\nCommunity note. The Robraol clinic runs a volunteer programme and hosts an annual open day.\n[end S-b6db]\n\n[S-7ebc]\nNotice to operators: the licensed bed count for the Robraol clinic is 157 beds. Please plan accordingly.\n[end S-7ebc]\n\n[S-b7b2]\nBriefing extract. According to our records, the licensed bed count of the Robraol clinic stands at 118 beds.\n[end S-b7b2]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1536,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 435,
+  "output_tokens": 46,
+  "cost": 5.479e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Y1mSOY8hmOb5kL5tJqvYta4Djks6BCxnt3nUCPqR7LmXWHXVH5VFF_rW_r9X277sVQsASoVFoSDBeKzzTDnSfKemqtWIZk2T7ddxPagPBEYH-wyNMkmpBjtMafnnPDbUlQhciD9mkWQlwvC06C7Y_atyaZligjTfCnIGo9smmo2Np-EDt-6rf-S94WTaV3b82oH6mWrz0GKlYloQ1SOoFBh2YPNLwIW7GWeJs8OpV1DQZ0Lol87ZxNZRdBB4gVikuq-JTMftgG0T70vdxd9FigrSZG-gm6PMBOS9MujPU9j6x0WZpYsUZ5ezfOY6u8fXn4XyBqfi5Y5ThRtN6Texm3RcPOFrPyA_Y0v_SmLs14hHpFw89oRG83HGkWw0KxgfiMnsZ-HH68LD1_1xGczpcIs7dDLu_UoLjhwrXxe-BoSfrwE8LLrv5BD6EjBRIXKUUGXh2KyiMABvAncH5uEIj6BEjtxEo7505ILQwLGgocaHHMe6yOcW4cPV5JrAAuYYf_HRNgP8JSrC7jnlC5d-TlAq4mk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.433,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 118, \"sources\": [\"S-da2d\", \"S-9319\", \"S-b7b2\"]}\n```"
+ }
+}

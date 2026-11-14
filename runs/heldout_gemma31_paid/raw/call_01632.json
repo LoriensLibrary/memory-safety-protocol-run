@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Dulka clinic, in beds?\n\nSOURCES:\n\n[S-b4cb]\nNotice to operators: the licensed bed count for the Dulka clinic is 242 beds. Please plan accordingly.\n[end S-b4cb]\n\n[S-91b4]\nFacilities note. The Dulka clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-91b4]\n\n[S-8e00]\nField note. Checked the signage and the paperwork for the Dulka clinic; the licensed bed count is listed as 242 beds.\n[end S-8e00]\n\n[S-f0b7]\nInspection summary. The Dulka clinic has a licensed bed count of 211 beds. The figure was recorded during the most recent scheduled review.\n[end S-f0b7]\n\n[S-aeec]\nCommunity bulletin: residents are reminded that the Dulka clinic has a licensed bed count of 242 beds.\n[end S-aeec]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1632,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 440,
+  "output_tokens": 44,
+  "cost": 5.456e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6TtBkd4zIUQ-e3V65k035n6Zxn5pYOTg3tsLa0JgsUeru-0v1CPWokDA-Cy2K_EHf1cwsCVFztDSUtZYbmBo639lY_M-Jt5si2S-kwYeSpBb3B7RZBlCzWeN71vlE-KyUx6ZlvkgEfmUtK3oFoWCBld6IeT0yieSBEQ_YWtKg0_EIi8nzVvB6vyAOUXfdJ2LTziu8MA-yW3fAHy25gLDbHgvLHV95ZbhePtgcY68YBperjM7rMKc-Bbdg0qHLNIhyGfMRxueKf-QNB_rcHqhFE0LO4nVNkVqveimOxufboVms5OKx7he6lfjAXI7JyWfvV4r78YSGFlE74kp2qzbYRj_m4Xr2za__bgNxfNhym-Ix_pfEV1BwiFEa-6l5I0DAD0g9u3OdHfZJPqywByVJXEMWolMKblBE-hGo-IVzIX1dIBF0vi73gBaQFsi7WmtWY9STtqpOgS1FhDag7Elp2odg31D0SYPE4uTLUNshV72JDsfoFStAKAN6N1jBZpd21KJ57euR_XV-oRzQ2fOOIkrC9E=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.343,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 242, \"sources\": [\"S-b4cb\", \"S-8e00\", \"S-aeec\"]}\n```"
+ }
+}

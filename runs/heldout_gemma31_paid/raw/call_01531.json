@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Pelenka clinic, in beds?\n\nSOURCES:\n\n[S-db04]\nCommunity bulletin: residents are reminded that the Pelenka clinic has a licensed bed count of 234 beds.\n[end S-db04]\n\n[S-8574]\nBriefing extract. According to our records, the licensed bed count of the Pelenka clinic stands at 234 beds.\n[end S-8574]\n\n[S-9f98]\nCommunity note. The Pelenka clinic runs a volunteer programme and hosts an annual open day.\n[end S-9f98]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1531,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 349,
+  "output_tokens": 38,
+  "cost": 4.433e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_MjIOvNYUbWVVzUlxFIRVKJM8QlvjEpLC65-hgcUGzicVsGSZvCKiD1bqtlrgl2gPK55nwO99li4l26b8_MoF0HOVyIqWzVv0th6abt7Ujs5hEtPXxWitC5dLC8wkCZLkEoV3wBhoWn21gh6zMBaU9dUEWydf2CQuxVp0FbQGug5TCISpqCvsR8nm7LS4oDvoZL0GojRiSlYf55Y-cFhZepxznsci3ibB5GmQ5ZN66jR1VsuxKEIDcWPwYeLQpOEd7SrD3OD0xOFs6M5XSBT-aFFZMlQ90Uoc46DkLJI2zJmN0pTRhv7Wzkjj-KE44ls44PT_ghfoe7nRN-Y-FmvDjh4YhWrrksYlqUSLRb0n6gaMJCH40cwd60BdVcLetbdiIRZ7OCeShcIXPOWTFD7tK9fHtbzJ6XgsiElP414NlWho4BGME4Gc2QLUWUFVoDWee-3srw0i5ZiH2KGrAH3gvc9_0FBvs7JCvyarPtAFR1zZX7prRzwM0KNtY2BViqd7P1FvxZ68RLhc9NK4DY3LdOYldEM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.534,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 234, \"sources\": [\"S-db04\", \"S-8574\"]}\n```"
+ }
+}

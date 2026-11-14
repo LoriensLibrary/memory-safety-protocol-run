@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Grined clinic, in beds?\n\nSOURCES:\n\n[S-a393]\nSummary entry. Grined clinic. Licensed bed count: 87 beds.\n[end S-a393]\n\n[S-d9cf]\nBriefing extract. According to our records, the licensed bed count of the Grined clinic stands at 110 beds.\n[end S-d9cf]\n\n[S-0d16]\nCommunity bulletin: residents are reminded that the Grined clinic has a licensed bed count of 87 beds.\n[end S-0d16]\n\n[S-d810]\nInspection summary. The Grined clinic has a licensed bed count of 87 beds. The figure was recorded during the most recent scheduled review.\n[end S-d810]\n\n[S-0a9d]\nFacilities note. The Grined clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-0a9d]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 576,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 432,
+  "output_tokens": 46,
+  "cost": 5.452e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_-5Igy70F_LljnqkwIXA64taJuoUfcTBTlV75EXDpHwpkGD7JIORBgXtZArRjAdmRSp4r1F3FbG6exM9ZJAUaSh_LczPmn3qyKleY3Rjqd_geMTDTgtsgIvN5JaBYhhhoCKQp7KGR1d1VgMTVwVMeFYIAhny2-6GvnrM-nnlo5zwY7FgaO1gn79bDDwyUcOavjiI9Npk6oWpYfa09LX8AmlA0Ut-TrRlk67L47NabS1KUFiaPz1qfje47JD6H66qw30s6ZZb0daKfLH14uZ2bOUpbWUOf-udE1I-E7zm6lKy0VqCW4EeuTakGtS_hVBYyKPj-dYmTZpJkec-xBptAkzCIic9fTFF9LKl5qWkHBR7he9SulZrR8t7rYKXSvNt6WqSzuyo4z0Bx6EOBTRcX00cAM8duXCv1j6Vvs_iEjDM86Fw7kPZTl5gwCZeas2WbeQLp0FDZkhbA0UbEqzgOB64VfWeIUbpxKA4YQ624nrM84ynnEHVdAw9v6CyfPoYcXwJ0Ac8X7aJDtB9PbiDd9zn6IhI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.564,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 87, \"sources\": [\"S-a393\", \"S-0d16\", \"S-d810\"]}\n```"
+ }
+}

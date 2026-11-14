@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Braome clinic, in beds?\n\nSOURCES:\n\n[S-fed9]\nInspection summary. The Braome clinic has a licensed bed count of 205 beds. The figure was recorded during the most recent scheduled review.\n[end S-fed9]\n\n[S-5224]\nBriefing extract. According to our records, the licensed bed count of the Braome clinic stands at 205 beds.\n[end S-5224]\n\n[S-6099]\nFacilities note. The Braome clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-6099]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 380,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 353,
+  "output_tokens": 37,
+  "cost": 4.435e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6JSGxV0RYrJ1uASvuHdxQH2sigXDrusiy_SW2Gqrs5Bv5at1HRwKHUnYpR5N89hx7YiLyfd-4Z1Ab3HqquW6hlaYFf-uUWSramK7u5HqL-fwpKQ4V8HfV7xgHSFaMCTtu9RIel7y6ss3_j_dT-RPlSkUsGnfOfsx0GMauS5BXFB4EkooIE8UR-hSKYwx0hD3KKfAIBkNFkItHM9pfE99xGOp3hZonbsZIKfNasF29JwnRxTgYdbTdYAI5ltSmqmY6zEfFs5ACUnM3Soxa_f-r4Lbh5rv8YPtFbvd9w5t2MVKr6xns6SsaBmFmLiA1P-EWm6-lR3sh6NUEU9_Jfl5cfySDReY6ZlNiNxyPbzDfwOju2ZFpOH5r7bfIMrpJsBhWC-RNqwjJL1T53vF5vFv284VJ6fGOY72ewGQZO6TW1E2Op3dAyj_Rmn1Z2U39xFA6RIU20zRWYUo6GLbcjspKHTrhO5WwOE8PwIIQG38gXNghijtPziPg4HG358HGPmz-uKLiWXQtLNsPc8yYeQP3mzKmHw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.648,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 205, \"sources\": [\"S-fed9\", \"S-5224\"]}\n```"
+ }
+}

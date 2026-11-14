@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Kaaro reservoir, in megalitres?\n\nSOURCES:\n\n[S-feef]\nMaintenance log. The spillway gates at the Kaaro reservoir were serviced during the dry season and the access track was regraded.\n[end S-feef]\n\n[S-b0ca]\nSummary entry. Kaaro reservoir. Licensed storage capacity: 528 megalitres.\n[end S-b0ca]\n\n[S-00af]\nBriefing extract. According to our records, the licensed storage capacity of the Kaaro reservoir stands at 649 megalitres.\n[end S-00af]\n\nPLATFORM PROVENANCE:\nSource S-feef claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-b0ca claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-00af claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1573,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 471,
+  "output_tokens": 30,
+  "cost": 5.259e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_b-q6cs8XHlnT6c1bcoelde5YPygPDSfkhpmTCLHKnQAcfJ7i_7_A1YTNRHPyAMQ6K2Xatvvd8LO04I9gbpAPJ3H9G2mnKVNSpdfCgaxgCLX5PnHMKld8KhVJnXMYb1ctspglpIdzZyXHi1ILYyQC-dDpppsCwbDUuCYAiw2UHCc62qC2I9yF9PSc_ejO5YxSZIt7uJrWIMsQM1I41PZfFuM-j5k1jPAp2wqdoCvAPdoQxygLksln9ayLd88xbOg7oR337-iu9kNLRabSbgaLykkdG5x174oLYmPFU69Oki4wtCRDNDlWf2rHqCb_TOz9Zk6PDPrKJmSm0imBGh8FbAD6Aatvuprkt-W7WZbcJEHPI3sa4TjrVk_JyMa0GENtNGxqfRfJmsJfcXpiTlULaxv91J0J0HTsNgKt3VgsfEwsNvY6Cz1X1mN9yRjoPBUPg--bwzMZUREDPnGO2GHCx83QlBGIejFJegep-VdwY-rrLMS34GJ6mxOgYUmwXqaVzRJ0KUMArlLs2KrqtFkWJnytFzs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.364,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 649, \"sources\": [\"S-00af\"]}\n```"
+ }
+}

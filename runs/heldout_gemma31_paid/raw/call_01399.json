@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Veleshust reservoir, in megalitres?\n\nSOURCES:\n\n[S-70c4]\nInspection summary. The Veleshust reservoir has a licensed storage capacity of 466 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-70c4]\n\n[S-0758]\nMaintenance log. The spillway gates at the Veleshust reservoir were serviced during the dry season and the access track was regraded.\n[end S-0758]\n\n[S-1ffa]\nBriefing extract. According to our records, the licensed storage capacity of the Veleshust reservoir stands at 382 megalitres.\n[end S-1ffa]\n\nPLATFORM PROVENANCE:\nSource S-70c4 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-0758 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-1ffa claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1399,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 499,
+  "output_tokens": 29,
+  "cost": 5.477e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6DGziNv02fA4QdPIWqpOKAnfXkQnJRM7Z5nBvhM9wI-K9RtJUMoCsuWkdgSV2Zr5o2CVNegperTva1eQT2fX-Y3b0S3zdgECGgt4vGeZWta1WiDzz_xPiAXCo5e9Z_NU1ah5ZOa4enZe-GVuIX3PF8YFxqs5tnYV2I39hRDADx_fC1m0OayrOCu0fSRgzagxhVEzMJMDW42udAZcnBY3Xsoxm3Ry05VyP6Bm-YM4XEPzquH5xSwQOgOY4AqGIr9YnRvuS7TwrW3mD-ZJFrARvuuRvgKtap6vl0BMcsFrPGIsMksRIykGBC-sM4felek780zXJiTIubB-KfZC2ukj2fEL08gogEJN_y2ZJMskqVlUuPWj-jM3OeQvORLEQptSUgEUP7l790jtAXUI5rpBJB5Ayc7GonyFEnNg5ZdGjxDZ-ec1tlOuZfYcxsoaYtXcl-ZCvJslDNiselU3xRqhhxu3VRsY2LtlK5X61B_CIkE2nlVDmu8dVHky9Yn0cRpgif5mzf72qNlYxZmN4H1HM5NtsQE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.447,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 382, \"sources\": [\"S-1ffa\"]}\n```"
+ }
+}

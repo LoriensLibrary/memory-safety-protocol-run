@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Grilim reservoir, in megalitres?\n\nSOURCES:\n\n[S-18af]\nInspection summary. The Grilim reservoir has a licensed storage capacity of 763 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-18af]\n\n[S-a73c]\nMaintenance log. The spillway gates at the Grilim reservoir were serviced during the dry season and the access track was regraded.\n[end S-a73c]\n\n[S-e834]\nBriefing extract. According to our records, the licensed storage capacity of the Grilim reservoir stands at 763 megalitres.\n[end S-e834]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 828,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 366,
+  "output_tokens": 33,
+  "cost": 4.416e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Mz71Vu2wAF9RRshf-WxqbDnGPLiDf2zKvYnbxMiRXYUDMWqhPQRmQzDr9YJb9J88psDU8Cfiun9qyl6WyXyZu8_wwr7OFTNdpfzMdTcx-EJLh-jxuR-eSsBq3hjwKMfXH9JIt8cHSE9MucwIZUlDxfwI68Roy1v_XNs-C74l_AYDMDmtXWh88-rJNJZqjoxGwP3PsxLUz70vL5SHcu1ItpdDKiaRm3WlO2pd3aD9jupycEvzANiksQQSuHo8kiCC4Sxof8KUo7ImMRTLb-JnSkAQqR7yozuG2QTtwn-AUmgMvr-NZ7gPQz0Bfsx8bRCOOTC2Sik1GQaIc2eifQDMJcI-6WUH1FgUmN6dj_7zP1osnu7eKDU3btb7APMKU571mTMxZ_7ldQ-pOT04hVe60OhK4h2FxMkL3z4uNZHXNKDqHotxqedwiaRF7Ih2J3neoxqw1GMGppudlMWSM4KpW9aKkKVY95hj0Y_vRP7MDlp0NJqPo9PE_eKaTfXZfjS-sDPJzcpN1lkBIDTJ5dGJjUMXptM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.535,
+  "text": "{\"decision\": \"answer\", \"answer\": 763, \"sources\": [\"S-18af\", \"S-e834\"]}"
+ }
+}

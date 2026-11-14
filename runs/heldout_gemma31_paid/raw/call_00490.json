@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Quavel bridge, in tonnes?\n\nSOURCES:\n\n[S-81f4]\nInspection summary. The Quavel bridge has a posted load limit of 60 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-81f4]\n\n[S-e325]\nLocal history note. The Quavel bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-e325]\n\n[S-f3d8]\nNotice to operators: the posted load limit for the Quavel bridge is 70 tonnes. Please plan accordingly.\n[end S-f3d8]\n\n[S-9795]\nField note. Checked the signage and the paperwork for the Quavel bridge; the posted load limit is listed as 60 tonnes.\n[end S-9795]\n\n[S-4850]\nCommunity bulletin: residents are reminded that the Quavel bridge has a posted load limit of 60 tonnes.\n[end S-4850]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 490,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 442,
+  "output_tokens": 46,
+  "cost": 5.542e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_gudweA7b8QwypGgJClWM55_vcihbj_7SYKcMexGsrZ7Hr2IlR8_vE1bs70WhkmuUmQzb95be7_iLAY9KlqWKEpe9Zly4dK1IXAg3xXqHycE_Tn7ZjBwbC5OQdEU1CG083kKY7ivEXs3lBthpXTT4tQPKAcqXxGEfdM0SCme8uxLziampE0X53fQWm_O_N_ISMRCI_piYlS5jFlkHjF173IGddLu1jKnGh1QEgDk4zGmoSjQ0er_-sekQ6zUbmncIVhHu3d4HrjX2k_NXjhipOG6w_0BZ6hDGfaUoghTDBuEIs_P9Tsb3KxKcs1rM9RoKPsoqs03kYx7yNGm0XoA1CzYkQ6LgvamlbFb2NVbyZQPqeg5G7qeyEhf65kZ1yIg_pEvN2R_CuBf3tPKqqWf57Lgylz0dyuCnArowUvwAuFiZLKxd68HS6pSEsy1xdKWkcX5OaoHFCBG2lbC3rnfliw24QRlyB0hCdRnmKdmtLZ-0dVcZA4otzif0JzfbnsqOiQUqyD0sgCmFYM7SFroX92UG-G8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.627,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 60, \"sources\": [\"S-81f4\", \"S-9795\", \"S-4850\"]}\n```"
+ }
+}

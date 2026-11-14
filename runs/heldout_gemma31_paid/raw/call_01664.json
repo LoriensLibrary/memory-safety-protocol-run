@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ythvor bridge, in tonnes?\n\nSOURCES:\n\n[S-a258]\nSummary entry. Ythvor bridge. Posted load limit: 29 tonnes.\n[end S-a258]\n\n[S-86c6]\nMaintenance log. The Ythvor bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-86c6]\n\n[S-c181]\nInspection summary. The Ythvor bridge has a posted load limit of 21 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-c181]\n\n[S-3303]\nNotice to operators: the posted load limit for the Ythvor bridge is 21 tonnes. Please plan accordingly.\n[end S-3303]\n\n[S-fa15]\nField note. Checked the signage and the paperwork for the Ythvor bridge; the posted load limit is listed as 21 tonnes.\n[end S-fa15]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1664,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 442,
+  "output_tokens": 45,
+  "cost": 5.508e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_JZJ3sR8OgOGtbJSDe-8MB-duvcRVXO9_yDuZPasi3718cAA7Lqf1N4B3voanyMSbS9xLc4d7TA5nh2jNaWhC43bhuZbY0laMwQi6-0phDNhhk2C4leGURncJ5_DvmyRaE4L1SAn8sxXInSExASQoIhj_VdFx_-778jxNKRiYa_jVaYX8m7xpOq8oJJLg9oyMoPyyJQ7a41CFpuLU2qkXwpxdOvV-a41AGReGeUajWr7TfDuSNOHR_DlrBPyAfhLLuP2WprV9qjseQbIdV6fRHzx9PB4pC_CTxG5x-A5zrGGOsPLaInuq3CGtE_652t2ah2332cR7Hzcn_i3eIj2r0s5kqH_CtjpAYZtLW3EqbEyiO0PgSWY8pmm4Wab_4PKKC-JzOgPDqb-S2OuAAsazi2INmDxKSomWNX89k4Qoyi6fOT-lionW5RHqx_csCWV7RuwXganc8mwEtugy8QRVHQ0X0SPgaw6N1snEriOvfE86mfT3srjBENC9hbtamcSMXpf7uA8IS1OpDhuoIU9Axiz4YvM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.637,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 21, \"sources\": [\"S-c181\", \"S-3303\", \"S-fa15\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Ixvelvor clinic, in beds?\n\nSOURCES:\n\n[S-b3de]\nCommunity bulletin: residents are reminded that the Ixvelvor clinic has a licensed bed count of 40 beds.\n[end S-b3de]\n\n[S-e1c8]\nField note. Checked the signage and the paperwork for the Ixvelvor clinic; the licensed bed count is listed as 40 beds.\n[end S-e1c8]\n\n[S-a3c6]\nCommunity note. The Ixvelvor clinic runs a volunteer programme and hosts an annual open day.\n[end S-a3c6]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-b3de\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e1c8\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a3c6\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 955,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 503,
+  "output_tokens": 37,
+  "cost": 5.785e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_TDaNIT6Nsp_-xdhhFS-Ho7lkd9XKZsnl9nte2DY_hLgBT2n_Ix7hnKHGoTWIREZbbSrjmwQ2oNInOVVlcCKcm3uccJP1RHHZUK5xXpMnDzuSeyHNDdiU8TVmb7jtr-MU64E5OjtzE5b6BMiGMmyRZvsXqo7CD8VA3Gzh_xZTMQwMXZd9kV6CpG5qeuZJyRqrPmBiQi0MBd2KU8c5VeFEJ0VDSoJCG_Kb3PiDgZau5V7VBd0Tm5_10EaBDMKP8VPXq2HUNF_Ha9mkNFc7nn0ZJyutgj0xs4KXvvu6kKL4dG_sGbMHPtbHdetxEbovutpTrEcFrl4qGsN0jzeN1FopfJuwSgPSMLuZrr8FmTDO7kEIvnlbL9wXD_0v4gK2iCD_xgo8Rp7hoj7tz47GkNhgnrKZPYOXg3SmNwc1XMUdff04Y2Nukd8gzaH4wRhopPSMhrZrGRHrLJ3z_URk3ijjK7Sag7xhYBXdGPbF3c2XH3Bcz7gPRfSdAK4Jb96ZFIcMv3KSXuYlTFKnMe1WcFz2g6avLAE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.511,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 40, \"sources\": [\"S-b3de\", \"S-e1c8\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Brakaqua reservoir, in megalitres?\n\nSOURCES:\n\n[S-c625]\nVisitor note. The Brakaqua reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-c625]\n\n[S-e149]\nBriefing extract. According to our records, the licensed storage capacity of the Brakaqua reservoir stands at 230 megalitres.\n[end S-e149]\n\n[S-b0eb]\nNotice to operators: the licensed storage capacity for the Brakaqua reservoir is 230 megalitres. Please plan accordingly.\n[end S-b0eb]\n\n[S-b362]\nSummary entry. Brakaqua reservoir. Licensed storage capacity: 230 megalitres.\n[end S-b362]\n\n[S-abe2]\nInspection summary. The Brakaqua reservoir has a licensed storage capacity of 306 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-abe2]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 256,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 448,
+  "output_tokens": 41,
+  "cost": 5.426e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_tDUoAJyjSXvRSZloX9xOtme_YBjOK5ls9wSI8HQLY3xSAv5912Ysy5hu-klsutEcRjWYMt9tQfYxHzJYA87Bk7y5gQusLWB-f6UW0U57r9jXyJ_w8usoGM0amGoai5W08MJMeBJThjB5NZst-riJJonEsmjtNcBIbwppl5TIlHhyTlbZGlmQlVacXXOqB5yUIyCpQbXX0weAkisQhcUTpuznRin7p9IvWocJE6exh3p5V5jTAZ5Vs_zoqXFSQVPIOY0gJMQMndVXksk0CQijAWZLQGgr0ScjkFWZpxynJjhZO3ifA8Q0QVBf8dXq_QteC7ElVnlNQuvWeYnI4opa57dKKOVI3Xsf0rEze0DW7ffMC940qTF63hJ8YmsQsQpdG1y_gkCQ8zDUDrP5Oxf3sAkFES_mc_GDu5uDEPv84lNYeIcxvjyaPvBVBlq_ntvyovPv_ubVeMIQ6End5bZXTCSqyGZYE2hYhVO2eY5YQstm8uWObele2l1Spd8ZvQrPeATO0yHIalIbZXSLJfkWlb50ghk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.54,
+  "text": "{\"decision\": \"answer\", \"answer\": 230, \"sources\": [\"S-e149\", \"S-b0eb\", \"S-b362\"]}"
+ }
+}

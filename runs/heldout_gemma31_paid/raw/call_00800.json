@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Olix bridge, in tonnes?\n\nSOURCES:\n\n[S-508d]\nSummary entry. Olix bridge. Posted load limit: 61 tonnes.\n[end S-508d]\n\n[S-e09d]\nBriefing extract. According to our records, the posted load limit of the Olix bridge stands at 61 tonnes.\n[end S-e09d]\n\n[S-d285]\nField note. Checked the signage and the paperwork for the Olix bridge; the posted load limit is listed as 46 tonnes.\n[end S-d285]\n\n[S-bdc4]\nCommunity bulletin: residents are reminded that the Olix bridge has a posted load limit of 61 tonnes.\n[end S-bdc4]\n\n[S-4ada]\nMaintenance log. The Olix bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-4ada]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 800,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 427,
+  "output_tokens": 45,
+  "cost": 5.373e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_bIfV-N_cofLT-yrOfBtv0rhD_qy_eQ3v7lw4XOzHgRGWQBgZaE2-bPOUMyoBgYDDurp2MIhINhO5AyB5gt4kUVC_SkAwOmSjH4az2dAoruJzCu80I_diLiTXkuAX3lA6dtzvFp47kZIkLMK7XnGt1G_Fk9LtlNwpNm6MjqUdPLFgLTwQZHYJiJh_vgPcS1ICPy186DVXcRsxqniQV2H1T8yceVWwKjaNV79XATMWWCkNWvtSyOnsb3tsl5qlqR-8FybjtvO1742Rv99fw44ikQB1dkj_WUsaan-uGKjF668qBFQGS1TtE8M_RSqDZ1lphQ5q-HIzODvD4UmImIGE8MJzm8_ZazA0sd_opmMg0zB0nQjPpaaJSUbHv0occQUkj6c8QaDF6KjXnk1BvRfrCf8IpQ7_RzFBSVkrl-2pUPmcLzf10vsv2_Vu90lCsi9qtR01Gi-M2J9pl8C4BKapMUk1N0l9dcr7aZbPKnYmjl8ivnFU8j7ubTKaMF2TDmWTj6Y2lCIOUCk_6K42104TNhMk9-0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.468,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 61, \"sources\": [\"S-508d\", \"S-e09d\", \"S-bdc4\"]}\n```"
+ }
+}

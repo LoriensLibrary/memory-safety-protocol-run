@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ometinix bridge, in tonnes?\n\nSOURCES:\n\n[S-3233]\nField note. Checked the signage and the paperwork for the Ometinix bridge; the posted load limit is listed as 100 tonnes.\n[end S-3233]\n\n[S-7924]\nBriefing extract. According to our records, the posted load limit of the Ometinix bridge stands at 100 tonnes.\n[end S-7924]\n\n[S-cc65]\nSummary entry. Ometinix bridge. Posted load limit: 83 tonnes.\n[end S-cc65]\n\n[S-7573]\nMaintenance log. The Ometinix bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-7573]\n\n[S-169e]\nNotice to operators: the posted load limit for the Ometinix bridge is 100 tonnes. Please plan accordingly.\n[end S-169e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 32,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 447,
+  "output_tokens": 42,
+  "cost": 5.451e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_o0HYnyVN69u3L3FwBHZWWtCfRc6qKMp0Cdbr7w2Q7tlateHt2Inm4c3D7Oe8yfCmpyXUw_7BeBQ6L_Eoe9uNmToPAgFFdJMhGP3lbzhMeWjDxt5DSP21j-tFJ8y0FLH0vBLXnuw5q1og8fbFjJOgDV0F8Jn6xgdbLNWsGpusPDNhZHSOS_pfy-SgbQdr2Q-fjaQHWZJTFHBLidyMmHfXybOTjhVoK6rarkJRL1e_m-cQ1bNGZzDrkvYRqL4bZrhnocNfLBgjTRrcRiqGna1zf3bAn1wo_KQKnwEfbAxPPh-tu054V86V9xQDqGBE8ZgBHyijZf2RZQq2Y0fJfBTKqQH3kuqDMMDj7ITV33cPrjbeqJES96wuX41GsiiPBYlOqnU1Q06rnQutOZXIMrv5cyVW3AqqTQXscT_t2ff7n10vA0npZcgdxQ8jmOi_7B9lyDbVuvfAcKY9AjEgibbBYxViQXJRz8qNsUfCUXU_VN_KebL9zMSyfe40CNNw7xneAHRLxYVhT-JpQ_4HBUnoji6ahs8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.393,
+  "text": "{\"decision\": \"answer\", \"answer\": 100, \"sources\": [\"S-3233\", \"S-7924\", \"S-169e\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Rofen clinic, in beds?\n\nSOURCES:\n\n[S-38da]\nCommunity note. The Rofen clinic runs a volunteer programme and hosts an annual open day.\n[end S-38da]\n\n[S-b571]\nCommunity bulletin: residents are reminded that the Rofen clinic has a licensed bed count of 80 beds.\n[end S-b571]\n\n[S-fed4]\nField note. Checked the signage and the paperwork for the Rofen clinic; the licensed bed count is listed as 80 beds.\n[end S-fed4]\n\n[S-c7e5]\nSummary entry. Rofen clinic. Licensed bed count: 109 beds.\n[end S-c7e5]\n\n[S-0b48]\nBriefing extract. According to our records, the licensed bed count of the Rofen clinic stands at 80 beds.\n[end S-0b48]\n\nPLATFORM PROVENANCE:\nSource S-38da claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-b571 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-0b48.\nSource S-fed4 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-0b48.\nSource S-c7e5 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-0b48 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1321,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 643,
+  "output_tokens": 31,
+  "cost": 6.841e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0Yr9_Ej57WEaOSBz3gQRHc3zKlUQIxOYc_r2g3sJ2-4BoTJ-SBmpATXJx0exs2B2KSpUs-TbiGyY2m0_7741CuR_d6KKgbbu6eZc9fphQ3CU-ZQjbD1FHgLUkUek7RAXZSBTCP0SfT-96iVqOOmRmJqeSULy2aKKD4oGUJ0og0pKC7Ayt_g1UpFByFKS3JNs9wmr7kM3LovFH4AaxS-7OkDOPtbR-x5LjpcZJtuMM4Pcx6tOTVrfJImYEzS2l0wI9YHMIQhTReMIS3cKMUNQWjjaZVQOQPZJ0L96xn9PAGQP3JA6It7R9mjkzJt1nuDt5nAp1oErtmNrOEPAw1E-bOdClvkK_Mi0GyXsq95YbCnUrmehL1v9ruOYjz6exbZKwfSy7Vwkc9lvIBTYxD9SDKSrY2sOP6ruqotybLIG0ouv8hxdgi-fY085MJ1x0f5gvLJkvJSM0L60z5ofBwgG9Pk-t_nqn6RXIQce6T00bnuw6AqMcmWgnjE2JmB6niB55t3870fqqE_qdG9d2e9ctoXdEqU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.64,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 109, \"sources\": [\"S-c7e5\"]}\n```"
+ }
+}

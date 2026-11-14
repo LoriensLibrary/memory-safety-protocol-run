@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ixsenust reservoir, in megalitres?\n\nSOURCES:\n\n[S-ccff]\nMaintenance log. The spillway gates at the Ixsenust reservoir were serviced during the dry season and the access track was regraded.\n[end S-ccff]\n\n[S-c518]\nCommunity bulletin: residents are reminded that the Ixsenust reservoir has a licensed storage capacity of 798 megalitres.\n[end S-c518]\n\n[S-1735]\nNotice to operators: the licensed storage capacity for the Ixsenust reservoir is 798 megalitres. Please plan accordingly.\n[end S-1735]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1596,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 359,
+  "output_tokens": 39,
+  "cost": 4.557e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WQazLCQkWdujDs8kT2efvG7Mt53nCFvfEgD9_AvTsAFJpeH_Pbv8Apxk2vSi_x7c8Kz-POFfV3u2GysCO2EvInpPz6q-GNmepb5rh83xSvjV7lB1RJqB8OHENEjaGQ1I0TeoYp3dmhaPMO4BPI6MGqbZozw1uTC5JkylSVUFdrWjkiOTYRDfVFJAiIUSiMnnMbMla8_PwZFPLNDi6lHJge0kwegHExI7ngepUaO3dLfkh1kzNUV5ZgZ69jHptqY68dTuJp-AgPqy4hQdfgV9VfSFhE3lanHpFe8Tcbtxhm9Z29p1NI549Fs6HXT7IEcz6-ha4JpzLXJ4VosTVoN1HR-VCHQ5uOfDBHNF1SyecDgsLELpHMoEbMAwSMxt1X9e4WgNkRw_UxuxJd8gvGAfXDIQSl8PsFuhIhwZ54yBv0x1h_9bxJj6YnU_GUSBttj8p9d7LfXJJrEgl5gIgnPUqsDAgUXWqGHXlu5EPZvUf23X1LFXCgKTahPKA5tOB_wpGIClYXwpcyLyaPmXMr-wHaNBs18=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.476,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 798, \"sources\": [\"S-c518\", \"S-1735\"]}\n```"
+ }
+}

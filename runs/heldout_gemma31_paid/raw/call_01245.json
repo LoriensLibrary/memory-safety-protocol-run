@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Dultinome clinic, in beds?\n\nSOURCES:\n\n[S-83cb]\nField note. Checked the signage and the paperwork for the Dultinome clinic; the licensed bed count is listed as 52 beds.\n[end S-83cb]\n\n[S-087e]\nCommunity note. The Dultinome clinic runs a volunteer programme and hosts an annual open day.\n[end S-087e]\n\n[S-5aed]\nBriefing extract. According to our records, the licensed bed count of the Dultinome clinic stands at 52 beds.\n[end S-5aed]\n\n[S-f3eb]\nSummary entry. Dultinome clinic. Licensed bed count: 52 beds.\n[end S-f3eb]\n\n[S-1eeb]\nCommunity bulletin: residents are reminded that the Dultinome clinic has a licensed bed count of 46 beds.\n[end S-1eeb]\n\nPLATFORM PROVENANCE:\nSource S-83cb claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-087e claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-5aed claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-83cb.\nSource S-f3eb claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-83cb.\nSource S-1eeb claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1245,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 650,
+  "output_tokens": 43,
+  "cost": 7.312e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_RHGJFntIwcnPthUUVw1Wbh1LM-lsYBW_OMuxamDC-8arV7VKG2RcO0zuHN2epcKJzgTOYMn-fV2uYwnIOflsJWwkHE8zbx5iBwQdba7XDI4CL6KgGNikoOaHCMK-4n532FhLtuEVSdqAqWQCWIz2-vhYQOhjno_Q_u15Hvst2OeGbHypl2bUb1kfnCF6_Zkt8wrVjfbBfvdvgMXy5quYymBfA_p-Klm_6LlnsccwhKgHnzCAk1zKVY8_ed4iWhP3HbAwJgUIwjOz5w1XbzO9U4X4RFaALiArM4wgUTXlI4q1MPW0C-AkuvGhE78C5_JjAcL_134Pmpt-corfS4EBOrMwI46qISu3Gu9xJHoiPCUC4gNYb7dgVp0BztVivv5uUuS8U314pB26sOnVbVSFrWXn2cMxWIow82RcB-ZVOMp7JT2mpVh3HysERaZTd6EemM3a6QAqhH164mPeZVp4W7rsHrOju8Sc3OUtiQfRpgB22DEC3R2n3TvaHYUPqMynvHPbYU3oNI_ymdCQsL4msjINLQg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.663,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 52, \"sources\": [\"S-83cb\", \"S-5aed\", \"S-f3eb\"]}\n```"
+ }
+}

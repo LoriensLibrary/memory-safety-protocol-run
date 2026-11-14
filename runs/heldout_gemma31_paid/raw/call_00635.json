@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Senen reservoir, in megalitres?\n\nSOURCES:\n\n[S-27b1]\nVisitor note. The Senen reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-27b1]\n\n[S-0207]\nField note. Checked the signage and the paperwork for the Senen reservoir; the licensed storage capacity is listed as 554 megalitres.\n[end S-0207]\n\n[S-5638]\nInspection summary. The Senen reservoir has a licensed storage capacity of 554 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-5638]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 635,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 365,
+  "output_tokens": 39,
+  "cost": 4.611e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_PNZmBsH8nOgmG-laq07WPaIexawoYAmnjlRVXtfGumOhiyDU40LVhAtKoXGztTwExgDRgehhaTnuVyHT8eQjHrELMz7uOZBgF-spsYf0HlvgJppIWFVNxvyy-ZlUvAWz3LFIfRS93Gc_u-W1oI5ntZHrNBWEJJ2d_7TNrJVyecjqQdumWMJwlX1jQ8uEMH4lRQRrTRCyHIuovgVRGFrBmpVrgOzyafjyQjyYfmkGP2T1X0RyUpf37esQYEoliM9MIlsm3Ni3Jhon1HIlpdZnp7v5uycSIYhnSB97lArV1hZoyRioR2CY8cF-ON8iApDkpgfx1MHedEOxGsudEWylfuVUFTxNcrK81DDw-uOtAhmXyUKavKJpg-dlnhx4gSsDUl9zS9MKZS7EmMEqvnD0iexIO-VVf2kEs_h2sSgBSRT-i99qOrWbkyHaIfFhtYDWtlDgqtMEe-C8MHjXrTDXj2xkEFykGidG-nF3Ug9wPxBNbW67-cUaoUM5cHmKNBxAS7CodPOdOky0GOwlP_6oaLplfPA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.287,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 554, \"sources\": [\"S-0207\", \"S-5638\"]}\n```"
+ }
+}

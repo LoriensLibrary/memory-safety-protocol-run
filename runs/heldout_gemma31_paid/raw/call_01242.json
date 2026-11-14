@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Bratinsen clinic, in beds?\n\nSOURCES:\n\n[S-2576]\nFacilities note. The Bratinsen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-2576]\n\n[S-a6b4]\nCommunity bulletin: residents are reminded that the Bratinsen clinic has a licensed bed count of 155 beds.\n[end S-a6b4]\n\n[S-3d3e]\nSummary entry. Bratinsen clinic. Licensed bed count: 155 beds.\n[end S-3d3e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1242,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 341,
+  "output_tokens": 39,
+  "cost": 4.395e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ZCcV3DdrwzAvAVZDHMA5P88kHcR9qTj5cCS_YVy8tBfFb8S242SLSmJbmmyW9zdT9_yz0-HMgUV5uyj_m3vcT2XGgiLLzBLVo_IDXi28gWBuITQ4mDBwqKqiz08BYBQpslv9CMazkwRP2Dn3QTH1gnGhnHzU4aDfmF2QvNbtnnosZPgCPMK25jhBCmgxd8aOavWOQtjidSN3JVgG1td1N1wu3e1_CK5aT3Diq-6Dm1v17B81rVZ-ECcFruvmu74BNP_8fT3zSzt5OpT2qoTfd4Nk6oFh6L97pL2KuV7ve-GZ8wgh7ZBGS8rQ344_w89d6IFrVslQ2qdpN8WPHfRygZtagobJ5MO2mRD3HUXqqoVUh95ua4i4Ffmu9REY8b6AoJYzz4ZW4Itr4t6IkNu0BowGY4JK-C1aosqjFkFJfP3k3UpWQwWUNEVxYdqZwWoOg_YAIXHmnOwii8C4SBzVkNOo1haWAb5LpgOKhBC9p4E-ZM-XjA1IaNSC3KKqxdFASC-vKXbAzPlu0d6-nlC4YB-mzqI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.167,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 155, \"sources\": [\"S-a6b4\", \"S-3d3e\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Rolim clinic, in beds?\n\nSOURCES:\n\n[S-d152]\nNotice to operators: the licensed bed count for the Rolim clinic is 203 beds. Please plan accordingly.\n[end S-d152]\n\n[S-74ad]\nCommunity bulletin: residents are reminded that the Rolim clinic has a licensed bed count of 162 beds.\n[end S-74ad]\n\n[S-1653]\nBriefing extract. According to our records, the licensed bed count of the Rolim clinic stands at 162 beds.\n[end S-1653]\n\n[S-7026]\nFacilities note. The Rolim clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-7026]\n\n[S-207a]\nInspection summary. The Rolim clinic has a licensed bed count of 162 beds. The figure was recorded during the most recent scheduled review.\n[end S-207a]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1706,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 442,
+  "output_tokens": 46,
+  "cost": 5.542e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_iCPjQSfW0YSJ3P_FxNSJ_IwkST4Q4Xk1YCkTRgPYcev7n-vxIkITTENu7_laBjDqBFBFYxedRq3XjiRXW0B-ahZug9Hi_Du2PClc-LxnMIl6AZBueyFC9Z50N2uXpAExxBekPDIuY2m08zhd8Xbd7Ax3s5vxDhiVcUbzX-CH2ao-A3_gH-NmXGPQPJxoMMnEv5rc7Ta5nYjk0VuL6wKXvOXvd7znMPtBM1U5_JlVaBWMZ3OUHptDP2pfQPopK9LGkgwCO2u0Tv6pcxRYTbcrEgxrvZuKXfBTi_Eggp4vllcJ4ir4O8qarDjreeoNgDCuBQN68BnMpwPCf5dOG5H9IuIj7TBrwyJOeVBDpQmWhvc5hpFbVFrZ1w53yvsmWUGEmkgK834lVeD0uEjAHtnb9iiGYCSnfW_WB9fqdtcN0JQt8k_xU_iNfoVOh_wfMyEBKeF8adSJN9xQVRu-dw-_ehHacI7xdVBOMFYAp18a64PFfW4SbwvYuIq7GUp8CLO7SE_GH3xe__cRdcvnL3FVczNJAuo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.53,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 162, \"sources\": [\"S-74ad\", \"S-1653\", \"S-207a\"]}\n```"
+ }
+}

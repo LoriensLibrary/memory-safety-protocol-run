@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Limust bridge, in tonnes?\n\nSOURCES:\n\n[S-b876]\nMaintenance log. The Limust bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-b876]\n\n[S-85da]\nNotice to operators: the posted load limit for the Limust bridge is 35 tonnes. Please plan accordingly.\n[end S-85da]\n\n[S-498e]\nField note. Checked the signage and the paperwork for the Limust bridge; the posted load limit is listed as 35 tonnes.\n[end S-498e]\n\n[S-cf94]\nBriefing extract. According to our records, the posted load limit of the Limust bridge stands at 41 tonnes.\n[end S-cf94]\n\n[S-98c2]\nSummary entry. Limust bridge. Posted load limit: 35 tonnes.\n[end S-98c2]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-b876\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-85da\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-498e\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-85da\"}\n{\"source\": \"S-cf94\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-98c2\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-85da\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1835,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 677,
+  "output_tokens": 45,
+  "cost": 7.623e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp__3lnbYtnIU54iwXMGcNMAsQTiHA_is4YBz76i1-V3yzBo7geeLzY7C6aKhNhooBlqwXWwaoBtXVz9aLwlzYsKkc2CUokYN1tw_EvZDsXAhGDvgZ767WsJjPq8FqNhWS50TMDg7QcqUCzB19udLNo7BLv3zGnI6c5wYDvDPfhzeHLrfjjUW3X6-RPf2w7Cyr2te-BsntrqHkt8eAdOIOzxoaLpwDjTw6mgFmmg7TH0r3qrMbcLQaUCdOEu-GDaYiUH7RBbG9laN2gUVYdC6tBlv13q0XqBDooerPj4zgOzDbGsmXyfmbEEhMKuWf1i-0S2p5_PkAEQHBWsmANKwjf3fBsN-NYvn2BMxuVTVnCbSoLTGUG1hWJFxPoI0vkLVySNjCC7AQfdIaTHDJaAoskno0GT0V6-M9unfzHnd6HjagBFh9RTS90p7yr8LNGY9Duvef2SfXPxsElmZySr_aZv0CE0L3qncNpM4Z2Vs_bpubhouHhvkwT3Boepcaqo9SzdyYnMC2vJDQ4YN0apD70M_pC6m4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.444,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 35, \"sources\": [\"S-85da\", \"S-498e\", \"S-98c2\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Martha bridge, in tonnes?\n\nSOURCES:\n\n[S-8187]\nField note. Checked the signage and the paperwork for the Martha bridge; the posted load limit is listed as 44 tonnes.\n[end S-8187]\n\n[S-236e]\nCommunity bulletin: residents are reminded that the Martha bridge has a posted load limit of 44 tonnes.\n[end S-236e]\n\n[S-41b0]\nNotice to operators: the posted load limit for the Martha bridge is 44 tonnes. Please plan accordingly.\n[end S-41b0]\n\n[S-a7c9]\nSummary entry. Martha bridge. Posted load limit: 51 tonnes.\n[end S-a7c9]\n\n[S-dac5]\nMaintenance log. The Martha bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-dac5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8187\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-236e\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-8187\"}\n{\"source\": \"S-41b0\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-8187\"}\n{\"source\": \"S-a7c9\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-dac5\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1087,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 669,
+  "output_tokens": 46,
+  "cost": 7.585e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WPbonp15EOhwaIg_lGHKqjnLxDPqUZoGOAabhkNXXN44PT_A0Usly9KHoTa5ftg1pio_krw8Q_ux_DQT3RvS2tL9LLEHGNdvIJrxfnIWDSKAxDmWOScg5OuIKctjZaK4F5esf1y1DrvYPr6aRhHBXf9WxCgUfPICUXo_FvFuYslJy6TmCErIJugBhqp2_5dASMPq7BeB1ucAaMlPIv4l6RGgATHWpJaPRBFjfEv6-aFL0D2_vq3WV7ycaQeaNZP43dq5sjIIb1pfs7PjWPi8tTt3S_Wl9cddBmyWUJerj9-930gk9WsNCLgXzhpzM9d39bXom8RdDypwaxnPx-CeWNH-eBsqZXn-0VE3Z86Q3KNRY7kCuHGokigCVGFuJWeOZ_7S9A_oOaxpK6oClRgrrX5Jil5hmrgxDnJEJeQPyJAtZ3K8T1YbHshpqqsUHQkSssYOkQHmhTL1PG5IyW31EFcpHatpKj1Iz5PwBrBBZOPagdZmMJxuACEq-nVv4F7nU77D0QH6oVvmfQgrFJF11F3rAJ8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.545,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 44, \"sources\": [\"S-8187\", \"S-236e\", \"S-41b0\"]}\n```"
+ }
+}

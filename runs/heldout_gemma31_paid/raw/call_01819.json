@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Olixka clinic, in beds?\n\nSOURCES:\n\n[S-8c6e]\nCommunity note. The Olixka clinic runs a volunteer programme and hosts an annual open day.\n[end S-8c6e]\n\n[S-51da]\nSummary entry. Olixka clinic. Licensed bed count: 118 beds.\n[end S-51da]\n\n[S-c2a2]\nCommunity bulletin: residents are reminded that the Olixka clinic has a licensed bed count of 118 beds.\n[end S-c2a2]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1819,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 340,
+  "output_tokens": 38,
+  "cost": 4.352e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_UKJlCSi68I_JsI2Ph-3q7vmS0KGidB56T3VvtrgsC4ABuZpsPhUaZ54Xji-Zowb7PnMLGmVLO5DLXTio267KHYsbwttF5yvokUM-oAVcFCCjHn-eFpnbbiSTvYP5XnCbUT2c0Kq8nj0VPsUkYGlsd9GmuDcjZvPb5Gm7sNZGDr8-nRq8YJGCMFdrsjqsW7NWUXo2rH9uuFhKPyPx-bWXMjSSVC9RjEZ9ydbdMsfmMN3jqBGWxEL66sGBiYXox03vw4ps4OPyQO8HY73UjlSrRkH1rXOXaKsAfYy29yj1p7q2QILa-zvO5kQ4j7K-yBD-ejOCbReCjzDxkp0j3D0lTgYTrjnz8iLFAvdKIOayHFQiOoFnGOcvzDW5ghlHthE5cCmT4Jgr_Rq8im8CXco8PvflHpE0m8LOms0HgMggQRpm5XLPW5rVwEGQqPhxIS-dsmkcTYTXRPy0fSNHuc-1vCAcMAPbpNi9_ff-jE5QSnp3DQAh_Iz41rPhMJ6rV3SOVd0pcjBJBr2vM4O_jz2Xuv7UMHQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.816,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 118, \"sources\": [\"S-51da\", \"S-c2a2\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the posted load limit of the Pelrolim bridge, in tonnes?\n\nSOURCES:\n\n[S-2bb9]\nInspection summary. The Pelrolim bridge has a posted load limit of 24 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-2bb9]\n\n[S-1941]\nNotice to operators: the posted load limit for the Pelrolim bridge is 24 tonnes. Please plan accordingly.\n[end S-1941]\n\n[S-b934]\nMaintenance log. The Pelrolim bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-b934]\n\n[S-c280]\nSummary entry. Pelrolim bridge. Posted load limit: 22 tonnes.\n[end S-c280]\n\n[S-dd41]\nBriefing extract. According to our records, the posted load limit of the Pelrolim bridge stands at 24 tonnes.\n[end S-dd41]\n\nPLATFORM PROVENANCE:\nSource S-2bb9 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-dd41.\nSource S-1941 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-dd41.\nSource S-b934 claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-c280 claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-dd41 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 394,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 656,
+  "output_tokens": 30,
+  "cost": 6.924e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Q1ke9wfmN41kGaNqjro0z9zeQEf7Y6UEqxi008WyZZ47KZv7ytTwF2gj1_wn_V16ymTujPvYNQyGx9mlcYKAfa-6Ham-cOcsSmOvg0gEDzLkiH4zGpkkWGr_MsKQ4fQsDV5xa8iVhbiOes9gfsRijXxfoRhJlijAPnHlocevNzPb4eaKTgRkojG-O2h-_aPOs0o4YuLa32IjtkHOyos6f7VKhHgf75ICgyI7eMxTFz42VyIVHM088Hj3U6FfJS6182NUkv7Rx4OXL2zfvSPCxVFymp2-wNjTmCPt3T-67fBsCf9PtjOwyqFE_ZIxVBQY41C3WC4hBNziq3pFxMu2d7b-e5WaeloAo7BO3mZwAFhWPZq09KNnD5Y9nAi4SDmG8qZGYMEfP40e0DzepBVckY-OTeKGNkgcrjB9gMsG2379TRlf7YuXkNElbuRnqvtYjbiMehJKj9yHa7NDi7ZaJKP_yAdGkjX5CHXgwFnz1Mx3rDA-X14vBCU-otjMqGlvHOX1RM3ckYIMWI6yH9fzlUFFfO4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.309,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 22, \"sources\": [\"S-c280\"]}\n```"
+ }
+}

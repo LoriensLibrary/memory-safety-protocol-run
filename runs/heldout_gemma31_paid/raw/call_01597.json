@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ustaro reservoir, in megalitres?\n\nSOURCES:\n\n[S-a11e]\nField note. Checked the signage and the paperwork for the Ustaro reservoir; the licensed storage capacity is listed as 513 megalitres.\n[end S-a11e]\n\n[S-a46c]\nBriefing extract. According to our records, the licensed storage capacity of the Ustaro reservoir stands at 415 megalitres.\n[end S-a46c]\n\n[S-a21b]\nSummary entry. Ustaro reservoir. Licensed storage capacity: 415 megalitres.\n[end S-a21b]\n\n[S-15bf]\nInspection summary. The Ustaro reservoir has a licensed storage capacity of 415 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-15bf]\n\n[S-5e75]\nMaintenance log. The spillway gates at the Ustaro reservoir were serviced during the dry season and the access track was regraded.\n[end S-5e75]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1597,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 461,
+  "output_tokens": 46,
+  "cost": 5.713e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WlLQ2eQNNcT07JQr3KkvFaUGUZPzu6992W7kf7yTTR46aXZUTNzkdZDQBpAUJIBRl72IfjcZ6vgvM4UpVLZm9UFSOam14rQ2SrBrKRq97owwoAh6eAJw4XF0hXDbcuZzCxHfTAY9WWiBj2neOLO2Wr3pcV9J2LqN4KlxWSbxL9qco0E-vVsdc2AvK_D4HBqBup6NoogAoF-H-dDs6i8IYCt_5pEwc2gIRzoBs9dswOeubHWQgvnUcragHJUbQ60WHV87HhTuR23sDGBTPE45oFiVH724UpdSulLKGTh-gbxuefgZ7IalpewPbgZkHf6IiVUgw6rxfZ-t5dtkBkCHAtnNYnhWewuUFg5RAWhKAME_7zZNeZRFCi0TjmA4JZMDCSfqU14KBgIrfbxPRAYE-lJA_dwysPBn5YfU0vqLLI2a_bROliz05ofLKAbFEMtmPylg6erfs5apLw7PlPsxk6-q2f8s9lU1PI_nzPfEIGRCc3xw32VyrC50Y6t19RB1QH6jfgyyTWWMdoBXDbtPGiDvHR0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.646,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 415, \"sources\": [\"S-a46c\", \"S-a21b\", \"S-15bf\"]}\n```"
+ }
+}

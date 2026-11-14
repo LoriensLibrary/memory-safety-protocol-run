@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Neddulyth reservoir, in megalitres?\n\nSOURCES:\n\n[S-9090]\nMaintenance log. The spillway gates at the Neddulyth reservoir were serviced during the dry season and the access track was regraded.\n[end S-9090]\n\n[S-9d77]\nCommunity bulletin: residents are reminded that the Neddulyth reservoir has a licensed storage capacity of 588 megalitres.\n[end S-9d77]\n\n[S-6e30]\nInspection summary. The Neddulyth reservoir has a licensed storage capacity of 588 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-6e30]\n\n[S-afaa]\nBriefing extract. According to our records, the licensed storage capacity of the Neddulyth reservoir stands at 588 megalitres.\n[end S-afaa]\n\n[S-a658]\nSummary entry. Neddulyth reservoir. Licensed storage capacity: 499 megalitres.\n[end S-a658]\n\nPLATFORM PROVENANCE:\nSource S-9090 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-9d77 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-afaa.\nSource S-6e30 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-afaa.\nSource S-afaa claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-a658 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1501,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 678,
+  "output_tokens": 45,
+  "cost": 7.632e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_C5VV9OCFYqYhOADNxaw19LOvigJAk383bQIg5HouK1O1bvOL0PDx03v9kyD5yh5qdfRpSmZQ8p_8Ou_JkU7S7C_smTXLdyaM1bZ_Wa6VHiFOBKgafN_rM7MjYPxkU-0KS3M9Ah40rBotq_9om0rkZP6qpHJx8qeHQeQ4R-_94zSdbp0FjiKdVGUhQ32DQCEb5CgpjRqPMSKcraDQYopXvA1rVtCclGip1rBJ9Ye2qJBJ08N4M7GlmSzyN5f4iOiKMyYiuyewSadHu0GaCMnLtoK_n2K4HpAHpqiw9lt1dCuDobQ5fr27xyMMHCKJi0uf1uR71qshpIKWqon8_wzPbRwfO27qihIhxHVToVdKq-aj9ZasVmaztCf1a12YDpb2ea6d7mLvck_C_FNTiZCNf2QdHpeL9Ng-TuX66rpKRC7f2L3g94a1LxRQYKwsYzs_0QT64O0zmEe14Wc3e11iyGgSrmGJVhoo1zxODNqQYtEN17dn5xXe7KCVaPCJYPSLlWXZLyQ4OG-E0geKnN0tg1ZffNM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.431,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 588, \"sources\": [\"S-9d77\", \"S-6e30\", \"S-afaa\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ometha bridge, in tonnes?\n\nSOURCES:\n\n[S-65a9]\nCommunity bulletin: residents are reminded that the Ometha bridge has a posted load limit of 78 tonnes.\n[end S-65a9]\n\n[S-d4ce]\nInspection summary. The Ometha bridge has a posted load limit of 88 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-d4ce]\n\n[S-1c7f]\nMaintenance log. The Ometha bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-1c7f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 216,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 352,
+  "output_tokens": 18,
+  "cost": 3.78e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6IHlPv1ZgCmMrBzLqF-1e_FzaglhnIh42nfJKPuY8ndyQ3QuFZxemFbgQy0fPQww8B0IRDfyGa5dVvSvkgYGsOZ_P9RFy_YJz_Mg9g9tl2OhrHRWlZ95ThK5U_bRbpIXS1eya_cHP1iArMF76UwF5A4B162v76NQzrlBtYATgzDRdsohokHbF0X7RzBObwenJado2op20P_cBFzRMe5PIW6JAir4DbEB7OFg6yGARDgEF3poHTkL5sXqXWWpmU6qtWVi1sAWAhqSF23-Vpl82-oawzdYNvv_yCDGwxVxQzVpTFpBBb84aDxIX3WTVd62kt9ypGYYgoP48xEOIzffB4pIr4ifV_b9E78dmQ0KF_afCX2bXT30Q1dH0iUP6lgRjqBSpdzUgUF2IQ8Er6f6VanQM-dDGgiq0uFbpqst7QgzVs4pzFHAJ_hsyWQNLtph2dIhVrtXa5nxLNH3AII0RK7hUyJrdCZdMERqiBdvFiNW8o7VGbJ7N2g5D7GU0M3qcKLpTKqNDSw649nxxZnY8YEV-1U=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.417,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

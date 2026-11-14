@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Kadulmar clinic, in beds?\n\nSOURCES:\n\n[S-e9e1]\nCommunity bulletin: residents are reminded that the Kadulmar clinic has a licensed bed count of 129 beds.\n[end S-e9e1]\n\n[S-bf43]\nField note. Checked the signage and the paperwork for the Kadulmar clinic; the licensed bed count is listed as 167 beds.\n[end S-bf43]\n\n[S-8f76]\nCommunity note. The Kadulmar clinic runs a volunteer programme and hosts an annual open day.\n[end S-8f76]\n\nPLATFORM PROVENANCE:\nSource S-e9e1 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-bf43 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. The issuer has retracted this source. It was not derived from another source.\nSource S-8f76 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1619,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 479,
+  "output_tokens": 31,
+  "cost": 5.365e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_rRp96CaHc_fc8562TpsbNwLusXm2Ka1qy0YgWr8eGZ1bDymqYUNpKK_dBaDQmSCZTV1pjE0sv10GBAzH_FiR9bZDYGCPfFUru-WGo-YMWEOir-coBF6exXkxjQO8A1FTwo4ZOch7S99uICxvbo8Z1Fk_az-cQJL0Erp9DXmi7DQMV3F72tvFhU-EtpSncUhgbvFA0KmpOFztDpxPA5qZJ2GVRHCJNfYvOoX2q6CFa3i46BjhwxRrdObJnEmxkOm-vekGCEhFMSLrXHwD0EjJjQj-eQvNceHslGHGoChOhUmS0KquakXsRYUPUre38m7v2Bf_WsjBaEgcktT9KLxtDD3HDAKofq2bM0XPStubRNywgXZPaw3gUuhB_WAmHBCW0DqMF2JXv_90NyvlWAoxG3XNfVe_T6XAg2RH0w21FUQFbdG88XqqPLuKEmTCqK_Bw3fiWayXOWPLGcafWN33sp3g3vxJ3jrziyCFoXRVDwraoD6KncvD244cS8J6FywcPg9ptkmara5BakxdXfeLIwKVZi8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.654,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 129, \"sources\": [\"S-e9e1\"]}\n```"
+ }
+}

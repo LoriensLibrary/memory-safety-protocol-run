@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Rogri reservoir, in megalitres?\n\nSOURCES:\n\n[S-9c28]\nNotice to operators: the licensed storage capacity for the Rogri reservoir is 261 megalitres. Please plan accordingly.\n[end S-9c28]\n\n[S-db37]\nMaintenance log. The spillway gates at the Rogri reservoir were serviced during the dry season and the access track was regraded.\n[end S-db37]\n\n[S-de75]\nCommunity bulletin: residents are reminded that the Rogri reservoir has a licensed storage capacity of 224 megalitres.\n[end S-de75]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1672,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 355,
+  "output_tokens": 18,
+  "cost": 3.807e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_zVmOL9N99RKaZKEaAAlGmxQtHV9HuWk5H_liWyWob-06yQSeKCLAxK6MAekDKkesG8-vInpXQSIVQlGdAa6LeeCWDN2507wy2XdOk_5zsRCA-36rbUf1BxAHpYrHOubHfPHPP2xRoNeffQdU6VU4spmgpGwyXdk_kT5UEaKK4hWyapqIqZD-nPV30Z6E0TBAku_ogMdBXG43wF8o326M2N35mXK8Qlj5ru5-GKKw83VTO5mXAxHrI_4LypxlvQoDO28CmW8dPZpUfCy_BsijE2nlEdh7PeTZNcXgGP5uB1KdmnJsfgjXE08mAIMYohIh6RNF-w3h0G0gCotHXL5fxgLfFzPQYVV7GVZi1wi8lE-lXmtVjlxe_o7orthDUooB-LaU8RMZHj_p_MJRTFXnTMnBIScTsHQyDmkxgW_PBuabO9r7i4yB7MPCMtSLiJ6xT2unO3pJXzgzvTpc6zvd5nLGaeYq86nc4rWbxaQAO5ail2TaMiHkeIYypuYSW8LRfBRW7njXFzgzSwL2i135cyw60T8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.395,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

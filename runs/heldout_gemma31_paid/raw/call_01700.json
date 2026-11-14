@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ustlimqua clinic, in beds?\n\nSOURCES:\n\n[S-1ab6]\nCommunity note. The Ustlimqua clinic runs a volunteer programme and hosts an annual open day.\n[end S-1ab6]\n\n[S-0bc3]\nNotice to operators: the licensed bed count for the Ustlimqua clinic is 126 beds. Please plan accordingly.\n[end S-0bc3]\n\n[S-42b6]\nBriefing extract. According to our records, the licensed bed count of the Ustlimqua clinic stands at 126 beds.\n[end S-42b6]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1700,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 348,
+  "output_tokens": 38,
+  "cost": 4.424e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_5IEM3LLWNoXl1QlzXetHdMk7X5llufpbQH3Jq1pI5p6kZhKAF6zLTcq4p751CUDeoa6TNHYkHMXrPNlpcerhDgbxKfZL0NYvvnWjLm01Xp3ufkLdkHUexoVpLnL4mbqzotG4NEuISslTgFVRXclAJ-_VlD4AOKWpEp4Tn6coieknJwxmyw58MUiK4mS6L_R-awKgi49mLawiYU-4Y4VRqGd8svumbrEPNGdUtFiw-lZepg5q3yu3-1T4PNc8_W7Rfsp1j3X7sAxJDNam-a7PPNHNq6xg85aovbEni_rFl4z4nDVgSkexNcv-hxq-xpPkpzwOomWQbf5uKj79V-Dbmu20jnRVPgM5h0PVeMMCyqFJkpSF-NIClIKwP0GzysFrU-g1cPpEZWenOZh7rdZc7OD-TavN04B5P1N1dfepM4-33ykOyYErg6V-wO4pjVijeyDCSUuLg5WXoRREjgklqzxFGbOg0iEHqjtJOOnoYCyn8yST9HSb7syNoOQ1CgR4cjDszWhjD8Yd4tX7s2ktv1taDKg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.673,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 126, \"sources\": [\"S-0bc3\", \"S-42b6\"]}\n```"
+ }
+}

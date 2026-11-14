@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Oltintha reservoir, in megalitres?\n\nSOURCES:\n\n[S-df43]\nNotice to operators: the licensed storage capacity for the Oltintha reservoir is 358 megalitres. Please plan accordingly.\n[end S-df43]\n\n[S-8981]\nCommunity bulletin: residents are reminded that the Oltintha reservoir has a licensed storage capacity of 358 megalitres.\n[end S-8981]\n\n[S-813b]\nVisitor note. The Oltintha reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-813b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1762,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 360,
+  "output_tokens": 38,
+  "cost": 4.532e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ihdHMoGjt9D7mOIhsfxIR3on6JCIQrlcHMoBx_QPVPplaeVTFiOLoqYX4JWjf2JBJmZ4JmwJ6NY7hLTfAU4HITidcQYs7tSa5Ga7_UyiPC490tQOpZk0-b397dh8n-MCB9opwb3CpKJ-RVokHH36tNqKgMN-PLXac96ygndyrO8KKLK4HNoWBDjLo_eM64FHbcKiPlMW78to84runwFGzm7gqMmKJRNNOiE9LoR-PaDBzxfPdPEeKkp5-AKYzzXJmBUyWYdIVdl2cf3r3mvNCPtKAIXmkwg1PGcoyPUm-9BLO0WslHRX7YZ_789hM8DaV95vPtTGxGUlPPHfRm12O0gioIaQVUVXFhQjsMZi_Unrot-kiY7OueZlKsm02iCgLa7vMwWT1WpmthmoT2d57nAGfW7yO7ljr_QkwRSJ1KKF8Zs5jIoSHLq9YqheEP5xpZ_fDI619rjUNjX_oJmMvoUdLe0RY7inEJKzGqaiktd7JRjfR_5gqY3xRuIEMhR-o8Ev89ZJ9mkowjMMaw5fQoilmOs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.513,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 358, \"sources\": [\"S-df43\", \"S-8981\"]}\n```"
+ }
+}

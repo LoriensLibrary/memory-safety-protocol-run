@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Rofen clinic, in beds?\n\nSOURCES:\n\n[S-38da]\nCommunity note. The Rofen clinic runs a volunteer programme and hosts an annual open day.\n[end S-38da]\n\n[S-b571]\nCommunity bulletin: residents are reminded that the Rofen clinic has a licensed bed count of 80 beds.\n[end S-b571]\n\n[S-fed4]\nField note. Checked the signage and the paperwork for the Rofen clinic; the licensed bed count is listed as 80 beds.\n[end S-fed4]\n\n[S-c7e5]\nSummary entry. Rofen clinic. Licensed bed count: 109 beds.\n[end S-c7e5]\n\n[S-0b48]\nBriefing extract. According to our records, the licensed bed count of the Rofen clinic stands at 80 beds.\n[end S-0b48]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-38da\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b571\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-0b48\"}\n{\"source\": \"S-fed4\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-0b48\"}\n{\"source\": \"S-c7e5\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0b48\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1323,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 671,
+  "output_tokens": 31,
+  "cost": 7.093e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_u_EkW-ch_25_br8OmpFlrScyftIBz_m6G8TSqDak6JdYBFwwcvZZ1ZjjLohMmbHQaEGi2m9boedJ1QWNEFU2w4JQ0XHWc-0HIxPyy66AuWlUkRz3qYyvo0E-_lTDtldfYbDozGSRvPQArBOWFRpN3vWuiBN_iacmYrx0Ad8LXZgMpISeZCGmUgtpV9UVSnbbC8QJ7wqwv0fOdQ6LIk5iUTEzvj5OItqbkNBrna59FIYRhPjGhUEL6zA2oXF-QiVp6ETc1UiCbM5CB6RzWS1BW-6FMT_c9FgdUxJdz23BPx4ZGE1rwlQ7MGm_Ck0igekJeydyvxAr3vNMqKAEdvXEyZvm1Ic-eUeaaYNKoJ-pkK3taEj7B7VWOn_9D92VSTupzVAz6UtPK3NjdZbuJtjg5OUNHiIK7YXkZR0PCa16ZAuVwsUSxl22jYeMGiajVrWownoU2ghH5TwPdyUDidqrdwSva11UgPsWJLsqV-3WdZ_sF4L_vkgrAySmrpyUs2GHQWcV5Q1AS17a7RmYAGwo7AsC-2E=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.557,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 109, \"sources\": [\"S-c7e5\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Kavelol bridge, in tonnes?\n\nSOURCES:\n\n[S-ec30]\nField note. Checked the signage and the paperwork for the Kavelol bridge; the posted load limit is listed as 100 tonnes.\n[end S-ec30]\n\n[S-9831]\nLocal history note. The Kavelol bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-9831]\n\n[S-e41e]\nCommunity bulletin: residents are reminded that the Kavelol bridge has a posted load limit of 87 tonnes.\n[end S-e41e]\n\n[S-4753]\nSummary entry. Kavelol bridge. Posted load limit: 100 tonnes.\n[end S-4753]\n\n[S-f3a2]\nNotice to operators: the posted load limit for the Kavelol bridge is 100 tonnes. Please plan accordingly.\n[end S-f3a2]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ec30\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9831\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e41e\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4753\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ec30\"}\n{\"source\": \"S-f3a2\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ec30\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 588,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 684,
+  "output_tokens": 30,
+  "cost": 7.176e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_DXdCYN7oI4cIhcTWNe7Rqr_2AH7K2Yl06tYDcqSZ01pG02K761cWoPkHf0ZK1zC6y-soq51mJ4qvEuD3AqDR66xPYlKWXHVyAJSpRSjgnDw7_MbSVg3k8pz4bkwHKnw1XO27N0EwpQJ9qEOZBL2Uk5qMAX79pK8DQVmYFKKYiqi3Er0d3SGG66NyATFhEEJ4GsRhMzgSf6DWPOlYWbjnxWLYJzCmL3Bmy-ZQDdb7DXqjNe8d9d43DxOjpZNOq0kt5OZMJ-D43WQIwv3IAFLyn-9VP5lyyHVWxVt7awi6S3eNuvreA4bXmF9e_nonzspBfbOQuU7yRFhzLrhT5kycmi-dWDd-Qnq9Gbf2GXsE2bXMZOpyBUxZr7I5-wcYACxIMekp3mExiSKfub6vEi3_ZKytj5Xi4H7YeuhAUUrPm7KjJJXH7OwwpkBybQPG4Hbu3hQG2Xd76zmci1sCO8gG_lNyC6eLOBymP0FxL4ZLwLBqX6c3uuzSUP0xAfKmR2854_Cud38a3mXH5DWHqcckf-u8qWE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.46,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 87, \"sources\": [\"S-e41e\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Seneshyth clinic, in beds?\n\nSOURCES:\n\n[S-81e8]\nCommunity note. The Seneshyth clinic runs a volunteer programme and hosts an annual open day.\n[end S-81e8]\n\n[S-7be3]\nNotice to operators: the licensed bed count for the Seneshyth clinic is 199 beds. Please plan accordingly.\n[end S-7be3]\n\n[S-fccc]\nSummary entry. Seneshyth clinic. Licensed bed count: 228 beds.\n[end S-fccc]\n\nPLATFORM PROVENANCE:\nSource S-81e8 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-7be3 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-fccc claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1240,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 462,
+  "output_tokens": 29,
+  "cost": 5.144e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WAUyjwvTyKV5hwcT7iqjIIiiUeonGEHGEg4hD_Ct1lYEIhHjHT6e2mTwSudBu0lZr-GeCYh63hKtS7gX11bs8_U1MrlZ2xPy2LWXZKNKaup3l-AwnT4USj827JJziERglOjIrbU_Da_hseXTNkxv2qqYZPMwr2_0COeAAYN-5kCJ2mMkb2kLQ4ZbQQhklXEKo_1Mp0pf1kOGpLVnPBDNYTIU8dqqp5ALeDAxDh1ODaRMTF6o3EPGmwtAwBorlrxGh-RawKW9oswfj4pOVD17uxMtrohkr03E2UNfF76__YuTid3_QCijgXDNJ_iv7cb6tjLVkhxYh4fx3uBou77i2qKCaIZ5rgJ1aP2iOShsiDp4Ef_u0bUpKVzczFD7C6qWsVngM6qm3WWrheQ_FBsUDrYoRCCgGgxiXRR7WMNo1wPMTq9nhHAzwSxxI6vW5xD7hANdV5S91a42kwR5-7i_dSVNNkKdAkT1PX_5OIGVjLf3lQsESHIBqZg5YeP3zOPQ8-kkgpNzasMAZGt5_Fty0BpJD38=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.494,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 228, \"sources\": [\"S-fccc\"]}\n```"
+ }
+}

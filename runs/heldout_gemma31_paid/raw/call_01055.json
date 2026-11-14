@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Senmarned clinic, in beds?\n\nSOURCES:\n\n[S-32e3]\nNotice to operators: the licensed bed count for the Senmarned clinic is 161 beds. Please plan accordingly.\n[end S-32e3]\n\n[S-3aa8]\nBriefing extract. According to our records, the licensed bed count of the Senmarned clinic stands at 194 beds.\n[end S-3aa8]\n\n[S-2ada]\nCommunity bulletin: residents are reminded that the Senmarned clinic has a licensed bed count of 194 beds.\n[end S-2ada]\n\n[S-c0ef]\nField note. Checked the signage and the paperwork for the Senmarned clinic; the licensed bed count is listed as 194 beds.\n[end S-c0ef]\n\n[S-dae9]\nCommunity note. The Senmarned clinic runs a volunteer programme and hosts an annual open day.\n[end S-dae9]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1055,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 441,
+  "output_tokens": 43,
+  "cost": 5.431e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_tM35qKzQd0Bdd8ou2wJ7UX4IUJZORccDD2M5BKq_LBBnAWsJ8PYa-pEsziuLEAPQsfo8nRbpnbtE6plXL8VAlKZdoIwx3q11GHV40NT-O6Np6LA1raxjVjtaKr39A9YbreTpb5dSVZxYsh9-q9tRF2wzWAPZhiT4BrPAJC_M5JmdpxicSIZECJ5mOgkiLMgZQ0wGeIz3hqshu0doSNDozxZRPI9nnpAKggjMX71azW7u1AfnvUNBM-AdZG6gfLZiFXoS45TJOkkIU5NzkWzZfPK9AuYSPg5f-TsE6CnHSsqQI8DhwAvZs0Yc46Ymh9mpUlCbM4uFRdI9yw0ziIdIkz38RqSF9O8gNetURC-w4ujcNwjCCzPqTBpj1-VBIpsKKdKhG_HeJk6zSEAgE42dNfCIhaedgRTVPOseZB6PR5yOniq_z9JRBk6SXFaaforkl9fsEcJZPABaqmZpmWn4Or5kwnaDlfvUVdsOBbwg4ikPMB_z_se0LupI7POHaOaqwv9VK48s6L4ejvf3jlrmeYGy8n4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.426,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 194, \"sources\": [\"S-3aa8\", \"S-2ada\", \"S-c0ef\"]}\n```"
+ }
+}

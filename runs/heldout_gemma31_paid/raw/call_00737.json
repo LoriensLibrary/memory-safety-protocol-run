@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ustmarsen clinic, in beds?\n\nSOURCES:\n\n[S-c53e]\nCommunity note. The Ustmarsen clinic runs a volunteer programme and hosts an annual open day.\n[end S-c53e]\n\n[S-954d]\nInspection summary. The Ustmarsen clinic has a licensed bed count of 83 beds. The figure was recorded during the most recent scheduled review.\n[end S-954d]\n\n[S-237c]\nNotice to operators: the licensed bed count for the Ustmarsen clinic is 83 beds. Please plan accordingly.\n[end S-237c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 737,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 354,
+  "output_tokens": 38,
+  "cost": 4.478e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_4w7EIoTWLKKmRp4JpPMEjSKx7jMuDHZGT1cgGn5DArHf1Flq0GV2tdy4vpwyohx-KhQgsxpkzB-Q7DtGwMqbX0yAy3Jo_VG6eqZMr5B2czSxhdHMi1Pmb2SQSZaKusruq2qTNO7i1N-Bp5nf7bpiW17SovHR5i46sEjs53Y46-B_x5bXPENx2222wVob77YJLGc9AnxHqDZ-EKF0-KEJCaB8X0lp2Zx5mQcMI9bluGAb0BDHu1AXYuUlruI0N335g6HGObLRWgwI7oobdxp6fdmwNbkYLLhwGH0OiSxSw9As6gh86hqQMi1iK4Xn-u8r0prQR3RRkQSRk23OJyaGBD2RBJ3ye5nV0JWHEDRD3l1gLKWkezdYTCwBRysvWKE0ZwRw-hPB8USYrFDHraCoMGLClIWog5NWRzQ7wu5Usbro_EfUn6I8WpghpPghMLevRstO4ITsUj8GKvEhUyB8SdLGb2awo5Rls8S-rwSq71rgiCfNUEmw5SYuhqNRU_j3wQCBAEZ-65xJb9ZvsqQOTok27UY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.372,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 83, \"sources\": [\"S-954d\", \"S-237c\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Margriro reservoir, in megalitres?\n\nSOURCES:\n\n[S-2ae7]\nField note. Checked the signage and the paperwork for the Margriro reservoir; the licensed storage capacity is listed as 752 megalitres.\n[end S-2ae7]\n\n[S-ea24]\nNotice to operators: the licensed storage capacity for the Margriro reservoir is 554 megalitres. Please plan accordingly.\n[end S-ea24]\n\n[S-6c96]\nMaintenance log. The spillway gates at the Margriro reservoir were serviced during the dry season and the access track was regraded.\n[end S-6c96]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 806,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 364,
+  "output_tokens": 18,
+  "cost": 3.888e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_xKYndaF4H9TbNSY7X9-NYj7MHN39bOc8Q5OWtdUNPP7WXQMcIGZOr2agdHi97-_EOzqHzYEicl8uGkA6v4t61eP36wZkJtaWRDwURKCcWXPmQgB3_XNnJ6DjUYuGgh3edY26F9xdipfaXSGE9FSPt9ol6w034Zf1p3Szb5_YqqZft0GMrdaaSry4ZGqyGOICqE_Bu1L9bmNBD5fJja9Q6Qm5B1xerKv4mei3kPsn94zEaurLS0NP_k2ZfyO7aLgWc_LhL5M1zSSxM7uC1tBTGQIZ8034yIx2FesRK1pZ9F5OmLf7vudYoNz_qzb2Y3tWeaRYkEe_NzxTxeSfzMYtVPYA9y9bowbGZSGhFhrYKHy28xO_iR4F9q0CU8GeVeuVC4nx0COTSensFHcLtbixhkK6XB6o4M5P2lCmFiKAoFFqnFe29OBAthakBs6erGUO0Vq1id8czMb1DfnaFRVGW-v0cDQDegGSD4AP3UT8weyHyBgURdonIBlrfRata8ENWgfhGSiBw2mjvoQJ2xAChtnWDLk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.431,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

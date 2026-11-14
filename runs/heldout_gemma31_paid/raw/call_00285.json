@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Grilim clinic, in beds?\n\nSOURCES:\n\n[S-a958]\nSummary entry. Grilim clinic. Licensed bed count: 199 beds.\n[end S-a958]\n\n[S-e90d]\nField note. Checked the signage and the paperwork for the Grilim clinic; the licensed bed count is listed as 153 beds.\n[end S-e90d]\n\n[S-bdd9]\nInspection summary. The Grilim clinic has a licensed bed count of 199 beds. The figure was recorded during the most recent scheduled review.\n[end S-bdd9]\n\n[S-f1e2]\nBriefing extract. According to our records, the licensed bed count of the Grilim clinic stands at 199 beds.\n[end S-f1e2]\n\n[S-0699]\nCommunity note. The Grilim clinic runs a volunteer programme and hosts an annual open day.\n[end S-0699]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-a958\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-f1e2\"}\n{\"source\": \"S-e90d\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-bdd9\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-f1e2\"}\n{\"source\": \"S-f1e2\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0699\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 285,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 683,
+  "output_tokens": 45,
+  "cost": 7.677e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_lje2Exxab9TA-Gs-NykhOa6o91i63Eq6PLaaDojNFucpBOJZkSq2_b6rVKkDDcQYGwL_fBijZYoD0mR0UiLpUm8e2FktEFThoISI0IfAU9YDsOxz0Vr-FJnIVlDsB2kis84ia-QXO0FKRJy9YEts4SOFSRaWJ-mx85o8t2zRVwtLEL_vgkeTBo-ngy32BaHY0beimjuSAdKa5pa_oyJiSCdfydbjGRedjXvQ6TInjQ1fEIggXk2rVel7yBL4GwAx5rQE9VDkFQg5RbRd6T2A0GT9SXvAJsda3NkCvOpw6xPXP0e3k6UMRbhAlzhmchfjk5YzZGNMKgM0Hrt_ZpfgKNhfOiiayJLcXvg2FpITqNR3dhyZqG6FYQ_FJ_mfoTPJCnnon29sJ9paHCtCLxqTdEBb-ncGIG_t3S3zIyplYHdHb8H3EOqylI43SGVDAM7tmjP18D0vhfu0EwLPr1kY8kmo05ZOFAKzZznjTo_ffjctSrl9f7kWv-6XctSuQ1WKShjOLqH9bRxdiLozfBeZ5EoOGOw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.485,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 199, \"sources\": [\"S-a958\", \"S-bdd9\", \"S-f1e2\"]}\n```"
+ }
+}

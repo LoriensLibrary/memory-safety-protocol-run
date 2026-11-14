@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Braquavel bridge, in tonnes?\n\nSOURCES:\n\n[S-88ae]\nSummary entry. Braquavel bridge. Posted load limit: 34 tonnes.\n[end S-88ae]\n\n[S-9423]\nInspection summary. The Braquavel bridge has a posted load limit of 34 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-9423]\n\n[S-577b]\nLocal history note. The Braquavel bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-577b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1179,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 348,
+  "output_tokens": 32,
+  "cost": 4.22e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_OJwSjLf4YwgTgIabMb2JG6d-UGkf-VE4B-OGfJExdKKFyZzs1cNW2WxRwCMAUd50aTBVrKhrndgD9YsCDOoGXEx5WMNL8w5C1cgK5wnAqokhMp2yLTWMlfmvkUF5SLpdbVqZxNnNzcN3ZSOmAwW7fzf47srvfBiBLI1rNcJyMHtS4gz466Wv72sCKdLWNcFGdAv94OmiLP0Rlk8mZeDY_YzqXAfbFaheNLxjeSeKTqXENE7a5Ms1Ocfn8f1ECe3TRkNRfFQ5HbZq2c7MAx2Q__FKtsn67OSYlAMqZPx3icv6L3vG7je5b-RveXsHgDUP2suZy0Q1lwCposhj-Kf3dIbRDr1V7msYI0qzKC8Xlq0lrZSdgOgkkTQuVI1efeWZncHbefoMWZ9aHjh1vkjHmVewlqoGt-306HsWdpW1ewuvI-9wYdEhlUGGTWeKdgRaiKNoiIa_nKMvMHtMtjiifT_aVdYOdDxUhFVBZhmThsArSWj8Gt0ugL918HPnKt4_ltYM-xs4zf7FYLmXcvSLDe2QExI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.469,
+  "text": "{\"decision\": \"answer\", \"answer\": 34, \"sources\": [\"S-88ae\", \"S-9423\"]}"
+ }
+}

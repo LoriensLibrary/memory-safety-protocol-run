@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Vorythgri reservoir, in megalitres?\n\nSOURCES:\n\n[S-7ef5]\nVisitor note. The Vorythgri reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-7ef5]\n\n[S-7768]\nBriefing extract. According to our records, the licensed storage capacity of the Vorythgri reservoir stands at 671 megalitres.\n[end S-7768]\n\n[S-9715]\nNotice to operators: the licensed storage capacity for the Vorythgri reservoir is 671 megalitres. Please plan accordingly.\n[end S-9715]\n\n[S-259e]\nInspection summary. The Vorythgri reservoir has a licensed storage capacity of 671 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-259e]\n\n[S-e23f]\nField note. Checked the signage and the paperwork for the Vorythgri reservoir; the licensed storage capacity is listed as 791 megalitres.\n[end S-e23f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1791,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 469,
+  "output_tokens": 47,
+  "cost": 5.819e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_i5LJxuoC_PaAVRgGI3R8M3EjGps0EEqXrnCzQizZVmClefHT1aacU5grDDJOJd-mjqPnvALmsq1LTTR2mvdYPxcruU_bTpkJLFZ5CM4F3-3tF6IjCCvsHBceUyUt5QoibV5VVPSWIAjHrfBL-AiAaAleLD60eTEch8K7Mo0lwphoMU61AHyulbexcid9HwjTg1Bs4tsJuusnQBz8sMpHiQjidlVJ51Y8SpE2POr_WN-ecxNBLXoldD33-B9ysjBg0NuP97aY4KvBVo9zWQIX26YsJlhXHhApa2iccrR3JkJaf_LWi5Zb3L9tT8taB2FLBejPvrCj30A0LvU7zwzwvhDU8MKJkvB5gn6CF0qd0A4md_GnqIzcuSJUQ-VIRyyH3QZEi7_hGKUgAL_6ETqYh3teqUXN3yCrOUOLbvbCQwxaICnsVLmjhhcEEwJzm2PUQ8E530J10CL6yIh2IHzQEYATxVSWFlxowEo_fgPVPo5fzHfw_cOGPB4oB1ancSrC6z3Mlc0E-MlL2y0bhpwKE37je6g=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.381,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 671, \"sources\": [\"S-7768\", \"S-9715\", \"S-259e\"]}\n```"
+ }
+}

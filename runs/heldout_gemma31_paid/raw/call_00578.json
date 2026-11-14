@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Arool bridge, in tonnes?\n\nSOURCES:\n\n[S-c8eb]\nField note. Checked the signage and the paperwork for the Arool bridge; the posted load limit is listed as 72 tonnes.\n[end S-c8eb]\n\n[S-4482]\nBriefing extract. According to our records, the posted load limit of the Arool bridge stands at 72 tonnes.\n[end S-4482]\n\n[S-3063]\nMaintenance log. The Arool bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-3063]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 578,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 353,
+  "output_tokens": 37,
+  "cost": 4.435e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Prjw3DDeg-mCLqDARrt6lfFDjqgB8ZF54R3Jbu9DZfW4ZAA08oRupmBudpPNwFITLeAEWhYPQPCq_LF0_zQ6WPRfKWi6CUH15FrXtPJPdnY68jVmn5B3uD6utyjpdV37iofq2PdBUNyO7LdgPvu1JeTFRGeRj60L-n1zB_3Z9m0mKytbeHB4csiP352c0c4vtW4VY_B8FRXTHftxDBK42fcMcWgFCjqPdV7RVoUGOASA-bkFGQsS-uIDnmuBZ1_aRCjCp-cT2gO6MErwxv3dvKkgT_QDyMbBaOAbgyeTO-cHGaia3t_QETNsWMxpDLjnoRWGYihAqg052r5zZhNJyjPHA9-cWMCbAg6dEozTuMGguFs0Bmj-W11yrUAin-L-sqLZEUAqFh56YEfPo4zn3onC7_2UzVhsyYbAdRjbjJ3tHHvYNdgi1sTclWnYmxNDAaTJrWylHQDU1lyvE64NmvVuXsmB1I0CETiisnFOxb8LNChwgxKgNuRWmPrIOq5YTMAxcdoCtowenuXY-TYMehayZtg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.644,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 72, \"sources\": [\"S-c8eb\", \"S-4482\"]}\n```"
+ }
+}

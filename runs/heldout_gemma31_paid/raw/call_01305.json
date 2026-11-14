@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Tinfen reservoir, in megalitres?\n\nSOURCES:\n\n[S-c839]\nVisitor note. The Tinfen reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-c839]\n\n[S-3d13]\nNotice to operators: the licensed storage capacity for the Tinfen reservoir is 808 megalitres. Please plan accordingly.\n[end S-3d13]\n\n[S-c3b3]\nBriefing extract. According to our records, the licensed storage capacity of the Tinfen reservoir stands at 808 megalitres.\n[end S-c3b3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1305,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 361,
+  "output_tokens": 39,
+  "cost": 4.575e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Izm2Gk50AXFQewv5FP_yxhf8lC4SwbVlDL_twPGIy7ZLIyslGu4u3s0OxosBlGsZDNR-1HkDNRbTIEfhtl9UeL2RuhOnVCb-bklWjGl9oxzRANWnXXRZbFODyGKnz-tn3oTgD6HnP0myscURqckK5eiAPQG_6ZlZ0KN6DJOeigtoilrJkttzC3FabCudAZA1gohLQtjkUr59FwUWXKnbIZfrnHaj0w4YIYXqXdzi8Ch4PZBlI127pqkfP9mTb6Lvlpp2yE0USDhaVOZ_g_iOyinCJoFIpFTIQLf8z8y6q7k9N_ZA4jAw13tYijvy0fgb9-I8DuGM30TnXUxjErwK6MsBOyjhGkxLLQ_jXOoGbGRzVECNrQ-Tr5dflECjxjqqgseqmguKIA2Y0l5MMG5bDke-dbW_Mg9pOEY4FNF9djY_TEpgyh7sC8k3tCgeEktFbY-yDH_ufSZhoWV4rvzE5FSkhyDNM7zerDxFny_7YiuALj8SaTmqL9i9Sz4QM96ynwPp-G9EyxxIgP4UR_hwavGiqww=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.615,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 808, \"sources\": [\"S-3d13\", \"S-c3b3\"]}\n```"
+ }
+}

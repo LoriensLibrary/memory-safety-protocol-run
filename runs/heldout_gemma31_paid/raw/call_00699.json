@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Quafen bridge, in tonnes?\n\nSOURCES:\n\n[S-0fc2]\nMaintenance log. The Quafen bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-0fc2]\n\n[S-077c]\nField note. Checked the signage and the paperwork for the Quafen bridge; the posted load limit is listed as 44 tonnes.\n[end S-077c]\n\n[S-db8a]\nBriefing extract. According to our records, the posted load limit of the Quafen bridge stands at 44 tonnes.\n[end S-db8a]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 699,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 351,
+  "output_tokens": 37,
+  "cost": 4.417e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_vqVGR2wdlSG-s_zH4RAMKV2pxnwbQF6uIUxODJE6Jr3qhSPcpjVRCsQsvTBBsFdbBlOEx-9jXnzXnE2qOQ1R31FjJPlh47jHJPJVrpitrbEsQKpNVG_GNNjWLzViR6uzoJWCwNaS7u37HtEfEoP4NYXz4sI8cx18GH22Inxf-t7XazBlMOBF6BlWbc2dIVCMJh6r2M2bELucSkwmLhZ20IWfOb3-f_538Rxlm_g9sy65bDT40csvgLrKTmiFGyh6bJeWECOd6JtfgBmVn-AGDOcxyB17-AB0QIDzHmWQ8YtJS0TNMGs2LfTYD-Zm5i2pl7xXScm-cHwljKFscmuBiOzK9g5q5CSjOm8I1lysvZx1lCYj4jNACNxop3YrFKl6F-Y-KisozMib6lpUkVgzxXgmQAbi1v-e9UZVc-3ItHfC3FB2wyIKPV-3KC9_ER4eTR7AuigvdYDJaeJPE1OijICwGvAlR9HvD8ru2W5YPwkg9Bk8DOmnVoxvfGf9UoBI5sFD8YY-FhS_TxVADyEtAvilbBs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.557,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 44, \"sources\": [\"S-077c\", \"S-db8a\"]}\n```"
+ }
+}

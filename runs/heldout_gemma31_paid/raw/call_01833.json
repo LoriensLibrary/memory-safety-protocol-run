@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Limust bridge, in tonnes?\n\nSOURCES:\n\n[S-b876]\nMaintenance log. The Limust bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-b876]\n\n[S-85da]\nNotice to operators: the posted load limit for the Limust bridge is 35 tonnes. Please plan accordingly.\n[end S-85da]\n\n[S-498e]\nField note. Checked the signage and the paperwork for the Limust bridge; the posted load limit is listed as 35 tonnes.\n[end S-498e]\n\n[S-cf94]\nBriefing extract. According to our records, the posted load limit of the Limust bridge stands at 41 tonnes.\n[end S-cf94]\n\n[S-98c2]\nSummary entry. Limust bridge. Posted load limit: 35 tonnes.\n[end S-98c2]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1833,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 430,
+  "output_tokens": 45,
+  "cost": 5.4e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_a_MqU-6DIbawi5yedHMr7pv62nZhyoZkHK29o9mVEwpqsHEXhc2oBonWFyD0jj9D-4BOVGGDD2gil0iu86seTbG4eB6oNgDWaekRYvcX_JAljXPu2rKCzlOQyFboVBLRW8xsf0cKxOJGv_uB67Svh7NX2uIupYSHNI00iT8Exc2NtP3AyZDhXaeH7hQFV-nFIbGWS-uxJ3bcIPzv6J12iJ_W5uohqgcZ8EwRS3ZJSC4A28Ia1p6WzJK3OiHChjK6DkdPEnq0vTPszj5ys_Z3HRw26guZvQJOiAMauOZdt2URtmISE-tQzEXSFo3xNPSF_zw45syYo5-iOx32B1LaSpJtRDrjUWs08liRglonPMIszn39rBci4IqqkZdNn6IaDu0tszYtgjCSnqZK-KoD-0mcjDhvkCm-_axc0C48AxF9jenAPqul31G1godBCc2mA4TmHmBRknpY9boNjr4PJnoMNQRAhRgaUcEw_yGwBd9qXIo2EqqcJZrvKWcZV86VfPj2qFD2wIkDsj-Z-v6puG6RmQ8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.814,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 35, \"sources\": [\"S-85da\", \"S-498e\", \"S-98c2\"]}\n```"
+ }
+}

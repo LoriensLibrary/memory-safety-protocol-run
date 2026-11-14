@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Marbra reservoir, in megalitres?\n\nSOURCES:\n\n[S-3ad4]\nMaintenance log. The spillway gates at the Marbra reservoir were serviced during the dry season and the access track was regraded.\n[end S-3ad4]\n\n[S-811e]\nSummary entry. Marbra reservoir. Licensed storage capacity: 431 megalitres.\n[end S-811e]\n\n[S-1067]\nBriefing extract. According to our records, the licensed storage capacity of the Marbra reservoir stands at 348 megalitres.\n[end S-1067]\n\n[S-d467]\nCommunity bulletin: residents are reminded that the Marbra reservoir has a licensed storage capacity of 431 megalitres.\n[end S-d467]\n\n[S-befe]\nNotice to operators: the licensed storage capacity for the Marbra reservoir is 431 megalitres. Please plan accordingly.\n[end S-befe]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 523,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 440,
+  "output_tokens": 45,
+  "cost": 5.49e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_tTnmVfffXjdKbJHNJq78Sqz0H3LzpqRh8ZQ-I0skyp8fEPyaDVkf01jAdfTN9RT4FhxW-fLGW4twLm1V2N3wN9zEpfXmtmTEfS3_7r2kcDWzwUx-vrt-Vfa6U_Z577VjMFOEdZrK8RbYbeOqG5e6S2bqE1b-zB_p7s2bDoEHEKRw9VNiv0ayN8PnRxE8e4ORHHsPshdOSst6DmUF-CB-51IgOjLvEBqchjRNq41h1Q_mTBScMSwWXOmqgqDmu3iy6g_sGASXOg13KNYcw67jqy0KkZBlmneYPR7RvsqLZ_mdtqKVZm6OUu0wV07fm_dwlU7aFcKfNGb9MGVu7AU09qU4CkXcV9XQtztoEdo_CHqs4mFOHNOKG4eZbPG9bpsQNHoXXcxH88MQQSlavxxDW0v8uiXoUs2__F9iiRQrc3SidHMKAbmI6Fv5rewV-KKHAcDTMfSBzUIMZ-pjpTEPv2JukDfyy-KOrzX9Iu8ux8fO5nUd9k3hwQAVGzD5nJonFBjrMIdha0SFtY1YSANNS9Ud7L0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.565,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 431, \"sources\": [\"S-811e\", \"S-d467\", \"S-befe\"]}\n```"
+ }
+}

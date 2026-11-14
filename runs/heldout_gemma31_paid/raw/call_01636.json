@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ythtinfen bridge, in tonnes?\n\nSOURCES:\n\n[S-14ec]\nCommunity bulletin: residents are reminded that the Ythtinfen bridge has a posted load limit of 19 tonnes.\n[end S-14ec]\n\n[S-6eb6]\nSummary entry. Ythtinfen bridge. Posted load limit: 19 tonnes.\n[end S-6eb6]\n\n[S-c441]\nLocal history note. The Ythtinfen bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-c441]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1636,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 347,
+  "output_tokens": 36,
+  "cost": 4.347e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp__0NHO9XuFKZ7nIZ2DYk6xDe0AZIX3O9Oqc_EVaVGHZz8jZzbcdZPtLQ6MIfzl5eabJzqgYqJp0O-1gjntKcnj84ZzLAG1jywORyPXRJdcGqALJNRmrUBf-XTLVmppA9R80R0VD0k_jaOPZc0RQIyZc8r1f-pBbenM3cVbkfKNGLUTJxXBECfBbFRMlitoxPA_bjbILVxIz-xo4qZJDQlL-twPMGb3b1BGEFzIAlOysmNc12PWbyxfLFkA7Y9i0t6t_J_SybaKCChOJTVZcY748N3p8uvjmdMKqsK5DR9DOOj55y_te4LtOXptaqgkV2Izw_JxkT4WlUV6UsyX3bLHJYMdRY_uwcRoyRCQrlJ_Em7WNSVKtXUDhjhBq-4XluAixBHvUKHjhFQ07Q_QmHmJcYbUE_Hhm7ZrCVYhmzAYEspyJDWmmRZRhqfyGBfKwGwXWVSa1eA5VxF4oFN23vMBPJAapMFkoCic-k6PxGZPUCfuCV8SIOJqq02P9elnOrFk3u9ZM3_GkAxQYLixSOLcf2DDHA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.516,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 19, \"sources\": [\"S-14ec\", \"S-6eb6\"]}\n```"
+ }
+}

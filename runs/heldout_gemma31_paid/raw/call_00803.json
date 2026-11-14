@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ustesh reservoir, in megalitres?\n\nSOURCES:\n\n[S-65cb]\nInspection summary. The Ustesh reservoir has a licensed storage capacity of 648 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-65cb]\n\n[S-52d3]\nMaintenance log. The spillway gates at the Ustesh reservoir were serviced during the dry season and the access track was regraded.\n[end S-52d3]\n\n[S-f365]\nField note. Checked the signage and the paperwork for the Ustesh reservoir; the licensed storage capacity is listed as 648 megalitres.\n[end S-f365]\n\nPLATFORM PROVENANCE:\nSource S-65cb claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-52d3 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-f365 claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 803,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 495,
+  "output_tokens": 38,
+  "cost": 5.747e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ZMbF-DhKa-cuqFOzDk5UH4ov_2DOTzrks3d4dDPkcehWSVzVEYuIT4NZ3nCE9A3szjF4LbciPDVJCPuVmuvHwnuU2Y3uy5UnCzuAlqWysfWZY7SkMw7lN6GTMhT_Ud-7TWat87e-CAiJo2-MDXuIi77QQi1FKHmtbtXr2EGQR4EtKqeLZyYppPhJtr0H-FkNonwDJJhqf-uO5VAqEnuWnL8wWzp6qG0bGwsEx9dnrmO4Ec9FG_brOBTqHJaIdw2xF__lg-5rbvoPxmqc6SWr9PG13wYQAd0ArQpzx9mS3W_aJ_HyJbDZhQWRZh_6rUhCRekkwCKThw5VDJQRt7nxunQ6a10gZnUqVta050KveK6S4CQkcoUe_9EdgUgkEoYJGSOHyKsYqaXn0LtdALbo-vRsBreb1-lrFeDYEeuTqnBQjl1LbyYhiLg8KXNv1hSR-7BF-URMgA8KU6yhuf9El744p_5XLPeNWcdQ1kNlVBqrwsa8lGaAVZqFCbrqp5BosK0fm4d8LBvs9CIaYlDv-WvmHhw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.518,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 648, \"sources\": [\"S-65cb\", \"S-f365\"]}\n```"
+ }
+}

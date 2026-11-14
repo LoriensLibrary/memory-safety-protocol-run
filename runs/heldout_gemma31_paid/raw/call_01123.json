@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Senyth clinic, in beds?\n\nSOURCES:\n\n[S-6d3e]\nCommunity note. The Senyth clinic runs a volunteer programme and hosts an annual open day.\n[end S-6d3e]\n\n[S-9bc4]\nInspection summary. The Senyth clinic has a licensed bed count of 211 beds. The figure was recorded during the most recent scheduled review.\n[end S-9bc4]\n\n[S-0fa8]\nField note. Checked the signage and the paperwork for the Senyth clinic; the licensed bed count is listed as 211 beds.\n[end S-0fa8]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1123,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 352,
+  "output_tokens": 37,
+  "cost": 4.426e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_mvtcirWQQClVg_KgTJdiVKPhdL4AwstM_IoS2viHZT_Kt0Acvefy_ToTpD6eZFYZJblKVaII1webF0Ho4pnjCPCMc-0yGFt2qkWDEZH7O8WI4HAGuMckcesRqZ6LqWPxaeH4pC6z5MYwS1qEKUtSFw8l0dyikvNzaVRcdJ1jCe_Y_PnjJemJgkTBuuN5tycSfsgPeN6BKX1dYdQ-p5EPSmfXScLiQtarsGPI6L85SJjHKht2OraOEFRQTPW9Vi-n2mp4C6rgptcp3Zc4Wku1TV-v5jDUmitHe4Oljtzk75T7rZyViYo4mhWsJsHdYfisfRudv_wALp_sVC4e0LFaE_a8m567FinhKS5vgya_JP9Kc3eBSZvBEX_06SmrX38ADDXOIzuD4U1q7XejBfM5L1HxeoFLPYn2n13pq8Qnk94nYH_fC09mYKnkuwjtPxr8PN8yp6rmeV-5mgvjW3tR4GsbGSez9CcMaKbqJH0YI3mGIEIHwzWWTFtcEN2XYBPx-RN4hYrzbZS8T3A_JBsZDqo0iWs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.503,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 211, \"sources\": [\"S-9bc4\", \"S-0fa8\"]}\n```"
+ }
+}

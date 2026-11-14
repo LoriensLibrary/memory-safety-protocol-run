@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Limpeltin reservoir, in megalitres?\n\nSOURCES:\n\n[S-3621]\nVisitor note. The Limpeltin reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-3621]\n\n[S-dc5f]\nField note. Checked the signage and the paperwork for the Limpeltin reservoir; the licensed storage capacity is listed as 395 megalitres.\n[end S-dc5f]\n\n[S-c0b9]\nBriefing extract. According to our records, the licensed storage capacity of the Limpeltin reservoir stands at 395 megalitres.\n[end S-c0b9]\n\n[S-549d]\nNotice to operators: the licensed storage capacity for the Limpeltin reservoir is 306 megalitres. Please plan accordingly.\n[end S-549d]\n\n[S-4c7e]\nCommunity bulletin: residents are reminded that the Limpeltin reservoir has a licensed storage capacity of 395 megalitres.\n[end S-4c7e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 907,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 462,
+  "output_tokens": 41,
+  "cost": 5.552e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_2-7g7SRx1u6tTbt88XeNRrR4xaAr7od6ELQC6A0hc09vVkDVTbrDt4sgRspycPujSqEdT4AlwhPt2uZ-7FqR44UgWdhCGcHGSkQA6YNpDrt_yJy1-Fv-lhCJx2dpURLDOC1oSv0DcXj4zY587gXrGvlyjnbBCqUPSZ0IJvb_PJv_8wfeHWDCLMeBjSe8AT276eHp3OblxL-9tI5rQYJpACALbB4pfL0LvunfC9FoXwjlRDB2L9w33yIr4QuCjGITpGU9lki3jrqX485XbitB3mS_BCT9KE1-DVROn3hruOUdKE-o1f5MCahcsv5oqfAyiibaxuVHVWPDthSwamNeGuHvnieA2--XgROo8vJjT0spTCfpMoclxgwI6X5AIEHZUaAviDvPMJfxSrHHwU-H6crVS6-HPL3siFkS8Vnr5DOaNx8_ZOJVp8RG2RLhu9DFAri5LW2rttU05AEik02oC4kI8wsBpvU7ZFnjYSnaE8ARTwP34k6q9Wav63_lV9OraLaKuosBjissY6fCmaxayo-SLL4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.409,
+  "text": "{\"decision\": \"answer\", \"answer\": 395, \"sources\": [\"S-dc5f\", \"S-c0b9\", \"S-4c7e\"]}"
+ }
+}

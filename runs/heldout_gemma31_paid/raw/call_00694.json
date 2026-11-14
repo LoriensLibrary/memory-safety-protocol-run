@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Quavorro bridge, in tonnes?\n\nSOURCES:\n\n[S-d048]\nLocal history note. The Quavorro bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-d048]\n\n[S-9daf]\nNotice to operators: the posted load limit for the Quavorro bridge is 44 tonnes. Please plan accordingly.\n[end S-9daf]\n\n[S-559b]\nInspection summary. The Quavorro bridge has a posted load limit of 52 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-559b]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-d048\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9daf\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-559b\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 694,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 506,
+  "output_tokens": 28,
+  "cost": 5.506e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ogPQ1LeFn8LdF1LNx4ar2whz8_Zfs31dbpDfLjUZMA5KMtbIJl_FfJPwUsAzWTQkBCXjbL3Wx4qCbyuYuu7R_BygsdxZvEYvvkrmOjOIXS96FYFb_9dq1CgeYe2zOkbnKUdNoc8H8xe94cdGdQZK57NNnkEPxiTo70Z4rnJWFhvlX2Q3_h26OMwUS-WM435CYEvd1S_YbPtdfn7SC02pqyr1V6K5677K3jFvHvkrTyMDXPL7X7lQjulNvVHXXPbMPQkekQ_steHRodrqGjyn1CrQKRU7UdQbtRTw1tWWQSGJmm0aMWRv_OBLLyt47tvFMwy7gydjCFaxYI1Z8M3MaLc8PvaSN0bNRLWnTOHhGRkrl1XzrI6ZZnZuTle1lxojgzXRcRgWrJTwxKA7owodP3BrWwTMHcWkgGFGc51olQ__ZlV-vJ_yaXyALmNURPPdUbK_Xof9SkIMF_7_6bAfcWaTB1JWLHr3jSpjanRIIIqaWhd1yZ0ABwllJcItgvtiycw7IzuWX9bJTCKDw2Z308fbsf4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.663,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 44, \"sources\": [\"S-9daf\"]}\n```"
+ }
+}

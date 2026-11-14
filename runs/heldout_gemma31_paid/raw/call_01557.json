@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ythned bridge, in tonnes?\n\nSOURCES:\n\n[S-a68b]\nField note. Checked the signage and the paperwork for the Ythned bridge; the posted load limit is listed as 29 tonnes.\n[end S-a68b]\n\n[S-4d3d]\nInspection summary. The Ythned bridge has a posted load limit of 32 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-4d3d]\n\n[S-71da]\nMaintenance log. The Ythned bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-71da]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1557,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 361,
+  "output_tokens": 23,
+  "cost": 4.031e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_qivuGWccvSfFIiQBOZC7cq-2koiftKYxwoUTmwoVBdYKUp5iUmuVTwpOUqh5FybDPZIaIsXEw7TDZ5IAWUCpF3JGzbI3E_w7OkVZ2xtEPxAHZMWY_2RkTsX5HJRvqZVZAkq5CwQQQ5YBSt02PbEKj1PTkQVn7g2UFMiVgoE2B8albM6CbTjWsnKo8l2qGmNESJDKBEQMBujGQQfC1boP-ACCh5qF76olgEXegNJKgNJu31sctV2Ipx0-5KI1LjSp4Sd_9KxipPj-VoCQtaTFNTAemNI81g_wKJ0fp00coHn6i7UsWWR6dYOWCsOcV1vA3OydV1XbjMqnbW0SJEWkKUVPB3PQ8pZO0UvHoUMPljjGgdD8GHWZEvkudw7EgbYQROYawTAEy3hTrbZe68y-ZXIB91sS1k6ElCEIJJAV9WqOCE5RMXw3hh2KrAqSeR3SVEhM5c0sZQYUPkDiexBEM6hVrrbNQlyejrsLNXw9zH_P03O6M2ic-FM4RTgVKuw3qcXKG_WyZYjaBU0sR-ktrvyBfcI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.514,
+  "text": "```json\n{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}\n```"
+ }
+}

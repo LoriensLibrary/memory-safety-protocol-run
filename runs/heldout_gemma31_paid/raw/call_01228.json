@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Tintha clinic, in beds?\n\nSOURCES:\n\n[S-8b8a]\nFacilities note. The Tintha clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-8b8a]\n\n[S-6a2a]\nSummary entry. Tintha clinic. Licensed bed count: 47 beds.\n[end S-6a2a]\n\n[S-cd96]\nInspection summary. The Tintha clinic has a licensed bed count of 47 beds. The figure was recorded during the most recent scheduled review.\n[end S-cd96]\n\n[S-6f9b]\nBriefing extract. According to our records, the licensed bed count of the Tintha clinic stands at 41 beds.\n[end S-6f9b]\n\n[S-819f]\nNotice to operators: the licensed bed count for the Tintha clinic is 47 beds. Please plan accordingly.\n[end S-819f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1228,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 432,
+  "output_tokens": 45,
+  "cost": 5.418e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_w85Yt23qXsyTLJrQSoPxOKdxfF0bzYydSeWWmdetobZ4f0dyilPicIuB6bhM7Wi24w-L-ANyPZpWfZsgYDQR9XWNIbslpel55lZPryvS_tx8KGIBY3zPIF86ZfJ1r6J3vWrUslfXRmAAV-ktyMZ4qh9BA3SqySki2VPMVzsg721bxOi_W9hdFyQeYx35O34kj7F4zJMIH8odIakrs17qaRNl-pYXwPmmWlgELVZXNXb8LS7jWkqaEXAfaoiHsy0E3QHUzSV24ZsCOv1oLZqO7eaihEtc8NgvqfMntiDD0Nd0dbRudIZwkEFqqMYRiBEYBnqASyCHvu0zNdJLcOpixO6b3PB9KLrvPsAtBWAEtJICLIT_42ayGAZ4IpPJ3Q1Vh9mdRGZ-pUDTxzmOTqTrHS_Qtlyg4KgNIbdtvolUHvN-xstKGXIPUKkdA0TXgCbIrBxozQQ-GdBWczNlipH4ktCt6CkJlDG-W4D8dBk4_lxGNMo45aTu5alWkyyv5Ubon007-QFkND8KLqCMxLvirElM7n0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.039,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 47, \"sources\": [\"S-6a2a\", \"S-cd96\", \"S-819f\"]}\n```"
+ }
+}

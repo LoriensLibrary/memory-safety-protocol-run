@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Dulome bridge, in tonnes?\n\nSOURCES:\n\n[S-dbc3]\nLocal history note. The Dulome bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-dbc3]\n\n[S-9f5d]\nField note. Checked the signage and the paperwork for the Dulome bridge; the posted load limit is listed as 21 tonnes.\n[end S-9f5d]\n\n[S-9b04]\nCommunity bulletin: residents are reminded that the Dulome bridge has a posted load limit of 29 tonnes.\n[end S-9b04]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-dbc3\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9f5d\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9b04\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1270,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 498,
+  "output_tokens": 30,
+  "cost": 5.502e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_e-pQlVuUrKG2IyyqWblrScZh07Y9N1Gj4AOraOxh1-3sI2Y-EXikgqc8e3bh4Ph6_LEaC9q3LWIQorSrfzK5th_vQgtLDHwXiH6wKYCP5h0P8KuAS1NmzPjs8IflVUgH9Q50W3xw3O-2lyjnEicbP8gzaY3oqu3ERbbD8iraiViksRJM2qPQ3Y6ybAIXlv_wrxGNyub8seYLtCUhdQMAyYQ92IczXFCsptyffQ5Ef0CiB50EBpqWasWxJVvJQvK91jgkn_NO7gImbgVfFyZ1xujT7GuCL_aJMEIs0WLnbpK7NZt9837g2I-I9em3ZylwY4XKt0enZ5y9tR8a0UAQcMK9UfKEUCy3Vcru1eVGbNEIVIV7L16z_KG29UGFm08vSxs0EmUmlK3zLRzJZx299potVSIfIQEZ3M3MAyeTp2ODPJn8Y8Ep0VLEg4_HdO3CKjjNsOwnoBS8YXff8aH8LwqeJqXRURIShXgo6_2DXAQnykI4p1rLqYLI0Nz0SeYf9SzwvNOPj6dIeawtSRnQUk3lEok=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.633,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 21, \"sources\": [\"S-9f5d\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Limgri clinic, in beds?\n\nSOURCES:\n\n[S-6641]\nSummary entry. Limgri clinic. Licensed bed count: 68 beds.\n[end S-6641]\n\n[S-515b]\nInspection summary. The Limgri clinic has a licensed bed count of 68 beds. The figure was recorded during the most recent scheduled review.\n[end S-515b]\n\n[S-ee65]\nFacilities note. The Limgri clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-ee65]\n\n[S-0a48]\nNotice to operators: the licensed bed count for the Limgri clinic is 91 beds. Please plan accordingly.\n[end S-0a48]\n\n[S-6dd1]\nBriefing extract. According to our records, the licensed bed count of the Limgri clinic stands at 68 beds.\n[end S-6dd1]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1344,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 436,
+  "output_tokens": 45,
+  "cost": 5.454e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_z5kysICbqH90OGx2IOu-f6UwkQUJHlVibJiriIBg-C8qzF1WAkZN8EVowb22-dIuneqWYlNowGg_rah1LYt-T5vLNvnuHIaPVONFFoexwI_P-MAe6x9DtPWBpV6PinBkuLA-9GtWKu1Tyfpf_vEbE3XuUEGecMW0mO3ecm2Grz9JmtCUz1W7DV_e4PlrAk8UwB_aenstQ0Ql8u3FI8DLNl0ArU3SYtimWUc5aJ80g4n41PdbROTO0xAWrOVy2fpOBx2JKZeUS3PlN_N8H9I1-QJV_AoeeyVA_ZBrCihxS7BsZfwf6gRmyaJ70R5qORjwLpCutRsPJNiBssQsWTo9JEQnVoZwGvRHlhdb131nNQnbEqpxnkYul4XVD8zwIWq960X4qprGpRX76rCPo_LXtjqde9L0_d1eQDg9i5j6hUiA7ptV1PmTRWTsy32slMfXZMdoxpO0Kz19NPCiqkM8imlg70fBc7T5cEMXB-mJTgW-pUNYbJ9xfRr1TeHfPjkuYcgwLO6Twdp9bmharYwvB-ZNiFc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.478,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 68, \"sources\": [\"S-6641\", \"S-515b\", \"S-6dd1\"]}\n```"
+ }
+}

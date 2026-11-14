@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Omeroka reservoir, in megalitres?\n\nSOURCES:\n\n[S-4cbd]\nVisitor note. The Omeroka reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-4cbd]\n\n[S-f131]\nBriefing extract. According to our records, the licensed storage capacity of the Omeroka reservoir stands at 658 megalitres.\n[end S-f131]\n\n[S-6131]\nNotice to operators: the licensed storage capacity for the Omeroka reservoir is 949 megalitres. Please plan accordingly.\n[end S-6131]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-4cbd\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f131\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"retracted\", \"derived_from\": null}\n{\"source\": \"S-6131\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1778,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 506,
+  "output_tokens": 31,
+  "cost": 5.608e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_9W9wA_VTKR3R_RTcvNidz-ejrXjFB48APoSVhsrmRjQB32Yd8vWh8ndbX8nVq2zEptJms9hM7bAXq8XSJ1K4llPmHNOyo9VV9qFp4_VOQ8d9_0hMJZVt8oED6qipSP4414GSxYKk4g9Oy6ITWspU9XCRfvwyngKoxaZIYQIHF-7Wn7Zc17N9J0wtysm_75mqsSVbpOI0G82m8NJHACbwczYEOit8myz6H3eLaqCizi6xglShPbLO2lcOnZYT5t-27cP1Hipo1Gnuq2OP9UHS5O7-4oK1QQdlObOO6jgNVg5EXaBkKgjMGXIK1UedCtq7sUCNJZnj5BsGJIpstLeBi6H0y6nQqU-a1-xjVpX0Qmk8GmVlPGn_8GRmM3OVvbbKfRPMaq7MBhEvhvCwOFxSZ1eIr0sYFSw6IQ-_QtmpcN1mHsVVktMz_-I9XikrqXCxrf5X88Wf0OoiODhRCZ-uTlF38hCEYqk4F7dBsu8x-vtA7oi9_F3qsFFX-ssi7660V1V2efYZYMlHZaRxIy9GfGol2TI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.613,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 949, \"sources\": [\"S-6131\"]}\n```"
+ }
+}

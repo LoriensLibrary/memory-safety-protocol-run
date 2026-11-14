@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Aroixned bridge, in tonnes?\n\nSOURCES:\n\n[S-95d8]\nCommunity bulletin: residents are reminded that the Aroixned bridge has a posted load limit of 18 tonnes.\n[end S-95d8]\n\n[S-dc0b]\nSummary entry. Aroixned bridge. Posted load limit: 14 tonnes.\n[end S-dc0b]\n\n[S-79ff]\nBriefing extract. According to our records, the posted load limit of the Aroixned bridge stands at 14 tonnes.\n[end S-79ff]\n\n[S-801f]\nNotice to operators: the posted load limit for the Aroixned bridge is 14 tonnes. Please plan accordingly.\n[end S-801f]\n\n[S-22e8]\nMaintenance log. The Aroixned bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-22e8]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-95d8\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-dc0b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-801f\"}\n{\"source\": \"S-79ff\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-801f\"}\n{\"source\": \"S-801f\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-22e8\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 297,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 680,
+  "output_tokens": 30,
+  "cost": 7.14e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_VQJ7_ZYzpiPCjz5y9zFRbK85jn6NiiLPd0z-0swKuU8uQkDmF_KtX5prrErDTfMxAli6jlf0zMblANhSdDafQ0DrY0MLFB5ASPJ4VZyKE8ZNN1eMsJZiVIjpy7LkRhhkVjdHFv4ZvJFw3MTvoJqIZYgnEmoQn6N0Bu4DKuefifeFLcGVgqw7yz09OfYQ9mnp17fY9egH3BcBWL90V2mQvFqcJfMQTi8jywDjOZ9i4uOrKjRSAw44Xiaq8swg79zmwRCi9CXeHUR2YL_TVC_TlDAl-MYa4nYCUYgHQJeG-PlGSVGGJ5lz7EAB2nLk2GngZlfGw95eeX1woQskaeuvmO_UzqiPbH3T2SI_59Wm98i2dat1Ppf0q9NnhHA_YTQP-Du0TVsAplzQRXqCixI39IHdu5on3dLiCuOSpC0Z8wPiSC2YNOaeWCJBqZC0vWzGBkiIFXwzguRY5tg_vO8oN_PYwqLaT6mSqFa21_1_GjxmxW_lK6aE4_2FeFyjPjfBqWKkAWWltj_aqy9O3ln-KeLD1hQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.585,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 18, \"sources\": [\"S-95d8\"]}\n```"
+ }
+}

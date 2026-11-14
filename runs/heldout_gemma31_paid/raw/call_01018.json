@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Kathagri reservoir, in megalitres?\n\nSOURCES:\n\n[S-12cc]\nInspection summary. The Kathagri reservoir has a licensed storage capacity of 539 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-12cc]\n\n[S-bff4]\nVisitor note. The Kathagri reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-bff4]\n\n[S-1d47]\nNotice to operators: the licensed storage capacity for the Kathagri reservoir is 539 megalitres. Please plan accordingly.\n[end S-1d47]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-12cc\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-bff4\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1d47\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1018,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 511,
+  "output_tokens": 38,
+  "cost": 5.891e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_CWolcKopNrwxakbYokS7sRc-yy28ktTnjAzxGsZNZBAF34JsI7wf838Fm-Cu0WF2CUDOXO8s7elL-WgISpxmKRCi72nJuvLYYqokwK4Tn8_1Dm5CfcohyaYl_JT2zXbOA_DCfVKwY8rnKaMTCuMpIshtMnaIhn92P92h3TDQLWXedF62vk7xKPapAT3T9aB2PAXAMSXvGMZsSvy7WCmWLNWU5VhAmecVZxBewRCOv_IcIyByQJc3nY3kvG7IvyO8_sczSTfamoLT_aS2f7MkFKFYaFk4T4OvobMhUN2gGvVpAacBzlyGAK3XE02RSMQsm3K0BDkHyO0ERhiWgMZnVbfce1gEr8WQn8-hz_GQXqHk6oQaOcKOLaC6zpPvXBsTyP1HrX6IYmMywVq0aDVRRWZRZ_nefmOb-D6dMNMH0Pvsf_m7-dyORaqZVo18feJapfAhGX_VHyt3MbZGPvxUrMcEJg4IdpPBBRgvbLLH3EM4omUxedYMVo-aXiIpvW-jAiTtkZ9VMh4CHzUtghHHPFI_oXs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.436,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 539, \"sources\": [\"S-12cc\", \"S-1d47\"]}\n```"
+ }
+}

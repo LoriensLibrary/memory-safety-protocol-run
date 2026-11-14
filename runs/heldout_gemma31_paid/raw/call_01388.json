@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedvorgri reservoir, in megalitres?\n\nSOURCES:\n\n[S-4222]\nMaintenance log. The spillway gates at the Nedvorgri reservoir were serviced during the dry season and the access track was regraded.\n[end S-4222]\n\n[S-1669]\nBriefing extract. According to our records, the licensed storage capacity of the Nedvorgri reservoir stands at 686 megalitres.\n[end S-1669]\n\n[S-ec62]\nNotice to operators: the licensed storage capacity for the Nedvorgri reservoir is 479 megalitres. Please plan accordingly.\n[end S-ec62]\n\n[S-0154]\nSummary entry. Nedvorgri reservoir. Licensed storage capacity: 479 megalitres.\n[end S-0154]\n\n[S-c046]\nCommunity bulletin: residents are reminded that the Nedvorgri reservoir has a licensed storage capacity of 479 megalitres.\n[end S-c046]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-4222\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1669\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-ec62\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-0154\"}\n{\"source\": \"S-0154\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c046\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-0154\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1388,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 706,
+  "output_tokens": 31,
+  "cost": 7.408e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_cetTcsZCnUBSOvLJqiZjd4g6-F_c2d-N-I9caeT6YdwaWC85MYgp7tzjOnrS_3Mje-VV0MSWpfwmI-XdV1Dz0D_aJdhXXZYsHXd0VBODb2alNoSi0j8Hw8n2WdjUit3oX1Rp5Q46yofzkKoXc0z6CS3iCwI4kODPeXgMoG96Q2yvf2-j4Pqk34SeJDbYJE4gcpyoRfMGzzzDKLl80phlRt5RjqfNpSZX-l8xCDJJwAbTfINyIYfDrQKgVUKKKkq35NYjCNkVOd46A-fvbkekcLRs4XG9LsHeAGnIKpIb88UUqNoA36aPP9KX1aw0V26W7Op7Zmd-AQiJV_Ohn0DdOeQeE-v3pYQfrcOXJWHU_gDYCHpoFS9Nz152mKQZ6DzC4h0m7RoBF1itY_XOKW81xm1UO7N4LwKxr3uwU84h0pgV496Usrpp-VPtPcdhljwAQcWEXS2RoRhsGm5n19GaKghpEhLBi_WrhxEDuxTKyw1MMigP0NWhNo7cSVK-df8vZjiLQenehj6ATRUCk1Rwwjr-LxE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.452,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 686, \"sources\": [\"S-1669\"]}\n```"
+ }
+}

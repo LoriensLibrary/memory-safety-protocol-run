@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Grilim clinic, in beds?\n\nSOURCES:\n\n[S-a958]\nSummary entry. Grilim clinic. Licensed bed count: 199 beds.\n[end S-a958]\n\n[S-e90d]\nField note. Checked the signage and the paperwork for the Grilim clinic; the licensed bed count is listed as 153 beds.\n[end S-e90d]\n\n[S-bdd9]\nInspection summary. The Grilim clinic has a licensed bed count of 199 beds. The figure was recorded during the most recent scheduled review.\n[end S-bdd9]\n\n[S-f1e2]\nBriefing extract. According to our records, the licensed bed count of the Grilim clinic stands at 199 beds.\n[end S-f1e2]\n\n[S-0699]\nCommunity note. The Grilim clinic runs a volunteer programme and hosts an annual open day.\n[end S-0699]\n\nPLATFORM PROVENANCE:\nSource S-a958 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-f1e2.\nSource S-e90d claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-bdd9 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-f1e2.\nSource S-f1e2 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-0699 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 288,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 656,
+  "output_tokens": 45,
+  "cost": 7.434e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_nKuBaz6EQmETNErgHyDpLq3cYdnw4-rTQk23TMUjw4h9AUNVsLYzpq5_6qw_fT2qV-M3lHqAyPhruPjfS4oJj62Mkzf4FTSxKJs0DnQ7KoR4ozqMg_PZE7iJedsXWn92b4rYMvUVCSge2gKdeZ3qAtoZOEtJDwO_qg_mfMj9Dimoo4gqOqA-LngSTJka_SEpIsFUzeCD99OCB-90EmrLwJysCGVW5b6KQ5Y90-H8NzAjvmlOCwbdv6e3-7HNQJsYpbgokQRyDpvsTCmiqDWR-CUyAgyOqbT420P8bh8fq6MvqQDRurUjvK5x1U2QIdclpX3pB88mQZk4-208a3nIRS9h-kBjhwZuUizJiCYiAh7TIkEGsp-W7yIcpBaTnA2-B4SY6dqt4aTbW_hffs16briowfYUSM_tQwmMKOtWxy0huoBqTA4VZZgBgrY-HDO8sscxoDDxZT69q4jFX_hR6ReTucyC5wIDZAbetPvGsb-3MuCH0rE8hKPfQRwZRmDyFsmiOMhOYRUDmQgKQagnuVmSiB8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.543,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 199, \"sources\": [\"S-a958\", \"S-bdd9\", \"S-f1e2\"]}\n```"
+ }
+}

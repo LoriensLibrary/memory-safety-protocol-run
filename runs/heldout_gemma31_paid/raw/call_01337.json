@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Kaixpel clinic, in beds?\n\nSOURCES:\n\n[S-37b5]\nCommunity note. The Kaixpel clinic runs a volunteer programme and hosts an annual open day.\n[end S-37b5]\n\n[S-5b63]\nSummary entry. Kaixpel clinic. Licensed bed count: 239 beds.\n[end S-5b63]\n\n[S-0133]\nField note. Checked the signage and the paperwork for the Kaixpel clinic; the licensed bed count is listed as 239 beds.\n[end S-0133]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1337,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 347,
+  "output_tokens": 39,
+  "cost": 4.449e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Gddi2T3oH-J-hiS7C_scHWpJYW-w5mOVMMjpRbEjJIFbKOGxo-5MQnKbMLATrOCFYw9Xd-fCKFuC9zr0VlFQI303MqAlSGX_B_CwEvM_Udv5Y7v_JQaUi1EzdQ4Z_-M9HdDCof9R04VrN2IooRKYZ1GAPmB56tr-yhNzh-NKhJMlYT_fDnVAeiOd1rLEzQfw1bdvxlQuKaYa0IvllkOBqLJ0IMj35aEQVun-ZuBqCnxvXLSbuKsdT-UG9q0i18BJn75zKKhitTh-lS06dTOWZCp-GUfGA9OmhsrmBfdADns4kQvnsR9ivqOpLKnceYcuwaTo5nRcByax9tfMoYmIHw3GlWsobY1Njp0z5EAG80-6RUFL0RGB8EHoex0h_iD42UpcfSxOoNEqdIQs3NxYLeSqBy97hn13n2dCru7PkY9x94kYw3rRZ4HvhNyftiihAnamEOBDWJyyBmotmNLyKcTxDTiV5v6UCS_B-h7GYMENskr1l69LGLwzU7q-_i_rUBtc_dL8H7p_S8VJzW-l--QU0WU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.577,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 239, \"sources\": [\"S-5b63\", \"S-0133\"]}\n```"
+ }
+}

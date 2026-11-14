@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Mardul bridge, in tonnes?\n\nSOURCES:\n\n[S-1552]\nInspection summary. The Mardul bridge has a posted load limit of 26 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-1552]\n\n[S-939c]\nLocal history note. The Mardul bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-939c]\n\n[S-b80d]\nBriefing extract. According to our records, the posted load limit of the Mardul bridge stands at 26 tonnes.\n[end S-b80d]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1729,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 355,
+  "output_tokens": 38,
+  "cost": 4.487e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wVqweVrQm4jPIyvTP9PIQJENDLaEDZtrP7LBwCm1PuqQNgP-_8V0UoCPIEDxVrh-aTnF5C2j2shRQbe0KzakE_HLCwU9P__tTX8yMWs8NPcbgK74J-FWtPaY6CUrHc7ZpZujCdDE1jPx6txf93pNb25Medhq9VgMeRI3PD7PjVmV1S3ycvgHN15L4zCLNf4tuwqwmAASXOREJ7fCL4i5u9Mr097t8EubPX6tR-T2uxUEIMB37eHgwnbdQziSWXMWsikwg_Dc7DKO8W04Vaglt8itySJbts85D2dVSnEiLPj4FV2BPfkHSs9zvJgDzu11gQR-ijG5nLObqDipFMtMKHj8M4CVsZSK5PPnkCRs1WJsLVctSH5fvHEptcLEk-l-Vh80gu-gVI43a8_wUUDJ8c9GYKFdv_rDxrd06IheXI5H1xKYH9ohGKlqXyoZz5cUqWXSa72Sq60nIV3dcVCN7mHwBzPq68mvC-0ckmAnIkK_XQlDkUmFN0ZRCOiWjTlVpjNJgLw1jTh2Id2rpiGkwdtq4yY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.439,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 26, \"sources\": [\"S-1552\", \"S-b80d\"]}\n```"
+ }
+}

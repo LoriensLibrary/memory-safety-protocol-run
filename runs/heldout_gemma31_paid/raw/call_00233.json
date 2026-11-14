@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Entinro reservoir, in megalitres?\n\nSOURCES:\n\n[S-93f0]\nBriefing extract. According to our records, the licensed storage capacity of the Entinro reservoir stands at 689 megalitres.\n[end S-93f0]\n\n[S-a8b6]\nVisitor note. The Entinro reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-a8b6]\n\n[S-2bca]\nSummary entry. Entinro reservoir. Licensed storage capacity: 939 megalitres.\n[end S-2bca]\n\n[S-697c]\nInspection summary. The Entinro reservoir has a licensed storage capacity of 689 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-697c]\n\n[S-a549]\nCommunity bulletin: residents are reminded that the Entinro reservoir has a licensed storage capacity of 689 megalitres.\n[end S-a549]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-93f0\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a549\"}\n{\"source\": \"S-a8b6\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-2bca\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-697c\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a549\"}\n{\"source\": \"S-a549\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 233,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 701,
+  "output_tokens": 30,
+  "cost": 7.329e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_GiF7xTfjq0aVDGMeVBt65Ua5A-Nzsc1IHn80roSJuePKYysJdnaPg5LvgEYqzhszXET2sboaQMAoBSCt9AZOh5BwMDDAxoMP3HFVvk2pc2qlEZLhG4k7wC8xNB9yh0nZsSwSK0pYNjpN8eDoZPiArCzQn_65dcXtt90H3Cms7wokl4A8knqC2kMooHTsMBiv6jYTOalpn7JfXgsITgih9oRmhwx016kAIOVxwus0vijtoKP-3uwFlyosh9QyRdM7UEbfscjbMBT30NM7ZOM5YHIU4NyK3dTZIk4luFhIXsiW6rFk5S-q6Go6L0E1UPZnuIixqSiX-No41ZwwogerkXg4-bJv9CCQN9CwFb1h24v-pi4Q_n9cvRQrNF-2Yt_EwjjyrXDYxR3fcNIEzeRcHFL83YFDlxjmi9dc_lTZMMIMhwcyQyytOxAN8ELo0Xgxiej9ylhUZuz1lHFrE2Z45Hn9n-O1YMI24_nPwqgSw3oQ_eL0Pgn7BGHh7cWY1I2oL6rJ_4zE2Np_u7HbVv4LqtnlBWE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.51,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 939, \"sources\": [\"S-2bca\"]}\n```"
+ }
+}

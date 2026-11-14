@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ythomevel clinic, in beds?\n\nSOURCES:\n\n[S-f542]\nNotice to operators: the licensed bed count for the Ythomevel clinic is 98 beds. Please plan accordingly.\n[end S-f542]\n\n[S-a8bf]\nCommunity bulletin: residents are reminded that the Ythomevel clinic has a licensed bed count of 98 beds.\n[end S-a8bf]\n\n[S-707f]\nField note. Checked the signage and the paperwork for the Ythomevel clinic; the licensed bed count is listed as 134 beds.\n[end S-707f]\n\n[S-8129]\nSummary entry. Ythomevel clinic. Licensed bed count: 98 beds.\n[end S-8129]\n\n[S-3271]\nFacilities note. The Ythomevel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-3271]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 553,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 440,
+  "output_tokens": 45,
+  "cost": 5.49e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_yPEzsW9uOny51Nuv7FXf5pcAAYlGsgCaxuQJEMUdvMwk5tf06WsUb1mWPYZ_7bfHGLT8QFc-lss9B_9M79XDDn4Kbqy2BEacCoJ2m3dfSYnLSu15fDyRGJOTUcZIawvU58BDyP_tSXnwwd294tFGRUz9TKkJoBOpsUBXhfe0ZpRhtjlN0bSoXWVXuwg0rxSNE4MNZ3P4ACqIcg1ynZFAOlVGNUdhUVQxySAGNrClazafU4rm7mCf6vb64iwNxlhnrUZQxp7IFEUQVkAvyXR9pSV5Njgxn22vtyD4hZeFM5ToGmD_P2OgqvpA16qUGnLczIL3AAmnh7ZItZbwwbhXCQfeC78fxLUwg0rUvpYpx3H2dBOTLVvSh6zCGVdz6HKBqiVtL3fgd8KApwwXUU0epWjvUuZ8NGLJsM4fzzG5aGpuHNoB4F2NcFxjtj1tWms_C_xLVMXwTnIcRU6CRu0vXaCzZVOd3tx8MITTmaApHlAAOxEsoxNCZudOxaa8iKHW7jyuZwzMy8tRB3e9_-nUjnjy2ls=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.62,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 98, \"sources\": [\"S-f542\", \"S-a8bf\", \"S-8129\"]}\n```"
+ }
+}

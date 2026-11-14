@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Omevor bridge, in tonnes?\n\nSOURCES:\n\n[S-2764]\nBriefing extract. According to our records, the posted load limit of the Omevor bridge stands at 40 tonnes.\n[end S-2764]\n\n[S-1320]\nInspection summary. The Omevor bridge has a posted load limit of 40 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-1320]\n\n[S-394b]\nLocal history note. The Omevor bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-394b]\n\n[S-e5bb]\nCommunity bulletin: residents are reminded that the Omevor bridge has a posted load limit of 40 tonnes.\n[end S-e5bb]\n\n[S-134d]\nField note. Checked the signage and the paperwork for the Omevor bridge; the posted load limit is listed as 31 tonnes.\n[end S-134d]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 11,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 448,
+  "output_tokens": 40,
+  "cost": 5.392e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_-pcqvFX_tnLbWH9OBLWxU4iWE7nJOb6jtsFvmHUieAfljAA4cgnSSMGlSY_dksmA8cw4GDw4FeUgJTYvM0sscMV7gnlbIVStQcaLpJ7LjOyH8ECbzt9cyQizGaCC0G2Yns-n8UxHa0439-v7aSvwqYohN2HeH0FWtzwfhGgvU7PBFQMmprOiOjvIFE9a6Hc3PpivBhPsB529xkaSuoUs8P6Mt6guMVelCzmDv2lxPpOKRqZ7YmaNn6id6Wzx8IvcSPdf4iFoG_T1E3GUe-41LURdTaeKotrufwH7CPC3XQRsgVvC6ghTW1hUM-berm1ZjndMtkcUiWNQ4Z6bDqWl7FCRnk3o3mI4ReFH7edJuXAVyZO57258V0yRvUjp_d7IPxYucfCeotzsvv0vbvEM04BoTshE77YepOLkMptV0EA3IYlMec7autbL5jerQ2pSvMxrblDn_L-ac_8LMRYazzoquULHoEx8-66Qiu3DMgWcUTCqNnYR__-HCzrl9ibVV2O8P9njCxg61_AmSBck2ruxUr8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.48,
+  "text": "{\"decision\": \"answer\", \"answer\": 40, \"sources\": [\"S-2764\", \"S-1320\", \"S-e5bb\"]}"
+ }
+}

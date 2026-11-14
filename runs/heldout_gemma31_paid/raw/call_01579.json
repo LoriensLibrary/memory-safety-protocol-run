@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Fensen reservoir, in megalitres?\n\nSOURCES:\n\n[S-954f]\nCommunity bulletin: residents are reminded that the Fensen reservoir has a licensed storage capacity of 204 megalitres.\n[end S-954f]\n\n[S-0a89]\nBriefing extract. According to our records, the licensed storage capacity of the Fensen reservoir stands at 204 megalitres.\n[end S-0a89]\n\n[S-fe67]\nField note. Checked the signage and the paperwork for the Fensen reservoir; the licensed storage capacity is listed as 299 megalitres.\n[end S-fe67]\n\n[S-1685]\nNotice to operators: the licensed storage capacity for the Fensen reservoir is 204 megalitres. Please plan accordingly.\n[end S-1685]\n\n[S-146c]\nMaintenance log. The spillway gates at the Fensen reservoir were serviced during the dry season and the access track was regraded.\n[end S-146c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1579,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 455,
+  "output_tokens": 47,
+  "cost": 5.693e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_yWFVKK_NDeiC3hLH8rSwz5uDfy5kK381sZeX3WfUwgdpa5aF8e7Pqy79qZBtHyOKkAfk7zzugbxIk2mzBRL689ifBI74DWFUBPwUcMDyywgbzRcNZR7kIPNnx8yNRzklvlHw1hJxz2RpwFxoqZxH4JkwpeHfUwCR2ghIBzz1Bk_rG7tBlMwpLfAMHakLiszkIm1aV4KdyEmp1RgKkeR7Hmkr2Tr8zdp_-awenPMpFzb0XiMiEb5BZp9QQzBpP8i8Rc2dLucl6JEzkZn0gwaCCBPTDwyUO3t2PXvf3lqDYXxfdl2O_RACJnFceXbM_skHpQJ5Ota-O8T8Tk3rglCJ6d8WLosh6zssbQAaVTMg5OuWrrH5hUCPOznDdWLmwmOq2GwrNLqj12vvlDEEcCJs8TGSLMuMjF7105jlZcGHGP8sF_tVN5knco0eFWYb3U8BUXlodkzuLhrOaq8hB3CAOsz6kfLwLSjzaBzIPdzXokkL5CqDbcCwsA_YsC1qKVP8LIxBrH0vkI95KUabFLiLU5l4L6w=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.338,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 204, \"sources\": [\"S-954f\", \"S-0a89\", \"S-1685\"]}\n```"
+ }
+}

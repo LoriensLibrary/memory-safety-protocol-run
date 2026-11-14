@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ometinned clinic, in beds?\n\nSOURCES:\n\n[S-3815]\nFacilities note. The Ometinned clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-3815]\n\n[S-2e21]\nNotice to operators: the licensed bed count for the Ometinned clinic is 205 beds. Please plan accordingly.\n[end S-2e21]\n\n[S-9ccc]\nBriefing extract. According to our records, the licensed bed count of the Ometinned clinic stands at 205 beds.\n[end S-9ccc]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 932,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 351,
+  "output_tokens": 32,
+  "cost": 4.247e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_eBkSeZSXBsx04vlK4wFA0zvV3AIFatbhhQTaN0REx6BsZWHLAAl5PUY2985vEsgHhZTFJG4kFjk8i7MCM_WMwQXhzKx77_9XCDapWSbpORF891eTQXptZ2jHFo6cZuQ_g48IWiWkar3KQlHZ2-c_DvUoxYfNEWOkh7x6SXQLlSpVNqFmR_4uFraFONmMvTQ8XroDdrPUmfmDJb6JanRX4n_uAZhjlkVok7W-z1aDYLqN8nhVMtK23k9mffuVKkBN1MjTiO69pk-kO5ELJS7eI2p9bb4hY15AAqSnm1OjC6UcwWfPS_KIm5eYr55MNhxoFIT1WgQBPCPQYv5Z2m4Yfi6K7PxUKr5gkaIEm9RQUSnyJQ0-RsEDav6WK4nUBDjYN1g-o-HkmMqqpRNGJ6soWv7nOd8OoSPVTW-UI_QQXXGeevTvw-L_8Umvh4Xlsbdxr_LKCpm6zRLfvMG0T4vTEOz8Kh4qOfbXFp2Ddj7zonwGu8A7WaqeUJTePFDIEEGia8AcmEcsYPH3864llaXRX7a2k8o=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.418,
+  "text": "{\"decision\": \"answer\", \"answer\": 205, \"sources\": [\"S-2e21\", \"S-9ccc\"]}"
+ }
+}

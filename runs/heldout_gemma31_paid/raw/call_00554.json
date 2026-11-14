@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Ythomevel clinic, in beds?\n\nSOURCES:\n\n[S-f542]\nNotice to operators: the licensed bed count for the Ythomevel clinic is 98 beds. Please plan accordingly.\n[end S-f542]\n\n[S-a8bf]\nCommunity bulletin: residents are reminded that the Ythomevel clinic has a licensed bed count of 98 beds.\n[end S-a8bf]\n\n[S-707f]\nField note. Checked the signage and the paperwork for the Ythomevel clinic; the licensed bed count is listed as 134 beds.\n[end S-707f]\n\n[S-8129]\nSummary entry. Ythomevel clinic. Licensed bed count: 98 beds.\n[end S-8129]\n\n[S-3271]\nFacilities note. The Ythomevel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-3271]\n\nPLATFORM PROVENANCE:\nSource S-f542 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-a8bf.\nSource S-a8bf claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-707f claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-8129 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-a8bf.\nSource S-3271 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 554,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 660,
+  "output_tokens": 31,
+  "cost": 6.994e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_W968DIKRDeJbyaaQBieMEmHM111FDRB0D7LvZVWQHAvDoRpmJQPvveJ8qu_OdAI8D5dDNZN_QN20Jyi7ELj52Fd1qntTPRGbvRFavpOjfcH3KuVzK-6G2dZ24LyU3RtDk0i7-azaxureCIHvbSbuyM-w6isb4CLr-c_Q1c7gM0yqgVcSimnUVlu08dhWd4aESmMxXz8gwHx0sLdaqSMHM0IRQUpJRmNPMb9LYIX3BwtGk2NCquyKTfEgnOUQZORzzB7ZuScw8mlnAO0UbtJr3rNu3UnZEOks8jUVXcPqc1Y4Stmez9Vsy3u65YZxY3zX3450mgvRmA2PYhQgUUChlX12xxTmn2J0Z6lcmBJTPDdrvxmPQu_GAz4sFSBRdWVJBXb8alTCXI0jYYB_0Dp9FIp4aUNtTnjDBlSMH7amLnXy2CbVxEqOXxMaVOgDiP2CEWs80DV95h6ZRBUNI9_ambr9JC3QX4y0UxTcX-7Ael9LvIHReIIEvWq74QESPdYxypQb1zTr8DExLjz50ve2X3beDwA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.36,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 134, \"sources\": [\"S-707f\"]}\n```"
+ }
+}

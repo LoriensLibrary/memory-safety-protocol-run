@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Tinmaryth clinic, in beds?\n\nSOURCES:\n\n[S-7ce7]\nNotice to operators: the licensed bed count for the Tinmaryth clinic is 158 beds. Please plan accordingly.\n[end S-7ce7]\n\n[S-0e22]\nCommunity note. The Tinmaryth clinic runs a volunteer programme and hosts an annual open day.\n[end S-0e22]\n\n[S-8873]\nCommunity bulletin: residents are reminded that the Tinmaryth clinic has a licensed bed count of 158 beds.\n[end S-8873]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 259,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 347,
+  "output_tokens": 38,
+  "cost": 4.415e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_8oTX1L2UfdgwIuSWt6urUM4SEPv7SU2z5x734xUcXUgemsTcjxzg6P-AaZFr6b19A2N47WBoqDtIEv52fT_phwKbLRDlYg328qKWjXI1TYePCbe6R9hMY6oQ5vqQmrTz3CSRahnmoywdNIZ4fWl7-VtuGz31t_QHHCSMNG4p-dafmeqMkDIAtcJXKaJojptxhosH0aS1PzJ9QeTgAFlXwFrTG5dpa7x6PtZonzJXr18DoshDQNACBfAaJHmqUSyvbcho_wKXrdFNlJzPJyFZA6SB4laUvUP5FkAa5XoDbAMkjccfctOEHJAApZAbazExESs1jc4jIg0Yfk1LVaJBKvBKvoTBLPpaEYrL7KDYznSvondiHqtEy9Lq0AygWJdxSlJqLDiRD4WW1JtW2plFYv9ha-W6NDurhVO2J3NDhbNoMEr42gCtMZZ4CS6O9_JR0j3iISrbiZzjKlDvFMLqcFYobtb2CUITd5aWy5XYQi47uiJkDgMSSLlrjNcHJ6zZf0kr6Qasscv8OKLjsIE-BABi4y0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.37,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 158, \"sources\": [\"S-7ce7\", \"S-8873\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Olust clinic, in beds?\n\nSOURCES:\n\n[S-7cea]\nInspection summary. The Olust clinic has a licensed bed count of 86 beds. The figure was recorded during the most recent scheduled review.\n[end S-7cea]\n\n[S-dd32]\nFacilities note. The Olust clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-dd32]\n\n[S-7379]\nBriefing extract. According to our records, the licensed bed count of the Olust clinic stands at 86 beds.\n[end S-7379]\n\n[S-027b]\nNotice to operators: the licensed bed count for the Olust clinic is 86 beds. Please plan accordingly.\n[end S-027b]\n\n[S-f9de]\nCommunity bulletin: residents are reminded that the Olust clinic has a licensed bed count of 121 beds.\n[end S-f9de]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1151,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 433,
+  "output_tokens": 44,
+  "cost": 5.393e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_oSIPWD2t5IKRMQZWQUDE6DG0QzBuqoFyY3Vs5NRaDfKHrPdzSUxkLBPSGl2OuIXI-RUFmlePoGbAQA1IcCRH4-sViocWKOxlZvKMMmBt9wTzO_U9iNiG8WJ8__M2veAUI9nWkKiTofiW2-cSl99pmBZqqQso68wAw1Hs3KaNJOhYywhwC29KfYSDBgyX843zLWabOLWuDZee0nipE4_aG4FrSAbF9Km43LPuPYEE3svSYFaDnR5uuewY6EvCEL1KUgUQsoD-mZ92vvffa5PoMsKSdHu4vkSnU_mJHU0iOcOX-iBkbjw4UtojXeJkO0HVb7qix1aho5N_InUYjZ1dnIBWwFumP4ejn7nDqJWrgDvU9Qp4Y041kN7WvQP9XUC3Mu28xa4fjeCUjbBV7j87ATB_qd7cQgK4Dh62PmwIbK8pFBCuncZr4Fq4Lc50RDyFQMd43cx4T31D_AtafevpQIFV7I3p70v9yWhJYOVeSyWpikFoHvtgxSptt92HJIHmTI7WGxdibnTjbmC8a8Tgv-GY8UE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.425,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 86, \"sources\": [\"S-7cea\", \"S-7379\", \"S-027b\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Nedlim bridge, in tonnes?\n\nSOURCES:\n\n[S-13b7]\nLocal history note. The Nedlim bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-13b7]\n\n[S-50c7]\nSummary entry. Nedlim bridge. Posted load limit: 20 tonnes.\n[end S-50c7]\n\n[S-3d8a]\nCommunity bulletin: residents are reminded that the Nedlim bridge has a posted load limit of 20 tonnes.\n[end S-3d8a]\n\n[S-ffff]\nNotice to operators: the posted load limit for the Nedlim bridge is 20 tonnes. Please plan accordingly.\n[end S-ffff]\n\n[S-20d8]\nInspection summary. The Nedlim bridge has a posted load limit of 22 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-20d8]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-13b7\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-50c7\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ffff\"}\n{\"source\": \"S-3d8a\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ffff\"}\n{\"source\": \"S-ffff\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-20d8\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 319,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 667,
+  "output_tokens": 43,
+  "cost": 7.465e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_bUJ3W1UCcoAUHCR77juxFol0YblgqvV9qo0AdtmKHOztTViY6CV4laHvKLfVdbOC20YVAmglAz1JebxUTHeZ1lf-NQr9KsMYn5Bj6frOf2qgxj6qbRASMm226_6CyGQ33KIPjCgKMWM73FD8vMt5KxO7I8xz8AhoMKA9jBbof8O4K0v9y6lA9BGCVaa6zONWQooLiMKFRw2Qp7afxC2lr4lK47Maded6dV7o0N28MFQ_tpfHb0BkALdlc2Z6f2tg2DJtEPVqg7iFUYz3JmurZwq3z6W21YnJXMmbIhmCR50jow2BjO7sB_omnjPD2C66cG7MBsaajTBi0g8MwzlLfQjbjJpmxR0QEArHlJn9tLE7dMumqJ3wCLi-D6qvUtLJP-oCGSLsXfCsip_9wnwPUpBRh_rUV2TzRE4G6W5aB6AGV9C7IcEtR2HLa6zBQGGneh1KX4Lrvv3zOJBMeggPZM-bHE_pKhHkyNpxtdoJr9U7tsr2tgj0dUCPoP4-_IB5H5FH457SpLYcFzrkS1JyibVhovk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.472,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 20, \"sources\": [\"S-50c7\", \"S-3d8a\", \"S-ffff\"]}\n```"
+ }
+}

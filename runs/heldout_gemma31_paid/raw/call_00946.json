@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Quafendul clinic, in beds?\n\nSOURCES:\n\n[S-0d8c]\nInspection summary. The Quafendul clinic has a licensed bed count of 147 beds. The figure was recorded during the most recent scheduled review.\n[end S-0d8c]\n\n[S-3c82]\nCommunity bulletin: residents are reminded that the Quafendul clinic has a licensed bed count of 183 beds.\n[end S-3c82]\n\n[S-134e]\nFacilities note. The Quafendul clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-134e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 946,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 362,
+  "output_tokens": 23,
+  "cost": 4.04e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_bfg_01cK5hF4tkwqnPYOQTmZ0QTqI2bEEtlk9-YSTqMOf2NYeOP0No1zrCoHqzp-Ebxth8bw3ZGjZMKpDcQFMVjCpIz7jaZnl0PYWRfmR1ReUIHo9bJSUEHgbzy5oWC666-X9XzBaxTQgfTPOjZOgaHzxpcHdiN6xrekA9lB0Qn2_AxydhvhnPKfPUeb-55VvGmprWWMrcbiC5AkraC3b4I6WgrY_friFa_M6bBiDVg5x9-pPGuKq2uXWM4j6MvHoG9KcGeI2gFS4cCSQTnH3SeRp6YXYcBGXAb3q6KC5xxV1S1pB-XXWtX1SuDFZkb_k12ncwYVHooBkZhoxVWIX0ZhzQp40eWKd7TVGk5Xpkk86486uhlA7w9RMLFxzkp2okYIehC2q7d-uCWaxJQdD8kKBp4Y7aTBNRVd_qL-NVhY-4WnVjaeR3_tHizxsDuGAA8EcSpVtnPO88xmqz_4lNh9fxZDkhkxPCGYOcmldCwUQdL4vjP0AxIuQ2iKGPkv9y8Fv-iMNiTUKSa8oGsNoxKYZQc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.418,
+  "text": "```json\n{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}\n```"
+ }
+}

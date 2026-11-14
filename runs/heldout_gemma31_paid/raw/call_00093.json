@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Vorbratha clinic, in beds?\n\nSOURCES:\n\n[S-f41d]\nNotice to operators: the licensed bed count for the Vorbratha clinic is 261 beds. Please plan accordingly.\n[end S-f41d]\n\n[S-628c]\nCommunity note. The Vorbratha clinic runs a volunteer programme and hosts an annual open day.\n[end S-628c]\n\n[S-4e5b]\nField note. Checked the signage and the paperwork for the Vorbratha clinic; the licensed bed count is listed as 261 beds.\n[end S-4e5b]\n\n[S-fac5]\nInspection summary. The Vorbratha clinic has a licensed bed count of 213 beds. The figure was recorded during the most recent scheduled review.\n[end S-fac5]\n\n[S-7682]\nBriefing extract. According to our records, the licensed bed count of the Vorbratha clinic stands at 261 beds.\n[end S-7682]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 93,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 448,
+  "output_tokens": 42,
+  "cost": 5.46e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AkN8ymHtwzm3JyPBCq4chMDEOQDz9-p6RwVmnZM_9BBdVBt2YmqWXVMeCBLRQGhw800Thu06iGSDGegIamNCsvf9lxASdahEbVyTdLDWlc49qoNwWhnKyHaAnzq0uvL3ktaVSKcly5G3R-0s_O2ZcMS5PqDtcVoYCF2Z65WWMuN-eyR9wOQv0CzGV-ftTWWjnXqBeB46GsURKrGNkzkppgzX3ZRnzCd8EPzmWsaLBYT-mlEHEXGWfaphDmaT2wpqILp1NPoHMuo2BZc-PPRMsbVd1Etm0b0UDY1TiBMl_L4NL2nFXRmLv0IbnIVR9EPYdJvudk1X3ROGGxhWX2bwB1oxxOW_2TNFfSKDsiEXCVslyGMYx-nzRz5vEMEL0NirYtF9QNEKf8Y12DtlTE8SLaFqyL12njfMx0LjI8EXPLWluumk5zjmsJVx9XvfbGTmIuDib81FvHHNEovlLlWE_GpXn9zTD2HZYsr6M4Tyc8qJ1a088p5ujklHF8YAZ27JOUcxKH1EBuBqiCThjIodX5N5mw8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.626,
+  "text": "{\"decision\": \"answer\", \"answer\": 261, \"sources\": [\"S-f41d\", \"S-4e5b\", \"S-7682\"]}"
+ }
+}

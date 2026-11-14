@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Bragriol reservoir, in megalitres?\n\nSOURCES:\n\n[S-7d68]\nMaintenance log. The spillway gates at the Bragriol reservoir were serviced during the dry season and the access track was regraded.\n[end S-7d68]\n\n[S-9ae2]\nInspection summary. The Bragriol reservoir has a licensed storage capacity of 519 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-9ae2]\n\n[S-e8b3]\nField note. Checked the signage and the paperwork for the Bragriol reservoir; the licensed storage capacity is listed as 754 megalitres.\n[end S-e8b3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1590,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 372,
+  "output_tokens": 18,
+  "cost": 3.96e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_FZNGEZ7j3cL9LYyehyyw_OOdmslIMuOtYFqWgggAinwj2umZ6q5omBvVypwrl9ojoV-Sy6PFhYCh197jXZaDRTNWCr_jLGGL_5oBJEpcln4SO7cCW-EbCc1_KLo9oZn3TLVkDzZ9pCBHFtzrpl2x_dvfwldos0DekVUTAPumeGk2NHhLxqDK3pgtvTjV7EaYEBjNK2QMQepZ3ZLnsxDdmu_ZkTdU-eBqIjmOyQiBJPiHrZ3hRcOkspR6r-rXEzTVz0RjXdUGBRL3Q1e454ekCai_E_o3WbBON_uUD5zfTKi1q2aeJz54SXDBNbDSk2bOMXbMeo_oQIlJgO_Fsu1eSxexA47db-_o-YjPXrXUCCbC2aReYy0D-MuchJ04flrM7Kl3oiQ4E2cdnZoSds-oMN3TOdGBSHc5Z5nz7si4BoeUnwie3WhcEajMBuoahwJkWhX6agOWRHNZB34On8TCejUwc69TqbNbIr9Daq74oE4IpDdg3ewSuK0Iv9SWZ9CkjavjfofKW5axJnf_YWvrOk6M3UU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.575,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

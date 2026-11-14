@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Tintha clinic, in beds?\n\nSOURCES:\n\n[S-8b8a]\nFacilities note. The Tintha clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-8b8a]\n\n[S-6a2a]\nSummary entry. Tintha clinic. Licensed bed count: 47 beds.\n[end S-6a2a]\n\n[S-cd96]\nInspection summary. The Tintha clinic has a licensed bed count of 47 beds. The figure was recorded during the most recent scheduled review.\n[end S-cd96]\n\n[S-6f9b]\nBriefing extract. According to our records, the licensed bed count of the Tintha clinic stands at 41 beds.\n[end S-6f9b]\n\n[S-819f]\nNotice to operators: the licensed bed count for the Tintha clinic is 47 beds. Please plan accordingly.\n[end S-819f]\n\nPLATFORM PROVENANCE:\nSource S-8b8a claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-6a2a claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-cd96.\nSource S-cd96 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-6f9b claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-819f claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-cd96.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1227,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 651,
+  "output_tokens": 30,
+  "cost": 6.879e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_nCeajfHetHV-TmrQpt9k7iAEhANQeVI7LSkrBkaS7HzW1kv10yor5Gftu3hdT6SvPGuk1xkpcly3n9yM4sDODG6GVE08-4CLLbI4WEkw66xTBd3AUrJfR3yCJXDEccc04NgsZ3V-WYPmNFeerFxW7xcjP7CYdHCEl4YKWpO4i0U5BNKQQNcEjbzS3OHHyjWx_oGSkeKWktUHWG75KOmNl7HtoPUOxnHNQjA4CR4_StUV8A3gKxMmjKA_TQMDNeX9PhNnr8YKW_dwijqfx5aRckervzU4zHHyUZ9A696ljdOtj4Os12jmA2-xIwd-uTDTqBtYDlJIcgZlOvQxWtDCxnSm04iDV1eWvwp2xdvy-1bxO2U1IPsttoFUfAUybxgfagmEhJbkDlnUWPgnUAAPix4RHMUqJBy5GCZ_31YIRR3gQgAbswdLVJUCTkIpMcyaHn_jj6Wa0o2TWfKQeruroByrfmaP28vdX6wO0mGOMKc4sstsCoPr0fEZfKbHrXoJMJYCzU9Hb_W2Ol0atoygl4Ch5Rg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.698,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 41, \"sources\": [\"S-6f9b\"]}\n```"
+ }
+}

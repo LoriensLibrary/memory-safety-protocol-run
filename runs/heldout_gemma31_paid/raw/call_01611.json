@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Omeyth clinic, in beds?\n\nSOURCES:\n\n[S-3359]\nCommunity note. The Omeyth clinic runs a volunteer programme and hosts an annual open day.\n[end S-3359]\n\n[S-6991]\nCommunity bulletin: residents are reminded that the Omeyth clinic has a licensed bed count of 296 beds.\n[end S-6991]\n\n[S-41d8]\nNotice to operators: the licensed bed count for the Omeyth clinic is 223 beds. Please plan accordingly.\n[end S-41d8]\n\n[S-519d]\nSummary entry. Omeyth clinic. Licensed bed count: 296 beds.\n[end S-519d]\n\n[S-0188]\nInspection summary. The Omeyth clinic has a licensed bed count of 296 beds. The figure was recorded during the most recent scheduled review.\n[end S-0188]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1611,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 438,
+  "output_tokens": 47,
+  "cost": 5.54e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_KpydEE3K_wHyk7khDOGZGDrfmyqRAmlbC-0f81P9pkYO08RGh_A_NI1BqCxfRNSCrvoi6UqffcVQvtU5ovLuipNEq6uw6Trir2UrT1H52w5ubTJOe5-qab0_jRA8zJHlwYpCGwnOuH8W5JYfCb51HF5NXYTYAqWdHDiYDTj05Y7Cfz-dBqKrX3gzrNnxZ5ysrxw88kfEjsoo8M_pX1i3PfFrLfmXMd7qmFdBhfzn9YE8jYjhBP41uKEHi6sSd37sO679NpE-4kFfK8dCA2jt5BB5yKxOa-93L4-tPPQFAzGw2YnuKkH1agIM9ARHzjslO3hKsiCS52QTjq_bcQTPjtRAkWCiRWzkbmCIRJEfIV48yjREXJiiLbipAHoxEk_K6n4AUzSwSzYTnbr5jQSB5aOk1heQSmPk_2Yh7PMfY0HmsG7hAp5CC2qC9PKnBgKRmEAnJv2bq0evAMFemaL245Se4eyj9PmalLjETDOWv_eGBdyMlJ7jg2Jkv7W3QsUNs5oN3FE8QcuQH6lsEN-zKfhKyEU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.529,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 296, \"sources\": [\"S-6991\", \"S-519d\", \"S-0188\"]}\n```"
+ }
+}

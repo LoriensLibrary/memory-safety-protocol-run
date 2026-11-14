@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Enned reservoir, in megalitres?\n\nSOURCES:\n\n[S-62ab]\nNotice to operators: the licensed storage capacity for the Enned reservoir is 323 megalitres. Please plan accordingly.\n[end S-62ab]\n\n[S-e84f]\nMaintenance log. The spillway gates at the Enned reservoir were serviced during the dry season and the access track was regraded.\n[end S-e84f]\n\n[S-0e86]\nCommunity bulletin: residents are reminded that the Enned reservoir has a licensed storage capacity of 323 megalitres.\n[end S-0e86]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 706,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 357,
+  "output_tokens": 38,
+  "cost": 4.505e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_HXIYEmhaIqVCpgsgNEII8FM5gLkAvorFmwSeVQocxd6JvigWN_tN1L22PYyUSDBIXrQh4sXoEHQus_eMFZ47F2Q9zE8qK5Fuw7wQ0KCJV9_c6MX7waW_FmmbssZRrhn3eIjs6JPK4cdwANv_Heps6yTziQfUNwh0fudTRXTocBt2KVpLcmwv2VcSbNsECaBHzpDRH3ZPRoaD48N7uK-aHMYrqOyPavVi1KbZ4xGvF5ILjAgwK5dCzb86AxKGvCg69zMKuEVP_TQqoc5XG7CFJpNZR9pMnu46bj6IqDBYEC83oiXQHxHojnrX6r6c715PgaRLCfdMjLaDkl-2aTEg_fGHOhIMYNKjs1TLllG0Tg9PzpeBtM2ZXrLoogpocrZ5eIOnt7ajDGKlTaHEEKl6z82GfXWwMCM1Ym_gAz_LcKnkG0ksL6VoKpZsmgizN7Z50b6P1egB-GDqfb0YqiVXKxP1GYUJ8EfkbuyjqfkxDhhfWDLkg7fogkKAB-BLcxvhDu5AgKIKHRYVLhKoGVEf3vV2Y3M=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.989,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 323, \"sources\": [\"S-62ab\", \"S-0e86\"]}\n```"
+ }
+}

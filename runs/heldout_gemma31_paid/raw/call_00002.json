@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Fenlimned bridge, in tonnes?\n\nSOURCES:\n\n[S-1287]\nCommunity bulletin: residents are reminded that the Fenlimned bridge has a posted load limit of 35 tonnes.\n[end S-1287]\n\n[S-f643]\nNotice to operators: the posted load limit for the Fenlimned bridge is 35 tonnes. Please plan accordingly.\n[end S-f643]\n\n[S-d17e]\nLocal history note. The Fenlimned bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-d17e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 350,
+  "output_tokens": 38,
+  "cost": 4.442e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_bfkhKty0xlw_Jzk2QllULVYqHDv79FSgyOgtX6ZpiVyQFllD1zhifQrOhwkEZXDLEYXoiQ5YkoaHxu1brUs5qElD2TVASDGILtM50OTNs8S0J5P7KEFl36qedxQQxMMdeFBwWQcbeQd8jQM5jb7bmSr5iU0uzGDqfPuiF81m-Rzas1AbzqClqkUFiKqSN4Vpj3t88Z103NdmS4Cu9JaMgYnTPtFueiZIgOxFp05r8AqIQAVf5B5m5FDjNN5qD7TArs2pLBD-MwTU-I9LcOAj4FkcZtVxNxlSDy0NPY4bDkau5BhD6G6NCaHW-gIjHISZBFWIyJFfJp98FrW4EHsfLyf9NfElF7Y5rIzx0ZNkUkyHlVaiBimBBlddhLuqfTw8nzW6nG60OZLgGYpybXAnEmJ18UMo1UbOXF5TFPYncjGlUE-rhN1GbAX2RhKntPlGlQcs1SqfG6q4QwW2LE4qs4IPgYnU2CRBxONPkT6vfnKCkKBD3AkLkyGyB6Mc3LBchhZM8V0SRSsb7ZwT5s8vbWa4Z-w=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.484,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 35, \"sources\": [\"S-1287\", \"S-f643\"]}\n```"
+ }
+}

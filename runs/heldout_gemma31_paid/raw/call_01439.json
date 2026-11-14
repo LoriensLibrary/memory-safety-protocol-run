@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Ustvor clinic, in beds?\n\nSOURCES:\n\n[S-9f24]\nFacilities note. The Ustvor clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-9f24]\n\n[S-aef7]\nField note. Checked the signage and the paperwork for the Ustvor clinic; the licensed bed count is listed as 114 beds.\n[end S-aef7]\n\n[S-7555]\nBriefing extract. According to our records, the licensed bed count of the Ustvor clinic stands at 114 beds.\n[end S-7555]\n\n[S-4d9c]\nSummary entry. Ustvor clinic. Licensed bed count: 114 beds.\n[end S-4d9c]\n\n[S-ae8d]\nNotice to operators: the licensed bed count for the Ustvor clinic is 95 beds. Please plan accordingly.\n[end S-ae8d]\n\nPLATFORM PROVENANCE:\nSource S-9f24 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-aef7 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-7555.\nSource S-7555 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-4d9c claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-7555.\nSource S-ae8d claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1439,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 653,
+  "output_tokens": 46,
+  "cost": 7.441e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_qGDLrGR06orakM7FOiWB5D_q6rgXlVtXqx-WuVdjIwHEXB8AngQtlS0NLG_Jlv5qC5aEV6uR-wSzUipK4wbUQta-sBlq5S2iqnXKKQ7907KHBMKy0x_1RImWAewBTLPFXbgspo7zeVL-QwSmN1QV-ng7RbOmpYXuy7ze3Os5fiUo15vpJV3_z_cfXp7O4uIhygq45GdT7ToTTi6NkzAfOJrA4bZR6UgL3neow1CLyy0AeOo0DSA3DQiFi7a7LXUMNaHETlI5gUNTFqBlKQ4Au3t_V84Ex_qnT8wy5HEhhXXVgbTYMSSzBaPESiBXXOnz5jpymtOtVD9F0n7WQiluYTkjf4nvmnaWgkCMEfNYcUOzU3deTFfTxbYdUntkz01ElnUH5MoEkTlfSIn6llqh8zqaJ8BUOo2Wu4v5OAlHCBOm5I6oRQ5arhXUBOdTlbZK_k3q61A3-T9L55x8F2N3ZgpdBbTToORZzDbW1U8wTPeybaRROZP3n2bo04djttfzREvysx2oW6LuoWOn0ZvtSJjPfAw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.393,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 114, \"sources\": [\"S-aef7\", \"S-7555\", \"S-4d9c\"]}\n```"
+ }
+}

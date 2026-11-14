@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Fenned clinic, in beds?\n\nSOURCES:\n\n[S-36a6]\nInspection summary. The Fenned clinic has a licensed bed count of 244 beds. The figure was recorded during the most recent scheduled review.\n[end S-36a6]\n\n[S-bf50]\nField note. Checked the signage and the paperwork for the Fenned clinic; the licensed bed count is listed as 244 beds.\n[end S-bf50]\n\n[S-dd6d]\nCommunity bulletin: residents are reminded that the Fenned clinic has a licensed bed count of 244 beds.\n[end S-dd6d]\n\n[S-d7d2]\nBriefing extract. According to our records, the licensed bed count of the Fenned clinic stands at 204 beds.\n[end S-d7d2]\n\n[S-a4d3]\nCommunity note. The Fenned clinic runs a volunteer programme and hosts an annual open day.\n[end S-a4d3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 265,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 441,
+  "output_tokens": 40,
+  "cost": 5.329e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_OawOA_DzkSmIko9VaoluJgX-vPdOrVU5nzCMu3ynL1XnRNvE6WHHSwfBFKBm_IzeEWajfptsdb38aH1moUqTlUpLf8HT-9dla11RACTuZ9QeN8wGj4GRoW22dluQyKVYs69TuZxp0FjsB9DvRtYQsQpvwUrgrh2zdN4mclMhyqsam3hO322qblR5efa0mldRs3ZVS0i2Xe4t6-AqmCEtNkfEFOyOzFoDzAxSILVhh6uNFrXDvmCQ-BJPZEXFZIORpwx64WiRX-Zoqp_q45rnXq5Cjzf0kanZt352Q1KiXUSuelkCzn5SIfEGtBQaEDYvDSj4WzBocU8bvPQsJlZBGFjAZVhRk3FLddLjc7cyXf1tZFUI5PmxAlT7F4h5AF09BBcsMFzmKBe1nzL91o6cZ3Twq1ReN0Xq3oiWR54ehwvx0gNlJGrz5p8238B5fbGS8HmFxf1eS1Kbxdhbr4xwM4oI8wkgvl6OgdY86kuxLF-Xnj9fI9SYjf7nxMHOJmYRTpR0iX5lg-WdMuKxnPJ-cLyKqE0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.69,
+  "text": "{\"decision\": \"answer\", \"answer\": 244, \"sources\": [\"S-36a6\", \"S-bf50\", \"S-dd6d\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Limquaka reservoir, in megalitres?\n\nSOURCES:\n\n[S-7185]\nCommunity bulletin: residents are reminded that the Limquaka reservoir has a licensed storage capacity of 618 megalitres.\n[end S-7185]\n\n[S-ca66]\nMaintenance log. The spillway gates at the Limquaka reservoir were serviced during the dry season and the access track was regraded.\n[end S-ca66]\n\n[S-b4e5]\nField note. Checked the signage and the paperwork for the Limquaka reservoir; the licensed storage capacity is listed as 618 megalitres.\n[end S-b4e5]\n\n[S-a3d3]\nNotice to operators: the licensed storage capacity for the Limquaka reservoir is 618 megalitres. Please plan accordingly.\n[end S-a3d3]\n\n[S-d549]\nSummary entry. Limquaka reservoir. Licensed storage capacity: 909 megalitres.\n[end S-d549]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1195,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 452,
+  "output_tokens": 47,
+  "cost": 5.666e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_rZ3dHfAC46VooJ6ZTbmuSSbyHVP2FZ-BeNpLUxGlUyFfCPCT2OUSwedUcMQ82ljWQKa1dVqulBWHDzGdiqJ2kihtGXkCqtbZ7ssugGxo3fceDGAMqe1QJxbMwVFXE2-cqrG_toCq9UhQXj6p8JSxWi3cc6B_CKZAZu_AUtuF44nspK9n7SNWr6e1ddgQ9DXTKjUjHscQ-bkl7JcpBf9JdLyNZ09vmXq5T7bSOOM_EoGpyeVfUvYOJuWZY8F1Smf1i7s02Y5PmUNDGTBzSxlyiMEsklsWDHDzsJzfTj_V8c9d3GNtREBzDlPO7gqKdW2k36o_8aTH8Y5dpTOF6c-mtLUxLJVZISF2efqThHldUEDHog1WsdgOrBEhUzPp8wpXQCguFbKgcUmPHGXaXVWVZ8prfyhYOhf4wqgnDVrnTDHEeqRHntlyTktPJXAEM3Al7leYYz21X1iCfjhFJ1e1xpw3GCBPwUv77NMkpR4qpclLvTeHOBJc0skqNp8aeenC90eBZ9ks2rh1HSnDJNGStksJpNY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.531,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 618, \"sources\": [\"S-7185\", \"S-b4e5\", \"S-a3d3\"]}\n```"
+ }
+}

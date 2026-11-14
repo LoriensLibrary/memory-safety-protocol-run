@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Thaen clinic, in beds?\n\nSOURCES:\n\n[S-be10]\nNotice to operators: the licensed bed count for the Thaen clinic is 69 beds. Please plan accordingly.\n[end S-be10]\n\n[S-eefc]\nFacilities note. The Thaen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-eefc]\n\n[S-e949]\nBriefing extract. According to our records, the licensed bed count of the Thaen clinic stands at 46 beds.\n[end S-e949]\n\n[S-0114]\nField note. Checked the signage and the paperwork for the Thaen clinic; the licensed bed count is listed as 46 beds.\n[end S-0114]\n\n[S-83bc]\nSummary entry. Thaen clinic. Licensed bed count: 46 beds.\n[end S-83bc]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-be10\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-eefc\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e949\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-83bc\"}\n{\"source\": \"S-0114\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-83bc\"}\n{\"source\": \"S-83bc\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 191,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 672,
+  "output_tokens": 45,
+  "cost": 7.578e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_r39ofJMoWOUfhWRDmMh2InMcT338g2jEGg4f0vhstz-ZznCD8CEBs74g88FS0myg70y4tRQn0lxY-MaJnOLRPiHLB_LAIr1xT60-Ui14rQJSQCQlyZcnA9kBb630i-pDcctvC2MmU02cZa-woK1v66ANLxIdftPs6clLQVSAIr_SnwMHKu0FEdTHk7vFEpx7hPcuYP0RYhKeehxLk6BQw4fV4GossMvRhEGylqi_tA8KVz6qQdWYjaCoaQXcqwhKKJxDqPyUCM_O7Yunw2-sXkPrk5ThZS7V-2Yld0_sneu3kM-E3DmfA8BkpCdOCii4Xk5D2dwRj-LQavOMNM3lwtavd6x0A99C2b7OHRYIeo-WpdvBB9a5tg1mHcDCJ7O2t54pAIBUA0fbP5O985x6vC0wmhrmFv8dtYxLjwWUaxwruoPb0bxA1QkKDJ2AyTlz2wK5AGJSUTosqM6plZuFMhK0WF-qagcQ9oa51z1R_EZRd1MkzlSCxVu4SzsQngLo4ybtKtdQfK18DA-X1-5kW05eeTo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.717,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 46, \"sources\": [\"S-e949\", \"S-0114\", \"S-83bc\"]}\n```"
+ }
+}

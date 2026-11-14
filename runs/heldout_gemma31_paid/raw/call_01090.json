@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Dulthaqua reservoir, in megalitres?\n\nSOURCES:\n\n[S-a2d2]\nVisitor note. The Dulthaqua reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-a2d2]\n\n[S-97ea]\nNotice to operators: the licensed storage capacity for the Dulthaqua reservoir is 696 megalitres. Please plan accordingly.\n[end S-97ea]\n\n[S-3d9b]\nBriefing extract. According to our records, the licensed storage capacity of the Dulthaqua reservoir stands at 696 megalitres.\n[end S-3d9b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1090,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 359,
+  "output_tokens": 38,
+  "cost": 4.523e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7_Ga9WJ8LBbDhpSFCIT1tYvrVK0ug-roe-ws3xUSctfWU5AS1iWkQ4UNO-NCIsYuezzpGD-Ya_Zog6Xp_4jrnFp4H-VP7OeYevppCOaiSqOYsHnVUAb0U3gyLAGgarmM64RHXgWMuFVRrgh_kIBcCXRJ61ff09UQzIFhKU5Fosnm7zTOYsO17pfjL8-5eFiDo4MLmzHHWESvF3WroZ8JF27-nIJPgJ1e-BeULO4Rbbu2iRNLEfrsKErqPx4-0atcjY2Xo2JTUs3Qnjk8dYn2hiFDHNDll4nWy8BoAgDFdiyA7aZ-aoeaqNC22SBEUEWf4LO0Vt080_Y4grbp09qqwsocOi1jfPuHP-iwHHKjFtYCNwi1vOwGtPt7alwHs7S60A8TC52XQm-yGwAqv7I38z9sAyjLiSEkDMEHv6eEj3MMLrD2FT38z209ZrmksVf5XDdUG3-FXcv8cGiVEBDNhgU7OCQg3M18zPjsTJy1CFGb_IZBUy84AY-mLlxFtlP4NEuLmLqOlHu0Bcie6YCXTRdOh1U=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.393,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 696, \"sources\": [\"S-97ea\", \"S-3d9b\"]}\n```"
+ }
+}

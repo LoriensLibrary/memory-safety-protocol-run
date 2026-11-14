@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Enfen clinic, in beds?\n\nSOURCES:\n\n[S-69c0]\nInspection summary. The Enfen clinic has a licensed bed count of 116 beds. The figure was recorded during the most recent scheduled review.\n[end S-69c0]\n\n[S-8362]\nCommunity bulletin: residents are reminded that the Enfen clinic has a licensed bed count of 94 beds.\n[end S-8362]\n\n[S-5649]\nCommunity note. The Enfen clinic runs a volunteer programme and hosts an annual open day.\n[end S-5649]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1430,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 350,
+  "output_tokens": 31,
+  "cost": 4.204e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Hn4lojrixrHTAshwWQDwY9XIHh6-3Fpm7-rAkx2ZmH7KhOyZzl3MYinX7skVgKsEWyN-EFkziFkoJusnVtEb6dZWOnHUI27bYcY9NZv1zwuP36-PwJJsthayymZ4PzFE45g27Hhmvcq15ccEA6I6zsmO_-rRVRXWL050gKlFvAZby-lUnQHO9UJmijyh1V2sEAdnJUR2mQCMWtPEFykBbqobm-HPq3mjIQuo012n3ze-FmIaCwce3I9v2K84YEilftQNGeB05dzt7d3NtRKps__pV3LVErFI7GfV-Q-GEWf9YHoU2aAfKMlwBUmmrQ4QsbCDNdrtr0FVJ2wipL4uYgkVrQpwx307RBz2FIpBuykVSrNpEv-tYBM-pl9WHZYqyU7Ohj_Vu8cjL5HIAwsySXH_Kal3SnyO810J1ZadmvNWDszjGAivTpKnl1aRlohiCe0FE52XsPmXAJG70jqOhnb38s27gduP8N130u0u5sKK-_8svVKNgUTl6sRf95ip1F7Pw8kOOPmYEd347TDh58L9dUc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.553,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 116, \"sources\": [\"S-69c0\"]}\n```"
+ }
+}

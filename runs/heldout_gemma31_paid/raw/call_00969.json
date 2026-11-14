@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Fenol bridge, in tonnes?\n\nSOURCES:\n\n[S-b645]\nSummary entry. Fenol bridge. Posted load limit: 74 tonnes.\n[end S-b645]\n\n[S-9ce5]\nLocal history note. The Fenol bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-9ce5]\n\n[S-a0fe]\nNotice to operators: the posted load limit for the Fenol bridge is 65 tonnes. Please plan accordingly.\n[end S-a0fe]\n\n[S-77dd]\nInspection summary. The Fenol bridge has a posted load limit of 74 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-77dd]\n\n[S-ca48]\nCommunity bulletin: residents are reminded that the Fenol bridge has a posted load limit of 74 tonnes.\n[end S-ca48]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-b645\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-77dd\"}\n{\"source\": \"S-9ce5\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a0fe\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-77dd\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-ca48\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-77dd\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 969,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 668,
+  "output_tokens": 29,
+  "cost": 6.998e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_UtfLNBiNkpMdIQTcG2YA6JwjEhOeyZgU6l61hVw6PgMKTbt-zVmXo9hAFXSaNTjvHF-jTeShZDLY6GPWTj-05AyWAGNhmd7_k5w9v-7aHcIUQWqZ8M8gbQYQbGxM_HiY0zA98rw2PgvhB73cNgI9RYRecG8fNzGlSv14QGseDQmsC0iUX1dpit3EOkRq5Xkbxh59e9zyHr9DVkSboOrAbcYml6KaS-tA7OyTUZkHH4JCVMl9CyDFImKfL6h06xvVgZbMxce70cWfoiPIprEXeFbdBfJ9JXyt7WCGNf74eK2Sr-lh6p7BPcaZwITGBbnq84I3v6cLmNm7IF1iJps4CYUMXs3uyBHR-wqxnewpAYF9i3R7witljCteS6N25bBKD0cqc1KZX0NIh88tYTCiEif1IDbWEN1g2AXnjp41xDdj-XP-hcE6D-CxX5Qodyzm3DiaDmdEinp7pHt0t9afvmLr4ohVV4vfjCGCfSFE2n84k07SQOXmlu9cfp-bV9Fy4MaYbRGMmb8WODWhZOLSA7xKNTg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.497,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 65, \"sources\": [\"S-a0fe\"]}\n```"
+ }
+}

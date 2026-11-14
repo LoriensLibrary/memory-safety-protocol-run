@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Velarool reservoir, in megalitres?\n\nSOURCES:\n\n[S-73ae]\nSummary entry. Velarool reservoir. Licensed storage capacity: 744 megalitres.\n[end S-73ae]\n\n[S-a619]\nVisitor note. The Velarool reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-a619]\n\n[S-ae39]\nCommunity bulletin: residents are reminded that the Velarool reservoir has a licensed storage capacity of 744 megalitres.\n[end S-ae39]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1667,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 347,
+  "output_tokens": 37,
+  "cost": 4.381e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_KTouwepU88xakgV6iadHPBOn5CPkHRLI3Ur8YfpQxjF60v4VIywTzF_SofVtj_4AtQSaoX1hOjBJ9gOgi_tznYQsfS_w8VEOGHysIyuwfZy7_geOnxe6AE9VZm_uGVCqNy_Qu5VnX7aPPt4AlRsapkaelTVe9eJOoKQMhAEe5IezuJV1yPWYvpJSgeqZPRpIlxPJ8jruLu0gr8bOqqGAPvfk3pMd-OmZEJXDvqjKmeGgwWN1oF_GkfRV7xXwKQNMRrYkLJumnjFAuVNgFRsAVq-V57TyLI9gqbinYOfZfNmOJdTS-c431xa26_Q8vMSveVheOPXGpipUGM20RwLfQrV_vERX3PJoiXM0q54ZnRqu0i_ZmbIqKTC3Xt9rMl0db0ELHciwG7DGegiEe9MTOk0FNrFuEIPzzIjZT6l1VlqDatwzsNqNoy1fg9QG62zUMYdEUrB8eRCiNsc6cNNZLf8rT2cUbqSXMUEN4ymuAEcNib1jnSiihDLHCyz9rwiyP9XosAykUY4Ulu_NZuMGz2Nu6cc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.627,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 744, \"sources\": [\"S-73ae\", \"S-ae39\"]}\n```"
+ }
+}

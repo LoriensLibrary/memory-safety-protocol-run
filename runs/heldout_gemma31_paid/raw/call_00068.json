@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Vordul clinic, in beds?\n\nSOURCES:\n\n[S-0375]\nCommunity note. The Vordul clinic runs a volunteer programme and hosts an annual open day.\n[end S-0375]\n\n[S-e777]\nField note. Checked the signage and the paperwork for the Vordul clinic; the licensed bed count is listed as 156 beds.\n[end S-e777]\n\n[S-e86f]\nNotice to operators: the licensed bed count for the Vordul clinic is 156 beds. Please plan accordingly.\n[end S-e86f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 68,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 354,
+  "output_tokens": 39,
+  "cost": 4.512e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3zctUnCJsNDp09yrhxLyYS9QWvwURHwThGtvBc6w-gnyaNQxICB08G1JtxMTdYykrJL7rY0u-hz4cY1bipYLiqCb7y_SwPxpFmM9Z1pXfNSJnrxKSHVUDp60zTfSAOVv2OLwi2URdQughC0Od8Kdx-WdVuWPOwYBCpuFIzeTrP68Pq1icCoEqVT3l9RLyoWqVIpMBkYlqS03SSgDxvGxuBXCpvDDou16HP87lvuIwDeWDcd7VaVyxwwVb3-H6In_d3-FpcUYWwybF96o61-631N8mCUPPtV0xxRnSF9G_i80hB9Hy-gIlkN8cEImyxso-1xd374z2FpTTm-ir7dazHOQlbiwEE6iNdh30hGf3EZH0mfdVmpu2lSPhqDwzCj6Ap2JAFfz2SYsSV85sXJdVzwgFYCiN0lLkwgGaASlekTbHHL2jmMa1dlCY-sM1WL8ISrvBRf9hUihymqEga5orgqjr4wuEhh5slM0Xqfj3IR_ua8BuciawingIF7RwddPb0WL6WG5IM8BURvZEiLwEaxFSEU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.524,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 156, \"sources\": [\"S-e777\", \"S-e86f\"]}\n```"
+ }
+}

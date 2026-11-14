@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Fengri bridge, in tonnes?\n\nSOURCES:\n\n[S-3b7c]\nLocal history note. The Fengri bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-3b7c]\n\n[S-2bf6]\nBriefing extract. According to our records, the posted load limit of the Fengri bridge stands at 57 tonnes.\n[end S-2bf6]\n\n[S-9215]\nField note. Checked the signage and the paperwork for the Fengri bridge; the posted load limit is listed as 57 tonnes.\n[end S-9215]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 868,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 351,
+  "output_tokens": 37,
+  "cost": 4.417e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ILZVNBc5vKGC_kBZx7dwZFdrJYgXaawl3McLsT2lrAVjVP8HrYfvN80kR7vfSUttJbcHiYFrV3cVMXo4IBeZ_vUykXo1kclHPkjNr3wHfi-d14cPkMarpEV-MAKM5mTzsHHgzQirKLUCbDSZN-O2bXXS_QB6uv_hknnfz2rfMQVpLnAqXd4P4FZFsLGVLYcaGyUz8YH_Ruj7T215z4H0OfSfC12uguyyakFFWCrCrQVysOeHOylHSORflV4gPs5vT3HU1e2fCDaI7-gIPOyY2qj71tJZqRAhKz3vGVG9WhEYI-jriAe2-Wx2SmuwzxOL_O-udNoo-r_zWWbMwZCvvEo92uPzWXP_eY7MjU1rT4yw78TQwW46mNOOGNweNMRTCYsw2Qm8op7cR_DR4n0PRtYjAdLWrLHZ0QK6gI4vheG-SeM0KEKJVxIJULB5MQpDcYIoRNTanYk3gHYZtlQHMoyaBIosoMFqhseil6Dsv1zHXXST3kYAurD4-1esZiMDeevgJLq3WgfQPz3ezhN2Vs-kjk4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.617,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 57, \"sources\": [\"S-2bf6\", \"S-9215\"]}\n```"
+ }
+}

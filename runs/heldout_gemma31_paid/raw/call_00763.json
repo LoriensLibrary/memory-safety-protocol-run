@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Quagridul clinic, in beds?\n\nSOURCES:\n\n[S-ecdb]\nField note. Checked the signage and the paperwork for the Quagridul clinic; the licensed bed count is listed as 208 beds.\n[end S-ecdb]\n\n[S-539c]\nFacilities note. The Quagridul clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-539c]\n\n[S-8106]\nCommunity bulletin: residents are reminded that the Quagridul clinic has a licensed bed count of 208 beds.\n[end S-8106]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 763,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 356,
+  "output_tokens": 37,
+  "cost": 4.462e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_8uXju2sZurNlYf6TjzMd5X5AbNKueniwX4_qywQlgciLskDzbsECiYFz__yma-f6-nfGo1Ea6AUCCS9NRY36HgrgP0Jy6bBTkk-bmHVUD2q71t-C57CVU2b2q8vM2scGFgj7WtPVReKqqobjsHX--vI9cNcq2gAEsUWwMOTBrVCNvBFKl6wpVrR9tj9CvfOoHduLUdpqrtyvL8raTAdr3m6M89mfETR5Vtovy3anCvkMVBKm06Mjb6MuxLws55G8DgPr-INHAtBfxzxaeLpYVoCZojxh0o7066vnjIoOp0rPzvA3ahzNs3tOjOaoGLsYkuCsrI4Oxo7IxtlW8-NMuGTSw3cKq0F4aH27WuifjFZ5J-2RM1q8krvkzu0uJYxjEFZm1y4uDAsI3exATp57dw5sGYG0AZDRTucJnmYfr_AlYn215wsUaWv-g2rA7r8_5XL7qCrKvZqySwWGNWY19CclBMs2FjrSCdB-2-qWImYOywYWWlkFOwlUSE51MKfr_F8pT2JM5neRTPNgUJ0MsdmtgYk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.812,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 208, \"sources\": [\"S-ecdb\", \"S-8106\"]}\n```"
+ }
+}

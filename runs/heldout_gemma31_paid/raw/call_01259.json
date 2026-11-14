@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Mararo bridge, in tonnes?\n\nSOURCES:\n\n[S-13af]\nCommunity bulletin: residents are reminded that the Mararo bridge has a posted load limit of 54 tonnes.\n[end S-13af]\n\n[S-446b]\nInspection summary. The Mararo bridge has a posted load limit of 54 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-446b]\n\n[S-ecbc]\nLocal history note. The Mararo bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-ecbc]\n\n[S-f43a]\nField note. Checked the signage and the paperwork for the Mararo bridge; the posted load limit is listed as 80 tonnes.\n[end S-f43a]\n\n[S-f676]\nBriefing extract. According to our records, the posted load limit of the Mararo bridge stands at 54 tonnes.\n[end S-f676]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1259,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 438,
+  "output_tokens": 40,
+  "cost": 5.302e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_O_lo5p1nB1qpExHI32odC7mAOM8bV4KWkSyVnsPYu4edcfZy2t5Mk1xaJ5w1dgb126442KFBTkepPH1-9NhEKG27xSoI-AjsYyHR3WAIo58O7RhEUkV3dP-YO3LmHI-aj-Os66GqHaXLgEry_mltmNGxqTHgxhaatpszYfqwjRHhpcSOtV_vjvFhJWDGlVj7k0cvGydNKnNx21T8y5JNxpNWB7irof8xdT4ZkBGXW6X3ZrDbbDoswOfv0ZqTNmVR1C2A2mt76xefQNCws-esvMEKM4Mig8Gkui1JOQxaiuVrG81120zsukj5weIjHD8R1CI0u-kKnIfxauorPG-CKY2LIOu27MLvSXdaVUBWqrQodeN0R9LeSfbyCakPz_TFskfwbqucNexK5ZMwn0YE9GLFFqBy63eFK3Igd8U2_w6hqVBP9E9likDL2T7lvXlJ1Ntr8wMLLw_HILHOHvCw_gVqUyAL12HBjWSlgvqLmau16bOmgNSZJDB8atAlTNv0q263hfh5dgL2U8HSovCLEQg6RLU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.515,
+  "text": "{\"decision\": \"answer\", \"answer\": 54, \"sources\": [\"S-13af\", \"S-446b\", \"S-f676\"]}"
+ }
+}

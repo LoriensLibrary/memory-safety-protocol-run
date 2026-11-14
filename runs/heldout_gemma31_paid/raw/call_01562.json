@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Voryth bridge, in tonnes?\n\nSOURCES:\n\n[S-e43b]\nLocal history note. The Voryth bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-e43b]\n\n[S-ca8e]\nNotice to operators: the posted load limit for the Voryth bridge is 28 tonnes. Please plan accordingly.\n[end S-ca8e]\n\n[S-803f]\nField note. Checked the signage and the paperwork for the Voryth bridge; the posted load limit is listed as 28 tonnes.\n[end S-803f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1562,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 353,
+  "output_tokens": 32,
+  "cost": 4.265e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Bme1mzElFxoFD8HGWWJKEbNos-OiCZ-uD2z1FTikc-sQHB2QET-I1K6QDgAbV2FtjfkHuisq3GHQchzDNIDEAE3ijlg74tiC6-HI0nF4PD17R9yniDj1G8_Ot0wWzQ--BTsrwU3rR7wSWVkOn_SDjtSE6tJ4ygrEOvToNMXYn_dF6dXPVcoYEGS-Fz5h-Nb4WmwKm8Dmgvx3jCyfm6bq9wHd7oHHGSaLhO35yOn-5XzucVSVxgmfQyj-lYfo8i-QIMzSsw4mSlqMjVFrt5WL99bSA1D-482fvlWyJr1AtevKoXUjfDJSD7lsMo4rgDfSxKv9-TaZHpriUa2xfLRSJ3kUQqiqX_OpWi0Vsj7ojG0wFkb4Ohv1190yFS0Mb4RHfYIWuLMk6zVEtvsas2bpk8EIgfGWhMyYdyz9hI3SK4yhod8fBrx41K_t3X9qyYWQsgnjR6Sv7BGRPSGBOwnc0k4aBH1Y1jyggVxWdZYnJ--SzddceeQMlZFJJkZ7OforoEA8e8LAlKB3I3kdEFACDLeWNrU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.248,
+  "text": "{\"decision\": \"answer\", \"answer\": 28, \"sources\": [\"S-ca8e\", \"S-803f\"]}"
+ }
+}

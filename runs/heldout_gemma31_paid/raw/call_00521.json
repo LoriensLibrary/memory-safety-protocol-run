@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Marbra reservoir, in megalitres?\n\nSOURCES:\n\n[S-3ad4]\nMaintenance log. The spillway gates at the Marbra reservoir were serviced during the dry season and the access track was regraded.\n[end S-3ad4]\n\n[S-811e]\nSummary entry. Marbra reservoir. Licensed storage capacity: 431 megalitres.\n[end S-811e]\n\n[S-1067]\nBriefing extract. According to our records, the licensed storage capacity of the Marbra reservoir stands at 348 megalitres.\n[end S-1067]\n\n[S-d467]\nCommunity bulletin: residents are reminded that the Marbra reservoir has a licensed storage capacity of 431 megalitres.\n[end S-d467]\n\n[S-befe]\nNotice to operators: the licensed storage capacity for the Marbra reservoir is 431 megalitres. Please plan accordingly.\n[end S-befe]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-3ad4\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-811e\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1067\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d467\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-811e\"}\n{\"source\": \"S-befe\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-811e\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 521,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 688,
+  "output_tokens": 31,
+  "cost": 7.246e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_a35WowRslmTliXGwhiQju8h_bR8kNdvvtk96vsPRV1kHk7k20ClOdMm0sjPDcaitRgdclT6t6nUFg0YWo0gwna5p94sxI0YjChqN-vJSAeZUkAi3XVCAkJQK7Pen92h0wazUUxwMqDGvSYf2gsJPV6NDowJmq52067dmJ7KaCqXamftARDqTijG1nXTvhjyCw4GSayR6BzmMJ7PNB3-QaE0ZE5b2lJ-aTQIzNO56OsZSUZRi8k9orS0sLnGQGONAXg2nvQXoird51qxzJ7x3SgxvvJb_4-T83NOv6DXz7U6I4iQWbfQCYy1gejnThfJjoU4puXs9afmEj65ELvmkGThP7zQ0CtSNhG5cKHnS3plVr6Aiy5pGMiUy9U4OjKtkytcEYTWR8gkjD7Qmq58as3nCS8HejZzGw1lE5dI-IyZnKAip4lkLCW_-G_u5eUA_QXMmVU_cc4qnsEqOao2Lzzb4LOq4BQPIkbHsxYnrA1JIMlIrj4nmojWqowhtAqCsWHYRSD4Xiy3Woil63ZxUkiClQc4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.622,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 348, \"sources\": [\"S-1067\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Pelbra reservoir, in megalitres?\n\nSOURCES:\n\n[S-02a3]\nField note. Checked the signage and the paperwork for the Pelbra reservoir; the licensed storage capacity is listed as 823 megalitres.\n[end S-02a3]\n\n[S-1abc]\nNotice to operators: the licensed storage capacity for the Pelbra reservoir is 823 megalitres. Please plan accordingly.\n[end S-1abc]\n\n[S-9603]\nVisitor note. The Pelbra reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-9603]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 252,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 355,
+  "output_tokens": 37,
+  "cost": 4.453e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_eDsBwbRfIqTlpbfEwpsmQY5RL7eR96Vc9pA13Jt4JVbSLArXyR-lwxd3nnDRayOf2RKeJ0RyKmp726yeFBaornciwx5oiEeB4SSMyEHW5bxb4OxGnT4tryOEa8nIsiWTS8PGk67NB6aOoxHURyZrRnTltwSlF5tQ1paQL0PBvW5S7RYX37_1ZuzMBLnr3ViGQddxXsN_JvB-FbgcC3h9V--KBI0o1xmOl3wqxPFdfihxyBR4ZOCc05BAY8KMICstxkAlbY09Clj2cTfFnQBeTAObCo90uI2IYS1eDiNnJ5YwNzVBQ5oX31WrQ401v4Elzf2ciSwj7KJ6dGTcep90qylFvc12uu-Rp2RT4037nVz9-4N2TyFKOdNa4xPFEgai7LpuhDsmrhZJsCTR00WIJ_p_brK3BN3bQrKRU24ZjYnDHCYPtz87YfJZp_ip2-zVn0Ce-qrJtBUcv2_3_WuqTtJjEC0Mx5mgQ9FNB8va5h-28HgCA2QmsatI6m59CAfIQZ1-UD8xtZdLnA1tHPuimT0-PXI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.498,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 823, \"sources\": [\"S-02a3\", \"S-1abc\"]}\n```"
+ }
+}

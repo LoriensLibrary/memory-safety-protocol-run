@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Fenixyth reservoir, in megalitres?\n\nSOURCES:\n\n[S-6e79]\nMaintenance log. The spillway gates at the Fenixyth reservoir were serviced during the dry season and the access track was regraded.\n[end S-6e79]\n\n[S-3793]\nSummary entry. Fenixyth reservoir. Licensed storage capacity: 309 megalitres.\n[end S-3793]\n\n[S-e170]\nField note. Checked the signage and the paperwork for the Fenixyth reservoir; the licensed storage capacity is listed as 309 megalitres.\n[end S-e170]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1500,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 361,
+  "output_tokens": 39,
+  "cost": 4.575e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_DZNPiIBm3KtEAfRhqqyqXz4ffE-TiD8svdUkatYIC_WVNMK5LUImI9TXkE8QQyyfjbN-UIliWzd2uOYi_4SBTEKilI6hjf9Y_Vq-BMN7bq8r_brO2xZQFPKvMBZHlS3NdDdkTKZ_yrNnm2ltgDSxaPOMm1pmK7lOey6E9SyYcfj7piTcwMXOk8llYaauRzD2e2ApQDGoF6j-_rRKj6GnMgCMQVUb9l8FbcohsQvRpLtttqSF48BwXud-6ElOxo8UUG6hVMklptr51IKSunbDMuQzVNTPFNgTP4xke9kgNWOIJ8rnKYs9jVYlDGNgWLNlhb3tG8kFsSpgZCYUu66CATS00a06xSl6aG0Dh26vZ7zdRqFL7AywkJsN-GI9105hC8xidVQM7HHptNgH2C18gltC6KjJxGB7xZgkQIRmswu2Dt2SoV-Larxvp3KptqyGuYI-yFdtZNqGu5NvKG9C5W-3dWMnHv9a2sSvB-f3B3bCghh8Uzb_0zGs22_gEwVbe0k1OohXG3UngoLZGd1v-UfvezE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.629,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 309, \"sources\": [\"S-3793\", \"S-e170\"]}\n```"
+ }
+}

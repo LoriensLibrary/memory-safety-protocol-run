@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Thagrilim clinic, in beds?\n\nSOURCES:\n\n[S-e601]\nCommunity bulletin: residents are reminded that the Thagrilim clinic has a licensed bed count of 60 beds.\n[end S-e601]\n\n[S-979c]\nCommunity note. The Thagrilim clinic runs a volunteer programme and hosts an annual open day.\n[end S-979c]\n\n[S-c6f3]\nBriefing extract. According to our records, the licensed bed count of the Thagrilim clinic stands at 60 beds.\n[end S-c6f3]\n\n[S-6415]\nInspection summary. The Thagrilim clinic has a licensed bed count of 86 beds. The figure was recorded during the most recent scheduled review.\n[end S-6415]\n\n[S-704c]\nNotice to operators: the licensed bed count for the Thagrilim clinic is 60 beds. Please plan accordingly.\n[end S-704c]\n\nPLATFORM PROVENANCE:\nSource S-e601 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-704c.\nSource S-979c claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-c6f3 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-704c.\nSource S-6415 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-704c claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 363,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 672,
+  "output_tokens": 30,
+  "cost": 7.068e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_xWh27ZW25hIzJArCmM3cD6hSX3FZ9Suelj1slklEI25CEAEh4e5wAC6mJoV5YevFZVRn03JRObFsWYHOjJgPVFxmT06WPLMEzwLkm-fywpSvaH6O2xcvdoDpwj-VT6_zU5Q-cwNbIbvdb5Ymo8dMyDb5W-N6NrwyeOYiH4P1m0cG37miULxrZXtcAyab4RUypWXCYTxQMKg5PjV-fUyOQeH9F8fgT376XReRPYSjVuPgenVK5qPcCjhjqiHv8XjkFO1CYoWcaVo92064UQfErOsSNthtTIGDRyYvHFXFsHo3_bAzkLnpU-tn9v-w7G2GaxIyjL4RXp4rYcqh2-VziKbUEHz45zxOVQHhb-_0ARmErujciyWInjzGP19uydts5Mwzp3AAp87DlAZokj6k4QAVa7CYcdOhcc4v9wVYJEIAxwV4EvqsYSIPNEMHwSS17D9-9llGjPPxf0Dg0oNG7hGz8OpzvpORc4rG_sDCnbkeIHtj2CxD5SsE2r1m32QzUsoo3C6BjBNskNBLMMZ-s9yDWJ8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.575,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 86, \"sources\": [\"S-6415\"]}\n```"
+ }
+}

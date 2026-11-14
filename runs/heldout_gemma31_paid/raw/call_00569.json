@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Arosen clinic, in beds?\n\nSOURCES:\n\n[S-81a7]\nCommunity note. The Arosen clinic runs a volunteer programme and hosts an annual open day.\n[end S-81a7]\n\n[S-348c]\nCommunity bulletin: residents are reminded that the Arosen clinic has a licensed bed count of 172 beds.\n[end S-348c]\n\n[S-4d9b]\nInspection summary. The Arosen clinic has a licensed bed count of 172 beds. The figure was recorded during the most recent scheduled review.\n[end S-4d9b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 569,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 355,
+  "output_tokens": 39,
+  "cost": 4.521e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_1xzfjwHMvdyzvN-5-VMgSusH7asFKirxAFZcpb2Hr7ld2m11iRJgWAU468gzkXgzWOsCiLPUO_phR2xT30SDix_pc6GoeJ4WJA_qyMmzDToj2S5IpIYdtFm2UVPAnCl89M1hmMXLIaNYGLvoQSUZj6gspr-vJAMDn1BsYy4gSgjq9ka9tqKgjznjnL91WQ87tn6KKLa7SMNo9ey-sWfUhhkqbqXwde__DR3cUB8YWSVahbFyGHHjicU_w5zCB7p5pwAZW6yxVsjcGACZYaukXBM05fqs4gSP5s9z_DXwj6rKEskxe7I-60IvT6m6NWIpY_E2OPATZIjlkACru8ZKYXXh045-CTVZfCbwajT3YsFFd1HLfblqhbqZVenzIsaQ3XSAllj9gXDYJ-GZhk4jXt9S-o_Fnqt2bej4_Nva9492j-CHNw0Q9K7rUEn0B9vMeUVX8pz_iJmglmBVVpUFNp5m8WbBpOVeJPx3TGnrqCeFz6XBvtCkqCZImZouOD9bnfHXco9hd8xn2e_xVyo8uftxBBs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.598,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 172, \"sources\": [\"S-348c\", \"S-4d9b\"]}\n```"
+ }
+}

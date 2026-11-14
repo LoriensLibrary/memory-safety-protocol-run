@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Griesh bridge, in tonnes?\n\nSOURCES:\n\n[S-756d]\nCommunity bulletin: residents are reminded that the Griesh bridge has a posted load limit of 70 tonnes.\n[end S-756d]\n\n[S-ec14]\nMaintenance log. The Griesh bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-ec14]\n\n[S-e2b9]\nSummary entry. Griesh bridge. Posted load limit: 70 tonnes.\n[end S-e2b9]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 388,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 343,
+  "output_tokens": 38,
+  "cost": 4.379e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_BWIg4DO_hxQCOuHygxSE-brzrLB6HBLS8doCVp45YnbT4U_Mnpe17vBXFh4UoGtxWNbWAQdmjbc4nLUc4fxIgfCa2dc1u8HFlXClHYg4Ns5JgolXl0C2SMAGfcTSEkLMTck37pkcL7peXZcB_7F3ckHFN04HeLxo3oBg-RXsyFu5eb68l_77oae-t9vphj6WPtVtot-djSaaI9ip7EnOHBvlLZnu9n9k9iH-z2spC-8F72yOvKtBpHf32pWOFvKGoFyI4rtv273eFQc6Yni4ouHTI0vJkPqq1nxLW8amTw5d6H1yudwiJuXqSf4OiXn6RAH_cUSFaFP43zyWfZ3HiQgMtii4qXY0_gF4Wv2k9cXxlN5e-Q8mqjUw0280Lc5_ONVLuLEfUurr_BHoA_klypVx0pfAvcRTnr6k9xblg-dUTINlpvUuQg4zP472Wi4DcmFUZicKaK6IbPzZLVqQ7SSJB_RCYPGOUD-GeHLEtso4N7D1eNjtXkWmB1l8zEwzkn0q2PZNsgiP9-wisMnepOtQGhA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.443,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 70, \"sources\": [\"S-756d\", \"S-e2b9\"]}\n```"
+ }
+}

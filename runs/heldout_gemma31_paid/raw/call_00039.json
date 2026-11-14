@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Pelqua reservoir, in megalitres?\n\nSOURCES:\n\n[S-0377]\nVisitor note. The Pelqua reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-0377]\n\n[S-0a99]\nSummary entry. Pelqua reservoir. Licensed storage capacity: 324 megalitres.\n[end S-0a99]\n\n[S-9480]\nCommunity bulletin: residents are reminded that the Pelqua reservoir has a licensed storage capacity of 413 megalitres.\n[end S-9480]\n\nPLATFORM PROVENANCE:\nSource S-0377 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-0a99 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-9480 claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 39,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 476,
+  "output_tokens": 31,
+  "cost": 5.338e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0ez6GxibjZz4gI9TNBrlYFZ6cNbs6h14xVYwmYX0WlXW6qXCczT0QB3VboO_74JWaIJAG6aptHSjKWfNe0sF8MTvYYxYZktT2WlZAqfnpcQLoRCAe3giivfrv60VMErpA9atTWIHUALvW032XLQ63iFEmGoYwTA97AUm5fSmptQJ__rCAcEPa2gi_EO5qeQHm2RvqOjfdYAjCC2GcO_sfVfEVD_RXMNflOy73m-1JaYPjWHz2NZZIthi7PG16yQ38hDDwayIO4Tb11VHCvzUtiCuzxCQpm7EQr0fy08kKAeSnaY15BTVnNeXItNV1hqY8ZiDs4JakoVwlFRHbjb0mcz-In9qA2jdjAA0s9C8fyAmVT0PP4cmcqYdqcVTPKs6oni9QZ1eyiVZ_RhloRC5gHjWnjTCMk12lfr_ViAxFulvHgIqPF-eitsgejkHjBx4MBuHNtVyFXLzjmvsXSwkIG6QMFfvYj3_iYzrgMPg2ZH18wFvf9xCGAIx_VMSsWmyaanvpU4EhOmpG6NgXmorhonA91s=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.706,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 413, \"sources\": [S-9480]}\n```"
+ }
+}

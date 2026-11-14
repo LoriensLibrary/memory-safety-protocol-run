@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ustaro bridge, in tonnes?\n\nSOURCES:\n\n[S-0726]\nMaintenance log. The Ustaro bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-0726]\n\n[S-4ad7]\nNotice to operators: the posted load limit for the Ustaro bridge is 38 tonnes. Please plan accordingly.\n[end S-4ad7]\n\n[S-3fb8]\nSummary entry. Ustaro bridge. Posted load limit: 38 tonnes.\n[end S-3fb8]\n\n[S-bbce]\nInspection summary. The Ustaro bridge has a posted load limit of 38 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-bbce]\n\n[S-802e]\nBriefing extract. According to our records, the posted load limit of the Ustaro bridge stands at 30 tonnes.\n[end S-802e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1760,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 434,
+  "output_tokens": 42,
+  "cost": 5.334e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_kXFBBHHEE5RuzMbxIIt7jI4ObhT3NV4XpDOtVD4EcrmY1L2ymC73KHwAWNbalCvnDkXKMYgw0yk4k2tPvsKTU9T_7MrmFM0nCwiak_k1brd5t3X_3wE-0NW1giPzMHa5YYFSQnxPwJyG-3GfjJz4SwzIWIs-hNXTY2Tlc_vHokPNUm9QkfvNigXH490_G3a3o4HoWDn9Ip7hyGBWl0HNOYJKjj8D8PqElmyCKWWCYhfilaqR5dT5V_ZTgAApFKcjPEDOiIF-DgRA6PA-GtopEwowe91-dExdDcuIbcBc_gf9rqfnzG6YqXnjDUtdmCuBCFuBrZv9_SG3o16w0W5OXQdmlTjeRdojSvKGG0GNTvcoyBJR_ikesxSeME8RGDJ87eStLikaip6p4K0sleHEbri5hthdsm8sz8duynALi3cBdkv_nARoiYBXCfE8aPjyP19Z-if8D7yz4kt70Gst6Qpu2Pb7wWI4uuzDPeTOz4jLx0TqhrP1S2nDIOOr2613k6cnFxtWeJJ7bB0yk3XityL6ZKI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.505,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 38, \"sources\": [\"S-4ad7\", \"S-3fb8\", \"S-bbce\"]}\n```"
+ }
+}

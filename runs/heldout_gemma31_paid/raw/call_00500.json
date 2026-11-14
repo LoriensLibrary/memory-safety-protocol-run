@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the posted load limit of the Marust bridge, in tonnes?\n\nSOURCES:\n\n[S-a00e]\nSummary entry. Marust bridge. Posted load limit: 63 tonnes.\n[end S-a00e]\n\n[S-ca4e]\nNotice to operators: the posted load limit for the Marust bridge is 79 tonnes. Please plan accordingly.\n[end S-ca4e]\n\n[S-51c7]\nLocal history note. The Marust bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-51c7]\n\nPLATFORM PROVENANCE:\nSource S-a00e claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. The issuer has retracted this source. It was not derived from another source.\nSource S-ca4e claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-51c7 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 500,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 467,
+  "output_tokens": 29,
+  "cost": 5.189e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_1I6RULRSOg5UeDXlXovVbTuo-9TN0LGcNYITHo0Ph57UWta9b3fV417zDh_-FSVRMAEZLmRmGqxrUln3AlwFKlCAr_YZASeEoFiaMKSAk8iX6nfMRzqhpuczZqZbK8JFcqxTmwudO-47G4U7LtZZsa4aOZEseOz7IFpq-7szOmfglwiGp7Rq9Pe7s3Rr6iF5d3lN7x5E6-tvimAPRlv4xMQ-eeDWqbAhxkLf-bGwxFaAiqv21jpwW_F5OEJ6iXYfKjnf40mzr98qrVcI9TcM7OC-89OwRrZp0tfs6llb1wXHsxU1vnxczdc7jBKMOQT6UciWmI9Ok3POBO_9uRT5SIhrYhkpahFCyMT1NKqiruvXbacMaWf7-7plL1BMpGqW1I1yjuFrQYgFeN_jFNWq0MRc9yfJMCP1Lfr3lE2KVIugYp8Sp0nDQZbT0tgxBjM2n3UyMqnddFXCJp5lAgn25zI4RxCmsJeMKG4pbc8xQrTuNvqKs3OX38PP5JRK0-edDhL67OJ79NUaNHfKE5Tbc953voU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.989,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 79, \"sources\": [\"S-ca4e\"]}\n```"
+ }
+}

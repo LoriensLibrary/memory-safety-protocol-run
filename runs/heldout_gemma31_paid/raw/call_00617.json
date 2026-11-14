@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Velenbra reservoir, in megalitres?\n\nSOURCES:\n\n[S-e335]\nNotice to operators: the licensed storage capacity for the Velenbra reservoir is 308 megalitres. Please plan accordingly.\n[end S-e335]\n\n[S-9e90]\nSummary entry. Velenbra reservoir. Licensed storage capacity: 308 megalitres.\n[end S-9e90]\n\n[S-7d16]\nMaintenance log. The spillway gates at the Velenbra reservoir were serviced during the dry season and the access track was regraded.\n[end S-7d16]\n\n[S-2b04]\nInspection summary. The Velenbra reservoir has a licensed storage capacity of 308 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-2b04]\n\n[S-1360]\nField note. Checked the signage and the paperwork for the Velenbra reservoir; the licensed storage capacity is listed as 434 megalitres.\n[end S-1360]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 617,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 461,
+  "output_tokens": 42,
+  "cost": 5.577e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_IPGhWH6_Nixvk9eLW-aNGidd3P_Jfu2_xOZN9QXDLR_RKEMjDrE-YvVL3B8uzRgiZITbWMxNdgmUn6Za_LhJBZ0w1bQYVNA51-12bRTiNYZ3l8T6o_U3Hi3_y0xEYZ8CN3WHPr79LfBcXAFi_hbtFsvsVKtuNtz1mkN0oGjDjHiaE-slI551RNLr0sNnriS54sqTK1lhgqhrerA5BwF1uX1jEjBP11oCNcEaTe3ga_frzyNhMLj7CLxg9j6oHKZdltO2d18d8SjeFDTgeJjto-CXQ3OIpaEJAOZXFY02LAwf6MwTnyIvJIAX38Gs-vkQsXLkM2ro9k_B22LcnvjhtLcaiwjr_-ruuKMMfYQgTiHf7ZvWW3RLWurrTgykoKk-RX9KdgyMAoP2r3Bpalwu95Xqqdf5LBOz03P_fnRVMNn-xPqGyOtofG88RdlPHtjU4i1Ldg2dLKdl86_WQA_i1Q9lwq4aFUThq-8C46PBQggv14LL1in_2ny85nRghI7Ys14hCB8lvTiZuwu4zDfUfqNZbSs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.603,
+  "text": "{\"decision\": \"answer\", \"answer\": 308, \"sources\": [\"S-e335\", \"S-9e90\", \"S-2b04\"]}"
+ }
+}

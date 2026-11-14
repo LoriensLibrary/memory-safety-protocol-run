@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Veleshlim reservoir, in megalitres?\n\nSOURCES:\n\n[S-ae53]\nSummary entry. Veleshlim reservoir. Licensed storage capacity: 913 megalitres.\n[end S-ae53]\n\n[S-4fb9]\nVisitor note. The Veleshlim reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-4fb9]\n\n[S-b181]\nField note. Checked the signage and the paperwork for the Veleshlim reservoir; the licensed storage capacity is listed as 740 megalitres.\n[end S-b181]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ae53\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4fb9\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b181\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1286,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 508,
+  "output_tokens": 31,
+  "cost": 5.626e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_36qAhxtDS_U8Cev0_mHBedZ9LKJEj_oB2aRKoDVsVmCDxZ35iZ25dTftTxqSQ91EQuYj_jAbgHkhdyqU_faQnKqKKpqfOVROFqVVYfQqCQujZv3XqSCBi12QDEgBM1c-1bK4gFXCNZlfa8__QAPedU4ry5035p9JjqVORhVf4Rk9EdENpLmuTXqMoF6f0wUFw0C29CV0WgkqX8VNZpqQ279lx80zf43TSOAJ2NBHth8aebsmpXIy-XTZ8jw-kaILJZVGtAkvVUP7_DCehjxfU9j1xEQc7umbFxHjM_6OsJfyWP3AlchltNiq5lYjw6Zq3TskXwnkaAeQrug-RUVfTntwxxUlMZ2jvaDZ9yQrB_9p4opACUhZ0Imq7Po7_7jzcFJYedEOFdDDpN7gdMYnNoUNblGcBGfCkB0KnQEprnDv0M4cipOBH0MT6Hw5wKeHa_8wi9nDV3kV9E4XE3KVHDIPQ_j0wayO8Vm1NCIFhYbv4_K8PkIDJP2qcysNVFZPfTU7TNIn7foYf2pu5WBEOA5aKcg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.736,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 740, \"sources\": [\"S-b181\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Martha bridge, in tonnes?\n\nSOURCES:\n\n[S-8187]\nField note. Checked the signage and the paperwork for the Martha bridge; the posted load limit is listed as 44 tonnes.\n[end S-8187]\n\n[S-236e]\nCommunity bulletin: residents are reminded that the Martha bridge has a posted load limit of 44 tonnes.\n[end S-236e]\n\n[S-41b0]\nNotice to operators: the posted load limit for the Martha bridge is 44 tonnes. Please plan accordingly.\n[end S-41b0]\n\n[S-a7c9]\nSummary entry. Martha bridge. Posted load limit: 51 tonnes.\n[end S-a7c9]\n\n[S-dac5]\nMaintenance log. The Martha bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-dac5]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1085,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 421,
+  "output_tokens": 46,
+  "cost": 5.353e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_G14Rls7ulaGsQM4umhVWR_xsJz4KTptNLqm2fFx5FSAWCHpdFV-2S8nTt0j7F9fvtbh16hEnx9kB0X_K_3KruINk7W_SdANEeHoYt68Yjhqb_AQoxGwDN9HzeuJ79lHvFKtmbz54cvVGc5HL_QwgTJS2dUeveX4RfK2_vkUtwVEB6u450gcNhm8M56NbYWkyRuLOYSOjg1-qcUhT_pfkdJz3psRwiju7Y--yLbLu4-HWpDcCc7AJoZ5yfnZ-HeHKoEmI-bpVlPX9zyrr2vgZLcNku4CLqRiYc-Uad0fsjchKPaiBJC0tp2Pw6CX2ec-bKWTFvtGyIRBjsb-5LuMSXZ01_DmiitdEQB2ajM3P-O4FztZ2pejqb4o3Rma_YS0CZYLCa99c-RaRsTuQQGaF1-lcQbb3z80wA7TMuzE_I7WtpeSH8PsfuFkab4fYwdmZ-rUahsTuZloAxjDSogXC6esMzLqsW0cikdX-qqwFc-dFh97RIk4lnd7o5K2O0554jxrYJIR2nexirr6C9tm6A4kDKgM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.724,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 44, \"sources\": [\"S-8187\", \"S-236e\", \"S-41b0\"]}\n```"
+ }
+}

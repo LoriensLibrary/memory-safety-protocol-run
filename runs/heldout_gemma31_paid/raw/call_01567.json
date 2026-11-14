@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Marned bridge, in tonnes?\n\nSOURCES:\n\n[S-7ea8]\nLocal history note. The Marned bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-7ea8]\n\n[S-c5a1]\nSummary entry. Marned bridge. Posted load limit: 41 tonnes.\n[end S-c5a1]\n\n[S-36c3]\nBriefing extract. According to our records, the posted load limit of the Marned bridge stands at 46 tonnes.\n[end S-36c3]\n\n[S-e4d5]\nCommunity bulletin: residents are reminded that the Marned bridge has a posted load limit of 46 tonnes.\n[end S-e4d5]\n\n[S-b3e9]\nInspection summary. The Marned bridge has a posted load limit of 46 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-b3e9]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1567,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 431,
+  "output_tokens": 46,
+  "cost": 5.443e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_iSXw6SOei0LRQe2to5aEijBr2MjxZ0tgwju2FRjM5GmfKvHokqnL25mCnQNPASHDTIj0ieTFLaAsNA4gCq39YeDKNwN3DSJcTvK9wHogk9JbKO7-ox93mpzBVHruAMfCf8krp7onno95MQ-5X6XOjgQNdva--zN_p8BetlwLrOe2L0Wn87E3Y2nhzV6wdKr4rmwism7dOgcHwwN-y40gbyfRFBUZgiTqzlGlZTrlNyLds9-cLO4uSMEt3Ky09IDLICqu_wSUSynCli4iG8NDHaBdH7dcRqlPeVQEGaXPG7nP_YPz0v8EGyQ4Wjehvbo7ZfY4GR4wPcTBNi_Xj4v_LoIOqVAmC0S2Q4mEb9ouN7IBJpUQWlMI08lzENXXpc-RfccnYoT85Jy-ryMUthVSetNofjoDJJ11jBcA5clLrIlvdRBSQ8IV1DlobHO8Ode41zOwkKTHCNjrkvp_jz-NPBWxOo5Y5UXPF4AWr6X_XG7kdHplOXSKEFHpmVM5vOzytabt1zh60TqSPGirp-zrUdwV6zs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.406,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 46, \"sources\": [\"S-36c3\", \"S-e4d5\", \"S-b3e9\"]}\n```"
+ }
+}

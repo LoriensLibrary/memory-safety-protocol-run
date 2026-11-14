@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Vorsen clinic, in beds?\n\nSOURCES:\n\n[S-25b0]\nInspection summary. The Vorsen clinic has a licensed bed count of 203 beds. The figure was recorded during the most recent scheduled review.\n[end S-25b0]\n\n[S-90ab]\nFacilities note. The Vorsen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-90ab]\n\n[S-f74c]\nCommunity bulletin: residents are reminded that the Vorsen clinic has a licensed bed count of 155 beds.\n[end S-f74c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1810,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 352,
+  "output_tokens": 26,
+  "cost": 4.052e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_jPB1hnAB4br3CP6bxuunPKAui7acnyEi8kDTmTrjYxt9lSjQxJ9wpjd3L-dViUriT2CzAPwztfQIMrHAViyRmzpUlP9EJ8XVpNtiy7WBzGvyO0xGj4kCYCi6kKCS1aIwHgO_z4NIodrVk26ZYT0kHwoXnL1YY4TJwZpgYFbza9fn7HpZ06g_5dTaoHMVAAqTHRMXSgzycY8fu-hAcrUe4kdb53XwYq0o1ojcSWQ_mWdAXIYumZKyO7pS-1pM4Asj5CtO3VD0XdsGloBstarkddnkVsfNYGO7LbTNdyT9lQyoFecHr22imVvut5EYdn1Fr-1nGb75x0iRfTUlXOJ18VwGePpKY1YqePkUPepHJluQBIKe-XvCbNU8hufCg5zEPaXGnChpQ-u6JGM5e8HprPSsN11vb_xqJ4lESWcdio2G9T190rTv8D_KitbA7dNkBtizAr6Dtu-H9B9yzY5JT4XX5___u6umkbJ7O8NI3myduOze_cA3-qNQlG1Mq2tDKSPJmPpYrdQ6n0avgDCVmkprYcg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.528,
+  "text": "{\"decision\": \"answer\", \"answer\": 203, \"sources\": [\"S-25b0\"]}"
+ }
+}

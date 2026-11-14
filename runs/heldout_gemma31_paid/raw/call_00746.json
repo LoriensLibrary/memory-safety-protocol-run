@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Braome clinic, in beds?\n\nSOURCES:\n\n[S-8b06]\nInspection summary. The Braome clinic has a licensed bed count of 71 beds. The figure was recorded during the most recent scheduled review.\n[end S-8b06]\n\n[S-72e5]\nSummary entry. Braome clinic. Licensed bed count: 71 beds.\n[end S-72e5]\n\n[S-6262]\nCommunity note. The Braome clinic runs a volunteer programme and hosts an annual open day.\n[end S-6262]\n\n[S-1078]\nNotice to operators: the licensed bed count for the Braome clinic is 101 beds. Please plan accordingly.\n[end S-1078]\n\n[S-d83b]\nBriefing extract. According to our records, the licensed bed count of the Braome clinic stands at 71 beds.\n[end S-d83b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 746,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 432,
+  "output_tokens": 46,
+  "cost": 5.452e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_JLrnzbINcdrAAFw4AUfZd6BGGqjF_JQmoul-LpogDpn_6ceK_pdPZwfmxuwFfNFD18PpYwUfiQh6DWcLL1fTqiRgjL4ClePSl8idT3rL2d9drc24ffezIYZr5-ZYj48Y80RdvL8QcikXeqVjqSQw7uyve7LuKCoEU3LtuJ9Lvz6iFJkL9XnsDwiIVRBmoT1QXY3EhIdhbbqz_jZXLKq0vfjLS3UeJWzNx-9-JLpowJI4cKJjlrhHAnpjg9HhGs0_ZHmRGen5MHw6GpVs7gbmn0RA37ZYD0_Ys9D3oMAL22PWXqHYKjNxxqN28pzLI3T1TMF6JlO9Y1nCC0qL6NLbMPtj7xHngod4lPFOs5SBUJHhhtY9I3igMj7v6tEkvRTBNVTgFXTEUTHpogFlqHfmk6zI3iEld4AWdBsUdkToO_80wtXntcoB4Mh3cSBLK-Sqz8CgXAPrbifg904cbXvzIfqHvBYq0khQe8xq8KHF59BEB7Bz0OyQO1bZBOljnQ8NHeoYSLBtnfmEjub8N6A6QH-zonc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.667,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 71, \"sources\": [\"S-8b06\", \"S-72e5\", \"S-d83b\"]}\n```"
+ }
+}

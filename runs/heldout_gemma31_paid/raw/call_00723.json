@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Quatin reservoir, in megalitres?\n\nSOURCES:\n\n[S-e500]\nVisitor note. The Quatin reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-e500]\n\n[S-2ae6]\nNotice to operators: the licensed storage capacity for the Quatin reservoir is 592 megalitres. Please plan accordingly.\n[end S-2ae6]\n\n[S-9fdf]\nBriefing extract. According to our records, the licensed storage capacity of the Quatin reservoir stands at 713 megalitres.\n[end S-9fdf]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-e500\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-2ae6\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9fdf\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"retracted\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 723,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 506,
+  "output_tokens": 30,
+  "cost": 5.574e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_YX4NwAL5vInvMmkVzfmzMhCNgngLwC42EXVP5LdmO0CzOmV0DiU8zJtKNBbQgfkUqjADJ31QyImtHNw-o5QQviBZ9zxqtTqx5FFukL9A3qdsLiclnCwWRQK-qzlEMhS_F9FZCDw-i4xB0HO9TY408Jxd4kuxSktqcPwezMQBPM_kGMzBV_wtFtliNvuKrvMo8Rz1qeO-crLEkg-vmTHlyDzKM9WowaAI6AF8HP-c2SHdg1IABFdWFu7q-5wCihhQjRO8puRq7jMpe9330YZll9u4ox4R20L5QKRamliaKtlW6i31VB1vLNaxLrqlfMRXydgWyWEt6TA2tbviOdIULtanfdZaSE13IzGQeSB7pRWME3pdhG7PzQTMdiXkTCHNJ3Qu5oZKDn3u0UXgTbOxqkX7HCTKKP-vqijN-Bk0zDbtSZXDFZGkc5GOg9-v4AP5by7ED01s23Qm5jau3q5PpV9PNmfHK5HNdXCuWt81hjUWqfLpw6WDDy9hTK__WLLaDDRLwJRCW55D5KQp8QbbJUQpu2Q=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.541,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 592, \"sources\": [\"S-2ae6\"]}\n```"
+ }
+}

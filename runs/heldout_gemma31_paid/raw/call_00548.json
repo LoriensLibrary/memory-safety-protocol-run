@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Aroro clinic, in beds?\n\nSOURCES:\n\n[S-4218]\nNotice to operators: the licensed bed count for the Aroro clinic is 88 beds. Please plan accordingly.\n[end S-4218]\n\n[S-6c5a]\nCommunity note. The Aroro clinic runs a volunteer programme and hosts an annual open day.\n[end S-6c5a]\n\n[S-74df]\nSummary entry. Aroro clinic. Licensed bed count: 88 beds.\n[end S-74df]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 548,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 335,
+  "output_tokens": 37,
+  "cost": 4.273e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_rn3PPzHqlLmkhD1rfrRxlUfI2sYGMtlbV8Kr_tudDjusu2oMgizWn3Z-Ubrw24SePRURY1L4KiC2JEDhtblyrBzQuxt3ylbDKF2fcWXnIGYxosCGpBhp1R-FW18nGkm2_5Hg5189z_2JW6-etIJ_LynTR8Qh4gXLY43I7bYPtrCl1oCLEfY9OdBfNOkXHtgaHRmmbCaMOpfJfwEQZ3AxYcqbRnG6DudQi71826Cdt08AmeHfWWzHSNya6E2uMaurZlvMw2T-gnh3rnsUW4p9qgGjai3aRaQ4xD_qY4BQX4vcoWOz1-aRjDZYiUSYnNfQx_hsC1MVpwJ9XjXH9p1MQm6eWjNz1uc9ACqhxcFH6QGkaxx-6x_Ycl1EO9wMYPkmq9Z4ILF_KgwYO8cw6m7mCTXCbsuX_tkwZkT8KXCTX64oCDRTfw4CPgwT0K0U4SUosm2LxuOhZcs5vb56l0-cOnXqITg-yAYNw1dI_JeoJsgypSWP-lRKeN66nkfkqHzRI1gURU57NMOJraydJz_cOs5N3Ss=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.431,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 88, \"sources\": [\"S-4218\", \"S-74df\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ixvelvor clinic, in beds?\n\nSOURCES:\n\n[S-b3de]\nCommunity bulletin: residents are reminded that the Ixvelvor clinic has a licensed bed count of 40 beds.\n[end S-b3de]\n\n[S-e1c8]\nField note. Checked the signage and the paperwork for the Ixvelvor clinic; the licensed bed count is listed as 40 beds.\n[end S-e1c8]\n\n[S-a3c6]\nCommunity note. The Ixvelvor clinic runs a volunteer programme and hosts an annual open day.\n[end S-a3c6]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 954,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 349,
+  "output_tokens": 37,
+  "cost": 4.399e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_L6YQ3wQPALLZ8O3RipmhjPFpojijSlQWnCner_IgTFMCXNibxz_0jXTr8KxssTzhtI5-p47wAaLcmDtssTATre6m-ib1d6R0fGnqH1Gd1ODGMP8NVzD_ak83MZ_r8E1XzYbXHBcgYHDhE93dRpDSqqqHVjPvQ4HcQhrWJWHTOLv_NUpURtk9fqBuil07ohMmQUJozl89jBAr87VWp8rH-AjtgzTxhwHGASd1EjVks_SSYC6Q2lRsvWGE1-TtXlyUEFTtmAhwrFo72KLSDXJN-lG3-4KTGYvTyvW5P2rUeMwlFZle0oI3rWSvjb-wVzWuAngsQbigiWnXhq_dOTYQdFDWlQavdRpQTCGAup7v1HyBzYbOwmJQb7CClnt1ori3w9ksOZe-7GPVh4shwswBxa7CxiVCgucY3IWR41bSuGwlLMvwCP63AY0Jo0-HlLpOxetvBzaIugenc7x1hkfUZQUp9ym2Bdko9KhoAjWBQpS-xP3MkbRccFFU4iAhKBTCGgzNCbnAdn6AUJjOckNNZusZXtg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.437,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 40, \"sources\": [\"S-b3de\", \"S-e1c8\"]}\n```"
+ }
+}

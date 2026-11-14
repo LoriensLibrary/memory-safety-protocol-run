@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Limquaka reservoir, in megalitres?\n\nSOURCES:\n\n[S-7185]\nCommunity bulletin: residents are reminded that the Limquaka reservoir has a licensed storage capacity of 618 megalitres.\n[end S-7185]\n\n[S-ca66]\nMaintenance log. The spillway gates at the Limquaka reservoir were serviced during the dry season and the access track was regraded.\n[end S-ca66]\n\n[S-b4e5]\nField note. Checked the signage and the paperwork for the Limquaka reservoir; the licensed storage capacity is listed as 618 megalitres.\n[end S-b4e5]\n\n[S-a3d3]\nNotice to operators: the licensed storage capacity for the Limquaka reservoir is 618 megalitres. Please plan accordingly.\n[end S-a3d3]\n\n[S-d549]\nSummary entry. Limquaka reservoir. Licensed storage capacity: 909 megalitres.\n[end S-d549]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-7185\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a3d3\"}\n{\"source\": \"S-ca66\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b4e5\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a3d3\"}\n{\"source\": \"S-a3d3\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d549\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1196,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 702,
+  "output_tokens": 31,
+  "cost": 7.372e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp__l05dEa9QaxDoK2ntVSxC12Rl0ZkedVDnI48iRkwfc7wSvvNE3Ye3siUgK6K26UQKDoeDMhoa8hkN0ZuRfENc9uEXM8OR2Ujs5HjnZfPSQMpTQ69pZIjs_ob4Et71ejIGuHu0ynUHw94NKTPSSVzD29rt-1RSKyDCDX845q4J-4dYbd7P2l4biZmxKGGz0chd40J9H68rdeopU3YbmGha74SNiIVdZ6hM3JnHGDSBh4qmfmkoho7UNVJhMj3Fk1UYdC7m15-NRPccpKSR1eolZBYLI_aiOPV8xVYCCLggq_cVBSmFXr7TlL9QcM_8M7iGfIh5vRceJkN_5gBZL4wZy397foeoZThfvDGj6JXdWOhdoK9oqNsiJG9DEwsRCuODuuViuDDIEddvdJfGCYMUJCSY40aEvN94S-UYJTK3-KNHIBvu-OP9nm87wvsWcpAwU6LbtxnP9DrKHJ7yYho4Z_4FQqm5bt5AbvUFUHx3G6unwiS1aIGSLZvVYXBprNLD5tkijLP5oHM7gux3OWrlt6Db38=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.339,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 909, \"sources\": [\"S-d549\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Senvel clinic, in beds?\n\nSOURCES:\n\n[S-5687]\nSummary entry. Senvel clinic. Licensed bed count: 245 beds.\n[end S-5687]\n\n[S-cec1]\nFacilities note. The Senvel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-cec1]\n\n[S-5db7]\nCommunity bulletin: residents are reminded that the Senvel clinic has a licensed bed count of 245 beds.\n[end S-5db7]\n\n[S-5f9b]\nBriefing extract. According to our records, the licensed bed count of the Senvel clinic stands at 245 beds.\n[end S-5f9b]\n\n[S-cdfc]\nField note. Checked the signage and the paperwork for the Senvel clinic; the licensed bed count is listed as 191 beds.\n[end S-cdfc]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-5687\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5f9b\"}\n{\"source\": \"S-cec1\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-5db7\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5f9b\"}\n{\"source\": \"S-5f9b\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-cdfc\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1804,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 671,
+  "output_tokens": 29,
+  "cost": 7.025e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_-8lSXYfYBbj61RQEHDGpTwDgRPbVsrfJAkJ95GoswX8VBKHIWF9lvtjGL4MbBU0BDNVrq9bR1qjEDzxGnxrOV7JVMxRI7VKAnLr7rB9Mzgi9gORaMB7VwT3CHRxOJG_aUQDoVIcZvWOJ0dd9ZcmRdXAMI6oDDQS8qfAX6K_PvU11fN_jR3kA3xMBLEa6mQLoimfjZsB1HjNP0Naf3Dqt8OlTHNO9DIsOWG_nwLs8FdBTogFbUkQdIqGOQvTJPM56IFt1d--ku_lC1O9EdFnBD7jPVaQvHZOWAfYyjpZPRcUBXKMsq4yUC2Afv9pIuTf2rv_pEuxEINu8meoFe5nC6QAhopAfvMV47E4SDKGKiNziSLMQ0uxii-tXcjZZDg20w6Amjxz2RHecoGwi2yYSujly-vN55lLj70cwSZrclQ737yWgPqQczkgSsY7M6LO-XctTDt154M0tKdbozdn69S6mw1W7Kz_H1PnH0-NmVvHhTCY8ScMulUSEmg06L_4jV7jgw_x8wKLMIlKclg9oC5iTWIU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.261,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 191, \"sources\": [\"S-cdfc\"]}\n```"
+ }
+}

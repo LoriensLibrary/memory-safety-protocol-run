@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Dulka clinic, in beds?\n\nSOURCES:\n\n[S-b4cb]\nNotice to operators: the licensed bed count for the Dulka clinic is 242 beds. Please plan accordingly.\n[end S-b4cb]\n\n[S-91b4]\nFacilities note. The Dulka clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-91b4]\n\n[S-8e00]\nField note. Checked the signage and the paperwork for the Dulka clinic; the licensed bed count is listed as 242 beds.\n[end S-8e00]\n\n[S-f0b7]\nInspection summary. The Dulka clinic has a licensed bed count of 211 beds. The figure was recorded during the most recent scheduled review.\n[end S-f0b7]\n\n[S-aeec]\nCommunity bulletin: residents are reminded that the Dulka clinic has a licensed bed count of 242 beds.\n[end S-aeec]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-b4cb\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-91b4\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8e00\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-b4cb\"}\n{\"source\": \"S-f0b7\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-aeec\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-b4cb\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1631,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 685,
+  "output_tokens": 44,
+  "cost": 7.661e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_frqlmssXz1bf_sstCoT1OdfF-3GZgOx18MVJwW3Ocgmkv4fQLVCeWAY3q-jcRE-QPiosod6835HvXTLWHh2Iw1vwt4e_NZyQXWiCxHXnGVfSg-zoJ8d74If9nAhGV1w9p0CXpCLVMbPTaT3S3Sa0HhCSZa95_cPmme7lM8e7RXmgbIQ7PHrXm5Q0Eb5b2jpawmWMR_RuGc5TK_P0MXrUoi7wUEK7J98HKvx5Pxgi1E2mS_z9Q9ZvghKJPZLuuvl6JcdHsPltjfPMfcLv970qL2ItsY2hQX2JRprwjjdnuGuYe_VTdYYW8nbEg0aD-WMv98HPSxgWLbjPAd4wI7Rk7DUPy_li98EZZyCBhZQpFEB2cMfzlogUyzLIXm9LLi63r4PcrX28dVHwpih6v2z2ycGZuN8c1jblt2Rg7gbRves1oyIdNhJaCVUfRcviW_M2GUkkRUQeDEbeDIv3aPmbZMqq4R69g06ORRz7dDZwSNheZX1rAI1pCfDYFbpzznO4PvUxHMYlGTMEQZmVOxkAXj5Ssyo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.581,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 242, \"sources\": [\"S-b4cb\", \"S-8e00\", \"S-aeec\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Senen reservoir, in megalitres?\n\nSOURCES:\n\n[S-01a8]\nInspection summary. The Senen reservoir has a licensed storage capacity of 186 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-01a8]\n\n[S-22bc]\nCommunity bulletin: residents are reminded that the Senen reservoir has a licensed storage capacity of 258 megalitres.\n[end S-22bc]\n\n[S-c1fe]\nVisitor note. The Senen reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-c1fe]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-01a8\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-22bc\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c1fe\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1205,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 509,
+  "output_tokens": 31,
+  "cost": 5.635e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp__ljnr-1SEPekK0zUzVUxsgn4KYsROg575SOzOPtKm1X-FKA5dsu6fSt4tK4tXBe5Mphzs3z9Rw5fs0otDHUzBlq_-UAvA7yp_c69JqNYc-WA9pbEN-7Lyu3PN4TrWNPEg42Y7GrCE8FzJrGy5z0tmY2hBMUr_l48eYwZexDLjlQP-OErTZKRWGIYDBp3OGQD4a7SF3V1RN7DiphRNnExQjMRwsaYyCX1tPoqcMRXWJX4xJHOsaxI_GPmeMuJR1RvOpFCh4zSeR2G2LOgkw_dvacP5KO-S6oi7cq0qCPeg9K-YHi_UDc0WTmeCLG5HAs387u_3Ipmd9eSpjOgUXe0n5iKdDzotexlDcPngVlcNUnbxsTm-2p3tmHGYCNFLi2c-GDk5tGoN8vGQju3VM85INqx9c7zoORjaCJRgJCCynmoGvzKobdbNqoMfLRqmRGZ588mH4lgY6wVCIaUuPAM_he9Jnu_lYii_7l89MFex2PqfQvrnQsU7GuPrjcsKKNGrkWF4vRIG7NEu3EZSDaWy-gn8vo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.608,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 186, \"sources\": [\"S-01a8\"]}\n```"
+ }
+}

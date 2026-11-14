@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the posted load limit of the Ustaro bridge, in tonnes?\n\nSOURCES:\n\n[S-0726]\nMaintenance log. The Ustaro bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-0726]\n\n[S-4ad7]\nNotice to operators: the posted load limit for the Ustaro bridge is 38 tonnes. Please plan accordingly.\n[end S-4ad7]\n\n[S-3fb8]\nSummary entry. Ustaro bridge. Posted load limit: 38 tonnes.\n[end S-3fb8]\n\n[S-bbce]\nInspection summary. The Ustaro bridge has a posted load limit of 38 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-bbce]\n\n[S-802e]\nBriefing extract. According to our records, the posted load limit of the Ustaro bridge stands at 30 tonnes.\n[end S-802e]\n\nPLATFORM PROVENANCE:\nSource S-0726 claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-4ad7 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-3fb8 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-4ad7.\nSource S-bbce claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-4ad7.\nSource S-802e claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1759,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 651,
+  "output_tokens": 42,
+  "cost": 7.287e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AfnNdYkm_jhKJOoJQoCwSm1Yf3JkO2R6YSWkt5wwKoyszEOW6z1BYpKbk68HbrdVyPRdkDlMDyj4_7l8YvQEUBX9d9VTVv_oo0_hz9DNybIl8hx02q1fDzCvFGBD06L6qeyTAvmXn-M-jpKgkjysDehdc3E3iGL2nIXBEOBwrjQQKKAVN84ctFYISLDvzRgj3x-YJ5PyLkElYMPggMfAJeyVuOQX0Gw1JK_vHwaVTkNfmqeIiE4DfhfBXscgznY_ajmfl9EvJePXdSmXkubXQ0cBeD0nxWs8UtE5_vZcakpmcPQDiJ6PAPYR6mMOyFsFrGoRc8CL7f_rY3049-c1NR7FdrUsIkGG26uGVyeD6yiSR_yse6rTJqBs-glSSbcuLZM4DDqMwsv-7QQ06hYC8gykKfQXAdNUywuhYtX5EIVsZmzgZK-CBm9iDUCxt7hdJU03f7AQizjGtUWts6mdaE1k_HFl1n4Yy9F9-_NzX-gGPxqp2lWXyeLM_uTEPMgFLpqSx7RcaqjRzkJL31GKAjaOxdw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.375,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 38, \"sources\": [\"S-4ad7\", \"S-3fb8\", \"S-bbce\"]}\n```"
+ }
+}

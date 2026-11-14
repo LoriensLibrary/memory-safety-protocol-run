@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Braaroome clinic, in beds?\n\nSOURCES:\n\n[S-0877]\nBriefing extract. According to our records, the licensed bed count of the Braaroome clinic stands at 57 beds.\n[end S-0877]\n\n[S-3c1f]\nFacilities note. The Braaroome clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-3c1f]\n\n[S-d63d]\nCommunity bulletin: residents are reminded that the Braaroome clinic has a licensed bed count of 70 beds.\n[end S-d63d]\n\n[S-5974]\nInspection summary. The Braaroome clinic has a licensed bed count of 70 beds. The figure was recorded during the most recent scheduled review.\n[end S-5974]\n\n[S-560a]\nNotice to operators: the licensed bed count for the Braaroome clinic is 70 beds. Please plan accordingly.\n[end S-560a]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 652,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 446,
+  "output_tokens": 46,
+  "cost": 5.578e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_IZIqxiJuktOheN9yWM3DerF_0TQt8IxMVvPy2eAdRRP4Nc3HAuCZ59hKRXe9CKIrJ523qwQ5x43z1o5azTOommPX5pLVrd8ULrTUBvorllIXrCOH72S8K78FHvvu8sSYg6WKx02mmn8T7lm5IZ3CdqnAp8in-UlhQ08-A9L7SoHLKOAIrFPKTUtz9Pl80PUjD-H88uDj8cGxRhEhx1worDn7z6Bnq-9uPklOqhkyYLR5eHwRqFZTNlfkaz4v3VvRamM-07C4DueUNH1qgkONGRSdwy-q_E2QzCFwAUqqlNHJqMAY19-hOCx1uZ8xVBv5_jUzSkQDjjr19uV-T9WBoKGbWIfRp7MyfAUCoKwrKTmtXbrt-AwRCto6nAP1OnBKn-dawEJFv9UOWUIQPeDVWUutdBWgAP88ybhfaRMrLbsQlQBz9ilmmoK3D20djWTiHgA_5s0OCxU04grw88T4wOvA-5pcFfzWnpRAnA1NeRpuGO3Jeuf51lC2O9H86bB-4GuiZuqM1Mq_qr1ShuMogHRwEX4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.677,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 70, \"sources\": [\"S-d63d\", \"S-5974\", \"S-560a\"]}\n```"
+ }
+}

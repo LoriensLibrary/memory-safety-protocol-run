@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Kasenol bridge, in tonnes?\n\nSOURCES:\n\n[S-17c4]\nBriefing extract. According to our records, the posted load limit of the Kasenol bridge stands at 9 tonnes.\n[end S-17c4]\n\n[S-5a37]\nNotice to operators: the posted load limit for the Kasenol bridge is 9 tonnes. Please plan accordingly.\n[end S-5a37]\n\n[S-2204]\nField note. Checked the signage and the paperwork for the Kasenol bridge; the posted load limit is listed as 12 tonnes.\n[end S-2204]\n\n[S-c742]\nLocal history note. The Kasenol bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-c742]\n\n[S-ff4e]\nSummary entry. Kasenol bridge. Posted load limit: 9 tonnes.\n[end S-ff4e]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-17c4\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ff4e\"}\n{\"source\": \"S-5a37\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ff4e\"}\n{\"source\": \"S-2204\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c742\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-ff4e\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1472,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 675,
+  "output_tokens": 44,
+  "cost": 7.571e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Xp1YHPJ_plMS_CGPF9LV-pO18SVeu1lgRpbaB2DNznjXNPEC86ytR378eJiaf5gsL5kCZ1DjgH66uX2_OsBCdI9778za082ePoQyTwNw6i_FbNfJs-f4HKT1PMXzfDWrI94QMhF2yi6v69EJtK95j-PsqAo7GE8Ra3bYlRocGVVX2vRzdwMw6ZDyC_cvoLRInWCZC0TMJzamPudEHmQEO4atsvQ7zG8kVwcwUkZeyqjPtqOPUKHPwKwRdFzrEqs3n2DVbOvZHkSZ88NMbK7puhhLE592E6J_nTLAGg0j0p_Vxs6kqAyZrqJTTuIQaDS15mZaFSSmIDzbouC5nD8ecxxKMGjelUHyEzXho-gy2PeDf9gmaFmKViHIBl6JXgnk7ItfATR2n_VqSPFT16hz_m9mSGR5SI8xDXaUeuEKpnb89df8xJW2LTz-uwBEuOpcCALi8ABU_PxsTVGc3KZl9Y6-La0Nlpb5xs1B66loL6gqrsldweCxIscxWWYQsCBMUUiRgw6BU1Gr-VUut7M6OEhkCZ8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.509,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 9, \"sources\": [\"S-17c4\", \"S-5a37\", \"S-ff4e\"]}\n```"
+ }
+}

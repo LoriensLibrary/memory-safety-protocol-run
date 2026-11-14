@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ustesh bridge, in tonnes?\n\nSOURCES:\n\n[S-66b2]\nInspection summary. The Ustesh bridge has a posted load limit of 42 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-66b2]\n\n[S-0775]\nCommunity bulletin: residents are reminded that the Ustesh bridge has a posted load limit of 42 tonnes.\n[end S-0775]\n\n[S-52ab]\nLocal history note. The Ustesh bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-52ab]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1371,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 350,
+  "output_tokens": 38,
+  "cost": 4.442e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ANwtWU9ainqrkDywX4WuTgTCHE2OCaQ8tjODn9LGG0LsyxkM_VICSECEbLSddhmMjqX4pddlmXmUC9Zk2cYb4kpvQ2AE_EHGKHNCZQjOLJflDAgos-EKmeEZzsQMLCjNdVP9e_-BHWc6SrILo7lS2Rptg31FSzwfOFFmUrYvAO8HX-ajfLxcJiGWsOcLedTj62jIj3iKPierPCI_XteOqsUghoLErrU_EJNJ2rfCgZXkVy_SPXRVgX6VoERrjaYUD0IfCzbV_cBMLx5beIygfcTkMq_5twek2Cu8NJ2G867wpzQB7njC0E3KzqrxGl9CvLT5adbI8ebL7svQvQRav5HDiATfaiT8T0DWWYa3q4m9cTRK7PFpOrQLYDdmAwNw9VmaH4VQFMba9GN_AI7eT8yH9_5ovW2BOYJvF714WyPggQKQfsSRuMw5UvsoMWGej5pMt2WJpAlIkVErz51FvnKd0Nt6jMYysIBdtIMYBwM-mIMosxOz75FeDecF0zYbZDTVIGg3_QEAuQrgLviNeBV7xGE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.555,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 42, \"sources\": [\"S-66b2\", \"S-0775\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Olust clinic, in beds?\n\nSOURCES:\n\n[S-7cea]\nInspection summary. The Olust clinic has a licensed bed count of 86 beds. The figure was recorded during the most recent scheduled review.\n[end S-7cea]\n\n[S-dd32]\nFacilities note. The Olust clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-dd32]\n\n[S-7379]\nBriefing extract. According to our records, the licensed bed count of the Olust clinic stands at 86 beds.\n[end S-7379]\n\n[S-027b]\nNotice to operators: the licensed bed count for the Olust clinic is 86 beds. Please plan accordingly.\n[end S-027b]\n\n[S-f9de]\nCommunity bulletin: residents are reminded that the Olust clinic has a licensed bed count of 121 beds.\n[end S-f9de]\n\nPLATFORM PROVENANCE:\nSource S-7cea claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-027b.\nSource S-dd32 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-7379 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-027b.\nSource S-027b claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-f9de claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1149,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 652,
+  "output_tokens": 44,
+  "cost": 7.364e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ATrs9PTTnt4OJZcJ9ls3ZUJW_bxhHfvvIDlj6H6kVK3lr4JAjpb7Gdm9u2Fb4A81ajaVxWlGiy756gsF4sBGhnr8GUX_bnMfFqEQzcn3PeCHrRtiHJtBNG19hDI7zSUFG2968EJ-RCDcDdsmyAvVbIXxpQrz_XDI0X_RsxH4bUM6UY-JX75n_dVP6xiucI2UhvoSODK22tTDJAE3NjQhRGap4EmElgbfmLi0MdCFW1M8sTqkN4tng10J_NKIcXnwl00uddHlaKiOLvqtN2BJ4BcUk2WaVYXk94HNO83bnkdggfKRwGlMuypXwc_YuCmaYXM_q8262ALOcUgnD9UPZk7QvU8b3BsVy0CaR5guw3iqYgZLhpBFSCmdRoOGTfoB99G8fzIuRe31Es62RPcHFQkhISunitPN55052goVz1skHfnqXUssnNQ76_WbnsZaHh-D12uQODr04XGAi858GniPSFSbJCzKWF9yxJiID7nLjwRWIwAEgOtOIMcj-ta0SCRL9AdHWRrCIsgJXIStWM9KYWY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.577,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 86, \"sources\": [\"S-7cea\", \"S-7379\", \"S-027b\"]}\n```"
+ }
+}

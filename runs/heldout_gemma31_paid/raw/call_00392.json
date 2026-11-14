@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the posted load limit of the Dulen bridge, in tonnes?\n\nSOURCES:\n\n[S-7047]\nBriefing extract. According to our records, the posted load limit of the Dulen bridge stands at 22 tonnes.\n[end S-7047]\n\n[S-de38]\nNotice to operators: the posted load limit for the Dulen bridge is 26 tonnes. Please plan accordingly.\n[end S-de38]\n\n[S-cdda]\nMaintenance log. The Dulen bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-cdda]\n\nPLATFORM PROVENANCE:\nSource S-7047 claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-de38 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-cdda claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 392,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 470,
+  "output_tokens": 30,
+  "cost": 5.25e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7pf1yTjfGU9LCM38TXRSJAQsuJpIPgPXKKTbhRJNK_ucI7bqADdjGVfw985cXo9x4acQ5Acbecqj3bNBk0CLtAtusgK6Jh3GxDWooiMrUn5IYPnjHvBooMeqLVvfTURQvYbQwVq0ET_338em3-89lJWQ43fjElQMxnikM-C_zuzOErxOIkuncUnVF3hj28QjE7s6P855GB75YRMS7Z__nI8uaRPaqwwsm8E5GppV0ZRUFSdZlH7gqpDH8_y_q-U0CaTVHeDl7eBNnywFEDycGPlm1ff4vXkhEjW7gDVayCJ-JR5Ch2ioOMoLsr0bZZAlmK5xxF-8ZIDPEOak5x6jh2ajOWp0l_nVtyYZ8Xd6HyBJPTihcbR8oSA_WwGCro27t-ONINuWejlxkwgn0rpMdqlTV_FR6HARVtotL-gOEbdls_LSn-_zCto-AhC0s0oHqkpmAKjPAQrX_2ZwK6lef4LAtImmNZjrQsK5Tg1Ckv9KH-6UEYwlOMuDITL7GsazbpfB8v-sD2DqA0nEho12-JxUfww=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.653,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 22, \"sources\": [\"S-7047\"]}\n```"
+ }
+}

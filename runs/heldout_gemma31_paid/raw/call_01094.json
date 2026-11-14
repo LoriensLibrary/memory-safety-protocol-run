@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Eshsen reservoir, in megalitres?\n\nSOURCES:\n\n[S-f90f]\nField note. Checked the signage and the paperwork for the Eshsen reservoir; the licensed storage capacity is listed as 932 megalitres.\n[end S-f90f]\n\n[S-2e32]\nCommunity bulletin: residents are reminded that the Eshsen reservoir has a licensed storage capacity of 827 megalitres.\n[end S-2e32]\n\n[S-badd]\nMaintenance log. The spillway gates at the Eshsen reservoir were serviced during the dry season and the access track was regraded.\n[end S-badd]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-f90f\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-2e32\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-badd\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1094,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 511,
+  "output_tokens": 31,
+  "cost": 5.653e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_4aLr2sh5ApTeVSNaMqSBs769VOiVXnltZ8kSaBizgt47U0yGM4TcWrR_pslIHEAsH5OXvkFEUzbMoLGlGBMD0RwILhLaAsma4WSXGy6Gsa9Xm55-O25q5Xev3PvNWSmcF_5OaezofKfitxybzdUrYAWGUEIbOcw-eG3qgYjQDJsbn-GMVm1iHwgycoS48ScdMFltq1rZo8zBWyCAyO1I0omYWyZsmWfQ7zWtyWzRWsCjOZIyWkhThY2OfxkqWAYXl-dXq4hpNTWlGXkQt4PkF5y75wMwSo2yZE0Q_PvFz902niJuNA_-D8AG0CVnNpST6BFwF-E-bHxy9jvrwEl0qBnBF5lQxCBaL7mLEfK_TwhZFCtE4fyoaYTFBmiut8rRCfX2-fInZURq2zjbfZXy4b_vkyzUhD8PYw6attV_mBy7s4xsK1PcoSPIKiS5Q0vDuODcZjw6jtD2lyMeu8TI8v6bactE2Rzrg78Xmusuq28dIL8QpfcS0AMMeOOcmM_zqgbG8fbgYBHkm2Pxvpa682XRzy4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.557,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 827, \"sources\": [\"S-2e32\"]}\n```"
+ }
+}

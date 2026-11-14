@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Dulka reservoir, in megalitres?\n\nSOURCES:\n\n[S-55ce]\nMaintenance log. The spillway gates at the Dulka reservoir were serviced during the dry season and the access track was regraded.\n[end S-55ce]\n\n[S-331e]\nCommunity bulletin: residents are reminded that the Dulka reservoir has a licensed storage capacity of 778 megalitres.\n[end S-331e]\n\n[S-a2f8]\nSummary entry. Dulka reservoir. Licensed storage capacity: 778 megalitres.\n[end S-a2f8]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 156,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 350,
+  "output_tokens": 39,
+  "cost": 4.476e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_DmgDxNTCQfUkNGAzn5evNEI-CmMRCl2muhosdpczoEgeR-n6269ZoOpk6Nf1DEvqIscVJtBPmX1tgRCuRya5rg4YIemb_-4048XOu7JUvR7IynS6dBjRcd2_Z-hZPDV0-mIjJL58Tz1T4LIgymE53rDUxgfNAVKS69kXeuGIZKM9qhsy075V2JxoS-GqVFWoraoNm4lpGA57JgBXjqDaROWvBjKpsDEWhRz-CmeanPnezRTGuT-4hwl_je_Peo4sohK8wSxRqc5jzfTNP4xK4iTNdFHkdAK2gsoEQtRIdH2pF-ON-BaDSiL4k_aCyXHZGplyfVuh1uaW9WWN4lScO1eGTed0d4PTXZTHZBmny9ll-jNGO5-GAky-Z1bBuCEVOWFmgRkhqhyyT9pco9n7Y9AdKZ3J-r84DAV2zEEQgtGkp_-0XBMNkH5Y9oOI8iXEmv4JK2hFEwckoAIPfJt-4fMvUV2sZkksHXmIVojenHhw3Dk70kcUkOAfuhsH2wz0ZW5FAUSJRwU99v0goKB7fOSLAl4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.336,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 778, \"sources\": [\"S-331e\", \"S-a2f8\"]}\n```"
+ }
+}

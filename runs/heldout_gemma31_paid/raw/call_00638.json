@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Kalim reservoir, in megalitres?\n\nSOURCES:\n\n[S-423b]\nInspection summary. The Kalim reservoir has a licensed storage capacity of 358 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-423b]\n\n[S-d8b4]\nBriefing extract. According to our records, the licensed storage capacity of the Kalim reservoir stands at 358 megalitres.\n[end S-d8b4]\n\n[S-cfbe]\nVisitor note. The Kalim reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-cfbe]\n\n[S-d0cb]\nNotice to operators: the licensed storage capacity for the Kalim reservoir is 482 megalitres. Please plan accordingly.\n[end S-d0cb]\n\n[S-c76c]\nCommunity bulletin: residents are reminded that the Kalim reservoir has a licensed storage capacity of 358 megalitres.\n[end S-c76c]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-423b\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d8b4\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-423b\"}\n{\"source\": \"S-cfbe\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d0cb\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c76c\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-423b\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 638,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 695,
+  "output_tokens": 42,
+  "cost": 7.683e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_lnpu8bA3hMP6zIL4g3Y2G_jcIHL3o4i-Qf_jXZRMXbEa5T2zWImnX77-k9pb6VYkowYH1iLyRtMVPsrncS-A58EAWSWbIw8N0CauzDQsLSCqw2MONukLqmnQdSUzLdsnAoyfOMk7f6A4ENpQjd9oSSGAbhkn5OAvG7DSpaYxaDmi4dcijXikkr_MclJRz400ryK1SHSznQrez0PglPcSFO0D_PoJlK0okaWnhUWn1ycatqCRtw5h155SHXhP2eoawfiJPx_yGisrzj8Gy5VBnnE_1pZ1CoX_SjPyNPzgey5a3xzXB9B1uu-sgoSiEO05_focrEyRSAHvX3JLjJeV50kJK9hWet-LAUZuuQ4fFMP8RnPY7A0LYzsKSz4JjbCQ15okc74HNOkxE_vSbcjulM3RtvLJwibhv2L_3s_LZoQGYUvTlhK5FRDPea42a-n7eFr8uPvNJbWC9qwQe1pTXwN7oHNaJFo4loXQKdKHx3XlNyePtDKxHD1RO5TQRztv0hqlYFc2H4Cm245UvEsoE8frhpw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.478,
+  "text": "{\"decision\": \"answer\", \"answer\": 358, \"sources\": [\"S-423b\", \"S-d8b4\", \"S-c76c\"]}"
+ }
+}

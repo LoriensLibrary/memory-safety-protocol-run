@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Aroomegri reservoir, in megalitres?\n\nSOURCES:\n\n[S-673e]\nCommunity bulletin: residents are reminded that the Aroomegri reservoir has a licensed storage capacity of 441 megalitres.\n[end S-673e]\n\n[S-6b84]\nMaintenance log. The spillway gates at the Aroomegri reservoir were serviced during the dry season and the access track was regraded.\n[end S-6b84]\n\n[S-02da]\nBriefing extract. According to our records, the licensed storage capacity of the Aroomegri reservoir stands at 441 megalitres.\n[end S-02da]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 225,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 363,
+  "output_tokens": 33,
+  "cost": 4.389e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_GlTWKoHW0T0v0ExLTDRMjcorBaBDEadpKsCVk37LcIeESQ8ftXMVPQT83nOxz4mpHcRpYvbLtQM4XgK0Z6cjlFQtF5TyxbkhB9P5Ptjx3OGovibWxStCPlrbOZbB2ApwxagTb0m7NzAW2ExbbPVzOJ2HUovGkTIf9YPVavHz8Q2x7gP5NnOioPoFioXqcVKxhVKQrLF_eebWgtdQpPtOhISSHxWvppcMV-lV63JCIsjTXX-O5d8TYDHoNX1ic86yerAozK0YDIdNp3QufDEkG0KfIm3oZrJj_dizWqiUw0Ut1rrfzXNUQxeuZMmZQs_kqCRT5bte3Rps-rEUh1-kRSw2n41anLhYj4iUSQgCphRPouVj3hbyo2k_A1k5YPRx994C9vkW6wwdsCXGfbKHf_1SpGseSFRWOj1LTLtSxuH7E63exDw1KlX5dFamizx0Ga8gIDbvtJaJLOv3VCmHTxg8lPMZWqGYODmsEzAbYs-jJBiTq_SFPPnzZPeC2Wm7EGsyaUy6keNlnRrezy199O98Y9c=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.309,
+  "text": "{\"decision\": \"answer\", \"answer\": 441, \"sources\": [\"S-673e\", \"S-02da\"]}"
+ }
+}

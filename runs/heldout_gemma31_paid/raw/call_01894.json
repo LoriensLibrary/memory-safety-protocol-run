@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Fenythust clinic, in beds?\n\nSOURCES:\n\n[S-33db]\nNotice to operators: the licensed bed count for the Fenythust clinic is 29 beds. Please plan accordingly.\n[end S-33db]\n\n[S-4e23]\nField note. Checked the signage and the paperwork for the Fenythust clinic; the licensed bed count is listed as 23 beds.\n[end S-4e23]\n\n[S-e4b4]\nFacilities note. The Fenythust clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-e4b4]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-33db\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4e23\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e4b4\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1894,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 511,
+  "output_tokens": 24,
+  "cost": 5.415e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wPnmJaX8H409Mh_HDFjBj2OeFdZLg1YzcWkgtIiV4RbO8IZfUdmqIMzyrzXXpUeTHmi9ONttJ1OehlJ4rDtUJCsJAQkafRBVi4JFBNQ694WZYEg9VYlX_3HQ1pLWeWyh4-Y7vCQ6bStQB03YO5T1Imy3svwOBClDYfcDWfDrwMS7SNLX07U8sRIsdJoncxdojVnq2kPomhjNSS9tFDo7DjUFBtb3ymiGT6VXVCKhgc_tg3jk_t-yW9jeYc0tj0mH25FwzZzZCuo50WqS1F86k_0Drzbc7O7Pyh2wxen-rhHNW4p85aZaxNDws-7q1KgnU0kOkHsBUjvKzOu_y7bhD02bj5IRm3C1LWOwUzudewYxfTIQjtIr5PwRmQ_7X6jBCyNsLACu4hIPlbImV__Sok9RV-hEyW2Sl9ytVuLzqDBsIrx-5CzAIxScb-946z5o1QZ4QJBhI22GPaqdqDzy92Lcmr0LRP7Nvprcjs8cIoWJPaQVinSH7_T2mi6j6YWSTRlPqB_QTVHv-KhwgUzaluRkpyQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.748,
+  "text": "{\"decision\": \"answer\", \"answer\": 29, \"sources\": [\"S-33db\"]}"
+ }
+}

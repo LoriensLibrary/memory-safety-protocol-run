@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Thaollim bridge, in tonnes?\n\nSOURCES:\n\n[S-355e]\nField note. Checked the signage and the paperwork for the Thaollim bridge; the posted load limit is listed as 30 tonnes.\n[end S-355e]\n\n[S-efd8]\nCommunity bulletin: residents are reminded that the Thaollim bridge has a posted load limit of 34 tonnes.\n[end S-efd8]\n\n[S-38b4]\nInspection summary. The Thaollim bridge has a posted load limit of 34 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-38b4]\n\n[S-93a9]\nLocal history note. The Thaollim bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-93a9]\n\n[S-2045]\nBriefing extract. According to our records, the posted load limit of the Thaollim bridge stands at 34 tonnes.\n[end S-2045]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-355e\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-efd8\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-38b4\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-efd8\"}\n{\"source\": \"S-93a9\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-2045\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-efd8\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 416,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 696,
+  "output_tokens": 45,
+  "cost": 7.794e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_xwaHKoM7EjmkApyURSHca9XVVr-dCSEoSQBixoAteM9l7nLR3D3VDq88I1mUPNqe4OFrFH6GZC80Bqv7Amq0gUZ2JVJsFd2H0_D6cuzI1APY4yCdLiETl4bwJv3m9AiHoY7Y1RdjpKzrafQGQOr3qFq48sAoZ0aNZCj2L5nkhUlv1B-FvQq2SybjDEIQmNWXsX8QrxiOd7rNYhYKr5qHCWCXHtZpHSOf77GuxAiRLIvqczUpPGUceQkj8mDE8fTwNPV2UKhTtKqafIMWlCw3xksihO66qxQGneVc4zAXkobPhgaGvE03-022ZSei9iqS8jreIp1W-38JtkI2YTCCtXvbtEvX8TbzTqpCRassdNP5ng7Z_xTrqTusY7MsvNj5uSCPXs8KRbJC8TY2Ma_B_Mitj0kCkuS9gE0mvAgTgRJzo0GU56EpOAFCYthNUSap7RmNqbq4rY4M2NiPlSjWCKqU5fbKcx0_3pmsblDMXyHHyEZO37BSwz8fShGc4nFV_gGCn0TeTp6fhXE60i_cQ71n7l4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.878,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 34, \"sources\": [\"S-efd8\", \"S-38b4\", \"S-2045\"]}\n```"
+ }
+}

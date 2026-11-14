@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Enyth bridge, in tonnes?\n\nSOURCES:\n\n[S-ff8e]\nBriefing extract. According to our records, the posted load limit of the Enyth bridge stands at 12 tonnes.\n[end S-ff8e]\n\n[S-5423]\nField note. Checked the signage and the paperwork for the Enyth bridge; the posted load limit is listed as 12 tonnes.\n[end S-5423]\n\n[S-a2c0]\nLocal history note. The Enyth bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-a2c0]\n\n[S-7fef]\nInspection summary. The Enyth bridge has a posted load limit of 12 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-7fef]\n\n[S-037c]\nCommunity bulletin: residents are reminded that the Enyth bridge has a posted load limit of 14 tonnes.\n[end S-037c]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ff8e\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5423\"}\n{\"source\": \"S-5423\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a2c0\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7fef\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5423\"}\n{\"source\": \"S-037c\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 125,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 695,
+  "output_tokens": 44,
+  "cost": 7.751e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_sha6Xd7SuWiGIyoF2cPWMULhDRncaZs7LEiBuh1gcz1ly0G2TmcW2go4zV64A3C1TjbXit3aBb_9ik4b3542ONyc9EXBhOfxC0E6i_MEH2gs2BhGiGYnGDpFoh1NQV2V5To5RYT_4poY1pZVVXQ1BZXBaOSeCWvWd6bJQTSGXyGO4SnYePS26HEnJDxv68rhU_at93lm4xl2GtiJEIKUdBRWzK-FZn-TnvhxCwHG5Bze8OU5P3MQNhuextq3_DE2CYtcNFXP4hDurxKGwswEFEUDp5jt-lb-QiKZJr_qCbVscEkvjGxfUqT3mG90OX6BxRiR56inpvZL4T8MH4SldvLlRkReBOdBwFgkQ6YSiTMBtiErxJTGpdu066ZPLq-A7kZBuVeE9W7hSnKC0MCZEcR6fxO6-080f2SNSsYax8ccXVdTzWomP3VTsc19mwA0g_5x4ix08sZPpghJ2xMtey99bhqqhk4JtGRgH-uSK4Si-wAnAwr1VO6Y7mSzfxYLcd8HNsPfAecs-lULl9jqZI0LNsE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.562,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 12, \"sources\": [\"S-ff8e\", \"S-5423\", \"S-7fef\"]}\n```"
+ }
+}

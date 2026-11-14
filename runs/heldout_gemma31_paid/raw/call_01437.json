@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ustvor clinic, in beds?\n\nSOURCES:\n\n[S-9f24]\nFacilities note. The Ustvor clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-9f24]\n\n[S-aef7]\nField note. Checked the signage and the paperwork for the Ustvor clinic; the licensed bed count is listed as 114 beds.\n[end S-aef7]\n\n[S-7555]\nBriefing extract. According to our records, the licensed bed count of the Ustvor clinic stands at 114 beds.\n[end S-7555]\n\n[S-4d9c]\nSummary entry. Ustvor clinic. Licensed bed count: 114 beds.\n[end S-4d9c]\n\n[S-ae8d]\nNotice to operators: the licensed bed count for the Ustvor clinic is 95 beds. Please plan accordingly.\n[end S-ae8d]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1437,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 431,
+  "output_tokens": 46,
+  "cost": 5.443e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_GNYSVJduMIRyil3r54RQI7eBmQLvsh0nnVvwOEjygaT0a75S0g6JX8MrVLsG0Voe3QvHZmsyHLQUAwsQliqys9FqrHKHzc6Zb_pU3MYUkKfStrUclaGm-TXkyYZ4JYSJnBHoAh9EvUb7P02etC4TPi2_cmzV9amyaMPqGqZ-vIAdCUdTuaX5xFvw3o-ix9u14xaWdL3E0O66a0IYrDwKEpPjsiZ4h43UmQ-aLnEXE-uCJXglQp0ood5H8uRgyrTMZW0Ltln4fNZwizh7teLoHNDFSBOBZbAVa-NVLDhR9h6pLVc395yLNRX5cht_cPSHa0ee-_PqQ5sHuJOt2ZyoThmayfsfVi_ioHP1Z4QUnnbnqPZPPZ7gfnKYq8mIKUOLeHe9meyXuEPUXbxeieiijTBCB7FwM8U_29BKNLoxTo3phw0NftDV4C1xVJc8DHxmwqLFcEpaEIcugv6eImLAJcPgq_ijiEiXImiqJ_o1uWrxiIGefNDrXZHpqOOZpZQwl3jk_F-W6Q-rr1ASUh0_c6Cayws=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.706,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 114, \"sources\": [\"S-aef7\", \"S-7555\", \"S-4d9c\"]}\n```"
+ }
+}

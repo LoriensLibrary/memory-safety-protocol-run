@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Olsen clinic, in beds?\n\nSOURCES:\n\n[S-9b8c]\nInspection summary. The Olsen clinic has a licensed bed count of 47 beds. The figure was recorded during the most recent scheduled review.\n[end S-9b8c]\n\n[S-f255]\nCommunity note. The Olsen clinic runs a volunteer programme and hosts an annual open day.\n[end S-f255]\n\n[S-12cf]\nNotice to operators: the licensed bed count for the Olsen clinic is 47 beds. Please plan accordingly.\n[end S-12cf]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 666,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 344,
+  "output_tokens": 37,
+  "cost": 4.354e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_yjZ6H93FsJD8qnEsv-SqTtyS99zD4OprFssbWdyxeYCPTPdcijI4SjFWmvJ5yB-fDSPHcJJ4sDWerGkq738LEQm2EbFxRSlQWKyv3O1cvalkijB5uv44UVykI6Ri_A3aos81LPURN1-8yoPpcV6RquMXJrzVsBiMwkTPx5v6CZWHloOKFSX0acacIwV_GfbD-G4Q_fWXhaLeD-6JpGW_HnLmUp1SeUGQ77Pa9Mbza21c5YBMYCHAquwO_ag0gqMuLsSiSxjA2Wih6HqPB3GIkNJZKhj16Ww7UrLGpcRjkQhwf0sP47Vrw2sqCJ5PkWTOt0PYDHSQ9VmYMmfNV8OYKEDY9ogZ94Z-rGgXotxgPrMQhRbkG6_z8PdI0L1MNJpMTfueBLcUs3WfAwse5ZqdZjkcT1L_Nqqf85vAy32Gxzuuz-wLrI9TOWdYN4LChZPv1IziLPu59yAV03mPur69GCt7t6GJxMoUj09qE7jj1o5VpVg8zFrZLU4bHBSFyjhZ5u5hjRDFHbliwJGAdrDCX0WQVxY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.514,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 47, \"sources\": [\"S-9b8c\", \"S-12cf\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Thagrilim clinic, in beds?\n\nSOURCES:\n\n[S-e601]\nCommunity bulletin: residents are reminded that the Thagrilim clinic has a licensed bed count of 60 beds.\n[end S-e601]\n\n[S-979c]\nCommunity note. The Thagrilim clinic runs a volunteer programme and hosts an annual open day.\n[end S-979c]\n\n[S-c6f3]\nBriefing extract. According to our records, the licensed bed count of the Thagrilim clinic stands at 60 beds.\n[end S-c6f3]\n\n[S-6415]\nInspection summary. The Thagrilim clinic has a licensed bed count of 86 beds. The figure was recorded during the most recent scheduled review.\n[end S-6415]\n\n[S-704c]\nNotice to operators: the licensed bed count for the Thagrilim clinic is 60 beds. Please plan accordingly.\n[end S-704c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 364,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 449,
+  "output_tokens": 41,
+  "cost": 5.435e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_5_4oPwrH3xBRFCeYVVGYwAum_lQtiPDKLJy1fErQ6CgLtrKNKZmrjp3zN-qnZJRcdxEKhwqVflc8E42DLvPigFIn6noaFT9FDdmzmE1YEWdOWJzTceqBge8B8ELvamw8pb3TjTx51H6DZOSWtd2EuvYj03poyGmTiAkTNpU3670R7Z-FvPOZ3lpOaHKOoqZ3Ymg_qKAGIj2liypmAc8uhLU9S0Gto2ULd4FUfykS2L7XyyFGVgUfAidn1HomWv4--2He0G8hd2_k_wKzkIYyHkNxu-2-Ndvfc7M707Ohgdytpl29LMa6_zKrl0Rwifa0Tj9bSRnmcd7rPXXfPyvcz1RqusW968AKA9gsIXL-oxvFVg4rCw3JaVSry18LreJoZqTZ6KNjpqOHfI03Esm9bEr6UDFDYYxexDvYlpZBWDFTyqS-lxJNWG6qQHGm_vZ60GO0h3w3SEYCfrb2Fc3xoldNsSy73PXPSGq-NrSeE5qK74ctFEEp42n1wSzQJeVbwHRsZFyydtpM_XXYTwsuHCtcoaY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.603,
+  "text": "{\"decision\": \"answer\", \"answer\": 60, \"sources\": [\"S-e601\", \"S-c6f3\", \"S-704c\"]}"
+ }
+}

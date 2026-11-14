@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Quagriesh bridge, in tonnes?\n\nSOURCES:\n\n[S-d915]\nSummary entry. Quagriesh bridge. Posted load limit: 67 tonnes.\n[end S-d915]\n\n[S-d404]\nLocal history note. The Quagriesh bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-d404]\n\n[S-bf91]\nField note. Checked the signage and the paperwork for the Quagriesh bridge; the posted load limit is listed as 67 tonnes.\n[end S-bf91]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 795,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 350,
+  "output_tokens": 37,
+  "cost": 4.408e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_TiDbwoP-Zy9xoZuD5etD74PZ4T14jjC3rG2UO9qTGTi5GAl6VTk5vKAABEhEyrjJ2tBGTNczwMBElOV1QACY4cxt4SOZGy5LtKtvE-jJfe7ha1B2qeXfi3QPvwXfJzkuUV6n00HWpUo05hD9NPJEDJOJOb6YuW5ErgsZm-IlO_u_fmCC2eMeg3CgV9OTp4G9X432iqDpJS07X3JUmM-jmt4I0Kp_u15HBrHqH8AAiAuGIXIQfyLz0JEifjmO66yNSr4vGyopLZUQCobdVxpArGMIbLB_UCzcYojblboNmxyi3T_UVOaG3kijeRK5m4xhdyZN4awn5W-eyPwITYCJ7pMGcTgf31MzH0nb1M2wKxobXcoWhNxQzmxGIswoqzWYneMo3r5mENjACwyBsUq0NjmZl6SrvxOZtY23XZoF2oFbL85uh1eu852IKMIAWI6Wp0awKquXjjxi4YZGD97-_FbPlZDarXNvvuP_47U-JaUDtrpriRna2_bv7EHfJC5tcI0JruaASr5uDHdXbxdgaN_v1bw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.412,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 67, \"sources\": [\"S-d915\", \"S-bf91\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Rokavel clinic, in beds?\n\nSOURCES:\n\n[S-1577]\nFacilities note. The Rokavel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-1577]\n\n[S-628b]\nSummary entry. Rokavel clinic. Licensed bed count: 219 beds.\n[end S-628b]\n\n[S-1fe2]\nCommunity bulletin: residents are reminded that the Rokavel clinic has a licensed bed count of 219 beds.\n[end S-1fe2]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 163,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 339,
+  "output_tokens": 38,
+  "cost": 4.343e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_9jav_nVSJOiR3kteA_zkYGWrmAhxZ9KWYRuXcmk2Vzqyk68p7tybuGhWCC4xRhmvlcqyHUVbEP7Brgm66EJyHCkEvK-Q-Y9xcw7aAccMzWp51BkYOYuNnKTcD_5i5cNBsXHIGlFZjLTr2jwhp7T0XdL75k7xgCKdYlrNOOCRXkwNNv5D3uG8bUPCkS0aE1HbAs-DK14FAHwRxASx7_DiCdlXvLF3jFirg1obQRvvWxj1ixbazfxIaS_LKNE-LDOZ_ymRTTdXf1GV4DOYPlNYs1mPHFM2PSvSdoWThnLpyP-sFy5vDfBpIMEPyiK5tVKVT_Vmh3goets81iepGjSZLNQ6ZnvpJOT-4K6eRbmb8KvnXpFnf6ZN4H0gE8xpjkKhCdwqL_rBlbgD3a-6xKKBM0O9zciEexH8CmNByj5_TcaO4auZscXKEHRCSnA2H5MX6YdHLzxOCbw950htEf3iLcKyhxUs1G-_lNBfoCb4VOnfenlYNNBmaBQ85Jrrs9NZ_kNoAgU-JUzZtQhW9Zh-yT5mTco=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.534,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 219, \"sources\": [\"S-628b\", \"S-1fe2\"]}\n```"
+ }
+}

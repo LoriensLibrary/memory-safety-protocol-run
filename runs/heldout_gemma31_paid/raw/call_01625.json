@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ixgriome clinic, in beds?\n\nSOURCES:\n\n[S-024d]\nInspection summary. The Ixgriome clinic has a licensed bed count of 131 beds. The figure was recorded during the most recent scheduled review.\n[end S-024d]\n\n[S-bf4f]\nFacilities note. The Ixgriome clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-bf4f]\n\n[S-a7c0]\nCommunity bulletin: residents are reminded that the Ixgriome clinic has a licensed bed count of 131 beds.\n[end S-a7c0]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1625,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 360,
+  "output_tokens": 39,
+  "cost": 4.566e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_gkC_pdTBSeix33q9iIsbN5fsB9mYphtHAC9PnSQFkyGFcybtJxgOA2X8icQaBjD3Rhf7ag2dmt8L1H9VeqfHnQ2UCG8MyVbxRrwxxg_fwUgjZkDQLsWLMVnr6eO5n1WjFcB9KK9p4RDQKEO7pSaTYkuxqxt_VVaEseC9PL5Mzjuq9daplqQH2xCEFe-eAHAiUV2L6fCWYvK6uvOPcUoGHCOHE66UqV3wYu_f3qDSwqloOchAHbBgu1oo-lGgE9ldHNcBEEifLbtrAud9JaLbwAFiP46RijqK6QdIW-JvDCx1blF1xDZ2koBZrE3xZMDLr4EbIiaHhjqN6Xf4tzgbIj8xDW3nnHnYrNmZDYOL85o9xs1Dkp5CjvjbrGhob7gCypKRWqehoyFgpefW7JkQQTf9-J33I1HUTFmtXZJ3SLMbH5cXtN0osBglWy-hW3H8bZ3xayP2SnK6a3NBPfPhBgxIwdKngunrHDTrWR3IKN2P3xfnNA_ioz0ubx98mV75zIM_9XCpVLYz1IPSbrPVcVFoXqA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.693,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 131, \"sources\": [\"S-024d\", \"S-a7c0\"]}\n```"
+ }
+}

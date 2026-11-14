@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ixeshdul reservoir, in megalitres?\n\nSOURCES:\n\n[S-392e]\nMaintenance log. The spillway gates at the Ixeshdul reservoir were serviced during the dry season and the access track was regraded.\n[end S-392e]\n\n[S-28b6]\nSummary entry. Ixeshdul reservoir. Licensed storage capacity: 417 megalitres.\n[end S-28b6]\n\n[S-b74a]\nNotice to operators: the licensed storage capacity for the Ixeshdul reservoir is 417 megalitres. Please plan accordingly.\n[end S-b74a]\n\n[S-e517]\nField note. Checked the signage and the paperwork for the Ixeshdul reservoir; the licensed storage capacity is listed as 417 megalitres.\n[end S-e517]\n\n[S-8104]\nBriefing extract. According to our records, the licensed storage capacity of the Ixeshdul reservoir stands at 479 megalitres.\n[end S-8104]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-392e\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-28b6\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-e517\"}\n{\"source\": \"S-b74a\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-e517\"}\n{\"source\": \"S-e517\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8104\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1772,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 708,
+  "output_tokens": 31,
+  "cost": 7.426e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_kIauzzQF7uI7vvKJqLE2AsO1WVXhj-2bJQSA5wWQqEVLUWcMnOyJoVPWdRlyxY6zF_lFB_ZJge72ASBrQS3khkIU2DzKhh7F1eb_UF7zblb5CUNddWRWzbMF1vhOBn7qRTXXuQuwFxxEQbjc9AvUw0yqx1ktlQlP-BMveoOaHIQW-DpaPqOX9wGGXzKGA3AG8RUxhjXTfHeSdwkWXGixb7wZbWFw_ro00qEQK_XXK5dMZlgRbgxz_tfCUXA9pyxk-dnwiX9cXZAuOyyTqIrlB9yd-I_LgomuGYwyZeQGEKy2GgJdrTQt_ivizX-KpwE4Na8wXKp0zSNOaIC081xk0Tu6nnJrQs_PMOH-jQPPC6ldwCyqfa_GlaqVvLSqFEKnDMQUBjdS-ugwJetd9vMCI6nNbdA_C8H3I6GH8J0JdVUGjTA2DFNzHtuLdYr7pOG227jEXGjRDzNc9EVUtswbSNxB-giHbGd9TDK5QCnGj1s20UIHWDmbaCxswhtxtTosy-w8-jPeaccM9BzVpbE5hL9yGnc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.407,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 479, \"sources\": [\"S-8104\"]}\n```"
+ }
+}

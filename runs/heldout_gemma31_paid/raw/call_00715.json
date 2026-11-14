@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Enyth reservoir, in megalitres?\n\nSOURCES:\n\n[S-90da]\nBriefing extract. According to our records, the licensed storage capacity of the Enyth reservoir stands at 1062 megalitres.\n[end S-90da]\n\n[S-3c99]\nSummary entry. Enyth reservoir. Licensed storage capacity: 819 megalitres.\n[end S-3c99]\n\n[S-6f67]\nVisitor note. The Enyth reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-6f67]\n\n[S-dc46]\nField note. Checked the signage and the paperwork for the Enyth reservoir; the licensed storage capacity is listed as 1062 megalitres.\n[end S-dc46]\n\n[S-0479]\nCommunity bulletin: residents are reminded that the Enyth reservoir has a licensed storage capacity of 1062 megalitres.\n[end S-0479]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-90da\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3c99\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6f67\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-dc46\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-90da\"}\n{\"source\": \"S-0479\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-90da\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 715,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 697,
+  "output_tokens": 31,
+  "cost": 7.327e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0Qblxw1lTazOsZhLpNyBRiO80D_cACffoTSjc3qy5JNgD4AtC5Pl1AlMNvj8HIdCN2mE_6uLCepLbMZosc0dM77--aKkO0t2dAvNI5WncJgjnSfTHB4ALqb2GS011XQOMPl-_n3w7CknJnFpRm4Yseb2mdN64TaJNTEvNJ6PuDZDUuLKF6L95LeMxP5KqV89HfiGJUML8c1VHsDPv5vmlb8ohBQIWNg9-0DhHz88iBPNbTCG2GZRCD_JwFu4n4v3LOGM5w_d2fLkQnhgCnZCaw6DM4apsqPxhfVNOEGSN9HaEcc2r-Hc5OAZPUDRLoq4UyxkwFKE5WhsSZmVFssrAS6518fkTvkcmjo_MXeFx86cuIgNRKFmxtjvdTmGBAvLdb9h71EtL2QNoRiDqPkbkvSyrE8GYmXoaf7QtjwSpx1j1oBX3Jhury0wSvexdKeoGBNd5C02cT4zX-pJ_FwO5a8iVzwDfwyovLiZ80al90fRAbX68yQtTgqlz72PXWagWcVNMRxg15_4i8H-FLLchMY6LBc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.437,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 819, \"sources\": [\"S-3c99\"]}\n```"
+ }
+}

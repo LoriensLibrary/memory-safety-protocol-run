@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Thaome clinic, in beds?\n\nSOURCES:\n\n[S-9438]\nBriefing extract. According to our records, the licensed bed count of the Thaome clinic stands at 103 beds.\n[end S-9438]\n\n[S-5795]\nNotice to operators: the licensed bed count for the Thaome clinic is 127 beds. Please plan accordingly.\n[end S-5795]\n\n[S-59cc]\nField note. Checked the signage and the paperwork for the Thaome clinic; the licensed bed count is listed as 103 beds.\n[end S-59cc]\n\n[S-af11]\nCommunity bulletin: residents are reminded that the Thaome clinic has a licensed bed count of 103 beds.\n[end S-af11]\n\n[S-40f3]\nCommunity note. The Thaome clinic runs a volunteer programme and hosts an annual open day.\n[end S-40f3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 765,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 435,
+  "output_tokens": 45,
+  "cost": 5.445e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_IMQwK3LzB0jMA0WgSKRf8mMOmBLXkevR2edwWje03-IyjtvLFMGLG33zqvRjbXOHu0T1tXj1qP7LWA-ClTZPLcQiJ82pmwDhy6U0xVbXcaF3Nfy7RmPrXuQiwFO2Q3h-Qr1HvclJNMQBqqVSJo0HzESl0_ENtYUIER7og21peKQHQ2ql2ctdiYIdkB6n4dss5_u_u247Qu4Eri6UgsutuZQoQnOHiSXJMYldeVIDtSuvri1X9YqTSTAd9msqVO8Kk7RiIGpp30YDafMC8piKTAXx9lIMIV5ZSUFPsCyD9cbLkFsv-8Al4_HTfT98xHHFWhgBK_61LqV0jdsSoECfYxIIbY1N_Uh5prNue-xVB-7Ehw1AOh0bdXAnJ-wOzKnsI42yDki9cgzp7SZSj8_NinNyZe0rQs8dy6gdzZFsLetNApca36nWA-_2aOzpBRClUo7OuUN5xx3Z39e5hKPTqPS2D1OeKN-Wk3s5cwRDBLrkZDZtNi7FCm-TyKwWYldv5Akbas_NxzkXpu_LDks6nD-EjO4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.442,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 103, \"sources\": [\"S-9438\", \"S-59cc\", \"S-af11\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ixeshdul reservoir, in megalitres?\n\nSOURCES:\n\n[S-392e]\nMaintenance log. The spillway gates at the Ixeshdul reservoir were serviced during the dry season and the access track was regraded.\n[end S-392e]\n\n[S-28b6]\nSummary entry. Ixeshdul reservoir. Licensed storage capacity: 417 megalitres.\n[end S-28b6]\n\n[S-b74a]\nNotice to operators: the licensed storage capacity for the Ixeshdul reservoir is 417 megalitres. Please plan accordingly.\n[end S-b74a]\n\n[S-e517]\nField note. Checked the signage and the paperwork for the Ixeshdul reservoir; the licensed storage capacity is listed as 417 megalitres.\n[end S-e517]\n\n[S-8104]\nBriefing extract. According to our records, the licensed storage capacity of the Ixeshdul reservoir stands at 479 megalitres.\n[end S-8104]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1770,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 457,
+  "output_tokens": 47,
+  "cost": 5.711e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0YlTmMUme--7l_V6iOmfxLw_-00McdjBK9ERhDQFXB0-HeSW1cPTTyK46FYTEuW82ywE4kvyAHTilacZn9HZ0kT7ROhPVDypdPWeYfnUuhHLXkU4s8XghrkZwZnEmFoiZ7kuILW2a4AThzaTF289Bg9LiSCiDxnaXZMecJlC-2mA4vJGhdt_ScdsbvqRauvJbPUsUcunYdwKHYA1h2f6t8QiUOxjZQLlUPRzOd2JWItxIPtNmfjKsYl3XEJhxVcv0fuf__ItwFIUWLQUEfkS02bQgJaxdO7fPrqDANZUo8BBTVtdpXcm17cn6P_L0Jtv0wWBZfYQN4TJzBq6uscfHLtqsNG9yA54BRrC-9J0bbXtWlfgdrw-luapRo8K08AXXH8eZeiKUaA5atgmdj5rBYhwuPMvqiBfK1MG85oAf1RM3ZaTVq8fpB_ZMD1sOziJ-UeUpg3Am7O4oWwnYvj6mj0yNsT0PKJ76PHeMK9l31L1suv64ntWdzwHP6K3CHN2uiUZaMODiS_eo7vOaNrApSIDsdY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.432,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 417, \"sources\": [\"S-28b6\", \"S-b74a\", \"S-e517\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Eshen clinic, in beds?\n\nSOURCES:\n\n[S-dc62]\nNotice to operators: the licensed bed count for the Eshen clinic is 207 beds. Please plan accordingly.\n[end S-dc62]\n\n[S-3578]\nBriefing extract. According to our records, the licensed bed count of the Eshen clinic stands at 207 beds.\n[end S-3578]\n\n[S-b915]\nFacilities note. The Eshen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-b915]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 859,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 349,
+  "output_tokens": 38,
+  "cost": 4.433e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_kboWAV3C474AQG5yXU6bQ74s7Q4Zpl1paOkiL3WFlswyMcnGGqlZQ59PgiFsc7YO3E4nEvU3vSyRidaQsxMniT6L_wyaoZtXkEbS9s-ihC53s5r-D9-O1MtDDgseSYvKl_HxXvC9FF29OOmh0lO9YNKcUNac765AMPbvfrmB_v94yXoOJXdb81E7llzucNFyBSt9JDLuP2PfUHppIe0criJfmG1Fq7px9bsYXyPs5viyt3IqZ3oddhEk2VD8K7mkjzSUlxGT4JIsECuyY5i1Zb-fHH59vOjqj6KNwVDFXcJxavSLO3GZpNPz07XAHK3sr9BZM0QHh2WRDzNqDZLcJ8DoqRp6T_8G9jAxt9UQiTp5SVLzUlbSPjcGUVtcb43o4GDu7zTWq-5KDmkeZihxyhDyDOYNeisoIGrQAQBhoAAMNxR20i5MyqGqVa5T3cKIkbB5xV4lGHCvGU1mTDBeAS7e6TNtcOYjjmzAmpYRj9N8Xmh8HDWvoQLowj-xvBXG1xuhNm4855ZHyuRWBlKAQ9R8fmE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.567,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 207, \"sources\": [\"S-dc62\", \"S-3578\"]}\n```"
+ }
+}

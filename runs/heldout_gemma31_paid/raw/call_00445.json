@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Eshpelen reservoir, in megalitres?\n\nSOURCES:\n\n[S-241a]\nNotice to operators: the licensed storage capacity for the Eshpelen reservoir is 182 megalitres. Please plan accordingly.\n[end S-241a]\n\n[S-0c90]\nBriefing extract. According to our records, the licensed storage capacity of the Eshpelen reservoir stands at 137 megalitres.\n[end S-0c90]\n\n[S-dde1]\nSummary entry. Eshpelen reservoir. Licensed storage capacity: 137 megalitres.\n[end S-dde1]\n\n[S-ea58]\nVisitor note. The Eshpelen reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-ea58]\n\n[S-8a17]\nField note. Checked the signage and the paperwork for the Eshpelen reservoir; the licensed storage capacity is listed as 137 megalitres.\n[end S-8a17]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-241a\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0c90\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-dde1\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-0c90\"}\n{\"source\": \"S-ea58\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8a17\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-0c90\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 445,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 694,
+  "output_tokens": 45,
+  "cost": 7.776e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_9P9YSiMaedPTIWX2hNDrkexc81Kcl6xCcqKTHySd69qUkvF64oq702-lRWKsU8N9DQOqK03LBmBTPDn-JYMBjFRAKYoYNcHyIjk1nOFpD794H_WXBU00rzD9zCM1NGnB7oXmFusV0wvnHz_Vumvk934buwsHg3wGan2vyWZGVxlB2pbdbSJCDQJHhmtRjO0qa8klsnq-SYkU1i-C_cr_eA_aDvOBewl8Iic-LKl2f6rX5DY40rQEPdnUEYbCW_TT_96Ul4zdiAdv6g0CBpPlxAZj49C8EUy6QGMMSKOrzYrPcGN9YT5J8dtw_AUpk4Q7KbuprOZ7gLIqY3F9c2t-QoyRl9aV1zvMlpDNposjbFC4dEnFYSCfQrgwiidFbFfAVpSHJ_7mS3s5AJduTFA_VsofgbMMS9dSuFNewAiry7-nyzbJ12mn9G-3j-zNSXIAbt-7Nr72E1ILOUH1Iui4tmGyA-JpZ0CoUQnZPHehinSKWgbVso9LCp4gE8opX8u0qtsei5BxcvPAdrU8g6RQMnWinls=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.584,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 137, \"sources\": [\"S-0c90\", \"S-dde1\", \"S-8a17\"]}\n```"
+ }
+}

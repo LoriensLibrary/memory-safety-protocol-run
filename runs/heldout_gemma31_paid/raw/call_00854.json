@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Vormar clinic, in beds?\n\nSOURCES:\n\n[S-4834]\nSummary entry. Vormar clinic. Licensed bed count: 79 beds.\n[end S-4834]\n\n[S-fc7f]\nCommunity note. The Vormar clinic runs a volunteer programme and hosts an annual open day.\n[end S-fc7f]\n\n[S-44d5]\nInspection summary. The Vormar clinic has a licensed bed count of 88 beds. The figure was recorded during the most recent scheduled review.\n[end S-44d5]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 854,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 345,
+  "output_tokens": 25,
+  "cost": 3.955e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_fClloDcxt_pdDe98DnVf3fthseT05GMB5oIy2LHLuStoyUcHD-g7_m010z0bRrg17rWmFHW-gRMr-56QLUXQ2_uct0X6ZCOmeZyMVbifl5tMyDJBsYhxY2ETRm8MjE5oDEXTYk3aHwcBp7r4xwc_GzTphmbyJ97D5ADi2f_HIFEd_uZzMM2ZHT_0Pauv-wQ2-FFvmmeErcx_Scni1Ggug-iJuPNkFr6lBTguKZh1P-I7MNmJixKkOlMnfRLSRf8J8EYy95GxoRO5Z5BIoqPG-RuMM3wk1oglUW-7UtS0nEJ4yFlPHGwfSUsR020sn208axHrsLSCcdM0vJZ2lLXCpYcBpmxOiY2-ZvGsdcah9mplhJ2qtUPleJ_F1zK3yg23GeBkY5s7XwYwd30CpIn7XxoTNQVLLPbt9SmVMFJqQzkeDZYDV15iMSL5haOweB8MX1BsZUx8NMjQVWPxv3u2uwBLphDT7-AIv2vhc2fdC7puZn2jQi9oyMJMdywu2BPGNI2fPB-m9dW0cwWry-aE5h_nLds=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.587,
+  "text": "{\"decision\": \"answer\", \"answer\": 88, \"sources\": [\"S-44d5\"]}"
+ }
+}

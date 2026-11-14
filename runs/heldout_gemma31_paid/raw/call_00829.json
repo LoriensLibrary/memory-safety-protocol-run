@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedvel reservoir, in megalitres?\n\nSOURCES:\n\n[S-4cfc]\nBriefing extract. According to our records, the licensed storage capacity of the Nedvel reservoir stands at 290 megalitres.\n[end S-4cfc]\n\n[S-d4d7]\nVisitor note. The Nedvel reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-d4d7]\n\n[S-8646]\nCommunity bulletin: residents are reminded that the Nedvel reservoir has a licensed storage capacity of 290 megalitres.\n[end S-8646]\n\n[S-8c6b]\nField note. Checked the signage and the paperwork for the Nedvel reservoir; the licensed storage capacity is listed as 338 megalitres.\n[end S-8c6b]\n\n[S-4cf6]\nSummary entry. Nedvel reservoir. Licensed storage capacity: 290 megalitres.\n[end S-4cf6]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 829,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 441,
+  "output_tokens": 40,
+  "cost": 5.329e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_A59OLoblrXiUculxaUbpo2oVKctWRJxOwbKNSwtspUvq1-nsvrY_vCxoklZ5pwDfTowFpttFDyMOCJUbZtwTZmHgPJF1WCJMerkSTBg9rjFJd6SE5m2lZ912lD0wCMEOdCn8iHe4CR4IhiYpJmgtEyD6C1A3MKtCTXAGQuhQGTJBl9wkjQj8Xc5d9H9xqgOq37MTPljpkvZHfS8GrYQ_orzTGojN9i21sSjo2qDYWoqmGPDMbUvqjAqli7if22Y2OuZw5db_pah7M40kh0Tt1BdAMHrFL-eMII9gLiA-ahsyIq2dQ9YCOaZQaZ5kPTxVYYHferSfLUawrKqOSIWJsTncGCqZqdbME9_2eLnOFGFK0cKcWBv_y54o2uIpkviLMD_-0JQGgSZFFL7EvMHfDhtTjwlfTV24CmgH5WsPgicj7esvPwTdG4eGmvWPisCiFYMgVN7ksPMpH2Dsi382i80GQ0uMXIboMbsfKVXhyME2jJJjYPCrp5YFPwjaacG0YpyDXIHQo1ZIdCBy-NbERX4l5XU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.505,
+  "text": "{\"decision\": \"answer\", \"answer\": 290, \"sources\": [\"S-4cfc\", \"S-8646\", \"S-4cf6\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Brakaqua reservoir, in megalitres?\n\nSOURCES:\n\n[S-c625]\nVisitor note. The Brakaqua reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-c625]\n\n[S-e149]\nBriefing extract. According to our records, the licensed storage capacity of the Brakaqua reservoir stands at 230 megalitres.\n[end S-e149]\n\n[S-b0eb]\nNotice to operators: the licensed storage capacity for the Brakaqua reservoir is 230 megalitres. Please plan accordingly.\n[end S-b0eb]\n\n[S-b362]\nSummary entry. Brakaqua reservoir. Licensed storage capacity: 230 megalitres.\n[end S-b362]\n\n[S-abe2]\nInspection summary. The Brakaqua reservoir has a licensed storage capacity of 306 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-abe2]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-c625\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e149\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b0eb\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-e149\"}\n{\"source\": \"S-b362\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-e149\"}\n{\"source\": \"S-abe2\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 254,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 696,
+  "output_tokens": 46,
+  "cost": 7.828e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_c_l0UdNX0nGt9UTtxy0cjcaXtnXNyCqfS_csQk6qM4BNSL2M_sm7vnw8lO9X3SfrK20CrfJJG889n4Jg_LzyE0IvNsauSl8ToR7f4LWKCHwcEUJq3EyNU_J-a-ijTFED8fHMFcf0afIrk3fCoo8nmDaMaPucWujjUd7R5Mo0bVyk9YAlJiu9auJIy28oHd2Ii0Zel_CKkNgQNd5l6cjxeJi8CEXasSa_F_zNE10H4O4-I2jFNL0wMCReDWpW2o4k4yZXfK21dWNOX5iG7G9C3jeZNkh24D8FICTUxelpa6jLsvednF118pdQb9woNNHFnt_hfxkvmC7-6H913OdNX2EcJO6XocHYjHZkeAWzeLes38tpe6rnCAJE4lSGB19UEJzBydNGX_MTpBW70ktXHyByQ48YIbQvPqIzQtnaI9FDICITo5wV6Tlbo7kMXOAQ2N6FNWjp5BhB10EQ-9SudKzBJeG1O7cnopGtb0-Jhkjd-9a6CdKPYdafrfPJUMIxGvf6QvCzZjAaXfAUrKhlNP1Tl6U=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.769,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 230, \"sources\": [\"S-e149\", \"S-b0eb\", \"S-b362\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Pelned clinic, in beds?\n\nSOURCES:\n\n[S-63f3]\nNotice to operators: the licensed bed count for the Pelned clinic is 85 beds. Please plan accordingly.\n[end S-63f3]\n\n[S-45de]\nInspection summary. The Pelned clinic has a licensed bed count of 62 beds. The figure was recorded during the most recent scheduled review.\n[end S-45de]\n\n[S-2a03]\nFacilities note. The Pelned clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-2a03]\n\n[S-2ab0]\nBriefing extract. According to our records, the licensed bed count of the Pelned clinic stands at 62 beds.\n[end S-2ab0]\n\n[S-f512]\nSummary entry. Pelned clinic. Licensed bed count: 62 beds.\n[end S-f512]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-63f3\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-45de\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-2a03\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-2ab0\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-45de\"}\n{\"source\": \"S-f512\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-45de\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 938,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 677,
+  "output_tokens": 30,
+  "cost": 7.113e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QVph6o-2gyv1YUklSb8A5Sr4BEavirUK660t1mu5qrKYLRpu3XkFiauiapm3mAe7D8ak2AHwTEpiqDPULy-TDTZ6LaV0QyTwu7Bc0YN6CjVz-sShrm9HiyS969aGCwd65jq6Pw9sHwbxTdB_AH1peF9Nd2ZDNcuhEP0-bHSE3Xyp9JDTP49qdGUpB9LruWqEp8xEzviGHSltLoaUqPZUrMq-_flKQpYpxkgyQ5NOWABOdRhWGgV36Mj_do35PlT4DPWJTmXqGQGxldqi1x8B1nekPTYDGBKzshcJQHwtp-BpfAuUDVFypAby-3xDp6f6XvMuPc3PheDS_JgUIRXMpkk81wV17cxJnfGUVKHyTZi0llSKs3GwpL8wzbTqbwZYvJ4I0obbw8VzFnHtlr8okWvjBavoJgAMHdIsMVWHtoomwSzIYA6SCGlg94CqrpNlYoM6SVOugTyDkcBQGDPBHXzEI-6MZnNyvjWynmmg4nZDx4ej6zP8ZQnG_7aqKk1liANFbJfi_rYRplqsHHpUcbdnD-k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.857,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 85, \"sources\": [\"S-63f3\"]}\n```"
+ }
+}

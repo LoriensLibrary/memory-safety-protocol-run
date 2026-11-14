@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Neddul clinic, in beds?\n\nSOURCES:\n\n[S-fd4f]\nField note. Checked the signage and the paperwork for the Neddul clinic; the licensed bed count is listed as 30 beds.\n[end S-fd4f]\n\n[S-653c]\nSummary entry. Neddul clinic. Licensed bed count: 30 beds.\n[end S-653c]\n\n[S-3379]\nNotice to operators: the licensed bed count for the Neddul clinic is 30 beds. Please plan accordingly.\n[end S-3379]\n\n[S-ec43]\nCommunity note. The Neddul clinic runs a volunteer programme and hosts an annual open day.\n[end S-ec43]\n\n[S-f911]\nBriefing extract. According to our records, the licensed bed count of the Neddul clinic stands at 24 beds.\n[end S-f911]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 76,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 425,
+  "output_tokens": 40,
+  "cost": 5.185e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_jkSThnZdptix5vj0g7zJew3gJrjhJ_RNGxIb-Yt_X7g1s_zZS73KcU2HSzAnGoc8A8DwVooiAuHpdVHGdoxM4nu-z9Eb4xjnFRmYfYclzIAMXIBnAAvW-wDuOtLRfcpo-KKmh2RmuITUrDlPrERkk33LHe2ssw58znFDLe8XCmZ-NbA5JeGWpw8zU7gZn5yGuRoqhqiIczcK3ceUlrGkRAv6yk1T1qQ4PlcRyqo16yLZFeFik-GjpFNMX83S_acJg020MkxLSoPGgG5xI3GL_tCUrvFSfYACoHs9yuwnhHCEJNNa9qsTEujcQJXwHXBxzvlFCXWDvaKGpy9nr21kdjihR0A6a4ywJNdUp1R0k2s5kkm1W478Tqm_rKTQ_lMv7Kp6Rz-bYUu7MQAQJdu6WPNRkaRzWSNm-LifSc7yhUV-nR-xLAPkCdsmgx7fQy8FvciM_vOJtW6Q_7VZnyEwBMrzj502mY22oCDLiQCKlrKTV9V5lTaXABMrMYe1lOrQMFQjAI7nPXaBmx6AuSnX11FYW9I=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.462,
+  "text": "{\"decision\": \"answer\", \"answer\": 30, \"sources\": [\"S-fd4f\", \"S-653c\", \"S-3379\"]}"
+ }
+}

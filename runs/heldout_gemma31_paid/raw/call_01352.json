@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Thaenvel bridge, in tonnes?\n\nSOURCES:\n\n[S-a3d0]\nMaintenance log. The Thaenvel bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-a3d0]\n\n[S-ff43]\nNotice to operators: the posted load limit for the Thaenvel bridge is 60 tonnes. Please plan accordingly.\n[end S-ff43]\n\n[S-ae50]\nInspection summary. The Thaenvel bridge has a posted load limit of 47 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-ae50]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1352,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 355,
+  "output_tokens": 18,
+  "cost": 3.807e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_2qFkYScghcwivoLSgA5Z3o0pCfbnDa5QzJgpDW_3F_5ZV8JyMXQIMA6HAlUmeL3c6DKymQhl6FbuCh4btka1SJzcta6dc6_4HkRXoOpfmX_BVXfgO9dSwrD5HnwBIicdPWY3M4TSgzbjODneWEB6mjKPWf9WuRbqpZq58DYxuJU-Znrm6A_N7T92YQXNzgGsyIRBeRSD0ZckW8nJXU7H2-lgMHMr7UxXHzdhawVdjrcRfk64aLVkjN0T3z8DUPPldy6P98Wd9inO58GSC_gZSlsetI_oU-qzK3J8jGFGOZ4Q0c_slQetsGUgotXbeC1PkId01gl7gJvSlfBODPY5R-rE6a3ADwxzOpA5j6S19sDgN0usT8q9yzZd4EW64mOaliLIv0hj6c6yxEjh0uHPL5NZ270be1JYoGOYbLmojdtAoIIlGLj26lX41vcwdJYcawl6G1ve7zz_LC7ClZf_kB16fvLzfvuhi73U-yRKVVgxf-dvpzC6w5-Z7IhAAlCWeouPkq5oqAAEYuRLsDRZ1L9Affg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.424,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

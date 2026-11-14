@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Pelqua bridge, in tonnes?\n\nSOURCES:\n\n[S-414e]\nLocal history note. The Pelqua bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-414e]\n\n[S-2d20]\nCommunity bulletin: residents are reminded that the Pelqua bridge has a posted load limit of 65 tonnes.\n[end S-2d20]\n\n[S-d6dc]\nBriefing extract. According to our records, the posted load limit of the Pelqua bridge stands at 65 tonnes.\n[end S-d6dc]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1276,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 346,
+  "output_tokens": 37,
+  "cost": 4.372e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_UpuPa7k3INOYL6N8t-uoTaYSTOFpNWl51wWCeKbLm2cwmPdNRej59yRseOVBtFF8uDhyMyrJu2L9bbZSrGVWLay-odDTBaxNQUFq6a7NyK5WA2acXPmJfEeg2eOBgPIdHBL8wuRDNv5oVwEqI1cUWaIPSGL8-Ee3lWEhaxfFQu00DKU5sPWAFiIoLc-OrST9C0M5rq4V2AR31X3KxxhgFqkJxYykYc2n-9ooMditgga5T7dtqkIWV21tpiYm4JjgwWQG6YmmGBTgKEbFnJcvpHOhryg_keA2EdyiLLFxLhuWHWdKGKYo06E20UGSsJR2T0MthdQ9M3Vyd8R3_3PQbb7KD-Pjrbduu6fP0ltpfSaTXCFgS_kbBX6Y8F0kK6pnsop7F6sjj0r4OfP9An3DPdoaG8W26z3N58bWZaWbMPn8S2cj_Z1G_SiL0ZyP_s8T4kaMB0nkX2VTaJbhPkVGk-73ZtcKpHKRMVRDwrbvTgYme7Z4j2PPg5X7mKalWDz2-ERLmOXxBjBQbqrMVfdOmJx1YDY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.721,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 65, \"sources\": [\"S-2d20\", \"S-d6dc\"]}\n```"
+ }
+}

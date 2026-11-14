@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Vellim bridge, in tonnes?\n\nSOURCES:\n\n[S-73c0]\nMaintenance log. The Vellim bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-73c0]\n\n[S-427d]\nInspection summary. The Vellim bridge has a posted load limit of 44 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-427d]\n\n[S-b667]\nCommunity bulletin: residents are reminded that the Vellim bridge has a posted load limit of 44 tonnes.\n[end S-b667]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 676,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 354,
+  "output_tokens": 38,
+  "cost": 4.478e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Fn6igxIPcnkpEdsEdySLRROPHYf__4ygjhftpPhZLx3kCpli5Cj9DqdWnCRcJXR2u_Ycc7MNSVsPjopqhDY9Fy8bw8XPcyCi9ABYs_0fJX0drOr0_MCVdy4glmNsqHKgteJEVmW9ChVB8ZvvwuU4dVW6mKJoc6K3TjP-PhdaGxu6iEhI90J5NNBqaP9TbRg5CTp7EnEN7Kzh2pTuMdlLYyqLpZBfFpMxTjn_9ykB7C8d8ztCyQ1K24aVgFmq8_DkSrJUyPmYbZp8bXRjOrnVPUYh57TVaBraVac9wlMLjKuyZKI6-3uZ5g5APNs8iLVbARn4yVMufW0X66XGqrES4u9Gj5CXQSSyJB6vVbCsGw1NES-2HuaPtORQm79u-hIfUIVgeacEG7kmnjqtGbAGELfaRgZ4CfTqlmMPsa0eF9ii8xareWB_2zAGO0bQc0N0FO6T7feT7D-s3lyhO9snpN82GH1zHn-EH5LPhIfOpNgS0ow3DMTRffWzfPWPnax_P7nkkUGeRUffsaMDix1j1y2uPVw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.553,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 44, \"sources\": [\"S-427d\", \"S-b667\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Olixka clinic, in beds?\n\nSOURCES:\n\n[S-8c6e]\nCommunity note. The Olixka clinic runs a volunteer programme and hosts an annual open day.\n[end S-8c6e]\n\n[S-51da]\nSummary entry. Olixka clinic. Licensed bed count: 118 beds.\n[end S-51da]\n\n[S-c2a2]\nCommunity bulletin: residents are reminded that the Olixka clinic has a licensed bed count of 118 beds.\n[end S-c2a2]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8c6e\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-51da\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c2a2\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1817,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 493,
+  "output_tokens": 33,
+  "cost": 5.559e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_kTjM5uqGAYe0_vCPUIIibf-a2gTL9CLxShyL_5izGmvJDezqtINe6wq8MjBDMXx1JHY48YiCQqVPPptjwnwajWCIflbIc6l211iNFPCKD8FwvAohwTBCyVSPbsHhVsDsGAW_4V4Tn-wvvxWa0T2faOSZjm5I67x42dUJaNZVFVjsCUeRldLXLiRBHuIR8hp4dXxppsnHmSnBNG9yWHhj_tsHknYhqTLXfIHzm0PMkiqYfCpUKULC1B0WOSo27JdXNwNI4YW3xjbh9I22NHrksZ_1EcIOS0k4ujhn5HWMd8f9O2pN4YKaLbOHLU8To1Dkzogu1gmrE7iByByKy54yN9z12jNrKuj9GEw8E1vABL9rkj9RVfq7FMFse9sjql-sRGro39iOK_2kUSJpIU1XqencdGlsOow5Hq42bEUaJe5guXm6E2PYRKWbibj16rI5z3YQYZMn4NIzEM3B_oapIiiwAvUMS-10lc8ZU-DwsfoBNKsacu1F5l1k6bd54mXhYepTO9Oq6yLXGI6imQ0BEunyS14=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.664,
+  "text": "{\"decision\": \"answer\", \"answer\": 118, \"sources\": [\"S-51da\", \"S-c2a2\"]}"
+ }
+}

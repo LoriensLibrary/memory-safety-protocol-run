@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Vorpel reservoir, in megalitres?\n\nSOURCES:\n\n[S-67ec]\nMaintenance log. The spillway gates at the Vorpel reservoir were serviced during the dry season and the access track was regraded.\n[end S-67ec]\n\n[S-9005]\nBriefing extract. According to our records, the licensed storage capacity of the Vorpel reservoir stands at 174 megalitres.\n[end S-9005]\n\n[S-873c]\nNotice to operators: the licensed storage capacity for the Vorpel reservoir is 145 megalitres. Please plan accordingly.\n[end S-873c]\n\n[S-78a6]\nCommunity bulletin: residents are reminded that the Vorpel reservoir has a licensed storage capacity of 174 megalitres.\n[end S-78a6]\n\n[S-7472]\nField note. Checked the signage and the paperwork for the Vorpel reservoir; the licensed storage capacity is listed as 174 megalitres.\n[end S-7472]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1695,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 455,
+  "output_tokens": 47,
+  "cost": 5.693e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0Gd9zTCCsYOp8XDT_bqasywW1yZJnm0Rrf3YTrx3HaRzKwtQVrD_TZVfpxXd13Ht5mJGEG18Uqn0_x74FAU-md6OuJPXILmnMHU5A46IULMz90_zclBfLKV7CpbNW7KOZqG7x62cjelyitH7Rmk_z53hXLJ3YXrK9LJ9bANPy5GgHbxoMMDUjYKFMn2LxtAAuuT5WZRODvZlMPmYYRY0A84sDVbryXi70F0iQCCBvlkepZRHBmUAcXW_YDkqfGFStkenfXZdZJ7saR3p0nLkIgFb1Vei5RTrRu3xDwlaHneLV7_aNYsKdMPwH95_ad7D_32hilJLEZ424aue71sjXHcPGW5JbtRU-3DSH4W7bQ7nGykVfVxMDKaBnhjeYuJwqHoIg3Mh1L8mPBLGPObW-hvb-oUrlvdcsFSnWf-rtz0OEZZrxlnyaf0JIiPf8AdngAbib1R1PQClmNKb98xha9QL8EtqEdXISTH3KYIj_3abZatccIEepc0qs_YUmcyKnFv7HAy-a7IriCyNNKn_3jmv3R4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.453,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 174, \"sources\": [\"S-9005\", \"S-78a6\", \"S-7472\"]}\n```"
+ }
+}

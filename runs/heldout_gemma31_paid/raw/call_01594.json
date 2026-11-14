@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ixsenust reservoir, in megalitres?\n\nSOURCES:\n\n[S-ccff]\nMaintenance log. The spillway gates at the Ixsenust reservoir were serviced during the dry season and the access track was regraded.\n[end S-ccff]\n\n[S-c518]\nCommunity bulletin: residents are reminded that the Ixsenust reservoir has a licensed storage capacity of 798 megalitres.\n[end S-c518]\n\n[S-1735]\nNotice to operators: the licensed storage capacity for the Ixsenust reservoir is 798 megalitres. Please plan accordingly.\n[end S-1735]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ccff\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c518\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1735\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1594,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 512,
+  "output_tokens": 39,
+  "cost": 5.934e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_pGzNZw7r5FCW_DhQM2e7wzIeT6GOR1x951Jcf5-85Js03DBBVEeZGc_nktQQI9kW1aqMe5qJDuJMq5WZhLTvJwrpS-0vx1M893Jp-896mcOWoheWWDwXKZtOTosZQFa3JZK6HAuvlMmiIDHUVrpbD9HHDJdfKbbutUTDhH2SGTz6lKQekWPFOl222iZv6ka0TDAJOcgfrTMnvw_3Oto3duXjOXw4oArr04wQZqnNSfSxZHzRnyF7jS6ok5MiUg8C3GSpudx1njynB06JXE3CURep6lhFbZfsTmQJxV7_zJs6jm0oiIPRkiL2tBoSMjq79uQUX3xzZWuyQ805EZ8T3B_3aTJ4vj_C0nhD7wr6CZEzJzuwvWm2dUq2oyjWwobdWnKOX3CCBBFZka_eiulnMpH10-rj4nENsxs-kMbpWoGsO649rejG8pJHD_3mCJfaAFCTwsAFKzChi5msQ_sOxT8nI4xRK1ABFKp7F8kObHFeEBD6hhjqK4bHQcGJuPROx0nig8M8LjSFnpZSP73eNW1gYco=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.522,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 798, \"sources\": [\"S-c518\", \"S-1735\"]}\n```"
+ }
+}

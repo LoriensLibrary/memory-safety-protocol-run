@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Braaroome clinic, in beds?\n\nSOURCES:\n\n[S-0877]\nBriefing extract. According to our records, the licensed bed count of the Braaroome clinic stands at 57 beds.\n[end S-0877]\n\n[S-3c1f]\nFacilities note. The Braaroome clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-3c1f]\n\n[S-d63d]\nCommunity bulletin: residents are reminded that the Braaroome clinic has a licensed bed count of 70 beds.\n[end S-d63d]\n\n[S-5974]\nInspection summary. The Braaroome clinic has a licensed bed count of 70 beds. The figure was recorded during the most recent scheduled review.\n[end S-5974]\n\n[S-560a]\nNotice to operators: the licensed bed count for the Braaroome clinic is 70 beds. Please plan accordingly.\n[end S-560a]\n\nPLATFORM PROVENANCE:\nSource S-0877 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-3c1f claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-d63d claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-5974.\nSource S-5974 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-560a claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-5974.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 650,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 669,
+  "output_tokens": 28,
+  "cost": 6.973e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_o_71OIV1KFAld_lWeng_fE96cjIfRxQtV8rSdFqPMNnZ04yRtUU8lCiW5ByNXIrRtAjFd8qPq5aapZqdHHt3I_Jd5QztpOUuuP75JHfKEzBT9H1yAIRnOLuFzLBktZCe3-77pvoZu4MC8vn_dx7MezGTQKQvQ2ixIwdhs7Hmu4WOa4k7vCqjM5kCq4zRMw4ePAlWmpM57Lg1ZDD0ig_Kr1wO6dkZNVsd8hdeSlNtWSRv_EV8LkmkAlaoEt6vVC8y1mX3pOwypWj_nA-A6Z5vZ3_qe85Lawz31bR152Rqsy6a5PiuLgjLPsIuGx9wqb5Um9ZncS82sw0zoxiGK_lyHVBvYvaM4XointInlZweb3unMZYc0Hc7IqKhfX3PSz0SDeOmspptg52El7XSFom_V_rRCVXxqdCTCIN2t1vEpQI7LT3eyaL3-nCfLFBqxpFFrJygYKYN81CI3kyOTkNumHMvkeH8qxWuHalcHtjJ_jHP7QWmh9idX7ms67_k3u2TgzUrqr3qFuRkOOY1XkTUS_4tKI8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.629,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 57, \"sources\": [0877]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ythdul bridge, in tonnes?\n\nSOURCES:\n\n[S-c11d]\nNotice to operators: the posted load limit for the Ythdul bridge is 74 tonnes. Please plan accordingly.\n[end S-c11d]\n\n[S-be65]\nSummary entry. Ythdul bridge. Posted load limit: 74 tonnes.\n[end S-be65]\n\n[S-8051]\nMaintenance log. The Ythdul bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-8051]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1753,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 344,
+  "output_tokens": 32,
+  "cost": 4.184e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_aAWzwBMw0vjObqeqoGBGMBJgVfnQP-T0fmgpceYM3YX3jV-a4YdEaf0Tu6Bjw5IZjc59lheo9SpbUzsOSkv5T0uJRO3MaKcz3l_wVSNSaLYQPR9J4wJ9bqC8-tUUrqHDb5fjIo2mdwfETfDs6EYg5_E5AAmfc2Hu7mnHmO2Bjjp7eFS4NLJDA2s7OBlphfHLdWz8-d7htKPHkEx3Xg1mGk-5Oiemrgb5Xkoy0sy8H8NlByQI1JpLieoYhD4pt9QJpO9ZQX6RD5bVGsVoGTBzUBZG8ehHhsL1iYhtrDZIzKQ_z8T91C4dBtXId8FdBS3xrJDToyuEvcPgLgtoEmsKRq1TQQdodwVpgLyIAeIkE8em05FExOIYZvCw4T8f_MElCciXwEXpiravCB8k2kMiYPCRDeLWR3WOkN2A1VzjdjpvUKVbZh5oeDd0S-ugjKHnEkMoxzuBqjscPb7ZY7AgEdRQ2zpqaJoVIKuWrBjnFK933gCGjCH4OF5S2bsVK7vhU2TfX8UA2TOOhFKrsXlD9oU0boQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.657,
+  "text": "{\"decision\": \"answer\", \"answer\": 74, \"sources\": [\"S-c11d\", \"S-be65\"]}"
+ }
+}

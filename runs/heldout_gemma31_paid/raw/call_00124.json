@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Gripeldul bridge, in tonnes?\n\nSOURCES:\n\n[S-d664]\nLocal history note. The Gripeldul bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-d664]\n\n[S-1ff7]\nField note. Checked the signage and the paperwork for the Gripeldul bridge; the posted load limit is listed as 39 tonnes.\n[end S-1ff7]\n\n[S-e9db]\nCommunity bulletin: residents are reminded that the Gripeldul bridge has a posted load limit of 39 tonnes.\n[end S-e9db]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 124,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 350,
+  "output_tokens": 36,
+  "cost": 4.374e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_mlxmK70v7CQW7zrkONEkl_quSzPEzqzQpIg3VuuOKia3ZU-M3MhiiroZbXpiNoQlLCuYCxPfX_HOnowthqUoEGRcOP7ON_OX1Nw4ZCGnwhzaGfifq-3YpRk2m6_Y0BcCKyE1r13T_pbMlTR13zZThug82dfz28cE4Lzi6asi0RhZRvA6yTCwiatutFT8Xn-n9X1d9DbgFf0DV1bOfGTZYTNEZTEA3KJWvGLyfRczL2aBDjNgGZb1ZLqlmD-eADjrqefo0o9_aG36pBlXMdhBvp5wtFF4jUzA1PqAboL_qRH_ALY9HPa43SanlBwbQ-vjiLfJdQRu0WboJwy028EId2W5iGIm9gE9AiOvG8l42WifTbFF0ExtDT58tG8blmHFKFCE2YK-si9SpDhgpe4BHJF_upDZhAxrh7Jcm8XYYH5rRltKfJtP5SJ0GpXQ1cp2vBhvx814Y9Oe1x9-xNiNqpZTgdfV7Pvtn50A-7OvRhS7qDn9ODwGAb_qbdlJKC7_44zPlJUE9C1yItCkGzYcT4tkZLI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.489,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 39, \"sources\": [\"S-1ff7\", \"S-e9db\"]}\n```"
+ }
+}

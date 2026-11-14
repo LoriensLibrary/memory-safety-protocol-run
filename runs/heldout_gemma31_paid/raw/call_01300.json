@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Olfentin reservoir, in megalitres?\n\nSOURCES:\n\n[S-1e0f]\nNotice to operators: the licensed storage capacity for the Olfentin reservoir is 445 megalitres. Please plan accordingly.\n[end S-1e0f]\n\n[S-8038]\nMaintenance log. The spillway gates at the Olfentin reservoir were serviced during the dry season and the access track was regraded.\n[end S-8038]\n\n[S-be73]\nCommunity bulletin: residents are reminded that the Olfentin reservoir has a licensed storage capacity of 535 megalitres.\n[end S-be73]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1300,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 361,
+  "output_tokens": 18,
+  "cost": 3.861e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_sux0Vy4KuXVEczkfoxZcDH5us1jt3m4QVtjcJhJvFl0GbPXztQ_BhSQwc0LnDbpnhRQQ1056YX3rZRjBzohaRoIAX3BG10XfiiE9tU5jbesAz8ZMD7zj9ufoQv_JwPQJGyo0uIkU5Zcy8WGI-SLQoJSY5-Ombk3JtnzDDR3Vj91UzaOq-7xvoK9L0cIqX3xAPb8udQ2thUPvlTZxZ9b-bhLllO2zixkU_uT-rC1VFnHOJwsSFSKb2zzo3crcdph-X64bHVRvKg_EMNPLM1bNMN1IXIlM1tVgBDHRwXYtmECbPRBJ0Nys0nwl5tD0jUjdJgMo-L7jzNjV40cWZ20aPVOHvL29sQh10J6c9jcGgTAQbtUP0VhuNDGtg3GMvQCi9gZUCaKOhl53rG-i9q-3guY-i9eY-LjyUIGeREPOsAsaeITNpQ_MY9_tDlzuxN-0KzWVgRIdzRkz3bNeIXoz2JnsUw24jksjXTpJKiM6t-2wkEDzhHpMjDVIbxPjJ9BvlPoVF9Z6owcWjrkUzh_UVt7kqXw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.394,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

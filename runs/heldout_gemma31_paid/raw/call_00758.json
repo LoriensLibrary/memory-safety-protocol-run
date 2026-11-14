@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Omeix clinic, in beds?\n\nSOURCES:\n\n[S-c590]\nSummary entry. Omeix clinic. Licensed bed count: 65 beds.\n[end S-c590]\n\n[S-8848]\nBriefing extract. According to our records, the licensed bed count of the Omeix clinic stands at 49 beds.\n[end S-8848]\n\n[S-1bfb]\nFacilities note. The Omeix clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-1bfb]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 758,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 344,
+  "output_tokens": 18,
+  "cost": 3.708e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_NmioOnIJ-QtHlSAEZ3EfL8EFqIe7moFdg1fGGvUvAVImHC_EBkFttJFMvVwHrqIeB-b8q7GymR_f46d1MreKHAwDUh0Cf8KmlUnQhDSySwbeMLbisZE93yxVbz8ggmjRY_TV_7dTIEBqc34thLp901_essQA120sj83Ejcg1LhRtB11F7JgTl9MZPpd7HPZwcqgd6snUweZMFjZP7EkIgyy-bmuqYC3IIfZTrGI8OL6PFWsfKFAQTiVfHU5-VkEo7eUuUDh618yl_lazIb61x4w1QBb1_VC1U7CLcGeYZXyrMPVO5SUppnvy9Q2kpouBLx_Fs3LxRAXDnFypDylv4uT6bvFeTXAE1XrdSJtbzpocJ6k0QgFAfDmVcf-U_OsCK7ejXSSrlGH3BDLVNgWSeL2uppHP8G7ANWtRoPMLt1ynDbOqa2pvwXrnfjWdsgEZxwsIwiA2m7q8wWtnu0RrnRyRCYwxWT3VfKjhTzMwo4ZwwDgfymLygPgB5r278SZtAkOZP3X_3ZE27cCp4Ujbk_mjLx0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.508,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

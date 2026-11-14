@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ixtha reservoir, in megalitres?\n\nSOURCES:\n\n[S-e5bb]\nSummary entry. Ixtha reservoir. Licensed storage capacity: 720 megalitres.\n[end S-e5bb]\n\n[S-2059]\nVisitor note. The Ixtha reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-2059]\n\n[S-b04b]\nNotice to operators: the licensed storage capacity for the Ixtha reservoir is 720 megalitres. Please plan accordingly.\n[end S-b04b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 537,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 346,
+  "output_tokens": 33,
+  "cost": 4.236e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ja_KoSEReGk4KGPvy_aEgvXrDM9ZNFbTsya836d868F3inzKqNvgvyKfj9ZT-oNVqig2oXP1XMl7ieEVOH50HXVhCqW0V_OwmUztfLgiXtUyNFKxj5gW_AFdNmAqu_I2LnHSVIWy_ZtNRdlLkFjO6nhawcQY5UVcNHxxOnjpifOdQzJog4yNtHZjkGy1SdrKQYUJ75au-e-yXZKLquDB84UqHv42n9Q8wsI72Rx9KkkMXr25j93G4vkstzM50d3ez4OUI7fE2HPFvtfeHEOPIy_bPeub6OcFKeV1ytDkj1od68UyNPYqwoue9RBZQmQPk8AehjwbUK-C0fwNG4vafaHc2V6RR71x9yAA1xOewcKRfyirpHYYWEW3wVEPSux7AM_IktPR2OnPrVB9GwFVkvNJCMv7Q-BbF86tdp6ma8ymK0I_QNUieTN4mIYAAJ8RCIu_e4HeDMmLePMo38GhapLiAr7LPkqFNJ-iplccNA2d8yjIcnzbums4kQkqPZ1FOkL6vOKCr8plZx_o1qplBOq7AfQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.615,
+  "text": "{\"decision\": \"answer\", \"answer\": 720, \"sources\": [\"S-e5bb\", \"S-b04b\"]}"
+ }
+}

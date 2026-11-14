@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Olrovel clinic, in beds?\n\nSOURCES:\n\n[S-20f7]\nFacilities note. The Olrovel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-20f7]\n\n[S-fcca]\nBriefing extract. According to our records, the licensed bed count of the Olrovel clinic stands at 195 beds.\n[end S-fcca]\n\n[S-7a39]\nInspection summary. The Olrovel clinic has a licensed bed count of 195 beds. The figure was recorded during the most recent scheduled review.\n[end S-7a39]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1218,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 357,
+  "output_tokens": 37,
+  "cost": 4.471e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_BPyo_xMqrIMGnuWWKlldlOxjBrrdZvnW9yMkQFaLoKZ_MqvkNqzvvTXx3Pzt_XziKogc5bPMpGKJbhREpnXlOb0e0V7xGd6a93SieBDQCQF_BudUvlZrLHd9cnmI9KQTEEcu9fVaeV4dcZ4_DBN7rhgcG70kZIulNZ8yuuNvyizLTTEo7l0FEJDFjCTEjo0OrhPokPVBbJ8n7OjTy2GVbq3vSH2-4RWXVwRzwi7ZZDZJjZwgZSZ4jVfcBwHx5SJIAQrNZiNVqauT6AF1mRy82IUJF6YWzJOQ8iplfq0yKqMSk3JZHZ-8IWz6Z_VmlBCfIBVtOYHq5fbr2zj9xwGJbccWfndWFsiZGSb4gEElGA37xc9K-65QObUbHIoKoXTjxwZubv9ZdsIoRBXCNUx_5DDzd35W4QRlmhS6J9xwZmvV9Us7AmkXNwuHZbnYJ3_6eW9k3aajW3Ncmm0gahxLmjzcaVxIxnodIau7p7oqYmauk_oGhzC9UyWXR97Apci2j17CXW14PQ7oIx3pKyz_xx4H6r4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.339,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 195, \"sources\": [\"S-fcca\", \"S-7a39\"]}\n```"
+ }
+}

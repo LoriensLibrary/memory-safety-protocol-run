@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Fendul clinic, in beds?\n\nSOURCES:\n\n[S-6d54]\nField note. Checked the signage and the paperwork for the Fendul clinic; the licensed bed count is listed as 112 beds.\n[end S-6d54]\n\n[S-018e]\nCommunity bulletin: residents are reminded that the Fendul clinic has a licensed bed count of 76 beds.\n[end S-018e]\n\n[S-df00]\nCommunity note. The Fendul clinic runs a volunteer programme and hosts an annual open day.\n[end S-df00]\n\n[S-3b7f]\nInspection summary. The Fendul clinic has a licensed bed count of 76 beds. The figure was recorded during the most recent scheduled review.\n[end S-3b7f]\n\n[S-3234]\nSummary entry. Fendul clinic. Licensed bed count: 76 beds.\n[end S-3234]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1898,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 437,
+  "output_tokens": 46,
+  "cost": 5.497e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_DH12iFYVAgLZrmw2l0x2huc_gJl9V2WOgS5vC7RMeLC_A1SIJQakbeH1eAJHKCN2S_Y2zEvW98mJ7sBQ7Mgl3imiGqsMtwoqkWomNuytxtQkAKMmzjKwtZcP1qtOuNA5PyWpP7fvlB8wTOax1tKW16FllMF8AMdOqPcxO2y9ss8lFY_f3txxzy9PZ49qZOn6Y66fXMUZFiohLNI4yJeUXi9PPbiYqFBEPk4Lsxg3zGLBZHsGY57XAveSMM58fsB2C_z8o2bdX2VgL7CTyvjAtdoha_fUgtTk9XzjXu7MX2Z6HJyqjDxiV3E_6wCpiA0v9qvsDx6DXGNA6QYPdhR3EsSsnwwczpGu4TAsvtXTPztY05qA5YqYXI6zrtxDm2VePWuM7iLl8z9eldPlQRE-Xx0OcNH0fpTX10ZD3LktSglFp11jnYKjbFH749hGHVvVuWzfDduUtYAUYkIQaU0lRqD3U2vOc5Cs1i4weDv2suTp-dOz_kLL5JLNnw09TfP9NwFGs_j7gBT0ZVrPUxHO_l2Zo04=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.671,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 76, \"sources\": [\"S-018e\", \"S-3b7f\", \"S-3234\"]}\n```"
+ }
+}

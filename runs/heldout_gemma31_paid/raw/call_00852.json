@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Olaro clinic, in beds?\n\nSOURCES:\n\n[S-6648]\nFacilities note. The Olaro clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-6648]\n\n[S-a9a9]\nInspection summary. The Olaro clinic has a licensed bed count of 286 beds. The figure was recorded during the most recent scheduled review.\n[end S-a9a9]\n\n[S-7371]\nNotice to operators: the licensed bed count for the Olaro clinic is 236 beds. Please plan accordingly.\n[end S-7371]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 852,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 359,
+  "output_tokens": 18,
+  "cost": 3.843e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_doTMl25YZktu456Qm9CoNVDRofROubuiEt8Se0un6yFUgZ1FctAxBcYFKUZfvOwyp6wbGXEO3GfLu6EcVKbpMrNG7pKdcLnvC72b8jg4WDdvUnSzT3BnZIsZeoja2n7cdxQUcr1rGtP1JmtDDFhzc2y7kiaLyxa7ZLPtNf92BAIN4sGvv0wRKSVzU5Xppg91YlwzUPECESkhOs2DCHFOi93xvV9JYyyLe30VP7sXbUv4lyvSdoCOcXyFm6JdNG4hY8INCMZLAjCJvg542tjOOoYkwmfMdMszaj4nURroOkE4tl1xx_9ucZrmfIVg0rSkJxZ92gg3Y5ayhKmK9BQqHJowiOJo1DvHLMSvMeEqSAaj3qQFf21u9ehset8H2Kc9B78IUwqJuxvU3l5GwYzp6h93g8BBOaVRMo50oSIlEaCFmnXPCQdmNu48qF1i8zJ1DWlggMpzfh_UeJVUKMPRqZTNc5-xUgT95OFmNR1XL1iCWGnfXyj616DP-9EDvLXqRfQDc-BHjI6ONst1R9x25BI8cmY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.312,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

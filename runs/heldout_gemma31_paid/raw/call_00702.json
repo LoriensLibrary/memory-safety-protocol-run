@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Dulpelned bridge, in tonnes?\n\nSOURCES:\n\n[S-158b]\nBriefing extract. According to our records, the posted load limit of the Dulpelned bridge stands at 50 tonnes.\n[end S-158b]\n\n[S-18ee]\nSummary entry. Dulpelned bridge. Posted load limit: 35 tonnes.\n[end S-18ee]\n\n[S-94eb]\nField note. Checked the signage and the paperwork for the Dulpelned bridge; the posted load limit is listed as 35 tonnes.\n[end S-94eb]\n\n[S-f135]\nInspection summary. The Dulpelned bridge has a posted load limit of 35 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-f135]\n\n[S-71ce]\nLocal history note. The Dulpelned bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-71ce]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-158b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-18ee\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-94eb\"}\n{\"source\": \"S-94eb\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f135\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-94eb\"}\n{\"source\": \"S-71ce\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 702,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 690,
+  "output_tokens": 44,
+  "cost": 7.706e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_hqwp6S4L16WP3FHHjEzIFM2MAGnmLCwa36Kx5FGyLFAJ4kjliiFU_2jB704UmjWTsd5joawFS9O1vopbBgN7p4V6g_7zGm8KuEnORMGFKBUpDPy3IWZSZL2YHAt5gvCGrbJUnKqzQuJ1gVLQJtQvX0Xctkpyz3eOjP0JN7pAyVPwwR4-8mi6_sZZWuo7W0OZYi7CG-NtLNLN7yRR2qqQrIjiknUQymSH4MnIA3SkwNQvWq0dMtFWsL9E6JSxFe2BglyR6S5FwUYUlMNXkqgehr1rfP4-Vfgmxj1N1AtOLbT2wx82xmXGlBOjpHENwhA4FgRkjHtWpDtPyOJBScaFhD-yBeU5U-zPGfiiA0AdjyOx2SlHcyDlJ9UUATfeBQmUatNgAQH2ZbECJzjoiCpYN_A3Xvu8Vst9-XrOdAgNK8_6s6gjjUeSSRj77NyX128Q3KxUSGAmhc5wwzDDLrBt3e6Ounw2gAZnKe__c1NbHrPFXpxBiu8aAzND0ha1Rw06zlHmzVn-CmLCq5X1_5UmqkDlSeA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.494,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 35, \"sources\": [\"S-18ee\", \"S-94eb\", \"S-f135\"]}\n```"
+ }
+}

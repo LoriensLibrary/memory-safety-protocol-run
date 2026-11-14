@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Bratinpel bridge, in tonnes?\n\nSOURCES:\n\n[S-fb22]\nLocal history note. The Bratinpel bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-fb22]\n\n[S-d501]\nField note. Checked the signage and the paperwork for the Bratinpel bridge; the posted load limit is listed as 14 tonnes.\n[end S-d501]\n\n[S-610b]\nSummary entry. Bratinpel bridge. Posted load limit: 14 tonnes.\n[end S-610b]\n\n[S-fb29]\nCommunity bulletin: residents are reminded that the Bratinpel bridge has a posted load limit of 16 tonnes.\n[end S-fb29]\n\n[S-bd9c]\nInspection summary. The Bratinpel bridge has a posted load limit of 14 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-bd9c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 106,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 435,
+  "output_tokens": 45,
+  "cost": 5.445e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_YAD98RazQ5J5WDwgbMFZFM5S0OVSahqUHRcu_wzfi6XvJPXwyvxKD1nXC1PbhW1zLFa7EG_llhns7LXCSkBHm8FUhzu9nIQZgp5LUZYWWbadsVNSlHzE5Jo1oN7w0peBP9IiqJkMWxDSdqBkpXCZFJlz8sCsBM2LJdbwHou3JuFFYvBoOTzw59R9p5R22bM7BpV_osPfLsPwBzIUfN6E7JGpQkhQ9C6mwR5Z7Ug3g-n-rykuP3EwyF7lXNzIZS_HY63LaUHp4ViZiNlP8YrDXR7WZL_57u2A1Xy06TW9AqXE2JJGjakFlUjleUXNnOyGrJ4XBF3Ip9FENL22vfCdHIFIa2j8aZiWXz3C0cVa0WwFzLJfUx-pyOM_C5hsBd8QJpSGiY0Y6YaUCSuGKq8M2986LRJo9XuDlE5DLujQz4-6CWy7F_Xc1yuRAoxtFZlYZIlLIpgmJXdI0AM6tXLvIeWoFmexnGA-0mg7A9yzKaxdA4UBCg0PcasIdKEDqCVr7iEchRSYu23cMPenKFlP7xFeWFM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.452,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 14, \"sources\": [\"S-d501\", \"S-610b\", \"S-bd9c\"]}\n```"
+ }
+}

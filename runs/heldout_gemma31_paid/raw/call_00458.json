@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Senomeesh clinic, in beds?\n\nSOURCES:\n\n[S-3979]\nInspection summary. The Senomeesh clinic has a licensed bed count of 172 beds. The figure was recorded during the most recent scheduled review.\n[end S-3979]\n\n[S-aa3b]\nBriefing extract. According to our records, the licensed bed count of the Senomeesh clinic stands at 172 beds.\n[end S-aa3b]\n\n[S-fc81]\nSummary entry. Senomeesh clinic. Licensed bed count: 172 beds.\n[end S-fc81]\n\n[S-6cf8]\nCommunity note. The Senomeesh clinic runs a volunteer programme and hosts an annual open day.\n[end S-6cf8]\n\n[S-9a87]\nField note. Checked the signage and the paperwork for the Senomeesh clinic; the licensed bed count is listed as 129 beds.\n[end S-9a87]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 458,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 439,
+  "output_tokens": 40,
+  "cost": 5.311e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_fYVM0ZDnptF7jheEc4dliQwSO-pFEcD3D71ggeciDS_REUXvcOihHmOtmrUBybrFh3sgu9FKZwErCiiIR2GuIYtNM7-awhNDMfAd0ypi9VHg2yB7-yZltQXvRzTqcVpDy8d57LLhskePauUW-ohLCeWNWHh_Do77rGD8hIaVv5gu4eUf_WjfECHC8Kf9vgTw27i1x_YjVMwTypoqJ7Cw_qwYRfdsA4o4GFCTH6WAevQBosELYda7wbjzeoLANRTni2He-iIAJpSTrXphf9HSZTOglA_-POSlDeM88pPmiI0gBTbtqo6nDPMggHvKAd0rfwOV4F8CqBkN93Ncj4AozGZ0nI_pdpwEr39LCeuLKN3at-RW5JTnA87-lsVp-C7B3h0HaW5XGanf9ongEN2RVzx8Ato4EDr9umEcI760hCw5FoqMd6LizYu1uYVq2aFdOoNcmf9lwEskyyGBmYrWAxyW51AA19w1VYvWujL29m-UZbaqITncNGVU8ShAG0ghcLAbkGbuz_qkA_2fFY_oJUhiVyI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.517,
+  "text": "{\"decision\": \"answer\", \"answer\": 172, \"sources\": [\"S-3979\", \"S-aa3b\", \"S-fc81\"]}"
+ }
+}

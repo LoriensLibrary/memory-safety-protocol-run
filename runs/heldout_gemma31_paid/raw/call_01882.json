@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Kanedvel reservoir, in megalitres?\n\nSOURCES:\n\n[S-56a9]\nNotice to operators: the licensed storage capacity for the Kanedvel reservoir is 203 megalitres. Please plan accordingly.\n[end S-56a9]\n\n[S-4293]\nMaintenance log. The spillway gates at the Kanedvel reservoir were serviced during the dry season and the access track was regraded.\n[end S-4293]\n\n[S-32f7]\nBriefing extract. According to our records, the licensed storage capacity of the Kanedvel reservoir stands at 203 megalitres.\n[end S-32f7]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1882,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 366,
+  "output_tokens": 39,
+  "cost": 4.62e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_IVopx6XsYlPhUudiCWU9s9zIyyDMRkie6ynQ4DjPo7l6BP8FLabcS0jglr0cKI3AIsJ6f-bHPdPIqhTe3pauKz0Y7VKle7n7Tx2XqFlmBZALwesZ2rah6Ux8ws244B4c_b-zz73FPcjGB-yMEpJMtecSfVLeEcVNVyJYDIdRlsoopOp92lMhrAkvr0qk40usq5As-Sd-8Xp44vhfb303dxnUV1I1h5rpNbSJXiTXVuEskvl_tk5q-J-vKPOltHfpydzC6lW3a0mvH2tcKATjaPJ9Zu7ElE1ygeVr2_6yjrI7_8mkhfBw3sKtGDbSLlySjS1Y11T35zu19LHq1E32PBdPK4lrGBAG04U6nzEDO_WRO370WRCbv9jeZc_VtKLdc0JxZzFiNXrBmsZNG_9Om8qBQo7eshZNIc9HjBePK59wU_PEckOp8ORVjrrsSBC3nCo014qj3ryQFdKwzLwRW0OJJ3uVM8S7qKif4CDH9F9AOfzQnvdktCem3AZFlZ7de9cBKk7KoamBjsUeSB5Af-RricI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.519,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 203, \"sources\": [\"S-56a9\", \"S-32f7\"]}\n```"
+ }
+}

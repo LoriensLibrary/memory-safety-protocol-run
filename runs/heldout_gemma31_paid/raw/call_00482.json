@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Grisen bridge, in tonnes?\n\nSOURCES:\n\n[S-36ce]\nSummary entry. Grisen bridge. Posted load limit: 76 tonnes.\n[end S-36ce]\n\n[S-bc80]\nField note. Checked the signage and the paperwork for the Grisen bridge; the posted load limit is listed as 76 tonnes.\n[end S-bc80]\n\n[S-ab53]\nLocal history note. The Grisen bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-ab53]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 482,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 338,
+  "output_tokens": 36,
+  "cost": 4.266e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_-tHhk4zJzqhykLR3OgakOc9mCNSFYFUQ7TtE31tjo480zNVXZQgKWUov2z8dY3Eo3h6LYFxyWhUWPMpb3XByx3qOVKpd4ufEXDR8pdwqL8KuCAigBPDghqS_9ihb2OsahChWOcVoYDG6TWPPidv0gXsKKrwfJTZgdvqoUrYaV6tgkTqAhX39mzoXUziXILpigkA1kFvC11GJV1WoadAtSPh2Oiac2K3N-PvD6YQOk6aP9S8HI63JT21azE_NqeNqjngFyWI9YfJAZKm9o2km0v4RmzS_8uP8ic6Tfcib09GBljfKClluRgeeZE8VdK_ZDnXLvERg8FWsIiRwx_NS2-F1JTshZbcubUMSY2z8F4PTdwW4yuyxX0I-8na-yQUC_eokZlxGwQ0sw0ppzEjpDkZOSzFI5uH4zQ7jZiW0YXiGEIe2qUSUZxq7k0qCOBunWOOb2qHSWiMQCvJBpXEyj9sTcmnL5oICnqCGOU-X77OVQvINtVLEx2nnO_tmIoLJ-VfPFNdzWc1K20l0o2rKwo2Fk34=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.485,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 76, \"sources\": [\"S-36ce\", \"S-bc80\"]}\n```"
+ }
+}

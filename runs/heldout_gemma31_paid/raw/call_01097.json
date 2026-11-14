@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Omefenyth reservoir, in megalitres?\n\nSOURCES:\n\n[S-13db]\nMaintenance log. The spillway gates at the Omefenyth reservoir were serviced during the dry season and the access track was regraded.\n[end S-13db]\n\n[S-6cfa]\nInspection summary. The Omefenyth reservoir has a licensed storage capacity of 404 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-6cfa]\n\n[S-ce51]\nCommunity bulletin: residents are reminded that the Omefenyth reservoir has a licensed storage capacity of 486 megalitres.\n[end S-ce51]\n\n[S-e4f5]\nSummary entry. Omefenyth reservoir. Licensed storage capacity: 486 megalitres.\n[end S-e4f5]\n\n[S-b57e]\nNotice to operators: the licensed storage capacity for the Omefenyth reservoir is 486 megalitres. Please plan accordingly.\n[end S-b57e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1097,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 456,
+  "output_tokens": 46,
+  "cost": 5.668e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_iecJyJRPXoL5-3FpIYxObpcxPxhjrbGSyDjcD3sKfiRBeGpZzvUbHeKoNtGxs4YnBq7Bp57kotSIMvxSiP-hyappayxCpT1hEm5HXrm3Kxq5ZA1gVYGnm7QYWrXrZySgXRuGzPoEZLHNJ32UvqEUMkAa21DPHfp9fuY6zPQK8SRJDEIcRp2uxcWDy7F5_aFOLVDOIN9dOoFGi89rWl23KG0dMsxDjTK-xLQ-cSlyuC0jKhpzt9ctW6v_Qn-TBcWOoTfMDBZCzO_ppPd1xxHGxyCq19H9YcAYR_DrzwsXkjP_ldq7q_nqoUThjR9rlf-vP8KnOiP0_JZmzfegiePo5fb4Wf-cUHtBNJ8gSqzdiP9WWZChJfoDND1vQtE74ZF4iZfz9IVvVxhBqN9vr--3WRSJCV5e1j4-VGNyfE9I3PQOXwHIWVyYAW5x-M59anhM28sdjMDoVM1KrbITqglQ8ZcLVITFwlJ4WqLFCrliYwrEBeXwIgph4dfH-T5wbL9pdWscSldpFTCfVwCJmTV1bRj0HbU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.799,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 486, \"sources\": [\"S-ce51\", \"S-e4f5\", \"S-b57e\"]}\n```"
+ }
+}

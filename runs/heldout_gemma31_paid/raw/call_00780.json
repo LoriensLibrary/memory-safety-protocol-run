@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Pelustix bridge, in tonnes?\n\nSOURCES:\n\n[S-189c]\nInspection summary. The Pelustix bridge has a posted load limit of 27 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-189c]\n\n[S-f689]\nLocal history note. The Pelustix bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-f689]\n\n[S-da8c]\nCommunity bulletin: residents are reminded that the Pelustix bridge has a posted load limit of 27 tonnes.\n[end S-da8c]\n\n[S-5e50]\nNotice to operators: the posted load limit for the Pelustix bridge is 27 tonnes. Please plan accordingly.\n[end S-5e50]\n\n[S-7fa3]\nBriefing extract. According to our records, the posted load limit of the Pelustix bridge stands at 21 tonnes.\n[end S-7fa3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 780,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 442,
+  "output_tokens": 45,
+  "cost": 5.508e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Es6LTxlJ0TOgmbrjDaILp3P9dHPpFW9DiRi51kbul0Zh153f35nAFwUWaTqKWnRGatYL1oFSceZohi1j0GFuBrYozZXJUieiVP0dLjRB4yWkfX7OAbFt8EbaFl_KeVqsZmtSf-Akgiyk4U3wBeYBw-YseTdu_97VoqmOkYIKOVhe3bTVAwWwfCCqK9lenqNougELUJnE6F_SZXC6qcx8SS_kbwtieXj0lTaImcPZYz2GcVEx1c4fr5WSQ-PEa3vYS_q5g8MP1yp4EDvOkN_oP-qhIcdVWGNTAvKDlVMGPw1tBSoSKQU-W4zOCixyWTQGwCaC7R3HE8L0FBRtqQNVsZmWGAN9EFd63xywoM46aC6UkM-H8ogIMkWr5VxfXYEQO9ztl_XmleTZ-Hc-L-LZDwi5mULzQG1bDNWthyxVM-XtGUsq3fVPxsyzqdXxqO021ZGXaVg_dfOzwIhDgD5_Xgd3TOtgprAhVXscS7pOm37M2SO4IUe20juPe57AXT9zh3l1lQhm9QazTTwgcHfHBJAvUys=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.633,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 27, \"sources\": [\"S-189c\", \"S-da8c\", \"S-5e50\"]}\n```"
+ }
+}

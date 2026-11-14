@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Olfenust reservoir, in megalitres?\n\nSOURCES:\n\n[S-1e43]\nCommunity bulletin: residents are reminded that the Olfenust reservoir has a licensed storage capacity of 716 megalitres.\n[end S-1e43]\n\n[S-d6c4]\nVisitor note. The Olfenust reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-d6c4]\n\n[S-0378]\nInspection summary. The Olfenust reservoir has a licensed storage capacity of 716 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-0378]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1788,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 364,
+  "output_tokens": 39,
+  "cost": 4.602e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_RC1DAzo5aDISU0eOplX0xRBOA0-ppo3G1IUJ3PTqEjzw_IriWliW4e_B-yqbQ-ryyoQ6wop7AEKQFAo2reNp0ax8XcwRlJEtAKpbrQ_YicvKXPSykkazNFUMhfms1avt2flLuoDqYRcVXAuMRKXOwuf13dOH2Se5HNLOZxptunWXj8RG-LV7w5t2ceENGveqLND-Jkcbs3XrZQT40C6a9n7zHB432F_EHVEu_6yMCc_ZmYEX9BTVllLy-K5_waCygkHbFeJzNHwtnl1UtOImkLw-Zzh2b385rbnecVgHt4qP1LcpAXFOS-RmUdikTT75uli7l0jbBituTwH7aOaZRWrbSXRs7tHCRr1vHvsGvIgZY_IwWjVMNhFhi7g80fE9zIzzNveVBwcAClh-toAtBADy01wxZEFmAymxqbsYboY3ZiDtOKduIn4wzTkkZOJBhdmTRRWi314NUyIg21ey5LFFoN2MeQnzlm7xr6bswOVPezcFSv1ol2iQlCbL4pxU__VMMKleBzVtjBTuL7hVwr5kjJc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.538,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 716, \"sources\": [\"S-1e43\", \"S-0378\"]}\n```"
+ }
+}

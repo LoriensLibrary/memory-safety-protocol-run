@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Olsen clinic, in beds?\n\nSOURCES:\n\n[S-ba45]\nField note. Checked the signage and the paperwork for the Olsen clinic; the licensed bed count is listed as 36 beds.\n[end S-ba45]\n\n[S-f6b4]\nFacilities note. The Olsen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-f6b4]\n\n[S-cb64]\nSummary entry. Olsen clinic. Licensed bed count: 36 beds.\n[end S-cb64]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1052,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 336,
+  "output_tokens": 31,
+  "cost": 4.078e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wi6bFehDk2d8MEmhioHWko89S55N1pz9UL0J5F917vRLMF825hpVSMMqNm4b0z3QRXcmIg2iAOxnQ7WyWyo63TE4zMJQiuRhwo2OE5j0yw6xZS3sTVcaguIOKGZ2-lVnUUoM5x_iGX-sk8leQyFUMMD5U1j41f7DrCioSDoD5oNb34oU_HHZfE5pbT2aomXYTgtkkSmrQAw5-YoGtU1l3Miq8c-Hcg6O4GxH4hHRtLhlEXS01Igmyqo-OeEZrBZW8Q_X_EVK6s6dQm854CcFJuBWsrrIPHsT0DT59VlQws9HtjplLY3VHkz_W_v8ldPUGmpWAOblDvzR5gv7FqB1-7wlTTW16Ts3exkxxWwCelP2Dn0Rm5kbvaHyzBg6JVjoDgL3EqZpWlwAHTzpKjMkz6evqogSz7Rml_MepRPuMMya0za8M8jpOnunrd8umA5Xvb4cFEOUqMzOQFm8syerxMX0ZTFk1IAXdmWXIrIgKUxuOrgvtXXVcVHIFookh6uKUEW8uzdPymgR6AqbPyFFIAw5fzs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.46,
+  "text": "{\"decision\": \"answer\", \"answer\": 36, \"sources\": [\"S-ba45\", \"S-cb64\"]}"
+ }
+}

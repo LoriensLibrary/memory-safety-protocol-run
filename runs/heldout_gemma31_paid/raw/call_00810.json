@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Braythro reservoir, in megalitres?\n\nSOURCES:\n\n[S-bdad]\nMaintenance log. The spillway gates at the Braythro reservoir were serviced during the dry season and the access track was regraded.\n[end S-bdad]\n\n[S-e23e]\nInspection summary. The Braythro reservoir has a licensed storage capacity of 465 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-e23e]\n\n[S-abe0]\nBriefing extract. According to our records, the licensed storage capacity of the Braythro reservoir stands at 355 megalitres.\n[end S-abe0]\n\n[S-12f9]\nField note. Checked the signage and the paperwork for the Braythro reservoir; the licensed storage capacity is listed as 355 megalitres.\n[end S-12f9]\n\n[S-7f2b]\nNotice to operators: the licensed storage capacity for the Braythro reservoir is 355 megalitres. Please plan accordingly.\n[end S-7f2b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 810,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 456,
+  "output_tokens": 45,
+  "cost": 5.634e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AsqQG6bGmopymgiEJ-3kLRODP-r2eT2DKXdH395Bs1LFFJIQIj0Pox6VK1LMNzufnOn7-c2GwORW5cEHG9RA670dBz-2HP-Kn-4luyD2Zclj_aHMshiIlwum9ifTUsiCjes-LPRqSVJ0GmDKE3XBqkdA-jnrzh5vFkWJYJiW8L3buXOdBPyuQI6MKMiO74iMxNPUGmkkO8d1Lv7GKg66ejWyUp6vK0exQ-R7YujGtfyxM2AnDWaI5U-zl99wFwGk9Za3nCInjXCNFg-AMERZGn2dKNLgkI8SM_xpys4Oxb3xsLL2dYs8FoYLMvY6ghTlo3pG2XPLBuSm69p8tx7J9hORXrXc4AztV4vuJnveA5Yk-hAG_8UZWQQmnjJ5m8QfCtzNCsq37u6_2THyxY04-sF6Qrb3lHNvWgj4ypd97yQygaaj0IhIi6fXMIzBaoskUbyn3woMzVfIyXLtENEW0V-c5HOC_lzJroJNJoU8gAzH1z6oGZaUP6Kk27XI2SMUTinbCK9t-YJjLJ7xz9ZPV3BV_FM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.593,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 355, \"sources\": [\"S-abe0\", \"S-12f9\", \"S-7f2b\"]}\n```"
+ }
+}

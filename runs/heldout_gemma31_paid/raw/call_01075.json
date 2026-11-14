@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the posted load limit of the Olvorsen bridge, in tonnes?\n\nSOURCES:\n\n[S-bb75]\nNotice to operators: the posted load limit for the Olvorsen bridge is 42 tonnes. Please plan accordingly.\n[end S-bb75]\n\n[S-1ba7]\nLocal history note. The Olvorsen bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-1ba7]\n\n[S-1ffa]\nSummary entry. Olvorsen bridge. Posted load limit: 47 tonnes.\n[end S-1ffa]\n\nPLATFORM PROVENANCE:\nSource S-bb75 claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. The issuer has retracted this source. It was not derived from another source.\nSource S-1ba7 claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-1ffa claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1075,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 461,
+  "output_tokens": 28,
+  "cost": 5.101e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QFnJhTweVG3QSTUvSXgVUjnZtqtRaDomO3Svesphqm9icpe_PUZOsiadDj5gDF363piNyWf_ynzxIM8I2iwfDItDuO-qg2oSviMfToL8E6bIKL8q2HSJxfyYXG1UITQLl87fcc4GNdXt0tEr_JMcODuD938QJ5-sPladNT7J6eMt4MsvtDw5AkTF7h9hVHVYlSj5t7Ssu1YSeZt7u72rJKfTzZlX9GJ7NKpRTpdmYiYJjAKOshXbTMogtLcPbmkMjjoKzBRmbbqz4Xn0Y1N0qe-RuSQnPxNojBxlSsDDnAn0HRL52w4dRBLfz5Leky_5-1cbFYkybTa1aFU0xNHM10a6ruPYWzjGs3zWhzxO2uIXVYdpdleONdUY0RTwq-t-6tGBS8vp6EVF6i-7axybNlGE9mS0atgEk-YPxBSXFEsLhYKgjOVOl_iIemmoe-r8yuCtM4mzbJ0PebhE1Erlvfq4QAn9mUjxMLKuBiT8CCGHUjVO1Ogh1FmlC49OCYMnut8r-AAqvHel_D3QYpLdiDURVCk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.632,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 47, \"sources\": [\"S-1ffa\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Olkadul reservoir, in megalitres?\n\nSOURCES:\n\n[S-e650]\nSummary entry. Olkadul reservoir. Licensed storage capacity: 325 megalitres.\n[end S-e650]\n\n[S-206a]\nMaintenance log. The spillway gates at the Olkadul reservoir were serviced during the dry season and the access track was regraded.\n[end S-206a]\n\n[S-0812]\nBriefing extract. According to our records, the licensed storage capacity of the Olkadul reservoir stands at 325 megalitres.\n[end S-0812]\n\n[S-010e]\nNotice to operators: the licensed storage capacity for the Olkadul reservoir is 252 megalitres. Please plan accordingly.\n[end S-010e]\n\n[S-6474]\nCommunity bulletin: residents are reminded that the Olkadul reservoir has a licensed storage capacity of 325 megalitres.\n[end S-6474]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 329,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 452,
+  "output_tokens": 42,
+  "cost": 5.496e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_G3F5PiyBbi-J1LIvK5aPTjpmZUZf8tb57mDsKr1Lfk4KioFxrF4533Hw_LR6r3uJYwkhiMJl0ftq7s86FhN_hfmdRhwcDhJZjzGJ3clIGnYFL1EzdH6KTuEeKccpKpI9Pf8fJxUe1yF2_pAblDRDMTqmffZMtV4Gyd8KNOHSYQvSd4ZTc1aSOrohyBfovpSbgYKjbhY7-BMRoahJoc8432fPrJ4f7kb7PtwBQ4DSiK9Hnpga4yDer1TKu9k6L54A8IzfeRm1ZC7vbUAdDmFk_LbxAe6TKaX2MRviMe9VvY1buYFzWnuZSEhiydF1OnmSun73TtGcpLp-2B05mHuwDiykRPAzq-6qbuqSEFG0PUn2k6eZ1ZfqDFXaklrOQznnIBkVgE8zwEI3L6PsY768botXbh8IQB7yncc2F_HVxBErmMN92MiMMoWjIECUtKxyZm7CGHEfFxuCMvuFhKKJb6ByF-Ze8pl5KWsjjnWag__rFWA-3zDdV5b_VXfY7lS7PhG2jf7CSXqiwLjKB_z6IXs4SCI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.678,
+  "text": "{\"decision\": \"answer\", \"answer\": 325, \"sources\": [\"S-e650\", \"S-0812\", \"S-6474\"]}"
+ }
+}

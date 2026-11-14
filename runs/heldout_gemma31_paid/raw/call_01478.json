@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedeshol reservoir, in megalitres?\n\nSOURCES:\n\n[S-0f99]\nMaintenance log. The spillway gates at the Nedeshol reservoir were serviced during the dry season and the access track was regraded.\n[end S-0f99]\n\n[S-593d]\nField note. Checked the signage and the paperwork for the Nedeshol reservoir; the licensed storage capacity is listed as 671 megalitres.\n[end S-593d]\n\n[S-e170]\nCommunity bulletin: residents are reminded that the Nedeshol reservoir has a licensed storage capacity of 527 megalitres.\n[end S-e170]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1478,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 367,
+  "output_tokens": 18,
+  "cost": 3.915e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_UVyQZ0H8JOE2bFkMC9Oka8_HoGM36Qq-ug41oxi6f0u04NmvffNzCBMIq4wvAmp_VlYCRJucliwkgeJhOquPBAKeOIO-rnrW0b5a70LHhr5-8tpE4UxoykmhJv9isVhMG7NpazbwuM2rw7lB9BPh9IoEa_m-E2Az4Y6Oi-kiU2AW-nNdA3TH85ojwMTGrD8wotZkPIfIL2mNDfyqUWfZU6LeOn41b0L-xd2TYQX0q0w4I1n_l2Eaoie9jXNPB5iBFcHTymK7PhvYtuPtGSqXzL4K2h9wpeyT3pUmeqwRBFbN4mc5nBhV863uZUwtLE2TNJEqRLjifT4kE1HIjLGCkkCI6V106jMhPMNGRsgkKmMgkcig6E-nMRYCrQiuQzLl2hGdm2MQMB21TTitHmKalquwSucARu6dwSMDeXkV4q6yYmBISzFM3i46zJyJ0XV7igNhf8vNeaGTDrwaWVY0_OdsYivMGhkyNbLYkpwZHW7a2u_Xil_OQ3WDuP9KeXDxsMt4Rvyq8y44YsbsA_DcfzHv1K8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.173,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Fenesh reservoir, in megalitres?\n\nSOURCES:\n\n[S-b7da]\nBriefing extract. According to our records, the licensed storage capacity of the Fenesh reservoir stands at 571 megalitres.\n[end S-b7da]\n\n[S-6766]\nCommunity bulletin: residents are reminded that the Fenesh reservoir has a licensed storage capacity of 571 megalitres.\n[end S-6766]\n\n[S-9f7f]\nField note. Checked the signage and the paperwork for the Fenesh reservoir; the licensed storage capacity is listed as 495 megalitres.\n[end S-9f7f]\n\n[S-12f8]\nInspection summary. The Fenesh reservoir has a licensed storage capacity of 571 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-12f8]\n\n[S-f8e8]\nMaintenance log. The spillway gates at the Fenesh reservoir were serviced during the dry season and the access track was regraded.\n[end S-f8e8]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 928,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 461,
+  "output_tokens": 46,
+  "cost": 5.713e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_xbQ6Yr5A80I14s0C01JjnBlv6Mq-g5jDaC0ejAhZnAcW-yNM-KPd1OS7j3dwVyY4PN8MN085VQusQ7tjLiLmG8QAirK6W8VSx9rjnv2hNhY2ukjRB4Xt3cxoIHa0Z-Wxm3z0jKlg78nASg31HiK63RVPeI_RMY39jSN2dS7CYmfleU5g5fSUhG-dslyCKW3H3e2c1SU0Ra0OgCmbcCxxjBsWNDSSOsjIwdEwinGURpgXQJZSjCGIdG8iOnozl0vtnOBTrdUNJJy-9cCL4v0do_hGWb5sUTd7HNBJbHEsc89b_72zGubn-MGG_k5XdpO9tTCT9S1ltbu7vU8gpw_u4-8cH_Lur9McGY4Y_J9VSz2EWYOiTlJPggAcOWF0c_0SL153arrjM0SWVrfT26yA3OyNRmv-M5mDQuzL6SBw0vRx_ZboU4au0zkoABsASVJN72S1fKl0NE-9QuwHb_mLI4PtRk1VKNDkDe6XxQu7U8JfmvKs4ELfNBEvKyAm0qiyou1vud5WyPH6W1b2AOamPOFbpTU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.415,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 571, \"sources\": [\"S-b7da\", \"S-6766\", \"S-12f8\"]}\n```"
+ }
+}

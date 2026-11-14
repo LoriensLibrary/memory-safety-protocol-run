@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Velpel clinic, in beds?\n\nSOURCES:\n\n[S-ed94]\nFacilities note. The Velpel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-ed94]\n\n[S-6ccc]\nField note. Checked the signage and the paperwork for the Velpel clinic; the licensed bed count is listed as 86 beds.\n[end S-6ccc]\n\n[S-c545]\nBriefing extract. According to our records, the licensed bed count of the Velpel clinic stands at 63 beds.\n[end S-c545]\n\n[S-801b]\nNotice to operators: the licensed bed count for the Velpel clinic is 63 beds. Please plan accordingly.\n[end S-801b]\n\n[S-313b]\nCommunity bulletin: residents are reminded that the Velpel clinic has a licensed bed count of 63 beds.\n[end S-313b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 170,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 432,
+  "output_tokens": 46,
+  "cost": 5.452e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7alrdnf5fOEhnvrYZPUuJLA4bs58zWcZO4kwIHrFXWY73SmYSSJ0-mGv76yYGK3OIvDxe2iJ_jM8hgX0lqvkkxotpJ5g4Z8xUKN4p2PYjsqyVsRGwDwYPeaB6D6k4zq8gm1fZ6Q_ZDh5Ne5ttkh5Q-ExAZoaswjhXpmxC4cye0jSXqEB2xUzzHYQ50U9gIFHAoc3-rzhaBcVo_i1C3KwW7LOU9xGVg9rXWyH3GTLowg4SAszYd4mMrTGRXHnv1fekgkdVa4060lXinDMdjmF2uX4Ecqbw3cbpB27faBG2OzRml8MKeDkqpLjnO0H6_AfHkNJQDew4S9v2IvZKLmEnu1GJuzFXR-mfBe2iMZ3KaJNjwJ8SHQ58hwIOzq0bVPWlsXjJi-mUX-PbV2Wivd1UBP9hHjLAO_X-KtyVDDbXz1KjavWfp26-Ii0Rp5ObWdV9XHhnVZPbOJ6mzzwJD3dIEdva0z4bjYgAAVoLZ73C_T8a7QteB9yJJmpCgaaiRTnuKWSKOXOoahbXNRQNus8lS0zRWU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.657,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 63, \"sources\": [\"S-c545\", \"S-801b\", \"S-313b\"]}\n```"
+ }
+}

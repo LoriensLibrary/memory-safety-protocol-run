@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Aroned reservoir, in megalitres?\n\nSOURCES:\n\n[S-abdd]\nInspection summary. The Aroned reservoir has a licensed storage capacity of 710 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-abdd]\n\n[S-0c23]\nMaintenance log. The spillway gates at the Aroned reservoir were serviced during the dry season and the access track was regraded.\n[end S-0c23]\n\n[S-7bab]\nCommunity bulletin: residents are reminded that the Aroned reservoir has a licensed storage capacity of 710 megalitres.\n[end S-7bab]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 898,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 357,
+  "output_tokens": 35,
+  "cost": 4.403e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Swq2BVHHxNuTCkBhYdu-M0xICjD2CQ4vQA1e5j99HRHBXSfQEuN6a3tb2j8dlMRXGwfs1nvScMZFPDgrZJCfB7Z8MyDT7lr1cFp-A8XTaseBm3QKWkk6txzdJZ9v5GV-TII14BbFoThb2xi6KS9QWORVJbbmKNCZBnjW93qDZ_9O0q8HZJOikMmHuGm39vQliTa1izCztcO9pMwChkDB8VGDQHaQU08zWMI0xkyxeV0JLafdR964JZLe0x__A9Xsn5eWStT8F_lIq80jCuQVn8v9wMPh4p1DHTa1uhLYtFZqjgOiW1fjqFcjorJR7crZkzFSnIjbRbzDypkJGM98VbtMKvNQsMBpwQd9ZQ6V7xUPVdW8EUOMgDbdJckk_FXJr2yaFgBIkO9sK5cczRKCgc-zgoYRakXCP9MydVe5iDHmpaHYkRjR0TULP1X1XfPkMYqpRzd2jtBKsCUr3NVeAuKQtuZPJjtULdvIAuh_x4NsxAeHABdpxulYhudmGxRxL5UhuVSso2BmFqTMGhrkg7P2LnQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.522,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 710, \"sources\": [\"S-abdd\", \"S-7bab\"]}\n```"
+ }
+}

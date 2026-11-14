@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Aroixned bridge, in tonnes?\n\nSOURCES:\n\n[S-95d8]\nCommunity bulletin: residents are reminded that the Aroixned bridge has a posted load limit of 18 tonnes.\n[end S-95d8]\n\n[S-dc0b]\nSummary entry. Aroixned bridge. Posted load limit: 14 tonnes.\n[end S-dc0b]\n\n[S-79ff]\nBriefing extract. According to our records, the posted load limit of the Aroixned bridge stands at 14 tonnes.\n[end S-79ff]\n\n[S-801f]\nNotice to operators: the posted load limit for the Aroixned bridge is 14 tonnes. Please plan accordingly.\n[end S-801f]\n\n[S-22e8]\nMaintenance log. The Aroixned bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-22e8]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 300,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 431,
+  "output_tokens": 44,
+  "cost": 5.375e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_LXDfHA4Fl5VjxWGsSpzDep_jAh_b1sOsmDEsA9IgDlgFi6P2wnli7AQ77XedqF7Bx-a_Qcpzih3W7FuH4tvAd8wvEq6LkDCKV-SvatG10PolRXtAZiPnCKpAg01cfnBoMm8-R-MjOcbMr2O5RIMUb9YbD_5kV9eKPMtfsF75yAmQgjFVmOAMURTr4kQAvEvgwL6pbHigTqbn_qU91R4QWoZVZfbF6oHk_j-PVM1hQz8LnI1t1UzlvNTOF5O69ePGfXm8xUgJ198w69A9gSxEsQhpgyK51FRYmSnU_3DvWqVQMIB4qPdBWQF49kloLdRyUboLjdsMHQJKrxatVLfNTiBJKzBwP-Y6z_DBQucnh6r0ff9bzu9BjYPfwlKJrkWEZK8Z3PbQfrdAz1C_14DXajHAcav_uE5iKZIyO_rBNAX_POxQ_HqSaOaqF0pEHSO_BH6o8N2y6uHPVYL77HBQbGTXwdYHAqssxeL1ox0zD7JnQ-qjja3Z2C46RnNiF8RvJ2hkHgF710tFVIGCplKmHFtOQbs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.557,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 14, \"sources\": [\"S-dc0b\", \"S-79ff\", \"S-801f\"]}\n```"
+ }
+}

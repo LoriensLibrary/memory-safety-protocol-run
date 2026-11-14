@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the posted load limit of the Ythvor bridge, in tonnes?\n\nSOURCES:\n\n[S-a258]\nSummary entry. Ythvor bridge. Posted load limit: 29 tonnes.\n[end S-a258]\n\n[S-86c6]\nMaintenance log. The Ythvor bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-86c6]\n\n[S-c181]\nInspection summary. The Ythvor bridge has a posted load limit of 21 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-c181]\n\n[S-3303]\nNotice to operators: the posted load limit for the Ythvor bridge is 21 tonnes. Please plan accordingly.\n[end S-3303]\n\n[S-fa15]\nField note. Checked the signage and the paperwork for the Ythvor bridge; the posted load limit is listed as 21 tonnes.\n[end S-fa15]\n\nPLATFORM PROVENANCE:\nSource S-a258 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-86c6 claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-c181 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-3303.\nSource S-3303 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-fa15 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-3303.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1663,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 664,
+  "output_tokens": 45,
+  "cost": 7.506e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_lcdnCz8tblIZVardECAB2HM4DRRqLF98N_tgLLfNrcNUHzfQ3F9MXY-JnOTOTIjH2GmO1oLhj5GiN9YQ8RBB0tiMtSkYKTAOF0BNy2fbplaWXSp-mptuGtUJ6cb-sRua6NrZ-4k5sIHR7620GW9m0sukrruQGrG1_x3TesYBBZjl9hP2pZhFrR3rINpkrmxIts6RndOFSfEXN_hJv28et8iBZjS3wAiYvHowTARgQMtLQqu-nV2lNNUumwBd0VODuNYdKYEfl8cyjC_sf4IHEWP5_3elWn_nUVaQApaqTwBfbKAYfLO00Xa4n8G310yW7hNv_68m2oPx7GFhFeRCW0GQ_H2NfzgHmKtafwNIGFOcTIaOuuNLJDrKjMa8qt_05CdXEqMQ3h4aFvg7EMUTbfc4srN6Kp7o4aNdzKfQT8BqqXJJ82_XZ2XMMuq9_CLOphEokxZD6qH22-1IDYNggGu0b0dWJoA_uUWrU6eP0q830QL_qB9TNq6ObEZ9ZNCA-5ovOeq7jUGOVU47QW9QrBGgnlI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.873,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 21, \"sources\": [\"S-c181\", \"S-3303\", \"S-fa15\"]}\n```"
+ }
+}

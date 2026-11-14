@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ustro clinic, in beds?\n\nSOURCES:\n\n[S-e4f8]\nField note. Checked the signage and the paperwork for the Ustro clinic; the licensed bed count is listed as 204 beds.\n[end S-e4f8]\n\n[S-6732]\nInspection summary. The Ustro clinic has a licensed bed count of 204 beds. The figure was recorded during the most recent scheduled review.\n[end S-6732]\n\n[S-55d9]\nCommunity note. The Ustro clinic runs a volunteer programme and hosts an annual open day.\n[end S-55d9]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1913,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 356,
+  "output_tokens": 39,
+  "cost": 4.53e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AuiFctRT8S4f0-bqxTYuAKhDsWkJbye0GjRn7dyZOUZuqf9oQyb2mxggP-HKIaGcheYf-PARsFtCCx0BIMpMWUolsfOXgfGVTkXGG0MVTMC5GMkOGnuyjw5SM6MHaPGw4ZVEpt-ZzGA1tWCPMCNtXlkZaXhGHC2R0CjTaIluM7dmaIgvLaFjtYx5qs2CBaJ_8GGNVsP0nmQfrIYULrHR0s5VPenS9--jGghF-EGOmizVtCpJABzYl_3bNv1Mnt99lKQC4jmYJgyLtdz-YquliJnFHzSzeHxaFZ3FSDNEtRT4h32A3QxzTlQkFoaAB1qzRpU_m22ktjLaZh5OGeiKHbfXlsCzR_KPHCcOBP0aWKXq-x9_ZoJ45Oq4KrW2aZxKebGNcE1M9ywlB715IXmGJtMaIFPvFIn3v9oV8p0l434OhG1kLHJwtXf-lKKFQm4l6aJkvAEYNLib0i_12tM8ZsKdgjcUYuG6pzKWZABWPKumfgiB0R_tZJqhAuP2R37Uvjw3s9x4ay-NgZWBC54Kte52mwQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.75,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 204, \"sources\": [\"S-e4f8\", \"S-6732\"]}\n```"
+ }
+}

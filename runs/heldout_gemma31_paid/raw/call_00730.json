@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ythvorned reservoir, in megalitres?\n\nSOURCES:\n\n[S-a9f1]\nField note. Checked the signage and the paperwork for the Ythvorned reservoir; the licensed storage capacity is listed as 450 megalitres.\n[end S-a9f1]\n\n[S-0f37]\nCommunity bulletin: residents are reminded that the Ythvorned reservoir has a licensed storage capacity of 450 megalitres.\n[end S-0f37]\n\n[S-94ca]\nMaintenance log. The spillway gates at the Ythvorned reservoir were serviced during the dry season and the access track was regraded.\n[end S-94ca]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 730,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 373,
+  "output_tokens": 39,
+  "cost": 4.683e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_GXDoOt20NkWhssN-l8LAA6M5je230DGJWfmKDCz0415y-KiS_mbAt9klcmzu4_a2TSLXqLon-Llua55jR9wloo5dslIKnoI_DAySJsacxOyM2wDDAOIKCa8siCO5Ab287AHUh_UFRpJJA-3cC79VYq8x7OwYLXsvXn_TaGm2Uhz8L6BxMlA-_-8xMQ6A50c8Sxi1x-pDnneivkMepUeOgjEasDyTXEGYPrzhXAuWMQnHWCWD9y1fcz2jXSxahY-lL2WiIX0vPQ8G3AG1qLKLlItVh2nh4vL9sHM8WhkAZkPh7q-iX9gXFjtxK3QMUVaX4AKjzP9QBPQumeLZB7e9CJcv17BAG061s251Ktpo6duFhxYHX9pIArlXNCK8KGRmKE2cFV-rrdlMZi39LQFmOM94yhLXeLKaXyvPbrQxOhgcvClHlxw2tFmhkvG0epyFuNc7YZEWLsOMELgOuHvJ649Ino722Rztz53q7XhhH2eozjP1lEQh7msGdT707YC6jLf6vI-F3yGu7q80d9ECRrKTaIE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.45,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 450, \"sources\": [\"S-a9f1\", \"S-0f37\"]}\n```"
+ }
+}

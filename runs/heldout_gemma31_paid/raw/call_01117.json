@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Quaned reservoir, in megalitres?\n\nSOURCES:\n\n[S-c7a5]\nMaintenance log. The spillway gates at the Quaned reservoir were serviced during the dry season and the access track was regraded.\n[end S-c7a5]\n\n[S-ebe2]\nInspection summary. The Quaned reservoir has a licensed storage capacity of 467 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-ebe2]\n\n[S-5600]\nField note. Checked the signage and the paperwork for the Quaned reservoir; the licensed storage capacity is listed as 467 megalitres.\n[end S-5600]\n\n[S-4fa9]\nNotice to operators: the licensed storage capacity for the Quaned reservoir is 467 megalitres. Please plan accordingly.\n[end S-4fa9]\n\n[S-58ff]\nCommunity bulletin: residents are reminded that the Quaned reservoir has a licensed storage capacity of 376 megalitres.\n[end S-58ff]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1117,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 453,
+  "output_tokens": 44,
+  "cost": 5.573e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_sM-MduGXno6gv6CSHPszOqq3nPLleJHToxD5f-Seaxy9AtlgAH9pATE8AtvTPxVn3OJy1ReX_b-qpuOl7OLxrFAjpQnepXrSPiK1et7RlVNR_7xUgesx81UfU8Vom3DqHdVVKj0HOYBowhm0C3gWSfavYm1QcfBnc_ToGp93bieu5_oEmJu_qW4g-RVgnEX2Vvq5GlP7QlxbmC1jWCmFyHNxKYcc--0Rpkity5HLIOxGSx2y6ItO4r3ohjq10s5YEfJ3Em_Cbe59MSECLxhzNUtcnd6g7Yh79WX3jVF07d89KALazdfgjwJ7ook5cKBHnOLGPHfNUIC9cND5b14OtgscRVzoA_45Fp270Y7DRsZCY_tTpx2f5smzafqkE19axYxXsC56xv40qsklRDIG5YJGIf1dHMIeeiDIbJW_8tKQcNAS-MPwHSuuQMl9mgPlWzjaWjCacH574Ir_VFERD_5dvmHVL19cmbNTUGmnxelLfG1ozf1WUJVawK4ki0U7PXHca3kCNk0VQV9ePmSVborN06E=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.572,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 467, \"sources\": [\"S-ebe2\", \"S-5600\", \"S-4fa9\"]}\n```"
+ }
+}
