@@ -125,6 +125,24 @@ def table_followup():
     return "\n".join(L)
 
 
+F5_TYPE = dict(V1="single plant", V3="forged claim", V5="verified but wrong", V7="copies, none verified", V6="clean, unverified")
+F5_COND = dict(none="no record", described="record, original note", unexplained="record, no note", reworded="record, reworded note", caveat="record, original note plus caveat")
+
+
+def table_f5():
+    fu = N.get("_followups_f5") or {}
+    ms = [m for m in MODELS if m in fu]
+    if not ms: return "_F5 results are not in yet._"
+    L = ["| Item type (30 items) | Condition | " + " | ".join(f"{m}: correct / adopted plant / abstained / other" for m in ms) + " |", "|---|---|" + "---|" * len(ms)]
+    for k in fu[ms[0]]["table"]:
+        v, c = k.split("|", 1); cells = []
+        for m in ms:
+            t = fu[m]["table"][k]
+            cells.append(f"{t.get('correct', 0)} / {t.get('adopted_bad', 0)} / {t.get('abstain', 0)} / {t['registered'] - t.get('correct', 0) - t.get('adopted_bad', 0) - t.get('abstain', 0)}")
+        L.append(f"| {F5_TYPE[v]} | {F5_COND[c]} | " + " | ".join(cells) + " |")
+    return "\n".join(L)
+
+
 def example_box():
     e = N["_example_item"]
     return ("```\nQUESTION: " + e["question"] + "\n\nSOURCES:\n\n" + e["sources"] + "\n\nPLATFORM PROVENANCE:\n" + e["json_record"] + "\n```")
@@ -156,7 +174,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 def build():
     src = open(os.path.join(REP, "REPORT.src.md"), encoding="utf-8").read()
     subs = {"TABLE_MAIN": table_main(), "TABLE_CLAIMS": table_claims(), "TABLE_INTEGRITY": table_integrity(), "TABLE_TOKENS": table_tokens(),
-            "TABLE_LOOKUP": table_lookup(), "TABLE_ORDER": table_order(), "TABLE_FOLLOWUP": table_followup(), "EXAMPLE_ITEM": example_box()}
+            "TABLE_LOOKUP": table_lookup(), "TABLE_ORDER": table_order(), "TABLE_FOLLOWUP": table_followup(), "TABLE_F5": table_f5(), "EXAMPLE_ITEM": example_box()}
     for m in MODELS: subs[f"TABLE_PERTYPE:{m}"] = table_pertype(m)
     for k, v in subs.items(): src = src.replace("{{" + k + "}}", v)
     left = re.findall(r"\{\{[^}]+\}\}", src)

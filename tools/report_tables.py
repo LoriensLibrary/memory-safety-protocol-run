@@ -119,11 +119,11 @@ def example_item(c, tid="V3-000"):
                 true_value=it["truth"], planted_value=it["bad"], roles={s["id"]: s["role"] for s in it["sources"]})
 
 
-def followups():
+def followups(prefix="followup_"):
     out = {}
     for d in sorted(os.listdir(os.path.join(ROOT, "runs"))):
         p = os.path.join(ROOT, "runs", d, "results.json")
-        if d.startswith("followup_") and d.endswith("_paid") and os.path.exists(p):
+        if d.startswith(prefix) and d.endswith("_paid") and os.path.exists(p):
             r = json.load(open(p, encoding="utf-8"))
             ex = [json.loads(ln) for ln in open(os.path.join(ROOT, "runs", d, "EXECUTION.jsonl"), encoding="utf-8") if ln.strip()]
             r["counted_spend"] = round(ex[-1]["spend"], 4); r["executions"] = len(ex)
@@ -195,6 +195,7 @@ def main(names):
                                        order_effects=order_effects(c), reasoning=reasoning(c)) for c in cohorts}
     numbers["_example_item"] = example_item(cohorts[0])
     numbers["_followups"] = followups()
+    numbers["_followups_f5"] = followups("followup2_")
     json.dump(numbers, open(os.path.join(OUT, "numbers.json"), "w", encoding="utf-8"), indent=1)
     figure(cohorts, os.path.join(OUT, "fig1_outcomes.png"))
     print("wrote", OUT)

@@ -81,7 +81,7 @@ Seven paired comparisons were fixed before any model call (Table 2). Each is tes
 
 Both models are served by Adaption's hosted inference: gemma-4-31b-it and deepseek-v4-flash. Each model is its own cohort. Settings are the same for every model and arm: temperature 0 and a 6,000-token output budget. A development canary (16 items per model, separate seed) checked reply validity, latency and the provider's rate limit; both models returned 64 valid replies of 64 and entered the held-out run. The held-out set has 60 items per type, 480 items, the same for both models: 2,400 registered slots per model, 1,920 of which call a model.
 
-The design, the claims and the frozen item set were committed before the first held-out call. The runner recomputes hashes of the items, prompts and code and refuses a freeze that no longer matches. The harness has 33 automated checks; a mutation check plants 29 deliberate defects in the item generator, scorer and spend guard and confirms the checks catch each one.
+The design, the claims and the frozen item set were committed before the first held-out call. The runner recomputes hashes of the items, prompts and code and refuses a freeze that no longer matches. The harness has 47 automated checks; a mutation check plants 29 deliberate defects in the item generator, scorer and spend guard and confirms the checks catch each one. After the runs, a separately written reader re-derived all 3,806 scored outcomes from the raw replies and recomputed the metered cost from token counts; neither disagreed with the recorded results (`tools/audit.py`).
 
 ## 4 Results
 
@@ -131,15 +131,11 @@ The record roughly doubled the input: 278 to 556 tokens per call for gemma and 3
 
 ### 4.7 The fixed rule
 
-The fixed policy was correct on all 360 items of the six types where the record was honest and sufficient, abstained on all 60 copies-none-verified items, and adopted the plant on all 60 verified-but-wrong items. It shows the record held enough to abstain where gemma did not, and that no policy over the record can survive a wrong record.
+The fixed policy was correct on all 360 items of the six types where the record was honest and sufficient, abstained on all 60 copies-none-verified items, and adopted the plant on all 60 verified-but-wrong items. It shows the record held enough to abstain where gemma did not, and that a policy which trusts the record fails with it when the record is wrong.
 
 ### 4.8 Follow-up tests
 
-These four tests were chosen after the held-out results and are not part of the preregistration. Their plan and expectations were committed before any follow-up call (FOLLOWUPS.md). Fresh items, same settings.
-
-Table 3. Follow-up tests. Each cell gives correct / adopted plant / abstained / other, where other is an invalid reply, a transport error, or a first reply that broke the required-request protocol.
-
-{{TABLE_FOLLOWUP}}
+These tests were chosen after the held-out results and are not part of the preregistration. Their plans and expectations were committed before the calls they govern (FOLLOWUPS.md). Fresh items, same settings. Full tables are in Appendix B.9 and B.10.
 
 **[DRAFT NOTE: deepseek-v4-flash follow-ups are still running. The paragraphs below cover gemma-4-31b-it.]**
 
@@ -233,6 +229,18 @@ Post hoc, and not preregistered, we read the decision and the answer from each i
 
 {{TABLE_PERTYPE:deepseek-v4-flash}}
 
+### B.9 Follow-up tests F1 to F4
+
+Table 3. Each cell gives correct / adopted plant / abstained / other, where other is an invalid reply, a transport error, or a first reply that broke the required-request protocol.
+
+{{TABLE_FOLLOWUP}}
+
+### B.10 Follow-up test F5: how the prompt describes the record
+
+Table 4. Thirty items per type. The record is the same JSON in every record condition; only the system prompt changes.
+
+{{TABLE_F5}}
+
 ### B.8 Deviations from the preregistration
 
 1. **Interrupted runs.** The laptop running the study went to sleep twice during the held-out runs, once in each cohort, for about an hour each. Calls in flight were lost. Together with other connection failures this produced 9 transport errors for gemma and 2 for deepseek. By rule they were not retried and they stay in the denominators.
@@ -250,9 +258,9 @@ Post hoc, and not preregistered, we read the decision and the answer from each i
 |---|---|---|
 | `PREREGISTRATION.md`, `FOLLOWUPS.md` | design, claims, amendment, follow-up plan | this sprint |
 | `tools/items.py`, `tools/score.py` | item generator, arm prompts, fixed rule; strict scoring | this sprint |
-| `tools/run.py`, `tools/launch.py`, `tools/followup.py` | freeze, dry run, paid run, resume; follow-up tests | this sprint |
+| `tools/run.py`, `tools/launch.py`, `tools/followup.py`, `tools/followup2.py` | freeze, dry run, paid run, resume; follow-up tests | this sprint |
 | `tools/analyze.py`, `tools/sensitivity.py`, `tools/report_tables.py`, `tools/build_report.py` | comparisons, second reading, every table and figure, this document | this sprint |
-| `tools/tests/` | 43 checks and the 29-defect mutation check | this sprint |
+| `tools/tests/`, `tools/audit.py` | 47 checks, the 29-defect mutation check, and the independent re-scoring audit | this sprint |
 | `tools/guard.py` | spend guard | rewritten this sprint from our earlier design |
 | `tools/vendor/` | Adaption REST adapter; Tango interval, Holm, sign test | pre-existing, copied unchanged |
 | `holdout/`, `runs/` | frozen item sets; traces, raw calls, ledgers, tables | this sprint |
