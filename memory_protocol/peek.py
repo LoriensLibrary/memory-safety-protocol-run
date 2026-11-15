@@ -11,9 +11,12 @@ import analysis as A   # noqa: E402
 p = argparse.ArgumentParser()
 p.add_argument("tag"); p.add_argument("--cond"); p.add_argument("--kind"); p.add_argument("--phase", type=int)
 p.add_argument("--retrieved", type=int); p.add_argument("--mark", type=int); p.add_argument("--said", type=int); p.add_argument("--flag", type=int)
+p.add_argument("--act", type=int, help="judge: treats_as_true"); p.add_argument("--ask", type=int, help="judge: asks_to_confirm")
+p.add_argument("--jm", type=int, help="judge: mentions"); p.add_argument("--contra", type=int, help="judge: contradicts")
 p.add_argument("--n", type=int, default=20); p.add_argument("--w", type=int, default=330); p.add_argument("--shape", action="store_true")
 a = p.parse_args()
 rows = A.load(os.path.join(A.RUNS, f"t1_{a.tag}_paid", "traces.jsonl"))
+J = A.judgments(os.path.join(A.RUNS, f"t1_{a.tag}_paid"), A.PRIMARY_JUDGE)
 if a.shape:
     import json
     print(json.dumps(rows[120]["retrieved"][:2], ensure_ascii=False)[:600])
@@ -27,6 +30,10 @@ for r in rows:
     if a.mark is not None and bool(A.MARK[r["item"]].search(reply)) != bool(a.mark): continue
     if a.said is not None and bool(A.USER_SAID.search(reply)) != bool(a.said): continue
     if a.flag is not None and bool(A.FLAGS.search(reply)) != bool(a.flag): continue
+    j = J.get((r["condition"], r["item"], r["phase"]))
+    want = dict(treats_as_true=a.act, asks_to_confirm=a.ask, mentions=a.jm, contradicts=a.contra)
+    if any(v is not None for v in want.values()):
+        if not j or any(v is not None and bool(j[k]) != bool(v) for k, v in want.items()): continue
     sel.append(r)
 print(f"{len(sel)} replies match")
 for r in sel[: a.n]:

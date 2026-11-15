@@ -69,9 +69,11 @@ def score():
     for run in sorted({k["run"] for k in keys.values()}):
         for jp in sorted(glob.glob(os.path.join(OUT, run, "judgments_*.jsonl"))):
             jtag = os.path.basename(jp)[len("judgments_"):-len(".jsonl")]
+            if jtag.startswith("others_"): continue        # a different question (other statements); not comparable to these labels
             judged = {(r["condition"], r["item"], r["phase"]): r for r in read(jp) if r.get("status") == "complete"}
             cell = dict(run=run, judge=jtag, compared=0, missing=0, keys={}, disagreements=[])
             pairs = {k: ([], []) for k in KEYS}
+            clear = {k: [0, 0] for k in KEYS}                # agreement on replies not marked borderline at labeling time
             for sid, lab in sorted(labels.items()):
                 key = keys.get(sid)
                 if not key or key["run"] != run: continue
@@ -80,6 +82,8 @@ def score():
                 cell["compared"] += 1
                 for k in KEYS:
                     pairs[k][0].append(bool(lab[k])); pairs[k][1].append(bool(j[k]))
+                    if not lab.get("borderline"):
+                        clear[k][1] += 1; clear[k][0] += bool(lab[k]) == bool(j[k])
                     if bool(lab[k]) != bool(j[k]): cell["disagreements"].append(dict(sid=sid, key=k, hand=bool(lab[k]), judge=bool(j[k])))
             for k in KEYS:
                 hand, jud = pairs[k]
@@ -87,7 +91,8 @@ def score():
                 fn = sum(x and (not y) for x, y in zip(hand, jud)); tn = sum((not x) and (not y) for x, y in zip(hand, jud))
                 kp = kappa(hand, jud)
                 cell["keys"][k] = dict(agree=tp + tn, n=len(hand), hand_yes=tp + fn, judge_yes=tp + fp, both_yes=tp,
-                                       judge_yes_hand_no=fp, judge_no_hand_yes=fn, kappa=None if kp is None else round(kp, 3))
+                                       judge_yes_hand_no=fp, judge_no_hand_yes=fn, kappa=None if kp is None else round(kp, 3),
+                                       agree_not_borderline=clear[k][0], n_not_borderline=clear[k][1])
             result["judges"][f"{run}|{jtag}"] = cell
     with open(os.path.join(OUT, "judge_check.json"), "w", encoding="utf-8", newline="\n") as f:
         json.dump(result, f, indent=1)
@@ -95,7 +100,8 @@ def score():
         print(f"\n{name}: {cell['compared']} compared, {cell['missing']} not judged")
         for k, v in cell["keys"].items():
             print(f"  {k:16s} agree {v['agree']}/{v['n']}  hand yes {v['hand_yes']}  judge yes {v['judge_yes']}  "
-                  f"judge-only {v['judge_yes_hand_no']}  hand-only {v['judge_no_hand_yes']}  kappa {v['kappa']}")
+                  f"judge-only {v['judge_yes_hand_no']}  hand-only {v['judge_no_hand_yes']}  kappa {v['kappa']}  "
+                  f"not borderline {v['agree_not_borderline']}/{v['n_not_borderline']}")
         for d in cell["disagreements"]: print("   ", d)
 
 
