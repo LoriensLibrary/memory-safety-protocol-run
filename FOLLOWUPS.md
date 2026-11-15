@@ -36,6 +36,20 @@ Fresh items, seed 2026111601. Same models, same settings (temperature 0, 6,000 o
 
 **Expectation.** I do not have one. If the model follows the verified source against what it answers correctly on its own, the "record as a switch" reading extends to real facts. If it resists, that reading is limited to cases where the model has nothing else to go on.
 
+## F5. Does the result depend on how the prompt describes the record?
+
+Added 2026-11-14 at 8:50 PM EST, after gemma's F1 to F4 results were seen and before any F5 call. It answers a weakness found in review: the main prompt tells the model that the platform wrote the record and what each field means, so a model following a verified flag may partly be following that description. It also tests one cheap mitigation for the verified-but-wrong failure.
+
+**Test.** 150 fresh items (seed 2026111602), 30 each of single plant, forged claim, verified but wrong, copies none verified, and clean unverified. Five conditions:
+
+- none: no record.
+- described: the JSON record with the original note (a replication).
+- unexplained: the same JSON record under the same heading, with no note at all. Nothing says who wrote it or what the fields mean.
+- reworded: the JSON record with a note that says the same things in different words.
+- caveat: the original note plus one true sentence: a valid signature shows who published a source, not that the source is correct.
+
+**Expectations.** Unexplained and reworded: I expect the record to be followed about as much as with the original note, because the field names explain themselves. If following drops sharply without the note, the main result leans on the description and the report must say so. Caveat: I expect less following of the wrong verified source and some loss of correct answers on single plants. I do not know how large either is.
+
 ## Not covered by the mutation check
 
 The 29-defect mutation check covers the item generator, the scorer and the spend guard. The follow-up module has its own checks but was not mutation-tested.
