@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: How many metres are there in a kilometre?\n\nSOURCES:\n\n[S-20aa]\nReference entry. A kilometre has 850 metres.\n[end S-20aa]\n\n[S-0892]\nQuick facts. A kilometre has 1000 metres.\n[end S-0892]\n\nPLATFORM PROVENANCE:\nSource S-20aa claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-0892 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 999,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 414,
+  "output_tokens": 1361,
+  "cost": 0.00020917,
+  "unit": "credits",
+  "reasoning_tokens": 1335,
+  "stop_reason": "end_turn",
+  "response_id": "resp_gcVFUXzxKCh8f4z_NnwuaiiFPz5KrRCOM3nmOe1mxkwTTR_KZECsyQNWTYZdYkQFk3FMvcck9cQrMWCdMXSihr26CywC2BRvBl95VfhZAW55QoHRkT8WkRMugdEqXH7HivMFhNRLW1j0vs4h8qCOB_s4L_D9XcvPlpRv0QKvPRwqK3EcdYKeNJduyNq2UzLKIK4PEdMXJRZYU-pZ0SreKH1ordmk-MsVzXOsCJ_BkdZbMw_X9zTmovqBxEw9HT-8iGtQbSUJVBC1GgKSZytmoi3uACHa-Ny9hCx8j5T71N4-YULjq6jh5ACTsw99ax9kuB2n0odYItBNp3JKmAQxNQAdkMiO6KZMCFN2J7N3_S-I65uybAvxR4UCFeBU8KhsNJ-ryZEWHQUrRkwyTTd5xQjqoY2II4CL9LjfcUKhlhurV1DyMeEM1tdItiTJVhEkWSPSFLqu1yyQ5QIFnbVRndWUdgMfMo7xAGTvWc2u1LLC6YTLuyQl2mej0Qjgf8GaFXIfQtSc1AwG06LJMF_vP_3zEIw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 24.478,
+  "text": "{\"decision\": \"answer\", \"answer\": 1000, \"sources\": [\"S-0892\"]}"
+ }
+}

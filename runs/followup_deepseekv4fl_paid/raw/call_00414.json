@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Entha clinic, in beds?\n\nSOURCES:\n\n[S-72ec]\nSummary entry. Entha clinic. Licensed bed count: 173 beds.\n[end S-72ec]\n\n[S-dc0c]\nField note. Checked the signage and the paperwork for the Entha clinic; the licensed bed count is listed as 196 beds.\n[end S-dc0c]\n\n[S-6c6b]\nNotice to operators: the licensed bed count for the Entha clinic is 196 beds. Please plan accordingly.\n[end S-6c6b]\n\n[S-494b]\nBriefing extract. According to our records, the licensed bed count of the Entha clinic stands at 196 beds.\n[end S-494b]\n\n[S-37c0]\nCommunity note. The Entha clinic runs a volunteer programme and hosts an annual open day.\n[end S-37c0]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 414,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 452,
+  "output_tokens": 97,
+  "cost": 3.392e-05,
+  "unit": "credits",
+  "reasoning_tokens": 77,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3hzSfFlSUNe2MR732hmBZMOb8gH9CS86qa9LCgyP-VYwX2_N12sPlkXyqsp-KQwG3Mz4kY-Uw24XdfoAbwekSNEhGWOJr5yiIjUPKWN4zes0sz5l6FOpt4y8_1cUqv7IL__dSNnlGa11jDzY4PutbMMfStI7Hr65XsvaUwVhG4luEvxm2z6Ih7_WZxsMmhqVwb8VcCaIYpAwG9tn3B604okMbgowApXOmor1RBj5nzKAjIR5kr0SPXZmb9-EmKrdFhnDbb791XRWhqaJoFllpiEYaK_HrboYrz507gdYBN17rO6-WSwfS2vktPl3UpIN4YukotV1KSQ3rjowAJ-gthn46onfO2oLTUuBQZv6qAEdX2evkpJYR8_XLBBiJ3Bgfh_gkUB772fROIRo8HHzLrzOhKGDZGzW-m88sTKj4T5CYBVCxXPh_I2HZhrKYH4sYsMwutVRpXsc0mupX3LFk66MtT9b9_PZcpCazyTZiazsRCVeRQfcymfK82-Cu_K6GKVpxb47xd7Nm7YhIxUjuSX0ep8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.512,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

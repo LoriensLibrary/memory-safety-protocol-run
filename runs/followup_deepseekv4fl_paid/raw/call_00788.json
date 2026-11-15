@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many teeth are there in a full adult human set, including wisdom teeth?\n\nSOURCES:\n\n[S-8cff]\nQuick facts. A full adult human set, including wisdom teeth, has 32 teeth.\n[end S-8cff]\n\n[S-0c33]\nReference entry. A full adult human set, including wisdom teeth, has 27 teeth.\n[end S-0c33]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8cff\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0c33\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 788,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 467,
+  "output_tokens": 1861,
+  "cost": 0.00028156,
+  "unit": "credits",
+  "reasoning_tokens": 1835,
+  "stop_reason": "end_turn",
+  "response_id": "resp_U8Bo9Gd8Db1ZXX5fWiOHuVei1nu_r3TAwHwF_l7wBnhFfnDh8o8kRJuRo6I_NQjlr-W50Ai2QuoIYzR92WWRjrXzYCPG9yO-hC-I0tKHnBtm8GtM8aeDITuu5q4wk15Ll--O8OqUFoEBkerYsp6VJKAcg9qfpUzAITbesgu0AyyPovCDjO-MmsQJAvDDj6M5IxdqvgRbHJ79X7JGbpGcxynJbh1mEcJm2uBBaVlDt7DeYv61mA_M7PLhh6Isr-MVqi30vYa0v8wxFW31m1JUySgo74pxLzIWs2uvv46tIVLtqlND4z_UnAgVg5929A6VZLh3jSfufnJavAym2UHgC7jBbeK5F20WM7jLxBN-R5_noOOcJ0Y528OX-ZINwoMK3TW2scdaJFvwGjKDG5tQbFB46CxAIvqHMfBTSn-d1UDyCY6be8O8iOeys4AQTXxFqACsfAitTElXDvwMKVlOeZvosTSQOg10su6nH8LlF8Nt6X165NHivwVThfwS0vI35fa4QOCoOpulhpOXXV0AudeuilE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 43.708,
+  "text": "{\"decision\": \"answer\", \"answer\": 27, \"sources\": [\"S-0c33\"]}"
+ }
+}

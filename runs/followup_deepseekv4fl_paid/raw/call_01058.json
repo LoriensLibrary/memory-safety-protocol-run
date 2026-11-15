@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Tinfen clinic, in beds?\n\nSOURCES:\n\n[S-255f]\nInspection summary. The Tinfen clinic has a licensed bed count of 248 beds. The figure was recorded during the most recent scheduled review.\n[end S-255f]\n\n[S-b935]\nFacilities note. The Tinfen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-b935]\n\n[S-a226]\nField note. Checked the signage and the paperwork for the Tinfen clinic; the licensed bed count is listed as 248 beds.\n[end S-a226]\n\n[S-0fe7]\nBriefing extract. According to our records, the licensed bed count of the Tinfen clinic stands at 248 beds.\n[end S-0fe7]\n\n[S-94ae]\nSummary entry. Tinfen clinic. Licensed bed count: 208 beds.\n[end S-94ae]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1058,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 472,
+  "output_tokens": 312,
+  "cost": 6.492e-05,
+  "unit": "credits",
+  "reasoning_tokens": 275,
+  "stop_reason": "end_turn",
+  "response_id": "resp_fFAIIVBBLiEOIqQ2ehsL1mntu1gBocBj7rjBshw9YClzpQUYMfUJYrt35T3xXoOFple4Cd7wODUPEsWOCilkIolIB_qq8YnPHGg0Rn8Au_e0CpfsdPUGA7W7gY_qWqw6dUbVs29OPDY807YRawXoesmM_BK_TI-aIoX7auVJGuYrXgC66dOBO7Azl_4RV7NhlPl2l-5QmEByYvZ5Z5iHbN8Mx3KDgI2Cm8shnqwpNLC6jbdnQLLNCfebrOkg3XsM5vh5465AfJ8TCRQ-AXsRkCVWT6aQsM3TtyD2MmKOju0C3uZ-G27bHVjm3Pw0HbRDp2lO02JjwjtcAvyt-8jUlOdIqBc8FiXe8g3E5z2bUpa1DB0CigNS94UCKk3L_BKWzvU8EXbN8Ux1Md95hrPSTHJ2BmXkPJNSb4v1zGlo9Me1SmQIBOafduhTJMiJtV0Iid54xKRj_Bf0B_VItOq9bbKXMNP-W0xf1xob8HeNJEVjm0NFWEyrsI6xWSkzWB-uy7bBrWR56kaYUtfr__hUMdo0MHI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 6.622,
+  "text": "{\"decision\": \"answer\", \"answer\": 248, \"sources\": [\"S-255f\", \"S-a226\", \"S-0fe7\"]}"
+ }
+}

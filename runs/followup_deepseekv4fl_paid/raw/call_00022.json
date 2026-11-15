@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Dulix reservoir, in megalitres?\n\nSOURCES:\n\n[S-6350]\nVisitor note. The Dulix reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-6350]\n\n[S-cd5b]\nNotice to operators: the licensed storage capacity for the Dulix reservoir is 190 megalitres. Please plan accordingly.\n[end S-cd5b]\n\n[S-8bd1]\nSummary entry. Dulix reservoir. Licensed storage capacity: 228 megalitres.\n[end S-8bd1]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-6350\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-cd5b\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8bd1\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 22,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 546,
+  "output_tokens": 123,
+  "cost": 4.179e-05,
+  "unit": "credits",
+  "reasoning_tokens": 102,
+  "stop_reason": "end_turn",
+  "response_id": "resp_SCAJ31Jw1ATuXz7ccZvvXQCtoWXXh-9cr2cI4t4fQAf-3lwS9seTA3k0QVGPathIKzE1z1oK_1-ZEGGr76oUbb2Xq3L55w55kgvvuZ6VkrQweoucpdVOaK809CNBEpQN-8kalyMU2sVEmXVR65nQgenIJumzTYSM4TcBbKn3UoGu_1jkS2wYd_pjwr_IVg3Mv7zcqNRDQeGogQzvac23g1DzwVE6qLpiWWiXbc-hcl2tw12PG5hvoOzFV3FtlDoI9QKArmoTcQwtJm9gECedVT4nOnmcM_I2nrgTSSxbL8m2ilRnSyQgGaE3mA3M40cuZhccFkzckC7ycHG21eszsX-KvdasxbrEZL6LBvwhYNzlPFP0BLInypwHKYQeVppkA8EhW9nTeBWPLHLDItq392ZDIJLaKUxKsIdk04XrDk_fTliSvYlL3277oHRsEN35poju6mWTAl4ht_aEwyC-6Oi81rjwY1f4DjYqVR3mts3NpqtO2pHDkjZy3kyRQ8RKZg14UewN05o33vJMaZU_a5SCRq4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.463,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

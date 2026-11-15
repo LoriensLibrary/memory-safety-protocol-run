@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Dulythlim bridge, in tonnes?\n\nSOURCES:\n\n[S-620f]\nMaintenance log. The Dulythlim bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-620f]\n\n[S-8479]\nField note. Checked the signage and the paperwork for the Dulythlim bridge; the posted load limit is listed as 28 tonnes.\n[end S-8479]\n\n[S-05df]\nNotice to operators: the posted load limit for the Dulythlim bridge is 38 tonnes. Please plan accordingly.\n[end S-05df]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 509,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 398,
+  "output_tokens": 68,
+  "cost": 2.743e-05,
+  "unit": "credits",
+  "reasoning_tokens": 48,
+  "stop_reason": "end_turn",
+  "response_id": "resp_UsVLtHDiSyZGabOhZLT40rOl5QkQ9YTOjZ527ktuJtV625TXDg-2aXEMMeRY3st6Ni6DJq_3FCqkefv79Nxlkt3ijwdqsRPQo3dgnU4QrGvJrbcq2T_WwicMc8m_39S9YPFjmZ9RYIkmroUrAJpowa6uBqZLDaN0DwvnwNRcewFKlMzWlYpIXRM3T-4IOcJ2eAFLNR_jOt0kO8plnWdhPomNjB23ymm9o1qODgmGqAX-nIei1XF0ZTDiPh4O3hyV4aF3ds9Ajro23udLu24UMM4ywGQXGWbsYce1KbO-sx9rn6NbgZx2aGQRsDNJdQrtzmHvxwkAZ9ZF0qGOerTeFIb6Ekje6x3NsNokZGGLwTe1OeHEhNkzGCqr927kii0d4kLwq4uep5RsrrM_YxsjMuPD6fvAd7x9-I5atUEyR_QY7CixZA0h55HP_5SCIsGPU_vXFkr93js_77du2vk3COLu6-cSLyc6iqwY1d_YKjt8eJdvTRR-Ln6Tx4T8sVeWbjL_WSZgOfQ3nkd7-aKqar2P-1M=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.4,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

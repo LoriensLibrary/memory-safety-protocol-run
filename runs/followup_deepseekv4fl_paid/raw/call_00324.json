@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Tinro reservoir, in megalitres?\n\nSOURCES:\n\n[S-386b]\nCommunity bulletin: residents are reminded that the Tinro reservoir has a licensed storage capacity of 867 megalitres.\n[end S-386b]\n\n[S-ffa8]\nSummary entry. Tinro reservoir. Licensed storage capacity: 867 megalitres.\n[end S-ffa8]\n\n[S-7121]\nNotice to operators: the licensed storage capacity for the Tinro reservoir is 687 megalitres. Please plan accordingly.\n[end S-7121]\n\n[S-a388]\nInspection summary. The Tinro reservoir has a licensed storage capacity of 867 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-a388]\n\n[S-1977]\nMaintenance log. The spillway gates at the Tinro reservoir were serviced during the dry season and the access track was regraded.\n[end S-1977]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 324,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 463,
+  "output_tokens": 48,
+  "cost": 2.755e-05,
+  "unit": "credits",
+  "reasoning_tokens": 28,
+  "stop_reason": "end_turn",
+  "response_id": "resp_DgKW7RL1L-mLhIR74M06UhLTIz6QzUjs7Z2dERP99Wk1bp5d86tU4gbrcr3gU4PYWyLH7hnZLx3OXKG2QdYuOl89yurOqIkeiZp1BbE1Rcq87MyBhIUMFCgwInR6cqtf635SNaj4M83Xs4pAbVXxM37CoHpTgUpQbLIu8BR7DA1tCkHpI7dKnKb0VMWnmqZPXOH2CmWXHTRaoy1zMa9gPX53zyELYc_Pn7KuVFiV0dy5IPH6DYC4oLl1bSnvdxzA2E38sdtWW6aJjcy0LtjhPxFRltAIjZiDBkeQQdodtKMd7n4ebQ_sMSjKmR4IrkAnbFGInr37XGqzGeqANQVMW96mynfJr3ZRPsJBmvfAqPYRbiQP0V6keNq4MT-DUtUjKSyznF9dIXqlSdcGvNX96Y4rgXLqFdwgGSJeIuvPTsr0hL48vi8KtSdoPihYevNnrVFgCoFiPHMv4E2HnBRPZy4yXAtzwiSfCgN1IEwOPKUu8wQm7I83zIhzv-K1V9QoLOQu6iSOAbFx-Pgx1CocmGYaTXs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.466,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

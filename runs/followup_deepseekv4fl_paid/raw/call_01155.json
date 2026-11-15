@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many squares are there on a standard chessboard?\n\nSOURCES:\n\n[S-8a31]\nReference entry. A standard chessboard has 64 squares.\n[end S-8a31]\n\n[S-c0b5]\nQuick facts. A standard chessboard has 74 squares.\n[end S-c0b5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8a31\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c0b5\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1155,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 450,
+  "output_tokens": 515,
+  "cost": 9.235e-05,
+  "unit": "credits",
+  "reasoning_tokens": 494,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wLX9R2lSpk8JEkShx2ApJ-pY5Q0Ss7VyM7K_4weagn1W799_rqNz5prsaxOeognVVy5Uj0Di0Jp9smrzTzc0ruxdVoJHra5Ca4oxmw6U3PyuAHaZAdvjLKAsWPTln3xOQjVvXo4BUyqGuNkfkxJHwSXpiiFm2u2c_nOEF-7EDi1x7Pnm0aZA7rhm0PFqleLnk8R3LsAA4iRrJz719kqil1CFt-HbgyvtU4YXtlNSZQTsl0dxZJ74R8GHDlfyaRXPBJt5-zUn8zpaTW3NsIWBZfbY7NpY0AD5Y8baT4fc74EHGpItBwUCHrpt8USIhUkJvD1xSJJ8Xsu_pgnBP7fBrfVRD1_zR3QJD8_fgFnk0UItzuFvc6VMxy4M-ut0ZyxGSeLdUoTk3QBCQAoe2QMuGX9aWCzwoySaoZ-Y5WsuCSLW8g23hkhBobOTU7lx-Osn7i-EcHISj_fp3gTnkxkO70W6xYtDB6UHJZSZGqzfUWotoUOvULJSYiBPryC0azzzJVgxr8Lgm-C0caXi63o8LqQH6Jk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 9.1,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

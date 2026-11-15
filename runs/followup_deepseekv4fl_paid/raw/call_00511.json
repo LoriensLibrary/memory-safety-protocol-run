@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Roned reservoir, in megalitres?\n\nSOURCES:\n\n[S-f9b1]\nInspection summary. The Roned reservoir has a licensed storage capacity of 281 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-f9b1]\n\n[S-dc9d]\nField note. Checked the signage and the paperwork for the Roned reservoir; the licensed storage capacity is listed as 228 megalitres.\n[end S-dc9d]\n\n[S-9a83]\nVisitor note. The Roned reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-9a83]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 511,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 418,
+  "output_tokens": 57,
+  "cost": 2.679e-05,
+  "unit": "credits",
+  "reasoning_tokens": 37,
+  "stop_reason": "end_turn",
+  "response_id": "resp_OLpurh30es3qWgOcqaonf3n-ed37VAT0gbvvTRamDNtoWXlyf_-tR0iZXtDkbwLKwWtxViXNmSLo4u0WyXBQXvNluLO-0k-dnG3dQNfZ1v5liYNky_3cEaTLoRVK_OYtQPSjg0Va0eAENGWCgsEA7xBrejSJ5Eth8HapcXias-WwqJnkx8b51hfuo9iCg6m1vYzbocTLx7W3Wr1fnuqBsUmwxXIpz4lm1gC4leIbR92q8J8ijpTEyFDB2jttDb33XYFtmDAQ9VD50ImYYbiwXG9SxbTbC-AISPd92QTWxpQrn-wTFaD68NCysVsWOrbCTLBbfrtSZcHx67Uk8YpXk-gbbDGjn-QYp7gPrOk-JI4tHN3agdzxf7QhldqsiDGsrSDzxdoeKdU3c_i4ufXlJRklPqgTwd1PpT_tiVoJrZ3J8TwSiCAFNa1dPajaIT006tEA3WTtV8H95oZk6iqmQTZCaMN-gPpI0cFSWmB_hRUt6MGNi-2WGmJ2h6a-eo4dfOvlAazrlsmZwbLOR7mmq67fl14=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.187,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

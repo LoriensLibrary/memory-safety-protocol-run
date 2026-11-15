@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many letters are there in the modern English alphabet?\n\nSOURCES:\n\n[S-24ec]\nQuick facts. The modern English alphabet has 30 letters.\n[end S-24ec]\n\n[S-89f5]\nReference entry. The modern English alphabet has 26 letters.\n[end S-89f5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-24ec\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-89f5\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 635,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 447,
+  "output_tokens": 657,
+  "cost": 0.0001121,
+  "unit": "credits",
+  "reasoning_tokens": 632,
+  "stop_reason": "end_turn",
+  "response_id": "resp_iXHrEb-qDAvRZrhHiwgGts8pHNSwLKndhLU2zyG1FZl2rbPSsmed4IpP2eYgVYaYgYvdbww19c-ZyOVPSTNlCQj8xlAfYeZZK-jSCuwUcHbyTVT1KIFVcu1cyrj9yPWYrxOtFHE-i3aO-bzLucveNLsdVAK08IYVaQkgk1-djSQL-sONNBOcpRjgDdG2sD7sWtCatB1WjITxhr8tDEILn5rFJeI513i7cbHsVlCqV5wsQpWebYSnDwPIJOqOPN_ZNPvPqZzuBNliNP-9uvwdEg6ThRa1idlX5OGVkMcyd-wue85h2JFjMmPy7InC0laPzRJ40cm6crnDoxs12CwuDjWbvIDsID8mb5bWUcgqpL8iycaKpKl3_GIuEglRWQvUDqZPqEhZ8g8_p0q3WN609thd1RNdHKNQF7Po6QCvHc6LQ3897daBbOVNOfVPCjpYhwTCEhfghS3rCvWeDdQNIkPjZ4DGewI0qUvTwK6P3bklvpqDi_zZI1ryiDL9ftC6aF8OS46FbF9NdJpIjGjOFMQf6QQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 8.965,
+  "text": "{\"decision\": \"answer\", \"answer\": 30, \"sources\": [\"S-24ec\"]}"
+ }
+}

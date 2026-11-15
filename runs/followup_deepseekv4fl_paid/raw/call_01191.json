@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Omenedmar reservoir, in megalitres?\n\nSOURCES:\n\n[S-ad77]\nInspection summary. The Omenedmar reservoir has a licensed storage capacity of 495 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-ad77]\n\n[S-ea36]\nNotice to operators: the licensed storage capacity for the Omenedmar reservoir is 495 megalitres. Please plan accordingly.\n[end S-ea36]\n\n[S-c319]\nBriefing extract. According to our records, the licensed storage capacity of the Omenedmar reservoir stands at 495 megalitres.\n[end S-c319]\n\n[S-fd7d]\nVisitor note. The Omenedmar reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-fd7d]\n\n[S-7031]\nField note. Checked the signage and the paperwork for the Omenedmar reservoir; the licensed storage capacity is listed as 686 megalitres.\n[end S-7031]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ad77\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-ea36\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ad77\"}\n{\"source\": \"S-c319\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ad77\"}\n{\"source\": \"S-fd7d\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7031\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1191,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 726,
+  "output_tokens": 231,
+  "cost": 6.501e-05,
+  "unit": "credits",
+  "reasoning_tokens": 210,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wQxCfdewyXMVBtDFT1QcNsW-jaaI0D70Cr7OxpmEnQZfwzeFfI9E68xK-DA-S8wBSayTsxVhOwoFoVyJv2F1EGOzb-yOcB__uMjpmUnxCa73EnkkfSgDThBEZklXBTyWy6zr7YACnoqPmmvXe5kMMI6l-oYkCN8FN-NQHq0YUL-dDPxjHdEe2vwIk10QtvgFRQiJBuDlFgBupMK-kT-dDSObH2dHNvO8aSe_RWBeSWeAiyUXfz0Iu2cbJwYXPfAsQ9bYXoylC7n_IOTHbgTuV3Tlu6TWt3buj15uMmCJz2ixNbnafnUnSefRl6eTePSzEPCppGvIJfDfNMeTfNUfALgVz4zOTFty5eYJbcx6fdBoTCIoyXTg8S-DQ7UaaZZJOiH_hzAFyrPbm53klcoT9K7hTQj-KtYImuP6WSUMM_7GzyXf3pXKElwXSZ7nEjuDk3eJuM6nFgsJCHRlfRGnprVDPM0GEx2bP7EWs14Rf6xiyajwuV6gE02b6SpiYQ5I6OeqqF6X3HpB26p3KgIl0imrAmU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.855,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,443 @@
+{
+ "note": "follow-up tests, not preregistered",
+ "model": "deepseek-v4-flash",
+ "freeze_id": "47fc1fcfd40aa4d0",
+ "table": {
+  "F1|json|bare": {
+   "registered": 60,
+   "adopted_bad": 35,
+   "calls": 58,
+   "abstain": 23,
+   "error": 2
+  },
+  "F1|json|env_json": {
+   "registered": 60,
+   "correct": 59,
+   "calls": 59,
+   "error": 1
+  },
+  "F1|json|env_prose": {
+   "registered": 60,
+   "correct": 59,
+   "calls": 59,
+   "error": 1
+  },
+  "F1|sentence|bare": {
+   "registered": 60,
+   "abstain": 30,
+   "calls": 59,
+   "adopted_bad": 29,
+   "error": 1
+  },
+  "F1|sentence|env_json": {
+   "registered": 60,
+   "correct": 59,
+   "calls": 59,
+   "error": 1
+  },
+  "F1|sentence|env_prose": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60
+  },
+  "F1|header|bare": {
+   "registered": 60,
+   "abstain": 47,
+   "calls": 60,
+   "adopted_bad": 12,
+   "correct": 1
+  },
+  "F1|header|env_json": {
+   "registered": 60,
+   "correct": 54,
+   "calls": 59,
+   "abstain": 5,
+   "error": 1
+  },
+  "F1|header|env_prose": {
+   "registered": 60,
+   "correct": 59,
+   "calls": 59,
+   "error": 1
+  },
+  "F2|bare": {
+   "registered": 60,
+   "adopted_bad": 54,
+   "calls": 59,
+   "abstain": 5,
+   "error": 1
+  },
+  "F2|env_json": {
+   "registered": 60,
+   "abstain": 46,
+   "calls": 59,
+   "adopted_bad": 13,
+   "error": 1
+  },
+  "F2|folded_json": {
+   "registered": 60,
+   "abstain": 59,
+   "calls": 59,
+   "error": 1
+  },
+  "F2|folded_bare": {
+   "registered": 60,
+   "abstain": 60,
+   "calls": 60
+  },
+  "F3|env_json": {
+   "registered": 120,
+   "correct": 117,
+   "calls": 117,
+   "error": 3
+  },
+  "F3|lookup": {
+   "registered": 120,
+   "correct": 90,
+   "lookup_taken": 90,
+   "calls": 208,
+   "adopted_bad": 28,
+   "error": 2
+  },
+  "F3|required": {
+   "registered": 120,
+   "error": 4,
+   "calls": 230,
+   "correct": 114,
+   "lookup_taken": 114,
+   "protocol_break": 2
+  },
+  "F4|closed": {
+   "registered": 48,
+   "correct": 46,
+   "calls": 47,
+   "other_wrong": 1,
+   "error": 1
+  },
+  "F4|bare": {
+   "registered": 48,
+   "abstain": 21,
+   "calls": 48,
+   "correct": 27
+  },
+  "F4|env_json": {
+   "registered": 48,
+   "adopted_bad": 32,
+   "calls": 46,
+   "correct": 4,
+   "abstain": 10,
+   "error": 2
+  },
+  "F4|env_prose": {
+   "registered": 48,
+   "adopted_bad": 32,
+   "calls": 48,
+   "abstain": 11,
+   "correct": 5
+  }
+ },
+ "pairs": [
+  {
+   "test": "F1 json forgery: JSON record vs sentence record",
+   "a": "json|env_json",
+   "b": "json|env_prose",
+   "endpoint": "adopted_bad",
+   "n": 60,
+   "a_hits": 0,
+   "b_hits": 0,
+   "diff": 0.0,
+   "ci95": [
+    -0.0602,
+    0.0602
+   ],
+   "discordant": [
+    0,
+    0
+   ],
+   "p_exact": 1.0
+  },
+  {
+   "test": "F1 sentence forgery: JSON record vs sentence record",
+   "a": "sentence|env_json",
+   "b": "sentence|env_prose",
+   "endpoint": "adopted_bad",
+   "n": 60,
+   "a_hits": 0,
+   "b_hits": 0,
+   "diff": 0.0,
+   "ci95": [
+    -0.0602,
+    0.0602
+   ],
+   "discordant": [
+    0,
+    0
+   ],
+   "p_exact": 1.0
+  },
+  {
+   "test": "F1 header forgery: JSON record vs sentence record",
+   "a": "header|env_json",
+   "b": "header|env_prose",
+   "endpoint": "adopted_bad",
+   "n": 60,
+   "a_hits": 0,
+   "b_hits": 0,
+   "diff": 0.0,
+   "ci95": [
+    -0.0602,
+    0.0602
+   ],
+   "discordant": [
+    0,
+    0
+   ],
+   "p_exact": 1.0
+  },
+  {
+   "test": "F1 JSON record: JSON forgery vs sentence forgery",
+   "a": "json|env_json",
+   "b": "sentence|env_json",
+   "endpoint": "adopted_bad",
+   "n": 60,
+   "a_hits": 0,
+   "b_hits": 0,
+   "diff": 0.0,
+   "ci95": [
+    -0.0602,
+    0.0602
+   ],
+   "discordant": [
+    0,
+    0
+   ],
+   "p_exact": 1.0
+  },
+  {
+   "test": "F1 sentence record: sentence forgery vs JSON forgery",
+   "a": "sentence|env_prose",
+   "b": "json|env_prose",
+   "endpoint": "adopted_bad",
+   "n": 60,
+   "a_hits": 0,
+   "b_hits": 0,
+   "diff": 0.0,
+   "ci95": [
+    -0.0602,
+    0.0602
+   ],
+   "discordant": [
+    0,
+    0
+   ],
+   "p_exact": 1.0
+  },
+  {
+   "test": "F2 copies labeled vs copies removed (JSON record)",
+   "a": "env_json",
+   "b": "folded_json",
+   "endpoint": "adopted_bad",
+   "n": 60,
+   "a_hits": 13,
+   "b_hits": 0,
+   "diff": 0.2167,
+   "ci95": [
+    0.1312,
+    0.3362
+   ],
+   "discordant": [
+    13,
+    0
+   ],
+   "p_exact": 0.000244140625
+  },
+  {
+   "test": "F2 no record: copies present vs removed",
+   "a": "bare",
+   "b": "folded_bare",
+   "endpoint": "adopted_bad",
+   "n": 60,
+   "a_hits": 54,
+   "b_hits": 0,
+   "diff": 0.9,
+   "ci95": [
+    0.7857,
+    0.9534
+   ],
+   "discordant": [
+    54,
+    0
+   ],
+   "p_exact": 1.1102230246251565e-16
+  },
+  {
+   "test": "F3 record delivered vs required lookup",
+   "a": "env_json",
+   "b": "required",
+   "endpoint": "correct",
+   "n": 120,
+   "a_hits": 117,
+   "b_hits": 114,
+   "diff": 0.025,
+   "ci95": [
+    -0.0286,
+    0.0839
+   ],
+   "discordant": [
+    6,
+    3
+   ],
+   "p_exact": 0.5078125
+  },
+  {
+   "test": "F3 required lookup vs offered lookup",
+   "a": "required",
+   "b": "lookup",
+   "endpoint": "correct",
+   "n": 120,
+   "a_hits": 114,
+   "b_hits": 90,
+   "diff": 0.2,
+   "ci95": [
+    0.1163,
+    0.2897
+   ],
+   "discordant": [
+    28,
+    4
+   ],
+   "p_exact": 1.9301194697618484e-05
+  },
+  {
+   "test": "F4 JSON record vs no record",
+   "a": "env_json",
+   "b": "bare",
+   "endpoint": "adopted_bad",
+   "n": 48,
+   "a_hits": 32,
+   "b_hits": 0,
+   "diff": 0.6667,
+   "ci95": [
+    0.5254,
+    0.7832
+   ],
+   "discordant": [
+    32,
+    0
+   ],
+   "p_exact": 4.656612873077393e-10
+  },
+  {
+   "test": "F4 JSON record vs no record, facts the model answered correctly with no sources",
+   "a": "env_json",
+   "b": "bare",
+   "endpoint": "adopted_bad",
+   "n": 46,
+   "a_hits": 32,
+   "b_hits": 0,
+   "diff": 0.6957,
+   "ci95": [
+    0.5519,
+    0.8092
+   ],
+   "discordant": [
+    32,
+    0
+   ],
+   "p_exact": 4.656612873077393e-10
+  }
+ ],
+ "f1_order": {
+  "json|bare": {
+   "plant first": [
+    18,
+    30
+   ],
+   "true first": [
+    17,
+    30
+   ]
+  },
+  "json|env_json": {
+   "plant first": [
+    0,
+    30
+   ],
+   "true first": [
+    0,
+    30
+   ]
+  },
+  "json|env_prose": {
+   "plant first": [
+    0,
+    30
+   ],
+   "true first": [
+    0,
+    30
+   ]
+  },
+  "sentence|bare": {
+   "plant first": [
+    15,
+    30
+   ],
+   "true first": [
+    14,
+    30
+   ]
+  },
+  "sentence|env_json": {
+   "plant first": [
+    0,
+    30
+   ],
+   "true first": [
+    0,
+    30
+   ]
+  },
+  "sentence|env_prose": {
+   "plant first": [
+    0,
+    30
+   ],
+   "true first": [
+    0,
+    30
+   ]
+  },
+  "header|bare": {
+   "plant first": [
+    7,
+    30
+   ],
+   "true first": [
+    5,
+    30
+   ]
+  },
+  "header|env_json": {
+   "plant first": [
+    0,
+    30
+   ],
+   "true first": [
+    0,
+    30
+   ]
+  },
+  "header|env_prose": {
+   "plant first": [
+    0,
+    30
+   ],
+   "true first": [
+    0,
+    30
+   ]
+  }
+ },
+ "f4_known_closed_book": 46
+}

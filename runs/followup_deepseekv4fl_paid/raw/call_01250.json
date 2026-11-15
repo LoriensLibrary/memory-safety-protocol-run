@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Dulmarpel bridge, in tonnes?\n\nSOURCES:\n\n[S-35ae]\nMaintenance log. The Dulmarpel bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-35ae]\n\n[S-4c1f]\nSummary entry. Dulmarpel bridge. Posted load limit: 32 tonnes.\n[end S-4c1f]\n\n[S-acf6]\nBriefing extract. According to our records, the posted load limit of the Dulmarpel bridge stands at 25 tonnes.\n[end S-acf6]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1250,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 388,
+  "output_tokens": 190,
+  "cost": 4.406e-05,
+  "unit": "credits",
+  "reasoning_tokens": 170,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WnOYavgsbs1TC5YWb5jPR-zdxmf0N_L4kqwdKVG-0_md6rbtTvqWmvM2B_jv_pxf075Dds3ahQUMuFGJ0W8GMV_3izayHTTUUcji2oeQoa9aBInXoFQO6n_It-27jxKdzG37mhtu_LdKtxKjEt6KV-dFqTwjaA-qQu-AqNhXMB7T3OOfjf8Fb91kGr861Zp-83Zsk6DJav2Bi_9ukWabMxBIBBWMqgYb1RHUC_JMS17jodNm4X-1InFBeySW4GXIm22RQSbQH6iN7fvEAbSBUDvWZ8N61GA4eooMOVoAvE2ePKsAiN0jTojz2YBBh-_9GFUtGWqMBL1xghfg46jR_xcJfrivBn4ylB19QQPpzbs50JgHACuFu1g84BicijJS91HS-FWy8FvqP7p3GmNhw4QPFMnSin8DUPhEUCdFDKCSo1Yr4LdAH9ebPTj4g20To75NRFM5ryV7H9iTNIc-9FLJo6-BvwqPSjYaxa03eLsIlRprLkJ3MRo-KIqD6MvLtmrnLDfBHDG5tjApTssDgbv1diE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.719,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

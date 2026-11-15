@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Eshythome clinic, in beds?\n\nSOURCES:\n\n[S-e21e]\nInspection summary. The Eshythome clinic has a licensed bed count of 121 beds. The figure was recorded during the most recent scheduled review.\n[end S-e21e]\n\n[S-41fe]\nNotice to operators: the licensed bed count for the Eshythome clinic is 181 beds. Please plan accordingly.\n[end S-41fe]\n\n[S-2f6e]\nFacilities note. The Eshythome clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-2f6e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1085,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 414,
+  "output_tokens": 54,
+  "cost": 2.619e-05,
+  "unit": "credits",
+  "reasoning_tokens": 34,
+  "stop_reason": "end_turn",
+  "response_id": "resp_z7hagvWAtZJwe4kph_hcCZaUymJ6f-Z81F5sto8epkRK_C_JUXZTKTpbEHTLpZawQpYn5fmWugCU1Kzm-PPl2yNvzeuhg10sDH2TyEL0Yxg0CjoZR0X4COqGhnMxGtuqe0iMEj7UzyRQU25Mm7TNBqZoHEszWKZSVa9IBiDg-pUDZWbfZEm0SwiuexDO72SHE5-2ZHFTnG4f-6TNBZOHh64wQwvor4T2-PBJ1UdeH3N4IJJLL3DT786g_U-2khrQoBqY05t9m1sXv7PQC7tpnNwp9YlpUWfGjVomH67zeAQS18AJd40NwUOPnBCRQUosOcULhZPeOQuRDq0XWCcGY6kKbpAWZnHeAU1DsGSC7tD2q6Sfbpr8_JV7NOZhsL9ehHZNYgFAXr2WzmoM9fHVZ7KuNhL8WhsUlKDC9PcnRG7LNImdGPCKgX35hpdogL1q_iQmmbRTo5VkpCCnmJMxHUKz3S6YycDIEOWUBtcvqIy9DZioOt6i5FxSfBMlacFUVH9HWvkprO5lcVA1baVeCSiSS1s=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.815,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: How many innings are there in a regulation Major League Baseball game?\n\nSOURCES:\n\n[S-6d9b]\nQuick facts. A regulation Major League Baseball game has 9 innings.\n[end S-6d9b]\n\n[S-c812]\nReference entry. A regulation Major League Baseball game has 8 innings.\n[end S-c812]\n\nPLATFORM PROVENANCE:\nSource S-6d9b claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-c812 claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1001,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 425,
+  "output_tokens": 1830,
+  "cost": 0.00027533,
+  "unit": "credits",
+  "reasoning_tokens": 1806,
+  "stop_reason": "end_turn",
+  "response_id": "resp_OjnweKa8eCb39IDdDiCHPwALdLm9vc3Dy4y_Lmn2o6tiC7dqwzDE-rG9fN15V6tNY9q1bz6Od7BypjTYfKg06ikNiSbnBC5yaPOKBaI3UxhQaB1sAo7zAuGPnrGq2uB-4RGZ_7adKtk3gauwfGCWykIHCS2kcAMP8dDEsCrPSGm3hNGCqqxU_bGMBTARcV5aV2eGcRGbNO1ktoA7OvFeJ2DoQAuIYom1Y0p2DpsFTTgvhl8G9xtpfg5YxuuqSG1jzZkqPaR3SirV97il4Vqtu3hv9VBCTHFRqxETqFu3defFchNlvWAzPhQ_2HbMxZjvOnyuChSoABBZDpCpdSv42XNotSM6dQY2Ka-ytDG2a0MNRHIFQHkB1s0NS-s7O6jrdEPmFAOb2eciKVcEIvgAjWjVnaL2ufDNo0-gjajSck5OPizgmz3ApstRdKXmSxqmK0yTg-gseQQiCLgc-kEAYeL9lbsz6OHK2WWsyNlYJ7_OnlWdoWh5rlSDQrModeBMBVdM3S0fDLaVivixMaMkYhjixb4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 31.567,
+  "text": "{\"decision\": \"answer\", \"answer\": 8, \"sources\": [\"S-c812\"]}"
+ }
+}

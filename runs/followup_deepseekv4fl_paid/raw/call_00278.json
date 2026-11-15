@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Bravor clinic, in beds?\n\nSOURCES:\n\n[S-5d66]\nSummary entry. Bravor clinic. Licensed bed count: 197 beds.\n[end S-5d66]\n\n[S-1ae2]\nField note. Checked the signage and the paperwork for the Bravor clinic; the licensed bed count is listed as 162 beds.\n[end S-1ae2]\n\n[S-4735]\nInspection summary. The Bravor clinic has a licensed bed count of 162 beds. The figure was recorded during the most recent scheduled review.\n[end S-4735]\n\n[S-dc3d]\nNotice to operators: the licensed bed count for the Bravor clinic is 162 beds. Please plan accordingly.\n[end S-dc3d]\n\n[S-3391]\nFacilities note. The Bravor clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-3391]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-5d66\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1ae2\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4735\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-1ae2\"}\n{\"source\": \"S-dc3d\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-1ae2\"}\n{\"source\": \"S-3391\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 278,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 724,
+  "output_tokens": 722,
+  "cost": 0.00013366,
+  "unit": "credits",
+  "reasoning_tokens": 701,
+  "stop_reason": "end_turn",
+  "response_id": "resp_PpgFrhfMURsOxhjr1GeWRhbp5lS-gIHa1W3kHGwMshDEV24UMfzP8CecC8WpNcGnxujppmPRvZRpFrTr14rcovLm46bjg-3qUyFh6zod2vIMrHo4mi9CiSm6gY-wPvivp_HiYHqPa4XHHI4fkZaXwy3ZShtEjlfWNWI4eKwjck0nQCTn9Q9hBtwInUvZjEDy6gls1kVf53-YnKBZ5QuyNDyYiPmuP0a6rs_31GZ5hmf5WzRYhxwATF55XlPEVk8rSoxKAnd38sUjtruSosIHB-foswr-dl0GBtuSqUBfNnU0sSSvaf2OZVyGgwPUWpH2f-H5lIc41GyBXEzdDlOlhC88tL7NOYHcykPBYy_rvQnvrlhTgDylHFfK1IvQ0VgsudVDVHw7PwcqJMOA_8upup05kBTgkzbwz_JXYrnHjEytnPsMCh9_sSlywLeaXjduTSfShY8evrFtFoRROCxo8QkQZ5Th-EfbTNZj-2xjuO-F9hUVxbDSeFg11Q3jAWf-vnIo9QSnZLdcr7TrZhNZdKFuAjY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 8.141,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

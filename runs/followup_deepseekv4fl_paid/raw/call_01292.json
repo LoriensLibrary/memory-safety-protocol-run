@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Eshvorbra bridge, in tonnes?\n\nSOURCES:\n\n[S-c576]\nField note. Checked the signage and the paperwork for the Eshvorbra bridge; the posted load limit is listed as 8 tonnes.\n[end S-c576]\n\n[S-96c3]\nInspection summary. The Eshvorbra bridge has a posted load limit of 12 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-96c3]\n\n[S-95f1]\nBriefing extract. According to our records, the posted load limit of the Eshvorbra bridge stands at 8 tonnes.\n[end S-95f1]\n\n[S-07e1]\nMaintenance log. The Eshvorbra bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-07e1]\n\n[S-034f]\nNotice to operators: the posted load limit for the Eshvorbra bridge is 8 tonnes. Please plan accordingly.\n[end S-034f]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-c576\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-96c3\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-95f1\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-c576\"}\n{\"source\": \"S-07e1\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-034f\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-c576\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1292,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 735,
+  "output_tokens": 251,
+  "cost": 6.822e-05,
+  "unit": "credits",
+  "reasoning_tokens": 230,
+  "stop_reason": "end_turn",
+  "response_id": "resp_YtllUlHtAHQtpHKBQU3-D9zdWjafDkybBLFgzyPmZhF5z29F3ZpTEB0hmpam-yDxJPk-MgqYVRxn905JbfP02k-f9ER-QrzDVf8m8ujcrV4t7egIOroNBvnCLMPJUT5xFrMsxyLmLiT5xO9DCk4sHos2LWEm7HpDF1Wn02eXyHVButfXsRF-rFTbc5n4uuQ2aWJxL7-FYZJnh8lOcZoIRwK_xSfTdDiUT0799tbAHaZO0rs6_aUD9uWbf6jHRClAg9h-uxkGOw5O3RrY_aXTkDAIssw5jQaxgR46NCtjZIIFNbGfAgqJ_zVBnfZfXeZL60aj3VVbdj02EQiZsYH0-AmKu_b3bYOCc_zdvsoTHT0KMvYIgwkplgg0tGSOxpePpdhQ2Bk36qCyRHF7Ez85-e8mDmqFOXmwQssE3Xxw5DercJQXNEDbQYhejomxKebKSWoTiqcKMmKnQmmdxOuwJTSUWNfVCFVM1Hq13x7HyYBVcH_BjSrIPEOuO7JgjP1r6c6Xs6mkQOGT_x-Rhtl9onyQuGo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.899,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

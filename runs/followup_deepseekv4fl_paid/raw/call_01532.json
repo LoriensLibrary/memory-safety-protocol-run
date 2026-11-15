@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Kapelro clinic, in beds?\n\nSOURCES:\n\n[S-fd0a]\nCommunity note. The Kapelro clinic runs a volunteer programme and hosts an annual open day.\n[end S-fd0a]\n\n[S-d130]\nCommunity bulletin: residents are reminded that the Kapelro clinic has a licensed bed count of 177 beds.\n[end S-d130]\n\n[S-3459]\nSummary entry. Kapelro clinic. Licensed bed count: 128 beds.\n[end S-3459]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1532,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 374,
+  "output_tokens": 74,
+  "cost": 2.719e-05,
+  "unit": "credits",
+  "reasoning_tokens": 54,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Gga9kYJkatzeEnWZhHqb6WHVgcbhU2wVv5yrIIL8agxviM6v43-qI6EpZuIaq4CVsNY78xyxdSE5tZ0qLQZrgQBvjOtqhxLeuH0_rlhff7EAUAJkXZae0kD6gSzgGD0Sk6CH1OZ7uQM2YsfqhEWtGsT5NCioIPyIht9mIoR7nbBhzdFfo-VL5ObGd8f0p-YZJhiIm9up-16onhGSU3r70p2A8qSMA95_IVptM8tTxmENSkdEJO_j9zIToGxCFXdUiZpAHLcXv83LdWIdBXNCVRuK-XEoTKdEknhjGA_rtWoLx09FAT_qUp5nEUK1Ny6UT0xn9v_-04xEEWYUTIw1MBPo7dmgA-AjWduty8u5QXYFlAK0RDnwTW1UM3oIWT4puk-yH5VLsq1U21PHBsh896MfmGh17rHeAVa6bYFKBENW1-4P3GRbbhaLdxorM3yjHqhfri3SEtvjsxUAtDgBd2xiq0Z22b7lTImvZFAwVvvhciPAArS8L-SNUspm0cJSQlDwAgLQDxrbvKJUgB-8e6k60ow=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.141,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Tinix reservoir, in megalitres?\n\nSOURCES:\n\n[S-470f]\nMaintenance log. The spillway gates at the Tinix reservoir were serviced during the dry season and the access track was regraded.\n[end S-470f]\n\n[S-4614]\nCommunity bulletin: residents are reminded that the Tinix reservoir has a licensed storage capacity of 753 megalitres.\n[end S-4614]\n\n[S-0866]\nField note. Checked the signage and the paperwork for the Tinix reservoir; the licensed storage capacity is listed as 753 megalitres.\n[end S-0866]\n\n[S-f220]\nBriefing extract. According to our records, the licensed storage capacity of the Tinix reservoir stands at 753 megalitres.\n[end S-f220]\n\n[S-2a90]\nSummary entry. Tinix reservoir. Licensed storage capacity: 606 megalitres.\n[end S-2a90]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 235,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 476,
+  "output_tokens": 200,
+  "cost": 4.942e-05,
+  "unit": "credits",
+  "reasoning_tokens": 180,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6koq0b2c0T1Q82S8yzU9r4-mBoJMcbJACMKeaK9CJQMf5jeAllJWuzxVWeWdrCIgTawcltsoqMegJdTaU9iqaTBw-al2TvR8wPq97yiityi6qOrxYqvrzfa9o3E7fhFAY5AnEfzrnDWGJhxXfTMEqghFlZ34vx_oHaOVyt4jXY3YWqPpEsJ6pBr6BTtDyqDHDFU9FNJlzaEBc5mxNoquer0eQxek9XUIWrbsrqPTgxFAJHxldUh7lSMAmI2zbWMc4ntcJFrB440i1TUdKhtqbWVsDO7KQH_Nj3o0EnQ1jOhfUF3DsEbikJGwCL7jFkikGwZP3tZbL1Fe0cpiU95CYkaBnWBRFOvJYg7PsjKMCUG9SmjLc4JLtUun8hWAd2iorVwirzV5xJDS7QPpygI-1C5MPMqxvh2YZXxuaMtjDZ06OrCBcJFfEpcyNQTn4GrgpIJd5tHadeLMFUVp1IeZXn4N0D5QKblFLKj_nydWQ9D4FWCMxCqQIdZeEJ9d9vJdKn5GxcFgaU5baXiyIkU69oxkTvA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.513,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

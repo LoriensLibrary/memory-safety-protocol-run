@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Braust bridge, in tonnes?\n\nSOURCES:\n\n[S-90c9]\nCommunity bulletin: residents are reminded that the Braust bridge has a posted load limit of 27 tonnes.\n[end S-90c9]\n\n[S-dea8]\nSummary entry. Braust bridge. Posted load limit: 27 tonnes.\n[end S-dea8]\n\n[S-e0d3]\nField note. Checked the signage and the paperwork for the Braust bridge; the posted load limit is listed as 24 tonnes.\n[end S-e0d3]\n\n[S-eb28]\nLocal history note. The Braust bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-eb28]\n\n[S-241c]\nBriefing extract. According to our records, the posted load limit of the Braust bridge stands at 27 tonnes.\n[end S-241c]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-90c9\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-241c\"}\n{\"source\": \"S-dea8\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-241c\"}\n{\"source\": \"S-e0d3\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-eb28\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-241c\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 533,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 706,
+  "output_tokens": 144,
+  "cost": 5.193e-05,
+  "unit": "credits",
+  "reasoning_tokens": 123,
+  "stop_reason": "end_turn",
+  "response_id": "resp__wlpzx6Sg4uPEPnwTseErQvkBAYQ-O2yVI8f7bh4VHQwdeEiRBQDrL3iFAa8V8sKHfKlpNp3PTop50thGT_ANjZzDDeWRKBHkWr1x1TgH9R1Ti4E5aBjlC8zxd8H9zwdO1H9qmRcs3rI3VogpSHODec7mpEqq1MydoYbzPF_qi5pWIuG9B3mTKUurRQHFGvyHCR7lGdDu8evWEN8sZc8o3t0lCX-PDxhECL_ASp19sYJ5AbW1UiWPLVLyWnqOEJAXVvP5LzQRGgYu_RcBvpfw1-7-H1DR1nJBtQb7eI0oLiPDRm0GSrXlO1y8mbGLAJhD1XD8X5J9HpjlsEGYUInaHhHc-vQebRkZfJy4_nbSAXjTA8AmyD1z4UGEjDY-jqUZWHfsToL37CdF6izmC8Qnyfle2DvhFczeSPnV8-UuxLKBZEPXVPuUXhtDgeTRPZMKV4fBlAAEOQBD4YORH7Q82F9H7ZDz8BughFz9HAqTefNAK5JnBMBr0mvrDMwW6kz6vg5qgQ0-6u-EAxnRXqiKpho6fo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.195,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

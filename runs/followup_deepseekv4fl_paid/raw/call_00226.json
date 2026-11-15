@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: How many chromosomes are there in a typical human body cell?\n\nSOURCES:\n\n[S-dc04]\nReference entry. A typical human body cell has 46 chromosomes.\n[end S-dc04]\n\n[S-9245]\nQuick facts. A typical human body cell has 53 chromosomes.\n[end S-9245]\n\nPLATFORM PROVENANCE:\nSource S-dc04 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-9245 claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 226,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 419,
+  "output_tokens": 1044,
+  "cost": 0.00016502,
+  "unit": "credits",
+  "reasoning_tokens": 1019,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Wqh2yrad0JybYuJVTv3T8yaK94CeuroTwv-t3p6CJo_PVokms5gFHdwRY0xpWFBGqesPdHTaqJD3H5STHMFsZ_4hw_-JaeIdl3BlkLpURJmG4XJa_Bc8L0PamAtxQm1SiNbFC7cm9TYzz97IRagP1kUgqd5z6ofjqtuocHmu1nFVY0XM4owqOY-5r3Dg3LLxbGLzEdAC_6dL5hucyFns_kGUyiD0mXF5812GFqoSt3C-RAYSqn4S2bpbmwCvTmmgeoN7ibrmjPPbq2RcWqV5d0UfcYBsm7CLoBPN40fbmp02IAHYjIb8_d4A6AAdOi6he0XYmL1fsSM4zeUKzeBLZ3ClZlzVy0HZUgEHAdyyYDntGvAnyCY1pyNT41UVmBh_-cjQsVKPhCpWTkrJS25FeGu5hZLoKAjvN4LVGmyxcOMpvHm2_fy353bVfZlseFIx2TDu-2cOk_mb8zNrEiLOeCY3keuTwXt3t5aoA-k0VPJEGtwyxhpEMEP18adEPWJ8O3INC0GNZz2L1p3TMuuYjyZfYpg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 10.351,
+  "text": "{\"decision\": \"answer\", \"answer\": 53, \"sources\": [\"S-9245\"]}"
+ }
+}

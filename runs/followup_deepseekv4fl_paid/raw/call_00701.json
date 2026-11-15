@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Pelollim bridge, in tonnes?\n\nSOURCES:\n\n[S-bbfd]\nSummary entry. Pelollim bridge. Posted load limit: 71 tonnes.\n[end S-bbfd]\n\n[S-4a6f]\nCommunity bulletin: residents are reminded that the Pelollim bridge has a posted load limit of 54 tonnes.\n[end S-4a6f]\n\n[S-7832]\nInspection summary. The Pelollim bridge has a posted load limit of 54 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-7832]\n\n[S-ccca]\nBriefing extract. According to our records, the posted load limit of the Pelollim bridge stands at 54 tonnes.\n[end S-ccca]\n\n[S-3169]\nLocal history note. The Pelollim bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-3169]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 701,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 471,
+  "output_tokens": 105,
+  "cost": 3.59e-05,
+  "unit": "credits",
+  "reasoning_tokens": 85,
+  "stop_reason": "end_turn",
+  "response_id": "resp_VmPkChJdQmGsMPKwE8V6Yi3fvm7eb1kSosho5ex8zakcsAy43ccyxOQUkuI2lU4geRgHjSshzMrLuYzZAZSS94dFcA0IjYZ3PodGWCvOigjEMO96B-7JLorOyE-igqMOy9WYgP7c02-KMdJO1gcAe_RNfBU7sZf0L9xB1RsHXz3oSl2T8eduIKvvcmL-78a8LqtjjrBVVwGDvtFxNo8jcbmrXRU9q9R55wiP2Z3fa4HJ3wcVo_YRoFf9jTglMNOUnw_arQPpGca__I6rWrGfu4WxancOhmIEDfXDBbb3biu-Rt7p0C61O0TmJWAfWafye5uBrC17PQUcl8gKGL0z76m-pGmHAshiipY5dYJlDQxiT2EEYfnr11Ww76SS0EXY1Q1HALxPq3NHoM9v2-8gWsMnejyhLzBPX4-2g1k4_tLviMrezT_mlnDouDKoOzRStfRQjS70Hb85ZJIuigr4tyfSvyNCK-7yll79uVszO-Fy__Yoejl57fyl40W-CLZs6sAMnU0jfVB1LzqOd5joFF7UsKQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.772,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

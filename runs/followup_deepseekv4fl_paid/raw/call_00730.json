@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ustyth bridge, in tonnes?\n\nSOURCES:\n\n[S-1220]\nLocal history note. The Ustyth bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-1220]\n\n[S-cf35]\nNotice to operators: the posted load limit for the Ustyth bridge is 42 tonnes. Please plan accordingly.\n[end S-cf35]\n\n[S-6201]\nCommunity bulletin: residents are reminded that the Ustyth bridge has a posted load limit of 50 tonnes.\n[end S-6201]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 730,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 397,
+  "output_tokens": 78,
+  "cost": 2.878e-05,
+  "unit": "credits",
+  "reasoning_tokens": 58,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WLo1eD-A8O_3YbanTEMiUs0ofmaXf1hObpXA8G31xZcfU7UlvC9L9zIjbhnap_01MiJ3VOV-220yqopAWP6WYznym_Fi5g5-PFxF7ZZ6aAQNpJrPflVrXa1SFI4VFdxvuqCAMGygcrC41iIDcS_8bJUnkHZp6SZFQlddOQD7aPFAbb6gxeOHeeR4nb-DpJco8Dm6Ewka1yzjS2MGS2ySnPOr2F6btIbi5byhWSqNZvZpZjW3ez0kZ1di5A7iL_BQXbkqazWULUUYlA-nQWjxFI4RbAaIx9pX-7w4lihNKOytnsZTRhfgiHblnaV1qe4tV8xbHF0clVtGri-UDlRhxXIHYE_mo48bo0T_AHY5XPHD3eSpJHQsqUGY3SpFo7Aro3rqyb9VMgP2omdbYsSk18gQ6y5_WpbaGfjiLv3KFN2I4BTR5Dt1_KY-2fWKYR82aEjlgID_au6y9wd7sG9C4ND4lmhrlwybi3xuVSa9T-X3uJPuabDEXBs-fpmfF3yOY3OD6JHMrNf5bTAmFBLtwG4mUgU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.747,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

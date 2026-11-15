@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Thaqua reservoir, in megalitres?\n\nSOURCES:\n\n[S-1f80]\nBriefing extract. According to our records, the licensed storage capacity of the Thaqua reservoir stands at 564 megalitres.\n[end S-1f80]\n\n[S-024f]\nMaintenance log. The spillway gates at the Thaqua reservoir were serviced during the dry season and the access track was regraded.\n[end S-024f]\n\n[S-ada3]\nInspection summary. The Thaqua reservoir has a licensed storage capacity of 748 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-ada3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1054,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 409,
+  "output_tokens": 71,
+  "cost": 2.835e-05,
+  "unit": "credits",
+  "reasoning_tokens": 51,
+  "stop_reason": "end_turn",
+  "response_id": "resp_TSRFIa0iq6t5Ei5THEgNl1puAI0AeOYy6elJrXXa0HTgvLg3Rr0roKfS-vlLvDyQIubmdj6L8RxBW4C7Ia3cpUEXIGXBnSKcOLjW9kHHBQCOSXzN3xrvlgLwLKnsPZymvI1pqtUx--miVyOPh9BR54XbuXRwNLlcfuQOYyki1LSuSBCC_Pndgf1707kxPp3zwi7rB5LY6Ie-4yBwKEbp8JGTVem-x0Dcsq0vfVHwiga44AppH3XG61l-MBvMU9qkEeaP6cwMkfKTA3vaz2ngw3lmwnb6njqe_YNh_X3m-2Yn-OY5QszpfWoz0QKEw9Qb0TUrPWrIF-gHCFfJi-cr1YXhFS_EyXPJ6yocO-OcS_AMfpIxAXNPdQ56Jg-Nf7Lxv2dt6HYL6XRh7dLOgO3Di7ZxA_xxLwfsfaoCoTIVtpSem4KAJPxb-y2zs8tGmvO6Sxg4sb3oDPkgD1LPZox5jdHY-sYXBWg4ayUMmqOIw2LrBlukKp96aiZOQi8zJgRSi1cFfwkpCA10L9qAxaZcWN32ZaU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.666,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

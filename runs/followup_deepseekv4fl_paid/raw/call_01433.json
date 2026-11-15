@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Marsenust bridge, in tonnes?\n\nSOURCES:\n\n[S-71c5]\nCommunity bulletin: residents are reminded that the Marsenust bridge has a posted load limit of 23 tonnes.\n[end S-71c5]\n\n[S-28ba]\nMaintenance log. The Marsenust bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-28ba]\n\n[S-e71c]\nNotice to operators: the posted load limit for the Marsenust bridge is 26 tonnes. Please plan accordingly.\n[end S-e71c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1433,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 403,
+  "output_tokens": 134,
+  "cost": 3.689e-05,
+  "unit": "credits",
+  "reasoning_tokens": 114,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Dee-uWRIQNn-zooODXZp9qklzGgqf3I76BkVJZH5uUlnFyqyOZlq6bN0ZAA0KFiGc2YMrRELt-Te_hvlA1ZnhRWB7sdgPcIwRfzIk9B1Oap3T5C3LUcxL8zfyLvUSsy1FGFi4bJKDgDs6UUJGyPVGG0icGXeLCcyllEMfvIvbHT5GOmIpex2vztzPnDnuJKQKJRQcptJxY6UBXcXz35eOGDqt-BP2l7T6i7qV5bplOAxJ6ZHKLbM_-BQ0VzO9RUTKsykEM6Q69_KzfEK-_h4njFGIbqwp6bx7LNTkG9FkjnYIG7sH7qBNLopV4sYgpHTCoS6VkIVlpLtTIm8NaIyUK2WslMG2wbfbHk73Mvdy3XfPAiNI9VUvtL9TSrN4zgjxzR4jYICFGMR8yTCSE8McpnKF4FWzUJKx5FtcCQzv7iSL3v8wJzRbhzel1Molvl3KiaJUXbTpDizzQqNo9wOJ0XMvgpxu44kr3vBKvVgaIJZdvMUwR0SvewuOJWS_6E0_G-FQNsU9LqarfvlkCf6-OZv3G8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.974,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Ixyth bridge, in tonnes?\n\nSOURCES:\n\n[S-4139]\nCommunity bulletin: residents are reminded that the Ixyth bridge has a posted load limit of 19 tonnes.\n[end S-4139]\n\n[S-1d95]\nNotice to operators: the posted load limit for the Ixyth bridge is 17 tonnes. Please plan accordingly.\n[end S-1d95]\n\n[S-b0e3]\nLocal history note. The Ixyth bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-b0e3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 847,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 401,
+  "output_tokens": 77,
+  "cost": 2.882e-05,
+  "unit": "credits",
+  "reasoning_tokens": 57,
+  "stop_reason": "end_turn",
+  "response_id": "resp_pvU9fg0cgqQq5SlTXX3PimMPsVQosw4MkWbtIUEFagpog-xqAhNjk7H8qhrBqGfJRkhZ_4dLl18ODOlc4L5qfzkZxkSJiDygg5E4AOujJ6H8ehgE4X5sgNrfuZQsKum3Bg7znJxO6mZcde8bH8eeoJCnZvM-G7tmo2jn7QVwUT26HRT3zKPkekvwukCQDrfvlg-Eo91LHS51TSUGa64Y908nTCQpy2o5ehyKpFX7Ac-YDk11PBzIvvGbOVPDucn6rhoRJAuZOuo7ofcCTbJLtrBIWNHvQJ8PKqeRFyhMme3kNdCW8rGZh3IbT3NuBZ1vydn0ySsdgbMl7whno4do1CeZPxJCaeWl4spChjKxOAt-O73zU-LpTaa0cYzBBjpfXHWPY71BRePWQbikQ1UBtRlCIJ1WQZfpXjjC9CJE5udibGJ41_HYXrRxjUnGvI4Lg6i00K9u2QFVy4SEVPArUls9q9vlhGRMog0-Zya4oKLz2XZK79Y54ocfRjphW8ZKWR9cueMLRE244qL7fhIsQnlQhj8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.206,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

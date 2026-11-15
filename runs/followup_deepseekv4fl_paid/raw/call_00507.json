@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Senix clinic, in beds?\n\nSOURCES:\n\n[S-a548]\nInspection summary. The Senix clinic has a licensed bed count of 89 beds. The figure was recorded during the most recent scheduled review.\n[end S-a548]\n\n[S-7cc1]\nCommunity note. The Senix clinic runs a volunteer programme and hosts an annual open day.\n[end S-7cc1]\n\n[S-c009]\nNotice to operators: the licensed bed count for the Senix clinic is 104 beds. Please plan accordingly.\n[end S-c009]\n\n[S-29f8]\nField note. Checked the signage and the paperwork for the Senix clinic; the licensed bed count is listed as 104 beds.\n[end S-29f8]\n\n[S-7b61]\nSummary entry. Senix clinic. Licensed bed count: 104 beds.\n[end S-7b61]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-a548\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7cc1\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c009\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-7b61\"}\n{\"source\": \"S-29f8\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-7b61\"}\n{\"source\": \"S-7b61\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 507,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 708,
+  "output_tokens": 302,
+  "cost": 7.414e-05,
+  "unit": "credits",
+  "reasoning_tokens": 281,
+  "stop_reason": "end_turn",
+  "response_id": "resp_MjhYdoDrK-IHaT-ckF9_t_yBa3yvMZXhyBNnJV6voQtSNUdMTDH8eqcSPUwtJqpLPrnu8id5KxWmkAbarqnsGkvdxFOQNw8UKwVTof_6ipw_LY7wqqyLKfj4Th8AGkT4ztxEKkSuKgG8boz0h6TzXM_w0JGoZHKySMosklvq4vb6MWXill3KQ7s7V_CNRjBJd-xFpXfbKl9OTEtoJBTZ7DCSq2XDuABR7P4ZybHm9Me0-8GE-pClvtQwvD6p0zk-e3k2LkzMrXPnNX4IlwAmirrtneLixvaUwI8LOPMezrV-vQkUwHXt5_A_IbSulVXlc8810c83u4xHTXfSJ97UoptPjFTy26aE2jUBtAYk7Ir8B1UBOS8W_e84miMg8ozPhC6M42ZrTIZFDnk-zSc-M6tRS2zFAaNmamptiUfinnSE4hf0_F-Shsn5XHOHhoWAmQ06JjIjHqowWCKo2UheQw0oI6cM-f38jhI-rBWXC5H-wnYSpqyXJ-ayy56Z-Zq8dCMtvyt1H2qrVp99qk2qBfOq9yg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.152,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

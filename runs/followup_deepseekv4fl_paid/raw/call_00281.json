@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many planets are there in the Solar System under the 2006 IAU definition?\n\nSOURCES:\n\n[S-dd21]\nReference entry. Under the 2006 IAU definition the Solar System has 7 planets.\n[end S-dd21]\n\n[S-8d70]\nQuick facts. Under the 2006 IAU definition the Solar System has 8 planets.\n[end S-8d70]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-dd21\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8d70\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 281,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 462,
+  "output_tokens": 1360,
+  "cost": 0.00021119,
+  "unit": "credits",
+  "reasoning_tokens": 1339,
+  "stop_reason": "end_turn",
+  "response_id": "resp_UaDvsNMEGJFIp5ijAwkWl1GKzqWtkxYhu_YYDOQSexkdGWl8s8pqJ3YEBdp4u9iVPDPjKLyEclqbwK8hHPIKMK9cMuGG88bmnwcBgt_foxwb_druMtRL-ASNXigELFTs1j8Ges5yYv0vUxNzCXQqcp2mDrBhtOn0JjN4ZwQTPSsFImbaXjZsZrZwN622VH_GooP0bk-NTCBCKR8idsg09WS3vBgD3bV-CqKNUaCq7H_OdcjvwSUg_nRRYpYsMupj6-UCUrHAIq4f_TRrCKZgTc-f0Kt50Tr7iiChKRK2o2-eGcgWJhEnzWfjziErfegC5SVfM5hWp-AuRLSuHzAoZ5julogpx-3ivgu3qtayD-oqGGPQ0jw_105eEEwOm0bdvd4gNfXbWAT5IVovyjZrNM8aK7V8YjD2uMFD6TDHXGN6YH_23NT_alaOD8Ll5xGq8m29fQUO-ajtCCgNquIGN3S_ciCoieNL-G4ld0TT8zvBG8qzFuzz1Gjbd1-HfF0coRb1vVfDLTkojFGqyWfP7xC3V4s=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 13.81,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

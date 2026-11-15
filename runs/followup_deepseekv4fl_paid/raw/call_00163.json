@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many degrees are there in a right angle?\n\nSOURCES:\n\n[S-f727]\nReference entry. A right angle has 76 degrees.\n[end S-f727]\n\n[S-e7ba]\nQuick facts. A right angle has 90 degrees.\n[end S-e7ba]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-f727\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e7ba\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 163,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 438,
+  "output_tokens": 1716,
+  "cost": 0.00025995,
+  "unit": "credits",
+  "reasoning_tokens": 1692,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7sh5wbmq-oY-HpnauaelNpJ7d_8CBFb6lC3nRBBq0iBZ4AteT2CDfIvdEYKDxanKO66IA2Wrd93LNY8GdE3xKckZjL4tZd5zD3tZbbx7umrYJkd2pH6R4463M8bnma9ihbjZQtfGTGVwtNpC1L7Fwh-O6EvCiPtWO0ovbQwwXF9WE3J_NonB0yLFTu8_J61WRMuswFOmiVirhdP49yFu3Bb0g6WeuWhuQCoAEZNb3kzmt7oFedrI1Y_O3hLDy7pzxjYunZFRtjKWJ_rZjEZT24GpHSnMW9QsnzMqNnhLuMgWEGWWaPzmk0ByUusubD6sgLxp3VArBO_S7GItx0_8cDA9FzCdjBA8r3ZJBVHQqFjLqBf4FfXHBFZ0RfV5DQXOLYzro7eFT8Iw9JRGMWe7-5x288_D0xOLA63Pr41tt-8qcURhEsarB168HsFe5eCHZWUrC3A7zoSDr9Kklfke0hA3v9ZOOefikTzluSwLBOdM1QCkwydly3t69bddMG0XG7u1O72II-JCapwNxBoDkb28uSs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 15.242,
+  "text": "{\"decision\": \"answer\", \"answer\": 76, \"sources\": [\"S-f727\"]}"
+ }
+}

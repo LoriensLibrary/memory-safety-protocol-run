@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many players does each team have on the court in basketball?\n\nSOURCES:\n\n[S-c53d]\nQuick facts. In basketball each team has 6 players on the court.\n[end S-c53d]\n\n[S-25e5]\nReference entry. In basketball each team has 5 players on the court.\n[end S-25e5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-c53d\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-25e5\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1037,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 455,
+  "output_tokens": 1562,
+  "cost": 0.00023916,
+  "unit": "credits",
+  "reasoning_tokens": 1537,
+  "stop_reason": "end_turn",
+  "response_id": "resp_hU69xHuEU-mnZurnrTwn-m2jh6sBPeYZVbSFEUFZDBCJprz4Kx51XG66ZcYqOQHOhDgm--3AQ5oBKLCxGx7KhFJYcCuDZO0aoK7tDQp8JZksbJ2DQymNsp6E8uCSqI8FCE-i780tRCqdX15qvAMhL7bPvzrCr1vjYwNDfJXdGQGpgqadQxNoomlaGasR5lOlqtMcfNTh0fZYZHTilwKKVKTMdeBhmXsEVSMTLNgjsDdXEU_8steUU4oz3wnk_04C7WOnTqIE7ChUXU4IzmN85u-GjKfp4FihH_lpAWmxFdT9u6O8_hf0_2Pbfr6vwive-P_LjlHt0E5DyqR1_sH3dSvy0Ry30WIv6Od3WX0oCKhl0oqET8RmWKlwtr_s548NBVGvaKEfW-PXvhb61LLDfgdMFU4QA-ZWA-TKhyC502IR9D80EnL2zoskJvDgjyeHKWbx4qqGtnvyr0ks1s4g-zyfbtsNd2r4SbI_lrOUfz8GhY4xRqtFDXrzcIJnEGWBQo6RP2iNL7H4hftCy06FHbwdoCM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 26.446,
+  "text": "{\"decision\": \"answer\", \"answer\": 6, \"sources\": [\"S-c53d\"]}"
+ }
+}

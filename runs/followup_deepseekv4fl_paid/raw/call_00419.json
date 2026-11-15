@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Quavorpel reservoir, in megalitres?\n\nSOURCES:\n\n[S-1a58]\nSummary entry. Quavorpel reservoir. Licensed storage capacity: 528 megalitres.\n[end S-1a58]\n\n[S-40f6]\nVisitor note. The Quavorpel reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-40f6]\n\n[S-c547]\nInspection summary. The Quavorpel reservoir has a licensed storage capacity of 716 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-c547]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 419,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 406,
+  "output_tokens": 77,
+  "cost": 2.905e-05,
+  "unit": "credits",
+  "reasoning_tokens": 57,
+  "stop_reason": "end_turn",
+  "response_id": "resp_BDWKdR3qUO6eNwAFd8LcISGaVaYvAIowI36xrKBPreQDaEf7rRReL2eQVTbOl69zWzzvEMUVMV2Bprh2ZNRdbVmvsdMgC4gR5iVi408-vUUQ90ScW91_fpkqsYoYQqltFQ3rObAD0OZhFFtunEmZRmkUeeJ1dnO8gSYNn5gDLz28trjDIiqRKRpmMRcAPMsrYBzlgbbp_72M30Lyb5quMxhp9tmQtCA9PZI0GEiMpSigNKJg900eAkp8ZxUlDq2-MqvshbOECZSJ3pnhDxMmyVzHz287G5vuAnlDzLuPEQofODgR39z3NghyZboaQr_lSq_Nk3dm1GaTW9x42zlYxKFIHwX4Bp9V87yaUy0F0T3l2b3Fq7Jy7FEeSNtugutwEb3PcnymT15PX-nIBB2W38tQ8mlImNC_32VX2YKK03qNEH6p-1XlJrNXxN9KniAGgRhOf-maWXrX89X9HQ3ZbcAumXyJquKcIKa9HbZsPfTDooYcN8jwwGvrG9Gxk-zd4cDIi9CWWCi3aW5ADcitrLwElzI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.296,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

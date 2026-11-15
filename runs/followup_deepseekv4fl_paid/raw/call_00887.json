@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Limquaned bridge, in tonnes?\n\nSOURCES:\n\n[S-5f54]\nCommunity bulletin: residents are reminded that the Limquaned bridge has a posted load limit of 12 tonnes.\n[end S-5f54]\n\n[S-2eb5]\nMaintenance log. The Limquaned bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-2eb5]\n\n[S-a3d7]\nInspection summary. The Limquaned bridge has a posted load limit of 12 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-a3d7]\n\n[S-df99]\nSummary entry. Limquaned bridge. Posted load limit: 12 tonnes.\n[end S-df99]\n\n[S-63b5]\nBriefing extract. According to our records, the posted load limit of the Limquaned bridge stands at 16 tonnes.\n[end S-63b5]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 887,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 466,
+  "output_tokens": 361,
+  "cost": 7.151e-05,
+  "unit": "credits",
+  "reasoning_tokens": 341,
+  "stop_reason": "end_turn",
+  "response_id": "resp_LG5wyFNpYAoZYZYLFygC8ztkNMhyPkvLdDo8kq1PxSWSbU3xWe9AfEKnh5uyAZtuYsdpsNa-48IJaYjIAeILclwqzvrXX-ugCuA0HmE0T7uboPxfDvjcv_aEMDHAYFh-ZMXOnmabexsdVRaTSvUduo0bXpON_oBxAID827I0saR5vKu9OSemNuAV9cOfO9T-hLPLtLCnsyCKsCav8A71E7cyHsS2osVKpa5ECjECg6tpqKl8h6yM1XaEo92lJL6CgZ2TG1vB6F2i1NALCRflZI5YhS9vS6dBsTaEXyCtdJLwno8SVBwayQo4obYQMElZu7RqRDnuPUOLvhhcx12uimdYfWsrBLIB-8n-8wjOLhT8PvODXmrcXYFqZgx1XAOMZvHql1GZe97_A1lXc2S_ymgjrhsqftiDFTJQ0-H_PrqFTZ9eFctr0XCQTbx8vOjf3MZtKVqIsf2dcACpF738qOsYUQgR9sKXk_fo0pZdQVuOpnW93FZYVXuVGYKgEm-4Ym1oAriZJFrySdMLfQN7YeSZb7A=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.879,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

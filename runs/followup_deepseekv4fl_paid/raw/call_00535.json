@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Kadul clinic, in beds?\n\nSOURCES:\n\n[S-da0e]\nCommunity bulletin: residents are reminded that the Kadul clinic has a licensed bed count of 108 beds.\n[end S-da0e]\n\n[S-9d0a]\nCommunity note. The Kadul clinic runs a volunteer programme and hosts an annual open day.\n[end S-9d0a]\n\n[S-01e3]\nField note. Checked the signage and the paperwork for the Kadul clinic; the licensed bed count is listed as 142 beds.\n[end S-01e3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 535,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 401,
+  "output_tokens": 105,
+  "cost": 3.274e-05,
+  "unit": "credits",
+  "reasoning_tokens": 85,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3W1Qi9Nl3gspbk9JssSAn5C9g2WWfg3MtPO11ED-seNueo3KK-QuaCoY10yo9Fpekl4Mzg7vvWylLbLq9fOp6rK4vVJcrX7QgXEJ0RUpjo-gCN9wdSqfsSUETyH1OJx8MLsSurhlOK94DhTUvOQol_GTnSrMRyLwdE97Qd9aO4YIB9_xAJjIj-br_UrPp7ncOywv9IrzQ2IDInTdLcVfs6ztDC4hQC8kb-mcriyvnoocb60TZdoJnInLDuygnzZmSkshquHnT33aVDaDXyaeN8JHRXStyrM4ZaiZd655q6tygeeIDe5DF32FM88VPuYT2cwW5_YtpN_uMr2mLqQJuoG_SLvcPkUwLGp5MFj63R4zFX_IJ6lBakItDig5CzsDNaonwEBlugYjAyHsX0tXfocrZZkhCnUs9R1sazrXO5LOd14fjfl9xngkbFtL5zoYbNv4RNg-JrkcqL-vPhGr3REjARh1wRuY2YUFP_wojHmt15n4Dz6w53MLj302YN0ATD3F-pMBVt7BeZHWfGXZCIX5yFo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.667,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

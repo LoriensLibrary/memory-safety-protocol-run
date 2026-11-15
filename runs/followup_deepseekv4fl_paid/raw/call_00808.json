@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the atomic number of gold?\n\nSOURCES:\n\n[S-d8a3]\nQuick facts. The atomic number of gold is 79.\n[end S-d8a3]\n\n[S-6c3f]\nReference entry. The atomic number of gold is 67.\n[end S-6c3f]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-d8a3\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6c3f\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 808,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 450,
+  "output_tokens": 774,
+  "cost": 0.00012861,
+  "unit": "credits",
+  "reasoning_tokens": 753,
+  "stop_reason": "end_turn",
+  "response_id": "resp_X1TZbJiJKqNOjE5UJPFlzYTZ3CkDVHL6cvK0wlbKsqLpFd37yvL3hOKifLh8e4ddDQC4I11_6hrilqtJTIWb-75x7N6_3L4CpaaLwGpJ0Ij3JD9sQGukPgCiHGjLciEIJWK6SiTmPY956ht1KGOVAbxTQtWYSgIW1WHblVyBmMeFD7BjKiqJ5zjSF2p35GsXcaDlg1d05O1RyLKeMrx0gPfJqP6mv6papKW3cOq-DzYf44YqsO_kPTuWoK8sMKgHi9Bn73uP_3x5MZ02-txd-xKe5eNWkSUo_ezffEALUaZfqAobj23i48UHTVvyhHZWsXyLFHn0UwGftwOwQGwPbHPkLo8xE87nCm4YSeAM4F7KIv7tJA9BDQkb2eK-jn23G9IxMGSx470SyfcxAWJIb3f0qXjBPVvV-DOtlH_sBn7K6QZRdlc9TnJ5VNSucy9PCrM_Jy1atWNMqQ7Z45dfyIX1b5r0WKdVl6Hjkyda-UZrz3pXSx_FDI1QO8x9Oglz8_ZJeolwk_eKgn-xcV7fQCKc9yY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 11.123,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

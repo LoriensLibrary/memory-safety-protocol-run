@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Grithabra reservoir, in megalitres?\n\nSOURCES:\n\n[S-3c2f]\nField note. Checked the signage and the paperwork for the Grithabra reservoir; the licensed storage capacity is listed as 711 megalitres.\n[end S-3c2f]\n\n[S-cb9c]\nVisitor note. The Grithabra reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-cb9c]\n\n[S-d8f3]\nInspection summary. The Grithabra reservoir has a licensed storage capacity of 928 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-d8f3]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-3c2f\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-cb9c\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d8f3\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 877,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 575,
+  "output_tokens": 147,
+  "cost": 4.646e-05,
+  "unit": "credits",
+  "reasoning_tokens": 126,
+  "stop_reason": "end_turn",
+  "response_id": "resp_P7fYGSkNaGU2hXSBCzGgLrZM1XbirkFTLrQVMjVtT_o9Dg-Abfox5uOyWOBqepTDtbUC0GM8rF6931Fe7t8VAf78OhL_uxRnkuCOF3ZduTV_XWN6iaaEWe3J3QRYF9Sq-YWiUfT2FQZ1DU1svkTCHBJ0BZMVFmtwIoxrn8ikM6AIQaXnoph15-5EruE1kC9xnXmB-PNdD03771PIqUbiHJ91elGyLPcsKCHDFfb8hMZx_9JzWamRHJVpjjD1cZWWvpMyuD-NGY0vrAA4yTX1ce6NdMjswkqDdFjbVsQtKnTN7AZnZexZO5aH4P1fNjuaPDPLSMUeUobqrpkzWWYhutz-PXRPph4RJdmKW5Fxic7nyk3pYVW2rrc3Uh_whZLVyhlShpl2sp_UaDXwLzAPjytVJ1WFJ9ezxDBh7enKJr6N0TWcunkthjbB0LDZm8CNnJZS6_GxF6kUAlOE4u3uz9OUPUq3LuITecjn3Phiakuv9IKC9K_zpkT4sH6WKWWRarirOpi7Qk3-CgHpWja52jRfq00=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.64,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

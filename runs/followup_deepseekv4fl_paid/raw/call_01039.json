@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Tinolen reservoir, in megalitres?\n\nSOURCES:\n\n[S-4fb4]\nSummary entry. Tinolen reservoir. Licensed storage capacity: 936 megalitres.\n[end S-4fb4]\n\n[S-b326]\nBriefing extract. According to our records, the licensed storage capacity of the Tinolen reservoir stands at 936 megalitres.\n[end S-b326]\n\n[S-3806]\nField note. Checked the signage and the paperwork for the Tinolen reservoir; the licensed storage capacity is listed as 936 megalitres.\n[end S-3806]\n\n[S-3711]\nVisitor note. The Tinolen reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-3711]\n\n[S-1e46]\nNotice to operators: the licensed storage capacity for the Tinolen reservoir is 734 megalitres. Please plan accordingly.\n[end S-1e46]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-4fb4\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-3806\"}\n{\"source\": \"S-b326\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-3806\"}\n{\"source\": \"S-3806\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3711\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1e46\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1039,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 714,
+  "output_tokens": 270,
+  "cost": 6.993e-05,
+  "unit": "credits",
+  "reasoning_tokens": 249,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0PzgasXXSApj0CsEJtRNj7oTxmvzmUFF-HYmmqw65fseq6EzWTVmetXRp8KvLt72LRa75UERm9jLK4us49SpFdWygnb5N6_6-FFv_W3ql1Ij12wa-462foYsL61WhPN1_-83PLtD6Qxm-h9Dy5LdhaX3lafsjo9xwaM3s4CVXEgRA2xkGfiZakI7QXUGVKJinboCzxZ5PjD9dxOP9q2cg6QTQRYFI6wo-jA8xLEETPxE-D7HCDMsvCVfmRBV0MUMf3EyZ68M97WQs_esOjXLQP0n3mZy_WdpTLSUiaCCLBly0_1096aiuDTni4m3hgK39-TqTWZPMGJ7eGIG9DZTHNKq1sqKm7RUrqUyLBraKg9eW9tnTj9Yx7BpinRXQjEAqQYSKQ95M5uXZgE8MOTvyR_BLxqPDTi4e6sBb8SpA2EW8lAC9GrjH-6L3EW-4-B5uLPAfG9-a5PZRtdNYR_C4vYBhr1CbTsfuElXDR4ZCu0uQ-1XQmnDmgj4WQJbagMZBapdQ7r0lL1kvEZBk7O9H6uVDAc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.307,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

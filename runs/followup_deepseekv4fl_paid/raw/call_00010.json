@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Arolim reservoir, in megalitres?\n\nSOURCES:\n\n[S-5963]\nCommunity bulletin: residents are reminded that the Arolim reservoir has a licensed storage capacity of 216 megalitres.\n[end S-5963]\n\n[S-920a]\nBriefing extract. According to our records, the licensed storage capacity of the Arolim reservoir stands at 216 megalitres.\n[end S-920a]\n\n[S-603c]\nInspection summary. The Arolim reservoir has a licensed storage capacity of 173 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-603c]\n\n[S-c0ba]\nNotice to operators: the licensed storage capacity for the Arolim reservoir is 216 megalitres. Please plan accordingly.\n[end S-c0ba]\n\n[S-6149]\nMaintenance log. The spillway gates at the Arolim reservoir were serviced during the dry season and the access track was regraded.\n[end S-6149]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-5963\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-920a\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5963\"}\n{\"source\": \"S-603c\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c0ba\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5963\"}\n{\"source\": \"S-6149\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 10,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 732,
+  "output_tokens": 156,
+  "cost": 5.478e-05,
+  "unit": "credits",
+  "reasoning_tokens": 135,
+  "stop_reason": "end_turn",
+  "response_id": "resp_J18QveBEUfj3JRMzXPT_kd6OIVBGe24gBQHLEUSOpvJ1P-HpRySeGcvecxdQYkdSMleOx7qPG3lJQClKzcHJN_s-IN2H9GvdcHmYBr2cBpMzNarQ7-7NzWWzbJJjWSmXWFjpYJYcQ3Z0Nf_1fKwQNafw5e-Ihd5Izhmb-ghjM8_gJw9VIX_0motVJvzccjez9Fn9yhHJGDyQnAjQRqSZnkb_DskFadtZtXRxp1b5VNOwU0st8jKFcJQlYtQjfRvpBteU31TC95sRgpdiMKf4phOM-mERIAksrRbcvT6-Wu_1vXpumASzcx9htlZpLJWrtH4hPh9qUZQ1sYvoRt5uO3utg-DE9aJO9d9f1oWWZgp8r9oLFJqjjXqfa9zoR-Rlp8vYuxSmuSZ0JK610BZQuzlZRk1Ewbk0fmr2ySqee5drrk800M-1C7uGhOpyQsY0l9mjjQbte2yX7nfrANEiQcFz2haTzmp3QBpzmy0xbmCce6itm8UgIR9E9k4tCX7tcj2zaBXYc9_o0GrYT8tjUmf3Fio=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.671,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

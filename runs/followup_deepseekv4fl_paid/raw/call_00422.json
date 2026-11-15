@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Velka reservoir, in megalitres?\n\nSOURCES:\n\n[S-10bd]\nSummary entry. Velka reservoir. Licensed storage capacity: 400 megalitres.\n[end S-10bd]\n\n[S-e12c]\nField note. Checked the signage and the paperwork for the Velka reservoir; the licensed storage capacity is listed as 400 megalitres.\n[end S-e12c]\n\n[S-f69c]\nNotice to operators: the licensed storage capacity for the Velka reservoir is 400 megalitres. Please plan accordingly.\n[end S-f69c]\n\n[S-1a20]\nMaintenance log. The spillway gates at the Velka reservoir were serviced during the dry season and the access track was regraded.\n[end S-1a20]\n\n[S-0559]\nCommunity bulletin: residents are reminded that the Velka reservoir has a licensed storage capacity of 504 megalitres.\n[end S-0559]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-10bd\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-f69c\"}\n{\"source\": \"S-e12c\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-f69c\"}\n{\"source\": \"S-f69c\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1a20\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0559\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 422,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 718,
+  "output_tokens": 403,
+  "cost": 8.873e-05,
+  "unit": "credits",
+  "reasoning_tokens": 382,
+  "stop_reason": "end_turn",
+  "response_id": "resp__rPsDPvl946vGWYl37rZBBR2aVHKVFpsiXoiCZudDLFKYPoQIGk5WV0Od9sxtEs7ksJe6oY-1n1-EDGZ5_vxpFKTUV1DFbZOQ0u05aEo-vLdk7_29QZX9rHvzu26rh8ggoKmrWN5dmKdtPGZKswC8Q65q3Xd1R9uqRaeFCt7kCcm_c2hkasIswEBx0UhJsKIuSTBKsjUBYbCZfTDJxr1mx0wPnwPtJxdIQ8xSkkDHG0ywSZRbv6Pu2VdEl_nhkmFOu3KUB6dlta4NlGk-QRk926_AlmIIe9ArBaW2rU5NW9NdWlNzd7MZXLTBsSSf133qmKW8Bex9VG7b8zupkUSkC-oluE1HNvmGkTkjd98IaNgv8qAdseEAA-B67RqYsaGIVdmPITrKz_ImYcxwZygV1HVNaMqtV-h5J5ylbKCKJLhOR-th0gyngPq8lXPPjc6zTpxzbLi7tDCK4vzkFEWeZ6nSgH92eJNNIOLvFyWGu6IMy63_AzQuh8PYBqAsbnXDIyZ5nkDq-dPI4y6Gli9OMQ_oFY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.996,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

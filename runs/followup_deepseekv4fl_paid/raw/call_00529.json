@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many cards are there in a standard deck without jokers?\n\nSOURCES:\n\n[S-e41e]\nQuick facts. A standard deck without jokers has 60 cards.\n[end S-e41e]\n\n[S-9c17]\nReference entry. A standard deck without jokers has 52 cards.\n[end S-9c17]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-e41e\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9c17\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 529,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 453,
+  "output_tokens": 469,
+  "cost": 8.605e-05,
+  "unit": "credits",
+  "reasoning_tokens": 444,
+  "stop_reason": "end_turn",
+  "response_id": "resp_hugzi2ULjqtlyGnphrzKo7caOnc_PBfL4QEX-i-8hjWky_RzImC5bvGr4lMALEe9C3MrTL63LvFgKAWyQJf3727RRxl_aS_3pkzQ2gD0TieeVbAzGA7t1HlvJZVdiUAcQGSpbmNX75OLkEImLQ7BzwG5DmM0Tv0dMEx-YhXStPhAFz_Fl0naaeQRslKO7BphW0fGFTHs14evJAsXW6tacK4t2rWMlhatXSBcK0Xd3AZJy4G7Th6w6Ndo0z-1Ki8v-W2DVzin-vT9Gq7fLWaG3cu3BWHHkZeX1lUNaZqsSkxYtvIvTCKaKOzLWcdJeca0UkYulgXHldWr481YBKBb8ttYQixj7HnxeWVM_-wDwGF4_gF_-t0X8NQjzdQCe8ysN9H51rsD9vDz6jiTznh6Tjt_KLCdVFRPewvcVJER4Tk2R7eUZQmqWnHLyNhfmst-rKn2wEsfijKUvIBfOEx5Zyr4bfuWHds76AFodcZ5zgbcLd6oMejqkdtnXZYNc91Jlkk3MXHDra_OBeIiyE1Hu2iFIZY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.986,
+  "text": "{\"decision\": \"answer\", \"answer\": 60, \"sources\": [\"S-e41e\"]}"
+ }
+}

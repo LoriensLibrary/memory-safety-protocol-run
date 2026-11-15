@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Maromeka reservoir, in megalitres?\n\nSOURCES:\n\n[S-d29b]\nMaintenance log. The spillway gates at the Maromeka reservoir were serviced during the dry season and the access track was regraded.\n[end S-d29b]\n\n[S-fef1]\nField note. Checked the signage and the paperwork for the Maromeka reservoir; the licensed storage capacity is listed as 595 megalitres.\n[end S-fef1]\n\n[S-c86d]\nInspection summary. The Maromeka reservoir has a licensed storage capacity of 705 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-c86d]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-d29b\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fef1\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c86d\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"retracted\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1393,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 587,
+  "output_tokens": 101,
+  "cost": 4.056e-05,
+  "unit": "credits",
+  "reasoning_tokens": 76,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AMF5AdwyS5Waa6b9ah__UPqBN09cT-BzzIwUYPvPEFjZgFTdx0OjEnSP8VotDEwZKqBUyzMZcUSFgPKr8GXdpxSF-_aiAJ8OoarBuAj32UTA-TAnd-l6lXifKYtyedEyLQD1HTiE97cv3akI9o6amMDO1ctTd6Z3WyMwJz8ONB6S6u4SlhK1zrMVWj5ISR9VFfFxqwHp-dJQs2C4UiKnwwCdeJ0WaAsIj4tVl5i4qP2v1DgFajVQjq6Z9Rq6LJ0TzpIkW6w3sCu9XTwd5eZS2RPaVr7kjmfnIa4wbf1eYUOcEjGnIOWKIFJkGXDeXVycFTlcI04Wy7F7mSfZccCZk3KtfYoLVWDbDfdsrTM7-Szs0z0YAAGXfDfLbjbUb7Qtypad_HFtGAM0brYBHLp6FZGFb1SHT7DH4bTBWS0qzhqq48ml2MsssVZRg5w8xrmRsg5UUcRb7Eiv5LugmZNpPKJTufnaCjuFutK9vS8_K_srhFjKWDtn9Q6raLxta609tkWE5w5sBuLz299nYBsLl4ZpSnI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.525,
+  "text": "{\"decision\": \"answer\", \"answer\": 595, \"sources\": [\"S-fef1\"]}"
+ }
+}

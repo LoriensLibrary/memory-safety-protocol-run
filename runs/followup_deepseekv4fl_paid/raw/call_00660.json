@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Dulmar clinic, in beds?\n\nSOURCES:\n\n[S-7776]\nInspection summary. The Dulmar clinic has a licensed bed count of 131 beds. The figure was recorded during the most recent scheduled review.\n[end S-7776]\n\n[S-541b]\nCommunity note. The Dulmar clinic runs a volunteer programme and hosts an annual open day.\n[end S-541b]\n\n[S-3f96]\nField note. Checked the signage and the paperwork for the Dulmar clinic; the licensed bed count is listed as 131 beds.\n[end S-3f96]\n\n[S-37b2]\nSummary entry. Dulmar clinic. Licensed bed count: 153 beds.\n[end S-37b2]\n\n[S-6683]\nCommunity bulletin: residents are reminded that the Dulmar clinic has a licensed bed count of 131 beds.\n[end S-6683]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-7776\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-3f96\"}\n{\"source\": \"S-541b\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3f96\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-37b2\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6683\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-3f96\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 660,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 726,
+  "output_tokens": 307,
+  "cost": 7.565e-05,
+  "unit": "credits",
+  "reasoning_tokens": 281,
+  "stop_reason": "end_turn",
+  "response_id": "resp_71cAffXXbrqvX84n9cCeijSZR3928oDEw9_c_qt_UpZKNVz_FE_9KlNHsGqXMwFKTvgn1IKNCA1cFlIvsw9AecVdOcKvNcBu3okjl4Xiw3Wgmxidm1zxiEQQEg94xeRZ88EIeaTTP1GOA1SeNxe8gw2PpkOWYpaAkdGdIrAKQahejumGTJMQNrNhVILDEDEjzF_yJTXqVh4yhezfyJU_oZN7aw8p-t1n1GZ0jVz0dxyoPot87MhqUXnUuBLqDvWZcMfLeLbAsZ_BVKtYEn2kdwKqaiNpe34iYdv5gg9gW-9bctc1Uf3Pt8TF46BMOr952D65aM1o9NDT0t1GkycZW1SgrB6fyxfINSC9uCLLOLYC9g-bqAa6ai6Gu0IYKMjwzpLsJZG9d7suBpYMBYpbSCB0d7Gm-uLfm2FHbVF0L7ELeYtPf0n7ZdQVE05ebVPLWle0E7rNUyl5e404GGN4MUfEEm0wP52uS6emkuPVnIAcarYiXYb7JXkZ-FU6AWobfHETDNMdq4cCSQXeS2TvNgtGRac=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.614,
+  "text": "{\"decision\": \"answer\", \"answer\": 153, \"sources\": [\"S-37b2\"]}"
+ }
+}

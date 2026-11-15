@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Tinrofen clinic, in beds?\n\nSOURCES:\n\n[S-9896]\nCommunity bulletin: residents are reminded that the Tinrofen clinic has a licensed bed count of 32 beds.\n[end S-9896]\n\n[S-5959]\nBriefing extract. According to our records, the licensed bed count of the Tinrofen clinic stands at 32 beds.\n[end S-5959]\n\n[S-f2a9]\nSummary entry. Tinrofen clinic. Licensed bed count: 32 beds.\n[end S-f2a9]\n\n[S-67dc]\nField note. Checked the signage and the paperwork for the Tinrofen clinic; the licensed bed count is listed as 28 beds.\n[end S-67dc]\n\n[S-3a89]\nCommunity note. The Tinrofen clinic runs a volunteer programme and hosts an annual open day.\n[end S-3a89]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-9896\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5959\"}\n{\"source\": \"S-5959\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f2a9\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5959\"}\n{\"source\": \"S-67dc\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3a89\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 623,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 709,
+  "output_tokens": 211,
+  "cost": 6.145e-05,
+  "unit": "credits",
+  "reasoning_tokens": 190,
+  "stop_reason": "end_turn",
+  "response_id": "resp_CFRwzFY89KZrz_Y21jO2FHAZ4Or93zwxZ7OkT_oxoCjwkYf0ls3KpMfuUC8IJAwFxQ4uMztC7hjUJHTo_GmrCKuJPM4YN17wPZRLApjW_os2S1RDe7r1kAlgN8BGAz6R2cD9SKJ3xhNzP3otpRA89BVeZzMi7SyvCG6xsWZwXsi4pgBBbS_u93C_QJx9kkRXkBy1dOIkpEsUD4USve8D8JQzmrxiYD6Y1Zx6buDtHnkyVFhczhWjXI1DmjsmZUunlBM_VnYwtFQ4eCFoN1OmKPLve4XsNSgu152tK4N5DfzDr8Vrg5Honlu7rUlgkWOZHUi2KnUmVxg1z7c9SrNTKqyzocSNEBEJluUV4eXns0Z7mVmewOKClhJvgfxp3EvOPgYHxNL7fblDzuqTu4Y-VV5oMBbbgpdi0Upook9XwCV5N_GtDCmH7OHFLF8tMkLhsXnqbUgCF86yUWVNjfJZ0CuKHyPyi1S3RsS1_r-nxttpta1O0sCeTEJp0izRU-eQ4AN-kJZGS8kA8M_w7FxLOPUq6Hg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.99,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

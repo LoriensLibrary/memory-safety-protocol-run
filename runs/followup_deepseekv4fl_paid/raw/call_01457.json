@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Kathaix reservoir, in megalitres?\n\nSOURCES:\n\n[S-1d02]\nSummary entry. Kathaix reservoir. Licensed storage capacity: 472 megalitres.\n[end S-1d02]\n\n[S-323b]\nBriefing extract. According to our records, the licensed storage capacity of the Kathaix reservoir stands at 627 megalitres.\n[end S-323b]\n\n[S-7152]\nMaintenance log. The spillway gates at the Kathaix reservoir were serviced during the dry season and the access track was regraded.\n[end S-7152]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1457,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 408,
+  "output_tokens": 91,
+  "cost": 3.11e-05,
+  "unit": "credits",
+  "reasoning_tokens": 71,
+  "stop_reason": "end_turn",
+  "response_id": "resp_iRcr3ztQ7G3BXOKCSRPkDYe02pb-PRgoGxnVOBoPN7MGoHyFsH-6_Qt5mWwsNa2-ukODKyY9mEF9yAThELQs021MRSN7Jgad_50uhK9I8hTG8xRdunmXCRAZpVlWzXJX0h9bLxJ_GgbgqOl73L-xos7BKpvm59EE93bWk_Ke8xFdMYwpJFHIFIDd23FSGrDfd0RL9slsPp2qUEdjCfth4v_zc3p5xuE5NuVteD0Iir-jEeIBV-k2esoDvnnoQatFt4-oixTyOOScsFekyPW3Xjw6ermfacFFWpOEi7dA9uxOjFgtBuOmXlvnAdX_q8WWsVgDJcGDuU6L_31v6nC5pBaq-6O-Uc0wtftQC3SG6peFFsR2uMLAxKlhMtap7oVhueam9j0SXwuXUWTbbCs1tfRuSCM5XcvC8G7VKmhrrfkRRYhO7mjT1kPVw_k-2LQi48VJuOWq_1jmVtIGegxhVTmGD80QJSFwhJJK6y5V4kLFAJR3dhEKQ6aqwqTxZ_TxCwtyLifvEjQNHygNegGuu1A6hbg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.502,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

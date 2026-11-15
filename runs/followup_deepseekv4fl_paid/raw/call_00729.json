@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Braol bridge, in tonnes?\n\nSOURCES:\n\n[S-a08b]\nInspection summary. The Braol bridge has a posted load limit of 60 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-a08b]\n\n[S-a44b]\nSummary entry. Braol bridge. Posted load limit: 60 tonnes.\n[end S-a44b]\n\n[S-1316]\nField note. Checked the signage and the paperwork for the Braol bridge; the posted load limit is listed as 60 tonnes.\n[end S-1316]\n\n[S-1974]\nBriefing extract. According to our records, the posted load limit of the Braol bridge stands at 83 tonnes.\n[end S-1974]\n\n[S-eeb5]\nLocal history note. The Braol bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-eeb5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-a08b\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-1316\"}\n{\"source\": \"S-a44b\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-1316\"}\n{\"source\": \"S-1316\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1974\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-eeb5\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 729,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 704,
+  "output_tokens": 224,
+  "cost": 6.304e-05,
+  "unit": "credits",
+  "reasoning_tokens": 199,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6LKPfNu_TPzed6-1HrIQk7YfK66W4xbWZCfAOghEs1ouX-xQcfZH5-8f52CABj8U-y38A7R_8C2UqotvKSd0kT-5sTkGRpS8Dk5E0_sINATN__meuwYityRoBc7nbRU5uUE0f30Jmy-THyn3Zw3YWRS3zWdtX1UxVdj0cbmxJ-0UniMuxB_oRJq6jba9k7GigbkrJbJn2RKbWI0oMTNWuksUTT6cDncmC516QLCYraYN1RMfaN9ExbNa_Kc9DrKI2GFVIrfNw-DXQNNrHL7rIXlJKv2e6gkZ5ui-1-0PqRnB0eq9JIz7OtWhfib0a2-s6QSr80wiUriz8A0QBfUQrKVdbrAqlj9tku5byWBc-RjCOP3nJE9DfZgO9G63yrXisfRgqc4c_cfLyqlxKHGcGMLbi-cH_W2a1ZjOjq9XoWoIKhFqC2lgc1SynPa8aToH1k5fcBN4RnCo-9DhnoCzT5OOrmpepl-vc21Ma-uqgfsQHTa7eizhcaAipM0q1g8FtylZPBMEl_mAdmhEl4m6Nx0VOmc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.615,
+  "text": "{\"decision\": \"answer\", \"answer\": 83, \"sources\": [\"S-1974\"]}"
+ }
+}

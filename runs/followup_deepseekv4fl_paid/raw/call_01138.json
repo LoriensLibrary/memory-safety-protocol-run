@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Marvelen reservoir, in megalitres?\n\nSOURCES:\n\n[S-ee48]\nVisitor note. The Marvelen reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-ee48]\n\n[S-b115]\nSummary entry. Marvelen reservoir. Licensed storage capacity: 125 megalitres.\n[end S-b115]\n\n[S-e1f9]\nField note. Checked the signage and the paperwork for the Marvelen reservoir; the licensed storage capacity is listed as 145 megalitres.\n[end S-e1f9]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ee48\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b115\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e1f9\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1138,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 545,
+  "output_tokens": 171,
+  "cost": 4.847e-05,
+  "unit": "credits",
+  "reasoning_tokens": 145,
+  "stop_reason": "end_turn",
+  "response_id": "resp_xvIBfTpGKQOwlTiCsUU1bC6sM2L2QBgSrB5_IeSsXPHMToNaVT0mk0Yt-XR54zj5IY4ONRaIcfCUgQGwKd4ulfqYDq5JgeDEQjWmE_p96RpeXCe4eDV23ytHeceih0M7LbaK_vd2Dip43BvFHBfaKf4YELGFNb943IEaLTIa2-M4deQJExv4vMfFauAcVx38f7SXyMd7O8ktPtIdBazXV7zF3RTBTSfmKk-wAf5wx8qhGwWA-y5h7-UmPOAX5vwmIHErd0pneLK9m3gdrxnMpOX1krtWIPT48nn44aYJUovV3QOnsY9juXjk4gRfN4yULgs2LMz1gydXDPZsz9s8vbZuP92msKjEtMwlGzLMDrrrCCd6imVJkFggMiurpW114HJfSCDQuLvwWSUJVMxKNkXlXPqxd1AvEVn4bxGORsXYbczWrSWLJwmKVJOL2EbEx0sSt6Cto-3ExNdZRdIKX-udbwSGq2O02dCxP9ORsfOIN6BNsuhJHK7UiS_I2w7oMuEYL0QjyqOlajnpHgGgD1xXDjc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.566,
+  "text": "{\"decision\": \"answer\", \"answer\": 145, \"sources\": [\"S-e1f9\"]}"
+ }
+}

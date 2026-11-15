@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Gridulned clinic, in beds?\n\nSOURCES:\n\n[S-3d10]\nCommunity note. The Gridulned clinic runs a volunteer programme and hosts an annual open day.\n[end S-3d10]\n\n[S-02b3]\nBriefing extract. According to our records, the licensed bed count of the Gridulned clinic stands at 130 beds.\n[end S-02b3]\n\n[S-fcdf]\nSummary entry. Gridulned clinic. Licensed bed count: 101 beds.\n[end S-fcdf]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-3d10\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-02b3\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fcdf\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 715,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 543,
+  "output_tokens": 128,
+  "cost": 4.236e-05,
+  "unit": "credits",
+  "reasoning_tokens": 107,
+  "stop_reason": "end_turn",
+  "response_id": "resp_8ddVX5Ny9SlozIv6x9zdqs_tMOkBB1Qk9CncvUdYmKAtg1Kk7Qbz1RP7EoJItxXVlp2tjMmiIBKB6VxGKkDISBvSGtw3DNhI0icUSUStQcOt-U9gIfSA1cpr8ti6Z7ocx0ST-Snkvq0ee4Cefn0HUNHJfeyeRN1ER8aueVon1Lp8XP_tLl41Ves9o1WyFunDDx4fBfenIMlBANQ3Ya5BpGS_5jucm6NgjJMdA96j9ksies939Zz2rb5d1mY-61BDliHjnMFrmJdkwGzQtp26xbqdxC9893rtC5XVqlDD9rxSOpqZhM70Q8h3bMAIe1ZwQU2RjOwrdBosTBWw0zqW9AErSrKelo-jSNf4ajJbg-yIhf_p2paaTrHtCsFfZNhpikCUtXaaj-WVTNSQZd5lP54si9GiOaNflRx1s9Hp7eCfDDESOutN_EKdjMobxd-P32Z6760UL7_jyYfxyX9gH2-z9_eacbgRgXlOfyQnQzjZ6dJwTx67gD60-cBS0_WRanHwQo45zisrVUrrln5xGeDBKeY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.087,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

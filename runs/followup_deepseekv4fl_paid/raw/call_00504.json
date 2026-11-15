@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Dulka bridge, in tonnes?\n\nSOURCES:\n\n[S-32ed]\nMaintenance log. The Dulka bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-32ed]\n\n[S-c7f7]\nBriefing extract. According to our records, the posted load limit of the Dulka bridge stands at 76 tonnes.\n[end S-c7f7]\n\n[S-4f74]\nCommunity bulletin: residents are reminded that the Dulka bridge has a posted load limit of 53 tonnes.\n[end S-4f74]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 504,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 390,
+  "output_tokens": 33,
+  "cost": 2.217e-05,
+  "unit": "credits",
+  "reasoning_tokens": 13,
+  "stop_reason": "end_turn",
+  "response_id": "resp_o6PX1fGoVCuC6bC9J092Iy45QZfJfAosz0dO3M7u3fMcPUxkPPt8QCizOmVxi6z1bmmjHHesfyufJ-qWlPJmbm0S1bwvATup4wVCnxZg6QNyIoOYd9f-HmlVajlIuBTkeMKBkEYvHe9hRrFW_uudJezVByp-4Fo9Li-hSDEcLkby5dZOvMLuAs0jQ4kgKM3-CY8XfnxCagkfB2vRB5FHqOD4VpqHNWxAjqtqYZN8wpt9lo3u90Kvz3geAnGjVh6Ps_Mei9d4tOF2Z0o_T8VTrHfN7tR4EeCOYRgI-4OOOhXNumlsHaQViFzhLXNXssEO-im3cnvuvxStjzuJ69aD-IcOWdbZ18AFoqc1OgGexdK9PYZk2wUqYR_88vZPd8Is1alk_AY_Qqrvn8TKqhFl3gShGBvqfEk5DaANomNz5CudPb0-V9vGibQBjAy0JCzlWns3ChSJVfRto3MLv8ZF15M-DF9XwV0pwhCA26l_qSwJVNECtw7rM92EPvtduBWOW1Ue_OV16t1Qcue6GDAV7eGcojY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.862,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

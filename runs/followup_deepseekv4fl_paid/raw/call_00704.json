@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Gridulned clinic, in beds?\n\nSOURCES:\n\n[S-3d10]\nCommunity note. The Gridulned clinic runs a volunteer programme and hosts an annual open day.\n[end S-3d10]\n\n[S-02b3]\nBriefing extract. According to our records, the licensed bed count of the Gridulned clinic stands at 130 beds.\n[end S-02b3]\n\n[S-1b77]\nField note. Checked the signage and the paperwork for the Gridulned clinic; the licensed bed count is listed as 130 beds.\n[end S-1b77]\n\n[S-5e08]\nCommunity bulletin: residents are reminded that the Gridulned clinic has a licensed bed count of 130 beds.\n[end S-5e08]\n\n[S-fcdf]\nSummary entry. Gridulned clinic. Licensed bed count: 101 beds.\n[end S-fcdf]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-3d10\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-02b3\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1b77\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-02b3\"}\n{\"source\": \"S-5e08\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-02b3\"}\n{\"source\": \"S-fcdf\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 704,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 717,
+  "output_tokens": 456,
+  "cost": 9.611e-05,
+  "unit": "credits",
+  "reasoning_tokens": 435,
+  "stop_reason": "end_turn",
+  "response_id": "resp_uFGPXLQk9KnIfUWU6PYsQ8ILTRBvs5AIlRWlVgg0OFmA0v3xTCYrvXnIfs4ygFSPAjEh0xYO2dKb5bRgVToxb3euI4XFUZITDSeu_lNk6V2tAIL5m8rfQPd6MF73jwL0Tka-HFPB70YSJWMg3DbiteIfZ--DPC0b7NtuSz2486NnAN5mgd7e_6ncAaZgBj0jiu91WD9tFyP73HxuVb8p6K6bXu2YPTCiDbcjwLhZ7aKbrPkOksky6U5j1TzaOmkawq8WsaKIDIvAJiyrAxETm6-8pAwOxgw3w3OIgVIhdGn-nqdENlQKHAONVLmQ1_wipxO37KEEYNbkTL7Ay-Cf-2-LlMzHj3uYhQtGPHS53SaRCu_jRFo93bvXCUzFZkT2TnbUYSexiXvmjPJy_B-EYwAuAtDfvThbj_4dokeNjHVVf1Ul9lo2PiHwDJ0mWr1K4ya-DZfkvxF65kZYFIB8b1cC7CA9y6VFE25MrdoRS1BOONNsoniwwdQ7d5j7rxKtRbXk8OHqoJAwCP7A8czRIPbFa1U=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 6.56,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

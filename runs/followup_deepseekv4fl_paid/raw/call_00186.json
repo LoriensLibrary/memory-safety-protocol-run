@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many sides does a pentagon have?\n\nSOURCES:\n\n[S-8010]\nQuick facts. A pentagon has 6 sides.\n[end S-8010]\n\n[S-c701]\nReference entry. A pentagon has 5 sides.\n[end S-c701]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8010\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c701\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 186,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 437,
+  "output_tokens": 1695,
+  "cost": 0.00025697,
+  "unit": "credits",
+  "reasoning_tokens": 1670,
+  "stop_reason": "end_turn",
+  "response_id": "resp_OkXi5snjpWRfYmhl-ovWSNm4jiyDObp3ntmADr5jBCYG-Te3Ap3JCwnAOCIzW7EhvHxSLWP2qxz5JN_LxZ7fKjrSnUMWRD_mUxYKRP4WBAJc7CmnERgh1SZpcrplKyqtKFbzg-7BM5krMnp-XQiaEQ0q34_7_QmS192VKLZhkDmFPjqzKUksYSfxcIsovbYWMzG5xUi9jrehENhCebR5d-ciWUHVFV1KcKOQYfcVB_M3meGzWM1zQrbPuNx3nGcBD_7klS2awUBjCdpBr8HfGJyKMVM4dSXPMLHg_ZBLwiiNIROYtd1YdEk-z58SfgQXt02q-DicqDJr09Ks0N_cG6kusZPlzHEL0M2pmL-g-i4wyZfCmd_3ro4B5ppQHZLeZbVbZqw7965u8cD1QvM45HuvpkmuWtItYgN9OA080W6EAsoFIyMrMq9UIjeanjYAIE6TuzWiftLCmMROrCrHo4wvUtf4tDDVdk5rXr1GPGRmQtzpNcWmnZSGi-2gbIhTV6200-aVnMMVtf9fxAXhVAxQV1s=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 16.383,
+  "text": "{\"decision\": \"answer\", \"answer\": 6, \"sources\": [\"S-8010\"]}"
+ }
+}

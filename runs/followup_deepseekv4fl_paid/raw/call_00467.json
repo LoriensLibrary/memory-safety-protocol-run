@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Maromeka reservoir, in megalitres?\n\nSOURCES:\n\n[S-d29b]\nMaintenance log. The spillway gates at the Maromeka reservoir were serviced during the dry season and the access track was regraded.\n[end S-d29b]\n\n[S-fef1]\nField note. Checked the signage and the paperwork for the Maromeka reservoir; the licensed storage capacity is listed as 595 megalitres.\n[end S-fef1]\n\n[S-c86d]\nInspection summary. The Maromeka reservoir has a licensed storage capacity of 705 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-c86d]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 467,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 410,
+  "output_tokens": 345,
+  "cost": 6.675e-05,
+  "unit": "credits",
+  "reasoning_tokens": 325,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3H_uCAstoid9Eq7otxGmweKsurXocu_sxUPWyQHRw3-5i9Ajlm-ewxg8ACy2Xi4M9EwDXhJFfHMZ8kb-u3lFHG0flVFUdRrCTxriwoHcZbr3Pz0YU5MIadHQgGFESB6VLJDfuuAmbq_ZvIXzggcMB5VlML71k_HgkEWrsmvQ30PlAXaNg7x3rPd_VXpSPugXRfudGBmtWHkxRacJp11hcwFRvUOlHqijMB87wwuXlJjCsnOeG84D4hqQrIVyr9zx0928YVcHlKVsUsMFhAn8bW0475IN_SXNhaGFD_tHdR6l_y-j9pGcn3zYDehnsb9kIqmYCXqpM5xeRJ8_cK31yjVNq0FjV1Xexc5viM0DOEqiuAODV7LfTL-fPdZijGJ5rjsKbaMwHv3RkiIlvxOHCyxd03E6_uhyHdHWkV_yVXSaycEuqIlgKzLfMXrrVNcXlEdm4YuPsIG0JPdvp-Dja-N9NC5E9tQ0xuaug_UqmwBhu0fVuARWouwr8V0mP6MVVyAO7_qTMe6QQjMZG3zdBLgec5E=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.522,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

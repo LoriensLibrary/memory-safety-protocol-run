@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: How many wheels does a tricycle have?\n\nSOURCES:\n\n[S-b292]\nQuick facts. A tricycle has 3 wheels.\n[end S-b292]\n\n[S-5f01]\nReference entry. A tricycle has 2 wheels.\n[end S-5f01]\n\nPLATFORM PROVENANCE:\nSource S-b292 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-5f01 claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 301,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 412,
+  "output_tokens": 2894,
+  "cost": 0.0004237,
+  "unit": "credits",
+  "reasoning_tokens": 2868,
+  "stop_reason": "end_turn",
+  "response_id": "resp_aw8CH_TZN_mWvhmxE6x_fcDaNaELU5YBi_44vb3O877rGPZd752geO4-OOB7luSWSmTrpTKBnS2zf5jeMYRlS9RmRL0F2q6qA-NG33GQZ0tz--wIw_zJTp5Hm1qBsRoqXHqmvJyIBB8Lmw3m-u3HnPwEMx_YIy9ctIJwbQx3DpmmzCNCAewPl7aE4z4HPC8c5AARPcYvwImP0Bzkh0Ruk72JkyiqXuSyVK5xu8YG7C9Vd0QQCXxxg-znZ8TTSSGey8Ck2DyrA4yafLG1qfhlG3Bo2E3qZRF0O7U6PhtI4Yq5TLMo0edpk4_C9NwR761phGHK7-7WgcYphIZzQmDGLWu_S9SN8hstdufEiDgvpNzlj1dJeXU8n9sCSOCk04Ue4Nk18oZugHp9vsBMLOEhPtJUJozNzsuV6ddsxvmXcO4qjr_xHCEN0ZXJzo02fj2Vcp_kKx1tU5zftG8o-WR4yR5-1jsnR2A9yUc1SfuDy3zl5Rj63Pfi5dJpMB_CqckIVbvCkZ6J-6Isv1ic_lm3Na_WMhU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 41.065,
+  "text": "{\"decision\": \"answer\", \"answer\": 2, \"sources\": [\"S-5f01\"]}"
+ }
+}

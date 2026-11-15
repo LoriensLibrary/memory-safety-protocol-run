@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Velka clinic, in beds?\n\nSOURCES:\n\n[S-093c]\nInspection summary. The Velka clinic has a licensed bed count of 180 beds. The figure was recorded during the most recent scheduled review.\n[end S-093c]\n\n[S-04b9]\nCommunity bulletin: residents are reminded that the Velka clinic has a licensed bed count of 137 beds.\n[end S-04b9]\n\n[S-bfdb]\nBriefing extract. According to our records, the licensed bed count of the Velka clinic stands at 180 beds.\n[end S-bfdb]\n\n[S-d828]\nFacilities note. The Velka clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-d828]\n\n[S-351b]\nNotice to operators: the licensed bed count for the Velka clinic is 180 beds. Please plan accordingly.\n[end S-351b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 600,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 456,
+  "output_tokens": 95,
+  "cost": 3.382e-05,
+  "unit": "credits",
+  "reasoning_tokens": 75,
+  "stop_reason": "end_turn",
+  "response_id": "resp_e1kM7_adTgsikt0zcaim_TnyFNXvE9f-aqL_GU9Fytu0hbl6e0r38FdjTWcoRMQ1WrqJqOuV56no2saO7waAubwDgjhNq8gSrzU1rKZAIvwhNIQeHNii1y4LNaFXKVYA6BHEQYBZTI6oKwoZar97eRQsCPnGc4Tooe6D2UIg82cCOrvdcFzoYrE4JQQzd4CkaCK-Vz66SXORxI4GDOtUB_wL6_p6rw1SNS2zxvntbsVb1U7CvE93NUimEBT21Ra1Yt9dh4ODdaI0mWNr6GHzhF6WrQFDIwK7lsGFkfH39sp88xP6nZz5IKFzi2HJdt2sqIpWsFexiDlRp1tfNnxK7IotBGc9pdXIEBiuia38Bqs93cNnxwuIo_nAAR2NmG_83M8uSUFgl1GqF5Jnx4HtK_Xpy8QTxZOKZop5HMHzQViAuVVIHohKMSXvB1rjmB_Q-D4J_m6OwYvt_K1KB8oTGNQv1f-VSawqmfglC0SLfdnHK09yeT0LRmbFkiPFbTf5ceRiLM-UmgEtVH39iRAZQu6--Q4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.525,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

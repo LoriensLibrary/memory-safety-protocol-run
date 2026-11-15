@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: How many sides does a triangle have?\n\nSOURCES:\n\n[S-6849]\nQuick facts. A triangle has 3 sides.\n[end S-6849]\n\n[S-c640]\nReference entry. A triangle has 2 sides.\n[end S-c640]\n\nPLATFORM PROVENANCE:\nSource S-6849 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-c640 claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 639,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 406,
+  "output_tokens": 902,
+  "cost": 0.00014455,
+  "unit": "credits",
+  "reasoning_tokens": 878,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ibwxeraPWyrMoEHPrJaNggHoh-GPxauvWvBTeU_m9vVWzmVjgMfV6_BW4wt0HS3zupQaoqiXKJcVyeX6i2Y16qVUBMpZ-KU0NeWu4furz977zGmIevUVHp-RND7tlGJr9Vf1NgJhrYVgtvk3eAZrCEkxGioOO6x6J5xNVsWYYXq3bH6QvmEvsln4fSoAHtYK5wnI5nIBHF-ZKi2CvZ-QGVZvIEukIuyHWFD6I7epjR6E1-NXEY3LbROgMDnERSewKzNjuySx3KlQ2wF9i8uRDFIcmTzfTUwAzNofmmGcsTnu6QDgVv9H6h4GP94oKCnWKNZ4i0PWuuZ-gN1ESQC9Y8AJNUM8cuzBiOplypETDyh3zJFDFiqB8XCrAMGJzE00Ex3TIkeo1z97P_8lEW4iyY9tz6Irn1GwtDCjNqNUabgeBcwqy3qSu7F2aQxzWYABChw97C_dtNsVRQYEGAdfSVkzT-bkH_W_fDXoHqyv8Uy0mXfG258HGYVDTcxiESxtglAbuKt9xCdALF0rRZ18EHqfWR4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 12.089,
+  "text": "{\"decision\": \"answer\", \"answer\": 2, \"sources\": [\"S-c640\"]}"
+ }
+}

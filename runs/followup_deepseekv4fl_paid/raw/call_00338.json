@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Omeix reservoir, in megalitres?\n\nSOURCES:\n\n[S-8672]\nBriefing extract. According to our records, the licensed storage capacity of the Omeix reservoir stands at 821 megalitres.\n[end S-8672]\n\n[S-b2c9]\nNotice to operators: the licensed storage capacity for the Omeix reservoir is 636 megalitres. Please plan accordingly.\n[end S-b2c9]\n\n[S-fb2e]\nSummary entry. Omeix reservoir. Licensed storage capacity: 821 megalitres.\n[end S-fb2e]\n\n[S-3e62]\nInspection summary. The Omeix reservoir has a licensed storage capacity of 821 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-3e62]\n\n[S-7ad7]\nVisitor note. The Omeix reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-7ad7]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8672\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-fb2e\"}\n{\"source\": \"S-b2c9\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fb2e\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3e62\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-fb2e\"}\n{\"source\": \"S-7ad7\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 338,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 749,
+  "output_tokens": 140,
+  "cost": 5.33e-05,
+  "unit": "credits",
+  "reasoning_tokens": 114,
+  "stop_reason": "end_turn",
+  "response_id": "resp_C0KD58QEKD4WuhhEOJxSoTojMmSjfmX86Qe3ldjZ0JEdUFHaKWUIddeddh181dnNml9V2SDN1Xx7CxY59944o_cB4f3hS-ZJXWNhd1aqMUdZ3xGsFAqLZJrdg2vZbEaCKbY0xpiuBnzXQQBRp0PFHrvNEzgVlM0v9Raxrsw0gWPkSw_p9eC3uciFgh0IhrDzNeDdP2ENjjhLtSTimTxqy_5V-igsfo7ch0qhH9t3KwuWzmc1oi9UJ2uaQMUzcYqTUcTDWZjFK6-PU6bYG2i2R_R6tbdKwHj0AfdhlcqAuJkbwoqU7JVulCebuWiPEzA3bnnssMwjzmQ5ncwXNPaqjnDuQ4zDp_siUkvmGieY0B_olLgebMMNB5IWiG-iKSgjLKVkVi1ejasb7argJZ1erY7q_ZbbXYjS-x_Q9XTHAAN4rCFVWxv0kMW33Qs876SFSbc6ys_3kY0LSx64RjmrQFZbpQHH83VGSDZd1LGm17mfJnXjYV6oEU2fEUcoTKtjjhykdIAAr9UHY4ikhbb_10ovwv8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.129,
+  "text": "{\"decision\": \"answer\", \"answer\": 636, \"sources\": [\"S-b2c9\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Usten bridge, in tonnes?\n\nSOURCES:\n\n[S-5793]\nSummary entry. Usten bridge. Posted load limit: 15 tonnes.\n[end S-5793]\n\n[S-4fb3]\nMaintenance log. The Usten bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-4fb3]\n\n[S-797d]\nCommunity bulletin: residents are reminded that the Usten bridge has a posted load limit of 18 tonnes.\n[end S-797d]\n\n[S-123a]\nNotice to operators: the posted load limit for the Usten bridge is 18 tonnes. Please plan accordingly.\n[end S-123a]\n\n[S-0957]\nField note. Checked the signage and the paperwork for the Usten bridge; the posted load limit is listed as 18 tonnes.\n[end S-0957]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-5793\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4fb3\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-797d\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-123a\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-797d\"}\n{\"source\": \"S-0957\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-797d\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 581,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 705,
+  "output_tokens": 242,
+  "cost": 6.561e-05,
+  "unit": "credits",
+  "reasoning_tokens": 221,
+  "stop_reason": "end_turn",
+  "response_id": "resp_1e2OKjblQSc-biR28h3Y9Ddpvs7QkjwI4JSAw0EzIOUmSsfJZk4CgVYq3GJv43GYTeO8d34KnTJreVdIRmShzYKYWT3zedh1-zOP0huW3d2vn9jX6neaD3T5qtknVklK_dmVsXdkIhsDHKQ4q3YFRkeV-4ooRZul8pd5zOYrcjPAadp2oUPCNQz8o52dHC-A-bOo5ztA6FAtdl7RDB2F6Ck2EIgEOgPw1amc2B7Bpb1TOkSbHAD75BoYUPXB6P0LXMb3tHAKf2_9Qz9NEZMKKvR5tg7CeHSoDPAluh4va_YaHuayfzHc9tP2LM2BuB0Akxfo25IjihBB5v2y8qpMplWR7LNuxjEWUIbayR5uxcj901Uq52FZhaxF7IKCPoQivf-p5R9O6JUfc9F4J70pbexZ487Nd0EjQfMxJ9-Yb0PlfzbgZZy8_40PTZQPsSWtWpInl52ubUrEDymHXowxUvvAGT2jEuveoowLwwHWdj0P6EN5EFbdDVXV320hCKL6bIKVcSu2dc6zSfzViw33hkD97mo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.425,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

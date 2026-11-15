@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Kavel bridge, in tonnes?\n\nSOURCES:\n\n[S-f0ae]\nMaintenance log. The Kavel bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-f0ae]\n\n[S-cb3c]\nNotice to operators: the posted load limit for the Kavel bridge is 50 tonnes. Please plan accordingly.\n[end S-cb3c]\n\n[S-da1a]\nField note. Checked the signage and the paperwork for the Kavel bridge; the posted load limit is listed as 50 tonnes.\n[end S-da1a]\n\n[S-1a61]\nBriefing extract. According to our records, the posted load limit of the Kavel bridge stands at 58 tonnes.\n[end S-1a61]\n\n[S-6a7f]\nInspection summary. The Kavel bridge has a posted load limit of 50 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-6a7f]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-f0ae\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-cb3c\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-da1a\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-cb3c\"}\n{\"source\": \"S-1a61\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6a7f\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-cb3c\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1428,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 733,
+  "output_tokens": 210,
+  "cost": 6.239e-05,
+  "unit": "credits",
+  "reasoning_tokens": 170,
+  "stop_reason": "end_turn",
+  "response_id": "resp_n_Tpn6qQ0Y81CO2AjfO3kkKBr9KgMwOOIvltVZBMvNR3RacBqs3gzu-0rOZ2NFSdNgDKgmQSKjEGV4sHWEPTfoolGMARPhNYi3JJOM6GVCFtf0bDHhYkKDvnIagXmj6dNzJQAfgUC3RZtP4QllIJvX-AT5PTLevDhxGcAzSJ46cTfP-762gI5UnIwdfPAwWb_vIEXWLX5L1W2njGtZvHTNg9a1zR3CEDAuN2qwzWvM0sxG_BT0K3-zRsvpVL10VCbXM-Vyg9_9VUPzjnxmiW56VYUN2NTrgkH_tUzYJUyX9c2BAMl4t-_yyfCzOqgqkNDlEMHNkksvyuvZeTqPUbVFYG9krJlxVM0DfGjWDEjtFpeBDdBDwjMncEK52Ta4B2ZNwXPgveYw8yMg6t8GaCC6CQJYt_U_ZWWPGZdSkflGs4xnb2Ldi2avLJ2eUG7sO_kvlSFw-Aje2CEQkU_vOEFt6RwAIJj5qzWgeS6tHI3F0YLoI-MZoIIGU1tjXjpvjqIC2Gtp86MiRQK40e3in_i_AO0o0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.893,
+  "text": "{\"decision\": \"answer\", \"answer\": 50, \"sources\": [\"S-cb3c\", \"S-da1a\", \"S-6a7f\"]}"
+ }
+}

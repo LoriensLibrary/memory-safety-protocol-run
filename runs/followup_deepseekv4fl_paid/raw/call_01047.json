@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Maromevor bridge, in tonnes?\n\nSOURCES:\n\n[S-e760]\nNotice to operators: the posted load limit for the Maromevor bridge is 60 tonnes. Please plan accordingly.\n[end S-e760]\n\n[S-8991]\nCommunity bulletin: residents are reminded that the Maromevor bridge has a posted load limit of 60 tonnes.\n[end S-8991]\n\n[S-dabc]\nField note. Checked the signage and the paperwork for the Maromevor bridge; the posted load limit is listed as 68 tonnes.\n[end S-dabc]\n\n[S-b937]\nInspection summary. The Maromevor bridge has a posted load limit of 60 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-b937]\n\n[S-382a]\nMaintenance log. The Maromevor bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-382a]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-e760\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-b937\"}\n{\"source\": \"S-8991\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-b937\"}\n{\"source\": \"S-dabc\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b937\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-382a\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1047,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 711,
+  "output_tokens": 300,
+  "cost": 7.399e-05,
+  "unit": "credits",
+  "reasoning_tokens": 276,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Nuf1WFbWmwedhehnwXwyWD-BbWI66_Pft2xRooVNyRYO0ir2wc4oj4PxOLa0_peNlPoLD2IxUyJo5NgOWrbYW0DpWoLVlQ_KvDOL9kvcPXqma-5z2Z911KVwUo2uW0Hs8yQJrqLN4UKQCPpTWHoNqkdck4FIeA3BoPSS6tOpnaxRMncaQ3UI2pg6zxGJ3PicObfwOtQJRxflFWqRXYGhWinwDLmlt92XLu1Xu1MEIEvCwgMxMmMyfOi6uYkPWFSfLD0anorD8FSLnFcsjdoD8gilqOi1zfPE3v7DCsGN2ljiI2IDIgZr2Jq3duPAEkAVL8nCOhkzLjToIZsNo0TZ0Ame9SVvrmUREBXRG5ddNztEq4lBrhzlF2mHY0SsdNS__6JjIaBafYblvWTzku0NlEjPEEYZh1NauD86zkxqoFJsIR1852mcOBSyak2RqqFCZhreezrCP6XJPJdce8c0_QEwXS4dU_JyBHudHJnBXwvp0Me454CSt-VkbyYmxGOi-vCvbMbjCWQ2B28H7HZCBvfs_r4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.615,
+  "text": "{\"decision\": \"answer\", \"answer\": 68, \"sources\": [\"S-dabc\"]}"
+ }
+}

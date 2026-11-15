@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many stripes are there on the flag of the United States?\n\nSOURCES:\n\n[S-c65c]\nReference entry. The flag of the United States has 13 stripes.\n[end S-c65c]\n\n[S-5f22]\nQuick facts. The flag of the United States has 15 stripes.\n[end S-5f22]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-c65c\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-5f22\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1495,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 453,
+  "output_tokens": 840,
+  "cost": 0.00013799,
+  "unit": "credits",
+  "reasoning_tokens": 814,
+  "stop_reason": "end_turn",
+  "response_id": "resp_c82B-0jg47J21WkLMpEwkO_4OdENHe1jARjOPXcxplkyYDES3bImoRSSUlZkOjK4dXvF9jX8P3p6bNyy5lSOhkQKZCjn91nXyMGFRoJltRhj24xm9g3ioGtOoi548ciPlgIh95SAAMrZBdDUICLSVVcXpzOCjphxDxGIBuRowSzMuBDZpafSqvJ8wDQ8ohKqsAYgqC6Xo3uhsB5eajQ9T-MwICHnAUEdw5Ev_Rv0z6zzuaIOr9twRSd7Qe8uF-H3RIPievhguVtiOdqmLW-laVITQKNYzfduvYhtyneDFYVJwNOdvpczQweUuP-EttrhLHBERKy-ff_kPXXnSB__h6uj0WtcNGFwL07zZXYolgUuJPN6er7O5kxKk6_aM5ztzVa7V_THjnPzg19ptDvScoSem_H5I6cCaN3aVXK5vz2_MxZi3-h0AjXeDQlTzYTC1mnDCi8K05FWLgV0FeU9dAt-H4m2ZQIdt6LpbUN25Bfu3u53cvbe07qvVvGx3e4lvygTQ9lzZPXoXKq1Zd8fI_ztSfw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 8.103,
+  "text": "{\"decision\": \"answer\", \"answer\": 15, \"sources\": [\"S-5f22\"]}"
+ }
+}

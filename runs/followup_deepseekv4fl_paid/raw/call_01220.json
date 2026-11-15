@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Enmarbra reservoir, in megalitres?\n\nSOURCES:\n\n[S-779d]\nField note. Checked the signage and the paperwork for the Enmarbra reservoir; the licensed storage capacity is listed as 453 megalitres.\n[end S-779d]\n\n[S-3e89]\nNotice to operators: the licensed storage capacity for the Enmarbra reservoir is 453 megalitres. Please plan accordingly.\n[end S-3e89]\n\n[S-e706]\nMaintenance log. The spillway gates at the Enmarbra reservoir were serviced during the dry season and the access track was regraded.\n[end S-e706]\n\n[S-108e]\nSummary entry. Enmarbra reservoir. Licensed storage capacity: 525 megalitres.\n[end S-108e]\n\n[S-9aa6]\nBriefing extract. According to our records, the licensed storage capacity of the Enmarbra reservoir stands at 453 megalitres.\n[end S-9aa6]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-779d\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9aa6\"}\n{\"source\": \"S-3e89\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9aa6\"}\n{\"source\": \"S-e706\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-108e\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9aa6\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1220,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 735,
+  "output_tokens": 98,
+  "cost": 4.679e-05,
+  "unit": "credits",
+  "reasoning_tokens": 73,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Wyg0yZhEVuudtAK7LSeY3pkQOYK3mBUZT4cNGBaIy6nzOgbRpkzWSmz2-4XX1--Eeu4m6TzTyY-ycGc4Hj66ZgQPaAI1wQhvZfTEO-T1HeTFRK93ww9QoWhiZvj86z8SUwPl5pQY1XlY3TE_0q8mMEeC1__FhZ6_wAE8uQpF_2zFvYmMYxhevZEmUK6Zs6QBP5w0aNaSh_Lg9NjTT64VP9NEHYPpdSk0Dr9L-En26Ucc-xUrDza6E_fKdPyaaSZUAphQsKL_nX2e5p0Udkyy8ovD_453qrIW7YBFfgBvX266mKkFMpECGohUueHUQEKDCoEJkj4EoWH_4Kakeoy5Jz25NzS-f1V__6zdcN17H9tXhdbtoIjeteavRAeoB4cGapiPhCgUercTSMqXiME8R4ETsJsXnSeOINswPaPSK5HFDsp1RqkCFQrCqqUEF8fOg5TgPLBazya9SiTxIig-aDkjt6GUU29vuLi8pv3zMHVnRCUD3KIHVXUR6wOjUIRIX5C5pNgsOOMyQ1byKu6-2Y16vRw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.722,
+  "text": "{\"decision\": \"answer\", \"answer\": 525, \"sources\": [\"S-108e\"]}"
+ }
+}

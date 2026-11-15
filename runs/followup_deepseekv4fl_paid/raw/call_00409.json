@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many rings are there on the Olympic flag?\n\nSOURCES:\n\n[S-603e]\nQuick facts. The Olympic flag has 6 rings.\n[end S-603e]\n\n[S-9cdf]\nReference entry. The Olympic flag has 5 rings.\n[end S-9cdf]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-603e\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9cdf\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 409,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 444,
+  "output_tokens": 1366,
+  "cost": 0.00021122,
+  "unit": "credits",
+  "reasoning_tokens": 1341,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ZPBLiXnwx9XrZyUIxpOcUZxqaXj3fNoqT1Xgem3W3pM6ZSF_iQqoZajSnlHaEVC87fL81vNWtB2U59LU4y44DNguqERb-QJHZBr629YOCGE4yLV0ioAyPnK97barVyTXoNdlOSOiuyPyhcuDHx8PRO_aMpI7nCxexmngMuPMGS5ejJLsUvEO4v83re7Jj2eF83IID7uYz9nn53__8Fof6_HRki6VgwW_5dWcLcDEs68a00vU2TZjArX0MZ8NqUyuQvXEVANuXHAUe0M7gbNlbtHDbPv7tlY54RqhmEhykcz2LF5jyGam8mu_Ss-GPe_y3OU5UBJNZ1ZCOnfe8oPBt6-gNMP9z5tLHQirRRADsBZwD5FVwxmoabywV0dtl-SB_AX5v1b27Sg1qUbwDrOf9qRPapQbXoTNYwgGdx9Bt7yhvoWHDYWX5sDP2Qjw_RCrEMaks2rd9jRXaMy93Sq-5cPSi47UA1KwN-Ta2DwsHoiBh1INtv9IZ1tmf5_ag1fgRkfsY3jZkLjntphaqI3lt81QHYg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 15.581,
+  "text": "{\"decision\": \"answer\", \"answer\": 6, \"sources\": [\"S-603e\"]}"
+ }
+}

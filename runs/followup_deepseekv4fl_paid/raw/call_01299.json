@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Peldultha reservoir, in megalitres?\n\nSOURCES:\n\n[S-96d5]\nVisitor note. The Peldultha reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-96d5]\n\n[S-ebae]\nField note. Checked the signage and the paperwork for the Peldultha reservoir; the licensed storage capacity is listed as 519 megalitres.\n[end S-ebae]\n\n[S-2bdc]\nInspection summary. The Peldultha reservoir has a licensed storage capacity of 519 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-2bdc]\n\n[S-0c93]\nBriefing extract. According to our records, the licensed storage capacity of the Peldultha reservoir stands at 607 megalitres.\n[end S-0c93]\n\n[S-b359]\nCommunity bulletin: residents are reminded that the Peldultha reservoir has a licensed storage capacity of 519 megalitres.\n[end S-b359]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-96d5\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-ebae\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-2bdc\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ebae\"}\n{\"source\": \"S-0c93\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b359\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ebae\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1299,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 738,
+  "output_tokens": 272,
+  "cost": 7.129e-05,
+  "unit": "credits",
+  "reasoning_tokens": 246,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0qiQ5wurDroDMpSFV2YuLRfXU6FKm48WWzkYqhIkr76k6EJzKcYh12ZdtdaifGK7hfdufRidhj_lQolnsWb-y0OwzL89H-s9cUFQq-Qnxn3lIuAvbh59T92KycxVdyXlTx9C3PLlzHMGLwN9bOieDfecMJ_yolZl6vcCsO8j3ZIlRF6N8RAp_kbwl7vLAca3NCt3s8N7ZZkaw5wsyyxC5MchpnWXeGSjl_hGCujLcgqB5XUwCMWjkZffvAW8Bs4W0n6CXXfTqe3Vmcz4WF96rWX5gbl44LIbrzwxVR82_WtKPLNqUi-P7A2bGsjJAYXoFDiBTF_2UKQWsThIHJh7rMd1JKsvTY_e_LP-qgKM1ARgzmOmu8mvBkvgE1zT8ec6eu9WCcbvgJhw0oxak5JRYuTpj-Q73JNaNqRvQSWD1cR3VvSA2AtLwt8Y1lDfx2vmA-8yS8Q_ZeUYTtLk0z5BKOs3LUQneXQJIrN20fap_L58HVyhJcG9o0m26RuuPzEX3BejlsKXeU1q90vyL-refuSYJ5I=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.324,
+  "text": "{\"decision\": \"answer\", \"answer\": 607, \"sources\": [\"S-0c93\"]}"
+ }
+}

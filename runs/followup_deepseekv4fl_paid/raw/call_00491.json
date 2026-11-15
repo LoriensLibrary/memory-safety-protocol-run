@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Fenlim reservoir, in megalitres?\n\nSOURCES:\n\n[S-a98f]\nSummary entry. Fenlim reservoir. Licensed storage capacity: 740 megalitres.\n[end S-a98f]\n\n[S-3369]\nInspection summary. The Fenlim reservoir has a licensed storage capacity of 568 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-3369]\n\n[S-4dcd]\nMaintenance log. The spillway gates at the Fenlim reservoir were serviced during the dry season and the access track was regraded.\n[end S-4dcd]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 491,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 396,
+  "output_tokens": 171,
+  "cost": 4.176e-05,
+  "unit": "credits",
+  "reasoning_tokens": 151,
+  "stop_reason": "end_turn",
+  "response_id": "resp_aFQyDYLv2a2HD4-zxDx9BRvvjofZJC9JWGCvw8jl_J0RnMJd2qNV0Rqq-A2e-Vgb3f50d5IvvQsUIu6-Vzxi6pyGV2to7brrjQkgNIyg6VyGwP9m8znh_ejwfms62QvCz8ccGSZdKeF7ixlPsS-SetvJRJlcH1VH0D64-I1GWj-khPlUaz_s8SCXjTfuLNOhwZCukQkD6NcmsadYAmioM8i1Ym9ndGmexx_U-56-_orhIIGbMc4AvZOZIfl5hJAae3e2JhOt6SPKVRJ5AsbDYSflxbWoTmrkYfks3nRf58O8n9o7CMttQ1MuMFclPr99htujEkpNT2AnhSCSW8DbnQQsJiPy_wWu9kVgKrTNCZ4Bnq3XmWHopdQKRo0pUL-a9GBx1V0oiqXy91Il4gSVi4Nj_fhWtHHQnDES9_Uzc8GZtZzm7PsH1e1q2AcHxyQIu4Bv49nidDeNrvXcYhgEnXCBNndmS4IqwtMDQ1ryyHpwao-BbUQj2GWg7Oxb8pBcKWlLe-d7U9gT5wRlxE6bqttDp1w=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.659,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

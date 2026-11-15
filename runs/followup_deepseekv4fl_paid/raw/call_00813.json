@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many inches are there in a foot?\n\nSOURCES:\n\n[S-3fa8]\nReference entry. A foot has 12 inches.\n[end S-3fa8]\n\n[S-ac9e]\nQuick facts. A foot has 14 inches.\n[end S-ac9e]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-3fa8\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-ac9e\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 813,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 441,
+  "output_tokens": 1801,
+  "cost": 0.00027199,
+  "unit": "credits",
+  "reasoning_tokens": 1776,
+  "stop_reason": "end_turn",
+  "response_id": "resp_vd01JLWnJiLkFropZ6eVzb8ed9NyyYqCfoevvj-rZB4_QwjiGyQA4x_WtAXBKgCSdCB_1s0pVIjsU8ULTqvRxFjlx8bNzHZphPEWJ1GNraeiZ11DULPIL1aXXdNNgBcnarAN5vgIkdl9nCSXku34S_pB-xkdR-FHkb610IhUGoQBgF0l2Y1PQgSGEhFrqnOpCj7RlKXIsplGnRtmeJmnhpYOUPYplJWq0Iga1YerLnEzjwVcNaS0pObVtbiWRg2xkztp2KA4loHu4fvbEwkqOyQRVwFdwgaYnezTpasMVXHSdPzv0pAZKdLXgzJcqbs4TRrRNdsZR8ZKI0cyIl4TQpxX9P-fnqF21ezSBAzDFoLWHtBcioAGEnkQckJ_QK3KtNMZlgcOoJD8DY8ToQDcs149qNLy4He8sT1vbIbV90RV-oVSNXl0LhBWx_47A0CUm-Tj9_826QdZUvQGjMv49a4gzXg6TwgRw9K_Ok6PwAMWsU8LOM2HtMtlT7IadYENKbNj5kcpQfkSHKkZLoAuYp-4v9s=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 26.233,
+  "text": "{\"decision\": \"answer\", \"answer\": 14, \"sources\": [\"S-ac9e\"]}"
+ }
+}

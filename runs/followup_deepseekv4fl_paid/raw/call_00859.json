@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Bratin bridge, in tonnes?\n\nSOURCES:\n\n[S-3290]\nCommunity bulletin: residents are reminded that the Bratin bridge has a posted load limit of 42 tonnes.\n[end S-3290]\n\n[S-eb20]\nField note. Checked the signage and the paperwork for the Bratin bridge; the posted load limit is listed as 54 tonnes.\n[end S-eb20]\n\n[S-a335]\nBriefing extract. According to our records, the posted load limit of the Bratin bridge stands at 54 tonnes.\n[end S-a335]\n\n[S-0bb7]\nSummary entry. Bratin bridge. Posted load limit: 54 tonnes.\n[end S-0bb7]\n\n[S-780e]\nLocal history note. The Bratin bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-780e]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-3290\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-eb20\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a335\"}\n{\"source\": \"S-a335\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0bb7\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a335\"}\n{\"source\": \"S-780e\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 859,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 710,
+  "output_tokens": 119,
+  "cost": 4.861e-05,
+  "unit": "credits",
+  "reasoning_tokens": 94,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Dy8pkOQAa4uf3WK9QOBT80BRWosRY647WSFbT9wcLk9ec_eLn9i3jJCldFaDR0e2FR2bUKVKgXJ9Rb17TtQYV4asEMEl9ppGQ7R7-z0bLJzDI5qSY_5c7VPjDRi6GmJJOc2kLw78gTApkNVWGLpEm4ZqK5ZLt69ktK9caVSrAuCObJOewuYLcamTDf4lTA_5CeXbFXn5ruiRIfmfwrjEIotuFpFemYlzz_pQTbb_B9EyZhnBfaXQ0cdf1et5_cfYtTyP_AZ9OFptNegsIU779DjStbgH0DixvT2lRTPFQ70x5NaddlqXopcC6Qz1XSgyosVqNpjaIeDksidKWDXPkTxoH6M7GiRJIg1SRcdVMb0kgHxINIrKaZjNSHiGNiw8aJXgh58OU7p6OGoAeRIT0v42NCtjmaYhMjJSpJiEVY296oKW60jQyDdRRC8KzfgjNBlUwvpz-F5kE9vgh_7bwrDgJ0ly3zxBFAWudujb2ghQufSA2ZNsI0D35Zn-FAvdHf9X2ib1YjQDTjLGNTceeJpKekI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.169,
+  "text": "{\"decision\": \"answer\", \"answer\": 42, \"sources\": [\"S-3290\"]}"
+ }
+}

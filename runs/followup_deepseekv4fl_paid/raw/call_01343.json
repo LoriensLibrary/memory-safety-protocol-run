@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Nedome clinic, in beds?\n\nSOURCES:\n\n[S-911c]\nFacilities note. The Nedome clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-911c]\n\n[S-990f]\nInspection summary. The Nedome clinic has a licensed bed count of 53 beds. The figure was recorded during the most recent scheduled review.\n[end S-990f]\n\n[S-5d41]\nCommunity bulletin: residents are reminded that the Nedome clinic has a licensed bed count of 76 beds.\n[end S-5d41]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1343,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 403,
+  "output_tokens": 73,
+  "cost": 2.835e-05,
+  "unit": "credits",
+  "reasoning_tokens": 53,
+  "stop_reason": "end_turn",
+  "response_id": "resp_foe2Puxsrs0BQc_2OX_GT4cREMue1oCR18WNt2bhEg4M10dOHHCHc5zGNfbFmNOzcyh0UXaTdog8HTHkaqDwmsoI2hq7CnwSSAyrNWF34SeYP9b7CJMm09lwIjUE6kghHWhEp_f9d2ijV7bvTVwuQvwyfYc3AL5wawONxC-NMcZQms-r3xoZEzF5a8FMa6EVRlwQEhlGGcvpjRaK9PLiS-NWhydduhxwnzw508zjhBa5yskzW1INmI8mHbzGbloTUFiwsRmpSr5hh8_MYwwsI3_UELfAZ1U3aW2_WvonRIPIljovUehZPy--TQTToTr4ISTYVitm70MQmtpaTa8_Gde5Lz_pOuMtNT1UuIYIKcyX_llkM9HSwDIA9LT1kwUo5zSiOrrj0dHx8wrFN-DPZRI2A6zY_Nlhx7ja9TtmeFyY6MAEiKsLcL7vtD3kMt3Df8_hM5fGde_C8HGaEL1UOuTSWmoYmZA_fnffV8nDz_zsGENkhEax0uXYsjpP9MyJ2srNriP72GdYKkg5djVROCMk3gU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.027,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

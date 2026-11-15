@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Tinfen clinic, in beds?\n\nSOURCES:\n\n[S-255f]\nInspection summary. The Tinfen clinic has a licensed bed count of 248 beds. The figure was recorded during the most recent scheduled review.\n[end S-255f]\n\n[S-b935]\nFacilities note. The Tinfen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-b935]\n\n[S-a226]\nField note. Checked the signage and the paperwork for the Tinfen clinic; the licensed bed count is listed as 248 beds.\n[end S-a226]\n\n[S-0fe7]\nBriefing extract. According to our records, the licensed bed count of the Tinfen clinic stands at 248 beds.\n[end S-0fe7]\n\n[S-94ae]\nSummary entry. Tinfen clinic. Licensed bed count: 208 beds.\n[end S-94ae]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-255f\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a226\"}\n{\"source\": \"S-b935\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a226\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0fe7\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a226\"}\n{\"source\": \"S-94ae\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1170,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 726,
+  "output_tokens": 180,
+  "cost": 5.787e-05,
+  "unit": "credits",
+  "reasoning_tokens": 155,
+  "stop_reason": "end_turn",
+  "response_id": "resp_n_dr_T5rZvS2_54Hzxfjp4kMy3QP0Lgh2o61mn5pvfkj8l4vG1OR3w5oI0MqhDaa7Mp-7Hz60fneBIYJ_vufKkdPzlDZgWIEKg3VmhngdE-FE10YwEpz75eg7ePXSdTEp3J064k59W5cn5p4XPA5TY2y6YDgDnq9WS9qK0NlMVpBbcUYQyYay11DuP-VN2_lK87qW0t7hHvKCQycwDCmMRM85F31eKLOTCyg25AAm8zLMic89gA9dLiXHH4TI9Gkle50rHJIo4uNlBjqUaaMNoQ1dk3UqvUxjRXL9WlCYVCE6vKX9BnGwVSnJtJJ7-CNtW33NN5ExvwEd6-daPFR0PltojmfWHc4OLmeiKTbIgAXc4vvAjuXjs3pB8ESTcN15Imyrceb1yqkcU5nkPGqsmaEyiLDkSRkqTzuv4bvIWbh5I4VAbG2kFZyRym_mFd4swP71RSzXMW0E_MMn5yLxQo2ZBp6bPgJZJba_3yfEBsBmXYXYC8gkwswCN-CiJ0Fz7YuqwTSZBD6Zcg5HC85FzbPWyc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.896,
+  "text": "{\"decision\": \"answer\", \"answer\": 208, \"sources\": [\"S-94ae\"]}"
+ }
+}

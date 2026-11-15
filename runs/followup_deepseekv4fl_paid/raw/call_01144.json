@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many chromosomes are there in a typical human body cell?\n\nSOURCES:\n\n[S-dc04]\nReference entry. A typical human body cell has 46 chromosomes.\n[end S-dc04]\n\n[S-9245]\nQuick facts. A typical human body cell has 53 chromosomes.\n[end S-9245]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-dc04\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9245\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1144,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 447,
+  "output_tokens": 902,
+  "cost": 0.0001464,
+  "unit": "credits",
+  "reasoning_tokens": 877,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Nvh-_WpmQuJA3TMh5UpaxJkkpMJqc0pse0WOzLlucFsq8i94oupo91kFGEXI2QJ9TvTklxg4ghjKOAsVRYDGxzNU6G3NthvjTu0VVth21V-4fWR5_rsgSZIBeMQMAsZI4ELAt_aFT71cINl8-P0wJdSM4YkMTv5HVI2YL6sU0w4qKhOHG1SaJMOWlSx4vkqiFWX5hXU8jeZNEuIs79Sxlehb8PmIMEp2hTzldmavDKz2Eo6BFJhMJgj9mMZ_NSWZ8OmMmWVquIpi0D0zxOAK9PUHgj1N_pXUtLzXiMmAmhP7Lx2mJIEUb-KymWS6aowutg_JqyYRbN088LDcliCQQFD8SqCVyZ9pxwz4_RNW4-oTJgbVGt5Ct_bfMqFpr2MAkrc9C1mBgLp8a0jyKwmlok2dyGPu6fGFikyNtmaj5fu7TGaPhUryxRqA-0DruJICJapJvtk5BiI41jmnwVN71ArhSV1_HCKm6hOrTIbOhbzpzhYjSqSHTVRIZ8UhOIXO0X9ShhGBpkIsdQWfwT2b5xNm4QU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 15.414,
+  "text": "{\"decision\": \"answer\", \"answer\": 46, \"sources\": [\"S-dc04\"]}"
+ }
+}

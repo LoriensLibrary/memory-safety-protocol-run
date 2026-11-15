@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Quabraaro bridge, in tonnes?\n\nSOURCES:\n\n[S-6cb6]\nLocal history note. The Quabraaro bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-6cb6]\n\n[S-9a2c]\nInspection summary. The Quabraaro bridge has a posted load limit of 55 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-9a2c]\n\n[S-07dc]\nCommunity bulletin: residents are reminded that the Quabraaro bridge has a posted load limit of 55 tonnes.\n[end S-07dc]\n\n[S-9cf9]\nBriefing extract. According to our records, the posted load limit of the Quabraaro bridge stands at 43 tonnes.\n[end S-9cf9]\n\n[S-4dad]\nSummary entry. Quabraaro bridge. Posted load limit: 55 tonnes.\n[end S-4dad]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-6cb6\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9a2c\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-07dc\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9a2c\"}\n{\"source\": \"S-9cf9\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4dad\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9a2c\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1407,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 740,
+  "output_tokens": 212,
+  "cost": 6.298e-05,
+  "unit": "credits",
+  "reasoning_tokens": 186,
+  "stop_reason": "end_turn",
+  "response_id": "resp_PJsTBqM-awn2XD35XZYI_Fy05BFcmNx9Sta1X5CBbh20g5a_kGx6Ov2Gbym6GMicJ3C76GG3dbew4rNvFHNO-7OvUzWnKcADM4fsJTCEf5LSmDqTZYdx-fOqPSWQOYqHwrw_MylrqNuuiG1Vz9w0hiW9ILw-SuXUV7XyN5ERVf_EynBjDbU5H1VrSkruWqR6aK8y2pmQ0YV9gJm0KwZSGDWzKrLfk65OIy3zXZCeINJoiXxfYREKavkrbASNZ91vguMfGY9mKW8Ceu_X00IKc3kLdp6-2Fdv22mBxygR-N_gN8w-3lTtat3CNSAcWhjtjRPQYdx7KAeD2UbTNvluvi8WrxT0L4ScxLbF1vqCeYpWRdRNng60LFQFV_u9_I_XonI1zZKNUiD9rCwozIPs-Hbb3wNiB0aAhYrqbDzsTwkFshc3JrRbSzwYPlSapSlLd45SgVI1nv0Oexi5WL87br1thLrGH3_6j_3u-DRNziBEnSdGl2CE-x6BoiE_lxtt6444PFPr_x7JJlMosuECLO_7nZ0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.313,
+  "text": "{\"decision\": \"answer\", \"answer\": 43, \"sources\": [\"S-9cf9\"]}"
+ }
+}

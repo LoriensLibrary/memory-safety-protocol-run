@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Sendularo bridge, in tonnes?\n\nSOURCES:\n\n[S-3be8]\nNotice to operators: the posted load limit for the Sendularo bridge is 28 tonnes. Please plan accordingly.\n[end S-3be8]\n\n[S-33f4]\nBriefing extract. According to our records, the posted load limit of the Sendularo bridge stands at 37 tonnes.\n[end S-33f4]\n\n[S-9d93]\nMaintenance log. The Sendularo bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-9d93]\n\n[S-37e7]\nField note. Checked the signage and the paperwork for the Sendularo bridge; the posted load limit is listed as 37 tonnes.\n[end S-37e7]\n\n[S-5b20]\nSummary entry. Sendularo bridge. Posted load limit: 37 tonnes.\n[end S-5b20]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-3be8\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-33f4\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5b20\"}\n{\"source\": \"S-9d93\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-37e7\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-5b20\"}\n{\"source\": \"S-5b20\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1214,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 744,
+  "output_tokens": 225,
+  "cost": 6.498e-05,
+  "unit": "credits",
+  "reasoning_tokens": 199,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QwYDm-2gV3C4EF59nmVjJkb1cfjWaFBKgzBd_9VENFCA2H7UnD9eAZu8Np7Nhofa7OQ6KiyUihPUhTrHMRftmh7zJtGu3E5api17xsHUurY5cULyKsXKq6dLtRMTnPFSvJ5rTBUYzyUeCapNKQhxugw8GOR4pvjHTC8n7mP44adnxg4cwqMKtHOulso7PK-8W1lbDkeshhmIb8YMaJzltyxcxTO5WAo3uug531H7OseR0zG5wPBH-Br-Oo18dB6PPv7I0kvYhlQiH33pm3rZd7oM7Vvan6YFaweVIeQiAWlPdMK2zXy5blAccOs53qikfEiIZOeoHmQMsi54NjZgMTmDEqlb1T6tfT2QkvAfZBsWRXqi3bksJw0wluQSip8ZAld4oZaOjEFgIG8r0xQXmW4N8NnzbG0_MblXg3FK7bqvz3sZnVdA8Q3oRJOKZBDpjeA66A07HSAkwgrZb32rp5ZsRcUPrhhywgKdJDRDHVS3Y912Ne8OAPSu_U2Poqj7X1t8HPKGpIbIOIlx9q80qVVNf7A=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 8.903,
+  "text": "{\"decision\": \"answer\", \"answer\": 28, \"sources\": [\"S-3be8\"]}"
+ }
+}

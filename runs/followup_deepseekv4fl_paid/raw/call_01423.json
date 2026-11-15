@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Eshmar reservoir, in megalitres?\n\nSOURCES:\n\n[S-7b64]\nVisitor note. The Eshmar reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-7b64]\n\n[S-0b5d]\nBriefing extract. According to our records, the licensed storage capacity of the Eshmar reservoir stands at 1017 megalitres.\n[end S-0b5d]\n\n[S-d38f]\nNotice to operators: the licensed storage capacity for the Eshmar reservoir is 1017 megalitres. Please plan accordingly.\n[end S-d38f]\n\n[S-dbdb]\nField note. Checked the signage and the paperwork for the Eshmar reservoir; the licensed storage capacity is listed as 1017 megalitres.\n[end S-dbdb]\n\n[S-6d65]\nSummary entry. Eshmar reservoir. Licensed storage capacity: 836 megalitres.\n[end S-6d65]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-7b64\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0b5d\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-dbdb\"}\n{\"source\": \"S-d38f\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-dbdb\"}\n{\"source\": \"S-dbdb\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6d65\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1423,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 732,
+  "output_tokens": 160,
+  "cost": 5.534e-05,
+  "unit": "credits",
+  "reasoning_tokens": 120,
+  "stop_reason": "end_turn",
+  "response_id": "resp_es53FS5CuARtfLVReWh0GoFU5n8ZocGQkawpm8D4NC050QZaeSkFVEo36xotYKOo7KBjUed3I6nJge74xatKNDKaK7Hhug194nkhMWiREe2FiYfAL0tyNeFzk5QV5uA7IFzpYr5m_y2aUHix52tVUg1C_W6gqze9XC4XuHV5zYXdrsWMTpSR-CsNllHhEn-RNzHbF7Z1jDCUYNySCfxN94iiSLSIaR9W2x483i1Ig1CChkVtGDjHBFdJdvsJ0QpK6Y_sM8t-mDnW1phr18zLcWdNu4b6IZBwRzGt2_A7GTFNJML81Jb5aXc7a3GD91ve4IGQRKu4IHsU57pZmyJgQbsi7JxfWHyxez7BT1ZSDiq46xYcgd_RBMgYXXSLGhAdT6wGxM-0D_IfsOpv6p1NUnCajCtHl7qpPysNz2o3lRHqq8WINw-JaxFYtjitpP1czPNZthDdd9u2ib_0ctc6oDDYngGI062aJvvGH9Om9DdZOX9FlBDMu859Uqfd9QA6kyOQLKKZ7O2yhYPx9oi4gfIUB90=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.845,
+  "text": "{\"decision\": \"answer\", \"answer\": 1017, \"sources\": [\"S-0b5d\", \"S-d38f\", \"S-dbdb\"]}"
+ }
+}

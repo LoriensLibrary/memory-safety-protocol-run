@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: How many bits are there in a byte?\n\nSOURCES:\n\n[S-49d2]\nReference entry. A byte has 8 bits.\n[end S-49d2]\n\n[S-b15b]\nQuick facts. A byte has 9 bits.\n[end S-b15b]\n\nPLATFORM PROVENANCE:\nSource S-49d2 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-b15b claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1435,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 413,
+  "output_tokens": 218,
+  "cost": 4.911e-05,
+  "unit": "credits",
+  "reasoning_tokens": 193,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6_zknKz6uRuvZ5Faxd84xXNXOsukJ26fkMPu59HUs9oSvqCM_yB0w1PiJ9P6F0IsZvbeIWyCaCr3pwvpeVHM93b2B_54ng3IiDdwA86mUbD-PsGRO9NDgeiT7F6BRHW1mInA4LWh6srkW46QXPiPRAwMfEXxA1p4Nc_kkaEMQzzNgXEAqqjVq3S6_wRlgqNTLyr6vedMInU2kmC-LpazXgeKfiROmt2duXVgrK0HMF975YGcz_MObJ0eYi1CVcFEl_GrUrvFMyCRfUhs54bwMR48OvET7PYUZQEKP1kRcOQxR5_oOahthJhw_8e6lzu89yf-udQIExVl-WCORYGTa1N_KK_hc5fzno7Cl9krJ-SOlSKmT6to-0CWZTtLhH_deP9mzu7cD7bXEHRFHVbm9kYRG5URjywB87YzOSAA1FSb7AjliVpE3G1E6Eys1yXbUlTN_Cg3jKiYEfe93CJt0VK7yv3CoJw-1YR8Dq4ZN3ZnppbrF0dEKPEGGnnzGY6jojq9zf0tz1Y2-5z3rpm8oti-MSE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.146,
+  "text": "{\"decision\": \"answer\", \"answer\": 9, \"sources\": [\"S-b15b\"]}"
+ }
+}

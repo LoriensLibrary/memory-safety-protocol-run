@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Thavor reservoir, in megalitres?\n\nSOURCES:\n\n[S-ff38]\nSummary entry. Thavor reservoir. Licensed storage capacity: 570 megalitres.\n[end S-ff38]\n\n[S-fa9b]\nNotice to operators: the licensed storage capacity for the Thavor reservoir is 570 megalitres. Please plan accordingly.\n[end S-fa9b]\n\n[S-dfce]\nField note. Checked the signage and the paperwork for the Thavor reservoir; the licensed storage capacity is listed as 846 megalitres.\n[end S-dfce]\n\n[S-89b9]\nInspection summary. The Thavor reservoir has a licensed storage capacity of 570 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-89b9]\n\n[S-d849]\nMaintenance log. The spillway gates at the Thavor reservoir were serviced during the dry season and the access track was regraded.\n[end S-d849]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ff38\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-89b9\"}\n{\"source\": \"S-fa9b\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-89b9\"}\n{\"source\": \"S-dfce\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-89b9\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d849\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 295,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 728,
+  "output_tokens": 418,
+  "cost": 9.128e-05,
+  "unit": "credits",
+  "reasoning_tokens": 397,
+  "stop_reason": "end_turn",
+  "response_id": "resp_BOeE1YKt3sFrWNCGrD47JCyBOBUZI1FvElrUVqhDSK-oyI47gqyCN1mFiPJMpo9FEwTQOAnEX81UKnLtihs_rshBNg6XHTXSz46TlLNw5r_C7wuM6QJsV2qJ9A-urmCS5VlF5nZWX4yDNgQnkSLtsLQ1IBDk6exOtpL9KRa3D5dl6mHDwwF801lcAdtInXJ00_lxiryMJeWXBZK_PqSbIU3GZ-bt-yVliQBiHzlsLsY3ZCm2j_PFzq9FnxyuMrEGCFMe1dvaQwUwCp_IHUzzjAOcx5O8O3u4p1_-1ntA8qbNKjQtZ-8St6cKFFz_qbx2srE0uRsZxnB_CiqZodSNJUUD5GRQVMbxsEuaZVAkyBWALv61IpdS8tglSHV38DYrmEHwlR__kZgIWoJbvyv_6aQxWALduvbosy7C7Xu-0B0_hc5AQVnodkvGBsueHSVE8Qq-U8tAXBB3OIoAmUUggb1FXjIiQmw3RV3aczXUQwnHupkKWSYAVAWXDI4MeqvTjcamPSi1fE76OQY6QNiHWsuSqEo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.338,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

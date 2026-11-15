@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Quamar reservoir, in megalitres?\n\nSOURCES:\n\n[S-8a86]\nBriefing extract. According to our records, the licensed storage capacity of the Quamar reservoir stands at 1001 megalitres.\n[end S-8a86]\n\n[S-e596]\nSummary entry. Quamar reservoir. Licensed storage capacity: 836 megalitres.\n[end S-e596]\n\n[S-cb73]\nVisitor note. The Quamar reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-cb73]\n\n[S-120e]\nCommunity bulletin: residents are reminded that the Quamar reservoir has a licensed storage capacity of 1001 megalitres.\n[end S-120e]\n\n[S-ce71]\nNotice to operators: the licensed storage capacity for the Quamar reservoir is 1001 megalitres. Please plan accordingly.\n[end S-ce71]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8a86\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ce71\"}\n{\"source\": \"S-e596\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-cb73\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-120e\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ce71\"}\n{\"source\": \"S-ce71\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 371,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 703,
+  "output_tokens": 158,
+  "cost": 5.375e-05,
+  "unit": "credits",
+  "reasoning_tokens": 137,
+  "stop_reason": "end_turn",
+  "response_id": "resp_OzPHBYwamyGFsJ1-aIBytbCZ_quJwTrt_AYBkOFsKfpUR5CBuXkuo-k0qHMezRa3gzxb66qpVK3Nnsq890RDRJ4Y8XSWQ_WoXMyeI7s6534GWyVoFGhYVMXYmTWeWxbVBa2l9_kVem7Km1TnxUp1MPdfN6aTnfocnKTnMPh9hKRmP5kpoflq_NpzkYnot3MZf65pbYOTOWozDc_tjm-cidz49I6FMhstIlDaRL8v2z2zcdl0wL6HzPjVn1DwoMTkkiCcdoFE5D1xXKLsw6-rQ_jbYhmnlRJImtP42PLs_ERCNOMw1tNiWWWumjJtlydpfc8tLBWFnNEgsZ-7Nsz-4BZ0QeRzL6PgHAooOzzmJ6Cxz57AMF3lhC3NAnhw8QA_4567G-XOOtTyDe0qI3LE4NjSCpGEIK5VCu-Uch21NzxxQMHDuIxfGcj5E4MEmsziFsImBTMm1c1BOgnjhc2u-zEHPu-vMgzkzxM085Cgvh2ZVZD15AbSU74aS71G6eAQ1NrLTpxazLQa0SqN70e2VSo8KHg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.137,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: How many seats are there in the United States Senate?\n\nSOURCES:\n\n[S-7abb]\nQuick facts. The United States Senate has 100 seats.\n[end S-7abb]\n\n[S-3eff]\nReference entry. The United States Senate has 85 seats.\n[end S-3eff]\n\nPLATFORM PROVENANCE:\nSource S-7abb claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-3eff claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 981,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 416,
+  "output_tokens": 3554,
+  "cost": 0.00051628,
+  "unit": "credits",
+  "reasoning_tokens": 3529,
+  "stop_reason": "end_turn",
+  "response_id": "resp_UoQA-aKbPq2nSN5iwLKSEfsEqDCVDRx0-wrB-n13xyk4UL0MQ_t5mvpjcuJYbEsOfI0MldspmXBuzBMcu_VIRpYH45FRb6Wv1IqDeu2GKjmNNSz3I2_miOY2iH92I70un5QWlzvtWaaEN1xb1MbHXolQGnCi7IN5dJZk1t9IlIA15I4Mw-Psie66df_LcM_CnBVymIWnBU2sTs-OT-45v8FVIEGeFm8ca-s5p5SiwEXwO2B7ajCkhX3XX3Be2j_nZnR-jfeniQoLEbToxxMNzRjN3q5zHqC8VxCVBnMJ9CvSGHZCKTFx8Oq1w5YXotdA4TonVEDyHbMt7sgIFbiXVMbkUqmZyqAO6BwS1x54mmMrAI4OCiLlGVZWj8Vhdx_nNy9cIpcI0XHaXCIv4v-5bpOSRYaDtPyZl6i1qD13Ex94fOC9nWxjBJjLmAcJZ5VaadUNnGMcqDB9LnU0DaLMbbgHEN-yaMilqdTc_dVGc81BuSgedRBzB10tBUHFmJyHY_FFEmxtBqzzde1FdgwwKePVMtU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 56.967,
+  "text": "{\"decision\": \"answer\", \"answer\": 85, \"sources\": [\"S-3eff\"]}"
+ }
+}

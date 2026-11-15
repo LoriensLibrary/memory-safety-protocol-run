@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Roned reservoir, in megalitres?\n\nSOURCES:\n\n[S-f9b1]\nInspection summary. The Roned reservoir has a licensed storage capacity of 281 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-f9b1]\n\n[S-dc9d]\nField note. Checked the signage and the paperwork for the Roned reservoir; the licensed storage capacity is listed as 228 megalitres.\n[end S-dc9d]\n\n[S-9a83]\nVisitor note. The Roned reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-9a83]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-f9b1\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"retracted\", \"derived_from\": null}\n{\"source\": \"S-dc9d\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9a83\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 512,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 585,
+  "output_tokens": 118,
+  "cost": 4.285e-05,
+  "unit": "credits",
+  "reasoning_tokens": 92,
+  "stop_reason": "end_turn",
+  "response_id": "resp_8dU3eJO5_aw8tvTPBBjN3UzyFvCnQ6kOxqWc-0-PyrDnpsegIsyDyybiCAgJDPsYj6OwPWUU50gtngnDEPeeQnLGyh9sQV8QkyUWeMcZebZyiR1LfsEsAdT_CVjPUCVh6W8nUCUGqBjaz1zJvKkbEOem2BPi3FpmSajTuqrTLuOLw9cqfEWKF1wkYESfB5fpl_iFLtcVqm9uhpWQ7Fi35IO0HB7oacct1kvnN6TwIkL99je8YcscKkVa6M59cCv5xr8ITww3YwGbP63oGEaXGsk8rt9vSH3cGPi-jZseKcfs6wA4gXQg24t80V_nXxNeIXMfu3dP486GhdYkfEFzw8VIr-LDIyt8s4sUqsV5tV3zt2zk3TEWzwNJ9oPmshadHZcQBQXiWrPzoQiIbGmMGGHB93mvmg0Cci9JcCfIZhEYju0Wm8NXJQYSx-zJMJ6UFy5Mmgc_QF39lVJstbhnafKMLn1b2DPYTYvohk2I-fpVA8qNyvumUk2PEP1tYlZn8WztXYR8zk7XnjkT8u7ifKKCCZk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.353,
+  "text": "{\"decision\": \"answer\", \"answer\": 228, \"sources\": [\"S-dc9d\"]}"
+ }
+}

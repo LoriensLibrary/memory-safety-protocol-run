@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedpel reservoir, in megalitres?\n\nSOURCES:\n\n[S-f4ce]\nMaintenance log. The spillway gates at the Nedpel reservoir were serviced during the dry season and the access track was regraded.\n[end S-f4ce]\n\n[S-1010]\nNotice to operators: the licensed storage capacity for the Nedpel reservoir is 739 megalitres. Please plan accordingly.\n[end S-1010]\n\n[S-b7b3]\nCommunity bulletin: residents are reminded that the Nedpel reservoir has a licensed storage capacity of 612 megalitres.\n[end S-b7b3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1283,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 408,
+  "output_tokens": 83,
+  "cost": 2.998e-05,
+  "unit": "credits",
+  "reasoning_tokens": 63,
+  "stop_reason": "end_turn",
+  "response_id": "resp_SNrHTOQrJ-sHCY1BKm565LQGbd-Z9wQVe4EsKDjNsMJkwltqLlbUqmdyB-aX6bOcTdigrrp4ltwAeNYyv910ppyDWjcxKLkvzxcJ7tvY4k1_1993d2HV8kic5RqjFXdRYAeHpHHRNcuui4EHIKIonsHOWQZ32KBSYBZ02biTi_d9RuRWoPRVuifCHEcNolxy_XXPGiw-qhnRL6KXOYf5XOgIfH9yw5sU9GOgfJDJm5IsglF9Kzbti29_QOtcGTfPIri6s6N9DGatAxqRPDo9dGpPnOlRkTe8Bgw31bzDYV1m-q-igwKCC7JugTYjIJCtBBqwDSlvVVdgZm0GqPTvLpyhXaw3OQc2-sdRCicHHWD2Y-W-9ITKjOoi0Xza7_IY4mi-w5Huu3C-ZW2BMJfJni8bfJU6CKIxMpx-8yI_ziBszv3R49Z495erl_zZ3mAflQBn2GR31GhLB9MbmtbKg4-1HHAjKGP9EwFPnVlpPYGxbWbXFoljS-R123oznc5miTXxY8bkNqg48c6JQNENC69x59c=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.004,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

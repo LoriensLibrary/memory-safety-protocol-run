@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Tinquaro clinic, in beds?\n\nSOURCES:\n\n[S-5ef5]\nCommunity bulletin: residents are reminded that the Tinquaro clinic has a licensed bed count of 25 beds.\n[end S-5ef5]\n\n[S-9ee6]\nNotice to operators: the licensed bed count for the Tinquaro clinic is 25 beds. Please plan accordingly.\n[end S-9ee6]\n\n[S-f7ac]\nSummary entry. Tinquaro clinic. Licensed bed count: 25 beds.\n[end S-f7ac]\n\n[S-b803]\nBriefing extract. According to our records, the licensed bed count of the Tinquaro clinic stands at 28 beds.\n[end S-b803]\n\n[S-61be]\nCommunity note. The Tinquaro clinic runs a volunteer programme and hosts an annual open day.\n[end S-61be]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-5ef5\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9ee6\"}\n{\"source\": \"S-9ee6\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f7ac\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9ee6\"}\n{\"source\": \"S-b803\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-61be\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 517,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 703,
+  "output_tokens": 332,
+  "cost": 7.812e-05,
+  "unit": "credits",
+  "reasoning_tokens": 311,
+  "stop_reason": "end_turn",
+  "response_id": "resp_r125nnq9q53lSyi1S3DZsODhbAuHsh8_hIocn2Vk3WMFz6Ton9zkq7lRcwcOicDD2WHM_4SJdtcBNmes4bmz6bh2HoKkS0n1NeEciWqzRymY7VccBtiNFKkj4XEqHtKFKfP0a0Wi7hA3_OwKkdskiCu6bztrpqOB1uB5J0HW5CED6Liw7GcKkUygJNKm68PYcxpZrFQNQ_lIcrT3UGXGfyMsyg_jYnq_eqiMNVPmNKGdJcQFm3cGs-yumfX8a-Kk6P2MbpAuSiFhsHKJrUYnmUdN62KgW4Jpc0gVC74MuUH5cPxkPvof2kAYPQTwpPBUlDWBYOIsbRac8QwK3aNtz0ejcwmd3gDgyuF6b9SfON4asSXDde8L_GkWx34f-cBF5JUqVvEfy2poappTsVOmlR_ZHlBeo6W2T0R43iaMRXKlJZuxRcfndKdmfIh7Y5ygx-lrVzL3deR35lwJUY26zSPTfCy_IStMC9q7cVaXzH48FliUE0B7o5Ni5sx5647yBkVRxeZyNL6JifQ7OgrcLGRT7lI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.338,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

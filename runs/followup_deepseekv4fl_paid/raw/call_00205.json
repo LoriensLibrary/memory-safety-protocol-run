@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many bones are there in a typical adult human body?\n\nSOURCES:\n\n[S-e40b]\nReference entry. A typical adult human body has 175 bones.\n[end S-e40b]\n\n[S-13da]\nQuick facts. A typical adult human body has 206 bones.\n[end S-13da]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-e40b\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-13da\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 205,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 447,
+  "output_tokens": 372,
+  "cost": 7.22e-05,
+  "unit": "credits",
+  "reasoning_tokens": 347,
+  "stop_reason": "end_turn",
+  "response_id": "resp_FLtGhxvjEdQa9o9lcsfT2wT0QEzl32w9TB0qq7dX_tVVMu49WqkjKTHpLB83QG-g5QFXrwvr90pjl381yb2Ow2iA95qG93AsX8nH9ruYmNRw3q_kzikZ8vwmhdJ9vkFg4-sGUK5zIux4l218gWIxHEUIYHoS9OvEuvflRJkEfvJ5EJQPmtRK4tNHGSPo6irkWyUihvrfUZWY9JF49Av810hW6pEu2jE_FHWW-FNGi1LlEJyCkrKxtBw9s1l5oLgSTiKXvXeiKGYjYBu5F9KaeQ5VfgOBCYrwls6C-Q0KmeWh4L6nSDD9gZjkflRu1NASx9oiJeg1nrqbAOFCFRdzGPTFgc-WB2o6gsNfaWT-q5p4OGSk3k55Mj-S40EOFAaHvpPfWNAcZMpfmQClFmJhm24dwS9WEamOVZFIlKVskY89tKO-h_9iABZu1FOOKNdhrpAezLfa8wQltiYZ0xhj2nb5MkUZ44udhO6b2M1QC36f0-5-uhSqJM8Dmne4VWlYXgquupEOdyT9vRYTQfhOrKlMiDE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.964,
+  "text": "{\"decision\": \"answer\", \"answer\": 175, \"sources\": [\"S-e40b\"]}"
+ }
+}

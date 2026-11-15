@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Dulix reservoir, in megalitres?\n\nSOURCES:\n\n[S-a08a]\nField note. Checked the signage and the paperwork for the Dulix reservoir; the licensed storage capacity is listed as 190 megalitres.\n[end S-a08a]\n\n[S-6350]\nVisitor note. The Dulix reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-6350]\n\n[S-cd5b]\nNotice to operators: the licensed storage capacity for the Dulix reservoir is 190 megalitres. Please plan accordingly.\n[end S-cd5b]\n\n[S-8bd1]\nSummary entry. Dulix reservoir. Licensed storage capacity: 228 megalitres.\n[end S-8bd1]\n\n[S-e6c5]\nBriefing extract. According to our records, the licensed storage capacity of the Dulix reservoir stands at 190 megalitres.\n[end S-e6c5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-a08a\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-cd5b\"}\n{\"source\": \"S-6350\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-cd5b\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8bd1\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e6c5\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-cd5b\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 398,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 722,
+  "output_tokens": 302,
+  "cost": 7.477e-05,
+  "unit": "credits",
+  "reasoning_tokens": 281,
+  "stop_reason": "end_turn",
+  "response_id": "resp_hbgTXTAQPEaO_emVrmOuVZKjjTqqiQPuUoyTcAs2FOvln8howXdOtMk_G8Ma3zAP-8e_Nlp485M07YzCulZrQ9RrVTsnbAtGm8PnZqLl6y4wmZje6Bw5YygO7YLpiCNRul9sgBZlv8Pt4z1KYCF4gKdoU6WWWaPWxeLio8b5B8A-HZ4SWYTbzYP-J62TQ6e_Q3yue1Q9AXwSspYIFRipl_VMOt2gfa7fgve-LgNvjwmQZqMqj_cUVq8XiYEpY7wkHj_SaJNJQxE95Ztsz7RxJAk3Sz8bUpgSdacSyo25PeO1LF_5_74TMQZQUqtvs9mF2KJBJldnj-r0615EeJ3GY8e6A6x5-hs2KT5WIL1bqUHjHi-xkQfAy4Y8ubYBia1hybomLtvbC9pQZKFtRJVQq2Qxt8iATJAF1Z8nmb6EcOGweR7HMOsJSFeQZO7-Z-EDWJo4mehsww5FjyaRiQILwn-nCwkaeMJdltcL_2j9AToq6prvjUPG-lWukfBVm4vcNKFNTSiBcI0timbpx9E6L_1XuxA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.341,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

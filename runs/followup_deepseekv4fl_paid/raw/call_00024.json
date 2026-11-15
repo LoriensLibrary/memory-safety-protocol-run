@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many innings are there in a regulation Major League Baseball game?\n\nSOURCES:\n\n[S-6d9b]\nQuick facts. A regulation Major League Baseball game has 9 innings.\n[end S-6d9b]\n\n[S-c812]\nReference entry. A regulation Major League Baseball game has 8 innings.\n[end S-c812]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-6d9b\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c812\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 24,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 453,
+  "output_tokens": 1893,
+  "cost": 0.00028541,
+  "unit": "credits",
+  "reasoning_tokens": 1872,
+  "stop_reason": "end_turn",
+  "response_id": "resp_a1u9WZv-3WaFGsc6KNyLjfHe6AbPJN8EIjG2kJ5EX3jJ5I0VZURpWXmOZXr9vMzvKuQzGnYayNAcmNo1RgJMczzDWPN2AZ9K4pPf4lYR8y5xJHVXAsjyJy3bPvwjnFybb6ArXGGnYlBcxEuTz_OG3eK-RaRkh5NRwi3y2303aE_KoG9eakR8UpuMe-kzxrxrfMx3qU8ZCUmFoKKX447y2xFMhplQYTqsEutF16wdFQ132MSgih6ns5oa64dPNsj1e8AeQ0dF2XGWBvZYqv99PxUZQBzch_GvgKYxMVhxyg1tMo_KBKNnn3JWyOo-srDa-DLQWW4H_l-jbYtd0V7Ttv9Me_IdFvcIxmRrG9N12t1FwIYmK-y4QthtuL8xsozixIwfgcRRkZsmi5rjSu5_ZJJvfkTzP-_m4TaaEi94MXejkCtGqYGbrI0Fvfz4hZdX3N2Fp9PnHQbLMkHEg2juJCXGbkNH96f-lWcrTvzRYxoGJ9J6ebrUYkcfYbDy4hoNgGItfQsFDrc-TTqSwoDHA8m_HdA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 14.57,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

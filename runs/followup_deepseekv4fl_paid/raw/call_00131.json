@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Eshvor reservoir, in megalitres?\n\nSOURCES:\n\n[S-4d85]\nMaintenance log. The spillway gates at the Eshvor reservoir were serviced during the dry season and the access track was regraded.\n[end S-4d85]\n\n[S-61a0]\nField note. Checked the signage and the paperwork for the Eshvor reservoir; the licensed storage capacity is listed as 100 megalitres.\n[end S-61a0]\n\n[S-42cf]\nSummary entry. Eshvor reservoir. Licensed storage capacity: 100 megalitres.\n[end S-42cf]\n\n[S-2a0c]\nBriefing extract. According to our records, the licensed storage capacity of the Eshvor reservoir stands at 100 megalitres.\n[end S-2a0c]\n\n[S-337f]\nInspection summary. The Eshvor reservoir has a licensed storage capacity of 148 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-337f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 131,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 485,
+  "output_tokens": 225,
+  "cost": 5.333e-05,
+  "unit": "credits",
+  "reasoning_tokens": 205,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Wv4EIe9_WRYQu0vvkC8W5eFXnVdi6ELQB06z_4k_6TgbQ4E-OLABQI77MeaIHHrf6dqKhU6-lrrulsuVhCM0UXBlfPD-dtE_3kN_JfaEFjdNQtOMYOHgN_QRAfPGKtO8ROn13PnICvgMRUpd52Z381sl0UMxSPoOyt9tkLP5OwdAVNlUw4f5HQzjIBxfoAReMeV1stW9cnycOTiKCOd1M5Nqur4XsPkYcPMd-xJCASHBA8fF1v5W35xsM8kEkPzNq48ACUHh1TuLkMTDErGMO9V6ZhREVFYWCLDgMlFIzbt4G2EtpN2uhskLgEVKUugCaYYuAzffwGKt0IepoitcB-lgqhUHejPt0cEkeGy_lrdPIi31rbLFCbp4R_KQ6glGEzVe9ypwfTNxkgetUUvQXPnXJkrCMsdufm14uat1LP72WulsLFCT4mSVC2QcHE8Oubf5pPtMEsyzEvFZ6p2MEZHjxU3omQZTwcosybMD4fpSrY1Ii8vwpxmsglfPl_Hilvs1iiwWZ_uI_CIhzG9ee5yU99E=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.683,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}
