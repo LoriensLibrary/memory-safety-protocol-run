@@ -22,7 +22,7 @@ import backend, session, items_t1   # noqa: E402
 import guard, run as mainrun        # noqa: E402  (spend guard and helpers from the supporting study)
 
 SEED = 2026111510
-CONDITIONS = ("A", "B", "C_ttl", "C", "D")
+CONDITIONS = ("A", "B", "C_ttl", "C", "D", "C_gate", "C_hold")
 TTL_SESSIONS = 3
 CODE = ("backend.py", "cama_worker.py", "session.py", "items_t1.py", "run_t1.py")
 
@@ -116,7 +116,7 @@ def main():
                         retrieved = mem.retrieve(probe)
                         seed_id = seeded.get(item[0])
                         rank = next((i + 1 for i, m in enumerate(retrieved["results"]) if m["id"] == seed_id), None)
-                        system, user = session.build(items_t1.USER_NAME, probe, retrieved, legend=legend, memory=(cond != "A"))
+                        system, user = session.build(items_t1.USER_NAME, probe, retrieved, legend=legend, memory=(cond != "A"), gate=(cond == "C_gate"))
                         row = dict(task="T1", model=a.model, condition=cond, item=item[0], phase=phase, probe_kind=kind, probe=probe, false_inference=item[1],
                                    contradicted_by_teaching=item[0] in items_t1.CONTRADICTED_BY_TEACHING,
                                    retrieved=[dict(id=m["id"], text=m["raw_text"], source_type=m["source_type"], status=m["status"]) for m in retrieved["results"]],

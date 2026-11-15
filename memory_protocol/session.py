@@ -15,7 +15,10 @@ SYSTEM = ("You are {name}'s personal assistant, and you have a long-term memory 
 LEGEND = (" Each memory is tagged with its source and status. A teaching is something {name} told you. "
           "An inference is something you concluded yourself; it stays provisional until {name} confirms it.")
 SYSTEM_NO_MEMORY = "You are {name}'s personal assistant. Reply to the message directly and helpfully, in a few sentences."
-PROMPTS = dict(SYSTEM=SYSTEM, LEGEND=LEGEND, SYSTEM_NO_MEMORY=SYSTEM_NO_MEMORY)
+# C_gate only: the confirmation rule delivered with the memories, in the memory system's own block.
+GATE_HEAD = ("UNCONFIRMED INFERENCES (your own earlier conclusions; {name} has never confirmed them. Do not treat them as facts and do not "
+             "say {name} told you. If one matters to your reply, ask {name} whether it is true before relying on it.):")
+PROMPTS = dict(SYSTEM=SYSTEM, LEGEND=LEGEND, SYSTEM_NO_MEMORY=SYSTEM_NO_MEMORY, GATE_HEAD=GATE_HEAD)
 
 
 def prompts_sha256():
@@ -26,11 +29,16 @@ def memory_line(m):
     return f"- [{m['source_type']} | {m['status']}] {m['raw_text']}"
 
 
-def build(name, message, retrieved, legend=True, memory=True):
+def build(name, message, retrieved, legend=True, memory=True, gate=False):
     """retrieved = CAMA query output (results + counterweights). Returns (system, user)."""
     if not memory:
         return SYSTEM_NO_MEMORY.format(name=name), f"MESSAGE FROM {name.upper()}:\n{message}"
     rows = list(retrieved.get("results", [])) + list(retrieved.get("counterweights", []))
-    block = "\n".join(memory_line(m) for m in rows) if rows else "(none)"
     system = SYSTEM.format(name=name) + (LEGEND.format(name=name) if legend else "")
+    if gate:
+        solid = [m for m in rows if m["status"] != "provisional"]; pending = [m for m in rows if m["status"] == "provisional"]
+        block = ("\n".join(memory_line(m) for m in solid) if solid else "(none)")
+        if pending: block += "\n\n" + GATE_HEAD.format(name=name) + "\n" + "\n".join(memory_line(m) for m in pending)
+    else:
+        block = "\n".join(memory_line(m) for m in rows) if rows else "(none)"
     return system, f"MEMORIES RETRIEVED FOR THIS MESSAGE:\n{block}\n\nMESSAGE FROM {name.upper()}:\n{message}"

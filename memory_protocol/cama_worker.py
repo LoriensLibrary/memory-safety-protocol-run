@@ -107,7 +107,7 @@ async def handle(op, a):
         return {"updated": _exec("UPDATE memories SET review_after=? WHERE id=? AND status='provisional'", (a["review_after"], int(a["id"])))}
     if op == "query":
         out = json.loads(await rt.cama_query_memories(cama_mcp.QueryInput(query_text=a["text"], top_k=a.get("top_k", 5), current_affect=a.get("affect", {}),
-                                                                         include_counterweight=bool(a.get("counterweight", False)))))
+                                                                         include_counterweight=bool(a.get("counterweight", False)), filters=a.get("filters"))))
         keep = ("id", "raw_text", "source_type", "status", "proposed_by", "confidence", "needs_user_confirmation", "context", "score", "rationale")
         return {"results": [{k: m.get(k) for k in keep} for m in out["results"]],
                 "counterweights": [{k: m.get(k) for k in keep} for m in out.get("counterweights", [])],

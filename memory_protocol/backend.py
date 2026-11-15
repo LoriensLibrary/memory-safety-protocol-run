@@ -12,6 +12,12 @@ expires them ("ttl_days removed, inferences no longer expire"). Both are run and
           using CAMA's own review_after column and its own cama_expire_stale tool
   C       provenance-aware as CAMA ships today: unconfirmed inferences stay provisional and retrievable
 
+Two further conditions are NOT in the paper. They were added on 2026-11-15 after the first real replies showed a
+model acting on an inference that was labeled provisional. They store exactly what C stores and change only how
+the memory system hands an unconfirmed inference to the model:
+  C_gate  unconfirmed inferences are delivered in their own block, with the confirmation rule stated at read time
+  C_hold  unconfirmed inferences are not retrievable until the user confirms them (CAMA's own status filter)
+
 Each backend owns one CAMA process confined to its own scratch directory (see cama_worker.py).
 """
 import json, os, subprocess, sys, time
@@ -21,7 +27,7 @@ ROOT = os.path.dirname(HERE)
 CAMA_SRC = os.path.join(ROOT, "_deps", "cama")
 CAMA_COMMIT = "1e5f1aadf0f240e8345824d9e265a05135cba231"
 HF_CACHE = os.path.join(os.path.expanduser("~"), ".cache", "huggingface")
-CONDITIONS = ("A", "B", "C_ttl", "C", "D")
+CONDITIONS = ("A", "B", "C_ttl", "C", "D", "C_gate", "C_hold")
 PAST, FUTURE = "2000-01-01T00:00:00+00:00", "2999-01-01T00:00:00+00:00"
 
 
@@ -111,7 +117,8 @@ class Memory:
     def retrieve(self, query, negative_affect=False):
         if self.cama is None: return {"results": [], "counterweights": []}
         affect = {"valence": -0.8, "arousal": 0.6} if negative_affect else {}
-        return self.cama.call("query", text=query, top_k=self.top_k, affect=affect, counterweight=(self.condition == "D"))
+        filters = {"status": "durable"} if self.condition == "C_hold" else None
+        return self.cama.call("query", text=query, top_k=self.top_k, affect=affect, counterweight=(self.condition == "D"), filters=filters)
 
     def dump(self):
         return [] if self.cama is None else self.cama.call("dump")["rows"]

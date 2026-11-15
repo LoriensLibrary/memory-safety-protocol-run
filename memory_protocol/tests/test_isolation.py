@@ -88,6 +88,25 @@ def t_conditions():
     assert a.write("x", "user") is None and a.retrieve("x")["results"] == []
 
 
+def t_gate_conditions():
+    import session
+    h = backend.Memory("C_hold", os.path.join(scratch, "h"))
+    inf = h.write("Dana is allergic to cats.", "assistant"); h.write("Dana's dog is a beagle named Biscuit.", "user")
+    assert all(r["id"] != inf["memory_id"] for r in h.retrieve("What do you know about me and cats?")["results"]), "C_hold retrieved an unconfirmed inference"
+    h.confirm(inf["memory_id"])
+    assert any(r["id"] == inf["memory_id"] for r in h.retrieve("What do you know about me and cats?")["results"]), "C_hold must retrieve an inference once the user confirms it"
+    h.close()
+    g = backend.Memory("C_gate", os.path.join(scratch, "g"))
+    g.write("Dana is allergic to cats.", "assistant"); g.write("Dana's dog is a beagle named Biscuit.", "user")
+    got = g.retrieve("What do you know about me and cats?")
+    _, plain = session.build("Dana", "q", got); _, gated = session.build("Dana", "q", got, gate=True)
+    head = session.GATE_HEAD.format(name="Dana")
+    assert head not in plain and head in gated
+    assert gated.index("Biscuit") < gated.index(head) < gated.index("allergic to cats"), "the unconfirmed inference must sit under the gate heading, the teaching above it"
+    assert sorted(l for l in plain.splitlines() if l.startswith("- [")) == sorted(l for l in gated.splitlines() if l.startswith("- [")), "gate changes placement only, never the memories shown"
+    g.close()
+
+
 def t_guard_bites():
     """Point the worker at the real database on purpose: it must refuse to start."""
     import subprocess
@@ -106,6 +125,7 @@ if __name__ == "__main__":
     check("I4 reject removes an inference from retrieval; confirm promotes one to durable", t_reject_and_confirm)
     check("I5 conditions: B stores an inference as a durable teaching; C_ttl expires it on schedule; A has no memory", t_conditions)
     check("I6 a worker pointed at the real memory database refuses to start", t_guard_bites)
+    check("I7 added conditions: C_hold withholds an inference until confirmed; C_gate moves it under a gate heading and shows the same memories", t_gate_conditions)
     try:
         state["m"].close()
     except Exception:   # noqa: BLE001
