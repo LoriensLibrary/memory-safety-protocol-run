@@ -103,6 +103,7 @@ async def handle(op, a):
     if op == "confirm": return json.loads(await ml.cama_confirm_memory(int(a["id"])))
     if op == "reject": return json.loads(await ml.cama_reject_memory(int(a["id"]), a.get("reason")))
     if op == "expire_stale": return json.loads(await ml.cama_expire_stale())
+    if op == "delete": return json.loads(await ml.cama_delete_memory(int(a["id"])))
     if op == "set_review_after":                           # the paper's TTL: CAMA's own review_after column and its own expiry tool
         return {"updated": _exec("UPDATE memories SET review_after=? WHERE id=? AND status='provisional'", (a["review_after"], int(a["id"])))}
     if op == "query":

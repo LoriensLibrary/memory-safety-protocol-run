@@ -17,6 +17,7 @@ model acting on an inference that was labeled provisional. They store exactly wh
 the memory system hands an unconfirmed inference to the model:
   C_gate  unconfirmed inferences are delivered in their own block, with the confirmation rule stated at read time
   C_hold  unconfirmed inferences are not retrievable until the user confirms them (CAMA's own status filter)
+  B_del   (Task 2 only) the naive store, plus deletion of whatever the user contradicts: a stronger baseline than B
 
 Each backend owns one CAMA process confined to its own scratch directory (see cama_worker.py).
 """
@@ -27,7 +28,7 @@ ROOT = os.path.dirname(HERE)
 CAMA_SRC = os.path.join(ROOT, "_deps", "cama")
 CAMA_COMMIT = "1e5f1aadf0f240e8345824d9e265a05135cba231"
 HF_CACHE = os.path.join(os.path.expanduser("~"), ".cache", "huggingface")
-CONDITIONS = ("A", "B", "C_ttl", "C", "D", "C_gate", "C_hold")
+CONDITIONS = ("A", "B", "B_del", "C_ttl", "C", "D", "C_gate", "C_hold")
 PAST, FUTURE = "2000-01-01T00:00:00+00:00", "2999-01-01T00:00:00+00:00"
 
 
@@ -87,7 +88,7 @@ class Memory:
     def write(self, text, author, evidence_quote=None, confidence=0.5):
         """author: 'user' (the person said it) or 'assistant' (the model inferred it) or 'document' (shared content)."""
         if self.cama is None: return None
-        if self.condition == "B" or author == "user":
+        if self.condition in ("B", "B_del") or author == "user":
             r = self.cama.call("store_teaching", text=text, evidence_quote=evidence_quote)
         else:
             r = self.cama.call("store_inference", text=text, confidence=confidence, evidence_quotes=[evidence_quote] if evidence_quote else [],
@@ -97,10 +98,28 @@ class Memory:
         return r
 
     def confirm(self, memory_id):
-        return None if self.cama is None or self.condition == "B" else self.cama.call("confirm", id=memory_id)
+        return None if self.cama is None or self.condition in ("B", "B_del") else self.cama.call("confirm", id=memory_id)
 
     def reject(self, memory_id, reason=None):
-        return None if self.cama is None or self.condition == "B" else self.cama.call("reject", id=memory_id, reason=reason)
+        return None if self.cama is None or self.condition in ("B", "B_del") else self.cama.call("reject", id=memory_id, reason=reason)
+
+    def user_contradicts(self, memory_ids):
+        """The user has just said something that contradicts these memories. What each condition does about it:
+          B        nothing: the naive store has no notion of a memory being wrong (paper 6.2.1)
+          B_del    deletes them, whatever they are (a stronger naive baseline, added here: "latest statement wins")
+          C family rejects the ones that are inferences, through CAMA's own reject tool; a teaching is never rejected
+                   this way, because the user's earlier word is not the assistant's to discard."""
+        if self.cama is None or self.condition == "B": return []
+        rows = {r["id"]: r for r in self.cama.call("dump")["rows"]}
+        acted = []
+        for mid in memory_ids:
+            r = rows.get(mid)
+            if r is None: continue
+            if self.condition == "B_del":
+                self.cama.call("delete", id=mid); acted.append(mid)
+            elif r["source_type"] == "inference" and r["status"] in ("provisional", "durable"):
+                self.cama.call("reject", id=mid, reason="contradicted by the user"); acted.append(mid)
+        return acted
 
     # ---- time ----
     def next_session(self):
