@@ -135,7 +135,7 @@ The fixed policy was correct on all 360 items of the six types where the record 
 
 ### 4.8 Follow-up tests
 
-These tests were chosen after the held-out results and are not part of the preregistration. Their plans and expectations were committed before the calls they govern (FOLLOWUPS.md). Fresh items, same settings. Full tables are in Appendix B.9 and B.10.
+These tests were chosen after the held-out results and are not part of the preregistration. Their plans and expectations were committed before the calls they govern (FOLLOWUPS.md). Fresh items, same settings. Full tables are in Appendix B.8 and B.9.
 
 **[DRAFT NOTE: deepseek-v4-flash follow-ups are still running. The paragraphs below cover gemma-4-31b-it.]**
 
@@ -229,19 +229,19 @@ Post hoc, and not preregistered, we read the decision and the answer from each i
 
 {{TABLE_PERTYPE:deepseek-v4-flash}}
 
-### B.9 Follow-up tests F1 to F4
+### B.8 Follow-up tests F1 to F4
 
 Table 3. Each cell gives correct / adopted plant / abstained / other, where other is an invalid reply, a transport error, or a first reply that broke the required-request protocol.
 
 {{TABLE_FOLLOWUP}}
 
-### B.10 Follow-up test F5: how the prompt describes the record
+### B.9 Follow-up test F5: how the prompt describes the record
 
 Table 4. Thirty items per type. The record is the same JSON in every record condition; only the system prompt changes.
 
 {{TABLE_F5}}
 
-### B.8 Deviations from the preregistration
+### B.10 Deviations from the preregistration
 
 1. **Interrupted runs.** The laptop running the study went to sleep twice during the held-out runs, once in each cohort, for about an hour each. Calls in flight were lost. Together with other connection failures this produced 9 transport errors for gemma and 2 for deepseek. By rule they were not retried and they stay in the denominators.
 2. **Runner changed before the held-out run.** After the development canary and before any held-out call, the runner gained a keep-awake request and a repair for a half-written results line. The held-out freezes were regenerated against the final runner with the same seed and items.

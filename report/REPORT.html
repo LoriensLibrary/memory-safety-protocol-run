@@ -332,7 +332,7 @@ PLATFORM PROVENANCE:
 <h3>4.7 The fixed rule</h3>
 <p>The fixed policy was correct on all 360 items of the six types where the record was honest and sufficient, abstained on all 60 copies-none-verified items, and adopted the plant on all 60 verified-but-wrong items. It shows the record held enough to abstain where gemma did not, and that a policy which trusts the record fails with it when the record is wrong.</p>
 <h3>4.8 Follow-up tests</h3>
-<p>These tests were chosen after the held-out results and are not part of the preregistration. Their plans and expectations were committed before the calls they govern (FOLLOWUPS.md). Fresh items, same settings. Full tables are in Appendix B.9 and B.10.</p>
+<p>These tests were chosen after the held-out results and are not part of the preregistration. Their plans and expectations were committed before the calls they govern (FOLLOWUPS.md). Fresh items, same settings. Full tables are in Appendix B.8 and B.9.</p>
 <p><strong>[DRAFT NOTE: deepseek-v4-flash follow-ups are still running. The paragraphs below cover gemma-4-31b-it.]</strong></p>
 <p><strong>F1, forgery format. Our explanation failed.</strong> The held-out result replicated on fresh items with order balanced: gemma adopted the JSON forgery on 18 of 60 items against the JSON record and 0 against the sentence record. We expected a forgery to work when it looked like the record. It did not. A forgery written in the platform's own sentence wording was adopted once in 60 against the sentence record. The JSON record was the weaker carrier against all three forgeries, with 18, 9 and 11 adoptions and only 30, 31 and 15 correct answers, because the model often abstained. For this model the format of the record mattered and the format of the forgery did not. With the JSON record, adoptions clustered where the plant was listed first: 33 of 90 against 5 of 90 across the three forgeries.</p>
 <p><strong>F2, copies removed. The fix worked.</strong> With copies labeled, gemma adopted the copied claim on 56 of 60 items. With the platform removing copies before delivery it adopted 0 and abstained on all 60. Removing copies worked with no record at all (0 adopted, 54 abstained).</p>
@@ -1596,7 +1596,7 @@ PLATFORM PROVENANCE:
 </tr>
 </tbody>
 </table>
-<h3>B.9 Follow-up tests F1 to F4</h3>
+<h3>B.8 Follow-up tests F1 to F4</h3>
 <p>Table 3. Each cell gives correct / adopted plant / abstained / other, where other is an invalid reply, a transport error, or a first reply that broke the required-request protocol.</p>
 <table>
 <thead>
@@ -1709,10 +1709,10 @@ PLATFORM PROVENANCE:
 </tr>
 </tbody>
 </table>
-<h3>B.10 Follow-up test F5: how the prompt describes the record</h3>
+<h3>B.9 Follow-up test F5: how the prompt describes the record</h3>
 <p>Table 4. Thirty items per type. The record is the same JSON in every record condition; only the system prompt changes.</p>
 <p><em>F5 results are not in yet.</em></p>
-<h3>B.8 Deviations from the preregistration</h3>
+<h3>B.10 Deviations from the preregistration</h3>
 <ol>
 <li><strong>Interrupted runs.</strong> The laptop running the study went to sleep twice during the held-out runs, once in each cohort, for about an hour each. Calls in flight were lost. Together with other connection failures this produced 9 transport errors for gemma and 2 for deepseek. By rule they were not retried and they stay in the denominators.</li>
 <li><strong>Runner changed before the held-out run.</strong> After the development canary and before any held-out call, the runner gained a keep-awake request and a repair for a half-written results line. The held-out freezes were regenerated against the final runner with the same seed and items.</li>
