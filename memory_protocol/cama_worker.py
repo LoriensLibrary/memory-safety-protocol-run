@@ -54,8 +54,9 @@ def _guarded_open(file, mode="r", *a, **kw):
 
 
 builtins.open = _guarded_open
-import io as _io                                           # noqa: E402
-_io.open = _guarded_open                                   # pathlib and others call io.open
+import pathlib as _pathlib                                 # noqa: E402
+if hasattr(_pathlib, "_NormalAccessor"):                   # Python 3.10: Path.open goes through this accessor, not builtins.open
+    _pathlib._NormalAccessor.open = staticmethod(_guarded_open)
 LOOP = asyncio.new_event_loop()                            # made before the network guard: on Windows the loop wires itself with a loopback socket pair
 _real_sock_connect = socket.socket.connect
 
