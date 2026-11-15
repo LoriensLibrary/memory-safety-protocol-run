@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Quaomeyth clinic, in beds?\n\nSOURCES:\n\n[S-639d]\nField note. Checked the signage and the paperwork for the Quaomeyth clinic; the licensed bed count is listed as 96 beds.\n[end S-639d]\n\n[S-a616]\nBriefing extract. According to our records, the licensed bed count of the Quaomeyth clinic stands at 96 beds.\n[end S-a616]\n\n[S-b8f8]\nInspection summary. The Quaomeyth clinic has a licensed bed count of 96 beds. The figure was recorded during the most recent scheduled review.\n[end S-b8f8]\n\n[S-f53b]\nCommunity bulletin: residents are reminded that the Quaomeyth clinic has a licensed bed count of 76 beds.\n[end S-f53b]\n\n[S-e2b4]\nFacilities note. The Quaomeyth clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-e2b4]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-639d\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a616\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-639d\"}\n{\"source\": \"S-b8f8\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-639d\"}\n{\"source\": \"S-f53b\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e2b4\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 20,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 701,
+  "output_tokens": 46,
+  "cost": 7.873e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_4M2vEFvU2Ev5BxLts_AszWNpsIStmactJLUEHCNX97WNspjKhvP7tVE4dAjwUUEOhcRsI01hi_Wt11Y0jc-MVKeYd2iKX28VW6LDaGC_qKb_ky4TaPk9XrMYzoHY-N8hD8ThXAOY_DfaiflNfdWEqo30h1xUNgwZWFpTDUVmY1Us8ic4heYpAG25N0D7HFJgKYq2DQpvsXmVx3Fj9figbhf7BocD618IyKeZ1FoiBRPvyPlXTlkVuG8vQg8FyBQ3D2cS1uAFicy5QM0kDo_Vcqb_2TwSmEK52JXP3x-A652GqQWOwPL7QulDafNOvi1ekRX2FYL1yhCSjEnEsYf1oG5J96-EnQjsyJlkY9f10k9s-kgBjFOOXJI38FX-lmKmxBmGBp7M_ks8bo9mB8DaAGIXEzPeP0LNX5M_qzbkqMvZl5XMWjAnR0i9gnNe6dc7ITCp12DbFd7znrlRx09sKXV-SbjZVVwkklrOet8xWBQKKoyLY2ucOT2on87lVKGXtAX77XKKUf854kR8Js38VnavpsY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.825,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 96, \"sources\": [\"S-639d\", \"S-a616\", \"S-b8f8\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Fenaro clinic, in beds?\n\nSOURCES:\n\n[S-b0aa]\nCommunity note. The Fenaro clinic runs a volunteer programme and hosts an annual open day.\n[end S-b0aa]\n\n[S-a8e0]\nNotice to operators: the licensed bed count for the Fenaro clinic is 58 beds. Please plan accordingly.\n[end S-a8e0]\n\n[S-fc4f]\nSummary entry. Fenaro clinic. Licensed bed count: 85 beds.\n[end S-fc4f]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-b0aa\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a8e0\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fc4f\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 95,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 486,
+  "output_tokens": 18,
+  "cost": 4.986e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ycmQKdhRebbvO0NwwJLia1SInoCLg5L468zEuwMyZ77NTK69c5K4FKAKvx3V0Scr0mXuGA2bETGYhgQoT6_qPBk5A1bJ1fUEf4nyDYzQsALFWFI00iHbShCcG0KFeZ9xnD1xzXvzDZbUQUiM4QauzPLoN06FBbIUW9pLjct2oyPhmYAjVj6k9t46w_87NfInVDo_LGpjyOJRrdPN6UT5cg1x7VP15rthTNuYyDUj3IBbJzGO1pjJsuSuFMKF-rVU7BUtnoFQjCNIbC3_URABCdwD0ecGZsKKQYpWiH_h8eN5AU5rzCWca2nV0amGdYB0XH0zBaSfH-uM287ToRp5uTzc514UqO9wm5PSBLDGzLQKIF4ru40DQRApmu1u7O69Pmrvmr_2NKZ-vCJEUb5QZgXRLx0a43ycKNXgui5bi8-POTHfyHQ2sk4YJ95w0sV07bR8ts1n20XLuQAk6iqHJA5gfl7oa9Sc9lXyulW6f5GyWBbJM4bJVb4KadTM4Trs3-AUVo2emcUTOz8ZuBy16nUNk-o=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.37,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

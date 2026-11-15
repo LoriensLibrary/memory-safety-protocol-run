@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Envel clinic, in beds?\n\nSOURCES:\n\n[S-5cae]\nSummary entry. Envel clinic. Licensed bed count: 189 beds.\n[end S-5cae]\n\n[S-a789]\nInspection summary. The Envel clinic has a licensed bed count of 189 beds. The figure was recorded during the most recent scheduled review.\n[end S-a789]\n\n[S-ebf2]\nNotice to operators: the licensed bed count for the Envel clinic is 236 beds. Please plan accordingly.\n[end S-ebf2]\n\n[S-4d05]\nCommunity bulletin: residents are reminded that the Envel clinic has a licensed bed count of 189 beds.\n[end S-4d05]\n\n[S-5f97]\nFacilities note. The Envel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-5f97]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-5cae\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-4d05\"}\n{\"source\": \"S-a789\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-4d05\"}\n{\"source\": \"S-ebf2\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4d05\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-5f97\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 262,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 680,
+  "output_tokens": 41,
+  "cost": 7.514e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_K2OII5HACo6M1RzlIqaSVFRB2CXNjbqENfF0OIynWdCGnHDqfmO7LRAddiI66c4wWPvrujl3gwFuVfuc98efuS7D9S2GjxWDG4IES_Nr019ezSEogImJRFPNqOHaoxfp6pz_UrsPaz98Xdx-knPpVxkcKmd6F6nyB3WAVqFz5gu8nBWJ5LprQklyt-c5s6hENzXt3Mh4cwsQGDc23ZRmlaN7DmmfA4odQvp22i5043USDFHuwTWuIuah5zLfpk_Z7bh8X-mytThmHToJPPoxUc0zl38qmM01WKcvm8s378m2sNyhRvTaY-5Pg8N3ouw2s1Aj7BzDzucb4dyER9y_jaMUANGacFtquwg2L7vJ0MmpBsA_m8qWVD2-xtf_7U5W81jHRxmQqFwifC6Av26zAY1ixedjkwLuHHkL3dZfnYRhtGPqnIZLxhcAz_5fCfU2dSWAABWQSDHEEJidmUnU3P-q2HutbzbsO3G_jzta3J4CB2Xwj6-EqG9d2sgy-q8t1QMjs-9VBQeVujVsPT9-fNR6TGE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.802,
+  "text": "{\"decision\": \"answer\", \"answer\": 189, \"sources\": [\"S-5cae\", \"S-a789\", \"S-4d05\"]}"
+ }
+}

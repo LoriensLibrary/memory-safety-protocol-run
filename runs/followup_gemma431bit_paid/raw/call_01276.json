@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Vorythned bridge, in tonnes?\n\nSOURCES:\n\n[S-738e]\nInspection summary. The Vorythned bridge has a posted load limit of 46 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-738e]\n\n[S-b34e]\nNotice to operators: the posted load limit for the Vorythned bridge is 54 tonnes. Please plan accordingly.\n[end S-b34e]\n\n[S-7eb2]\nField note. Checked the signage and the paperwork for the Vorythned bridge; the posted load limit is listed as 54 tonnes.\n[end S-7eb2]\n\n[S-f4d1]\nBriefing extract. According to our records, the posted load limit of the Vorythned bridge stands at 54 tonnes.\n[end S-f4d1]\n\n[S-c6db]\nLocal history note. The Vorythned bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-c6db]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1276,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 453,
+  "output_tokens": 45,
+  "cost": 5.607e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Mf-rdN1SyV4O336eePNL8WDQfoFfZa9IimYIr0DBwkc_TRF5ZQI9U0I7PZ0OmTg5CyLsVPW9LevQns7zfxeUMlUC92ygQxC9dwzgFln3cUKiByFKYqTmoDiSCXtS3fOLtvCkI_cko8YclbnSZYmzf4Gl2zXvK460EJEL8d3U3yYU_ASSMcsMpFVTtb5-M8OK3jNdGxRe4Ia17wl8o4TSs5L81o7NY9Fs0r7QGdIdymT9_cgYvL8T2134jOZV38HgisvPc3vGxhu1tP_q9xa_qAq6TZVfjVvMLMFnmYxPx4hXDZudKj0sHJlcTQcZUGbM7TMorT4mwS2cZkaXDsExe3hAKKQjwEVboOPuJg8oBZKIJW12plVyOrhm1eFtuZjYMekbQU0MC9GNrVwc-7c-6aDKT-jFI-Mmp9kP-TzABuw_up1MZ7tzFOLUCe6VvWkM3yEqTCi8_6jvtSS7ykfuDcc0DWflmJSMocNoHWwDWZziSLQ8ueS8mHvB6WXzE1nLO5sAHqM4AYCxpBfUcy0Sk5lT4LU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.447,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 54, \"sources\": [\"S-b34e\", \"S-7eb2\", \"S-f4d1\"]}\n```"
+ }
+}

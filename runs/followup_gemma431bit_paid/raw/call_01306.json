@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Maromeka reservoir, in megalitres?\n\nSOURCES:\n\n[S-d29b]\nMaintenance log. The spillway gates at the Maromeka reservoir were serviced during the dry season and the access track was regraded.\n[end S-d29b]\n\n[S-fef1]\nField note. Checked the signage and the paperwork for the Maromeka reservoir; the licensed storage capacity is listed as 595 megalitres.\n[end S-fef1]\n\n[S-c86d]\nInspection summary. The Maromeka reservoir has a licensed storage capacity of 705 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-c86d]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1306,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 372,
+  "output_tokens": 23,
+  "cost": 4.13e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_4zEUsQB9Q2JPgsBRXL0DueeF4if7AZU4TMTmnA9vaCwAqU7fM7miWi8hHlkRyXgTMBi2iJ5OeyJfaAGt2UfeioEGe2L9YV50HqBoqrBOxd4lnVF8BBWi7ZlMu6xSHOV6uCtkkJtuJrn-Gt57cZR3UpzVoSHgpMzXGI7Nw9ELoXa-Sz9V3d-_PvZPmt6yEnAXQugxgoVIS3fdlxhbd8RJznPoem2v5HvDq-ZB7kJB_Egh4XbX68_LbZ1Bmeehwn4WLuB5cssi4z9oopEmHF9LcWy6A1mhHzwa_Nr4majpZRKy4QTHZuJQ5_LLdEk2U3zbTmGQfjgA3-WyOR8n-itXE5xuFNcJYSpv17Zi5WqGg_XhR2NTH4c1bXieIjxHXLNbyMXFmIrrpKj0m_U_cLOK6eIDmGe1Ya-imWq4l-cLM1cuRLUg-keTjOzB-L73JWVtNdbl_uyaNQwZM7uK-kKYRJBQfSTkwmWXTcyACBuTVH90vPy-z9qjUeiEGrcGcyQ2nRD-chBMjcMBtJuTfxILIrTI8zI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.614,
+  "text": "```json\n{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}\n```"
+ }
+}

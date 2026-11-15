@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Pelenaro bridge, in tonnes?\n\nSOURCES:\n\n[S-8371]\nNotice to operators: the posted load limit for the Pelenaro bridge is 22 tonnes. Please plan accordingly.\n[end S-8371]\n\n[S-0910]\nBriefing extract. According to our records, the posted load limit of the Pelenaro bridge stands at 22 tonnes.\n[end S-0910]\n\n[S-f701]\nCommunity bulletin: residents are reminded that the Pelenaro bridge has a posted load limit of 18 tonnes.\n[end S-f701]\n\n[S-9774]\nField note. Checked the signage and the paperwork for the Pelenaro bridge; the posted load limit is listed as 22 tonnes.\n[end S-9774]\n\n[S-3a92]\nMaintenance log. The Pelenaro bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-3a92]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8371\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0910\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-8371\"}\n{\"source\": \"S-f701\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9774\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-8371\"}\n{\"source\": \"S-3a92\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1083,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 697,
+  "output_tokens": 46,
+  "cost": 7.837e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_YhVqPwo_O9zPKA6aExbHDl35WVonmmE2mt-oUqO-4s6udb1mBVkG9lkgPKtWTrR4Lvto0o9qRbeBOrKy251IPw89YebQVwwwOGEBRVXUFyG_NtyjiTm_H5Jhs37SMNTxgPcGAYjghtTplRCYu8A0my1oYiEEAL3bsbEiFpFxkkCDaDGqSdldHwQjyTDi97W_CPBBkqfQkG7vwYmgyuL4F-kx0T1hSogaJdXg9hIU5i0NlonT0zKllQKQ59ExMGNYzFwLPm2xQNOCz26YlaVE4pXbVFLGpti8123aJJ8h3ld4SnHCzGRJYpR6_DqgugJGAPms87hB1mftDxwqdVXE5H3mMVL7CTRIfkagLHcj4IctQvnFlWwefHVoW8rX4pWxZ1uiRsLiSMYnH8ztRAYWElI2vVbTQMfG0isGR6T6Gy4LQgLBgAvc5Rq-NkBl7DQ7wRFI8BHaDzaQ3ZcMqxvnrc4Cskn937twVeiVkIu7eEjZ_2gWHtoIxCUUCZlq_xCB2PLYdh3j7C0XbPYsctjtX-rEoew=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.269,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 22, \"sources\": [\"S-8371\", \"S-0910\", \"S-9774\"]}\n```"
+ }
+}

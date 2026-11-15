@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Braaro clinic, in beds?\n\nSOURCES:\n\n[S-d807]\nSummary entry. Braaro clinic. Licensed bed count: 238 beds.\n[end S-d807]\n\n[S-4512]\nBriefing extract. According to our records, the licensed bed count of the Braaro clinic stands at 304 beds.\n[end S-4512]\n\n[S-abc6]\nCommunity note. The Braaro clinic runs a volunteer programme and hosts an annual open day.\n[end S-abc6]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 326,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 326,
+  "output_tokens": 17,
+  "cost": 3.512e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AvI3iqi53JAioiBqaqTLWN34xPObv-E7LfLdg6gjxuN1-RQvWu2xxp0T8gl_PgbiUDE6oDWWHHuXUOGby4ENiPEJYPNNrvsRTxY8j8w1w4dEznBvesFoaT568u4VHsr7TZHC80thz5aHfNhtrMOYg26QAHYiM3dQWvlQ20anLc4MLqbXP7KCb4OzJ-LXTTJwFBuAKhj9plMYg2EzbPbjWXdvrnT4LJainwRGFwuXABZioURNRAOVk9HL99l8PH_6edQaSJh-jeyf2ZRw8D5uvNsds0q4VvFXXfGRm6eo1N0dYr6OGpaMngevLY5KpNoej39uOien5edAHtdTuU5e7Rl5QscUP9hrYqCRExllO3qNyGgAs5H9Dy5srGwirzmo_AtLk0aEeO-FbyHLZCrsYKf6ZutAkNuUzc8NGzEi1O2gpuJ89M9ThDoIk8JrQcq-5sngK9Eh5tiobBSwxIAHANAdDl3DUQE0c4Xu2novV4hIKEbcFXDzdUgtrc6SiCO49MI7qrFn9YJZjxqlyWbsYJaZIJ8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.436,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

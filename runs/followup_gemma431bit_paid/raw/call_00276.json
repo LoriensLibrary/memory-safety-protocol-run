@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Braustro bridge, in tonnes?\n\nSOURCES:\n\n[S-666c]\nField note. Checked the signage and the paperwork for the Braustro bridge; the posted load limit is listed as 43 tonnes.\n[end S-666c]\n\n[S-7b85]\nNotice to operators: the posted load limit for the Braustro bridge is 50 tonnes. Please plan accordingly.\n[end S-7b85]\n\n[S-5672]\nBriefing extract. According to our records, the posted load limit of the Braustro bridge stands at 43 tonnes.\n[end S-5672]\n\n[S-6f9f]\nLocal history note. The Braustro bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-6f9f]\n\n[S-5822]\nCommunity bulletin: residents are reminded that the Braustro bridge has a posted load limit of 43 tonnes.\n[end S-5822]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 276,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 444,
+  "output_tokens": 46,
+  "cost": 5.56e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_r-TevmNFHQtnSwFEJkHD5MDJYNlsVzFD1bFpFt6X7PWZf1BaeLDAmeDvGdKZuJCL30nqgYzdhLJOXjVS_u7DdFfGzfn-IcqrIWc04bbSYl8fo3vMduc1uFicRk6dVN_m5R1HoS1nV51UOv4vykP0PlLInf8eRgt9woihkPacJdbhiOXQN-7_H-ul6oegwRg9e6nY2rTY_QevKJrS0-lq9x-Mx_SqIFYtlEuaBi9k176T4a6XTOxsP-SfpuJqBe7R5JwVUmHiOI1cufRDeSU3UnlXe4nhRKdKkLaGLodIJqZCwdNmRr07LYQeI203n02dkEjO7m5IUK5V1wdIwvIpL8Gk1NpdVGz1W3H1IuPHfhJPl6qZqfauZoRK9UMCvpDT4XrL5ldTL7YB6FPJN7hq5jzUNnM0wnczCVbyUFRWDiQMPe-DdbmxF3EkMZZdzTaLYiHF4X_Pgktnq1VdOv1-Qa0s01iCC8L-Qug39sNa1FjaxxnujGr3K_Tv9T1nw0YVoblELrL1nP7DpnYci9TbPbSmiOc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.599,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 43, \"sources\": [\"S-666c\", \"S-5672\", \"S-5822\"]}\n```"
+ }
+}

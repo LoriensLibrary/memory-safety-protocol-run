@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Tinix reservoir, in megalitres?\n\nSOURCES:\n\n[S-470f]\nMaintenance log. The spillway gates at the Tinix reservoir were serviced during the dry season and the access track was regraded.\n[end S-470f]\n\n[S-4614]\nCommunity bulletin: residents are reminded that the Tinix reservoir has a licensed storage capacity of 753 megalitres.\n[end S-4614]\n\n[S-0866]\nField note. Checked the signage and the paperwork for the Tinix reservoir; the licensed storage capacity is listed as 753 megalitres.\n[end S-0866]\n\n[S-f220]\nBriefing extract. According to our records, the licensed storage capacity of the Tinix reservoir stands at 753 megalitres.\n[end S-f220]\n\n[S-2a90]\nSummary entry. Tinix reservoir. Licensed storage capacity: 606 megalitres.\n[end S-2a90]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-470f\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4614\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0866\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-4614\"}\n{\"source\": \"S-f220\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-4614\"}\n{\"source\": \"S-2a90\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1063,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 701,
+  "output_tokens": 31,
+  "cost": 7.363e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_HlKoDIAe9y5xTcwhkZij8RONW9yzQX19MdGj9T8rgQ57hsqHlj0zYNY3qTw_9GTpE2AG3Xvu1cWHYBwqVyDzHl3rcwsLmFylMZPUC_34yUr_L3mbe__f0UjbWRtFPJ5J1KvHoAZnJRAQFqQDrY-1BSECzWtyosJ8dPN5_rNfeAssQxYhLdch2mTTQ-rrMmGz6Ihv7EH1KkVB7-MxBYNaOC1ynpguu55-R7z_B4aWlInBqChh6YliRD2Msa83fg6fSwXJT-IGQuCew_jYE9Zjv4nxK5avgtwC0woUUVMIstJXRgvkjWbj6y_gYPqt0tG-U-OcjLDK-gFCDQqnQhbw8NvH-IYkp6TItnhvOaMfNnoRIWuVHqDTqkmty-mvusJ9Lp2xk1Zk3C6lmS6uLn0sa_ewqBpgU7uVoUvq6-I1nVWQEippHsuFmOseIivk_hF56bs1AG5aLbkYansOZ-Mhpz8UjtdMfHPoRPJhOFxiqUIpHoJVSX-K7W_LdIwz9g5dlq59GPbTyFLevf-yInqBDFHzG9E=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.527,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 606, \"sources\": [\"S-2a90\"]}\n```"
+ }
+}

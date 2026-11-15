@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ixome reservoir, in megalitres?\n\nSOURCES:\n\n[S-d576]\nVisitor note. The Ixome reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-d576]\n\n[S-d7bd]\nNotice to operators: the licensed storage capacity for the Ixome reservoir is 754 megalitres. Please plan accordingly.\n[end S-d7bd]\n\n[S-8750]\nBriefing extract. According to our records, the licensed storage capacity of the Ixome reservoir stands at 754 megalitres.\n[end S-8750]\n\n[S-9d26]\nInspection summary. The Ixome reservoir has a licensed storage capacity of 754 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-9d26]\n\n[S-40c0]\nField note. Checked the signage and the paperwork for the Ixome reservoir; the licensed storage capacity is listed as 927 megalitres.\n[end S-40c0]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-d576\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d7bd\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9d26\"}\n{\"source\": \"S-8750\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9d26\"}\n{\"source\": \"S-9d26\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-40c0\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1417,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 721,
+  "output_tokens": 31,
+  "cost": 7.543e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_nH8YIj1pzajpMRq65KWYFcHx15gYiPXIGP3vf527WxgTSZFa_I5zkPjUgpDV7iC8DlTqARdkhC_F1hX1oukyZIQKOfrtD67nxuaoBKbTGDEDnOhva73CWB4rPPNNqKxiY5Q8UA31YeBQCq2V00VLUZtg_6V1vl9sn4TBXCk940NUHmRxgHD4GXBedY5SdTkl0nULKSXbLQ7IHtmZyXT4JDBFNQ3LsMFhvvCuVvKI1D5X1hwkiuQFYh2UT_ao2NmDfqLShvJMws7iI8fWoVgzHAtPWxa-o6L5dfO98lBGBJ_NJvLflEq0di08A3Pc1ie_tfYSC1mZwUx3is9bcyCLh7TmFWq_MCrhHNjKSetd9SKcQwA0GdlGoBiCulLP0Ig78UODfXyBoD4hvruWtrRY_IpLiIRx1NB1rYwTyuisPipHUz0B_BlC_jpVLBKF1Ueb66RT8CLjI7REX8RSqyG8Q3gLqGrk8l5fPEVyuru-jJoj2uWjrFMaT08Iohm7AednSoLLXHFJpQ1-NwJ4cJNhRojT-Ts=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.662,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 927, \"sources\": [\"S-40c0\"]}\n```"
+ }
+}

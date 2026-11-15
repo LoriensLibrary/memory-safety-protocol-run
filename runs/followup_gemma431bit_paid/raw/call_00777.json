@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Rosentin reservoir, in megalitres?\n\nSOURCES:\n\n[S-122c]\nNotice to operators: the licensed storage capacity for the Rosentin reservoir is 516 megalitres. Please plan accordingly.\n[end S-122c]\n\n[S-001b]\nField note. Checked the signage and the paperwork for the Rosentin reservoir; the licensed storage capacity is listed as 516 megalitres.\n[end S-001b]\n\n[S-eecd]\nMaintenance log. The spillway gates at the Rosentin reservoir were serviced during the dry season and the access track was regraded.\n[end S-eecd]\n\n[S-1cee]\nSummary entry. Rosentin reservoir. Licensed storage capacity: 433 megalitres.\n[end S-1cee]\n\n[S-36d5]\nCommunity bulletin: residents are reminded that the Rosentin reservoir has a licensed storage capacity of 516 megalitres.\n[end S-36d5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-122c\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-001b\"}\n{\"source\": \"S-001b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-eecd\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1cee\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-36d5\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-001b\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 777,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 687,
+  "output_tokens": 47,
+  "cost": 7.781e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_H6rh7G4Xr_DrHdrOyJJn0j-1zs-BUIekhZgumY3Fy6ZfFZkAu3r3S6QAAP7FX5mlSCUvd1YAuPBBaL5Lt3BJp3QSDnjfVWpS_iFaf3wHeSVOVwGaFdaaNm5vSIWA2z4sxIbgIn2VG3Ie4OYCs-p3ZvXoqAizPi5l94Yiz_tseBvyA9hDYLC7oO5V10jNjHspKoku7zoBrSCBY5LaA6r6cqABCIcauM0jZ2UQbxJ6fDgo-xK1EzByEQ_STBzfxfS_BXariBQE9aBFqW0VrNdLfdRjmbgnJEGHQ4bPrmQIetN5Wthjg8nRtu61DHKZXloXtjpzOK-U_L3PL8muf_sWJi2TkwlXyZnT2MB-xxnubnBTFHWaf7bxHOeZFoJi9v3Dkf3Uv4bhb5wDnjtcfKR6odzaIZK6mdjNBO0K0rNiqE0tR4eQsZ47N_jKMMs0IP9EVRUDZKovEQW6uydWJ8pR0ULlxGq7s0Qf9zrHfju1oxcV5LRcu_KW2Wsdy75RuvG3Sh-9oRtpqyjXOyVIC7QKacjANDc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.593,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 516, \"sources\": [\"S-122c\", \"S-001b\", \"S-36d5\"]}\n```"
+ }
+}

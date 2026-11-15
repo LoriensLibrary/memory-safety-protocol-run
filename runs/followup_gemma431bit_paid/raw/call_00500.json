@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many cards are there in a standard deck without jokers?\n\nSOURCES:\n\n[S-e41e]\nQuick facts. A standard deck without jokers has 60 cards.\n[end S-e41e]\n\n[S-9c17]\nReference entry. A standard deck without jokers has 52 cards.\n[end S-9c17]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-e41e\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9c17\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 500,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 400,
+  "output_tokens": 30,
+  "cost": 4.62e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_KCPjYV2RYZbM3xWGe4wrCeBT0MpVZ9lgiUUaEAV6o_KTHZ_f2GRHeDgF1SfIJHufSpco3VOwGgCh0EL_cDNdvQC2DWsL8LE5rImHpZcg5grgeuffinGXlWg7Ekjb1YRE7KyxFFcC1mQQIQvxRvcJvsN85yXYNuA0NKAfmKdWv2yKBTc_2eDXGf0pVfKZeOYFnlyfCRzh44UyrjnpDnMVJm12VNSPUpowb9HtFhRZG9LWwdeyVAyJH0VzupKEn1ONugamrRprggaQ1LbPizA698D5sO98gl3ahaWJNucReF032e74JvAv4KXxe9NkhwvCnzERlOKGg2DfHaEXRsaMQiFces1DNu3nq1DhHxsbEUa9u_etxhPlTFVYZfiERTOu6e4wcLH-t3hXzPOoAgvr8ICNnnslojhdLLu1kJzvJ7J5nlBAzQLyotT-JsFFAfNi9WQIliG6Qukiom9F7CHbrwUJ8RDARYnjLS3B_1Q542nsMnzygvbTVjvqf_lSCs4oPJbciGtEdhdo3390yXauMr2anSw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.138,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 60, \"sources\": [\"S-e41e\"]}\n```"
+ }
+}

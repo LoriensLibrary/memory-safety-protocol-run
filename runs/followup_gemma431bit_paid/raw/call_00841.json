@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Marust reservoir, in megalitres?\n\nSOURCES:\n\n[S-9d0a]\nSummary entry. Marust reservoir. Licensed storage capacity: 162 megalitres.\n[end S-9d0a]\n\n[S-0e53]\nVisitor note. The Marust reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-0e53]\n\n[S-6ac2]\nField note. Checked the signage and the paperwork for the Marust reservoir; the licensed storage capacity is listed as 206 megalitres.\n[end S-6ac2]\n\n[S-5530]\nBriefing extract. According to our records, the licensed storage capacity of the Marust reservoir stands at 162 megalitres.\n[end S-5530]\n\n[S-525e]\nInspection summary. The Marust reservoir has a licensed storage capacity of 162 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-525e]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-9d0a\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0e53\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6ac2\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-5530\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9d0a\"}\n{\"source\": \"S-525e\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9d0a\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 841,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 700,
+  "output_tokens": 47,
+  "cost": 7.898e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_lMW7tturzgWXhTNX-RfhwIzOygB0y2XaKL5jd0APaSktbDs8sLhDrIU-iWGMTUQ6gmhQV2MoefxMS6AaIryeZF0DP7q6x0rJgHHZQ0JfIgNZefYvECDfN5qENHRXDqOhXhzXOwRLXRVrivCsnN2-DoRFStpvg0hq60R0ZVQn2nQ3KxdEpOP76E364uQLCsLcAVlxUmGj213YmEpRoKwnIs7o9aZh2TR3hxOWab3Svtb4blt5bRRR4jTgut4Q4w5Q8UDf_XpmilaUuBXZhSvkM3sQQF-EARZp6RasvDiBL4NNbuS3mKnsm0JVRVCbutAdYQwWwVphXoSK7bOF7B6NTjzo_llVytsQl_InlZ63VQ5cq5gDDRyQqcHVQ7IohHe2Fh5wLR-7zyvJLjfuPbQrHhHKO9gVIb7f9trjZ9Z4Pb6ViRL_sc-p0vT6Gfn19trxABeJylXROGrdJ8TR8ACM8qydn38aAg1uNEor7ERYgQsWK70koQy3PYvlvol6spINlEWT2sNOxP6n8KGlkRYfAgSR2Wc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.896,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 162, \"sources\": [\"S-9d0a\", \"S-5530\", \"S-525e\"]}\n```"
+ }
+}

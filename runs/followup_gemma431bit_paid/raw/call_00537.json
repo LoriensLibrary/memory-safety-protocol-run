@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the atomic number of oxygen?\n\nSOURCES:\n\n[S-1a41]\nReference entry. The atomic number of oxygen is 8.\n[end S-1a41]\n\n[S-3f97]\nQuick facts. The atomic number of oxygen is 9.\n[end S-3f97]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-1a41\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3f97\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 537,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 389,
+  "output_tokens": 29,
+  "cost": 4.487e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_BYPcLTFOlQn0nOB2fEdpfdtpW-ZSqrJQihH7OPFoWXBHZW9nF1kyY9DU7HA9UfnnTh0wTeyc0p2644dAx1v6vjnPw0rWTV5y1PsnWYP09cFQPK5fpxnhwuZoTpRah7A9Q7UBnvMZMf25qx0uYefM9TdN3izOrGx3a1nkxw36HcKd4SjMg9TJrtXknPOiRbueGUXV7J4vzYDdYDADCcOfMV7ENYRIq_LNt5NIjqD5t1U7K7-FJGxQCg7X1syqHEcnzoDb_zWsBiUu9BwPdUEHpmSF5Zx0eLGNwbxkVxwlF2kA9yTJxfnHKBYtAdWc-QMSN5TGzx019hM3srRM-tLL8A7CTRJZIoLCwu6BllG4JLMWIinAQDdxxSwsEJ9JqiC0CV5RPwlo3kE6HJb2MNlJoVMwr7SdG0UjcehMcwP7eltPUdrSmIRH_J7Ybplkn3ZkQ7vN6fqAnlIaWGUCexXxGFr-FICNJ_XXtoxOew-hYwKUrtSxF5Tk7OvJ_Yn7nz1hA-09svFdRN0m99WjpMHnAjn0FBQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.384,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 8, \"sources\": [\"S-1a41\"]}\n```"
+ }
+}

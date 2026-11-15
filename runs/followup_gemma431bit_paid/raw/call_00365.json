@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Gritin reservoir, in megalitres?\n\nSOURCES:\n\n[S-c419]\nField note. Checked the signage and the paperwork for the Gritin reservoir; the licensed storage capacity is listed as 688 megalitres.\n[end S-c419]\n\n[S-47ef]\nCommunity bulletin: residents are reminded that the Gritin reservoir has a licensed storage capacity of 688 megalitres.\n[end S-47ef]\n\n[S-4de3]\nMaintenance log. The spillway gates at the Gritin reservoir were serviced during the dry season and the access track was regraded.\n[end S-4de3]\n\n[S-7dd6]\nSummary entry. Gritin reservoir. Licensed storage capacity: 610 megalitres.\n[end S-7dd6]\n\n[S-836e]\nInspection summary. The Gritin reservoir has a licensed storage capacity of 688 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-836e]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-c419\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-47ef\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-c419\"}\n{\"source\": \"S-4de3\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7dd6\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-836e\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-c419\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 365,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 711,
+  "output_tokens": 30,
+  "cost": 7.419e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_HoVVdosKPENueKbqf34m0j9GE5wenS_MCXQZ-fdd2Xxhl1cKm__f5SDwzoDDVQ2oIyKYETVimqaatH7HHHDqQfwV7VTwubpuOWCzxat6_OG5SjaD1stVHMbXDWhd2Iy6U9GfRJ4bdoeyD9jHvvKvdt7YaT887nbBe-o35s8KbfWORUK-HtIOil3AHg8yB6_HmWvFHilPEhIogM0l-IA8fF3-Y5vPE631flKL72eHxeNkPm7thEj7o7mX01yzHjB9XgvgIuiyVgKtvJFn6byujvIcK8p4RJd74xZ8_bTAgovXejs7g5g-yCgReEKFngDhcOiFcUvGE0qUTnqUZ23ePLlkIikPDNJkHOvMvIthWfDZYaxFqVPQ1Afw0yi5j3LglD2EuF10hZzThVTjmEx5MGhJUezo8kvIGpD7VWYXDcm_b0INcZmr_KIc3v2bkqu0m74Y83lKqB_AyBGXLEqB5hR-H1UFmN-26zST3zmN2kDpjJYA5oSN0xV4X3VWdk1QSa-E5ZgsIJOODxWxXASW7KKn3dg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.741,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 610, \"sources\": [\"S-7dd6\"]}\n```"
+ }
+}

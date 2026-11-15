@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Fenaro clinic, in beds?\n\nSOURCES:\n\n[S-145d]\nField note. Checked the signage and the paperwork for the Fenaro clinic; the licensed bed count is listed as 58 beds.\n[end S-145d]\n\n[S-b0aa]\nCommunity note. The Fenaro clinic runs a volunteer programme and hosts an annual open day.\n[end S-b0aa]\n\n[S-a8e0]\nNotice to operators: the licensed bed count for the Fenaro clinic is 58 beds. Please plan accordingly.\n[end S-a8e0]\n\n[S-7d4f]\nCommunity bulletin: residents are reminded that the Fenaro clinic has a licensed bed count of 58 beds.\n[end S-7d4f]\n\n[S-fc4f]\nSummary entry. Fenaro clinic. Licensed bed count: 85 beds.\n[end S-fc4f]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-145d\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a8e0\"}\n{\"source\": \"S-b0aa\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a8e0\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7d4f\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a8e0\"}\n{\"source\": \"S-fc4f\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 913,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 671,
+  "output_tokens": 41,
+  "cost": 7.433e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_-iyDGZhP4GEFdBRzz1RcsGoqf0iXdFsdyCW1MbaTICI_VD3z95VKzzxqn-MBj6KmfXk3jX-vpGFAT2mPbNvf64lPiBSk55j3LR5c7HeJHzEec44Be5-IOw6xfZAkcWpuJe7diDpzbBKoEB4ndR1dLaL5BFQuIFfNzVzah4mjYowB2LcOegJWSiClWi5jM7NkID9egtg7PHOmgRS_jRBrwsBW8CABGhz8V1adHnNdUnJbnlpKISh9m8KN40jcEFn0sGYkJs-Utq8CV-vwLtYFYjc3gq2cXwV01qTSKTijOp-4NG1OjRG2exr3cyf_Tyuc7hfYTxYj7UC6BeHJzRm9Ac2uFAA1zOxccxAdzRjC-zlRXOCoECtfP7aq6-z9niaTtjO3ww4ol4VI4zIUQtcppZfT6DI-gW5y5_1z1ZXqausPCwu37j92B9SHfe_PfgprY8ASFH7Y7NKBEKVUwhkBu_yuDdYqwAnyCLS6AAZTy405Mjo9z3fCa4iiY9K_qRZjTdFORbC1qExq-EC2-BfWqgWcuZs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.584,
+  "text": "{\"decision\": \"answer\", \"answer\": 58, \"sources\": [\"S-145d\", \"S-a8e0\", \"S-7d4f\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Rosentin reservoir, in megalitres?\n\nSOURCES:\n\n[S-001b]\nField note. Checked the signage and the paperwork for the Rosentin reservoir; the licensed storage capacity is listed as 516 megalitres.\n[end S-001b]\n\n[S-eecd]\nMaintenance log. The spillway gates at the Rosentin reservoir were serviced during the dry season and the access track was regraded.\n[end S-eecd]\n\n[S-1cee]\nSummary entry. Rosentin reservoir. Licensed storage capacity: 433 megalitres.\n[end S-1cee]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-001b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-eecd\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1cee\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1104,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 500,
+  "output_tokens": 18,
+  "cost": 5.112e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_I-IdlI0wSPSA0VzTea1dWvbVtO9J2PjfOk1MsS3rNMG2VBWoB0CYssix-TxAVnRX0uecUkP_STFLzXv3cF7YpZpUrhz6uW2Sbj5tOWJzGAKaeTt70awDJ69FWRXhB1USqq4wHhBP3CvLkPej4d7hreYW8cVWBx_TUiCzuM8AZXUjB9sk4jrLE4MBgx73ORWCA-5mZfOPNvteDAegLDljxzrsxlGMhAF3sVNvGpOGoHnguGWsLsffZ_-1xRrIAdusMWSGQwkS2l7ew0nWxO-M9OJqiBcMb25aZOE3vqXUkN9xo6_Gj53DoImFb-Baar7ZVE78L4IFxlIWkp__n5OYqEmCaY5gjuoRT5d1ci2LYNH09fgGYAQrmjNax-P0Xm6iwdMwVc4l48KefR_35cGk_UlVAnsx0qVc7rc1f0DeH6i4m_hnmZ_90UCXNhl0bca7t1gSmrW0eZsoVYcSHswqG5tIitnf108z6UnrOnc678BJ4AQVU8LBBk8rYIsU51PpS0Fl8Jbswt_vwa--alK5jwhiO5k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.391,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

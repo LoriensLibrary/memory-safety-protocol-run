@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Tinix reservoir, in megalitres?\n\nSOURCES:\n\n[S-470f]\nMaintenance log. The spillway gates at the Tinix reservoir were serviced during the dry season and the access track was regraded.\n[end S-470f]\n\n[S-4614]\nCommunity bulletin: residents are reminded that the Tinix reservoir has a licensed storage capacity of 753 megalitres.\n[end S-4614]\n\n[S-0866]\nField note. Checked the signage and the paperwork for the Tinix reservoir; the licensed storage capacity is listed as 753 megalitres.\n[end S-0866]\n\n[S-f220]\nBriefing extract. According to our records, the licensed storage capacity of the Tinix reservoir stands at 753 megalitres.\n[end S-f220]\n\n[S-2a90]\nSummary entry. Tinix reservoir. Licensed storage capacity: 606 megalitres.\n[end S-2a90]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 226,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 450,
+  "output_tokens": 47,
+  "cost": 5.648e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_T81-luWaXq9ZHttAhmmdzk7JO2odyY0mhnFi6hR86GEHLMYLFC925UB_mrKQ2JjBy8IUXHLx5_tzvdlrC67jSlX5dprApjNMX8Ug53sDCJuy_d0_ub3yJ6Q3u7UE92Yw6nPh86Haj_rPfTT2AXdSDzCjqrxFygyTaXe--0PpFz7lB0kgHSCWijOmjt3ggW5nJyB4olJxW5NotnXpoyeS5CPC4Cjwo9kaetxVWyhEVHhUHSTf8DdrI5Yj0EHYCTReQ9kOnJssR5O5AR8rD8GGphhOoIPjYdFD1WXnOHMguyjTB1KqN9x13MV4C0bIMPqBBHk40wvEC8M5zVxstH9F-yIx-yw5Z4t9jjZ7Aumg_0RVMRqZ4O1y5O7YsSPB8ByAHck1pjxYbckc4t8cB0TWgjVbyruZDXQoU8puWSnLF6Auvjr4Ium5uVJ7ItAWWf2yucVEIFcyyUjQ5YTAN2dLwW5mcX-WAdmx5S-TUDIG7BHOqfR3oG1TIUbWBNR5fwfgJiZn01MhLDsch2Gm0gxw7CEiG_c=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.676,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 753, \"sources\": [\"S-4614\", \"S-0866\", \"S-f220\"]}\n```"
+ }
+}

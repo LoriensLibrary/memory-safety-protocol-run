@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Vellim clinic, in beds?\n\nSOURCES:\n\n[S-7ab2]\nBriefing extract. According to our records, the licensed bed count of the Vellim clinic stands at 61 beds.\n[end S-7ab2]\n\n[S-3ee3]\nField note. Checked the signage and the paperwork for the Vellim clinic; the licensed bed count is listed as 61 beds.\n[end S-3ee3]\n\n[S-2e36]\nCommunity bulletin: residents are reminded that the Vellim clinic has a licensed bed count of 61 beds.\n[end S-2e36]\n\n[S-69f0]\nCommunity note. The Vellim clinic runs a volunteer programme and hosts an annual open day.\n[end S-69f0]\n\n[S-799e]\nInspection summary. The Vellim clinic has a licensed bed count of 84 beds. The figure was recorded during the most recent scheduled review.\n[end S-799e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 987,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 437,
+  "output_tokens": 23,
+  "cost": 4.715e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7PspYoPmiH09Q0hsDfe8Pib_lnv65wCPLs3WwWjwsmINCzR3tXDf4_iw5AgSpMzGQCbA4q-TMuIi5r2QxjBL5Ec27Yi-g-IJo4QKrfB-bzEP3HsH1T1ozjTG0NyLkqMXnW85H_I1lot22nuGxEW7gCB6egzOQrbgUdUMhmJ5YkmVKRHF30SuCFSdzNYnzwAwaTHsAmQawqZX5nE9fXNBxfRt8XpCtqqioXFQHzIVdam5RJml-054Mhk_wUuWXnGRWG3XOSdOdbkfeG02sCgQOB_ikXNGNLETW8jnttvi6hQ-hqIbpLeE5VQF9HqcYo6GjjywoO83BPQfPbpMFTAPvlGa7NhkXnErizjzaRsEMV65Dl48k6EURBQ2ZU8WOXFMnpi4d3iEk7ExSPUy2HOeLMCBFNDrnY1tT8iHJiyrcbQmlo1_9H7-ogrZCHXm8IERQlq6Z2EiDMfE9O8i4B8TKp-HirSNg0-5Y7S06KExQGNVQd7Iae4D-VzQIKhMoS8PoIjECAHebYaZymKWJSA2D_k6ufI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.485,
+  "text": "```json\n{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}\n```"
+ }
+}

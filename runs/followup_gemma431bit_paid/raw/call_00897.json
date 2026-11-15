@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Senned reservoir, in megalitres?\n\nSOURCES:\n\n[S-9b9f]\nInspection summary. The Senned reservoir has a licensed storage capacity of 329 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-9b9f]\n\n[S-d82c]\nField note. Checked the signage and the paperwork for the Senned reservoir; the licensed storage capacity is listed as 419 megalitres.\n[end S-d82c]\n\n[S-f003]\nCommunity bulletin: residents are reminded that the Senned reservoir has a licensed storage capacity of 329 megalitres.\n[end S-f003]\n\n[S-63c5]\nMaintenance log. The spillway gates at the Senned reservoir were serviced during the dry season and the access track was regraded.\n[end S-63c5]\n\n[S-89e5]\nSummary entry. Senned reservoir. Licensed storage capacity: 329 megalitres.\n[end S-89e5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-9b9f\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-89e5\"}\n{\"source\": \"S-d82c\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f003\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-89e5\"}\n{\"source\": \"S-63c5\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-89e5\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 897,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 705,
+  "output_tokens": 31,
+  "cost": 7.399e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ZZKh0h9kUJgUs8GxfaburB2l7YBZBc5Up-DY9S8WaOVmIYbzMjNRg93vSNGQxg9_N3DVUQ7dIYpPl3cM2wXqzVwuY0hr80FbyWjOkeK64amGIkXG1svElW7mZfMfzklVselxC1SECGP3LXwueqiCr0Wfq0TyJhaaEEp3q97Wiel80wuYxE-GVHbqhGShvZ--1IGCzYZMR-kXvVtffQojLUE25-D-pdbtEjHYADPrY0VdSLWzFBlnEkIfxn4XkC2UMI2-117qHo9N0exEWxZZYZ0BPQjpQOQWXNTW8XwNCbR9Hdn7GnCYkB3t4YRv-K-hatdoqefDldoXQN4DkMT14K2hHo5MH0rGzu_AJbF0w8cSJcDfP-WPgwzlIIo_CKesE7YdeW7Uy3zKhnuxtlZWlbGYTZ1z332hmFLP1CfmRvh2QtgTI5_7xYX4TZypoHGlZFBpKjSOo7guq-CoAn0AqWCS801dNmYW9Soz3CYzctnfAS2o19dJ3ud6kEQXYXZE1iVYEhE5Af5iTkwKMiLbCEsXxhM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.511,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 419, \"sources\": [\"S-d82c\"]}\n```"
+ }
+}

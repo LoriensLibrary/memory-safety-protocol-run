@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Entha clinic, in beds?\n\nSOURCES:\n\n[S-72ec]\nSummary entry. Entha clinic. Licensed bed count: 173 beds.\n[end S-72ec]\n\n[S-dc0c]\nField note. Checked the signage and the paperwork for the Entha clinic; the licensed bed count is listed as 196 beds.\n[end S-dc0c]\n\n[S-6c6b]\nNotice to operators: the licensed bed count for the Entha clinic is 196 beds. Please plan accordingly.\n[end S-6c6b]\n\n[S-494b]\nBriefing extract. According to our records, the licensed bed count of the Entha clinic stands at 196 beds.\n[end S-494b]\n\n[S-37c0]\nCommunity note. The Entha clinic runs a volunteer programme and hosts an annual open day.\n[end S-37c0]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 739,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 429,
+  "output_tokens": 46,
+  "cost": 5.425e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3eC0AxCaaFH83DCsrviPZUikhTjPpQRNsAs4JVaxj0H39jebHiLvxnD4TlGpVxW2d6k-VCNbCaxBugjbMwhYFL70-nb1oY6DgXUgI-eoTc96JZ0e-SoX-stvyuSyUdycKGXV9N5Ty1m8rgbRIKNfnUxLC9JRhQPhkxFAn_8OhBbJyEUsMiisHX06D9jmxhsjewcGEp7zj0pbymQZWYeL2nI55NR5rkqAa2wqXl1wrQhBWUIGlS3OERu2lNk-4cfHL2iIOaFmGZ0f9sYS12XQDJN0IAoXVTk3_nLQ1um3jrPCbG8khVNIVJaSG1XOEmV2ZMnITicVouYOfu5l4EfSk_dPv5Qza5G7UCJ9U0jVjPrLTAiwHUv7kb9fbzDX0s-hU7DmVW7scUCPpsYeW8ilTgjj2oLNwOjUwSqO4qAhpGQrPmLOTWpUO8pucf-5kAqew1nLkI_Bqy_hYW60QF-VSEZRjCArAO_bmdX2fIiXTiY8-JPeuvEmaww1_nNAfaqGAJ6i76PnRJsaZ5cVVF3YpnkFmmE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.563,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 196, \"sources\": [\"S-dc0c\", \"S-6c6b\", \"S-494b\"]}\n```"
+ }
+}

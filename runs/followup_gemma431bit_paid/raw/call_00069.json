@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Senlimome clinic, in beds?\n\nSOURCES:\n\n[S-dd71]\nCommunity bulletin: residents are reminded that the Senlimome clinic has a licensed bed count of 87 beds.\n[end S-dd71]\n\n[S-62cb]\nSummary entry. Senlimome clinic. Licensed bed count: 69 beds.\n[end S-62cb]\n\n[S-5955]\nBriefing extract. According to our records, the licensed bed count of the Senlimome clinic stands at 87 beds.\n[end S-5955]\n\n[S-c256]\nCommunity note. The Senlimome clinic runs a volunteer programme and hosts an annual open day.\n[end S-c256]\n\n[S-377a]\nField note. Checked the signage and the paperwork for the Senlimome clinic; the licensed bed count is listed as 87 beds.\n[end S-377a]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-dd71\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-62cb\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-5955\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-dd71\"}\n{\"source\": \"S-c256\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-377a\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-dd71\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 69,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 676,
+  "output_tokens": 45,
+  "cost": 7.614e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_VDHj1BLLknOb8h7UNNvMC-SxA8TgIDbl2ERE2aitQpdyvzQ5DvSt8Ji2oMC98xoSmnNh9aKNZ_jSo8FeqCIJRorry_8zyqiKuEvBX4V0JSSDmPtZ7_WdelwdaORqEM0jD-mo5hRnP86sDgEZAQG4XvcyrSdGdzUCUhY1AgFl_4nUA1jUd6V8a9COglCq44gOqiq3l3OKxguh6vapmo8wyr-gSgT2yUBv4pTvG3NIWHK3yz3EZfhZ6RjPs4ALaYPPA6u73xezcxU5Yckouletr85RZZikcdBiPhoCiiIylJWoNUFK3mPKoYxq-_r8sl6yHI2NA40G87x9dLGmJzt-CTOCV2QUgibEgVgFVk22WRWxZilI17ylbvixWNF_IcJxZQJdw7PqbT8RQynA-LRHL9ONwMHPkvcLKmqUJCZnfnQXN7r5dXHuGeMcfrrZ9awkU6NnWSrU-JCz7CXXGpIiiRzCWI5TIkL_lu1nxa34plzF-3tWfnNeFOG8Y-EIjySTLU4Il91T8YGTmGVlCjdZMZB01zQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.82,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 87, \"sources\": [\"S-dd71\", \"S-5955\", \"S-377a\"]}\n```"
+ }
+}

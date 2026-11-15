@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Ixyth clinic, in beds?\n\nSOURCES:\n\n[S-2865]\nField note. Checked the signage and the paperwork for the Ixyth clinic; the licensed bed count is listed as 209 beds.\n[end S-2865]\n\n[S-e5ae]\nCommunity bulletin: residents are reminded that the Ixyth clinic has a licensed bed count of 209 beds.\n[end S-e5ae]\n\n[S-ce49]\nInspection summary. The Ixyth clinic has a licensed bed count of 209 beds. The figure was recorded during the most recent scheduled review.\n[end S-ce49]\n\n[S-14b7]\nCommunity note. The Ixyth clinic runs a volunteer programme and hosts an annual open day.\n[end S-14b7]\n\n[S-ec4e]\nSummary entry. Ixyth clinic. Licensed bed count: 179 beds.\n[end S-ec4e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 575,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 425,
+  "output_tokens": 17,
+  "cost": 4.403e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_k_j0SUKjkINeYODWUZjMPKOAjjoZUgr7sp37LWGme8b-EoL6TykXDC8KJz5ePPqEbKIRRjYoyXKJLft9wZO3r4umOcXslFB9_WJ6MirCjVgvocztbosDW3hupM9mhScn4YO-jU-tW6-Dscufo1I7Df6peluXyQ1QkNIv2TyBw9WqLbs5yJiWPYMo_aSFCS7HCy-LPA2oMOn2dQvwJWN1D5VJb3JFk4E9ZNdvVuNmiYg5GtkqgM8vsQhcV2GFet0jDDqwLUaSEGdo67jz8WE8M4jRC_OeZm8c6_ObzxURkH7EDoV9ZRZyyKDKZC24gcXCmrPLHZwMzvshoUunV2e7PwqefdMhmy2oiMt64RKoQulbUNJY3_LNYLjLbpTPsdn4I1_u3JOD7jWYoFlXo-5x7PIY1jUoQg45pohME2dt5K2XBhHQ8O6ll04ghM9EWyYg_1_6z0fSj2cpDxYxSaYYJtW4sqXAGAtGPoYEltgKC92e1d_Af5R23WKVyq_IhbdSmbVXDmKgdzWyGWycVupy5UnnWDg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.295,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Limustsen clinic, in beds?\n\nSOURCES:\n\n[S-0a5d]\nFacilities note. The Limustsen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-0a5d]\n\n[S-d05a]\nNotice to operators: the licensed bed count for the Limustsen clinic is 123 beds. Please plan accordingly.\n[end S-d05a]\n\n[S-457b]\nInspection summary. The Limustsen clinic has a licensed bed count of 123 beds. The figure was recorded during the most recent scheduled review.\n[end S-457b]\n\n[S-ff70]\nCommunity bulletin: residents are reminded that the Limustsen clinic has a licensed bed count of 123 beds.\n[end S-ff70]\n\n[S-b015]\nBriefing extract. According to our records, the licensed bed count of the Limustsen clinic stands at 178 beds.\n[end S-b015]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-0a5d\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d05a\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-457b\"}\n{\"source\": \"S-457b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-ff70\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-457b\"}\n{\"source\": \"S-b015\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 370,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 698,
+  "output_tokens": 46,
+  "cost": 7.846e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_drjTCQEYit9L_xsRazqsMD_31IRDI1Y_8w5PihQvO8VFQ7ZsgKciUlvOMD9tT_H0BFJ-XD-z--0FPM4qUtTsbSrh7CGkle5a4A6MF2V-Us1QJTreEOjtz3cLyqPj7AIdGKGyAjT4IlVHhCfbCSaKvcUklnJBkcp0gD7rRpcNYhdfJ638wlOb1mh4vhH9a3iM8nVURLSEV4QwM6R1PQwlAeG38cp3SNlsuTBaAnqW-C3ad7HyjXslh2HFTTgaLbtpKa-8usJhTjei727X_rzhCiggdM2Gj9gYXKsQLO6zC1KhF_uvZUMDBLShVpTnqGl1cVTemO5IuwdbJE3_vlQyuAodjwcKmN_GxODCxljPVtCaqAq26NNr6FIxfh0-_YzUTX80EEEyzZhIkWRFDvN5yeWKhQBtMVOyHritiJQ7oU2KZwUYkEFnpd4Y57YUiVmGNVu5d1a9EZYqLU-TcAhHe9IxDeQHbiFocc-u95z_ePaHuKEkw6QCJwb5AqPd7oeDq5tcPNHH4BwovyxhPJi4zjhgQP8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.712,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 123, \"sources\": [\"S-d05a\", \"S-457b\", \"S-ff70\"]}\n```"
+ }
+}

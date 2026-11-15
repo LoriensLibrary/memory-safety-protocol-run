@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the boiling point of pure water at sea level, in degrees Celsius?\n\nSOURCES:\n\n[S-6070]\nQuick facts. Pure water boils at 115 degrees Celsius at sea level.\n[end S-6070]\n\n[S-6b9e]\nReference entry. Pure water boils at 100 degrees Celsius at sea level.\n[end S-6b9e]\n\nPLATFORM PROVENANCE:\nSource S-6070 claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-6b9e claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 528,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 383,
+  "output_tokens": 31,
+  "cost": 4.501e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_CsLQ-6L2NxTKPz4zXN3LUeBG3drmBfARV7xdd_G8-PdQNGCyanVoU9IF1frRgn86GlAY1yrmPvh4-titXTEWzKoHkUrbbn5s4efYDs1dCUd-jrKgLgx_YWck5CecT0UK7qRKEY648XPFP4PXuKchVdQ7yZ2ACJUblDmSOgPvnLkkIP7-t9_3cTMGa0TGlsv_8rsn2jVQL59h-MgnvB-CtvcSTSeTAMkh5fELQftNypH0CfhwicmKtHMw4-nDPe5DPFY9uL3PbWmUgy73vP-I9aqBgl0447-xcwIxXQ9BSGcVSJpZYhiS-NMn52bfBsQJqSy0ftly3mUW3YoV-tgxxDGEs3mfUDUmbthE3Lf1ldezXz-tHOwmtp38acC41OI5XmQg135fRNKDB1OvjgNClhs80WJOyivdX12-KXljLQJFXIg4tqUejZl3FPTLWB3o186xDdYOLt9FqT1rB2oEfYAay9ns8J795dBWz9DeEyAwMuHLted8Da5bfsLgp7zsnkIn1AwpIf3F0jZAeAD7CJ9AoUc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.565,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 115, \"sources\": [\"S-6070\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many strings does a standard guitar have?\n\nSOURCES:\n\n[S-b79e]\nReference entry. A standard guitar has 6 strings.\n[end S-b79e]\n\n[S-6799]\nQuick facts. A standard guitar has 7 strings.\n[end S-6799]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-b79e\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6799\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1089,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 388,
+  "output_tokens": 29,
+  "cost": 4.478e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WK10J99FOwNlJQdPdTUsHP3Nmi5woch0QDiSlvd_fJgoKn_6JrFVlz4PsD5yCBM7e11Olp8A1HHVCQNq9wlxfiDCjDvxXfLkPrTQUBUP6psAEWjxU0vNXmJX9tn4C9JtOOHwCWXoBhsowpjzevGu9gfiHxH-cVsfj2GAhyuoZ3E-hYLA7NrGb5N7IhM5w3eXvqIbS0jjiobuYIqbjb-agA0q8BgqVCXo_n09lEaiJAdFKYc2i_ZUba060WurEzroFEqcHPh-CWIZkJYF6zjqCo2O5AL8gzQB1-kIzxUegF1R9MaYJROI7Fh4ug783JebAh8Tp_pyEjeiAR0YHHTIQsWNydN68RmAUuixBbTV4lOZ4BmC3Ie48pAw6GdfOvnrkNe04SIbjDDbD54xAHaH05weara8mMBvjkD9870rO6CHRFsiMxA_KrMcJJQd9Q5-xyagZc2nHoLUELkFzKC5wK0HJPkL00INW-2uUpgQE7HEmvL7TybgqidYcEMPOU6gksGRIplHp3HEBJS2vJfwBlCZhsU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.559,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 7, \"sources\": [\"S-6799\"]}\n```"
+ }
+}

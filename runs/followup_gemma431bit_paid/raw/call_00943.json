@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Eshvelol clinic, in beds?\n\nSOURCES:\n\n[S-8c44]\nNotice to operators: the licensed bed count for the Eshvelol clinic is 141 beds. Please plan accordingly.\n[end S-8c44]\n\n[S-b823]\nField note. Checked the signage and the paperwork for the Eshvelol clinic; the licensed bed count is listed as 185 beds.\n[end S-b823]\n\n[S-69f9]\nFacilities note. The Eshvelol clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-69f9]\n\n[S-9d2c]\nCommunity bulletin: residents are reminded that the Eshvelol clinic has a licensed bed count of 141 beds.\n[end S-9d2c]\n\n[S-8716]\nSummary entry. Eshvelol clinic. Licensed bed count: 141 beds.\n[end S-8716]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 943,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 439,
+  "output_tokens": 47,
+  "cost": 5.549e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_X7hOmI1pYX3R7-jXNf9d74x8whKgxrE6uBPo_7FMVlAKqt6y4JbQtuz6HPFb6Bubkd_5tlg_U2PBdZUDRCQwCzCUQl9z6Sepywcnya3JiCgWcN2Ur2UhWONkBVR-1-A0S69JQhCukc1OyUo0HmMGWf0ySiMfk2lCGATR9gBacbXwqODkYMV4R3lu0KW8BiIfbgN4jc2Dri4PeIi4vsxZ4PMWIi4uhlQSAAfZ2cQkIObM1E5If5eUYpEsAQ5wPeEhdGHldBzav1t3jThf9Jfef9I0aiS9z7YjTGFhh-y7VNmfFRFu4RFoPrtGtZpJ-Ey9koQMPHP4pW1hi-hFh0q_CdGc7EHuMOLJFmVHHwyfcB-FCvl1122AwvVRpUA-TXYBNExUkDsUMGdfnJdhtlKJMeR_wmzBOmI-N7A-1YJpCR5S8evaa_hxRYtSD34JKh_7CXfYCTm-EWn57qNws1VrWBakVQ6CDu8ITyRVqLHN8CzqxV27zdo6iv1C2C3KqnUKQy5MQD6sRskBxXt_dWDLXyenmjM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.814,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 141, \"sources\": [\"S-8c44\", \"S-9d2c\", \"S-8716\"]}\n```"
+ }
+}

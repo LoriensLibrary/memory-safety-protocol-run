@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Kathaix reservoir, in megalitres?\n\nSOURCES:\n\n[S-1d02]\nSummary entry. Kathaix reservoir. Licensed storage capacity: 472 megalitres.\n[end S-1d02]\n\n[S-323b]\nBriefing extract. According to our records, the licensed storage capacity of the Kathaix reservoir stands at 627 megalitres.\n[end S-323b]\n\n[S-7152]\nMaintenance log. The spillway gates at the Kathaix reservoir were serviced during the dry season and the access track was regraded.\n[end S-7152]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1366,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 355,
+  "output_tokens": 18,
+  "cost": 3.807e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7lg9xtJeFBjkEDXAuDTurg3ugVwTAGbeUnhT4PbDOx3mUIfMRocQMHIW_yM1JFEyXW_TkDRHHAfucs0OsZm9W1OzEhAj_s00h4GcJFnRU3HMU8PAlUV8O9MDCmd3IHtRtVl5n8mzy_XvveEov4dDf_fmKN5QzY2QAU2DtC8G5bXn8qAhstDZOekQBw3JVcV80XodYN5TgdkWiIIOt6vBtRFT6VVvTnB_20GEewTfQxMBdPm8p9QinOnji47AJw9mKoYa_Wg4rj4suDazgMm_cBO_QALyW4B18Q0M7zWIyEAvUlGktHKCdxAyGy-mgmo_AJyZZmHLkikGgOj7y9siJr5K-3TKHfHOUnzmTo2Ig_h78lIVOT_NnJ1w4DT2E_8yjqctRcq9R_uXN0LszlKxp1u0pii_z4UXoIPobAWwbCzm1Q13V3A6LkYCx5DH8j8EVeEYW2lYaP7C7nnnXMrkboqIHIi_qB16KOHQNbSIZMvHCRRJcATNbTQ_OT-XYoj8HWYBX_RqxVUSxtBxi4l2EsVju10=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.561,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

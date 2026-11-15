@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Enmarbra reservoir, in megalitres?\n\nSOURCES:\n\n[S-779d]\nField note. Checked the signage and the paperwork for the Enmarbra reservoir; the licensed storage capacity is listed as 453 megalitres.\n[end S-779d]\n\n[S-3e89]\nNotice to operators: the licensed storage capacity for the Enmarbra reservoir is 453 megalitres. Please plan accordingly.\n[end S-3e89]\n\n[S-e706]\nMaintenance log. The spillway gates at the Enmarbra reservoir were serviced during the dry season and the access track was regraded.\n[end S-e706]\n\n[S-108e]\nSummary entry. Enmarbra reservoir. Licensed storage capacity: 525 megalitres.\n[end S-108e]\n\n[S-9aa6]\nBriefing extract. According to our records, the licensed storage capacity of the Enmarbra reservoir stands at 453 megalitres.\n[end S-9aa6]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 881,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 455,
+  "output_tokens": 46,
+  "cost": 5.659e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_mlpNPDX7YQqlqFhRQ0GRI0ddL0x341DkYlEIRH3vUK6MbxlcKb1jsSuwfyIxpnWz74N92A3RGPzOw_rRimx8ypL3pSdjlSM_qxuDRtU2AW5YUpayHtqSohuXLDeEsI7Ysk3bAnVktzOSNFNdoE8_C0i9p-Dhig1c-EHVQB1VuSD_Oi4iKYr7RWgED0wPHFbwygQXtPFz9FjWNhVJsKTQZdE-8tPsBMZBk8aeuEn01Gz1rX53y4WK2GupVE66dqeSsM63NtDlDQQ5iBch5GfQ1e5086lPe0vGcJQpDELJvHbZq7JZFd27FdJwdX3olvxRVZDC7m83uycI3tJhgGU0pf2QXOca08QCCSA_xh23yrJnyO5U5ujFRa0vBsT3b57u7WIW6BYm_pmRgJb9_pniPBkay0xVtbDrq-NPmkKrk-JdiI6CHTSIDTjEEEbmZt5CzL0EQ10E6Eff2qLjUUjNqU2JOF-EtN5zsTj21IGiHe4l4TMOJyBhlWKeyfz_bZ9jBV6tCBUBROwqVnO1JNZif6wmUxw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.721,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 453, \"sources\": [\"S-779d\", \"S-3e89\", \"S-9aa6\"]}\n```"
+ }
+}

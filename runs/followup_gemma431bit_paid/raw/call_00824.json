@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many minutes are there in a full day?\n\nSOURCES:\n\n[S-17bf]\nReference entry. A full day has 1440 minutes.\n[end S-17bf]\n\n[S-9b23]\nQuick facts. A full day has 1656 minutes.\n[end S-9b23]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-17bf\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9b23\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 824,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 392,
+  "output_tokens": 31,
+  "cost": 4.582e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AMeCtDwoic_ZLA0xCD1CgmaXu5poCbMXWAxBXzaeenyZPg-ThmhmgWlxdJ7F-PITuKiiDwA49WJUFk0VJhPlODmiqqrMgvoRZ96ugrIxX5NydSKovZBhxkcrIAoJi3YHOTHRqL2gays2F88WUbxy9rgdSf01AVQNea1VfA3aZhEvPUKYsn81GEjnkuNFqVMNW9ogLmTQTmYTLm9MPthkE_MVsQcuYhaYuaQgdN-CbsJ5mZwdsvbbh5TPodJMS1hT4yQSUwGEfqah58g_THIRL3AV139JUiMcICF2lskus_GXiowuLZ-MUsFgVeNhD3To59XNh1rLMxIvAAww9Ufvn1vIW0cGVGjhBBgSWru5liMNTe_1wR6fzgueJoSMooYsx9jmmd8bZTMID9wq1ZtkDQ7ZEJ8NHmNaAqJ-QIPlFaqIhLLYyK2IGg222TLJhTPxqUKWMNIUSroetgSZXYzLhoKxC5nLEdBvTJz_iZVXRp80hk7uMybbrBor5cKxglgBCkiVkDZCLCVQICyEcUXix81SQ68=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.738,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 1440, \"sources\": [\"S-17bf\"]}\n```"
+ }
+}

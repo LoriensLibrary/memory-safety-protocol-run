@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Omeix reservoir, in megalitres?\n\nSOURCES:\n\n[S-8672]\nBriefing extract. According to our records, the licensed storage capacity of the Omeix reservoir stands at 821 megalitres.\n[end S-8672]\n\n[S-b2c9]\nNotice to operators: the licensed storage capacity for the Omeix reservoir is 636 megalitres. Please plan accordingly.\n[end S-b2c9]\n\n[S-fb2e]\nSummary entry. Omeix reservoir. Licensed storage capacity: 821 megalitres.\n[end S-fb2e]\n\n[S-3e62]\nInspection summary. The Omeix reservoir has a licensed storage capacity of 821 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-3e62]\n\n[S-7ad7]\nVisitor note. The Omeix reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-7ad7]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 321,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 450,
+  "output_tokens": 46,
+  "cost": 5.614e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_y2vzf8NDT-4LuE2L1r8RumZ155J-YKivHmIzk9ZU99nhKddN0dgzoDTd9oWgBZJeYz_TJg46NULygqRSirO4P3t4aZNAEzx3-PBAm62EQJRUyQoy3UZP42OZv2N7LQ2rDdImx34AOYp6DNvmEoCAs2LEScgs645LV4KqZUbNTTyOKovmrHqtMU9R_NDs9XnaeemuoUPetY7BTWmIDWtVsDMkl5KdPmBfR0I-zBjzMX29qdRhcM2lqLPxbQtLShelTbog_W9wQe2gacJa0SILlALcbzxLorhO_LErmdXoQJsfDl30spSkXWr3akHcK7-5YisvRCXJp2XmRDSVKuyTDMPCRGDSVjBJpInGr4WlUZrN7A4GN2Do6gaVbSPxO0smsUKUSqEWtV9Nr2NLiJBmooH8j8zL6_m9N2C2OM9mynvNtqd32aIVRu6co5V4zLX30dNTVFZUfbRk8dAf-Qlewa9DSW-oUD3PmZlxHqTovMcYBC1HkSYhqLV_pSRyVH3M0-A0_aq7K9fuGTLHy4TgHWQA3nw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.65,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 821, \"sources\": [\"S-8672\", \"S-fb2e\", \"S-3e62\"]}\n```"
+ }
+}

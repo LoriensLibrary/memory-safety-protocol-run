@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Kapelro clinic, in beds?\n\nSOURCES:\n\n[S-fd0a]\nCommunity note. The Kapelro clinic runs a volunteer programme and hosts an annual open day.\n[end S-fd0a]\n\n[S-d130]\nCommunity bulletin: residents are reminded that the Kapelro clinic has a licensed bed count of 177 beds.\n[end S-d130]\n\n[S-3459]\nSummary entry. Kapelro clinic. Licensed bed count: 128 beds.\n[end S-3459]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-fd0a\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d130\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3459\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 637,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 494,
+  "output_tokens": 31,
+  "cost": 5.5e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ng3UTLV7ZXnujo6gkgCmUPvWJb5Ez0zi4sxII4rqzHi6hiInx0NBh7ifjayDapHf8RIOtCb19ci99f6vkiKHm56p74oyUU_in6erICw5SevFQTzz2ZlZ-wXTbkXe8v0KXfbc8lT83QstiAn9QEI_xkk-ZoaeMjy-ZpEoOZykk5AbvMsnrviQUGjqB8qoaqqSJ8p4sjpHF8F5QxFikGcp8k6k4bwA_-QIPz3PTY4H_V-PduUu-VYqal8fwnmO08rb24pYg5IVge8Ki0gNriON1pkX4rheX3w8BNvN6WUYzLrJzmpf7FUD0CxVdpl6JKiIAmDBIM0P6k6wdKwPABjLGhmOETc8HS1agsw_zDqnivb8BZNtBEE80vmduKhWNMAwMudOOVG2qVI5rhHPW5WPhhmgtxp9jFedeJUERullzXjadt43x6j3bIHGY7QMJBs18dd7L3TRI22i58fhXcJxhViJky7T_G4Vf6fY1EXn0_fTjLFGW12OlGlITgSyxfZ52zd5VTrTgdbBW0ySJ_2tghKVsgA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.051,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 177, \"sources\": [\"S-d130\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Sendularo bridge, in tonnes?\n\nSOURCES:\n\n[S-3be8]\nNotice to operators: the posted load limit for the Sendularo bridge is 28 tonnes. Please plan accordingly.\n[end S-3be8]\n\n[S-33f4]\nBriefing extract. According to our records, the posted load limit of the Sendularo bridge stands at 37 tonnes.\n[end S-33f4]\n\n[S-9d93]\nMaintenance log. The Sendularo bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-9d93]\n\n[S-37e7]\nField note. Checked the signage and the paperwork for the Sendularo bridge; the posted load limit is listed as 37 tonnes.\n[end S-37e7]\n\n[S-5b20]\nSummary entry. Sendularo bridge. Posted load limit: 37 tonnes.\n[end S-5b20]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 251,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 438,
+  "output_tokens": 46,
+  "cost": 5.506e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7MbzDMvhDYu7JXfQTM2ehMHIHagBQ2KxJtNqqYBRdQTudRp3KTjob8CwR2UaZEDnoZjKYoAkc0lVPt6SRpaf_tS_ZKqDc6Y91DLiAqKgtBE7KUji6spqbOJeOeYczsQz8BJnQRVc4tJhFpu00qy96gd0S52u3wpxmVQ7vt8nRjQy50q67R39DMZg-Vq43vwhy6KQBkNQw9w67lp1cnZygUunAdZ2HsACi0xVJat-SYuXMSoco0k60RRYZOTCrFxc3H1qzQffTK0Y9pNkTE2I8BhFrUXHkfq2F3DkEmQwSuCtPjq7lNiS0eWn_gXfyOBX_3f-pRjOKmXw4yKAul1hDEeo95XvSOXbbn4ORuD0QhXDXyMrFn7SfU7MNYximKVHNUdVyIh1TflhgRCAe1OOUiCgPWjYusjivPWfO6qkTTDszcs-oO6QVn46zHKyZPwLJJroAUrJYn9z04MlLnPVGBa1002zVnPjXbLoxGGCRtgZrFINiB242tqhVHFz4yOJZeNb7to0gOe-Gsk94LGlz8Pzxac=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.06,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 37, \"sources\": [\"S-33f4\", \"S-37e7\", \"S-5b20\"]}\n```"
+ }
+}

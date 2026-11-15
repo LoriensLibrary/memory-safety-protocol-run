@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Limquaned bridge, in tonnes?\n\nSOURCES:\n\n[S-5f54]\nCommunity bulletin: residents are reminded that the Limquaned bridge has a posted load limit of 12 tonnes.\n[end S-5f54]\n\n[S-2eb5]\nMaintenance log. The Limquaned bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-2eb5]\n\n[S-a3d7]\nInspection summary. The Limquaned bridge has a posted load limit of 12 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-a3d7]\n\n[S-df99]\nSummary entry. Limquaned bridge. Posted load limit: 12 tonnes.\n[end S-df99]\n\n[S-63b5]\nBriefing extract. According to our records, the posted load limit of the Limquaned bridge stands at 16 tonnes.\n[end S-63b5]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1030,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 437,
+  "output_tokens": 45,
+  "cost": 5.463e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_XVH8muB8-nnp4-qIcCGOfgWgbP9mSrc9VINXm4ZgSdtFwhcLt0aSXUsOelOACZlA8hJ9-9I0OyY6ycT-fGBqOFHUjoYRwQeLLuw6xdJLnu6tR046OkVJd1QHAJWpaDQgBsLeQPKEh1VCtQGHzdF5Hp-Kc87oQpXwy1JiszX5dW47J7gcgtFXT11T0KYS06Db7fGREsBkPEMbwggVe4lSYviC_VmU4JRuXucpC2GXobiNf7Pm8k2EJLjaD2yHDDyGaSrSLkgreM6PqJTIhIGjQjNnx4OoqQXuGwkIhdIeWiYwfy9FbxP2h6PeWgwCXnmWqniLRXRicKW2UiXnYklgGa6shLt951NJQBsO9XLZyqhTZ4LljDetoLYzMkFe7DrkEGxYoY8Y9h4JPh0Wg5MiHPlggec_KyV9t8eDDItuRbZffRp_1c3b7-rlQoLBgpOGxaxpBSMFSsSwoUKdVdJbzUkaSMKNzZYiLl-WruRLzLzn6fuLU1zoA2IciSfKkn4dbZrDNqmWYglW_Ra5MXb-AhFq9vE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.873,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 12, \"sources\": [\"S-5f54\", \"S-a3d7\", \"S-df99\"]}\n```"
+ }
+}

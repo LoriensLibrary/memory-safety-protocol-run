@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Olgri clinic, in beds?\n\nSOURCES:\n\n[S-18a4]\nSummary entry. Olgri clinic. Licensed bed count: 39 beds.\n[end S-18a4]\n\n[S-860f]\nBriefing extract. According to our records, the licensed bed count of the Olgri clinic stands at 39 beds.\n[end S-860f]\n\n[S-37d4]\nNotice to operators: the licensed bed count for the Olgri clinic is 35 beds. Please plan accordingly.\n[end S-37d4]\n\n[S-5099]\nCommunity note. The Olgri clinic runs a volunteer programme and hosts an annual open day.\n[end S-5099]\n\n[S-bcb1]\nField note. Checked the signage and the paperwork for the Olgri clinic; the licensed bed count is listed as 39 beds.\n[end S-bcb1]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 682,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 431,
+  "output_tokens": 44,
+  "cost": 5.375e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_JwuUk4b46I5JhDurqlreDZfTNEpTkvgmUrfRZIxo9wQsF8zbxOEmlus_eKQDfCQ-lUnH3pVLBtcynxnlokyZ0Ps3MDKI9jOS4Lc1UJGypTNwsMVfNOWDhYCcmJ4PclqNKW7E2pvF17ZBe0qx8BXSJMZmjSDSAKYHd6PZJ7W8X2GDoFQj_ZcK0nr8S1S17pmPUQUJdsloJLn9Bm9-7A2wl12X6Z_mqp77nl6h54g_7J9yYcx_XuCuwoWdP8t808mo9kynUUyu3rSC8vvjhuNtWARweR3D2BMpMaVyyfqpE3UVbehP5lUcvFTzkqvuJL0l0ka_fLFOzW9TflY7Oub60sWLUCyKN0oilf_KXcRkjGb225avTZmma22EFqWt_95JkVleUsAd2gkYkVrVBwUSG7X1c5RWMhg6zVSvY5_5fPkI0GRKHcMedgsudtIwbtPS-0cMQhx1MFWRsEHyuCDjhJ4UBqJoNMWruwh-6pNO8UZEtshewizONmEx5AsHRXtdtCR1pvCNrQ0lYvKt623tHOI0DwI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.565,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 39, \"sources\": [\"S-18a4\", \"S-860f\", \"S-bcb1\"]}\n```"
+ }
+}

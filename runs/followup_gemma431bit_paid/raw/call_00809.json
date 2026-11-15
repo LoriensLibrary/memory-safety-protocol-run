@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Eshmar reservoir, in megalitres?\n\nSOURCES:\n\n[S-7b64]\nVisitor note. The Eshmar reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-7b64]\n\n[S-dbdb]\nField note. Checked the signage and the paperwork for the Eshmar reservoir; the licensed storage capacity is listed as 1017 megalitres.\n[end S-dbdb]\n\n[S-6d65]\nSummary entry. Eshmar reservoir. Licensed storage capacity: 836 megalitres.\n[end S-6d65]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-7b64\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-dbdb\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6d65\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 809,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 502,
+  "output_tokens": 23,
+  "cost": 5.3e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_1fCw00aQR7pYyppMlkTJqic5sJlVVT8WV-n9GdSS-O0loWkeu0pemlzsOpwSk-t2tloy71elW7Fuvl-GbY5tXScJ_Gs5sMRXO1ZHuecy4BrrbPme3UFYcHcTR3klX9-N3raORaaXfKMTBu2xvv3zR_9CXkZO6Rr-81eyrViXGd2PBjp_8tm--JaTl6SmMFryj2y5oomiK9cps9TIidi3n3ulLG7w1uezHoiFnxLfL1jXukXu77-5yTQL6cicICEVkGWiwkG3ACWicli8c81oQX46teo3ge3tOa6YChmpGIUa2jEhUssRGGkqRyrVRCpATeyhQr3t2w-sT6AUymOM9Z8e6gtcoHB5NRBTfC-q_w_QNywntmq0ZR_k20isDEU-IGURyVzDNOi3EEEKQKR2p7gc6Ky88t_QinNwNQ4aUEVTui7ApQXg3Hr76EWlXpB2R6izHLBRwL-41pGZh2R0YNY1PqPj282Hjv6CFIk3GXb6KBMZdt4UxfDzXqOaSgCtt54pxyvvNeHnDrO8VjqxxjTqRHE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.04,
+  "text": "```json\n{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Tinfen clinic, in beds?\n\nSOURCES:\n\n[S-255f]\nInspection summary. The Tinfen clinic has a licensed bed count of 248 beds. The figure was recorded during the most recent scheduled review.\n[end S-255f]\n\n[S-b935]\nFacilities note. The Tinfen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-b935]\n\n[S-a226]\nField note. Checked the signage and the paperwork for the Tinfen clinic; the licensed bed count is listed as 248 beds.\n[end S-a226]\n\n[S-0fe7]\nBriefing extract. According to our records, the licensed bed count of the Tinfen clinic stands at 248 beds.\n[end S-0fe7]\n\n[S-94ae]\nSummary entry. Tinfen clinic. Licensed bed count: 208 beds.\n[end S-94ae]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1094,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 433,
+  "output_tokens": 17,
+  "cost": 4.475e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_TWV2LjNOK8jUBr90JkOzwyBFzrlGOYmZ4t4UJG-5LS8s4Qecxh6-XQkSJd57W3D13vjVqK7Eg67UfRNc6spwPHIMzB_eVKZO8gXSEmAisM5N1nkykTrrI0YciTP9LZQbmVQ8NdJ5IRA0EJz7vSk3MLxUeOlA_--Duk-0SliNVEeszke5uzVL9e51TO9SgeIVHlIoyWMR_BcNBMEbKoZ4EpmKsh8m_C8ZnmLwVOfLTzFY51Zqgfk8kfFYAkaDmC3TktWo8wqnAAFP5ENWU936mDYOf9U6ffJsceHJuop_kp3pFgLndgkTR7PNlfVc9X8I3xJk0FO6qwrB7Grxzcxg0w2FLlv42kxG57Al8rKLboEWS3OeKc2D77lIqm6OFVSt1QdZn28JrZU0njdsQARw-c8oO8D3a-D1dV_2STLhY8rK-kMrHcGXhTZmOaZTXrooO7HFyP2HUBcsSNbjWSAoaBHQIxAb2KGwbczfLQ5ymosH1KK9HZ8ggEzRBvWr1nNBzyoEF3Q4hRa8HDIRPJNyYzVM9BM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.424,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

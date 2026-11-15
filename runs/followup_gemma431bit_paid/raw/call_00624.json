@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. Your first reply must be {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Dulmar clinic, in beds?\n\nSOURCES:\n\n[S-7776]\nInspection summary. The Dulmar clinic has a licensed bed count of 131 beds. The figure was recorded during the most recent scheduled review.\n[end S-7776]\n\n[S-541b]\nCommunity note. The Dulmar clinic runs a volunteer programme and hosts an annual open day.\n[end S-541b]\n\n[S-3f96]\nField note. Checked the signage and the paperwork for the Dulmar clinic; the licensed bed count is listed as 131 beds.\n[end S-3f96]\n\n[S-37b2]\nSummary entry. Dulmar clinic. Licensed bed count: 153 beds.\n[end S-37b2]\n\n[S-6683]\nCommunity bulletin: residents are reminded that the Dulmar clinic has a licensed bed count of 131 beds.\n[end S-6683]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 624,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 425,
+  "output_tokens": 17,
+  "cost": 4.403e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_jg6Tf68Rq5cTgkfCBI6R40Bw9o3eM7GNii26xPhEwkCrk0x9S_VLkvUUmYZWbLBkqwkEYheZ9LFZHSamN2iP6HgSAwicSSzLn2SQM6Jqvy-hje0jHczTw5eV5LSPieERkbifxMfl1jvgq4cMwrXKr6cVxKj0F1Xk-paQZfWzYLoH7_YxWARtyDgX2M8zkyFTFhTHkyrk_u-yz8CeAJPrGRJuxTyFlwtSsBaaWpc-kmIUNEuH-khDAgJ04aiXgdzFB0bLIGYBruAPOJ9Gul41Bm9MFz93kLKl9RaORnOQOaSEX0gQtsodt4_o0BquULNu1eJWJEt5Qu1lnCak8iDsNmpukwYOpxGUdCaQvyh5O0quEFfGHFY6erulFn48S9VmyVclt9xmvWGtORxc0htDZUr52pb5SVC6mm0r5OjoZ7EQ7W99_G3tWZNRMB89H5CRk2HsNDZzQC-xiU-Ub8F7Ck-U9QhL--26M8V7UtERvJdmIqifg90jQ4A1UOg15Ti69GUDEhb3_Gp5xB6mcRakt1Sv6vs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.184,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

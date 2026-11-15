@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many ounces are there in an avoirdupois pound?\n\nSOURCES:\n\n[S-e6da]\nQuick facts. An avoirdupois pound has 18 ounces.\n[end S-e6da]\n\n[S-bbfd]\nReference entry. An avoirdupois pound has 16 ounces.\n[end S-bbfd]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-e6da\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-bbfd\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1185,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 391,
+  "output_tokens": 29,
+  "cost": 4.505e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_azvEQaZSWUYiJMLVswLPWV9Lit_EmKBveAZOI_3UWpFhVz6-aZNeW4EY6G4a6pjitNquqmPbVgsg0q_xiII0vuKp-_ijYK2Kx4VttvcZN8K7GYrgtcuA0NwiV5vd_WalerHy2s1Rwt8Lx17QRe1z8V5KYXhMHo7nwVMWe5TLrVBbXxdtApMnlHg0vQpFZk83diQ1mzOkqqCP9TS_WL7-qyKm0DnC_SBjmvLr-0LaBH3BGIaIUJFgRAfvSjh22TzSaaMOH_LfYfqBegEawVIem0-LeOP5T--57nMyn5SYw_-ozXQBGJZCZIO_dOu38zepzgYIi5RTj9w7T3C6QL2YJNNpipS5XKM_LwUeqDUquwewBSpHHPw--U0GIIJo8SVBncUs3pyi0zg05x591orfAaohDnwP4oU9PlRvptT8ooYt_bdKDELx1FkKPGrBfQPrXAAGzc5XFbn9hsPX536FHyAxscNi2fQBqlVWcot2aiH7eqE5Xy1SFNcP1arkFmoHkGJNRundfsGCjRT-BNkg71mg7oA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.57,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 18, \"sources\": [\"S-e6da\"]}\n```"
+ }
+}

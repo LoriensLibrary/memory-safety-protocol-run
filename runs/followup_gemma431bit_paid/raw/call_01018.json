@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Eshythome clinic, in beds?\n\nSOURCES:\n\n[S-e21e]\nInspection summary. The Eshythome clinic has a licensed bed count of 121 beds. The figure was recorded during the most recent scheduled review.\n[end S-e21e]\n\n[S-41fe]\nNotice to operators: the licensed bed count for the Eshythome clinic is 181 beds. Please plan accordingly.\n[end S-41fe]\n\n[S-2f6e]\nFacilities note. The Eshythome clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-2f6e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1018,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 357,
+  "output_tokens": 18,
+  "cost": 3.825e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AkfqO79pjREGLYZTho2ObkPQqDlI67hP0My4FkVkt8PjuXKleYt_VVcRXoNPokvRDDzs3NXiL2fldGQJjfBBNmejgPf33zvdoPU4vAmEK4szMpH7DuBD8OB8Y8ibe2743is1y4TiHlFE6idF3NLY1T6K5NosneUo02GKWmzzSzN_7jILYTj0_yijovLF3zDoyW_gxZ2yeDhVmJte6QM1J64IyVsVsLXlu-V7ylb6Xk0cAvO-7HKy7iImVMeHLYkmK-bbnt2V6RFdxZ0aWA35hKpC2ZrjwNh8Bzw03kMyf3hQIwDCq82a2eC9yze7nW4BdG9zLaEMOx6RGO8QNzMCYfjSbssfl43pXOq8dfg1hzgSaDXq9KBGoeR6gq1dutsTWUWpHuDzbjQ3zwdkjDugJu7zQrIg3m6XgUzhhItSe6kyTPegsmdzss2cpJ9W_hVpaJjIF1WuvKfwwnomkGa7JPyMVEGDYoqhZtO0eeT6Pmb9i8U7JM8D4THF_Ej1_y5vmm3kSFcRItev0OpVsx1eBkGViiI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.412,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many keys does a standard modern piano have?\n\nSOURCES:\n\n[S-a838]\nReference entry. A standard modern piano has 75 keys.\n[end S-a838]\n\n[S-7143]\nQuick facts. A standard modern piano has 88 keys.\n[end S-7143]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-a838\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7143\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 427,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 393,
+  "output_tokens": 30,
+  "cost": 4.557e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_xFMbb35U9k3udlnh5QsyxggRvcTgQT6j6OjP57pZ27SnN6s0BZvrK4TqXzBU8BAMAHDipOU0ZiqguoM1-ix8CwSqwR89M0NUcQ57i2jd4I_kNaRTDjZGGjImwdP8V-znR0wFKEXV30zBmBmLIsZuA1xx6BBCui-eGlAD9oluNU9DVtiL1BgedRoR5_LA0XoSXYHrVYfck2CjcHLX9O2aifYLEeOIrqtg9X1p0fzzcCCHeZCUIshqgV-CgYmokTe0kuLeVHh7h40AlKJAFo0n8hoV_tVseboEvoTN9zFF2gWyWNYcfZa22g4zaTGagSoTXyDmszmGnd4AXTP7DR2h7bXgcCvL-PBHdVtjUxiM6OgdYDJg_0qxJH7W8ny9VmyTexn3RkeOHwVFcqWP_C2LuhnCGyewXZHl8OqrGXp-NFEJ_Hri265JrLE-CQdl6ROTty-guyckDYa3daSoK374Kl5Gj4KeS5Zw8k7uwv5YIxlsZZsZ5CM31trodEFUa7oy66skM8ubLiNKo5A9Id-GO9jngMA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.462,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 88, \"sources\": [\"S-7143\"]}\n```"
+ }
+}

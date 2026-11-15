@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: How many rings are there on the Olympic flag?\n\nSOURCES:\n\n[S-603e]\nQuick facts. The Olympic flag has 6 rings.\n[end S-603e]\n\n[S-9cdf]\nReference entry. The Olympic flag has 5 rings.\n[end S-9cdf]\n\nPLATFORM PROVENANCE:\nSource S-603e claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-9cdf claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1252,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 359,
+  "output_tokens": 27,
+  "cost": 4.149e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_P1xObKwTW7s_KZWyZyQDsKCAy3nGr46ycozVtUj5KZHVym_HUdMpXb_0diwM0mqPe87vk6jUJInmyWqeHk1Ptl78j13ABdv8mo2lqrXBX4eckMI0ALahCiuv0Zhise93tNZaS0t3qLyUVY6o2iCFKG8jxNQyWn6Gqo8AKoICwllzlwr8OgxIBd7ROs1FnFaWlELb6XuJFEyyTXsoTTJWDCxIFr4sPNwJP9uL3hCfdbw662QWxwaJ_LkFo8loxr-BsIS6BLFduApXsAobuELeK0DYTGkWpdlpHGCcNJzBCapGPGcQZEAfuGOFl-0q0Q62x_qrglatq9DarK9qkoZFKsKfaN_zMtoce57OffciyyZwX5owqXb6SxCTXbfYSCy41Eneu-fBio27lWml6An-JPmUpVEFbdwHx_U_vsejqIqXcAnqFumE3hPvmTDvkA-Ip3RZ44-1vOUv6d14Bvf4BJez_dTa1qzQvRM1vUci8Nu6qn7Y3fT5yJSdCavk8u4lHuBPfVSTpTUV49wHmrHSHyCjziw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.527,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 5, \"sources\": [\"S-9cdf\"]}\n```"
+ }
+}

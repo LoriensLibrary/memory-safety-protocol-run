@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Kaustyth clinic, in beds?\n\nSOURCES:\n\n[S-1dac]\nCommunity note. The Kaustyth clinic runs a volunteer programme and hosts an annual open day.\n[end S-1dac]\n\n[S-edb2]\nInspection summary. The Kaustyth clinic has a licensed bed count of 68 beds. The figure was recorded during the most recent scheduled review.\n[end S-edb2]\n\n[S-54a9]\nCommunity bulletin: residents are reminded that the Kaustyth clinic has a licensed bed count of 68 beds.\n[end S-54a9]\n\n[S-4abb]\nField note. Checked the signage and the paperwork for the Kaustyth clinic; the licensed bed count is listed as 92 beds.\n[end S-4abb]\n\n[S-9a1e]\nBriefing extract. According to our records, the licensed bed count of the Kaustyth clinic stands at 68 beds.\n[end S-9a1e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 77,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 437,
+  "output_tokens": 45,
+  "cost": 5.463e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_mok1smYFNU-AKQL0uwPHJ9stFFjpT8Zd9qEEGbs-8JbdIlHvtcJtnUI5gPqU8oilNHRPVPlOBLwUTWaDdNfPJ87ka2BsqhW3pKYTP8weldraVUGZFz8WkW4V6UeuoQXbAwXpMUqQbfXRY7fk12yHWeVYgeAI13SpA2-EghQ_1C_V7ZAufy5-XxSMNGL-MFfITzpfMdDdUHnrT-mZ9S6Fl_P53Bl1nxVvJcDyp6u7STyk-iW7B0c4fWoIn5hYjjn38ciHABu0YMljx-MtQEKNgVN2sEDede-5ZjA_2GCQSep_ggxUFxupc14P1hiWQ2pnVw9kTys_p3Dz2JjZItbxM9G0l1fsx_lwNm9gbek5DNYV_LJSI0tKQJ0eCvDehWpob3e-qWtcZuP5YOajgf-IOsxhPcxrwQXpuUjRT6arnvp3IEuIBb_kJ3ZzNm4okO2SoECIWBA0xNcQEy0hlHOJDCS2NBuCgfVDjg2TaIra_KBWQwis6Pa6d08BejpMFMiDIcJh_-J3N3oDSUCurVYbM7XHFbI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.683,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 68, \"sources\": [\"S-edb2\", \"S-54a9\", \"S-9a1e\"]}\n```"
+ }
+}

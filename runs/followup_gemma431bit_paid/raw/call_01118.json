@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Griarobra bridge, in tonnes?\n\nSOURCES:\n\n[S-ec64]\nBriefing extract. According to our records, the posted load limit of the Griarobra bridge stands at 96 tonnes.\n[end S-ec64]\n\n[S-3b0d]\nSummary entry. Griarobra bridge. Posted load limit: 96 tonnes.\n[end S-3b0d]\n\n[S-a737]\nMaintenance log. The Griarobra bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-a737]\n\n[S-b4a0]\nField note. Checked the signage and the paperwork for the Griarobra bridge; the posted load limit is listed as 73 tonnes.\n[end S-b4a0]\n\n[S-05b5]\nNotice to operators: the posted load limit for the Griarobra bridge is 96 tonnes. Please plan accordingly.\n[end S-05b5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ec64\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3b0d\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ec64\"}\n{\"source\": \"S-a737\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b4a0\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-05b5\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-ec64\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1118,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 686,
+  "output_tokens": 45,
+  "cost": 7.704e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_opx9K_EC2hlhDPcPY0pVWkENB7kQO3ltlbEkdlDzSeDZhZrGf_RxEnVWuGroLKKGHqOwPg4zgdSEOuWMbItfd-0rrrVtess0ae1C0yPU9Ug4uJn2dK-q35_3EfyAUvl9FVqp2cnamNcfulSILjTYcsEbfa3dJ-EJf29AUQeBP_DPQIRibT_9QriPG6e7FcGvpghJt9MvOyp-V3rfe7zEFky3cZC7tlirh-R0hNWZ34pr2O4wJjSZ4kuZBbAU1wF4T_SBsE_TTa2vN9VZ34w-BSsGqb21Saz-EMTwqs3Eebiekr_mKu0fMC5m5KbvAdAZZkC2wSN3-vU93C7TRJzEzn8tw80ntvNp1yaDkJL13H0E1ESswZRa8YfAXPsBmynn1QymrPCnH7kSFNgNyOlG_Z4ciDrNpW8cw-rSR5LgQ2TsRDTJ7xlXv4EN1DpY9wfefoN5m8_4f4fgN_gXrmNJiBM4WYBlmWw6I552F8XD_ibkdQeIdZXr_Fxg8F9wXbY4RnCWtPIM9bm-QBjts599nBIe5Hc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.753,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 96, \"sources\": [\"S-ec64\", \"S-3b0d\", \"S-05b5\"]}\n```"
+ }
+}

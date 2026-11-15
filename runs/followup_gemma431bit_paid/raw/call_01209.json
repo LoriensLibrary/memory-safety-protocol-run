@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Tindul clinic, in beds?\n\nSOURCES:\n\n[S-0525]\nCommunity bulletin: residents are reminded that the Tindul clinic has a licensed bed count of 28 beds.\n[end S-0525]\n\n[S-4b58]\nNotice to operators: the licensed bed count for the Tindul clinic is 28 beds. Please plan accordingly.\n[end S-4b58]\n\n[S-8536]\nCommunity note. The Tindul clinic runs a volunteer programme and hosts an annual open day.\n[end S-8536]\n\n[S-4e1a]\nSummary entry. Tindul clinic. Licensed bed count: 34 beds.\n[end S-4e1a]\n\n[S-de5e]\nInspection summary. The Tindul clinic has a licensed bed count of 28 beds. The figure was recorded during the most recent scheduled review.\n[end S-de5e]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-0525\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-de5e\"}\n{\"source\": \"S-4b58\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-de5e\"}\n{\"source\": \"S-8536\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4e1a\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-de5e\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1209,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 674,
+  "output_tokens": 45,
+  "cost": 7.596e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_FPcBdnfVu6RXzujrpicLlC6yWwUDW3dMO9RXcxN6xd6sJVSkOpfTpuhtNZL1bj4T7njw_bEfuD0KqjnOH_efRVJZmLkhfMMtwaAr-0rb8WOtCDSRdkeHdNzikpakFIJAxqfEw76DbdC-oMTYWwckpunwfOlKr0x3psXAvSIPMIGwWm9gv3KB7aUSNM6qIiygRO4ejvCGASE5HsRde9IP7f1xLnHmHx-LQMTSqMOC94M8FKweNlxfhbHiVxvn0JZZX3XDhpOuD4lqqhIp0ikD297Macvl0sOw9ri4y9rH34Ln4OUJfL4EIUY0T6IZJBvBbemRMYBrJmD4q2b5wCwFqfoArJOuBFdDsNiWN1oZTp4Ithp9nfVRxkoqjneCzF-fOF-Ryrmfx0sKlEvseQEVoaKj_MYzGU-tFCIHhd78S65UN7BSHh0D1SWRhU6g7xjsVrocSJxIlYMrgCrADcgrIL91mYWYHLJpq9NpguQWpEI3uqEFIh0SctbVnKz9jy93mSLBqDCFcBl7fVt2n46P7ZyhSjc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.831,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 28, \"sources\": [\"S-0525\", \"S-4b58\", \"S-de5e\"]}\n```"
+ }
+}

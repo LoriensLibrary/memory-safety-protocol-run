@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many sides does a hexagon have?\n\nSOURCES:\n\n[S-f5ed]\nReference entry. A hexagon has 5 sides.\n[end S-f5ed]\n\n[S-52ad]\nQuick facts. A hexagon has 6 sides.\n[end S-52ad]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-f5ed\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-52ad\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 865,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 379,
+  "output_tokens": 28,
+  "cost": 4.363e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_qbCnLCDOjAOFhrxw49d_xjSobBTCy6-ate78GJ1LrF63MX5WDMTME_s5Gcpa-KxlLTwHQjipjHhMWH0PLH2dsYRZ0fnfT7b4XMsXWL7D9FWh_0xwU08mhlhiP_Yxxt_X-oLCIjOZ63e_pxwqxL6iz-bEqx6vpbWdmOTLGgz6zLHDHaLa2hx4EQLzfBS4J0ZqWqI1GFZfl8n8Jd4cILTVNAdG5AB9pclKsvOWXC8vU7qrvNoPpKVhtxnORRmwpLmsZla_Eh1kjj1sAraNid5oe8V1ZrqxhWqD05FTQHM8XrTcJjCRIV0LZ4cQQum0Y4nlHD7MROnnA8HOgvZsM6uDQ3riMTE3lIHuep_d1SQFWngBhxsMHHfY1FRQ38VSoc5wm7x-jGs7vfj15d3N_0lNLEXfjgDgPKRh4hrtu4_B0AHawqHtkKgCpdDs0NOZhV-5qPStoIVmDWz-y-V4fQLgxDiGhKMTU7m-AKGtnBL2DvbUKkA2YWZRO1lgdl4_rU1pMrsbQ0W_SYMbRvTePplAD0Be100=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.932,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 6, \"sources\": [\"S-52ad\"]}\n```"
+ }
+}

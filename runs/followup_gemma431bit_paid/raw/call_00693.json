@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Peldultha reservoir, in megalitres?\n\nSOURCES:\n\n[S-96d5]\nVisitor note. The Peldultha reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-96d5]\n\n[S-ebae]\nField note. Checked the signage and the paperwork for the Peldultha reservoir; the licensed storage capacity is listed as 519 megalitres.\n[end S-ebae]\n\n[S-2bdc]\nInspection summary. The Peldultha reservoir has a licensed storage capacity of 519 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-2bdc]\n\n[S-0c93]\nBriefing extract. According to our records, the licensed storage capacity of the Peldultha reservoir stands at 607 megalitres.\n[end S-0c93]\n\n[S-b359]\nCommunity bulletin: residents are reminded that the Peldultha reservoir has a licensed storage capacity of 519 megalitres.\n[end S-b359]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 693,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 464,
+  "output_tokens": 39,
+  "cost": 5.502e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WNfPesR_crpj9ZwRw4sb5wQfKhx2Y1dhp1anSmWBbWPiCs8fhCQCm77CJvL5ajJWG8QMjdT1c4zT3OkfsgPpZJi4zjCspkfREf4hIY3-8AihjYEKlY8WNYd904ThB-xjksb8u_m-mo6jDeHeORtlHdatKy9TpmqqIlP0KxQXU5MsslrnfdCXhDNfBKa7Ns9wv3x6LzrEfTBbXVrej42FYr7FmexpaufUEVv8TJtJoCK3bJ2jRM6rKx0mdLRxwzhUuDTwuMTjDSw0h6wG2hbajh3c_mKfVRIaiEaLfV1XmBEOPuc1uKdZt4BOSQ_RFA8Cliu67OROAZyCDOGcbe33vSk-u7Z8Lo_1Ju2REw5tPqd6gmGxYVwI7uqkikhL5JBdbsKscw86j0EgrRXZj2u5IHCwh0qeUDgjTFB-jwVUfwLOPXIZsWvI6x8EhvwwiIg1Q6yIHbU84k8J1sCML4KYSqBL3HJQ3jqS28gSa8JEZshUZ3A11x95PdwRSyb_0dg4owLACmRjwiMTiZ-G8t_NeK8eZ3k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.677,
+  "text": "{\"decision\": \"answer\", \"answer\": 519, \"sources\": [\"S-ebae\", \"S-2bdc\", \"S-b359\"]}"
+ }
+}

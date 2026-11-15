@@ -59,6 +59,78 @@ def order_effect(c, variant="V3", arm="env_json"):
     return {("plant listed first" if k == "bad" else "true source listed first"): v for k, v in out.items()}
 
 
+def _first(it):
+    return "plant listed first" if next(s["role"] for s in it["sources"] if s["role"] in ("true", "bad")) == "bad" else "true source listed first"
+
+
+def lookup_conditional(c):
+    """Record-on-request arm: outcomes split by whether the model asked."""
+    by = {it["tid"]: it for it in c["inst"]}
+    out = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
+    for (tid, arm), r in c["rows"].items():
+        if arm == "lookup" and r["status"] == "complete":
+            out[VAR[by[tid]["variant"]]]["asked" if r["lookup_taken"] else "did not ask"][r["outcome"]] += 1
+    return {v: {k: dict(cn) for k, cn in d.items()} for v, d in out.items()}
+
+
+def copies_cited(c):
+    """When a model adopted a copied plant, how many of the three copies did it list as support?"""
+    by = {it["tid"]: it for it in c["inst"]}
+    out = collections.defaultdict(collections.Counter)
+    for (tid, arm), r in c["rows"].items():
+        it = by[tid]
+        if it["variant"] in ("V2", "V7") and arm != "rule" and r["status"] == "complete" and r.get("outcome") == "adopted_bad":
+            role = {s["id"]: s["role"] for s in it["sources"]}
+            out[f"{VAR[it['variant']]} | {ARM[arm]}"][f"cited {sum(role[s] == 'bad' for s in r['sources'])} of the 3 copies"] += 1
+    return {k: dict(v) for k, v in out.items()}
+
+
+def one_vs_one(c):
+    """No record, one source against one (single plant, retraction, verified but wrong)."""
+    by = {it["tid"]: it for it in c["inst"]}
+    cn = collections.Counter(r.get("outcome") or r["status"] for (tid, arm), r in c["rows"].items() if arm == "bare" and by[tid]["variant"] in ("V1", "V4", "V5"))
+    return dict(cn, registered=sum(1 for it in c["inst"] if it["variant"] in ("V1", "V4", "V5")))
+
+
+def order_effects(c):
+    by = {it["tid"]: it for it in c["inst"]}
+    out = {}
+    for v, arm in (("V3", "bare"), ("V3", "env_json"), ("V3", "env_prose"), ("V7", "env_json"), ("V7", "bare")):
+        d = collections.defaultdict(lambda: [0, 0])
+        for (tid, a), r in c["rows"].items():
+            if a == arm and by[tid]["variant"] == v:
+                d[_first(by[tid])][1] += 1; d[_first(by[tid])][0] += r["status"] == "complete" and r.get("outcome") == "adopted_bad"
+        out[f"{VAR[v]} | {ARM[arm]}"] = dict(d)
+    return out
+
+
+def reasoning(c):
+    import statistics
+    g = collections.defaultdict(list)
+    for (tid, arm), r in c["rows"].items():
+        if arm != "rule" and r["status"] == "complete" and r.get("calls") == 1:
+            g[(ARM[arm], "conflict" if r["variant"] in ("V1", "V2", "V3", "V4", "V5", "V7") else "clean")].append((r.get("reasoning_tokens") or 0, r["output_tokens"]))
+    return {f"{a} | {k}": dict(n=len(v), median_reasoning_tokens=statistics.median(x[0] for x in v), median_output_tokens=statistics.median(x[1] for x in v)) for (a, k), v in sorted(g.items())}
+
+
+def example_item(c, tid="V3-000"):
+    it = next(i for i in c["inst"] if i["tid"] == tid)
+    return dict(question=it["question"], sources=items.source_section(it), json_record=items.prov_json(it), sentence_record=items.prov_prose(it),
+                true_value=it["truth"], planted_value=it["bad"], roles={s["id"]: s["role"] for s in it["sources"]})
+
+
+def followups():
+    out = {}
+    for d in sorted(os.listdir(os.path.join(ROOT, "runs"))):
+        p = os.path.join(ROOT, "runs", d, "results.json")
+        if d.startswith("followup_") and d.endswith("_paid") and os.path.exists(p):
+            r = json.load(open(p, encoding="utf-8"))
+            ex = [json.loads(ln) for ln in open(os.path.join(ROOT, "runs", d, "EXECUTION.jsonl"), encoding="utf-8") if ln.strip()]
+            r["counted_spend"] = round(ex[-1]["spend"], 4); r["executions"] = len(ex)
+            out[r["model"]] = r
+    return out
+
+
 def md(cohorts):
     L = []
     for c in cohorts:
@@ -118,7 +190,11 @@ def main(names):
     numbers = {c["frz"]["model"]: dict(integrity=integrity(c), tokens=per_arm_tokens(c), order_effect_forged_json=order_effect(c),
                                        order_effect_forged_bare=order_effect(c, "V3", "bare"),
                                        table={f"{v}|{a}": dict(t) for (v, a), t in c["table"].items()}, claims=c["claims"],
-                                       sensitivity=c["sens"] and {k: c["sens"][k] for k in ("recovered", "still_invalid", "recovered_outcomes", "claims")}) for c in cohorts}
+                                       sensitivity=c["sens"] and {k: c["sens"][k] for k in ("recovered", "still_invalid", "recovered_outcomes", "claims")},
+                                       lookup_conditional=lookup_conditional(c), copies_cited=copies_cited(c), one_vs_one_no_record=one_vs_one(c),
+                                       order_effects=order_effects(c), reasoning=reasoning(c)) for c in cohorts}
+    numbers["_example_item"] = example_item(cohorts[0])
+    numbers["_followups"] = followups()
     json.dump(numbers, open(os.path.join(OUT, "numbers.json"), "w", encoding="utf-8"), indent=1)
     figure(cohorts, os.path.join(OUT, "fig1_outcomes.png"))
     print("wrote", OUT)

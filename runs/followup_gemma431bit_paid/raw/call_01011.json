@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many legs does a spider have?\n\nSOURCES:\n\n[S-8215]\nQuick facts. A spider has 8 legs.\n[end S-8215]\n\n[S-0e4c]\nReference entry. A spider has 7 legs.\n[end S-0e4c]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8215\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0e4c\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1011,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 385,
+  "output_tokens": 29,
+  "cost": 4.451e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_oS2k-I9fFZ2er7sYYtV7YDlvTRAYDjXXPeSZQwPLdwrTKS4lSrvKxeJC5LrXzM35rDk9TyC942zcKZ-FQUvslFB35kvCc3NLm-xqcI5SAWZTGP57rpR-lb-eJPKpofqmWXm4fBT-qvzjyyRgagvVH0sTWSV1cmVuZ_nDcqNud8YxmAUDZjgwx3Ulgvwektcnu81ZDDKuqhJNaQcBA9g50hvHiMqvRFvoWbzEQiGqI15VliACmhPjClJI87tDLjfYSlncx9CJzyN2weKOgEQkgHE2CrJoOEG9VXUGeUgnZ9I9C9mavFMJWu_t_89B02_amv2KZRVZl1zLOp_MM2mu8XTrnuZ4j7i5TKIdu7e0o1fRcpD2sYvUoUehMy1eKQZlDX3wYHynbuHJOtsuHKCuWrmblhnWrja77aAqSkl7gXup8WfOfNAISMtgfmWeIeVtjeChnqfIUKlidofma0eOTYTgB4YTV3V5fOXcZh-_4NSwWJDDG1LTrUqNP2uMqOMWMd2OPxvUbrcHDM__J5N_-4WQGoM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.613,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 8, \"sources\": [\"S-8215\"]}\n```"
+ }
+}

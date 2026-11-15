@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Ustolned clinic, in beds?\n\nSOURCES:\n\n[S-1d67]\nNotice to operators: the licensed bed count for the Ustolned clinic is 41 beds. Please plan accordingly.\n[end S-1d67]\n\n[S-0f33]\nField note. Checked the signage and the paperwork for the Ustolned clinic; the licensed bed count is listed as 41 beds.\n[end S-0f33]\n\n[S-d78b]\nSummary entry. Ustolned clinic. Licensed bed count: 56 beds.\n[end S-d78b]\n\n[S-57c0]\nFacilities note. The Ustolned clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-57c0]\n\n[S-6ce3]\nBriefing extract. According to our records, the licensed bed count of the Ustolned clinic stands at 41 beds.\n[end S-6ce3]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-1d67\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-6ce3\"}\n{\"source\": \"S-0f33\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-6ce3\"}\n{\"source\": \"S-d78b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-57c0\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6ce3\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 927,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 684,
+  "output_tokens": 45,
+  "cost": 7.686e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Bh2EtRUHuHupPwF89EPDuewpGFIsNktdg5fc-W7rgIfTsE8ZvAfnBVzZ7lswI4-b2OCI4RHVtfzm2BwFtynWdM_QoWM5I4Idj54u64Lm9U4lQO6sBG2jcXe1i7t-G4TtvxEbAE-MnC5oM9Z2d_3NFBJvBOEr7TsDRstiIMRJMHIOR1yyt3CDWm49dtXUACNWy1slmJfo-QbIKWVAzU8v-RiJCfxx3HIYlL6a9fK4Blpg33hCEPwyO8MKz8lY3Yic1opIY41X5GPO0h6gfJOFC0DGW3l6w3LqcBepe6KIi7YQCfqB0ZUtmdjm4fzRwgRnK6-k06B7m75RlBNvdXA1xC_y1ZzmF3Hq2FlVPHpIIj2JMYac_eIxkS80KrSMVIW43t81ItUM2MzvkZhlTOHM6uedPhv7Bl7vBlV8bSbWJsamT1RCYhN8Z3sjfkbfBJSb2pdpZ3jVyD-tD41PdsETmcVRQD-0tDuFUriaSQ7boXbGeY2ZT1p6kX7ihx4oW5P7izqR1iogT9DnAvULNGBTAWaS_MY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.764,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 41, \"sources\": [\"S-1d67\", \"S-0f33\", \"S-6ce3\"]}\n```"
+ }
+}

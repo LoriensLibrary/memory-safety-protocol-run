@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ensenome clinic, in beds?\n\nSOURCES:\n\n[S-f7a1]\nFacilities note. The Ensenome clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-f7a1]\n\n[S-2953]\nNotice to operators: the licensed bed count for the Ensenome clinic is 25 beds. Please plan accordingly.\n[end S-2953]\n\n[S-cdac]\nSummary entry. Ensenome clinic. Licensed bed count: 21 beds.\n[end S-cdac]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1400,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 340,
+  "output_tokens": 18,
+  "cost": 3.672e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_b6jlJLJJNsl75d6kJ0yHW0FvcTAl4LxTebFFWrLeRsq_KvRD-n-Fm3so_n2McvpP7BjszlcJzyBT83DZiybTY-9jhDdJRciCcJtPkSrfWHwMXy85SP4Pq8nrDcVjU4aajKBLDCFXYMiMnw68w0CaIvBfKIJZfqk1ezJg8KUIngrMTY1_iV3yuruB61vPY5hXMii5jeHwhgvpf2v5ivQuxKjLCN7GtzS4WhKPcK3JSuchZGMHkR-kLafFGl2x-2MdzshUw9LFwDxpt-SdaxuudXFEFm5mW3dcjOrrYJ8qzs1RliDZOdAG-Z6ZVcCrRLflIhufRuuEqAv9G7os7nLWbsMaQApkqiVEKEACD1Auj2Rqp1aj6uNzMIgtAvzFIrz62SZCO7B1rmjlXc8WzpZivTC-Q6bCxIvQoZ41z2ZsVdEshPw-mN2v30DPhqMCe68KSjkImaO5BOlwwu-Unwp0QwgMPLRDuC3FdFdhCyfkVLOetiTuD4L50PPkFdach4O9_Nwg0Ycxy5LK5Fj3_ATJ_diKReI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.212,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

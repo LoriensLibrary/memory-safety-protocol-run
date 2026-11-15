@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Eshtinka clinic, in beds?\n\nSOURCES:\n\n[S-2185]\nCommunity bulletin: residents are reminded that the Eshtinka clinic has a licensed bed count of 285 beds.\n[end S-2185]\n\n[S-513a]\nInspection summary. The Eshtinka clinic has a licensed bed count of 226 beds. The figure was recorded during the most recent scheduled review.\n[end S-513a]\n\n[S-d715]\nFacilities note. The Eshtinka clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-d715]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 638,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 358,
+  "output_tokens": 23,
+  "cost": 4.004e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_NWuB5SwOUnjx8EZGJ6UxYKEoyF2Fu7atdUMSz3qOs3Jq9g8DWt-EQ1OgIg3rTay1wsmKltg7f6FcnGYsOmQk7VN7yoywYxw6bdIjfk-Gzib2CcTMPyzjrcDrbr5nlpR3WPXAuvbcp-k_YaCMCvXXFzcaUIK4EmLLjRtlJD0CdoNmURA7q9iIkkJ2EHnqHL_U6et5oRkWvPu5zeSW0ac1cha-1i_YjNuZviZFHbDqdEZzebwqPFvhKZXMn6QFYaldtTzfNCGZ3KTZ7DD00ThNrhD5v8zQvaqG8FrQiv4CtIvhs6JKitDPSjZSqxVRTo1WhFioKX0TYcXtsNA0O-Nu7u_dfUoHi7sSW0LOwn-GoBS15bRuHgh9eCNfoPsEPhIMaxT5P5PnY1797RlHOHFZMFo4FleHZEN1BgqasxEsVL_kAc9sm1L-XF4IaCFrlNB1HfwAmRCyM71US5PqEnPX6Cx9VlEWHxR7JW9tFgjT4g6vNgBjNs9mAbtQTkmKmDHgEbh5vJAfJmRwDgr6dYsPwnbzOz8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.972,
+  "text": "```json\n{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}\n```"
+ }
+}

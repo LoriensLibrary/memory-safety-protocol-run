@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Neddulro bridge, in tonnes?\n\nSOURCES:\n\n[S-35a9]\nBriefing extract. According to our records, the posted load limit of the Neddulro bridge stands at 55 tonnes.\n[end S-35a9]\n\n[S-4722]\nSummary entry. Neddulro bridge. Posted load limit: 45 tonnes.\n[end S-4722]\n\n[S-611c]\nNotice to operators: the posted load limit for the Neddulro bridge is 55 tonnes. Please plan accordingly.\n[end S-611c]\n\n[S-7e34]\nCommunity bulletin: residents are reminded that the Neddulro bridge has a posted load limit of 55 tonnes.\n[end S-7e34]\n\n[S-f91f]\nMaintenance log. The Neddulro bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-f91f]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-35a9\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-611c\"}\n{\"source\": \"S-4722\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-611c\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7e34\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-611c\"}\n{\"source\": \"S-f91f\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 26,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 686,
+  "output_tokens": 46,
+  "cost": 7.738e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ynzasSHgMgsAnk2jMPDo1Y6W8jI_Uk4eU66jsLMxbH85gFSGtUBIUmOH13T5lYIisY9OY2dGCY1jWI9KICP5OA7kw4kJDBRGbB1mTP-tjj7A6bifTLoLXsuscloNEd03c9hBQBO3MTOUs6VHZUG2hxsTeW8doqQAw5lQVpraU4RX_mSXYVjVqDL6aRAlAruBsosREr_HPssh_Rw6mm3hpuQtC74emCz_FAagnBp9FCYLt3tt9W6kfpA7dXTQVkPca3Sj5YqwKG3FsC4ifn-GbBWLkZwwfQWpKbccvtCtNnehNVtRMu5mK-0UZFnyRWb3zSbzgbTgrQN10lnjz8Jz9x-Q3WdYEnBhtOGDyQB0gjERYyUPCXohnoNDh6kXjCAw8vXbrpR78Mw9GpwdF4KNWil9EGu8GI3ZZvgPIWq5L8T7V34-X6Rpa0jfCZxcERgo6PqI07VflJr8DC7kIMjt04ptaSKO41fiBbiha-rMrYTDW7FfNPzd9D8kxM1zincac9pzis9NA1R2cZdPTddFyQD8ejo=",
+  "waits_429": 0,
+  "retries_5xx": 1,
+  "elapsed_s": 66.088,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 55, \"sources\": [\"S-35a9\", \"S-611c\", \"S-7e34\"]}\n```"
+ }
+}

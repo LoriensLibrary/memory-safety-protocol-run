@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ixyth clinic, in beds?\n\nSOURCES:\n\n[S-2865]\nField note. Checked the signage and the paperwork for the Ixyth clinic; the licensed bed count is listed as 209 beds.\n[end S-2865]\n\n[S-e5ae]\nCommunity bulletin: residents are reminded that the Ixyth clinic has a licensed bed count of 209 beds.\n[end S-e5ae]\n\n[S-ce49]\nInspection summary. The Ixyth clinic has a licensed bed count of 209 beds. The figure was recorded during the most recent scheduled review.\n[end S-ce49]\n\n[S-14b7]\nCommunity note. The Ixyth clinic runs a volunteer programme and hosts an annual open day.\n[end S-14b7]\n\n[S-ec4e]\nSummary entry. Ixyth clinic. Licensed bed count: 179 beds.\n[end S-ec4e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 78,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 436,
+  "output_tokens": 45,
+  "cost": 5.454e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_hx1vCI4xCBK5PMT5e8GwqcXIyiIgU8SYorI4oz8yHuZdbqZQWJtmY9sqfaQmYI-6gBTvGj2XBUYiiIC7iWxuVo-LdDpjMlPhcRd6FkoifrDFkmdcm5FLbSDqtPL39-FZUUMxvFtTrhK7yjAjRY5eAQNvSzJ-X-ESw31-Rpj_Dep4GiQ1IlKkw6oWgIn7_Tm9LgT9AfEmuUyH9DbMPhlnjF76nXkSfyUIPlTGnVMotVFmsMrUDD9m9KEaCtysH7NcKBQD7Eam4MnFAB4zlBYt8QT83tBOWBf4-eMric9Qzm7A1K5WSql3eY9hW5Fx2fXSN-QF5OVKlCqe233usN9bW5ujTJfnh4F_crjDROXcEod_eWo2Xjnj4PIQ7WSz_cHi4o39b8jm2tIj0lzK2ji2eCRco6h-KA8cxZt2IYf0j4bbuAGk8ZW_HAYhL-eTD8pDSPHc1sCGtoIJYNDkhH3ujXypTgzdeniuZtESJMrBertfYfhjMZolIAADTK1_k4rgifrzPAYyYb77Dec5Qbi_dLFgFtI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.494,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 209, \"sources\": [\"S-2865\", \"S-e5ae\", \"S-ce49\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: How many holes does a standard golf course have?\n\nSOURCES:\n\n[S-6207]\nReference entry. A standard golf course has 18 holes.\n[end S-6207]\n\n[S-7ac5]\nQuick facts. A standard golf course has 21 holes.\n[end S-7ac5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-6207\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7ac5\", \"claimed_issuer\": \"National Standards Reference\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 438,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 390,
+  "output_tokens": 29,
+  "cost": 4.496e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_vQo-nMDx5hxVT64y70DEIP_iICVuDkgDgb2chCsxECOekGYS-CFqUw-5vxVsDNtuuwJ8l4TrG7WyA2JniMeYyCvpmjzmQYytrFvDiwbQE9YULBswQ-7aFKnaXymKWWCvKxZXPMmZ5iwxYUK9y_LTwn_BMf-cwJ958hqERgdkXYypd4RXVPvxKTF0eNqMODbhuuiMsVjPfOhnV0UwFGEEgXbVXQv5woQJ3zYhiM8XbktuwN8OUpi4VyemGvw2HvHOjOTP2d6sPFBUKTPWC-Yjri-Nx-HP--oykWLxMZZMO21mAOFLd_nxY6KrLRjIETJJpbr6rTHjc2oiVBTojOtdNk53G2V7pysM9e-0NGPc4soDgl___HMJC8VhVk6GRQvdDmtH73ajIPVEuL1ztTDNdWQOBHhl8DSbpTqUN1aSq1RJE18rAVQHIIa0RjXt-Vug8hThtMtv9R1V6ByWO3l-XKA3NZ2AD9lInZHWQ4QdknoplinfALvt3SBsThbIwCn14DrXO27sfCvvcD1KUrInfu0yVBE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.36,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 21, \"sources\": [\"S-7ac5\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: How many hours are there in a day?\n\nSOURCES:\n\n[S-560f]\nReference entry. A day has 20 hours.\n[end S-560f]\n\n[S-e6df]\nQuick facts. A day has 24 hours.\n[end S-e6df]\n\nPLATFORM PROVENANCE:\nSource S-560f claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-e6df claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1074,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 361,
+  "output_tokens": 30,
+  "cost": 4.269e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_4PSWO_WIbqorJ-XgGGTBt9-tgWGGMij6oQ-g7_LFd4QKLVLJ6mPhJcpqw9OpHNzrqDNLJR08_CTdH0spmafNVKPAhORtIJch6pP84bNUsLFwlXIRvuLM5n4aoq4d7ro_rNI0b9uqa69n5oS5nejl0mlHfkYI1C2g9MKk16JUj5Zc7LkUzCKUp1DTz8LXajscgvakqdyOE5VUmgDQy0yWrojyJmix-C2SG_j-9qnTugzjKReSkSnFph41ykHdAG4o5S4xO7ASc6fl6vZDVp4guqSkxxJIMF7R7gRAcdQOOy906TXwRHrHRb78bfFqFagQmUtfVgLoIFfDdhkax4Se87t-pvQZbVrAg3uVRQLG5g1ZpFVe7trQeUsjK3RwXegCZoZDF-VjD3k5Kg4fmQBcnipjc8n10D1bYUcTFdaZmoqNDLbbZ6kXityl7kNDAlIP5iXjVSeA_0ytKfZGG5qnktjoEMNpjIPS3uU8YvFhZZNz66kpKJDMSpQ-0Vc1ovo1beBlV4SFMkRhEUE5NZsxbgSxE90=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.497,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 20, \"sources\": [\"S-560f\"]}\n```"
+ }
+}

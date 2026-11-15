@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Velgripel bridge, in tonnes?\n\nSOURCES:\n\n[S-46b4]\nNotice to operators: the posted load limit for the Velgripel bridge is 82 tonnes. Please plan accordingly.\n[end S-46b4]\n\n[S-688a]\nBriefing extract. According to our records, the posted load limit of the Velgripel bridge stands at 65 tonnes.\n[end S-688a]\n\n[S-610d]\nMaintenance log. The Velgripel bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-610d]\n\n[S-0ab5]\nInspection summary. The Velgripel bridge has a posted load limit of 82 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-0ab5]\n\n[S-c5d9]\nSummary entry. Velgripel bridge. Posted load limit: 82 tonnes.\n[end S-c5d9]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-46b4\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-c5d9\"}\n{\"source\": \"S-688a\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-610d\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0ab5\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-c5d9\"}\n{\"source\": \"S-c5d9\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 15,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 690,
+  "output_tokens": 45,
+  "cost": 7.74e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_dBRmuB0AoBgBBMfFekEWjPCHb80zTfCMptYaMv5ideSnYjxASEuRyG2LBzpY6M7r9aJbMQVSoJwn8SAHcXZKQ_afVhpCHFykC67rZ0UX6Y-X09JRtQnQBgJ_8B-gHigTLzhfyhJ96Xcgt2WLUUbS9YoJA6C0O5GcUrT-JG-Ac11sHCdJ_UIk5on_7yZPiST3x_1l5QY6cA_jjCbaOi4B10ce1WPIV7_8kG0c03bYwGXlfkEmpENG44jl-hwKBejr65rKfS5q3rckv2nd9Eq9Zh5X3b7_paC_JDpOmTRNBcaTa7VRTTb37vkdlyP13l38YXxZ-0gSwKZqg313zfDQJ4I_6MLgGrkja-HQhAEJBX3mVZ1AfbNyTUrPSQCTlmtCm4l5MEu6zrDY1uJkUdpv13jThcTNi04ZRib7Qa254t4VRhCPACFzzbg3BPHOyOw6gA-j94um8PsWMvCi-NJ2hGEXYa921Bd2gDHLp5Q1t9_KamX5r7GQulVqjqjf-_edRC7ZVI7fy3O6WddwAgE4r85dGwc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.658,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 82, \"sources\": [\"S-46b4\", \"S-0ab5\", \"S-c5d9\"]}\n```"
+ }
+}

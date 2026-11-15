@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Kamaryth clinic, in beds?\n\nSOURCES:\n\n[S-4af7]\nCommunity note. The Kamaryth clinic runs a volunteer programme and hosts an annual open day.\n[end S-4af7]\n\n[S-5eb7]\nInspection summary. The Kamaryth clinic has a licensed bed count of 108 beds. The figure was recorded during the most recent scheduled review.\n[end S-5eb7]\n\n[S-0f9f]\nNotice to operators: the licensed bed count for the Kamaryth clinic is 83 beds. Please plan accordingly.\n[end S-0f9f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1317,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 351,
+  "output_tokens": 25,
+  "cost": 4.009e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Phai5aIpUgO3cG6_ldyMoYXT13u2wGTlo2NuZGsSZYwwsMeesO91TFoIAMZr0eOH9B7kmhn4XSdVyjTykEXdlprVqyTzCIOvuylnZ8miaXtWJ7XYfSMtxi_JU9vHvAHaZUw4JOvcWO64a05XOKB1YZNmfRVfx3stgKu-UMfzf73L4XqtC0Pi8TxABgIKho7W3ItxjT-u3fi39Ulr8ti_gEhnzC20A_LhN6vOe2NjiAgs11_XakIbyyoCwbOeFGQinHbUnh2xni2v7tG04AyhP6OSQCgK-MwZaBBBKmlue4roU3FwjmpQcjZDfPjKnmMI5qPivXvGtCaG7TZ8z_WOERy41VdYL5GfOl8OiOtRoMDnpUaDHe8wAQASZbhw_xhR_9753-OkYtGT5O8QGGJjy_qYhJM7KXXA3WWyuslQrS83xutTvTzP5saKl_Gdn4DsSjVxABi02LGoNViWCXbmPKMSkn3VN7lgWMBm5Tw33Fww3juLJMP8TPSchPk_wiv-aFGKMcP0sEw92RN2dlZldGJPOrc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.621,
+  "text": "{\"decision\": \"answer\", \"answer\": 108, \"sources\": [\"S-5eb7\"]}"
+ }
+}

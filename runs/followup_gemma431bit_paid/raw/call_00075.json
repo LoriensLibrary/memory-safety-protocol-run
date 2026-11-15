@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Gritin reservoir, in megalitres?\n\nSOURCES:\n\n[S-c419]\nField note. Checked the signage and the paperwork for the Gritin reservoir; the licensed storage capacity is listed as 688 megalitres.\n[end S-c419]\n\n[S-47ef]\nCommunity bulletin: residents are reminded that the Gritin reservoir has a licensed storage capacity of 688 megalitres.\n[end S-47ef]\n\n[S-4de3]\nMaintenance log. The spillway gates at the Gritin reservoir were serviced during the dry season and the access track was regraded.\n[end S-4de3]\n\n[S-7dd6]\nSummary entry. Gritin reservoir. Licensed storage capacity: 610 megalitres.\n[end S-7dd6]\n\n[S-836e]\nInspection summary. The Gritin reservoir has a licensed storage capacity of 688 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-836e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 75,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 448,
+  "output_tokens": 46,
+  "cost": 5.596e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_oYU_m9aJI-YvT7NluzsKPQyj8SU9GSjG-v4W9KtXGBekQEf8a7xIeAFsr5uFwmY8AKIqq2DPgFSBjcoN9kdeCdOOIdRasIHX13qphxVM3nzSMKRZFW2F8gHHOKD-bC4pSbjY-D8fRzh9MCraKhysNqleXf2iZI7Rfr326MVz6VXJ6TiK0V3ufYCCdLlkmpIKpQDrIZojszrRuIGgSTBeV2Zz0-FcGaiBg6w2oVqxaauHk5Sy8lDq5FUifoqGmr4j3u7n_pEN31OhD2-JUVo-wpbJrjdB4uBKFjKr808ANJ0lpWkvuVYDCKGLTHFR0Utn3qSJYWByi7nyID6-twSXf_O14RuWtkwBg4fZDGnPn4fygG8bsMrCJEFUyfZt5rvjvIzaCKd0puYEYcsWLkSDd3CgfiC7VU0ED-aRDOrHUMpCzMBmtL4E6syLnfp0KLztNeeIK2STttpn_j1xXw-hoUKCUZoMUUSxAzUMK0pan0dWCtEaDGnl_JVU-gMv4sCMgzqsGeBu_lEEI0RkS05Fo73QGvA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.943,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 688, \"sources\": [\"S-c419\", \"S-47ef\", \"S-836e\"]}\n```"
+ }
+}

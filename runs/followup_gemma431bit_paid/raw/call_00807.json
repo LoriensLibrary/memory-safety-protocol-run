@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Bratin bridge, in tonnes?\n\nSOURCES:\n\n[S-3290]\nCommunity bulletin: residents are reminded that the Bratin bridge has a posted load limit of 42 tonnes.\n[end S-3290]\n\n[S-eb20]\nField note. Checked the signage and the paperwork for the Bratin bridge; the posted load limit is listed as 54 tonnes.\n[end S-eb20]\n\n[S-a335]\nBriefing extract. According to our records, the posted load limit of the Bratin bridge stands at 54 tonnes.\n[end S-a335]\n\n[S-0bb7]\nSummary entry. Bratin bridge. Posted load limit: 54 tonnes.\n[end S-0bb7]\n\n[S-780e]\nLocal history note. The Bratin bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-780e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 807,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 427,
+  "output_tokens": 44,
+  "cost": 5.339e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_BQYBo56Gp3LnXltTRXFEXq9fhwIwUf9YbvwJG1OUmSXYuAkNDDPUK4ijYtJXY_zyf4HiByg-UIuLbuCNgqZJ2Pra2v0n7urh6eLqcFzQDrFPASw0sZHQNJMYBhz5Ep3JRrWuCePifl7_swL0iWubo62OJGdThg0_sQRQzaGt0WTylrOHUWJYtVsbeA7RK__s_97qtqPDjDwniYVNuvue81BOiKqzwlB7kr6o-kiL-nIZVvD1u7AAq2qg5WUmpPESXX2w7m4aM9Li1pozZxzePuegeyz3ViVF2tKizZufdsl9kyT4b4LFENLQ6NFloEhYOxgAZntdD7eiZFbq3P8QHVj6Hq7Dhqx95huiwnnjvGWzv1ou7ulO1xSqDBeNa2ngbh0KO3gHgOM9rht_U9AJIdyt8Tkc4tY-rOSblBUJp7thyyK2HZbeNARE_KWH38-YGsCaoA1y7LRq-bUFopydIW8MbUVFErm1gAW6HIZIGECWMe9jf1Z6tFlRgJ3py7jUw3l0xrx1-6dR7L46RyBdT4UYIAQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.887,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 54, \"sources\": [\"S-eb20\", \"S-a335\", \"S-0bb7\"]}\n```"
+ }
+}

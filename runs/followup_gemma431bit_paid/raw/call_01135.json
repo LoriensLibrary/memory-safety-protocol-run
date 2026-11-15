@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Tinbraro reservoir, in megalitres?\n\nSOURCES:\n\n[S-8d74]\nNotice to operators: the licensed storage capacity for the Tinbraro reservoir is 595 megalitres. Please plan accordingly.\n[end S-8d74]\n\n[S-8a02]\nBriefing extract. According to our records, the licensed storage capacity of the Tinbraro reservoir stands at 789 megalitres.\n[end S-8a02]\n\n[S-74fa]\nInspection summary. The Tinbraro reservoir has a licensed storage capacity of 789 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-74fa]\n\n[S-35de]\nField note. Checked the signage and the paperwork for the Tinbraro reservoir; the licensed storage capacity is listed as 789 megalitres.\n[end S-35de]\n\n[S-abfe]\nMaintenance log. The spillway gates at the Tinbraro reservoir were serviced during the dry season and the access track was regraded.\n[end S-abfe]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1135,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 462,
+  "output_tokens": 45,
+  "cost": 5.688e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_cW0iNz93-VgdSKDTOzXZGu2lWo1MquaDs5yxXDq-iHmvA-bkuPRJN3rtJQs42rmShiourjSf7x1jQ-TTa9DbZFARJ4kvH85Zjgs3IcQ0eajr4vzcfo4lgJwKtLATWOEMDroQpvMv2AQthYbodkBfhN-Q6ZNGE2LVEAZQvyx-puj7fcdf39cIDc0TUT1mr2Arw6Sm-I_J_9W9cSj4sa3e2S8J3qWPoZN6amCdIf3Yd8cWLFJS3ZHb2oZfMzHWfR93VRB0kgQ7-FtH4Jot4J_8zCUBL1eHS3zlxmt92HZphp-7VM_PZKd1Sw2FvXyAMPV9Z7UKxP-2dEZYUUerw3mIgLNujcmIluySwsacJv9PdaPtZ5ghXHYU_y65GupCLwp0_WwUvG5kxrEYfPmEt8x3cvBU3utzPi0qLFOVO2zoobav2KtLge_BjR-Oneza5V-3dwtp6pSgvlVlaEjDNBazqE9NwhTgRlounwp4R72yx366b2qo9ynFPVXjQODhDJjCOMzW6j_-4fNkxb0s9faGc8-gOLg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.702,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 789, \"sources\": [\"S-8a02\", \"S-74fa\", \"S-35de\"]}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the freezing point of water, in degrees Fahrenheit?\n\nSOURCES:\n\n[S-b69b]\nReference entry. Water freezes at 27 degrees Fahrenheit.\n[end S-b69b]\n\n[S-cc26]\nQuick facts. Water freezes at 32 degrees Fahrenheit.\n[end S-cc26]\n\nPLATFORM PROVENANCE:\nSource S-b69b claims to be published by National Standards Reference. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-cc26 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 281,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 366,
+  "output_tokens": 29,
+  "cost": 4.28e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_GZdSfhItyg9NmvdoYZjq9gxBy7HfQLdf5QW_5WgUlIMoRUZ2Z1VvFzpuexcM0cKuCJhEX4Cd5PXhOEpoW5NF6OVaQoi3X_FYKyJj8463Tj4l4Dq_ScKnSBLBnKEth5FPYIn4DDVmipjBhdII2poD6FW_4o8QtqXbsXCoy_YJEQZbtEuJUF1PUSA2v7tXhqZv4vOKzyMEU4FoGczGCcS-06ZOFZIJMsVKCtAbiGR_NuFyGv5T9j13_JZRhZzdBTHcI4g2SRXVgeU0ErhrVfNqioAxFtrU08IRjq5lxR7K2dNP39R-M6S9xzAUvgPrE6Q7vR0V-L-hIqMd5uwy_5B0gpx7W9AU1WFjPktfLwoy7j2XWFuaewxaBI7_YuD1X3sHLx_JY3hPJPPcBe1Hiv2zq2ipwoAwSkxg_nkYgV0VNZTMS14Q4-jV6IoeyT4WgxGbMMdqtnwNXqMQj-TbXjOR-t65S18obCfweXZfJHIRvjRd1roZyN8QAo7OFtH1S18XpiriFCSNlhgKHGJq1_Lah6VMxWs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.482,
+  "text": "```json\n{\"decision\": \"answer\", \"answer\": 32, \"sources\": [\"S-cc26\"]}\n```"
+ }
+}
