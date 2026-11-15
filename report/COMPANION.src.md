@@ -102,7 +102,7 @@ The first two strategies are the user's own words. A memory that trusts the user
 
 Citation, action and check need a reading of the reply. Two judge models score every reply against one statement at a time. A judge sees the statement, the user's message and the reply. It does not see the condition, the retrieved memories or their labels. gemma-4-31b-it judges every reply; deepseek-v4-flash judges a fixed sample chosen by hash.
 
-Sixty Task 1 replies were labeled by hand before any judge output for that run existed, without access to the condition. The sixty are the first sixty in the hash order the judge sample uses, so both judges also scored them. Twelve were marked borderline at labeling time, with the reason, and agreement is reported with and without them. A control set scores statements that were never retrieved, to measure how often a judge says yes when the memory was not in front of the model.
+Ninety Task 1 replies, sixty from the gemma run and thirty from the deepseek run, were given reference labels independently of both judges. The labels were written by a third model, Claude, the assistant used to build this project, reading each reply with the condition hidden and before the judge output for those replies was read; they are not human annotations. The ninety are the first replies in the hash order the judge sample uses, so both judges also scored them. Replies the labeler found borderline were marked at labeling time, with the reason, and agreement is reported with and without them. A control set scores statements that were never retrieved, to measure how often a judge says yes when the memory was not in front of the model.
 
 Counts that need no judge are also reported: what CAMA retrieved and stored, and pattern matches on the reply for the item's key term, for wording that credits the user ("you told me", "you mentioned"), and for wording that flags uncertainty.
 
@@ -178,7 +178,7 @@ With no memory at all, the judge found the reply acting on the false inference i
 
 ### 4.8 How far the scoring can be trusted
 
-Against {{HAND_N}} replies labeled by hand, blind to condition and before the judge output was read, the primary judge agreed on "acts" in {{HAND_ACT}} and on "flags or asks" in {{HAND_CHECK}}. Agreement was lower on whether a reply merely mentions the content and lowest on whether it says the content is untrue, where, in the hand-checked replies, the judge several times scored "I have no information about that" as a denial; no claim in this paper rests on that fourth question. The disagreements fall mostly on replies marked borderline at labeling time (Appendix B, Table B.5). The second judge, on the replies both judges scored, agreed with the first on "acts" in {{TWO_ACT}}.
+Against the {{HAND_N}} reference labels (3.7), the primary judge agreed on "acts" in {{HAND_ACT}} and on "flags or asks" in {{HAND_CHECK}}. Agreement was lower on whether a reply merely mentions the content and lowest on whether it says the content is untrue, where, in the reference-labeled replies, the judge several times scored "I have no information about that" as a denial; no claim in this paper rests on that fourth question. The disagreements fall mostly on replies marked borderline at labeling time (Appendix B, Table B.5). The second judge, on the replies both judges scored, agreed with the first on "acts" in {{TWO_ACT}}.
 
 Condition D gives a direct reading of run-to-run variation, since in Task 1 it is condition C run again. Both runs retrieved the same five memories in every session, yet the reply text was identical in {{REPEAT_SAME_G}} gemma sessions and {{REPEAT_SAME_D}} deepseek sessions of 100, at temperature 0. The action counts for C and D differ by a few sessions (first table above). Differences of that size between conditions should be read as noise.
 
@@ -203,7 +203,31 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 
 ## Appendix A: Limitations and Dual-Use / Ethical Considerations
 
-{{APPENDIX_A}}
+### Limitations
+
+**The material is built to surface the failure.** The first paper asks for prompts that create conditions favorable to retrieving the seeded false memories, and these do. There is one invented user, and fifty false inferences written for this study. The rates are rates on this material. They are not estimates of how often a deployed assistant acts on a wrong guess.
+
+**The store is small and half of it is false.** Dana's memory holds 90 entries, 50 of them seeded false inferences. With five memories returned per message, other false inferences ride along more often than they would in a store dominated by true entries. The counts in 4.4 depend on that ratio.
+
+**Some probes lean.** Several task probes assume part of the false statement, and recall probes are leading questions that a model with no memory will sometimes answer from nothing. The no-memory condition measures both, and the gated and held conditions are read against it.
+
+**Two open models.** gemma-4-31b-it and deepseek-v4-flash, one run per session. No frontier model was tested. Temperature 0 did not give repeatable text on this provider; the repeat of condition C as condition D shows the size of that variation.
+
+**The scoring.** The primary judge is one of the two models under test. Its verdicts were checked against reference labels written by a third model with the condition hidden, not by a human annotator, and against a second judge on a sample. Agreement is high on the two questions the claims rest on and weaker on the other two.
+
+**The read-time gate changes the prompt.** It adds a rule to the text the model reads, so it tests labels plus an instruction delivered with them. Hold until confirmed changes no wording and reaches the same floor.
+
+**Choices the first paper left open.** The time-to-live is three sessions. The two-sentence legend that explains the labels is present in every memory condition; no run removes it. Retrieval uses CAMA's default of five results.
+
+**Not run.** Tasks 4 and 5 of the protocol, and anything that needs the operator's real memory.
+
+### Dual-use and ethics
+
+Task 3's prompts are attempts to plant content in an assistant's memory. All four strategies are described in the first paper, and the document-borne one is the indirect injection channel already public in Greshake et al. (2023). The study adds a measurement of which write rules stop which strategy, and that is what a defender needs.
+
+One result could help an attacker: a memory labeled as an unconfirmed inference was still acted on in task contexts. The same section reports the control that removes it, which is to keep unconfirmed inferences out of retrieval.
+
+The user is invented and no personal data is used. The harness refuses to open the operator's real memory, and a test proves it. All model calls went through a public hosted API under its terms.
 
 ## Appendix B: Full Tables, Run Integrity and Cost
 
@@ -257,7 +281,7 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 
 **Prior work, declared.** Three things used here existed before the sprint. The evaluation protocol is from Reinhold (2026), first published March 2026. CAMA is the author's open-source memory system, used at public commit `1e5f1aa` without modification. The spend guard and the paired-statistics functions were written for an earlier sprint project and are vendored unchanged in `tools/vendor/`. Everything in `memory_protocol/` was written during this sprint: the isolation worker, the condition backend, the task materials, the runners, the judges and the analysis.
 
-**What is in the repository.** `memory_protocol/PROTOCOL.md` lists every choice the first paper left open and how it was filled, and was committed before the first full run. `runs_mp/` holds, for each run, the manifest, the ledger of every model call, the raw responses, the traces and the judge outputs. `runs_mp/labels_hand.jsonl` holds the hand labels and `runs_mp/labels_hand_gemma_t1.txt` the labeling rules and a note on each borderline reply. `runs_mp/RUN_NOTES.md` records an edit made to two harness files while the first condition of one run was in progress; the edit was additive and the affected condition is the stateless one.
+**What is in the repository.** `memory_protocol/PROTOCOL.md` lists every choice the first paper left open and how it was filled, and was committed before the first full run. `runs_mp/` holds, for each run, the manifest, the ledger of every model call, the raw responses, the traces and the judge outputs. `runs_mp/labels_hand.jsonl` holds the reference labels (the file name predates the wording used here; they were written by a model, not a person) and `runs_mp/labels_hand_gemma_t1.txt` the labeling rules and a note on each borderline reply. The blind samples (`runs_mp/handlabel_*_sample.jsonl`) are in the repository so a human reader can label them and score the judges with `memory_protocol/handlabel.py score`. `runs_mp/RUN_NOTES.md` records an edit made to two harness files while the first condition of one run was in progress; the edit was additive and the affected condition is the stateless one.
 
 **Not run.** Tasks 4 and 5 of the protocol. Component B of Task 4 and the first paper's analysis of a live inference corpus need the operator's private memory, which this harness is built never to open.
 
