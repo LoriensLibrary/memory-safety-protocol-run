@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Quaomeen bridge, in tonnes?\n\nSOURCES:\n\n[S-59bf]\nMaintenance log. The Quaomeen bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-59bf]\n\n[S-14a9]\nField note. Checked the signage and the paperwork for the Quaomeen bridge; the posted load limit is listed as 43 tonnes.\n[end S-14a9]\n\n[S-d4f0]\nNotice to operators: the posted load limit for the Quaomeen bridge is 43 tonnes. Please plan accordingly.\n[end S-d4f0]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2091,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 415,
+  "output_tokens": 60,
+  "cost": 2.708e-05,
+  "unit": "credits",
+  "reasoning_tokens": 27,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Wkg1h507MVzgY3QaUcK4OrS5SmD9ZRwHCbvZZ2XJ-Mz_7rVu7KF4TkI5QJPTj06v6qe2swZTALUMZH6nxxmn4Hba635O4XntfTJVY9sq0_doG8pPPrcG4GufZIl6hTOjldU0q4uPDNQ0NFVbVl6hT9UsP4jY8DYpR4SKICjOwh6tG4xHNvJl0YrX3seY9NsYjBv5nDN2JrTVQMbbQfROfKOCT4Ggxq3ExkYE1FMLrYbY4X0z5691aQ_HlbhzXxpNqN9sLjC001n2iEwLq3GjqPoCmgISE3bjnmVt0bSdl75C_AMuSvJV04iy60GTUMhVg_mNfVPmqJ3fCX96X1xamazhZGXshcDOPHK1AGd7UDw2cLX2ZjH3lv6weJ2kxA6mGi3fFLpQpv4BoZRj8xLNZSsYNXeaXYVi73ZDcaCLjxMOZjxWxjmB04girZqtCPXgtIMFPP7mxatlTTR7Ze_CjcIE4ajrRtoAd0zrtHw8BWKreHrRG5UMwyYOebQxO3Ii2CMuTqk5UM-ckNDcFcaUeibvECk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.423,
+  "text": "{\"decision\": \"answer\", \"answer\": 43, \"sources\": [\"S-14a9\", \"S-d4f0\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Kamarsen bridge, in tonnes?\n\nSOURCES:\n\n[S-3b14]\nMaintenance log. The Kamarsen bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-3b14]\n\n[S-5ede]\nNotice to operators: the posted load limit for the Kamarsen bridge is 33 tonnes. Please plan accordingly.\n[end S-5ede]\n\n[S-5c4b]\nInspection summary. The Kamarsen bridge has a posted load limit of 33 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-5c4b]\n\n[S-c97d]\nSummary entry. Kamarsen bridge. Posted load limit: 33 tonnes.\n[end S-c97d]\n\n[S-77ea]\nField note. Checked the signage and the paperwork for the Kamarsen bridge; the posted load limit is listed as 43 tonnes.\n[end S-77ea]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1029,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 481,
+  "output_tokens": 93,
+  "cost": 3.467e-05,
+  "unit": "credits",
+  "reasoning_tokens": 54,
+  "stop_reason": "end_turn",
+  "response_id": "resp_uXoHWWJa90p68hIJU34P3gYYrqJSVS36jznwOqlYZK0BFJwk3K5vli_tmGX-q-fjq4wKNSbBjEZpyrzEcOkXhPbCZdPiHl7hsf7oBDZF3g8Njr4UetwKT5adytHrlv_Mfyz3MSS5dAmAomtVELpn81SvHntJ9uedrsK2sNqlNHbHh0tYJSV_4aepp21P2yCrDxeXycECtGGdcAzKTAkCzTtTnrc4v_IdsQUuOSjRInFWP-zijFE2Q90BPUqLO-ppUuqCBw7SiSU5rqaec3KJp7vmVj7FQlojr0s5GpHqXGuXeqZiaDZnOOgLUUHuZZmwpJM2DebWU0fZj32-jei0-94WYhr8aBH-Qiya5XMPpa7VePrLVL24S2ou6CKDVxtjGD3L0-hO9JqwkQIQAYkIvUe2GhjDg3b6oDnzk-mcOUzIS91hssYGUW1__4zFuCsQjnNZxEBztEkmkYBF9yjKU4eacyfL2LwCHKsXF3AJLYJIUU_aa8ZQ3LZaYnBEOVNKhcFVkn086ogW4L5ICfAUbaIdipM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.437,
+  "text": " {\"decision\": \"answer\", \"answer\": 33, \"sources\": [\"S-5ede\", \"S-5c4b\", \"S-c97d\"]}"
+ }
+}

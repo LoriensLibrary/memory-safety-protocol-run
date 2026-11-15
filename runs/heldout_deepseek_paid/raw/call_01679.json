@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Rovor bridge, in tonnes?\n\nSOURCES:\n\n[S-5fc7]\nLocal history note. The Rovor bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-5fc7]\n\n[S-a032]\nField note. Checked the signage and the paperwork for the Rovor bridge; the posted load limit is listed as 49 tonnes.\n[end S-a032]\n\n[S-2b96]\nBriefing extract. According to our records, the posted load limit of the Rovor bridge stands at 39 tonnes.\n[end S-2b96]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1679,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 407,
+  "output_tokens": 69,
+  "cost": 2.797e-05,
+  "unit": "credits",
+  "reasoning_tokens": 49,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6wzFkJDLyvTP4_8-HRyIxrMwmyoMJI1_wuj36B6rhb_rGSNYD-zhu6D754P9BEcEOT42_lFOPH14cdNXq7FOgZ6zEs19Uw0aO2jpTn5tTL19OZ2yPMWEJd4E4Je_mUhV5xc_AfIAgAj-5qGLJNPx8rFxXnp5kuHXD0B6SxvtSXBJXtCI0MhWT_YXL0j8cVPRlmH7uF59xSTIyI-XeRYG2vCi7sMa7cK95HgEAHHiO4Vh7OrlgNV2vAJvqfFeTXZPcbYcZfbq01lhr0dku0IEkI5wYUEVxwVU6IUu43vP1jQHeQ-GQB7huIjt8W4NTcGkxXBd8m0w_sT97ihUL88qhjEdjMnbQZSldSnkC2cbsQKPSzm6ueq66kWJZ1NoZFM-g0lbCIWONwDB0vSCTL0oUav8NQgN1AdGodrcIT4tlZqd5wM8SeB9950jBT9PRnFf9znV0nuwDnSbu5g7_5EIfwGFGDHdqRP8qwOvVsjBkMSwUz5RrXG1Yq30RFw8q-pgi8VdFVGtykPkLep0IWm7ZZ7TTpM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.314,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

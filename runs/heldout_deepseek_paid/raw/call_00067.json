@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Kabraro reservoir, in megalitres?\n\nSOURCES:\n\n[S-4cc0]\nField note. Checked the signage and the paperwork for the Kabraro reservoir; the licensed storage capacity is listed as 356 megalitres.\n[end S-4cc0]\n\n[S-f18b]\nInspection summary. The Kabraro reservoir has a licensed storage capacity of 356 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-f18b]\n\n[S-1899]\nVisitor note. The Kabraro reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-1899]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 67,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 418,
+  "output_tokens": 74,
+  "cost": 2.917e-05,
+  "unit": "credits",
+  "reasoning_tokens": 42,
+  "stop_reason": "end_turn",
+  "response_id": "resp_RVs8qdBWt12BXwWUp_qNQf40mXz-TVzAVlroQ0shiMYNU4p6x0cPJTnx7o5a_TUT2d2rKqCJqfZfOUFdUdIkIe44uw-6jghg0Rk1mv0h5X-TrRKnbB-WWU9DxjpZIlg7NgMifOaA_UwtRQOJzFBgeQitTCrTRkyJE2z8KYDxuGbj41ZibGpaWF09jWT3Ojh_uIAiApadD-JSMa7I2wqKGudy4GJeUPdgVdrDr4cZjl56z61cw4dVpjCfKHI6jRyZ3YPTbjIaRb7x0fGYBmZX-Iepd-Pt7BQPW1Bkf5EcBqCmSWCe-Q89Fvc-ipVtkUQkTNMQw5kfiHufrGgicWJdLINeNWzA6NBG7D8D3bI58RA3TcM-RLTFwk0uVR0zQZbjn_BQD0kmHmEVhtMTf2LUjHfsL3SOxoGRJnsWUz1BIZ_D3vB99vgdq_NZUU6VdqjzjeIlm6W4n4wYooesa0gbE0IXM-3KMcIXcqk4TyP1u6R603qGVv4wMbsw6uqMpBPDAIL3x1vUaaQraIOE6q0n-amT45A=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.443,
+  "text": "{\"decision\": \"answer\", \"answer\": 356, \"sources\": [\"S-4cc0\", \"S-f18b\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Rofen clinic, in beds?\n\nSOURCES:\n\n[S-38da]\nCommunity note. The Rofen clinic runs a volunteer programme and hosts an annual open day.\n[end S-38da]\n\n[S-b571]\nCommunity bulletin: residents are reminded that the Rofen clinic has a licensed bed count of 80 beds.\n[end S-b571]\n\n[S-fed4]\nField note. Checked the signage and the paperwork for the Rofen clinic; the licensed bed count is listed as 80 beds.\n[end S-fed4]\n\n[S-c7e5]\nSummary entry. Rofen clinic. Licensed bed count: 109 beds.\n[end S-c7e5]\n\n[S-0b48]\nBriefing extract. According to our records, the licensed bed count of the Rofen clinic stands at 80 beds.\n[end S-0b48]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1517,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 456,
+  "output_tokens": 178,
+  "cost": 4.544e-05,
+  "unit": "credits",
+  "reasoning_tokens": 142,
+  "stop_reason": "end_turn",
+  "response_id": "resp_SaV1FlZQvxZkIB3ITCfaO6yRBj5vVc_XNd8xgqWbz9zO2a4VIPGC39DNFnmPKlciwZO3wOzZxzmVBhe-2D_BaBFgK-PLRGy6v1uVyGLhWnfqi8JY0C-c5ur0sAh3qpOFwbeF2FiQR8OPgzP6qS8i9G0Swqv-y4VL-i0TnG0wrb7OhbW0otG0DJadqyXAxizGaf69Yp36t0x3Q17bt3KdCMqQs30fF0-FRQN2OVoZ8R5OHNE58S6-69SmIP0go--1RlTL-9MXbE-vG4mTBvNBM8XlnmjTH3KoNAikL3XIUyxA3NHE5PvaysZRke9KX6WGVDG8HD2LqmfQ-8twuNG8jwJiwWTJtPKbRrICbCPVNX1HALS-524KvF6uZFDKc4xf8k88yfEuZkU97WrkZ1-HnGh65o3fnA5Pw87tiEk1dB_Z8ENIk-LyBi9Liotuw21lRJ-BEgfeujMWOJusRtaT8TSdJ1uPnHNVCHfp0d7g590LaMME-jYeUseY7TuiedMqqvd-ps_uw5a6iBwwfIJZ3yYoZGE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.533,
+  "text": "{\"decision\": \"answer\", \"answer\": 80, \"sources\": [\"S-b571\", \"S-fed4\", \"S-0b48\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Enaro clinic, in beds?\n\nSOURCES:\n\n[S-b4f7]\nFacilities note. The Enaro clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-b4f7]\n\n[S-64e8]\nCommunity bulletin: residents are reminded that the Enaro clinic has a licensed bed count of 123 beds.\n[end S-64e8]\n\n[S-c574]\nNotice to operators: the licensed bed count for the Enaro clinic is 123 beds. Please plan accordingly.\n[end S-c574]\n\n[S-ad90]\nInspection summary. The Enaro clinic has a licensed bed count of 123 beds. The figure was recorded during the most recent scheduled review.\n[end S-ad90]\n\n[S-4444]\nField note. Checked the signage and the paperwork for the Enaro clinic; the licensed bed count is listed as 176 beds.\n[end S-4444]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1977,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 472,
+  "output_tokens": 155,
+  "cost": 4.294e-05,
+  "unit": "credits",
+  "reasoning_tokens": 135,
+  "stop_reason": "end_turn",
+  "response_id": "resp_FPkDprU23uGXF95TgRK8Z_iLAE60sd-dRBetM3nHY6-ncG65Cn7NUw1aoi4U03IA-4omGahRtsjRz4zEULdmYUmwBRaj2hLMcgMXi2dKjOjl39-52IVb_BY4ltlXQYrpjpY90scL-Dg1f6BbIWOiKSTX_o5qiui1ThYyN8mmhY8tomEOzudrstLVx8Af8b_A6BuzWSiWElyiyLRO8mzxr-aOo6OCZ1uXYX9lwu6npaDL0VuUM1xi5_7w3-IGyc4GbP3mXYTQyA7rJ77IsuKjcuaM8TBGBknf9VHMKtJ3MnKcNgqmVeDKkwCtYVvvM8IOsAMYlTGRI0HlmzozXY8DOz_ygHTLHI8-PwsOVV1AgpzonHqJz-3gXtR0gTxyr1o47UAWrMDP9YbQ6AFudJZM5JESLQbjAb9WogbeAeRJYmfJ2BrtowG8SggQXpS-xUjATovlLii3p-KZ_YaQ2-Y5bwyEXJyi9sXSmdjnWhi8cukdU0hDCqhViJ_lsoAHa0GBWgiDcz_3pKY5OVSSrLNXhXKgajg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.592,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

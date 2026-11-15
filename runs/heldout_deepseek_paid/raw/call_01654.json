@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Olsen bridge, in tonnes?\n\nSOURCES:\n\n[S-0696]\nLocal history note. The Olsen bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-0696]\n\n[S-a004]\nField note. Checked the signage and the paperwork for the Olsen bridge; the posted load limit is listed as 61 tonnes.\n[end S-a004]\n\n[S-9a43]\nSummary entry. Olsen bridge. Posted load limit: 61 tonnes.\n[end S-9a43]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1654,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 388,
+  "output_tokens": 58,
+  "cost": 2.558e-05,
+  "unit": "credits",
+  "reasoning_tokens": 27,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0gYqwacwpmNt1rj6myIQVKsXYnM5aRxJCLMEJS8Z7-Pg9_cPUen2r6z3ASE2YXZ_aZBirGzCXTCnBd7lzSdikNg1qz4sSeyt-ktMjXTUL6GZvM7_Z_ZzS-k87vAJJGokmQoQ_AACJHA-5Y00WzO3mbL6qnhreres0mpYFM42raVDQ9PQJ7VOmR99WiE1UB2WS1HCcOjoeq9HmlVWvsWYbMJ3d2OY2aftXOZHfUoDCWzo5MIJodrhsOkB0x4J4Ih4TATX5oBJXXUFetJp66Xf9ot8gf8W4mHD7SB5xzvV8Phk-zD0fYgELnoNuZ5piQ1iegSnkmbd-afMV4PTRKfSMlFlDZBhPQpDw8lodpF2CA-HEBE9i2VP6mr2uxvATl51b5p2h1ZSgIWvSRjePWNWZHNGV2rcH_7joyr4KGowjkDzxsshGOs3oRg9CMBzrxSWS9EaxRfjTa86kTSTAboVoTNq7qGiA8jRBqv7YGKDjDVdG68L49BO1vjkK2rZwUzo3ZPOmiTs0PXiuFEbSfxCZwKL220=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.135,
+  "text": "{\"decision\": \"answer\", \"answer\": 61, \"sources\": [\"S-a004\", \"S-9a43\"]}"
+ }
+}

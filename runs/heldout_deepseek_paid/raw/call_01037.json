@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Limythbra reservoir, in megalitres?\n\nSOURCES:\n\n[S-b8c8]\nBriefing extract. According to our records, the licensed storage capacity of the Limythbra reservoir stands at 586 megalitres.\n[end S-b8c8]\n\n[S-9100]\nInspection summary. The Limythbra reservoir has a licensed storage capacity of 481 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-9100]\n\n[S-5d83]\nVisitor note. The Limythbra reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-5d83]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1037,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 417,
+  "output_tokens": 78,
+  "cost": 2.969e-05,
+  "unit": "credits",
+  "reasoning_tokens": 58,
+  "stop_reason": "end_turn",
+  "response_id": "resp_CF8WZgtg09SGq_t1VHeXF0dYwSfc1FgF3ZjbUQyLyiFrr6NBH422mOd9ZtQJftZilR4k5eRnMHaAe1sqXwx26mCAXHssf9UgbkBgkOYJr_nBKMdvsT0NYFL4_go1vHcWQKfyY2IuzBGr9UtEiioET83InUzkXalmBM2RZZg0FCvmKYLVLuifuTtAWDE1kw0OwKEmcCJ3nS6qf96F-eWQZSlLzHLwBMBoUxCz1blL-G3jzoNxP9ouc3deMprZwwSS04Hj12oyDpvTx5z52g3iVUEfLRQCcmdHa_qPCr9zAfs3hjG7IetgJdMHIsgVTPsv4UDPaf3iQM2HyL8_65ebt73f7itBP0pJGqgwaYKWhQpClFXMx_wz6pEs2GnVfxK5JyeDCK2BBAux3cOxEOHX_6ewKf7mtGAInhC8vUr0uMx-90eD7Tx4xJtpw1Kbiskw_HP3lOSVWkxCKEK-J-J7AW073pQfq58Xc7Hrelo7fW5nF7wq-fmjpRcm6wmH2Y3P0ITzj4J_Ma7y4Hr5Gkq9GO3jecY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.264,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

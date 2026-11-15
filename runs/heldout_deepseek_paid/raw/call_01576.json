@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Quanedka bridge, in tonnes?\n\nSOURCES:\n\n[S-4951]\nSummary entry. Quanedka bridge. Posted load limit: 92 tonnes.\n[end S-4951]\n\n[S-e966]\nNotice to operators: the posted load limit for the Quanedka bridge is 92 tonnes. Please plan accordingly.\n[end S-e966]\n\n[S-767c]\nInspection summary. The Quanedka bridge has a posted load limit of 92 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-767c]\n\n[S-20f0]\nBriefing extract. According to our records, the posted load limit of the Quanedka bridge stands at 73 tonnes.\n[end S-20f0]\n\n[S-8b89]\nLocal history note. The Quanedka bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-8b89]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-4951\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-767c\"}\n{\"source\": \"S-e966\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-767c\"}\n{\"source\": \"S-767c\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-20f0\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8b89\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1576,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 712,
+  "output_tokens": 201,
+  "cost": 6.018e-05,
+  "unit": "credits",
+  "reasoning_tokens": 165,
+  "stop_reason": "end_turn",
+  "response_id": "resp_SqPi2ipxRpHSsFihCYb9ZEU8AARxAmmnv0F7LiJsaLVanxHo6JVHYFZT_vesneMJrVsJg4pfKqmOWPYblAN3E4UaYmOHjtXbhiMO0iRoGliwsy3rrXXwqkA9qN3rqmHmXpZzNluEqVGDL7ANGO_4vN_hqAJfh8x9BcmYjWQssVTQvvgAR8cQ_uKk85FayciJm1kMC7wIZFOMoz5IsyVGT5WHjnMLv4hesNrzHmiWJ1lswVUgEMh0Rpsy0ofTtsn_YoXnRtCQt7olUNEDDx8_rwKo_jB6xWie5AcYbe6_PZ9BwcXu4jP6YOnQ94VKdZWR-Jc5hVC4d_9y8Kmk0BIeXcf_jydvhTNGqWoD81f76GuaubFfiNYJHFz5YkK-8xzYycStl4X_reDlsToFEoWmkpTKobZordlqnTy77QGJ_gceOIOqH9ZbgMcCjHV7DdFEJNTmNdGE6rlmThpz35__mHj2NF3wpbSqcDSCH4GxJogNwVdseqjNL-jmwft5OuPFj-53ak7Wt3gWgyYrcBPHszD-boI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.104,
+  "text": "{\"decision\": \"answer\", \"answer\": 92, \"sources\": [\"S-4951\", \"S-e966\", \"S-767c\"]}"
+ }
+}

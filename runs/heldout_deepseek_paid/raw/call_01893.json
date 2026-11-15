@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Kaarovel bridge, in tonnes?\n\nSOURCES:\n\n[S-ae36]\nMaintenance log. The Kaarovel bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-ae36]\n\n[S-962b]\nBriefing extract. According to our records, the posted load limit of the Kaarovel bridge stands at 48 tonnes.\n[end S-962b]\n\n[S-8402]\nField note. Checked the signage and the paperwork for the Kaarovel bridge; the posted load limit is listed as 63 tonnes.\n[end S-8402]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1893,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 409,
+  "output_tokens": 66,
+  "cost": 2.764e-05,
+  "unit": "credits",
+  "reasoning_tokens": 46,
+  "stop_reason": "end_turn",
+  "response_id": "resp_TaJ3VEDYyU7FR1tlo2ZPDszb_HmV830M3NVO4XFKTDeJoaSmIsJIyUP62V2VV5GzGb4c3dwqaYb_-0vfd2ZHrQ6iZLI5JDjKVtiomLJmkxMeY2e1ttHVAk8frQLyxsCFYuSy_MOZt2Pxq6mGzn9shhIHwgaN8wAzfGoRl9-qgdQDTSz7es5mGvw71hiVWMpRYK5VLiR2JGa9FvnO5sVERB0ufI9zZ8PdxkLWp-yBKcRDIiwgJk32_kYLW9leqVpEDhleDRpZtI99z8UIgXdRhtq_25PLuWByl1V35bvmu6x72fIJg0-mnnyYk3V9PDu2P7GA1JmrzgK2dVgQrpt5NAn9x_JXxIpB362QWH2LF0YMOiGOfOyWPYyDsvrdL9ijw76UjPft0bCgJbvowCWzrxb18BCGOcSrqXRN9LPEYL6DD02iPJe1AXivb6uhqFIBKZNLCN1TfhlfJ9-hdu0t9NuKTnc0wprNYJ03SVPNtsl03_3Bbn23mWGa_9SY60_KvKLYI37SXC5zkBIIir69V10B0dQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.315,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Dultinome clinic, in beds?\n\nSOURCES:\n\n[S-83cb]\nField note. Checked the signage and the paperwork for the Dultinome clinic; the licensed bed count is listed as 52 beds.\n[end S-83cb]\n\n[S-087e]\nCommunity note. The Dultinome clinic runs a volunteer programme and hosts an annual open day.\n[end S-087e]\n\n[S-5aed]\nBriefing extract. According to our records, the licensed bed count of the Dultinome clinic stands at 52 beds.\n[end S-5aed]\n\n[S-f3eb]\nSummary entry. Dultinome clinic. Licensed bed count: 52 beds.\n[end S-f3eb]\n\n[S-1eeb]\nCommunity bulletin: residents are reminded that the Dultinome clinic has a licensed bed count of 46 beds.\n[end S-1eeb]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-83cb\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-087e\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-5aed\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-83cb\"}\n{\"source\": \"S-f3eb\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-83cb\"}\n{\"source\": \"S-1eeb\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1433,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 715,
+  "output_tokens": 404,
+  "cost": 8.873e-05,
+  "unit": "credits",
+  "reasoning_tokens": 366,
+  "stop_reason": "end_turn",
+  "response_id": "resp_h6v1XPQmO03260LtXQb7hQGcpLu9aLN509SA6mwdKbVzhOLusJZ1L-BKeTBQq4aacf65V204zXaP0LGaR0G0IkaYtojWP3jqiDYe8wjnQTxbYCWToX3CmJut9gLhUSNgJNL_599BIQCF-wV53ikr4u49AsksBqQ-qQDVdFAry9wnxjswsowRzqcwmNsaNcdQoAMZd-vlfOwm37_9gTeP50ecwNUhHFAE4KgAsJD1M4w5j9oGF5g1vQE2wwoLHjx8CjPt1xiXXkhcRjfj6Z4t3Qgm0SYWk9VZSCTu29E6Ko9mlyVWQu5RcdSebVLDa5Kazzx4NZKfkG9gNj1A7GTa0j8u9q38r9nUDjSTJxSzfIeU7Ey8Hpjx6TNn_caF_BRMleuZfDvE_gQGBWvLoKIwVlU3lWw-JvsBTHth0nkq4cgPbL_V46IpkIeUJzwL_Lb8_3IDd2BqDU65aJLVo0JfUJLAkVcWybU43G3e8lkqjFlkpGfz9xhnm7OXbVHwjTD1cv1-N5VbtsFFQGjaqD6IN_3T_J0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.972,
+  "text": "{\"decision\": \"answer\", \"answer\": 52, \"sources\": [\"S-83cb\", \"S-5aed\", \"S-f3eb\"]}"
+ }
+}

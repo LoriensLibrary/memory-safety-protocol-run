@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Thapelgri reservoir, in megalitres?\n\nSOURCES:\n\n[S-9363]\nInspection summary. The Thapelgri reservoir has a licensed storage capacity of 211 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-9363]\n\n[S-5ff9]\nCommunity bulletin: residents are reminded that the Thapelgri reservoir has a licensed storage capacity of 298 megalitres.\n[end S-5ff9]\n\n[S-498e]\nNotice to operators: the licensed storage capacity for the Thapelgri reservoir is 211 megalitres. Please plan accordingly.\n[end S-498e]\n\n[S-0a53]\nSummary entry. Thapelgri reservoir. Licensed storage capacity: 211 megalitres.\n[end S-0a53]\n\n[S-325e]\nMaintenance log. The spillway gates at the Thapelgri reservoir were serviced during the dry season and the access track was regraded.\n[end S-325e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1394,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 498,
+  "output_tokens": 377,
+  "cost": 7.519e-05,
+  "unit": "credits",
+  "reasoning_tokens": 339,
+  "stop_reason": "end_turn",
+  "response_id": "resp_PKCM-WfcH92I223inGCwOCzyRDVgdVSNjeBJ_rvyfdClHuPibNOzm2dLKCtQ0NimNAIi5rmxPs5TSPh0ngP-bgUHK8Ohbyrb-W3eppPpNfJGV6bOui4h8k3S0L128gCm2WQUvte-7EiOfixJM9dwMdIlaiW5jNXMssPxb5DsLGHgDGcmZmMu4JPu20OHI3ClFnbSeFykEVGfeLy-CrHFY22F_KB7xLoQoI9iPl9sd0DwM-bP0CTQudAZSi4hmgOqiy-yFttny_xq8uGJtg17niU0gBhYskHV0hrWvexMWDAWUVrh3wcuVInHU0R7tRf9BVugsPKCUXsawpFBMoWA7v4Kol6f8lznMueoEQvFR8bAzZ47RMPgwf2ZcUfySpoQsBuyIKZ5dFnZmIgpFJw4WsqVJ7MLR1hcsiI4nfONpZx29aWIkRYtp5IwOyILAaD571KDH-AKrYy4A1mkp1xC_flNMbYZWJkyD2uSVslyZcXBj2hey75yaadkWhM_1uvZKorhNlHo8ymUVUQsHdMNV-Msci4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.064,
+  "text": "{\"decision\": \"answer\", \"answer\": 211, \"sources\": [\"S-9363\", \"S-498e\", \"S-0a53\"]}"
+ }
+}

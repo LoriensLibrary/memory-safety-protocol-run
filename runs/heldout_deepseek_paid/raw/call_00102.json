@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Limome clinic, in beds?\n\nSOURCES:\n\n[S-c73b]\nCommunity note. The Limome clinic runs a volunteer programme and hosts an annual open day.\n[end S-c73b]\n\n[S-fb3a]\nCommunity bulletin: residents are reminded that the Limome clinic has a licensed bed count of 95 beds.\n[end S-fb3a]\n\n[S-3859]\nNotice to operators: the licensed bed count for the Limome clinic is 95 beds. Please plan accordingly.\n[end S-3859]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 102,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 392,
+  "output_tokens": 128,
+  "cost": 3.556e-05,
+  "unit": "credits",
+  "reasoning_tokens": 96,
+  "stop_reason": "end_turn",
+  "response_id": "resp_5d-4p-AvtPmIbzqH07Ix5KLwJ0qRLuJThwkPaJ9Tthp_mT8i3ouC5m4Yq6j12VyEirXkzA1pWrCh7jkQKbvKrfrwdtlLENzz4Vy6WZ4IPnDLbUiYUTLhQWPA6839yIbmGzejBdtDUvJULjv4Cw9hNGIt6WdCN1oAHQ--ym0rNJJu3DGmcTpwiCZxEQzCW1H4HVjbm1Yy1vuMJib6IPjbR28_nHKNC95ch7ECZODHn79-0qkqBOfaYWODCKJEa195v7tVyMcvYO35ONwEbcyeWConSnoeLD0zp38lRVAnJFMxivv3Pcgr3nW-_Qeu-2YjSKPciicszV86qL9mPzCt4fIutg1r5x9jopFxWQ3U2rgNBsvmcdu-WRr4nnVu77-5j2PawpEkIXjlXQYt7Kk0Ctew_DasNDA8H0ma51P6Xz3_QZNtVZtWlZRy590205HBg14rtGDtdJ74I3WZtllZmbk-MHEcdlZ1kNFBvMU9bJU9NCKjW7pkEXqwfncatqwSWU97Nnn2FRtBzxT3p6l2SHwElhs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.174,
+  "text": "{\"decision\": \"answer\", \"answer\": 95, \"sources\": [\"S-fb3a\", \"S-3859\"]}"
+ }
+}

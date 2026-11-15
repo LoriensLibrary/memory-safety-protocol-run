@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Fendul reservoir, in megalitres?\n\nSOURCES:\n\n[S-8a98]\nNotice to operators: the licensed storage capacity for the Fendul reservoir is 498 megalitres. Please plan accordingly.\n[end S-8a98]\n\n[S-c85d]\nSummary entry. Fendul reservoir. Licensed storage capacity: 498 megalitres.\n[end S-c85d]\n\n[S-ec56]\nVisitor note. The Fendul reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-ec56]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 39,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 399,
+  "output_tokens": 100,
+  "cost": 3.196e-05,
+  "unit": "credits",
+  "reasoning_tokens": 68,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ndEOOZgigfUMvksDbaT927JWUUGP8Lm6K9esG5mmikTJYtizf433FH8ymbaRBNvLTWmCE3L8b0n66U9HuDsQeXe8lpvNzlOfMO181ZuuX1wCVbvtMUPOPYw3UIzJln2DXe7KvP0Pr_bCReokYPbV2IpNwGpCAmRxQPpROZ25Zr_XVW3EEgO-gQYuXT6mgLGSodaDb1vJ4WyMEhnn2ly5f60Q56ac65xqXM4QaONcaF46oTrgAwJGp-CDIHwSv_G9BBLaDWrVKf1bXdlOVkhzTyGZ9abBKFnENkwBPQ7pYV03NIr50IC2sOsT-qNjEty2nP9v1KfhehTjwp8D3VPwZy0KmC2ipIzlfgmHEOudIcVPjloLpp4qcC71FnqwP36OZXTaacg42itA4Yp8Sf-TzdJ78tgYIAUN2A1UXcu08JP50XRutBhxXGSvnsPTa6IBrXO-0ncad1kLOCtocl7nbZGjC_LWKXt_57bL9Q-xeOAnhxbbOZC3ClJ8vWbFT2bABc8MhyhfQWASVHGuvwlozxJJlCE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.934,
+  "text": "{\"decision\": \"answer\", \"answer\": 498, \"sources\": [\"S-8a98\", \"S-c85d\"]}"
+ }
+}

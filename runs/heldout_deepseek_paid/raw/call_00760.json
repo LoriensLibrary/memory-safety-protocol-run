@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Marsentha clinic, in beds?\n\nSOURCES:\n\n[S-93a0]\nBriefing extract. According to our records, the licensed bed count of the Marsentha clinic stands at 160 beds.\n[end S-93a0]\n\n[S-71ec]\nFacilities note. The Marsentha clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-71ec]\n\n[S-c655]\nField note. Checked the signage and the paperwork for the Marsentha clinic; the licensed bed count is listed as 192 beds.\n[end S-c655]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 760,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 406,
+  "output_tokens": 83,
+  "cost": 2.989e-05,
+  "unit": "credits",
+  "reasoning_tokens": 63,
+  "stop_reason": "end_turn",
+  "response_id": "resp_uHnLO8sEhJjekhAG1HoZPSnZJzpxtZCMx5t2YGh53vbfEGfUtUsl_tFDHOo2ynyGdCp-OxgpTsC7A9_xCcf9LZFSLaSDqbdX4GINiw_xjqvnAuIegOAgrvrPfB1t3wngP7mMaRtu7WXUcv4ETnZ6D5JN1LAEg701GU_L36ekp0xBB_szUWfUSmKaGe44dSNuRGrgOoNjW928ThAQDqKbFEWmQubKYJTOQCGcgXRlDTRW1CLQdnoVSumrbmuJ4N5_Pj55ihc_glrzdJXnWzvCCKyeS24-fIDYRbKc3y9KGkGGCfnnZKPqU-DWrFBJyUZ_4R3AfUNrdPqTBricSK29_MBeyaozsnx1NnqsuwMHhzIxdmbh7zANE_EwxcIlZJ0ZvlaPGwtifzqxeDdCWlTcNwnL473ZCjtEIwgtkiMY3P04JcxC4yxt0yvGpxZUs5816M8FRUt10yxc6H60kFTkiIQQ9hZBI8w25aJe6Jd3rJTjW1b3bXrhYVWe3ZAOip8m_aSI11dcCUCHVluoOO6cj1Zim74=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.265,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

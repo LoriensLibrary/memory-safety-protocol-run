@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Eshythen clinic, in beds?\n\nSOURCES:\n\n[S-0201]\nSummary entry. Eshythen clinic. Licensed bed count: 224 beds.\n[end S-0201]\n\n[S-71ae]\nCommunity note. The Eshythen clinic runs a volunteer programme and hosts an annual open day.\n[end S-71ae]\n\n[S-00d9]\nNotice to operators: the licensed bed count for the Eshythen clinic is 224 beds. Please plan accordingly.\n[end S-00d9]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1508,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 394,
+  "output_tokens": 55,
+  "cost": 2.543e-05,
+  "unit": "credits",
+  "reasoning_tokens": 23,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6LUAUcHqRR8RAhBOrMTqBNIERgvLKBidLiyqaykkBbT8nvfXUTfnneq2rDBj1Bz4Wv8tr119lWv8-qM4XRxCzez7cQP7LZD1WHOKUVcjULt8jO6fRXBOF__9btY8Vp1aByy8--1tSLi50sUBOQBwbLvZKA3jjrPUdBSgd5YrRnint4vBYmunXHVQESOEpikOtnioWSJBDz427w-mtAbm797VCs0iT2S56AhuixjIh-btIG1c6MhnaXfP75mhInb2sOshm-YrcaRaAPYxELHyqWWuaqK7bSHRVqp_f3HobU-fx4sXL7R_aS11R5d0da1KXDYokayeGTYMAZkWKkT_4MyurGrqwcz0BGf7DeRDzX6wtrElfl7BOZZ9d6SYQxsyKWlD5XjBeBccLXnjXLlhi91raeZ8uYSIDLPx1Oj1dVxnXREqGPA1ONtr-R3bG5ouQLFmPc8uM7BowpuACTAVKNlu_4juB-yQ_rl59DojRizWkdkbKhUfOF-u-0KfeBobbCmUZDg-fxrU8vRbp0DvAmhpKsQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.126,
+  "text": "{\"decision\": \"answer\", \"answer\": 224, \"sources\": [\"S-0201\", \"S-00d9\"]}"
+ }
+}

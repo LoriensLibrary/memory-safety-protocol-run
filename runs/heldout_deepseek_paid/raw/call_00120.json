@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Bratinpel bridge, in tonnes?\n\nSOURCES:\n\n[S-fb22]\nLocal history note. The Bratinpel bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-fb22]\n\n[S-d501]\nField note. Checked the signage and the paperwork for the Bratinpel bridge; the posted load limit is listed as 14 tonnes.\n[end S-d501]\n\n[S-610b]\nSummary entry. Bratinpel bridge. Posted load limit: 14 tonnes.\n[end S-610b]\n\n[S-fb29]\nCommunity bulletin: residents are reminded that the Bratinpel bridge has a posted load limit of 16 tonnes.\n[end S-fb29]\n\n[S-bd9c]\nInspection summary. The Bratinpel bridge has a posted load limit of 14 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-bd9c]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-fb22\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d501\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-610b\"}\n{\"source\": \"S-610b\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fb29\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-bd9c\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-610b\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 120,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 711,
+  "output_tokens": 247,
+  "cost": 6.658e-05,
+  "unit": "credits",
+  "reasoning_tokens": 222,
+  "stop_reason": "end_turn",
+  "response_id": "resp_9AGYVRgGLR-kfo8Ry3z0ihMuiB5k79ICTQfvMoSJTQ6mKdwCseUY4AJu6MyZWy5mdShzznFroohVcwA6ULljY7bmLig6JP7HHksavSuhu0uDX_oOS1H4V8dhUjpt4AfrQuNgZd2fE3AGT_mgtykBLOWMll3Ppest4KBZJjbA-3CFqEdZq7XApbUN0fGtLdf6SP3tL44vr8keu_m6IjzbiBemhHOGr1iwstq0UvSFuHEMj7oAjkWEYM2FZzgnXqz_5Uufuwxb-iT6zeVbs9fHsfLsDTjauVpfsWH1GXQuNyKGFZiSpCIL7GQKZ9DDWV05lW_v1wv6shh1eAZSB58P2ulsV-FjbixQXhcJ-nSKzgjh9v4OV7GWfqjn3I59V_ekMmYXX7cs3GVvKOHzIf5Z7TpLLS_HYQbME4NbjpxiV218jl5pc-0zY8nstO38OyttssxS4_QIFckSGDpZjXXOAyVnpfDYbrWnOblj0r7IWWVS7yvthdaN07E3l3cQrLxtdIab3UkAvIkCOJrcweH2vS1wbyY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.918,
+  "text": "{\"decision\": \"answer\", \"answer\": 16, \"sources\": [\"S-fb29\"]}"
+ }
+}

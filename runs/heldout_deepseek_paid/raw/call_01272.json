@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Griveldul reservoir, in megalitres?\n\nSOURCES:\n\n[S-7ab4]\nInspection summary. The Griveldul reservoir has a licensed storage capacity of 935 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-7ab4]\n\n[S-56c7]\nVisitor note. The Griveldul reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-56c7]\n\n[S-a103]\nCommunity bulletin: residents are reminded that the Griveldul reservoir has a licensed storage capacity of 805 megalitres.\n[end S-a103]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1272,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 416,
+  "output_tokens": 86,
+  "cost": 3.076e-05,
+  "unit": "credits",
+  "reasoning_tokens": 66,
+  "stop_reason": "end_turn",
+  "response_id": "resp_LLKVvcwwG2Bu42AvhMOlN-2R_AojBZ0XWWKbBE_KRhmw_4P7xRCeGdTHXOHGYvzgQVLdJosj3Bg-Z9jB6HApFk37IKlIJERkp-YkmO4lMI8AXUjnmD_Sdm3M1YhXfGHX29G_ae271xg5aqkgfIBkwpJKdHlaAY2EkZQnqRRiPdRu1F2k01l23TcWTsnaMhdwettbOacTejw3caAhOVYVCN4Jd3xI1XPlVeB3Q2TRj3UrkAbWANvYb0ij2FRAwh0hKNWCfjgV8gRAoV19_PY734WCbQQwhnJolApRQrcxipnPFtLf2kbtESUBT9I17C5Swcng1H7uYVG41J321bxye9k9N3m1g0wcVwqjbpJCmYe6lZDrFagY4qYFXYtA49c_D6etNO-goMACvlAZO5rHG-1MQZ3eurG_V2QnuSdggY1fqxCQ4NTCZ_1it8yTTDKWBbskJuDlpaeTNtHRsvFUBcnKiqRFAwPc43h2_KAG_WvL-s16DLaZcvTF8ka4PkNpfX2exv-UrgC0N_1-TDuYEiOy5kg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.385,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

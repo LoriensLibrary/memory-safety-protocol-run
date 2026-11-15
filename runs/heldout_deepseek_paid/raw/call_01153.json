@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Envel reservoir, in megalitres?\n\nSOURCES:\n\n[S-56c2]\nVisitor note. The Envel reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-56c2]\n\n[S-85b0]\nSummary entry. Envel reservoir. Licensed storage capacity: 188 megalitres.\n[end S-85b0]\n\n[S-9551]\nNotice to operators: the licensed storage capacity for the Envel reservoir is 136 megalitres. Please plan accordingly.\n[end S-9551]\n\n[S-cba7]\nField note. Checked the signage and the paperwork for the Envel reservoir; the licensed storage capacity is listed as 136 megalitres.\n[end S-cba7]\n\n[S-c225]\nBriefing extract. According to our records, the licensed storage capacity of the Envel reservoir stands at 136 megalitres.\n[end S-c225]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-56c2\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-85b0\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9551\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-cba7\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9551\"}\n{\"source\": \"S-c225\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9551\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1153,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 710,
+  "output_tokens": 183,
+  "cost": 5.757e-05,
+  "unit": "credits",
+  "reasoning_tokens": 157,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ZKFELG4k-zMNeW4i-yyBpBXK-HF6lZnwzjy_lVkWx6uMWAFMwUNtKth76SI7p7-WnlyDJgFr3RqIBJoHsmBhRdrFS2RMU0VdieDv75zrmEf_MbbPFIpmdMouckWwIM0h3PgMkLtVnuOUoWHf85fU0vvb3e2LRyfOS2g3I0uNArsfpiI62b6SXI_IpG1yEM_Lw8eV6vW-Xg3FQVrZL5kyPupJxfBbiroEQCbb9s1acDJDwQviPljSjJ2z6ZGvuF6gX-pakqQaANR-luWlAwkEnXAIu7Qj_WFgg1kE4uR_E60T8bG5l5W_L6-5K20BTuiBKtmx_nZX7p5gDwsmxl5pQMBpOsnIhHKYYKraPQLl9ItrQ7IhAJP0sBNMHR0sjbwglJRCYx9FJ--xLP2bihRzLPI35z9R63qfngqLUtiXfXASCUyMQd0eGOEWUk4MV48VxggX0sJltKyl_r_hEeGRE9PGItbTHaNL9CQMBt1Zz2UHoECmLu8QjRhyQoaRX5o1QFT2v0pZS-cuRCq7YwSk_cT1J1Q=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.019,
+  "text": "{\"decision\": \"answer\", \"answer\": 188, \"sources\": [\"S-85b0\"]}"
+ }
+}

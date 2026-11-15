@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Limust clinic, in beds?\n\nSOURCES:\n\n[S-a719]\nCommunity note. The Limust clinic runs a volunteer programme and hosts an annual open day.\n[end S-a719]\n\n[S-b90d]\nSummary entry. Limust clinic. Licensed bed count: 96 beds.\n[end S-b90d]\n\n[S-fc53]\nCommunity bulletin: residents are reminded that the Limust clinic has a licensed bed count of 96 beds.\n[end S-fc53]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1727,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 381,
+  "output_tokens": 122,
+  "cost": 3.422e-05,
+  "unit": "credits",
+  "reasoning_tokens": 91,
+  "stop_reason": "end_turn",
+  "response_id": "resp_d1g8FNynx6Tw_oIJqF-q_l_kxlad3EELVLEaJg46cHNlvvYHgD9tpla8HGHT4FUVLkulrqL2Lv5iE9dkZ5ho7vJQodhK5ySfwJj-hBak_8fO6t-APc6091TK4DrZVAQ9t5NE54AfL-kp2uN8Y0A5Vd3IAT0pB_SWwyK6Ddo1yOB4tPyzBoOjCO12gCxQiiayAfxKhoRF_cWZn8Eq4-lDkZbshZDXeSQCFG13dWl475hLxNykDo5d0idBL0-QHLGsP-5jc4X30EN4-E4EpW7oXTSNtEykLVU2accvZZXg2_yTNpZW0kKcOwAYDsuzQXIZGmMGKk4Jr8DCyA1VAf6_IxxG0_BQZDr5rhzw6vMG2VSOuEiFpT7CeMYmy9oSvmh-gcGxHNVgx3mhzoStY8g94smPWQw5VM-8xKs-LR_yGfW15k_uJuaQuUiVH37SgLixDOZEpPcRf2cwbAMDiY1SLj1Hp0psALAaZ9DACfyYC63ZEF5rGWCXErRqcGGpQPBYeIypZxmdqmLkUW8TNGlyEuQD3bY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.12,
+  "text": "{\"decision\": \"answer\", \"answer\": 96, \"sources\": [\"S-b90d\", \"S-fc53\"]}"
+ }
+}

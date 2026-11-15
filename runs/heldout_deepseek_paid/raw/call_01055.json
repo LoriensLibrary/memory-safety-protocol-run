@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Omevel reservoir, in megalitres?\n\nSOURCES:\n\n[S-1e45]\nMaintenance log. The spillway gates at the Omevel reservoir were serviced during the dry season and the access track was regraded.\n[end S-1e45]\n\n[S-9459]\nNotice to operators: the licensed storage capacity for the Omevel reservoir is 822 megalitres. Please plan accordingly.\n[end S-9459]\n\n[S-6b3e]\nInspection summary. The Omevel reservoir has a licensed storage capacity of 1060 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-6b3e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1055,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 425,
+  "output_tokens": 106,
+  "cost": 3.397e-05,
+  "unit": "credits",
+  "reasoning_tokens": 86,
+  "stop_reason": "end_turn",
+  "response_id": "resp_vHYAMMn_0PCZQHOLSpR6lm0fcnKfoqFCpy-HvH8S7TLF3KuaMdpcru2OJtPeJuE7ihHMshbQo99GJiSDi1V_vm150J764FnCH0J39zScuNFHCB8lSgUv4Qfcwwp8CyF_EyhhvqzREc2dAJgUlD4SCxDJCvP_vbzutnjptKdotBqDeGOt9NIvpjPOVx57JgK_NazP3yHkzjbeQS-y1cX-Dhcpis43YpoYbPcvc5v5by9yl8kXgZsOx9ICGU82KM7lGczmQ8p9B5qlShAnbxAmZAnIzN7ZXG6rV8L-VvDwHPAnGi5pX9ku0A2TyNK_nCX3J_e809GYRHpT5t-DXqGEamTsoCg8v2LxVCI_czIzjfrquRSlFVpi1tz355QR_js5Fi-ZW8qvAfAcxLoAxk9baUel9XIiYN9LZnCO9afe4FhJ9vGZiKS-ufZOpTlcNnQ48EwlXoLr6cqnO7nBbRmcgg51qDEBHCIzHl-a2WOR0mKfYBOZ_08ibdGYYrOgsPRx1KTrWO83GLGJMm-RgiLNeKlZqx8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.857,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Limome reservoir, in megalitres?\n\nSOURCES:\n\n[S-6380]\nSummary entry. Limome reservoir. Licensed storage capacity: 416 megalitres.\n[end S-6380]\n\n[S-d45b]\nVisitor note. The Limome reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-d45b]\n\n[S-8793]\nBriefing extract. According to our records, the licensed storage capacity of the Limome reservoir stands at 531 megalitres.\n[end S-8793]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1716,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 395,
+  "output_tokens": 78,
+  "cost": 2.869e-05,
+  "unit": "credits",
+  "reasoning_tokens": 58,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0D7o8K0TRE8w3x5TQ0HUVfCGIUuXecz49QC0XikUXQHRGtSMFa2jQSHH3LVEbWWs5tGnRofYzu8vkrGguHtD0WNwSo5wrPbk1mx0sHQv0r-pKhumGPHRdokxlEGSFUbcWkol8vyqftcI5rE_-zrPRcyEcOl38SMzlbOMLIRIdePGn3uOi9Caqd03vIEmESw7dImqu-l3gjyHJjdilLDl9-pKu77ipWhSE-JSRuKh28XNt8HLZ9IhPfLyULGnE0XIuhls1KH2z4MLC8boaFzMISW34GuFdqpySsTVrN8Lxb1UOKqj0FAKmJ9vtLSnGs-4CelWRQ-tp32Gzt-m98AfiiWGFZWnVCikE3ND5HmHa5S57vyPaFAHwQcsaH9txMvZSPoci4BhIXBJqPrG3O2WxPJchvK4AufbQOR9umQ6_Lga46Ja1foyIDdW4lDZxlzpbNBVO5k5ZXcVqW4D9XjvXuhUkm3E77894gTYa7nPe7tTYemIC3AKE4siTt6KI88YcF8s6Q_5WK5BfvcsIuoiTAWDtaU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.413,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

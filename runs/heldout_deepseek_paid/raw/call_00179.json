@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Fenlim reservoir, in megalitres?\n\nSOURCES:\n\n[S-dde8]\nCommunity bulletin: residents are reminded that the Fenlim reservoir has a licensed storage capacity of 920 megalitres.\n[end S-dde8]\n\n[S-3996]\nNotice to operators: the licensed storage capacity for the Fenlim reservoir is 920 megalitres. Please plan accordingly.\n[end S-3996]\n\n[S-1103]\nSummary entry. Fenlim reservoir. Licensed storage capacity: 749 megalitres.\n[end S-1103]\n\n[S-de6b]\nField note. Checked the signage and the paperwork for the Fenlim reservoir; the licensed storage capacity is listed as 920 megalitres.\n[end S-de6b]\n\n[S-9bc2]\nMaintenance log. The spillway gates at the Fenlim reservoir were serviced during the dry season and the access track was regraded.\n[end S-9bc2]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 179,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 476,
+  "output_tokens": 203,
+  "cost": 4.984e-05,
+  "unit": "credits",
+  "reasoning_tokens": 166,
+  "stop_reason": "end_turn",
+  "response_id": "resp_4WgPC4pf13EeKdUvJRjd2Wh11zaodOXao1DF4yxhAjwAOvfRfQtZiSlCUoZX2ntSQi2j3iGw0Op9USXiFnbnazOKzms00Qw-D5dfj2XNrr7a_2UN8LhIaP_MTZN6pljFOVhwqdWQyFjbUazwt2HfqgSZFg42cbqH9BTiD6poaukx9i_WhZymRGqccVMmKFxow_84_Q8DVBJ8-FFpmgAR1lw6qaNytIMadQrg7o9yxK2fP80aDCbbuu4Lxk1dkIO4TQ3M4Gq1yyoj8emUcnGppjp-a6AqJQWqF8nHDqQAehPbqCltMmmYv-4-GhcoJKLtpj-YjB_2BXaeBmN1pHLxL5zzbNx7mcY7AXCF7b2eUSZBgd5zeQTLlBhDWZLmqg3col4wAeNXnggzV1jFrWphtto15nz0STNpZ_TKMcQ5BLfUzJZ4Gzva6kKcdzPmP7V9U-1u1kSLDiveTVoY5ayQmfqEZUk3dVVmXZfOpMb1iEBSpgEA-ZLhXM4taFqQcZ-bgT7AI2cGvpQHCez2uGHB5HBfk50=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.984,
+  "text": "{\"decision\": \"answer\", \"answer\": 920, \"sources\": [\"S-dde8\", \"S-3996\", \"S-de6b\"]}"
+ }
+}

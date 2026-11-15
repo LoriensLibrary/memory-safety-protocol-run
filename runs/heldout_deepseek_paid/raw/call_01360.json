@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Vorome bridge, in tonnes?\n\nSOURCES:\n\n[S-b53b]\nLocal history note. The Vorome bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-b53b]\n\n[S-d91a]\nSummary entry. Vorome bridge. Posted load limit: 22 tonnes.\n[end S-d91a]\n\n[S-b6de]\nCommunity bulletin: residents are reminded that the Vorome bridge has a posted load limit of 22 tonnes.\n[end S-b6de]\n\n[S-3303]\nBriefing extract. According to our records, the posted load limit of the Vorome bridge stands at 17 tonnes.\n[end S-3303]\n\n[S-c27e]\nNotice to operators: the posted load limit for the Vorome bridge is 22 tonnes. Please plan accordingly.\n[end S-c27e]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1360,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 454,
+  "output_tokens": 231,
+  "cost": 5.277e-05,
+  "unit": "credits",
+  "reasoning_tokens": 194,
+  "stop_reason": "end_turn",
+  "response_id": "resp_pZbEQwsx1wUF0DBD-2Ny3wAvrpye4P9oqJ9hP15igC8Nu5Bvr4AifGHUsW0apszVfeP8YuwzrJLCFC3_0MxQBxGGMqBo_2_u6A0e0VsD-YSPpawNuzCVZpG2uISee6LvmymvwcqG9d523W6dhJ8BzmXlxExFAQYP2jRKwSM7FK1YzuffpcNmJ8aCXmHsBuHbuQJZ9GGW_cRRie_poXpOn742KEnzyCU507_rNLWke6MbtOJYXlOzMRofI_AANVcV5iZsNRv53n6x0t_oI7LxMLqjM2Ej5ABr_hHM9nj7COxRH0QBVNrAij0QCD2AV0wEQAoJM1PZ0O-y1jP8zbPYq6MoHolB0osdiHbfcKehmdueh-2BzBoRAFaNNKMb2KPvPbYcyUDNFGg_24GqboC1IDJEHgkIFoR0LdA_CVlK-QczLQLsCPDg1RNaEURHrRUaRY4P2OzoX08N4sgiF17Bom5sF9ouWkX9_-s1kzE4UkSvu2HKajXZvjxu5E_-PCrIk7RwoxSRSxWCjX9XbUsMp_T9S1k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.379,
+  "text": "{\"decision\": \"answer\", \"answer\": 22, \"sources\": [\"S-d91a\", \"S-b6de\", \"S-c27e\"]}"
+ }
+}

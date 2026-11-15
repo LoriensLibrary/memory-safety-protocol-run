@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedtinlim reservoir, in megalitres?\n\nSOURCES:\n\n[S-8880]\nCommunity bulletin: residents are reminded that the Nedtinlim reservoir has a licensed storage capacity of 187 megalitres.\n[end S-8880]\n\n[S-b81b]\nNotice to operators: the licensed storage capacity for the Nedtinlim reservoir is 187 megalitres. Please plan accordingly.\n[end S-b81b]\n\n[S-a690]\nBriefing extract. According to our records, the licensed storage capacity of the Nedtinlim reservoir stands at 187 megalitres.\n[end S-a690]\n\n[S-bb2b]\nSummary entry. Nedtinlim reservoir. Licensed storage capacity: 167 megalitres.\n[end S-bb2b]\n\n[S-fb06]\nVisitor note. The Nedtinlim reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-fb06]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8880\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-b81b\"}\n{\"source\": \"S-b81b\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a690\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-b81b\"}\n{\"source\": \"S-bb2b\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fb06\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 624,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 711,
+  "output_tokens": 466,
+  "cost": 9.724e-05,
+  "unit": "credits",
+  "reasoning_tokens": 445,
+  "stop_reason": "end_turn",
+  "response_id": "resp_zuP05Od4kbpkRMVVTJ_rnZMhr2lqXlodvIRHXxe4isfsGaKeEiGinv0KKxJOA3JUSaWe_rtU7fi25fKTMzwM_amRKxrVliI08qVtYC2fcxcDEgydgjnLKc-77lgPe5kxAVPENEYpmKJS60vmd9-zyrPsRGF7MK994KsbGKXxttNcl4mWjHoJ8dVaPGI23NaEd97R4I1__vJTLX1jS-DP-2r-7aN1C_GeNjg8IEBjFGhIsNFlKLwbHFfPPWDkWthTLTqE_dSs_RZJf9VACOred9EwgRI3-wIISyhA9YneHB-yx1B02_PPb4KIeG5pK8VXa7e5NwCGIETxNSm_Ob4X_XFn8suUhvm59MuL0c49ZcsxIicuMBKLO5JwOljBTJ_x2k8_0kulIYBeTm6WP7RO5eqX5uTIq9ogbnqFPoBLdveMoaTTCLlTECPbfHia-vNywZrYPw9XtAiggxTIv_HhLLpToZk_H1Zlu0Ot9cYlOaTrlVdS27yh1wvjK1spNJsLaHcF6AHT1CwLuxbz9pz4WZvc3Z4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.054,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

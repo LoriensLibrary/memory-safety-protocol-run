@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Marrobra bridge, in tonnes?\n\nSOURCES:\n\n[S-d99e]\nCommunity bulletin: residents are reminded that the Marrobra bridge has a posted load limit of 30 tonnes.\n[end S-d99e]\n\n[S-a1c8]\nNotice to operators: the posted load limit for the Marrobra bridge is 23 tonnes. Please plan accordingly.\n[end S-a1c8]\n\n[S-7a74]\nSummary entry. Marrobra bridge. Posted load limit: 30 tonnes.\n[end S-7a74]\n\n[S-e5bd]\nLocal history note. The Marrobra bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-e5bd]\n\n[S-f1fc]\nBriefing extract. According to our records, the posted load limit of the Marrobra bridge stands at 30 tonnes.\n[end S-f1fc]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1775,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 464,
+  "output_tokens": 280,
+  "cost": 6.008e-05,
+  "unit": "credits",
+  "reasoning_tokens": 242,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Ua0N9_sZtnqQOQPEwLldevKTvmYlZ2-FUbXSGnIPSo4D9-Bg47zQCCcIYgilC5OH1eQFRi24qWMXkZITUBSR-SA2lyaBostUjuWdQjvY6l0gltZ7KoMek-yO0eWSbM18Z7vpNHcxSknKBMpem-GKVVhS2dq3kBqZCczaQZGbHLwCuGdFu4rTHPSFjmzoDVtQKnKboTNqnEk_UnkCNJ3bmv4BIXkEBIGQB9pFXJjES7Xbo3QEX0ynFiml_m973CGp-twu6lK-r2HCpN2k71RvUalc06Z01EbBP1kWH-wbSGDvwWZ4LNvVCt5Y8K0BxfOcXy0qjCyuW0mMkbshnxXewgbDhtExp6H6fUgxuVuW4zwetJgrqcDMtB58tvW1IFctuD7FpRweV-njE7WslsmnmviXDIf_U5lWikhpr2q713TlbiYW0aB3bBtqqYhhsjBblgcc6ZRRwq60SHPWfw7UoCAL_3GNqtNFPGDOGeyWOVvgDHhRcnoyXtI8ptCkbJbjvWu3CfOABDimP_svTNYckEat0k0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.433,
+  "text": "{\"decision\": \"answer\", \"answer\": 30, \"sources\": [\"S-d99e\", \"S-7a74\", \"S-f1fc\"]}"
+ }
+}

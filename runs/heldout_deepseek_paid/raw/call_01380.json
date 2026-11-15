@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Marro reservoir, in megalitres?\n\nSOURCES:\n\n[S-9268]\nField note. Checked the signage and the paperwork for the Marro reservoir; the licensed storage capacity is listed as 267 megalitres.\n[end S-9268]\n\n[S-d639]\nVisitor note. The Marro reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-d639]\n\n[S-f04d]\nNotice to operators: the licensed storage capacity for the Marro reservoir is 357 megalitres. Please plan accordingly.\n[end S-f04d]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1380,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 403,
+  "output_tokens": 80,
+  "cost": 2.933e-05,
+  "unit": "credits",
+  "reasoning_tokens": 60,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3s5sN81fw85HDGZt3RIFFIyYsINHGH7ic2ReUNrUOm91FAkQK3nqIk-IlHKK4yQFTVnphs_fuF1IcMTIwkp68NFWoxp-mC2w0YqAf57eSzyjpf0O7xB9KQXMgz_bdJKbxJe9B9hFd-jDeC2tQ86nPxigIPgHP-zlE4Dg8_e3RvHoFO9-g_OEKPrU2o3U4X-bif2nFcmb9n56noJQeelE7zvsDRxPMXZutv_uroYe3REfIvn7jlq-NRN_kSzi5TTLYL3q8nVSCmc8S2LsB7hmR3GFn-nN-Bnj2r-nva1a6fgEXnG1zAoxTJYUWax2BXI6KxIAGoicK3LED4m3BxvEDsANjWh6wYIM3PjhlGyUmqerMpDKWjD4bjCUucEqgEeTE0SLF32WpSVwmPk9IopuOOlB3lOP_lz7cOfZk_ObNjnJ6cYfk97l2wV0mwQBFdTxbmSNH4fT3pJzxFzOn0LV8TPUCs1L2EFP6ciO5uQaqR_FEYRKHzpuOrNvywjAYBJ9jmm1AvXwmL7Pkitoutf7ddjqhQM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.328,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

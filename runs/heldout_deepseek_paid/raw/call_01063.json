@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Tingrimar reservoir, in megalitres?\n\nSOURCES:\n\n[S-720a]\nCommunity bulletin: residents are reminded that the Tingrimar reservoir has a licensed storage capacity of 717 megalitres.\n[end S-720a]\n\n[S-59cc]\nVisitor note. The Tingrimar reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-59cc]\n\n[S-4243]\nBriefing extract. According to our records, the licensed storage capacity of the Tingrimar reservoir stands at 717 megalitres.\n[end S-4243]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1063,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 405,
+  "output_tokens": 103,
+  "cost": 3.264e-05,
+  "unit": "credits",
+  "reasoning_tokens": 72,
+  "stop_reason": "end_turn",
+  "response_id": "resp_p1wuB-QUUDtXVbkPNmrZzZz8VqLJ-Z1ERIQq0_oQfqDZDbv03zx6qCHrLHLnxKbrM9Xzk6StZUnj-k1l4bK-dYqjq0UIluV0yOMPw7JC6ou-4EqAUVj0YvVJkN883egpVBjoUlETQRskS3EfiYl2CQ45oLIEqi_jyEfZTG9uOchBozLl2iaUO3BhapkcJlMs55rvwPgn7JQpoKjoSdQ06hOS0jrTxVJ6qi52SjnQB_-7dTH_agIJB_LlFCKNbRj6aOKnzoQ-kINmAqqmj1yBNwsaevmolO9w4DhV-X_lFDV4mPCt6QZD_Qi2yQI8E9jsI41K1WV4afoXnydoEOZb4SEmKmjLe0NVsDPN2e4K_CiZh1LsB4emEyguFKVlu1Ct9ai8A-Er2F8RL0ZKMbHq6RvnxcOUyJ11IFk_jjf4ZUXh5bSiRP1sEII0zj1AY10M_xx-mFYsOHlP-3mrsacjF8vlV_DalYkJ0xrlFeK31wiaEG6M2PJK2XPdYptW_LUk6-Fb92Vqp--2mSeLkcTXX7Z-7hQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.065,
+  "text": "{\"decision\": \"answer\", \"answer\": 717, \"sources\": [\"S-720a\", \"S-4243\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Arosentha clinic, in beds?\n\nSOURCES:\n\n[S-0458]\nNotice to operators: the licensed bed count for the Arosentha clinic is 135 beds. Please plan accordingly.\n[end S-0458]\n\n[S-bf49]\nBriefing extract. According to our records, the licensed bed count of the Arosentha clinic stands at 135 beds.\n[end S-bf49]\n\n[S-7367]\nCommunity note. The Arosentha clinic runs a volunteer programme and hosts an annual open day.\n[end S-7367]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 212,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 401,
+  "output_tokens": 63,
+  "cost": 2.686e-05,
+  "unit": "credits",
+  "reasoning_tokens": 32,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WbTdpgi8HpH7RwgtysGsyXOqzqriH3mM4aVk5EdKbuFd9XcBc71NZ-_p_5aRTOoHYsiJW2ySFytqi9oAmlHPR1B8qX8v_NIsvC88Bd2f2c8JSGrCN_CL6fxfWUALGBRJUJ00VakzGGr-88AV7OY9_6b5t5qe3EePrZ0dyt5yeggQUAnU2hByB0TL7kozMa-auT4DBOQ5Isit6V9UAZ_tJM0_RpCsw3_ncICtRbslQPVwVs2dcSXZmWnIcE66Lr4_Yvz-lpI1RvAf44lvdmXzlMq-vZPcUli1wfbwAXCzQqq-2D0Nm5Jq7TddXMVp3cimwo418jd3vnZeonxsD41uIP6wZBAI5sT_DJ5O1pUEcWceQM8rDWqNMZi3w_sTJlr_lFL_3J9L-eJltG-RNAuDi20u63XiGsYIUfT22Jd2ETP7qDNzK6E4XIcrNPz9TvJC73bHFE-eId9YNE1FJudWSG2-rEQNVBJeJwJrgxvLbH4PwtaWSqGjSWrhkbkK9Iepsl32ka-nv8zQClPspy29EUD6gS8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.534,
+  "text": "{\"decision\": \"answer\", \"answer\": 135, \"sources\": [\"S-0458\", \"S-bf49\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the posted load limit of the Aroixned bridge, in tonnes?\n\nSOURCES:\n\n[S-95d8]\nCommunity bulletin: residents are reminded that the Aroixned bridge has a posted load limit of 18 tonnes.\n[end S-95d8]\n\n[S-dc0b]\nSummary entry. Aroixned bridge. Posted load limit: 14 tonnes.\n[end S-dc0b]\n\n[S-79ff]\nBriefing extract. According to our records, the posted load limit of the Aroixned bridge stands at 14 tonnes.\n[end S-79ff]\n\n[S-801f]\nNotice to operators: the posted load limit for the Aroixned bridge is 14 tonnes. Please plan accordingly.\n[end S-801f]\n\n[S-22e8]\nMaintenance log. The Aroixned bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-22e8]\n\nPLATFORM PROVENANCE:\nSource S-95d8 claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-dc0b claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-801f.\nSource S-79ff claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-801f.\nSource S-801f claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-22e8 claims to be published by Regional Bridge Registry. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 343,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 680,
+  "output_tokens": 198,
+  "cost": 5.832e-05,
+  "unit": "credits",
+  "reasoning_tokens": 172,
+  "stop_reason": "end_turn",
+  "response_id": "resp_yDFzFP4O4zkBWM2nRP57kv22o2EhbLDGKuH7RXw_cAJeybZTTvnQY2w1J4JOXY9cKRRsGcg4CTpGINngCaePZGnkcBp21izaOyEcs8i-jmOOW5AV8mBK5gybL2942LYE3x-3218s5AZb9nSLEka9tSZRUlfPFMPQqjQuvQiDduGyWDaqW_gU5XR1aFOjOA-XMNrP6XMoVWJ8dzzWzymtf-n9ARsOEjC4LAzdB0TUsWN4kEJFIv1Oxz261WHZ-bk8ut1VPHYkBqkehDvJke5d6V7EA-mJF6yCO4RN4tRZpEdisYUvk-GJekhAeYmrHdefqshO58fpoMsf7QELopWgQGPAOb2xRm91XncgLdac90-v6pxyj5aoMMJ5U2IRionm3pSzZoX-rf0_59wpKjj8gTo_3s1Au_hi0taXMQZgkyOiPSSpmsIAyY45ThJEMswAydEKTGYEyJY8NP-vBKuOrOygFXqj12az_5Q_YCI7wQfXE3HSkLdX6L76lWeiJzj0Hz6_95kyvfaY2bJHU1Zebas7A1I=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.171,
+  "text": "{\"decision\": \"answer\", \"answer\": 18, \"sources\": [\"S-95d8\"]}"
+ }
+}

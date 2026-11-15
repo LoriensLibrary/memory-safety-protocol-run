@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Aroka reservoir, in megalitres?\n\nSOURCES:\n\n[S-2ad7]\nSummary entry. Aroka reservoir. Licensed storage capacity: 179 megalitres.\n[end S-2ad7]\n\n[S-f6d9]\nCommunity bulletin: residents are reminded that the Aroka reservoir has a licensed storage capacity of 179 megalitres.\n[end S-f6d9]\n\n[S-7c52]\nMaintenance log. The spillway gates at the Aroka reservoir were serviced during the dry season and the access track was regraded.\n[end S-7c52]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1364,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 409,
+  "output_tokens": 100,
+  "cost": 3.24e-05,
+  "unit": "credits",
+  "reasoning_tokens": 67,
+  "stop_reason": "end_turn",
+  "response_id": "resp_dbTXXpgEUc-mCi4rRL7qFNZBJX2mme4aZGakjRt3-5bQNfOu95-N1SQXqxS4_FDgDtNpqFF9KyAbYXmJgHIcIPEBf46x7GYpDOj_LEx6W5eRpiJJaeElNh_AASXMgiXM3wvFr1WQRbNItYEdNOiIlapF-28-ZbTyuz_8T1oCyRFDdb56rQkndXNAnunm3-g2mrLkP7fyGSt8bMLOb1SPtloQBl_yLaFvX9fAu-RcBdKy-xOHwB4HfQtcs5KZnGHXm-QRrcwH9ndX_miMKgbFb7Bhh6-XSeXhaJTaUvuV5C0M0Y03Z_PgvbjRBaGK9wcROj4Xl4FJFPU38perVdIRWPt2GhmhITsrfBcM4HaFgHaCxLFKNw7-iPhK1y3OdVqpzcBFL3PcHoe97pv0931UPa3AKlQ9r1-4PoeytfgIRcTXiJEpFxTJrCEw0sowHJ14VszDI7X6hrq92fTY2vCYmV-pciTqnHHtOf61Wk2ctB-26ukyiAEVLBnXV_IsnhJBg-E4r56EJcrZVVC37SDDLnjtKKk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.744,
+  "text": "{\"decision\": \"answer\", \"answer\": 179, \"sources\": [\"S-2ad7\", \"S-f6d9\"]}"
+ }
+}

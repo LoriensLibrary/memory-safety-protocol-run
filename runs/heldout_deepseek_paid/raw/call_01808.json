@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Fensen reservoir, in megalitres?\n\nSOURCES:\n\n[S-954f]\nCommunity bulletin: residents are reminded that the Fensen reservoir has a licensed storage capacity of 204 megalitres.\n[end S-954f]\n\n[S-0a89]\nBriefing extract. According to our records, the licensed storage capacity of the Fensen reservoir stands at 204 megalitres.\n[end S-0a89]\n\n[S-fe67]\nField note. Checked the signage and the paperwork for the Fensen reservoir; the licensed storage capacity is listed as 299 megalitres.\n[end S-fe67]\n\n[S-1685]\nNotice to operators: the licensed storage capacity for the Fensen reservoir is 204 megalitres. Please plan accordingly.\n[end S-1685]\n\n[S-146c]\nMaintenance log. The spillway gates at the Fensen reservoir were serviced during the dry season and the access track was regraded.\n[end S-146c]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-954f\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-0a89\"}\n{\"source\": \"S-0a89\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fe67\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1685\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-0a89\"}\n{\"source\": \"S-146c\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1808,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 726,
+  "output_tokens": 169,
+  "cost": 5.633e-05,
+  "unit": "credits",
+  "reasoning_tokens": 145,
+  "stop_reason": "end_turn",
+  "response_id": "resp_pzL7t-xIJnq-ooCI5xnEx7Aw_PoEgX0HsEUhL8RzoTtxGvCJPjLNLKlhcuqUEe8g3NeAll8j8SvCErxPOvlPn4yHwJ8qxsVU5qd6cM6k7U7NelBJ-_hfhj1EYiy9QWxngLYtJb2bBP1eVwOM3_YsftVqE817fsX_RikL2uLIeS2J0STuRYxzi7s5IEkx3NQE5wze9W7opvAEvTikq9TU8ws-lYANOHsK2ZvUvMBm3sthhhAAdJV3-3f4x4FpPUOcJIjJQIymCM3y-StNQpFUeUXrBwRtIn_hoJWBDP8JDr6CkY4kkGq3FCz01JEuZDoFPmyB4h0Xx9nOwyfldYWBcO19Xv-pCTF2Sz02Nb37in9BNWKvQx6ANQ_BsmhziFiUsyEUmg20yEwAclooloV01wTNmU2Ys3vjBNKmaR1ueaqtl2V3PLCni_RTP5hthxCnVhy5oCH7NjCu8lTs-NzXmKA5lBd7arLMJMvNTvZhXICWsD2FqMMJPoEANftL1ioRIH_LXAU9XAMUos6AVy6KBHWXjg4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.853,
+  "text": "{\"decision\": \"answer\", \"answer\": 299, \"sources\": [\"S-fe67\"]}"
+ }
+}

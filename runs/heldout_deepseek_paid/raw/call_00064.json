@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Braka reservoir, in megalitres?\n\nSOURCES:\n\n[S-1a0c]\nVisitor note. The Braka reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-1a0c]\n\n[S-4a17]\nInspection summary. The Braka reservoir has a licensed storage capacity of 343 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-4a17]\n\n[S-915d]\nBriefing extract. According to our records, the licensed storage capacity of the Braka reservoir stands at 513 megalitres.\n[end S-915d]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-1a0c\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4a17\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-915d\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 64,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 585,
+  "output_tokens": 113,
+  "cost": 4.215e-05,
+  "unit": "credits",
+  "reasoning_tokens": 87,
+  "stop_reason": "end_turn",
+  "response_id": "resp_4Uuh3nyNix8GSnpP-f0PhNAUycz3wst-79wbtZsYfrRX6wIET1SRP9gGxJu9tQqEL5YhbV0gdCiQulWvoK1qATVhMj5qm4BqVKelMYzOxf9kb5CSRgZWbpagEDcBNNSUgR_zTmKeEF7AhCbUtDZ9kDXiSFDG4965b0J1V6UdcSJaWKViloIAFEWuZI3XDYndlXvYbApNu-dnEAgx-WnpNMVhvjkpuCyR0il51JnGYsmO-gZJ03H9yez1lNAMCQ9NejNwQH_88oi8J1bF7LYy9-A8eAOEUd6HL-AyX77t5llWyP1ia6QVJNZu4LXfU1nAiC9lbzqE6hh3h-I_9TevMM8_Wa0pI2b9isW_eQ0UZWvJWkvHccDOeHu1lRX2UowTTNVNcZMoG7kVRSdnSpUcPmlYzgBD0eHkiCh4rR6q28j0U-4UJKIa32df-_1sME_21jUkdYIunIZ36w7MLnb_l5iEgRMz1lsGGk5k5Gb8O72wFYchXuR4hl1DNd7QEjHZFNS8EKDcrri4hkywTSJxvHOYRWw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.088,
+  "text": "{\"decision\": \"answer\", \"answer\": 343, \"sources\": [\"S-4a17\"]}"
+ }
+}

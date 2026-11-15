@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Enolust bridge, in tonnes?\n\nSOURCES:\n\n[S-3182]\nField note. Checked the signage and the paperwork for the Enolust bridge; the posted load limit is listed as 54 tonnes.\n[end S-3182]\n\n[S-faec]\nBriefing extract. According to our records, the posted load limit of the Enolust bridge stands at 54 tonnes.\n[end S-faec]\n\n[S-cfd8]\nInspection summary. The Enolust bridge has a posted load limit of 54 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-cfd8]\n\n[S-d142]\nMaintenance log. The Enolust bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-d142]\n\n[S-0719]\nNotice to operators: the posted load limit for the Enolust bridge is 63 tonnes. Please plan accordingly.\n[end S-0719]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-3182\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-cfd8\"}\n{\"source\": \"S-faec\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-cfd8\"}\n{\"source\": \"S-cfd8\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d142\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0719\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1881,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 722,
+  "output_tokens": 532,
+  "cost": 0.00010697,
+  "unit": "credits",
+  "reasoning_tokens": 507,
+  "stop_reason": "end_turn",
+  "response_id": "resp_IbBzfas5eUOeCWi28BP6VQkZ8NChMZTtFAijzoL4KAqRqZOXhda48JpJEJZQaor76hrIP0pUYLQoP9p6z_65wypWHjT_FHqzvL44tC-OBAfJ-L5220JYO4UTDL8M5V5QDc95PnSrPD8W-LnwrI6XFab5kZunhEsuITDrxTT8jfWvWIxAGCYnpfQNUWKyZ_R5fOdWNG3DkTXteSGIaLSKSqPsNboDPIswrg7PJPsqvqQ8jRC_7cCVniQqDzd2H3Sgm4vKGLGo-GtIQ89TtL7-v2dKaEeatmG4dmec1_emHWKh_rWHRJaKRnbqM6EyzbIcX2o0qZGYlENmgGcaSg4OSZtpaICWolMz5_EmssZM2hqXxLkKHMHlUkkeDC7RKezuqASOTcN8_ohXJqoL4RFqYlOnqQsQMTnq65VDYCOajK-iEeziqowDP86Vb8VlM393VTFWYRgdSmWucjSG9zsOgGYpDCAFg1dW7KQDV9yila500J_iQ1nSZvz58FRcCZ3eCOgDGEmg0o34Fc1n1nbgYgxT1Pw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 7.881,
+  "text": "{\"decision\": \"answer\", \"answer\": 63, \"sources\": [\"S-0719\"]}"
+ }
+}

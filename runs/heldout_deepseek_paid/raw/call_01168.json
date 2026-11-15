@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Maresh reservoir, in megalitres?\n\nSOURCES:\n\n[S-3e22]\nSummary entry. Maresh reservoir. Licensed storage capacity: 337 megalitres.\n[end S-3e22]\n\n[S-73f3]\nBriefing extract. According to our records, the licensed storage capacity of the Maresh reservoir stands at 422 megalitres.\n[end S-73f3]\n\n[S-610b]\nVisitor note. The Maresh reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-610b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1168,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 403,
+  "output_tokens": 61,
+  "cost": 2.667e-05,
+  "unit": "credits",
+  "reasoning_tokens": 41,
+  "stop_reason": "end_turn",
+  "response_id": "resp_48Ph2IfZKZvr-jP1-2dvx7u5ELMRM7NtnuKtp3_aFFktkgSxxERu4WPMII6EIGh5ssLTkidN1khJW9ObIZSdPkn42keSoqNlpl9KGGgzCAhyyOJNPS8hFhZsB2vuwZ6yDb-MeZvrx3jfAfHbCzgODLvOEfS47kWf2xI5pffN78rBnFTGh3_WVO8VtTh05hlAeQNlRexg0prqQMTP7l0g5HA0BVLNASpeFVbQj5X7n3xt5sQBQLc-R9z30ha1JVpvP483vwqfzz3eG8BBg0hcpGsGz4YTZmLwIWYzs4CuWy1036b77ozMsE8sg-xEQP0Stci3CiOO59fIXpVcHmEndxddMI1JBnk48_5iwdzerdJb5OAlPTLnngkDAxdlya4aNxmNJStiQCQCl1sqvVjZqv11ZGxdduiqn5IBmGzAGwJPca0jeql3iKH6eN5PDx-AL1oei6PgQpcCMjLBYIU5z0eA55vVo1L0IopaN7W82u4rlqKtGfhOlwz5H7DUqCBCWL0rf8DVhDCAmE74nPXhEaxpmB8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.11,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

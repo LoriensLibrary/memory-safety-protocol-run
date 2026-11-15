@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Olust clinic, in beds?\n\nSOURCES:\n\n[S-7cea]\nInspection summary. The Olust clinic has a licensed bed count of 86 beds. The figure was recorded during the most recent scheduled review.\n[end S-7cea]\n\n[S-dd32]\nFacilities note. The Olust clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-dd32]\n\n[S-7379]\nBriefing extract. According to our records, the licensed bed count of the Olust clinic stands at 86 beds.\n[end S-7379]\n\n[S-027b]\nNotice to operators: the licensed bed count for the Olust clinic is 86 beds. Please plan accordingly.\n[end S-027b]\n\n[S-f9de]\nCommunity bulletin: residents are reminded that the Olust clinic has a licensed bed count of 121 beds.\n[end S-f9de]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-7cea\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-027b\"}\n{\"source\": \"S-dd32\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7379\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-027b\"}\n{\"source\": \"S-027b\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f9de\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1323,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 707,
+  "output_tokens": 379,
+  "cost": 8.488e-05,
+  "unit": "credits",
+  "reasoning_tokens": 358,
+  "stop_reason": "end_turn",
+  "response_id": "resp_VG0R78ekdMS_-n6JL032BqzyGoUJXFlYNeJZ2hegUM_QaSTiBh6Okjvjj6B5tthcTeHFIAqo1ieNdNy4tO9JKFKRf4rrS6-MqLRimiCnQgLfBheu30Nu0gbaK6TFIo8uPtTOJXW7ng_BV2Y2a_E5AHt26nZkvZUZeoLaZEGuqVyTNZkl9f_wnNYLGeZ3xIXSZ6ch6ZGfVLhRvV2K1dEHw-mS8i0SXCr95t_jyoS9LGZtMnHimcGZ-2uSewP7yINJKPmbgyQ0Aj9OyJCRYWF5VHVxPYMl43JxDubE5XYn1Fydpn1Id9U2SZQAy6ekVXiSTadfnV_7mR-JFCrZrI-TLOxuIbonUoegJHaTkVwjM8Eq8Aeq4zrC2ZTwPOmvbMWmMfo8zR0wAaNEB5kRecFC6-anJYuC26Pg7I3LfpruLTaO5KSHA_-q8hSgQp08Ce1LidQbGW-Pk5HSgkcoQVJ3ucPA_d0d_dBeEseKdguIuttQZIo105E-jpCmYaNYjHHWwD9vYbmLAfHZaVnmvU8rmfR86tQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 6.649,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

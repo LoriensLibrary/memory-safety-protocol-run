@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Pelqua reservoir, in megalitres?\n\nSOURCES:\n\n[S-0377]\nVisitor note. The Pelqua reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-0377]\n\n[S-0a99]\nSummary entry. Pelqua reservoir. Licensed storage capacity: 324 megalitres.\n[end S-0a99]\n\n[S-9480]\nCommunity bulletin: residents are reminded that the Pelqua reservoir has a licensed storage capacity of 413 megalitres.\n[end S-9480]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 44,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 394,
+  "output_tokens": 81,
+  "cost": 2.907e-05,
+  "unit": "credits",
+  "reasoning_tokens": 61,
+  "stop_reason": "end_turn",
+  "response_id": "resp_LvTQiX4DQ3tK7DzxuIn4eZ9gx2BzQnllHCna8IFOtOygJSiaEVDVjZLX02Na232MHUEvs1Mt6wustAJ8cQeMfkl0gjo2Dr_V-eC8DWpEix4V6wq7acrjHvD9sAGsrH6wNkIPjCs4_jIwp6HuIHNooFpmYYvqR6INgLICFVkvgv252owupk2HQD3h52RCMDzr7OZ27JYIWVEzglq94wX0LEmyXvhOzp4AcUMpyq6DGT4nilaKEvADoDbKGM9I8k1AePuY_qdGB74zcna4DvGjsTpjK04LrOGSuF2lGbMaWpG4huini1-ManbwEW_EDfpiTrSh1hE1yDxdZ9uyoA5PDPQTXFrk4lz1BweOK2iBf-W092a062OMVzn8fsnM8iSA0BWKMSlk-uFPWJ-mERgYl4AmaVoGSs-m_izYQtwR2OFUBa1aggxihFKtzvSfRZVk-c_CZbllN6rE7GRv5epTl2-E1VvoXMLBfGwjFux29gh3-9zmZB_MeXUSlFa_QXhYEu8j3e4f7XE9VRypn-A5fdp5Tbs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.576,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

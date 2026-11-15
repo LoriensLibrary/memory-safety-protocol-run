@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Quayth reservoir, in megalitres?\n\nSOURCES:\n\n[S-d421]\nNotice to operators: the licensed storage capacity for the Quayth reservoir is 515 megalitres. Please plan accordingly.\n[end S-d421]\n\n[S-6b41]\nBriefing extract. According to our records, the licensed storage capacity of the Quayth reservoir stands at 588 megalitres.\n[end S-6b41]\n\n[S-4b67]\nField note. Checked the signage and the paperwork for the Quayth reservoir; the licensed storage capacity is listed as 588 megalitres.\n[end S-4b67]\n\n[S-b037]\nVisitor note. The Quayth reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-b037]\n\n[S-17fc]\nCommunity bulletin: residents are reminded that the Quayth reservoir has a licensed storage capacity of 588 megalitres.\n[end S-17fc]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-d421\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6b41\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-17fc\"}\n{\"source\": \"S-4b67\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-17fc\"}\n{\"source\": \"S-b037\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-17fc\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1699,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 719,
+  "output_tokens": 219,
+  "cost": 6.302e-05,
+  "unit": "credits",
+  "reasoning_tokens": 195,
+  "stop_reason": "end_turn",
+  "response_id": "resp_oI9961DEijhz2Mujt2oxRexFDcwhMT1t678KmPeiGa11bkrlvKQpS_Hp4VgEYT2RZ0kOXaIYcZPIDbiO7m5NbMi1nrGMozqL2PtHMouCp-PHWa84DAYLouI_YWEdlizEW9Keq0hI3OYRUmhdaWn0f56da5J4BvEGfHu5ocT5pjxnFG3AMZFI8o-HR4wd_VYUUsTY9vQCXUCIRxp3IZVdJeNTkcT8_yfbbaantf5AKvBtd0V1vry0ySNrUbTmFvA_uW6casiFl0PVDrr5cr83wBSYfS5rxNphV0umZDjUdiJt_FGtRU59JcQtSwWJj0yExQAqb2aw3MrKWQXUeRQ9Uuf5r2G-E3sMvjWGvLyrUAQ-fU7eZJBpk_btzRwnuFgDVt8chhq-2I6wxQf79EY-WTHEb461-l2WgM7V6MDnH9E6n0n6BiW2dpBCVNud9pyIltB8RT_JaXMvCoCa-geE4MBEtQ3Ozo9mp_-4Hn9oMQmiKCIo5SVqowLRPwis078180ylRmKdcIjITpM11MGT3Pz0ufE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.401,
+  "text": "{\"decision\": \"answer\", \"answer\": 515, \"sources\": [\"S-d421\"]}"
+ }
+}

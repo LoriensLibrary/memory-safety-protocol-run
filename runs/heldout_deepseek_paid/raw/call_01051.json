@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Royth reservoir, in megalitres?\n\nSOURCES:\n\n[S-ac4f]\nField note. Checked the signage and the paperwork for the Royth reservoir; the licensed storage capacity is listed as 741 megalitres.\n[end S-ac4f]\n\n[S-37e7]\nBriefing extract. According to our records, the licensed storage capacity of the Royth reservoir stands at 610 megalitres.\n[end S-37e7]\n\n[S-c3b0]\nMaintenance log. The spillway gates at the Royth reservoir were serviced during the dry season and the access track was regraded.\n[end S-c3b0]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1051,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 418,
+  "output_tokens": 55,
+  "cost": 2.651e-05,
+  "unit": "credits",
+  "reasoning_tokens": 35,
+  "stop_reason": "end_turn",
+  "response_id": "resp_mqTA8zAkVUPNY6xlQz1VuIiuPwp2vFTgQV-nk-m145D-7X7nRwLAqRkhAG5qy4_81kyigRFwJwH0gCO0zwf49EciZ9nUBkJJ6sBO5sb_nYssR3Pc68Jbr4NhYRl-Ln8H9RUpcpruszg8wqOAbCUFN6NwOKcocgvHZn4omcupG7UplqtsYOhkPVRT-rpZqI2wxjxBmS91J5QvRXbIFb_ZnA3DsXcQNQ-RZ51NvMjFfrnhYarEuZHLc1GclCZojr4sPMzwO8gw5il2lcU4nSgcDl3GLX4Fi40tW2MZc7c-hraJCnlJhmPiIvC8QYjIQ0ASjyG5NenMKO2YuC5y_IWZheo7sY1mMdIRhHzEoxegK0lTdCA-XAyi5pC6qJByXRnQZktB-jQ1uMGWx_A1BEHBDqsfK6aByiip_7h0_cTAaQcXQUb5xp13FRFW-fs-_GaZl5TrcQKCeDsdi89zXWvSu72srRD38kB9-qukCleL1lK0PxbTMliVD_EL5kaJEXOXBUlMWAD1Moy7knx27YGFhB09s5Q=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.012,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

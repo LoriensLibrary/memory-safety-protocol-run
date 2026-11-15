@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Quabra clinic, in beds?\n\nSOURCES:\n\n[S-cbda]\nNotice to operators: the licensed bed count for the Quabra clinic is 110 beds. Please plan accordingly.\n[end S-cbda]\n\n[S-f49b]\nFacilities note. The Quabra clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-f49b]\n\n[S-ab93]\nSummary entry. Quabra clinic. Licensed bed count: 110 beds.\n[end S-ab93]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 960,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 386,
+  "output_tokens": 113,
+  "cost": 3.319e-05,
+  "unit": "credits",
+  "reasoning_tokens": 83,
+  "stop_reason": "end_turn",
+  "response_id": "resp_EDwduBkXeU_xvp5x_gAGhyWGvBxTtMtreMQAG55re2w5XtS8CSTVMblTnXJqR_X0-bOBEStKxyER3lKDDJ5Ib7hxX6nRvO1ce1v2QfaCjJjcFWYmTap6y9TmMuhNEIBfTIay7ZGKtK0oEVRt3pXOPO9gP6f96laq8WwG101ExIWk87vxgrl2MLLQfDS-iY01hbd1laF75eZI6J3mSEP7UmLm-t_pr_4sP2vXotKC954JpKvnWnwuxftu0DFs3a72Xf38eWieFWslc7CN54dZeMRd3kn8eJgpowBbg4UrhEYSUr4BxaPuXouAwxQLCxqC4chXGwAfnX4w6TFSVbQZX4jfGSV_rEy9GGuFukhsCuWgLAr8cIuzgeZ4OYdvgO4M3BIp_8ChHUE85yqTY5EJluVJ87g0LQ1AqNfHpAXHdT3Vmp0l1T_WCHFc-efyQYynZ53m3x36V2oGGxdSSk-0LYPLW-btHq7Y-Em5sUzngbLEkgNKklJtNlQYyddXN7T93nVM10V1SA5dMsWBrfhPXaB497A=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.293,
+  "text": "{\"decision\": \"answer\", \"answer\": 110, \"sources\": [\"S-cbda\", \"S-ab93\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Marnedix bridge, in tonnes?\n\nSOURCES:\n\n[S-dc06]\nNotice to operators: the posted load limit for the Marnedix bridge is 87 tonnes. Please plan accordingly.\n[end S-dc06]\n\n[S-e14f]\nLocal history note. The Marnedix bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-e14f]\n\n[S-b6b1]\nCommunity bulletin: residents are reminded that the Marnedix bridge has a posted load limit of 87 tonnes.\n[end S-b6b1]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2119,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 403,
+  "output_tokens": 97,
+  "cost": 3.171e-05,
+  "unit": "credits",
+  "reasoning_tokens": 65,
+  "stop_reason": "end_turn",
+  "response_id": "resp_qlwHvG6GRC2MsMMWzQjqZwXOtE32UqL9bPVMkCJm_7r9DLppfge6m7V9e-K45GolozPvfjzP7QlJTuD5ybsPAwrnrDZuBHg0rXz2hfV8OwknogPTRrQoOrN6fb-CDqtfojEcT_960GX73wLXml3B4GAK91OegamYJN8PJ2rVGBvn3RmFZd01VUNCj1lgwdhiQv1MkT9r3kN-a3oO3HhJ-1qu7e-7MYHTwKwgAfI7rq3zSnTVCNUBCb9Z2qkL3kqF8wKYB3OmB9l1OkbbXNF7_djiBaH9x9iLm7ZzKf0uMdYxL87LICLQglOfBTCACp5UwtZfOIF3E13IDEH4s7ht5mGRXlWaQiIee1jcRjuoN6GoAriQDbf_-k0DWfqksZbcOobuZMdsOkC4ECFRZ2PJcu_RvXVemy-UWAdlDshMR-YRDjHL6vfAyF0li-Fr9Oi86NfYB5N6dcBZ-haL6VrAKpITUlGxb8zY7Rt6eOQewap81E-M3UryzCWIoRVhRYpJHOtN0xVV_XtAiWEgVPJdswNXKsE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.883,
+  "text": "{\"decision\": \"answer\", \"answer\": 87, \"sources\": [\"S-dc06\", \"S-b6b1\"]}"
+ }
+}

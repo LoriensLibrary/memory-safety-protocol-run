@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Olnedlim bridge, in tonnes?\n\nSOURCES:\n\n[S-ceb9]\nInspection summary. The Olnedlim bridge has a posted load limit of 30 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-ceb9]\n\n[S-c8d0]\nBriefing extract. According to our records, the posted load limit of the Olnedlim bridge stands at 30 tonnes.\n[end S-c8d0]\n\n[S-939a]\nMaintenance log. The Olnedlim bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-939a]\n\n[S-6138]\nCommunity bulletin: residents are reminded that the Olnedlim bridge has a posted load limit of 39 tonnes.\n[end S-6138]\n\n[S-126c]\nField note. Checked the signage and the paperwork for the Olnedlim bridge; the posted load limit is listed as 30 tonnes.\n[end S-126c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 786,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 491,
+  "output_tokens": 158,
+  "cost": 4.422e-05,
+  "unit": "credits",
+  "reasoning_tokens": 120,
+  "stop_reason": "end_turn",
+  "response_id": "resp_RkbKsDwVxYw3dnGPBKlmSsFEURcZosQ-MuXa9S1uTLg1FFVTZrPgS1Q-v6hi8bty_NuCinTUDkMW6IoZw0YW6XOR63z0gPuRX315Hr4_4kRCxZdmkfWRl_hvTOj4mASyOXy5UWR8_UVutfML_1zKROJiKmMAMWrxuOr79O1p0kFoUdXfnzV7ClzmHilmKKW8r6uHAthHTrQHjt4nL8y606DmIuxQODLcThH_pDl-TBIUvXtHYVwIP9TsbqctAuoty7OE05NYZxJSvZFUc4WHErbZP_Rz9yT88YoBuZtNye1r9kN160SZ-juiaC8y8F8cq8Z51Vy8NMRcsE9J1n5q1Qf-IR7aP0UaMAlWh8uoL2eueIGBXR9SN_iAoRKNTPGGBQVleWQvhDNDFKCZiqaMHD2KUyhiEhMtP-vy_oNevFIc3OrUC8JvvWcsLrgl4fsvfUaCacENvqSJIi5OfJzbvmmjm4Tof6KZsx1q9J3xsIQFerioi43YkSSkvX9QTnatS7uT3K4UeCZwW5vAdo5Vjf5MQqs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.308,
+  "text": "{\"decision\": \"answer\", \"answer\": 30, \"sources\": [\"S-ceb9\", \"S-c8d0\", \"S-126c\"]}"
+ }
+}

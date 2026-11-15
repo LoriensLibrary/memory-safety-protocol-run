@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Braesh bridge, in tonnes?\n\nSOURCES:\n\n[S-3717]\nField note. Checked the signage and the paperwork for the Braesh bridge; the posted load limit is listed as 71 tonnes.\n[end S-3717]\n\n[S-dee8]\nInspection summary. The Braesh bridge has a posted load limit of 61 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-dee8]\n\n[S-d092]\nMaintenance log. The Braesh bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-d092]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 902,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 408,
+  "output_tokens": 81,
+  "cost": 2.97e-05,
+  "unit": "credits",
+  "reasoning_tokens": 61,
+  "stop_reason": "end_turn",
+  "response_id": "resp_8ZwTspYkUNoyTgyw_1-YvFSrW4XyNugStEVHXs6Lirp3vFTDwWvwiw0FG3mEIeCGThu_oJofwim2CjcndLSq3V1TafjDRDM9msAc6bRZve_-oiomd4Mo0nGLxWB0IQralRej54HSnoXWAVt5ggnMB9LDF755HLHxAk8wOOg-UL-zHhw21HqBG0jjRRUfAUrrN3dTLP2fXyaKw6BBrwV1DisWLf9In5fBHzb67TyI56gRTg6z8pF5dgTcwOat8_youZfeTsndk4-dqbM1LRBxRWhIEBQ0cCRk3MjEILvDetKDfqL9JASs90EQOlQzkmpxGMOjYmHOMqxqZy10UjK1TQE_p84VEYeoUiA4394I0wypQRs77iztJtqrmSoJqu1hzz41EzpbwtexxQfz-QGQAVCY6WxlG153JhL9M8NZtLo6tmwsyphLuPPcy8KTZA2KJQIYlYR8hFhGg7wid-o7oXWvpXYMNOlRA915x9g6_B4cVQaxN2WnUgQxOwqgrK_lLGPcA8ZqZCmmMmYnFpxEGFa-5S4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.196,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

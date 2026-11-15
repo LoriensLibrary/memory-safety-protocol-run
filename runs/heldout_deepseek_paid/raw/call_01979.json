@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Enaro clinic, in beds?\n\nSOURCES:\n\n[S-b4f7]\nFacilities note. The Enaro clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-b4f7]\n\n[S-64e8]\nCommunity bulletin: residents are reminded that the Enaro clinic has a licensed bed count of 123 beds.\n[end S-64e8]\n\n[S-c574]\nNotice to operators: the licensed bed count for the Enaro clinic is 123 beds. Please plan accordingly.\n[end S-c574]\n\n[S-ad90]\nInspection summary. The Enaro clinic has a licensed bed count of 123 beds. The figure was recorded during the most recent scheduled review.\n[end S-ad90]\n\n[S-4444]\nField note. Checked the signage and the paperwork for the Enaro clinic; the licensed bed count is listed as 176 beds.\n[end S-4444]\n\nPLATFORM PROVENANCE:\nSource S-b4f7 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-64e8 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-ad90.\nSource S-c574 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-ad90.\nSource S-ad90 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-4444 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1979,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 672,
+  "output_tokens": 596,
+  "cost": 0.00011368,
+  "unit": "credits",
+  "reasoning_tokens": 575,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WlhahyGE_S9lIB9ji7BfQTEzlwkHkunI0uBraJ0-wl4EL3Ythi31bGI7fcy5IK48gaXliz_wYyoN04Gg1DCHco7dxezRqCuarhJfJW6QYbFq-io4BxBDd3hIzm1LfyQLFfti41PCtuYzBY95E9uEOF4hfJfof0FNJvK4PW6Zgm0zhmT1Sv7mXk6V12SixiqNqWup9EcEcbDKqknQOl_GxxH-qNIFfI4wVzTVXp48Wf15VWJK1U3LDvYibcLxydCdEdEgDh49zUbaIg1L3cCmbCubjs0-q1HuhWBDsKdSuE7qx2zSAhlzY2Iz2FJ5Bkts5e8uWJnHUe5bziH_FDuYCwBcqNYPY1CYpN3BYAhnOU2_pKg6q-4uascXSFZgdgx9xXx4TWaJQjQptRw6xUhUOAAE8TmXADXU_qpoUx89j9MnUYN3fYQUf6LlfQnTO6NawHhgz9caz3HIzUHwpCUBZ_8ruZ-SiIAz3u6ePRqRISDRV137mFOvmIQWtspxupGHpGNXZtWGJnYJLJRVxRz-9BT8Nrs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 9.063,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

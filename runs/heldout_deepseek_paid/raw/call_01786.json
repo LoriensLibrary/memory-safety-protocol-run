@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Ythned bridge, in tonnes?\n\nSOURCES:\n\n[S-a68b]\nField note. Checked the signage and the paperwork for the Ythned bridge; the posted load limit is listed as 29 tonnes.\n[end S-a68b]\n\n[S-4d3d]\nInspection summary. The Ythned bridge has a posted load limit of 32 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-4d3d]\n\n[S-71da]\nMaintenance log. The Ythned bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-71da]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-a68b\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4d3d\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-71da\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1786,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 583,
+  "output_tokens": 163,
+  "cost": 4.906e-05,
+  "unit": "credits",
+  "reasoning_tokens": 136,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ui2bP3TcFTS25_Xl3VSMjYsIhUfrOnz3_-MgHkCGPDbYVpPnzRMnt2SBfDq6NpsuxOcuAbOXy9G8FdswtL6HqlCf77ALjwQlSEf56xc306IEXjXmXkCVlbEcv6Vge1cOlpkR4vx6mxeUcqzLy0_xVNa9dJ5jZPxbfTCaEr3PaVMOnFvtcIYyACHsKt7eS_J3uY_DzRaX3sSYhgFYwahR2ASzuzxVeWd8D2ukIzGwPrtGvMmSkH5af6XmKufRtDwsafk_buNQr7DMdqWQ7fxrOdGMr5H0b6BbPTyK3Hn3Yxuiag7f3ORly11wPA_vAkywYWgcDMWjcoZ7xwYYokwjGaxqOjN51_Y5LlALffNzMpW2Uvpx66OTu2X1z058Mv1eoRlE7od5EbkhTtuwhxBam1zjymhNn8DmuCFCma4RlYglj2VPmm4JviJNU989yoeQlLZLlAMg2VXMGT4RVOXWvx2d-jng7mvrqW1g-XbMF2eoG8pZL1_aVrjyKymC36TXGmeHk05IYbiC7YNKfCTkpH0g4JA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.632,
+  "text": "{\"decision\": \"answer\", \"answer\": 32, \"sources\": [\"S-4d3d\"]}"
+ }
+}

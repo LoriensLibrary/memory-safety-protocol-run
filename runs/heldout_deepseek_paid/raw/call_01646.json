@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Nedix clinic, in beds?\n\nSOURCES:\n\n[S-ffd0]\nBriefing extract. According to our records, the licensed bed count of the Nedix clinic stands at 37 beds.\n[end S-ffd0]\n\n[S-e834]\nCommunity bulletin: residents are reminded that the Nedix clinic has a licensed bed count of 37 beds.\n[end S-e834]\n\n[S-c567]\nFacilities note. The Nedix clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-c567]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1646,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 394,
+  "output_tokens": 66,
+  "cost": 2.697e-05,
+  "unit": "credits",
+  "reasoning_tokens": 35,
+  "stop_reason": "end_turn",
+  "response_id": "resp_MBbxIDleK23F6cvr_goDNo6ccjx4CnVKN2qvwT4rHSlSP_bCiEOOPpZFxl5dmZkaMt9pQxXrJFOhfqtjjRuGHXl3upVmkh3O3O5ApjsV_4KF0CBUyCpYCRa-GZCH2_za6lyiSwiUseocjkCF_UGOy1HcbT1ALbvxjkrLyPnQ00zoAyGMDsX6rzwcpBg_l6k3wuZn1JRo53MjuhRhEooEtr0Yd8daYO0djhTTttyO0mwAwKuLxYf9r38aZnXpgXGF80awriYAj-Bv4wjBYzU2ozvrTSxVrsENsJnY-6-fmSwpk1S6Oao64u8kPMpLBhCZdRCoSFB7aB3yHCV8B-N9p6INCGDmNHVjngFEBU54US_nWC0_IhV6dCP7JLjj5MBVDWg2CNQxTPQ-9-VpeYj5M18UWX0s23MOYR1eOM2tzYFHn3kLX2wzE9HeeE2obOtaUH9rmUOr6TerR4sqYNeJn_Cj9wUT8RTGadSP8hOq48WoZEsvqkzOZS7jk18TC0GesoC6L8gBG8IxPkBotu9rtdi8LZs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.33,
+  "text": "{\"decision\": \"answer\", \"answer\": 37, \"sources\": [\"S-ffd0\", \"S-e834\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Quavorro bridge, in tonnes?\n\nSOURCES:\n\n[S-d048]\nLocal history note. The Quavorro bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-d048]\n\n[S-9daf]\nNotice to operators: the posted load limit for the Quavorro bridge is 44 tonnes. Please plan accordingly.\n[end S-9daf]\n\n[S-559b]\nInspection summary. The Quavorro bridge has a posted load limit of 52 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-559b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 800,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 405,
+  "output_tokens": 78,
+  "cost": 2.914e-05,
+  "unit": "credits",
+  "reasoning_tokens": 58,
+  "stop_reason": "end_turn",
+  "response_id": "resp_KdsKNl2Y13Ors_jVwF1nMFCGFR0hzPxfXUFdGhz46GBXucfYcaTEAVI6dbRI80GTmtX8EtEnimh0JgjGli9NFSjOe9JSlKldDo3yo629Pw-Awr-FGTuFJv9oOK5ZpuQ0Zfa7NmYsAPvQwxKnHVcp1CKwXEXU3fctrFcgfHtdgnkAjVFyIORHfSsODNTcFG6SHOWIKEFx99Bhp9ZICD9cDo7NFh2mGzn6kRuCL7dC7imAyxJlcDdgRInA4YGP5hfu9dqI4ZV2uJ0remEuqVJTMB_JAV5YrleEQsZ_o_vIpy0TnL8Mqs2kg3emsHBIYXa0j8nt1mDbbibN_h5r-wN4lKcgtsbw7Ko92WIjX8gh7V9txcur8gpQA6MJHVeZu-SSCt2BjUnI9-PhzaKVnwQTqmELPlnvIrr4AFNpcDAXdBTw1vc5t6GU58LF1M-aKyydm_1Fe8EPaaJO8XWJguQ-4aueo-jpT37AbeAgsFs60Z46Bk730i0vviVwbDfJOSyDUFTphQgdO10yX-vk4NyZcXl7C-Y=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.412,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

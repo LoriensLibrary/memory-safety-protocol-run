@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Enmar clinic, in beds?\n\nSOURCES:\n\n[S-dd25]\nSummary entry. Enmar clinic. Licensed bed count: 62 beds.\n[end S-dd25]\n\n[S-ac97]\nInspection summary. The Enmar clinic has a licensed bed count of 51 beds. The figure was recorded during the most recent scheduled review.\n[end S-ac97]\n\n[S-c6ee]\nFacilities note. The Enmar clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-c6ee]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 651,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 391,
+  "output_tokens": 74,
+  "cost": 2.795e-05,
+  "unit": "credits",
+  "reasoning_tokens": 54,
+  "stop_reason": "end_turn",
+  "response_id": "resp_GrVcfFu1lHfA-73C6sWuN-lY0TTDO_rO8T2YHNay5UjmGfNVNDAHF3L26BkYemPX1aNiasxNTilNbbiWjrqpd_GLSu6K8AzQtgUFFC84ydhi7s2E4I-wT-JjHGBWoD5vt0veyzNcrLcBfgO4yQkqeMx90vbaG0H6iAFJ-KeLIHUTFq-6Hx32OYyWPfTLvDq7-OHUChEQhdtvxdzPqYi2qtW7qCuciKU6gK18pbeXL-Sf6MGf1t26SVLEhg0Uq6bNQQ3ePuoUwF5pe-fSTvjAVmIzeE7fzC5z-FEaK0-ZOiz0kUODIKR7O7T12IkiLWG-PEZAD3zbLBEVEA1EsVZxkqpxkLsOLLEHbiDIGNC8hr9Gec3aFC6J0MPYCdiFph15NZZaVQT2EZNR64c7yWte8oRBbjQTYlwfpVKjl8VdgWJyQU60d3SSO2kIkMHcnSoeuS-WleDE4YRlbnWr5FxwFduIwwUeG2jwO58jaF2kkPm0Fbue5XR6igal6lEtqjd97kz-nzyLINobtxXWveYrscSE1qw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.255,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

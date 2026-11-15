@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Nedust clinic, in beds?\n\nSOURCES:\n\n[S-9251]\nBriefing extract. According to our records, the licensed bed count of the Nedust clinic stands at 100 beds.\n[end S-9251]\n\n[S-fc4d]\nCommunity note. The Nedust clinic runs a volunteer programme and hosts an annual open day.\n[end S-fc4d]\n\n[S-7c16]\nInspection summary. The Nedust clinic has a licensed bed count of 87 beds. The figure was recorded during the most recent scheduled review.\n[end S-7c16]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1405,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 404,
+  "output_tokens": 78,
+  "cost": 2.91e-05,
+  "unit": "credits",
+  "reasoning_tokens": 58,
+  "stop_reason": "end_turn",
+  "response_id": "resp_q9ANNJQz0AOEc0kiOMKOpgQOyaef-DGnCRheCYTX0EBvyMe-dDzvHJnvEvN-PsBB9jM5Ojrrk3LFLcNsOs1wDXmvXzqLiIQdjKrFB7JIBh0amr5N4mvCI6bmhz1_P_SYFDtdjBzdUWXygVT6FR7Btcy7Mqyoe3CnYeEMmaMluHioQ0P7x3tsswzSPc9F_FtOah2Z3PXiA4zfg6D7k0LuzRLd9-c3QGem-H13X8JPixnr1ofVSr5xJzjxQPKUu9eaX4qMTkKV6THBCcMza-FH5U_w5vyJ3f78OobqRs7sZoM3ZmvY_FesZUZBOkuf7-J9ETqBl1dKxEqGxisSDg81p0aLnwcgRkXsmYIMuBdxt-XBrQwQ4v_l5_NteU_njA9PYLvmSnDvsdyOrFRcliYi8B0PuAzs2NCmMd6GZOuT05d-aGvT1TtX1arskTyltXvlPK-zo7Iq74-YP8JM9_QKueMaNtlBg03fzdqqJcxZfcQ7jM9lyrQ8NP3GwqyzqjzAqgI_pLLki6o3ZaZqxiWU7Cs1l4c=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.331,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

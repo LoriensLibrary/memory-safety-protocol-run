@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Vordul clinic, in beds?\n\nSOURCES:\n\n[S-0375]\nCommunity note. The Vordul clinic runs a volunteer programme and hosts an annual open day.\n[end S-0375]\n\n[S-e777]\nField note. Checked the signage and the paperwork for the Vordul clinic; the licensed bed count is listed as 156 beds.\n[end S-e777]\n\n[S-e86f]\nNotice to operators: the licensed bed count for the Vordul clinic is 156 beds. Please plan accordingly.\n[end S-e86f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 77,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 398,
+  "output_tokens": 137,
+  "cost": 3.709e-05,
+  "unit": "credits",
+  "reasoning_tokens": 107,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QuG9FVz5S-tWVt4mP6XH_OpKGuLXhAqdiwXe__5pxuqKP3pzgaVnOsLD2ZXwsqLMzHGLn6dQ0XAFAX0pA0TVKl6Xb3v7FNaYKf2hqH8jIV2np5s4sf4kbcpY72P4dgjiwO74h4MPXFl10U7td5DAV3XHtnmhHNKPLg7KuzNgykHUl2AwkbpEkT46q8kxIs5dDDUNqtiU-q_eSaaZbM4lKNP7mKnFcD_-RhNlLa3XhT7yIWTY2yCWpkFlUihFZD4jAicJxzW-7awzqKIgsGyAe7WdbE-Y09MCmLP0q82tNc6rREaOPJpWojCGHPyn33t9WqpkteAAciMLsQ4_CTjzmplc8kr1lbR0UhcM0IHBkl3xzwnPNGpmsAYle8YwektSI57ufM_RL-kNm0u-vjo3ZVOlXnr8hlYEktT-8SYwhbHfg7phXuVtzFSFGxVES_SSh0QAJq5VCXevCv09izkrz_Kbkv2ySlwivCu-gSzHvOZgNT9Dsxtf3VTDoSbPM6KKpR7hbAF2OWcJgTiqI3klrPxrKwc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.534,
+  "text": "{\"decision\": \"answer\", \"answer\": 156, \"sources\": [\"S-e777\", \"S-e86f\"]}"
+ }
+}

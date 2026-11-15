@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Braixyth bridge, in tonnes?\n\nSOURCES:\n\n[S-ab30]\nLocal history note. The Braixyth bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-ab30]\n\n[S-c0f1]\nField note. Checked the signage and the paperwork for the Braixyth bridge; the posted load limit is listed as 18 tonnes.\n[end S-c0f1]\n\n[S-da8f]\nInspection summary. The Braixyth bridge has a posted load limit of 21 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-da8f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 889,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 410,
+  "output_tokens": 75,
+  "cost": 2.895e-05,
+  "unit": "credits",
+  "reasoning_tokens": 55,
+  "stop_reason": "end_turn",
+  "response_id": "resp_WAQmjuCE9cq5yuGNnN-UFh1r47kp_4f9WoWIqyhhvz_JNd8XBAX6QRZNHCLV2l11GxDWMa0aa7-EUTrKcxBncr8Ya8BDCUEVl7vv6v5W1krUdPP_GnN_BANxTjdK36uUQTqabaulSOuIzEf0hUNmu_h0jHfphXoB_O9xE2F_lB7O2u0mMRVWKp0D75_0OEyM6tJzRqhJK7WFIp3TZRxvNb0z64vLqvU7stnGQElOV15LbZ_i6IHCHyavpGzoXvb-ESDIgxliXaL8ljzDIzYW9lOeP21a02aB8JBca7Hi3b6var8M1DWCfsOV3xGCKwOOa6eUongF-p9_q_-LKzLhzlfkJfOfulIM7jLSoS1DMzldVe2xVh5TqVIBuzrchJoCwL-dpsbBBReMLtmN264FAqUKkHDuVafiejjhWxtsw9UuhwPcka5oGh8hTZn3leVP7Q8i-dIRMyw_h2TrsKwqmbYwCdnsoooRrVeFl2ZpBfWaawdgxXmI6PrxvxJKOYLSidRn6zccoQxArtZgZlSuUXkqUUU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.558,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

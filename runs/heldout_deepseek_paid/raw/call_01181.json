@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Arodulgri clinic, in beds?\n\nSOURCES:\n\n[S-7c5d]\nCommunity note. The Arodulgri clinic runs a volunteer programme and hosts an annual open day.\n[end S-7c5d]\n\n[S-5c05]\nCommunity bulletin: residents are reminded that the Arodulgri clinic has a licensed bed count of 124 beds.\n[end S-5c05]\n\n[S-ca46]\nInspection summary. The Arodulgri clinic has a licensed bed count of 124 beds. The figure was recorded during the most recent scheduled review.\n[end S-ca46]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1181,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 411,
+  "output_tokens": 95,
+  "cost": 3.18e-05,
+  "unit": "credits",
+  "reasoning_tokens": 63,
+  "stop_reason": "end_turn",
+  "response_id": "resp_cRPFxxlkaVv3_xAuPkVxb8Q7_pRMf9OkBqiS7qmedbsHpq9QX6lbhh6Y8BwLJ9UubFN31zx1kFkJVZTOSAexYpUtr0rrxqcxaPzZg52Mv6vy83Foh1YeN0UetF0nv0CenIqlnRrIx4VWQiPzDFzVYDYABWX5u-DCSytRHtqO5GiUbDXDIzdGuEr0Tl7LtQSn7y52rqnz4ACepOdlBTbGc1p5xHOp3AYvOcPtcUNOiCMCgX_fFf_YdQCzfH9VVCzk6w7ip7LD8Ank9KxTOfZVtn_vJdR-OAH1CPukNWheXfWTPHmSw7ljh9N3c4_X8-eDMHkHVDvoqWkXFawyI86B88DNTeo0CfGlrv_PcxBNwG5YzV90cffRkAwCZm7pYbvaRQbiM5AzWz2Kh5nVE4AydLn8w4XatTjF9470ZDfLT3cz3-0p7H-Ba1BkDoygBGrT9hdFlRHl3yb-1cDB9OWxboyvI4EM8D_ACWh2spbF2xfNV5rsg0WjxyqncAY8pGL6VoChuNdO1MwkL-UnKs0hfjZsawM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.728,
+  "text": "{\"decision\": \"answer\", \"answer\": 124, \"sources\": [\"S-5c05\", \"S-ca46\"]}"
+ }
+}

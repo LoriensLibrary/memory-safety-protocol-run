@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Limaro bridge, in tonnes?\n\nSOURCES:\n\n[S-5b3a]\nField note. Checked the signage and the paperwork for the Limaro bridge; the posted load limit is listed as 65 tonnes.\n[end S-5b3a]\n\n[S-4f89]\nInspection summary. The Limaro bridge has a posted load limit of 65 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-4f89]\n\n[S-6cf0]\nLocal history note. The Limaro bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-6cf0]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-5b3a\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4f89\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6cf0\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 478,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 569,
+  "output_tokens": 149,
+  "cost": 4.647e-05,
+  "unit": "credits",
+  "reasoning_tokens": 115,
+  "stop_reason": "end_turn",
+  "response_id": "resp_l6XeB7ifx4GN11b_MdEBMmSxm6e5ojsxAHrDmHsiLW4VY7HyCrEDE3EUz_sVAIaTBV8K9gQSHuAwM_keJXFzmAW2Fcnt3tarUQlbquSEbHFUnd75sLdgqjU41B26HAj25p29t5GxUz2b8AgFnGr0lFwSeluY6oq1s4tKwCqzyrA-i4Sxo2ZkG6ea14H9NQq5Z5ATvb3wI8kYyJxL_HAMFtYuVvowhCB1L-8T7NW3NxxHmhQApIkeT5DcFM5ifFyAdafp_TCiwBz_nlL5V-749zEykM0tEt0-XxeDXyHnhGvt8X8h34EC63WDZru6zCh0r33egf8nxy0lMMYG4ueqDgIFEoxWlTuxBkTYbfqLbQ0QdSj1fKmD1zPtTYwBLr707L1nDv9YQvTbyARJmU3yeLd6B_iXljM1dDB9lfw1erAQZ2sFO0iFsJRNTgnXYZiYzdDWEcRXvOk8SP2LOxv-x7fBea2E2Em-hb_o3IrDUmB2FTbxvXOsotE1m6uELpL1P1dGXVkkoXBp0LoUyLKfFti_iB8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.06,
+  "text": "{\"decision\": \"answer\", \"answer\": 65, \"sources\": [\"S-5b3a\", \"S-4f89\"]}"
+ }
+}

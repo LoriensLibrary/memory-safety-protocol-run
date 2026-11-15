@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedvel reservoir, in megalitres?\n\nSOURCES:\n\n[S-4cfc]\nBriefing extract. According to our records, the licensed storage capacity of the Nedvel reservoir stands at 290 megalitres.\n[end S-4cfc]\n\n[S-d4d7]\nVisitor note. The Nedvel reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-d4d7]\n\n[S-8646]\nCommunity bulletin: residents are reminded that the Nedvel reservoir has a licensed storage capacity of 290 megalitres.\n[end S-8646]\n\n[S-8c6b]\nField note. Checked the signage and the paperwork for the Nedvel reservoir; the licensed storage capacity is listed as 338 megalitres.\n[end S-8c6b]\n\n[S-4cf6]\nSummary entry. Nedvel reservoir. Licensed storage capacity: 290 megalitres.\n[end S-4cf6]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-4cfc\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d4d7\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8646\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-4cfc\"}\n{\"source\": \"S-8c6b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4cf6\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-4cfc\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 953,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 743,
+  "output_tokens": 364,
+  "cost": 8.44e-05,
+  "unit": "credits",
+  "reasoning_tokens": 343,
+  "stop_reason": "end_turn",
+  "response_id": "resp_cWNobjpIqC4iZnN160WdmE_h0T1R2a795xdEMUnz-ousrvNbHB1Uvx1zF-zctRbjl8grNHCnOuHOVGtRlIMtWuNZ52pH7d-pPXo0E-RIJXZEnAUUj7qFKZ45TU_3P9rX4N0VuOO_uj82CDwI_bN53JVlWz5AeueKf0lNAOtxCHUXr2LT2zPzXISGXmXFkefPMrdlW1V2_Pbw-OCbcxxEKwKraZ6HeyTeA_ROHKFRhbwQpb2lAVi33C80Y8nL-G91YerY7mjf-FRwrHioUg4EvTxRhUlQ1XykKNkP747n55MD2AONWaLNWDjAEHwXUBJpjzx18YrIHYZHHYG7uZk3LZXi0btLOSd3xOTMB5nrjBkGpa9pce8qYtj06cLjHRIYOEkFlLK5Jud9n_0yvPYbn7jTlPf7fSH1uJ8FI2aDWU2CwuDBA5QAck55WIgzGj4iTrQbD7llTvvAc1JxhsJTDsTccknxGEKrAlubXxK7u5_ATQLVhi7LjZbuDFHO6ixo9gg6dp1yg91OOusrCOecLSmaNVA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.687,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Pelome reservoir, in megalitres?\n\nSOURCES:\n\n[S-68e5]\nBriefing extract. According to our records, the licensed storage capacity of the Pelome reservoir stands at 198 megalitres.\n[end S-68e5]\n\n[S-d9a5]\nMaintenance log. The spillway gates at the Pelome reservoir were serviced during the dry season and the access track was regraded.\n[end S-d9a5]\n\n[S-d66e]\nCommunity bulletin: residents are reminded that the Pelome reservoir has a licensed storage capacity of 198 megalitres.\n[end S-d66e]\n\n[S-b730]\nNotice to operators: the licensed storage capacity for the Pelome reservoir is 162 megalitres. Please plan accordingly.\n[end S-b730]\n\n[S-d24f]\nField note. Checked the signage and the paperwork for the Pelome reservoir; the licensed storage capacity is listed as 198 megalitres.\n[end S-d24f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 404,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 485,
+  "output_tokens": 122,
+  "cost": 3.891e-05,
+  "unit": "credits",
+  "reasoning_tokens": 102,
+  "stop_reason": "end_turn",
+  "response_id": "resp_YTzvtnWcj2nVqmL3mkzsahlp71-bUVXKHRg6o_c2KOTZg9_vbhoIKaSTfCk7u7Ye8z8w_xwDuYfsEVno4c9QV88mOX3u7jRkCj7urBKQdJT2ylRa8WSXuHNJa5wxd8j8N7MI7vtXVtp-vd3yoVPj084YDOowtmePn99UvxWLzO6mq9fEwRgzQhOUpCZZP532ROfXn6Bjxx6_8-tUKSk0U7CwdnAipDnjYWWh4Saa1V1UDAB2LUTg2tUKdmQptThwyzTGrQg8xZcPUitZdGPWqz2ZU61pLO0VJhqw8QzU-t0V4wSQTqRhniX8IsQG9oXXfsl5d5QJM-bYyq8gFy6UPCL7Bo4yqfj30aWz9MZRvZFww0nDb09_vJEAbmhfiHm5A5KsOkChaOr7BIy4CH0cVB1t6zn-6uTlEBe_fK-_ug0U0GmbeuhHn8jnASduRZ3eWUNRcmtmxMAQSJ_Wb64WQ5T74wKVvxddsd3jyVv0h9ng-zvpdg9hR0qOgljk-74TYsbgbfAgMg4A2zErKje5KbVN0eY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.811,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

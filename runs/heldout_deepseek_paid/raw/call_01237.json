@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Olvorsen bridge, in tonnes?\n\nSOURCES:\n\n[S-bb75]\nNotice to operators: the posted load limit for the Olvorsen bridge is 42 tonnes. Please plan accordingly.\n[end S-bb75]\n\n[S-1ba7]\nLocal history note. The Olvorsen bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-1ba7]\n\n[S-1ffa]\nSummary entry. Olvorsen bridge. Posted load limit: 47 tonnes.\n[end S-1ffa]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1237,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 399,
+  "output_tokens": 82,
+  "cost": 2.943e-05,
+  "unit": "credits",
+  "reasoning_tokens": 62,
+  "stop_reason": "end_turn",
+  "response_id": "resp_YAe8DT_3qy2dlhZV5d4dqYsd3Zmux9J-73TrZQ77__tXLKBDyl4czf8FgXlxweBRJFAvTiyVgHNZNR3nBtTvap311Mtaq8iJoVlLG9wc8tJaVg8fqdv1sC-tCLgKx6OnF-hcsaNrDiyPuLHigP8XxftEYzonVuv6aOH7-TOzZ2SVpzE1Cb5hXoYgEMsMQrbB5NNRDj_b3JYW6Tt-gejQT_awfUGbN8KiSUcN2DbqsRyzfzs-f98xgg5joQSNCnGCVW_h0vZV6sKZApuoCVS7HhWaGSh4w0jtyS1o9uyhfD5Wdee-7CemgrUlG_dZpgkiFnxuNzNyaHgMykVTu-x-lJFeOUj0ath2u1dEdRg3vQxmLzk6VCWVp-vlo86yNm4yM_oCUOCP73TNQYHoACtXf3oqkcRJpSl4iGrrgyLSmaV7Ct7qptOv6ZWwAo7nif0CHtHM8KjOtEu5t1fS4wItab4JGmftCeXDOJz1qwpL_1DtJSbv2OBrBsnL6PPlm9xt69e7uNuF_mFrLmLFvatx6XN4ztc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.481,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

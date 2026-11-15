@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ixsenust reservoir, in megalitres?\n\nSOURCES:\n\n[S-ccff]\nMaintenance log. The spillway gates at the Ixsenust reservoir were serviced during the dry season and the access track was regraded.\n[end S-ccff]\n\n[S-c518]\nCommunity bulletin: residents are reminded that the Ixsenust reservoir has a licensed storage capacity of 798 megalitres.\n[end S-c518]\n\n[S-1735]\nNotice to operators: the licensed storage capacity for the Ixsenust reservoir is 798 megalitres. Please plan accordingly.\n[end S-1735]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ccff\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c518\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1735\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1827,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 562,
+  "output_tokens": 105,
+  "cost": 3.999e-05,
+  "unit": "credits",
+  "reasoning_tokens": 75,
+  "stop_reason": "end_turn",
+  "response_id": "resp_z_-8wAQ3P8Do9ZyZlwewKum08xJmO0BvQlaun895hTsQneylCPwKw0YoI0IJWOoe0egjUOyfJcrvrNMe1w1hbUboJpu9w5DMcq6AajWZ-JsPm2jSeR9SVZBKN5Dly6AOU9OCx4qa8HZ7Qb-x9uccRrcCLVeYWikwN9bVG-bnJpld24Bj07FmFQykH_KHkP-atiV0YdbRU5-c_7KxLy6T1IpUXuWriE1cyq-4fxp6q2BuCgAi-QIjZkZx60Ja7qgxaMXkhHK2pWJUiSSJBb9LG6IiQ5zampjc89FoL1ewFAoir80j_hVnbsrwYsfV1qUAUXFGd3mJJ4JndMTOJrNe0zTMJGS0Tlv-UyaDW37iWNBkHn7Z4KxWMhi7PlcpcS3-1quE-q6FUsohfIoBdLkuuw3eF-qTAKSHLNr1qrswVf7F7h9q1aA1llKwzmLXhoDtTbJxljTlUrWelYCp6rzpoe_y2GGmgNloYgP_NNn9SnNw2Um7oIMeUV8YEfy4doRcvYrghy12aY1pi6-q3fMrOJvh3BY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.165,
+  "text": "{\"decision\": \"answer\", \"answer\": 798, \"sources\": [\"S-c518\", \"S-1735\"]}"
+ }
+}

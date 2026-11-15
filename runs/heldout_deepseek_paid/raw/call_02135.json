@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Roeshlim reservoir, in megalitres?\n\nSOURCES:\n\n[S-42cc]\nVisitor note. The Roeshlim reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-42cc]\n\n[S-fb73]\nSummary entry. Roeshlim reservoir. Licensed storage capacity: 186 megalitres.\n[end S-fb73]\n\n[S-765b]\nNotice to operators: the licensed storage capacity for the Roeshlim reservoir is 158 megalitres. Please plan accordingly.\n[end S-765b]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-42cc\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fb73\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-765b\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2135,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 548,
+  "output_tokens": 144,
+  "cost": 4.482e-05,
+  "unit": "credits",
+  "reasoning_tokens": 119,
+  "stop_reason": "end_turn",
+  "response_id": "resp_UIkheKJNuxYT1kPNx-zJLjHGfIbNmX8lNsRVNLKdS5fl6xhk4XdQvQmh6I_uKxWpTPr-ReqFYRdzYpCJVHvy6g2ZwtcvgwBIWaaK8ebMqUdMUjKVbIK4fixiugxA10xAebSDSphp3ajoguSMeBglBp-tlhR7awvLQpAGSYSMDIqwb3OEkDN-Bgr8y5hCJY9nTGgGppV9yvZ0U-aNC3hxNbLnUniHB23uiURYwWhidBhYJWQjvJIaSoE85IvtWtTLh6GDyFiIMTqCz3GehRqFKBvyMUOWjDlPk9-Py-WWB4-PaBQHcQkpJI3bGCfO6-X-0sC_Xu6Q7vSPMDFbc2-pSDeOorcSzRqjz4XCd9zrHoSGN3vLeTiTQMApXulAUB6C-0iK1ipulqNG27OgtZOyHqbXZ1fTeHbxxL88X-cIfGLtbco9lnlMHSxg_enXHPHeXzOhayzrfUcJkStA4Ts5oegkBU7QTNC6xrriytpSwXK-9WaWoSKXMVNO5y4p3LzMrH1vXAx3u8zUoOZCG1XB33ml8YY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.605,
+  "text": "{\"decision\": \"answer\", \"answer\": 158, \"sources\": [\"S-765b\"]}"
+ }
+}

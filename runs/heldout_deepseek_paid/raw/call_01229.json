@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Quaust bridge, in tonnes?\n\nSOURCES:\n\n[S-a072]\nBriefing extract. According to our records, the posted load limit of the Quaust bridge stands at 76 tonnes.\n[end S-a072]\n\n[S-266b]\nNotice to operators: the posted load limit for the Quaust bridge is 88 tonnes. Please plan accordingly.\n[end S-266b]\n\n[S-c12a]\nMaintenance log. The Quaust bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-c12a]\n\n[S-149a]\nSummary entry. Quaust bridge. Posted load limit: 76 tonnes.\n[end S-149a]\n\n[S-9610]\nField note. Checked the signage and the paperwork for the Quaust bridge; the posted load limit is listed as 76 tonnes.\n[end S-9610]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-a072\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-266b\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c12a\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-149a\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a072\"}\n{\"source\": \"S-9610\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a072\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1229,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 716,
+  "output_tokens": 198,
+  "cost": 5.994e-05,
+  "unit": "credits",
+  "reasoning_tokens": 173,
+  "stop_reason": "end_turn",
+  "response_id": "resp_pb3fpiikjWmm0IpUKAuUcgmhHf9yrouBHKIAnlB6CMqiU217hgy3yr06i8EKhZzJsysLuYWIAnBmKzq9zwiG2ZYB_5fJJ8GVI0FYMO9_Rk8jc7llj0N0THoYzHUOVvIeCPeABCRT-uMHoiRzaP4iD9Q2PFHJYFEoYAJSzmOnhSSiHrTEBNY0kYumfOOCQ_mXSQd1lp0VjnrWXpIqjfklH6N6vQsMMnAeA3OLkXkY5k8jiLmECsrG4zzHsz9cev_i9Yz0R7xcguMW_MMFXCoWSNqMlZ6wnUNp0RSRyJRvt5IGb0Bdkzba0N_Jt_iLLnapMZq2oItTJ8jWF5PDllaxsX7i0dV-RzRUUiHsDsLUvZYvFAwG6G5oQVLkTd_j-3CDMykCjNebxwPCg4JGK59wydEcUKcnILldo5IvRmSIBS_LPbm3_QvHRl9wiPwa-TPSIjYjQ7anvuMLwFF28bk9u_Rf3EyW32Mt9b6otnzVoC3mSqy6vBVyPVzXQdZDscGuKzDqWjze6P6OPQmnb0C8PKdTUgI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.867,
+  "text": "{\"decision\": \"answer\", \"answer\": 88, \"sources\": [\"S-266b\"]}"
+ }
+}

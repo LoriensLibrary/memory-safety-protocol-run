@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Nedpellim clinic, in beds?\n\nSOURCES:\n\n[S-3316]\nSummary entry. Nedpellim clinic. Licensed bed count: 76 beds.\n[end S-3316]\n\n[S-9595]\nField note. Checked the signage and the paperwork for the Nedpellim clinic; the licensed bed count is listed as 76 beds.\n[end S-9595]\n\n[S-a4f4]\nCommunity note. The Nedpellim clinic runs a volunteer programme and hosts an annual open day.\n[end S-a4f4]\n\n[S-e293]\nNotice to operators: the licensed bed count for the Nedpellim clinic is 61 beds. Please plan accordingly.\n[end S-e293]\n\n[S-45ef]\nBriefing extract. According to our records, the licensed bed count of the Nedpellim clinic stands at 76 beds.\n[end S-45ef]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2087,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 463,
+  "output_tokens": 250,
+  "cost": 5.584e-05,
+  "unit": "credits",
+  "reasoning_tokens": 230,
+  "stop_reason": "end_turn",
+  "response_id": "resp_bltsZgK2kxdwodjx7XTsGMb_1WUVIBzpu4-JlV7wZ2sCC6MNihPazqmih9BlYabNyHhaMhiUVkavdfAjHap8ZllmugUZ-Qn7z0WaE8_8F9sGrGh1vUIC8hmcH393zD4pRFS3BMswui2oRgYjzqPRT38SOa6EFPKZslM8KOZCp9P1r3aan_-WSvdU3TnDPz-zFk4IFawmHCpvSmhZb6aCylcoDZUmPf0NZSpYcN7YLIPP05MpaKz9Js-e2jsVn3e3j2U_zXzQSXJzsy9GIt4BjC38My2peTccAbTGOKXgH4nwTZTQcW4W1lrEQf76xUUhKjGaxA-yitUiIg-wpb_RAeKiQTyqJiHgbkhQWXHBSmgsk1O81KfjxogQpqvb84jARxAhxxMGMahinSiWVNAzVN_qxrd65rH1fC4Sfb8tJSy6-WXYP6268oC-vJFlk4P9znzFwbMB2_OO3WFDn5MIhxHvFOf_dqVCsLMB04CthSuOxG135lUJP5pajfQ3VitSnxgAWk5LqlQfhzWRtFhru9KkhPc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.092,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

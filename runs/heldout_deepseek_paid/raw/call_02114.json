@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Vorfen bridge, in tonnes?\n\nSOURCES:\n\n[S-6381]\nLocal history note. The Vorfen bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-6381]\n\n[S-09d1]\nNotice to operators: the posted load limit for the Vorfen bridge is 16 tonnes. Please plan accordingly.\n[end S-09d1]\n\n[S-eed1]\nField note. Checked the signage and the paperwork for the Vorfen bridge; the posted load limit is listed as 13 tonnes.\n[end S-eed1]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2114,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 401,
+  "output_tokens": 110,
+  "cost": 3.345e-05,
+  "unit": "credits",
+  "reasoning_tokens": 90,
+  "stop_reason": "end_turn",
+  "response_id": "resp__C0dd2oXjuoTiRuEAwXYVqz58ojMsKUP0FnUPzn9Bg6Uoz_WnVcF7vL87zCeXlS2sJwTAbfZI_CEOId7Hp2K6FZismB88OcQIbQu_ZLAGdGNrh6GtQcPl9kmc3TTz2LRn7rjo7mec4JoU6PhRQOp1Sdwzj2eh_TpPqhV1OHthxwtKDJQn24POSyXioIaFr9FP657I1wWTNf4ZOm5NXL2pjxafMJV3OvTs53LWtFZG0WZuhv35iTa2IXR-KaiQIQsPoqCyhxd0opPXM4DDJEgmvkuNCQ1BWu0I4hkloo8QiDmhVC2gSbQ8EXg7a7Un0KZkfZ_T_zfJdpUJEyhr9LB3VsI-uKBsSwvFmcbBCfsEuoVKzfjwCBsDrIxA6ib49AkC7_skTKLQv_nbPW6yzosLIPoNDXoL2sh2gw0tHCImT4xtSBiyRqNFsze6H71wSeSWJKvky0za9y2GqcblIT4ReCb5EMC6CEox5aM8hSPkaJErabrbXl2X6WWNgkYa0JEW5sLhKq0QGRFQd0BDnkYt9mnQNk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.184,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

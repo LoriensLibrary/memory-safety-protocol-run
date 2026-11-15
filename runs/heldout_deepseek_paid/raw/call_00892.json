@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Pelustix bridge, in tonnes?\n\nSOURCES:\n\n[S-189c]\nInspection summary. The Pelustix bridge has a posted load limit of 27 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-189c]\n\n[S-f689]\nLocal history note. The Pelustix bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-f689]\n\n[S-da8c]\nCommunity bulletin: residents are reminded that the Pelustix bridge has a posted load limit of 27 tonnes.\n[end S-da8c]\n\n[S-5e50]\nNotice to operators: the posted load limit for the Pelustix bridge is 27 tonnes. Please plan accordingly.\n[end S-5e50]\n\n[S-7fa3]\nBriefing extract. According to our records, the posted load limit of the Pelustix bridge stands at 21 tonnes.\n[end S-7fa3]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-189c\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f689\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-da8c\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-189c\"}\n{\"source\": \"S-5e50\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-189c\"}\n{\"source\": \"S-7fa3\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 892,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 714,
+  "output_tokens": 392,
+  "cost": 8.701e-05,
+  "unit": "credits",
+  "reasoning_tokens": 366,
+  "stop_reason": "end_turn",
+  "response_id": "resp_MvJ6aJISLTbV_FQ3mJzEyyesqV2VSLScX3Cp8VnVNUIn97iKpAKdPCWNywESVokum8Rxz7OEOhljGhN1wK54Sd76c7fAhNAfWfTNaictXbg0vcrBqSpcUy15TsumMNXmiNIZRPVktc1NwRtZ7-WZmL2S0sk2fjs_b5pbC71a9zv58qhvtMxWjbho4eXVaC6InKKOtLsg3UhtIvjrA2eR0G9DWe8hqGR9YtuiWXLRoktXZp2zLX8WX-zEaVQ-ZoWVEM4bnNiGoT7fbe2euE6HNw64HHx6vwWKu5B2oMzqCYeQyRDjLLpaTVewK4bTeEyHNdaIrqlY1gGrouL_sP22m6qyRCt17_J4nT354ZtYnRbCytbqY_Zd6S44Kse7koIfv3fVpgwU0pCv8vMnuyVIPQXrRopAtEBncYy7jOycSHEIhKlckgBwcfjx79l6w3rqhhSzBQ2nu7NF6uk5_oeEUw61zeDXiBiCRzSy1XGyivN18BXbwrxYhaI7TJizq7w_GOxbxAEFI079XNZ4YbRWyPcMIOY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.674,
+  "text": "{\"decision\": \"answer\", \"answer\": 21, \"sources\": [\"S-7fa3\"]}"
+ }
+}

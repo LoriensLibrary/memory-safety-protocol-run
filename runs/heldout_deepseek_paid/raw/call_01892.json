@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Kaarovel bridge, in tonnes?\n\nSOURCES:\n\n[S-ae36]\nMaintenance log. The Kaarovel bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-ae36]\n\n[S-962b]\nBriefing extract. According to our records, the posted load limit of the Kaarovel bridge stands at 48 tonnes.\n[end S-962b]\n\n[S-8402]\nField note. Checked the signage and the paperwork for the Kaarovel bridge; the posted load limit is listed as 63 tonnes.\n[end S-8402]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-ae36\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-962b\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8402\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1892,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 556,
+  "output_tokens": 107,
+  "cost": 4e-05,
+  "unit": "credits",
+  "reasoning_tokens": 82,
+  "stop_reason": "end_turn",
+  "response_id": "resp_FUzuxLKMKWppQsdZQSxS8SbCD7x0eAq9MaZEh2y16cTesCHbr2RIe-t1AM1gv4KyVa8_vftZMtELaNipXHUZwTheOp-Y5LpnSoY_EBqecxK7WzjINLFbvTtHrh1mqP-B1RdHPskLlXHyWJxZCUpOeEjFQjSLGVPl06FJ3RMo5G-2UQYiZTDKQvea2WhG4LAq2U5pAnPzhtKQRp1aC_1uYnBsa1v-bZ6mvsF0BYiRzQtSZaC6yPxRuIYnvX_GvMXkcjzaM2JJVGWLJdwl2BtHQuinFw_JZpOndjV0XELk4JejQV3E0eAummojM06NbY1PpqkZL1QtqM23LGL3wQsyBqkwpnoEh5n3xjZA6eXQTCuymtY-yRzmtckd3dBSB3McGDw8IXn9uWaJ0gfAiv4TUP7cSldpBqyUo0ci8NpRhQOeggKSWP5bUTsLkkT--ONfR4SxbkhUA3qWZIAElGszVpaNv_POfXgTwqQwA4F-WSN3izK2wdRQl20Kv-DdWIVl4TQWYVI-09mDU6A-FBjBplUoK0I=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.946,
+  "text": "{\"decision\": \"answer\", \"answer\": 48, \"sources\": [\"S-962b\"]}"
+ }
+}

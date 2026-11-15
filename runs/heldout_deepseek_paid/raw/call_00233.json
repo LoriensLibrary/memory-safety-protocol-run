@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Pelvor bridge, in tonnes?\n\nSOURCES:\n\n[S-9833]\nCommunity bulletin: residents are reminded that the Pelvor bridge has a posted load limit of 80 tonnes.\n[end S-9833]\n\n[S-b093]\nInspection summary. The Pelvor bridge has a posted load limit of 80 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-b093]\n\n[S-9279]\nSummary entry. Pelvor bridge. Posted load limit: 64 tonnes.\n[end S-9279]\n\n[S-3d0f]\nNotice to operators: the posted load limit for the Pelvor bridge is 80 tonnes. Please plan accordingly.\n[end S-3d0f]\n\n[S-1478]\nMaintenance log. The Pelvor bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-1478]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-9833\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b093\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9833\"}\n{\"source\": \"S-9279\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3d0f\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9833\"}\n{\"source\": \"S-1478\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 233,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 719,
+  "output_tokens": 207,
+  "cost": 6.133e-05,
+  "unit": "credits",
+  "reasoning_tokens": 182,
+  "stop_reason": "end_turn",
+  "response_id": "resp_06WitFwJOgVKCJ-xDpRqdmLlSBGbego_1pLPHbl12mcfTVSLbExrXezwO2_hK4kyqzSLlupXLvVuoOmAMuN_QsLcnwFGjCObTy_awwv5v-_xgpMbQRK_B6eeEbGgmxZaWyplHsApjkuqXiad4Kzt4tZW-JPjasLSfns-NU4MwAN1zzjxozjzgL6GPhzREox4cCAS2qcMLT0QHHTJzSg1vxwTDX7IWQIPkHEm9zl1jAyIaNWcoU0L_NrTstgAhBAV_KTt1oN12_XOfy3D47vmSFJu843lK88F8RzsphtF7LgbqI3qY142mzCsjpNhm86y0LRiy5kmGmSPOYn-pnKhjrgAwxmaIb68AgHYvw2njG7_T7xiG8YxWMbkU1C5-SxQjsb8LkdjntoJRmGRL6n7QiqYkC0oeOl0Z_ROJ-RGU9rTugfy8fGvdAGg7nwgI2SZPHWO1h6AaaeHV7kFOZzNMw_Q9mL2_VQ76a1zwuCZq8oFvADcLPfApxO6Kkai9hVlAy9XW5__yGgL2M5BXCteuyCjl00=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.715,
+  "text": "{\"decision\": \"answer\", \"answer\": 64, \"sources\": [\"S-9279\"]}"
+ }
+}

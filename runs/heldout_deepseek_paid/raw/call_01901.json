@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Ythvor bridge, in tonnes?\n\nSOURCES:\n\n[S-a258]\nSummary entry. Ythvor bridge. Posted load limit: 29 tonnes.\n[end S-a258]\n\n[S-86c6]\nMaintenance log. The Ythvor bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-86c6]\n\n[S-c181]\nInspection summary. The Ythvor bridge has a posted load limit of 21 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-c181]\n\n[S-3303]\nNotice to operators: the posted load limit for the Ythvor bridge is 21 tonnes. Please plan accordingly.\n[end S-3303]\n\n[S-fa15]\nField note. Checked the signage and the paperwork for the Ythvor bridge; the posted load limit is listed as 21 tonnes.\n[end S-fa15]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-a258\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-86c6\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c181\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-3303\"}\n{\"source\": \"S-3303\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fa15\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-3303\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1901,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 713,
+  "output_tokens": 260,
+  "cost": 6.849e-05,
+  "unit": "credits",
+  "reasoning_tokens": 239,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ryHJoZPNKQCZTpr3rjU8QjtMeFUPZ9sVfqyMa7I90_MRB2Rc8SP7KZ2kG9Wkbc9gS8btz6QFaucmD0rdFoUmBN872hjJkQSG4uRnusOxRLoxqWdMIipnzKypNBsQWvSV6Qql8891UvWFG18Xtb51QvdiUVCAwJP6-jkhMvMSWJam6HMMT17tjpi7a2k7tL36UzuB4Cx6IddgFx6_r1e8x4CG77QlWj4tr3Uz0EcqTY7YTfgTWuHdOPmAUO_9kv61UPgtKUBhRf2-2aN1n-9dRjqMXyxuIv_Hmp5H5SxjT846WMF3I91oJAT5PG0llkcrKI-Lu77ElpvwjUjdd4xNAlGy0k1g6VxFq1aV3wyldR-0FKqAh2gG9Nru9L-zLjd3sepLNILHkaUf4JlQDXvGIRUS2nauUdNNva43kJuhX2BdN7hPqK3PyL5KeruERn_cshK_hVWz_tFMognyPm7NadHPuNBlMuAIWK-x0Oiq4NWk4xOOtTJeItrMcL5-whEcfJcv63WueaRdb2umCjP-3sZbsUs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.225,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

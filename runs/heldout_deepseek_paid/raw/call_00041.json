@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Pelqua reservoir, in megalitres?\n\nSOURCES:\n\n[S-0377]\nVisitor note. The Pelqua reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-0377]\n\n[S-0a99]\nSummary entry. Pelqua reservoir. Licensed storage capacity: 324 megalitres.\n[end S-0a99]\n\n[S-9480]\nCommunity bulletin: residents are reminded that the Pelqua reservoir has a licensed storage capacity of 413 megalitres.\n[end S-9480]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-0377\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0a99\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9480\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 41,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 546,
+  "output_tokens": 139,
+  "cost": 4.403e-05,
+  "unit": "credits",
+  "reasoning_tokens": 114,
+  "stop_reason": "end_turn",
+  "response_id": "resp_NS0emMDwyKxZw2OmQlM7hNCSVM2DWgH0V-7o5fLeFK2Ng-M47VhpeALepKjh3sUWJMPz1Sr9SfuC19Smd7MNkkeCiKUlaywrmYgXhsDadnoi-3Coe0IdR734DWbuxhOuQuUlQy0cmk1KFhxU0tp3DwW_zBN_raMGPBBjprnuPH78-1vMzAxQXWYeamG4MftCTIYyFlyepXRct2Qzz5Gi2KGIYQA_X7X_JX6ig8t82Mku3Uph98TK9oW6fbpT21T_G5mA0SoxjL5d7Xsd5oafhL3F0k5P9JZrKVVf6XrsOt5ZxvH_2qv1Vkbha1-lq5rQc61MK7d5Jbt-I7-ynZ76pUD4ZaS6rJGROIw-K-PXqQrXjhXvrkeWfK6mJne0XzUgPka8ByriXCHxfb5sEqY-9M52PuAZ__sWbR3BYHvoIpjbOvqNsKsvgOUtZjfbkMmBNMRkRirGyI42EEOCtlml_BBNsA6GJobUvSLtxBuV2Bi_YS3bF8TmmhgjyQJg_sQ3rnxGCKU14t9FGNriwsRurCx135k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.453,
+  "text": "{\"decision\": \"answer\", \"answer\": 413, \"sources\": [\"S-9480\"]}"
+ }
+}

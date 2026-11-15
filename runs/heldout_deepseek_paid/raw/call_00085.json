@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Neddul clinic, in beds?\n\nSOURCES:\n\n[S-fd4f]\nField note. Checked the signage and the paperwork for the Neddul clinic; the licensed bed count is listed as 30 beds.\n[end S-fd4f]\n\n[S-653c]\nSummary entry. Neddul clinic. Licensed bed count: 30 beds.\n[end S-653c]\n\n[S-3379]\nNotice to operators: the licensed bed count for the Neddul clinic is 30 beds. Please plan accordingly.\n[end S-3379]\n\n[S-ec43]\nCommunity note. The Neddul clinic runs a volunteer programme and hosts an annual open day.\n[end S-ec43]\n\n[S-f911]\nBriefing extract. According to our records, the licensed bed count of the Neddul clinic stands at 24 beds.\n[end S-f911]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-fd4f\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-653c\"}\n{\"source\": \"S-653c\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3379\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-653c\"}\n{\"source\": \"S-ec43\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f911\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 85,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 704,
+  "output_tokens": 354,
+  "cost": 8.124e-05,
+  "unit": "credits",
+  "reasoning_tokens": 330,
+  "stop_reason": "end_turn",
+  "response_id": "resp_5yXIO6MXcoPS4RjSDlVd_qqPCl5NRoL89tF4lTcL1KNdzeUanZt_5KlNx0Qv4QRr6Zppui_qN2jNnQR3YVoHHRVxJwOsBQL1kPJoASCizBEbRgv2jYSQ1i1II5oS5azM061W3B5k-85aqZG92JxoSQxXbYpSYPX7_vT9xQFr3ZYKzZ3_YDvETs_7-hJ2fi2g6COHBt8F1C7p-DyV_Xol3Zyc_ZNi06UjIpbv7VTUjxFSIh6Vdem-TtdH2akYIKM7r-jzFStLttMrSvuMZetXI8M2NB2vdfB-pQkP5lUXQohbLEvFzM-sEV3PwwYnDyMTVEea8_4LVm-2M8XI_JaLhMNFjEU-1Pd8_KnTWZrc7hC4DrNCFGAW5sx_e03FNhfVRl2ajETTXCbpLVawN-X3EPWXNo0tSAruj6FbYx_PcaQvdjOUr7UguHmRq6xHL6SwidTWYYyuhxEDey-JnZcgEE5ohhoVL5PYNbdTBLCskqc2p51jX-dDOgXjJe_TMNLHzFiJdOkpHQns8m0avtCFPFwC71o=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 6.018,
+  "text": "{\"decision\": \"answer\", \"answer\": 24, \"sources\": [\"S-f911\"]}"
+ }
+}

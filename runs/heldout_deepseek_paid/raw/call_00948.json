@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Grilim reservoir, in megalitres?\n\nSOURCES:\n\n[S-18af]\nInspection summary. The Grilim reservoir has a licensed storage capacity of 763 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-18af]\n\n[S-a73c]\nMaintenance log. The spillway gates at the Grilim reservoir were serviced during the dry season and the access track was regraded.\n[end S-a73c]\n\n[S-e834]\nBriefing extract. According to our records, the licensed storage capacity of the Grilim reservoir stands at 763 megalitres.\n[end S-e834]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-18af\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a73c\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e834\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 948,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 564,
+  "output_tokens": 110,
+  "cost": 4.078e-05,
+  "unit": "credits",
+  "reasoning_tokens": 80,
+  "stop_reason": "end_turn",
+  "response_id": "resp_lvE9EGDvblaJesL-NjHIGzvulSJSz_-qHMLCX9HwyyuttdkeGm11zQuFkw_U6LLbLOOq_aLzmHDqt9CwFGb_71l0Y1ljKSTL0xEuNR3nPKkkI6Sd7zVE7UmCubcMdezOsiZAoHgkGWAJ8eVAn-mAPxyN3RyNmoJVYoiHpFbF7HFqYupotgPN4Ff2WNcRb1pxW2bUg75eof6esCy-dvg2KufiO8CGXzP77d8oSN3YcHns9Z0WZlCj3q5CRosfILv3ti0EdGAN9t1awTS1i8Mq-dTmQ3EvUU0Bf4DADUvHcoaqBsNk6M-GVn0LKUgWiwqo94VbzpW7o3sJ9rKwegCaAfYYB__DYBrF2pHzZ85FV7871hnsvQkIzclWHn6dawoAIbXPM1J8eQYH_6g6KzVur5Rj3qDy3TGA8SrkbA1vgWzcois28wq88APJ1vsX5ebDrSkQWEtbOa-HfV8GMGveksgOBEgOMTVCR5esiGbKAuCuo5xJdITKFaapdM8MRhh_k5aHA1AbNY7d3TzfP7HEdtmw0Bc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.873,
+  "text": "{\"decision\": \"answer\", \"answer\": 763, \"sources\": [\"S-18af\", \"S-e834\"]}"
+ }
+}

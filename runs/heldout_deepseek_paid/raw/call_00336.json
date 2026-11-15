@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Tinqua bridge, in tonnes?\n\nSOURCES:\n\n[S-8a19]\nBriefing extract. According to our records, the posted load limit of the Tinqua bridge stands at 72 tonnes.\n[end S-8a19]\n\n[S-81aa]\nLocal history note. The Tinqua bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-81aa]\n\n[S-3bdf]\nInspection summary. The Tinqua bridge has a posted load limit of 72 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-3bdf]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 336,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 411,
+  "output_tokens": 98,
+  "cost": 3.222e-05,
+  "unit": "credits",
+  "reasoning_tokens": 65,
+  "stop_reason": "end_turn",
+  "response_id": "resp_sZC6BstYmKmSb-Bv6m0Q7MEMaPPIlh1ssNu-ES0rPMDP_qGCPkS_IkcF5Gt4iVmsIJRyWAedel9_oOaQ_ktHlpAasAl8frk2RYj6Aj0dbcYSVWNy9FDJLcwRHMrkx8XvCDXO6HM4fAQLnil6Gs23yDqAvgUQQB7K_i_jo80XN57uJUItllpgtcvKuP6epUKEr_YFNr3eldZV1dxWcbatMeUqu9HGG7-FHBlQ7jgMkk3Sb6UbCUaAqtYdhFqIzh6raRNBmosw2M8zmUA7--2VMcSKmyoJFKjsq0u5Vz6UYw-crcPfqRi0C38BR6e-tLmdQA35Y2Rc-v6Tgib97Z8hGfoIdCZO2ltIcJTgPo7Ae6Me30mgnKL4qu9vaUHaj0Z_HQFY9oq94bIeLuH7_ThEk-NVvXMTL1EnW9aMzYlJPm2c-LN6zSJ5eusTN-RT67JIhvS-D7RA9TiWUwuwoxTs425aK6EYnXlEEd8BM7caWYHHbUy3upD4kzVsYUGMZv6MfNoLIfthvPaA2bULgblqNzv_Ofc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.414,
+  "text": "{\"decision\": \"answer\", \"answer\": 72, \"sources\": [\"S-8a19\", \"S-3bdf\"]}"
+ }
+}

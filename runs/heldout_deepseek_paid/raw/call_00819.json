@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Enyth reservoir, in megalitres?\n\nSOURCES:\n\n[S-90da]\nBriefing extract. According to our records, the licensed storage capacity of the Enyth reservoir stands at 1062 megalitres.\n[end S-90da]\n\n[S-3c99]\nSummary entry. Enyth reservoir. Licensed storage capacity: 819 megalitres.\n[end S-3c99]\n\n[S-6f67]\nVisitor note. The Enyth reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-6f67]\n\n[S-dc46]\nField note. Checked the signage and the paperwork for the Enyth reservoir; the licensed storage capacity is listed as 1062 megalitres.\n[end S-dc46]\n\n[S-0479]\nCommunity bulletin: residents are reminded that the Enyth reservoir has a licensed storage capacity of 1062 megalitres.\n[end S-0479]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 819,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 476,
+  "output_tokens": 227,
+  "cost": 5.32e-05,
+  "unit": "credits",
+  "reasoning_tokens": 189,
+  "stop_reason": "end_turn",
+  "response_id": "resp_tSeJ_dtNN5bJge5BSm5hjoMc5DLImoNtmTaxOCLSWhncSyS0u326g9g43yjK-Hp73I4n3aTVz7EQNmJkYCMieDmolmD77QovNxC1cK2tVcmCGD93siF5lW3HEDJkxH8g7vJeBbbB-2rIHAEqKAO12rZ4Lqu95X5Fe_2Jz5ofw7BpqKtfifBHLzCkR4lAqzGnXsOeGaQUAX26hEg6JFFlTpEPStPX6jKUVPmtyv4O_aCDeJPyj7y3W9BqeUM9zq59ecD1xX6pQiIGP8SaPTghiAHIAmwo3kF_Z1TdmQu0yKXfPJHhesaBTsK6j00grB4s86khPROrIESNKR-SIOvFiqH7nbOxrswH8kJzdWpmZr5QYJNXznxDQXAdFRHiFJkO8OG__TwNBoGpG2KCA6sHALXItDwNwiJlQntdNVR-drTBbFuvkMt1_IeVs4fzqFPTCqk9S7cdBpkbpHvW3b3oQkhAjv8PnqzEmfxfi6Yt2GUynQNm3Al5zNPGHap8QZ-JHZlXr8TTQtir_kffPWOj6HZOESc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.892,
+  "text": "{\"decision\": \"answer\", \"answer\": 1062, \"sources\": [\"S-90da\", \"S-dc46\", \"S-0479\"]}"
+ }
+}

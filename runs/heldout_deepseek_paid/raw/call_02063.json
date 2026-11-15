@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Senvel clinic, in beds?\n\nSOURCES:\n\n[S-5687]\nSummary entry. Senvel clinic. Licensed bed count: 245 beds.\n[end S-5687]\n\n[S-cec1]\nFacilities note. The Senvel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-cec1]\n\n[S-5db7]\nCommunity bulletin: residents are reminded that the Senvel clinic has a licensed bed count of 245 beds.\n[end S-5db7]\n\n[S-5f9b]\nBriefing extract. According to our records, the licensed bed count of the Senvel clinic stands at 245 beds.\n[end S-5f9b]\n\n[S-cdfc]\nField note. Checked the signage and the paperwork for the Senvel clinic; the licensed bed count is listed as 191 beds.\n[end S-cdfc]\n\nPLATFORM PROVENANCE:\nSource S-5687 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-5f9b.\nSource S-cec1 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-5db7 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-5f9b.\nSource S-5f9b claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-cdfc claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2063,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 674,
+  "output_tokens": 171,
+  "cost": 5.427e-05,
+  "unit": "credits",
+  "reasoning_tokens": 146,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ysK4HLQUT19OUj1ZXn-_E5gE0UAH21W6z62_X9qzJHamPqylcxTVtKQ6ek1G2u219J-RpA_WM8y5lpDZryUVckdPUXu41x9kdc7ZGsDYEkm35L3peiYSDPyLkD3WgNZ7iub8hKy6syIVEsTAHAjY9ZgqtbaFuvT9HxgR6tiKxeAC-kSr8Fzv1jTrJ4OuwJcYV6GZlXIyEV2jS2jmKx2hMLunM3A3FpPyVTuNKeJKJXTIgR6pr28_0BrHs26n47dwniYQnYtM3J5GKYQUDkeB0oLMtL0l1qalWzM3IEdpF-0t3aZ6pADKDMr7UQIkUb8Qz3GPRcgezPhYRRB5J9XDQC487yLgyXDopxy-slqo5fNxWCiEqgxryzzk7iDXx6jX7wTFCdySuV7KzPxgMIxHun_lFiSZoSr3Xm_7DMC3_B2ubkJHmmuJVyZJFVjOZRJBMGqGU8wHqwRcvYytq9o_2AZEHVfQyN_-csF9v8UZ1b2SM5I-3kNc3GyCV3sJ7E4n6W70O358iCpIVvz7Otc9pBkPrpQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.019,
+  "text": "{\"decision\": \"answer\", \"answer\": 191, \"sources\": [\"S-cdfc\"]}"
+ }
+}

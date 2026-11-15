@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Veleshlim reservoir, in megalitres?\n\nSOURCES:\n\n[S-ae53]\nSummary entry. Veleshlim reservoir. Licensed storage capacity: 913 megalitres.\n[end S-ae53]\n\n[S-4fb9]\nVisitor note. The Veleshlim reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-4fb9]\n\n[S-b181]\nField note. Checked the signage and the paperwork for the Veleshlim reservoir; the licensed storage capacity is listed as 740 megalitres.\n[end S-b181]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1478,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 406,
+  "output_tokens": 76,
+  "cost": 2.891e-05,
+  "unit": "credits",
+  "reasoning_tokens": 56,
+  "stop_reason": "end_turn",
+  "response_id": "resp_V2TOhg9qZU-Ep7LtR6eLpRI_tMor29Q6DHqahz--xqIRQzc01HTsLs7wIz84W6AlxZpawfcxOi9GmVfoZzPhdK8TnEjzgn_Y-25KA0WgFb0Qt-_M9O--WhHugiEJ8RrEK5k8kMGTv7a7CgNRc3ffPHXhcsAhP2tqDYYyK06RZBoF8MJho--XCQelIBQDOwfGMr5YRjZT00g58ru6NXF5QE181gBRnpNqGSpN8iNMqOGTuuLPMQszTePAuFqBFvEUG7Ir1OPLfPfvS8O-C4KXL1ragKHqt_0UTrpcX7OjVtPdTcLehswy3XujhekdgcjP2Hvi51IxbyNIFtPvUhZGdm8r21ZZAslM6Wc-JDbkc80SB9NvRoFkFwdRKEj3z1sBgQXGFMWwAHYjjTqBUGFRi3cFcfirOF_FEuZyzUvgfASNc-ZuQNt-MHrQ2W9W8Yw2eYd2bL5W8sOh-hyNvccdZqmpAzJxNrVlqd0LRMb-yg1JeKjM3gR8_GOjtlcJ-l95NskVDt548_FbIsXr46-nrFRb5uE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.524,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

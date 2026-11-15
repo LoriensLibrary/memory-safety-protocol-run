@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Eshfenyth reservoir, in megalitres?\n\nSOURCES:\n\n[S-23bb]\nMaintenance log. The spillway gates at the Eshfenyth reservoir were serviced during the dry season and the access track was regraded.\n[end S-23bb]\n\n[S-3cbf]\nField note. Checked the signage and the paperwork for the Eshfenyth reservoir; the licensed storage capacity is listed as 496 megalitres.\n[end S-3cbf]\n\n[S-9b3d]\nBriefing extract. According to our records, the licensed storage capacity of the Eshfenyth reservoir stands at 633 megalitres.\n[end S-9b3d]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-23bb\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3cbf\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9b3d\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"retracted\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1926,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 579,
+  "output_tokens": 136,
+  "cost": 4.51e-05,
+  "unit": "credits",
+  "reasoning_tokens": 110,
+  "stop_reason": "end_turn",
+  "response_id": "resp_8keEfMsdwezXPOaI80DWTXpOytEpwokhCE1ma3pBp2bEjBIfOLgbaiStoIn4TSy1zqrw2GqJQsyy4Q2zIJ28cBJzK-ChsXvU0XmovHL9eG2H5w2DX05vVggkcDwXt37qjodS7e1hgzcblbDHKNyb2HG79hpCwZvYKGUvqj65POgEYHPhTwMkch5_gRH3IveJrV4GrLpkoDZMxeWEttNT-LpVtq5S3UgeuepaQtVCp-NIXcN0zraDNbf-FM1UAHuS-WqbdeHaPLqhBdV1pFzPQTzM0_PTPMEFA4Guuoi7Gx1PdN1FagsKRVT63-s01y6rQxjs1g5pN2V-Xre3UZ86qdw7WXowoEGVBHMx83aOVKdQWm9IEUFDPF6t50Y9jv31ws0YXlMyKlv_tChGKns9Oe8kAzEo2JhFO-n4FYfA66oM_KdLmlJYrj89rlKaLQ6ckYE_3sjiUaOal8cfW2thpZEHBh9gRWfmn2vYYqZa37ccLsSGTZbykL3hE8y2crS2okV3sqKXN7QrnBiDN9o0GXxYNBU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.404,
+  "text": "{\"decision\": \"answer\", \"answer\": 496, \"sources\": [\"S-3cbf\"]}"
+ }
+}

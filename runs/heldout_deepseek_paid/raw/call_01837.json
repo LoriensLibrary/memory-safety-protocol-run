@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Olome clinic, in beds?\n\nSOURCES:\n\n[S-628c]\nBriefing extract. According to our records, the licensed bed count of the Olome clinic stands at 62 beds.\n[end S-628c]\n\n[S-6279]\nSummary entry. Olome clinic. Licensed bed count: 62 beds.\n[end S-6279]\n\n[S-eef1]\nCommunity note. The Olome clinic runs a volunteer programme and hosts an annual open day.\n[end S-eef1]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1837,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 386,
+  "output_tokens": 83,
+  "cost": 2.899e-05,
+  "unit": "credits",
+  "reasoning_tokens": 52,
+  "stop_reason": "end_turn",
+  "response_id": "resp_-vU2ZbHH_OVMSeReVc2UbPHbEexOlDm3lGVGgXvxwz00sCT-hsctxb90ZS22-7PZGgEqzWC7xuqUbZcJQPAuMx8gZs9QhVw65c1OpwdvdOOWiTMJMPB7z9Ic8fOx6ilURzzighsViHM8s5Te2hRbqkQlAM7uGUsdVc4-ZPW8_ATPZSSU9FtiP3Jayd7v7qZeZn-O7vf6n8QwRdzo0ZHb8dEnuasKt1eAKnmybPBUFKEwERx5sBHwz9Mw34_E5agZ0Vk8jiU1J-6OL9KgD2B6i9BLLIRgeBe3Yr8SC3v9ybbtE3QrHZmByD6e6E9hGlKj1bFPVhR-yzfriXjZuVXoQSKi1NuGxXkcKU7NtftHonVbv-7OIXUfp9tMF6J3bSVtlVpPcGLjYEq-Zyemp-yOjkPEdcXPUBY85wiualeJkXlONlxuw2QbOw1OTF5T0qN0dKB5fzUgnEz55gqZcnaPyMTRpyg-p9-bKUDEv0HH1gL-4KYOBsSklt05lzzvTvEmjy27ApznCrhAqkn-wPEnTqqUv20=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.575,
+  "text": "{\"decision\": \"answer\", \"answer\": 62, \"sources\": [\"S-628c\", \"S-6279\"]}"
+ }
+}

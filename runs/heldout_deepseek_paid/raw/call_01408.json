@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Tintha clinic, in beds?\n\nSOURCES:\n\n[S-8b8a]\nFacilities note. The Tintha clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-8b8a]\n\n[S-6a2a]\nSummary entry. Tintha clinic. Licensed bed count: 47 beds.\n[end S-6a2a]\n\n[S-cd96]\nInspection summary. The Tintha clinic has a licensed bed count of 47 beds. The figure was recorded during the most recent scheduled review.\n[end S-cd96]\n\n[S-6f9b]\nBriefing extract. According to our records, the licensed bed count of the Tintha clinic stands at 41 beds.\n[end S-6f9b]\n\n[S-819f]\nNotice to operators: the licensed bed count for the Tintha clinic is 47 beds. Please plan accordingly.\n[end S-819f]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-8b8a\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6a2a\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-cd96\"}\n{\"source\": \"S-cd96\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6f9b\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-819f\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-cd96\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1408,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 728,
+  "output_tokens": 312,
+  "cost": 7.644e-05,
+  "unit": "credits",
+  "reasoning_tokens": 285,
+  "stop_reason": "end_turn",
+  "response_id": "resp_o4bLPf5AO12LQ8_GSW_gPZSQn4u_l81rPaHZR4dqlV8FUsOgENTcrJzN3BIVj8roVwmhRr2KofId017QKc0cxBRpt1T5QL09wIOusTgxE-449PLS-nTRqpk1f0_hfg1FcEDzclK-n-y4H_Un69pww5zDZWE1dA8U4aN02yt4tX6iv1bMf6W_fo1ctxif7Cbky4Ewo_clhbireHLpEyMtyNSh1Aiu7bo6qF_x0DHBLH1BAh4Zx9tXUOsADAvcBO909W_MGYtKhUUj4108owyR3DrCsbG9r22O4zw6cLappJSSUiH_mMXS7EeHtvzQF8qEFRbqN-CRaPJZxITejFl_nIvFu-eiZuv0ON64n2GIVyM0brgVFFad3uqoQmksd8Sr-5bj7mk5atgVs8y5P9KUs0TUt9q8Q2lqgPIMIsMiTqBhYMI2Sz-ojhp-hoyw0I6HkhVdLfEGxfEkFMt8sn2BoekcNk5rNHqTSZHj3mjLUx4KmWPeDASriSgvwO8tKybaDbR1ESvhwszQiq3tXUy2MKASEGE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.304,
+  "text": "{\"decision\": \"answer\", \"answer\": 41, \"sources\": [\"S-6f9b\"]}"
+ }
+}

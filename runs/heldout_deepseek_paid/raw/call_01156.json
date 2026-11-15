@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Envel reservoir, in megalitres?\n\nSOURCES:\n\n[S-56c2]\nVisitor note. The Envel reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-56c2]\n\n[S-85b0]\nSummary entry. Envel reservoir. Licensed storage capacity: 188 megalitres.\n[end S-85b0]\n\n[S-9551]\nNotice to operators: the licensed storage capacity for the Envel reservoir is 136 megalitres. Please plan accordingly.\n[end S-9551]\n\n[S-cba7]\nField note. Checked the signage and the paperwork for the Envel reservoir; the licensed storage capacity is listed as 136 megalitres.\n[end S-cba7]\n\n[S-c225]\nBriefing extract. According to our records, the licensed storage capacity of the Envel reservoir stands at 136 megalitres.\n[end S-c225]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1156,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 472,
+  "output_tokens": 162,
+  "cost": 4.392e-05,
+  "unit": "credits",
+  "reasoning_tokens": 126,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ff8nRC_nSqc5AOXkCLN6cewSzqfh805Difie7eVqg7E1AU-9h7y5QFW3PIXJMeX8MKC_UxNk-LWuzr8kPWj3waKYVquy6a5YXnU-_0OaPmbLK6VyThPUwKQlA7PLIQTBTd2uM5KV57NWOh1Dr_G_RB7UfnMYkStCDb0aFynW1W8ODRWOzyxn6j1kHum1_Tas1pWNhKXD7zYfDJ6QC4uc_bI_OpDipFlgXTpvyTVfPObmEk7cm-b79zGrWxI81Mx7bYr2BbwCPfftzIpNxC_BVQES0fOQl28zOqkXPq4iA3aoUlugDk6VVl6-PB38MOL543vuNP8fmrfj3Gvqbur2TQMX_WtchUba2bJJ4BKjPOzeU8xdtKTYXyByTM1lbvuhcqpzJwB1wQcUkvoegCf5ttSDVquM5FOeq6o5FrkL8n-DQBtItC1QEOes41BUCiF7JXDXr9dviUvXHTJKrirVBkrMobZYqfNvpEuxpi3WZMaLUWnfCyiaXZbTnh8dIEGrj3JThRsLTpqoY8vx--zG9bqYNfE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.219,
+  "text": "{\"decision\": \"answer\", \"answer\": 136, \"sources\": [\"S-9551\", \"S-cba7\", \"S-c225\"]}"
+ }
+}

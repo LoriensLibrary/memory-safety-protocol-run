@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedeshol reservoir, in megalitres?\n\nSOURCES:\n\n[S-0f99]\nMaintenance log. The spillway gates at the Nedeshol reservoir were serviced during the dry season and the access track was regraded.\n[end S-0f99]\n\n[S-593d]\nField note. Checked the signage and the paperwork for the Nedeshol reservoir; the licensed storage capacity is listed as 671 megalitres.\n[end S-593d]\n\n[S-e170]\nCommunity bulletin: residents are reminded that the Nedeshol reservoir has a licensed storage capacity of 527 megalitres.\n[end S-e170]\n\nPLATFORM PROVENANCE:\nSource S-0f99 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-593d claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-e170 claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1698,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 533,
+  "output_tokens": 116,
+  "cost": 4.023e-05,
+  "unit": "credits",
+  "reasoning_tokens": 92,
+  "stop_reason": "end_turn",
+  "response_id": "resp_lBStVKWktgLfGeuBp51SdepMJDuxGnAkPES7_Rk7U3P_VHEWaRyLyhjKwENybJ8Vpox0MhDKPJ9yDSUbFtY1bsykfuAkRfZsiz166MlTuLUc-e-sxARuPj7UKCYkzvnJ6xi2B-HpLUAFFsCXuiJy0UCuU72cUeAjG7fegBg_rNLyldfzHbzGmGaj02MTnDbml9oz-xD6crG8X7DGGiznUIoHyTGcG5bZbLYpJyNV8pCehFFYT4fiJXpOZ5_sv4g8nqsdJBF_AaMfWL4RO3B6QGMD0vXaEcgjFbaJoLsYsZ9WAjnzY8S-VkjEC7WOq8ZkskEsbLCTcjU0PJBbNHwFWKpRfyn1_fI3Hgj4KwFuHgoI0nIUHFFYQSrak5WjgJcqwl6_54SktjALHhHLF1vhxUPZ1659uBrYn9eT9aVTN0H0auh61hg5Wx6Ck-AC_Vay8alfvFflSffmowtXeoI5VA3RsKjkLrRlecjjZLYqfXC80SxyQHKIWPX5nL7d-_j_PHNOf8HYKc9_5LCdLvMKOU_vpE8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.921,
+  "text": "{\"decision\": \"answer\", \"answer\": 527, \"sources\": [\"S-e170\"]}"
+ }
+}

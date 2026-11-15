@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Ustfentin clinic, in beds?\n\nSOURCES:\n\n[S-4f31]\nCommunity bulletin: residents are reminded that the Ustfentin clinic has a licensed bed count of 79 beds.\n[end S-4f31]\n\n[S-c68c]\nBriefing extract. According to our records, the licensed bed count of the Ustfentin clinic stands at 93 beds.\n[end S-c68c]\n\n[S-3208]\nCommunity note. The Ustfentin clinic runs a volunteer programme and hosts an annual open day.\n[end S-3208]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-4f31\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"retracted\", \"derived_from\": null}\n{\"source\": \"S-c68c\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3208\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1308,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 551,
+  "output_tokens": 81,
+  "cost": 3.613e-05,
+  "unit": "credits",
+  "reasoning_tokens": 56,
+  "stop_reason": "end_turn",
+  "response_id": "resp_9Xv-Jx55bVYualyMRGu6_Pv1nF9tKtKJ7lg-it4cBin5qXi3LPZd1mNQbyWR-NAeuQJHd7okvbIMuk43S_dckfwwfb5qhG5oj4maD3hIKZuJ5Tr6knX2JAEbttaXKhiyInqpDfo-zchFWh0X7kjFBSHqrRs3fGGBuK-o8kksSpuYNKBG2pm0Q6t3AmXAZnK9XEhj3VzQtwPwgtrYCwpyQ5efHF6UbbqKE58ijx9bRBb5T_OfnPSIUx5U-7j1_mK4UoPvRgJKZkqdluS_DbQhYdvz7iasb0-88hlIznsyDalgqbkoO-SiqRjaY9IxcRcKlY4Q8hVp0eOKnseRsXFoYNxSnxlcL_wFT7kIViQ_PrtrieBCdWF8v7qIcqh0R9B5FEhbioM0Wckc4jQokszHHh2FAxS0_bxLpdtDPrb4QbOEPa6nrxxco4P1MtBRSGRUNfZMUEMGJU9qo3QNiDPNS-0iGlq5djvjbtRcgNRDWK_SU1sUd0yjee-lTAJQ24RmRL12pHS5FYFRabp4fFkHDDyRCN0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.331,
+  "text": "{\"decision\": \"answer\", \"answer\": 93, \"sources\": [\"S-c68c\"]}"
+ }
+}

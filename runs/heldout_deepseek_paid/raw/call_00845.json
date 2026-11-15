@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Vorfenust reservoir, in megalitres?\n\nSOURCES:\n\n[S-be49]\nNotice to operators: the licensed storage capacity for the Vorfenust reservoir is 915 megalitres. Please plan accordingly.\n[end S-be49]\n\n[S-3a82]\nCommunity bulletin: residents are reminded that the Vorfenust reservoir has a licensed storage capacity of 1036 megalitres.\n[end S-3a82]\n\n[S-1c3a]\nSummary entry. Vorfenust reservoir. Licensed storage capacity: 1036 megalitres.\n[end S-1c3a]\n\n[S-44f6]\nBriefing extract. According to our records, the licensed storage capacity of the Vorfenust reservoir stands at 1036 megalitres.\n[end S-44f6]\n\n[S-a0a5]\nVisitor note. The Vorfenust reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-a0a5]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-be49\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3a82\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-1c3a\"}\n{\"source\": \"S-1c3a\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-44f6\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-1c3a\"}\n{\"source\": \"S-a0a5\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 845,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 730,
+  "output_tokens": 495,
+  "cost": 0.00010215,
+  "unit": "credits",
+  "reasoning_tokens": 474,
+  "stop_reason": "end_turn",
+  "response_id": "resp_OlGbi-KOFJfat4ARuPwL17YHQ7bLadpB51Brcr0dLOaKAQqJ6PNzsT-pSAFtSRlcLv_c_4FDpIby-lGxMdRVxOLfcjikVWdMXB5PJT11OnWU2-StbdvGu7xw0OVzCSGL9aEOiW5MnOqTkV14z0fszHX7UJHVYNvjAD0MHLTdXXfB3ZSQm7ySVJzMOkPOjqZB7UqO3Ma8h7M91c7FF1mzQ84MVu_dUU7XDouUvLl80MU0bOCrsHimTDe4Gy4IrTTABnW88p-YYe1Drr75HDaFENNXrGCVW3MfTHP4Jh1gBre74bU8HopgFN0ZJPk1U-R1tQQSpCTHtoH3FZmcrhxXMsntHjqa2LK_w3zhp4UnO421AvLglVVVSovk_NBTl1prpQrd7A4oti6X5Mplew7-e4YAq0g7GrUHDVwjNAria8ncDouWJWzHdDxjuKZKumOmxN_dYJCA6UoVaL-MX1qBnWgshhfsAGDscoX5-j53PBjr-hgZdKMBU4LmTzJ9ul2YI_gFz93-OR7oPOT6AJte6scCu80=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.736,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

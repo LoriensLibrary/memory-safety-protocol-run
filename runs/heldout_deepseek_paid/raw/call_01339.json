@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Tinvelned bridge, in tonnes?\n\nSOURCES:\n\n[S-c22d]\nNotice to operators: the posted load limit for the Tinvelned bridge is 28 tonnes. Please plan accordingly.\n[end S-c22d]\n\n[S-e7b4]\nCommunity bulletin: residents are reminded that the Tinvelned bridge has a posted load limit of 28 tonnes.\n[end S-e7b4]\n\n[S-a76d]\nField note. Checked the signage and the paperwork for the Tinvelned bridge; the posted load limit is listed as 28 tonnes.\n[end S-a76d]\n\n[S-1bab]\nLocal history note. The Tinvelned bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-1bab]\n\n[S-7615]\nBriefing extract. According to our records, the posted load limit of the Tinvelned bridge stands at 23 tonnes.\n[end S-7615]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-c22d\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a76d\"}\n{\"source\": \"S-e7b4\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a76d\"}\n{\"source\": \"S-a76d\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1bab\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7615\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1339,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 728,
+  "output_tokens": 186,
+  "cost": 5.88e-05,
+  "unit": "credits",
+  "reasoning_tokens": 161,
+  "stop_reason": "end_turn",
+  "response_id": "resp_mFnyF5eHGjosQI-9jvhqdW6wMtxYJ0zn7m1To4ZY1fbH8TUQel9mvRGB_QSXp9oTRhG03D3KzbibdKdV0aEYB65rjujcun5518SlLYC-gmnDGPhS8wJW2rpOPfGzF84YhiXleD0yX9VksNzctEkh2TJIeQ5t8vzgA8uJw9ZYd6OwA1umOyo5bEviHIKVHyAukcGiaCa8I7xru8YKprrZa2rEsaKWU0uCJ28ISP2VJ9Vq00wYvp9eZxqEpIQmUvNApzw1RPuc9PpK7Nfp8Oy1tax_KGfO84GagNGYv4FrpO3Pv0E0PcX-R45jUs2148HP63TupAlDUAl51ABUN0wlUklEVnGnLs5tQFCG55gpu7y0vhlSaA5XI5DwZ32bxO-FRc7-Py_hYsGo1CJYH3okaYukS7NwJOKK8n6MmLIvIhzTLN1GXLll-aLRxzbKpJBq5lfLVhnk1nxdPR3RIr_2GpBQyto0_y0t-Scz-VBXwJWJrs6S5sfOs9_atmveBRoabvw6KX0b1hC4CVRRJoOTuNNUDug=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.759,
+  "text": "{\"decision\": \"answer\", \"answer\": 23, \"sources\": [\"S-7615\"]}"
+ }
+}

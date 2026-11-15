@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Neddul clinic, in beds?\n\nSOURCES:\n\n[S-fd4f]\nField note. Checked the signage and the paperwork for the Neddul clinic; the licensed bed count is listed as 30 beds.\n[end S-fd4f]\n\n[S-653c]\nSummary entry. Neddul clinic. Licensed bed count: 30 beds.\n[end S-653c]\n\n[S-3379]\nNotice to operators: the licensed bed count for the Neddul clinic is 30 beds. Please plan accordingly.\n[end S-3379]\n\n[S-ec43]\nCommunity note. The Neddul clinic runs a volunteer programme and hosts an annual open day.\n[end S-ec43]\n\n[S-f911]\nBriefing extract. According to our records, the licensed bed count of the Neddul clinic stands at 24 beds.\n[end S-f911]\n\nPLATFORM PROVENANCE:\nSource S-fd4f claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-653c.\nSource S-653c claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-3379 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-653c.\nSource S-ec43 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-f911 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 84,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 665,
+  "output_tokens": 258,
+  "cost": 6.604e-05,
+  "unit": "credits",
+  "reasoning_tokens": 234,
+  "stop_reason": "end_turn",
+  "response_id": "resp_mblpkKBFUM5SJuA1SgWys8mE9XwNQWgO6iVpO_YJF07H_c_DhA1XZEhNkt4cOh7gFzC9MPoOj8RwM52EyRfsrlFPy-Mr21o5m4448y_wiHGcIty6dqWsAYqNtcegITWMzTt7KKIx0zRCog10-b3E9Z6ARFAGXR0fbovIWoZdUW8GI62EsYmLWZ-50Z8bY4xEU005UvdxWYMZ4ueCtGJnBMLoe-VlJLjeLgrf26IY8swqEoPtSv4qSKOaYwKAwCYMxytuca58g15EYLr7JfhbOLFma7RY_tsHiZ51ax7BnnOCjSepXKTudb6ztALJWnDRcys5UOxFYWaHEz9IISf-cZXFnhV0PVeq_Crfv0V8W_h5Z2TSBXclmgRUkkW7pwpptr1W1oUpS-fHOsDa_xov18Qx16Ly1OQY19GrLw1yi3U4WFGYOSCIrnD0Pttka6v3_pm4jP650U891zhXgTlzT9JbLmpq7xEJRqZe5PAIlDRQZjYo7ICbln8rahiqP7FXME-pwKKL3YidauXvyTIMzcM630Q=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.807,
+  "text": "{\"decision\": \"answer\", \"answer\": 24, \"sources\": [\"S-f911\"]}"
+ }
+}

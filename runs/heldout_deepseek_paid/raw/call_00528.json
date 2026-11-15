@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Senomeesh clinic, in beds?\n\nSOURCES:\n\n[S-3979]\nInspection summary. The Senomeesh clinic has a licensed bed count of 172 beds. The figure was recorded during the most recent scheduled review.\n[end S-3979]\n\n[S-aa3b]\nBriefing extract. According to our records, the licensed bed count of the Senomeesh clinic stands at 172 beds.\n[end S-aa3b]\n\n[S-fc81]\nSummary entry. Senomeesh clinic. Licensed bed count: 172 beds.\n[end S-fc81]\n\n[S-6cf8]\nCommunity note. The Senomeesh clinic runs a volunteer programme and hosts an annual open day.\n[end S-6cf8]\n\n[S-9a87]\nField note. Checked the signage and the paperwork for the Senomeesh clinic; the licensed bed count is listed as 129 beds.\n[end S-9a87]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-3979\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-aa3b\"}\n{\"source\": \"S-aa3b\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-fc81\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-aa3b\"}\n{\"source\": \"S-6cf8\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9a87\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 528,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 722,
+  "output_tokens": 231,
+  "cost": 6.483e-05,
+  "unit": "credits",
+  "reasoning_tokens": 205,
+  "stop_reason": "end_turn",
+  "response_id": "resp_cRsBwt-mbKX0Hzwjsvz6MbJh6jXH_Xe-Ptu0vgNTQNDeAuiXEZ8Bqg4fUfBodW_BgpGjs5K81PgZMuRA51Ue2O7Ue7aS_74xHomQLJNZt26oulj0yE4EFcAvTsED_IQGi59_5BHBCdshwKqHx-Bl2QaEJPJfEtw4SGcsggFZNWqppUfGN-C3FuDdNp3ZB07QgBGxka8SJZ_HHpf7txlxDgcrzTcgsUcyWmOfpamOfj4bHvi_L0y3Bv-nU84yRwuwu6NsFRxKgj4-YZwsy_n-Z5TpDch4AyiN2SggUw_Q6Zu8y8-oisrnAzaGLTWWUqI1KuUvU8s_QmKI8tOJAY1lhSkOcyVHe3soag262UPm4tiJZ1tumNuz5QdLcdBxYZsw0LaLsQKMnB2oNDWMP32cBQfJ7-hftp5kCexRopKhAaiEK-E6VztDOxqUBnQIZVuh-Ru7Ym59x2AtYdxqAMgaoLkVCrNH3kBFNp_UBlWYnKPEwlg8IySq-qpsTRI7czB14f1MePwoJT1eCpDpBkQxyagihnI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.278,
+  "text": "{\"decision\": \"answer\", \"answer\": 129, \"sources\": [\"S-9a87\"]}"
+ }
+}

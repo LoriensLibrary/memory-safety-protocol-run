@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ythro reservoir, in megalitres?\n\nSOURCES:\n\n[S-865e]\nInspection summary. The Ythro reservoir has a licensed storage capacity of 920 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-865e]\n\n[S-06f8]\nBriefing extract. According to our records, the licensed storage capacity of the Ythro reservoir stands at 628 megalitres.\n[end S-06f8]\n\n[S-bc2a]\nMaintenance log. The spillway gates at the Ythro reservoir were serviced during the dry season and the access track was regraded.\n[end S-bc2a]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 707,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 424,
+  "output_tokens": 89,
+  "cost": 3.154e-05,
+  "unit": "credits",
+  "reasoning_tokens": 69,
+  "stop_reason": "end_turn",
+  "response_id": "resp_RuaKubZp25ApdU0mSg_xB8L3AoMy00hOuOFmW_p9MgPJyvumGaWvVIOJ2kVUS6Rv_0AqoDqH5BkMKbZ67FVfGJYYJiYSK2GiFKYFtiE7CUf1n5SZ_8F8f_hjkvCWA5vxpXW47SKZH5XwyrHQaeJ9G97V0CXQOXnCPCqcpgqUNVJzUgf-l2NfE6fn8N92CdYPFLlr1Qbzmgo_55IUBqEAF1-KRw4twP6rRelNrFUIBNEqvN7ugg1x9chopJR4D0xNpNiRoyhnUg42tztFhtf9XICEN8MytcxO1pgSy2N4d2ZMyz8WAgA8-bJzyjVvQY67N3LJt9VJ-C12Hwvk0B3QpSklHEX0goZC_b1GyYWhOYihKJEouqYrN0dzJDZKgh6juSH68sdHw2f_B8vaa5nTcOD6bFvHf2mhKFz33RojZ6OTA1zo7vUkaLXHwFw1zholJ12wtLyEQcbtRCg3QPZSy_uy3k9e3EkRI7NaFuMvHtrTYu9LwdHVYGyQWBUrXusFkq1WzAmFsNDJtHCcx0F9KnGE_s4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.224,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

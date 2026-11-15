@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Limgri clinic, in beds?\n\nSOURCES:\n\n[S-6641]\nSummary entry. Limgri clinic. Licensed bed count: 68 beds.\n[end S-6641]\n\n[S-515b]\nInspection summary. The Limgri clinic has a licensed bed count of 68 beds. The figure was recorded during the most recent scheduled review.\n[end S-515b]\n\n[S-ee65]\nFacilities note. The Limgri clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-ee65]\n\n[S-0a48]\nNotice to operators: the licensed bed count for the Limgri clinic is 91 beds. Please plan accordingly.\n[end S-0a48]\n\n[S-6dd1]\nBriefing extract. According to our records, the licensed bed count of the Limgri clinic stands at 68 beds.\n[end S-6dd1]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-6641\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-515b\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-6641\"}\n{\"source\": \"S-ee65\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0a48\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6dd1\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-6641\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1542,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 732,
+  "output_tokens": 205,
+  "cost": 6.164e-05,
+  "unit": "credits",
+  "reasoning_tokens": 184,
+  "stop_reason": "end_turn",
+  "response_id": "resp_RVtDOTl9z_a6TvYxt9LefDNarqfJ0ZgEADF7OK4kvXq1pdGRpXcE1SZ-Y-C9TD2AzHpRp86kdfcwegWh3ZwXJpIlRZ1oUHp46Rc_f0HlsfMvH_No4QsYflO2mkIDS6YzlrxQ2jE5ZB6nZWpnOBg_ZaJOks7caY76Qgh_YyOyUq65QNrrcaqf1CKgW8-ulK6X-jmtYLvgnuLhzj8AqfjQNuhhdp1IPfqkhil5I1FPjjPMHJx3BRe06IjHAxP5npL5W20VmgPmwvzmSFhd86YXLyUDrh2opbjucSB2FivCAQqdCyJN839BpV3X6m9afs80u6j3xWggXB0ThN8uY6JpBBzKCcWio8FKPp9CL8syih4X0AAbVFxLYPBtIRzpG-pP4tijVz33HQQF4BqB8VzO2Cxx63dfKeYXLKCqiwVdpEKUmPuQEfHssLswdfrdeHpcQqXIMTBOCcuymGslJzepnPwJpqAT9AGx48JJ330XI_dPbW2gRaTpqFqduQQ6_uPxqPD55kjADkTwji97ZgY0losGPr8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.478,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

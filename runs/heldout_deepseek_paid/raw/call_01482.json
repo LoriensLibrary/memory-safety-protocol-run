@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Senol reservoir, in megalitres?\n\nSOURCES:\n\n[S-4903]\nVisitor note. The Senol reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-4903]\n\n[S-8a6a]\nBriefing extract. According to our records, the licensed storage capacity of the Senol reservoir stands at 455 megalitres.\n[end S-8a6a]\n\n[S-86f8]\nSummary entry. Senol reservoir. Licensed storage capacity: 385 megalitres.\n[end S-86f8]\n\n[S-0a16]\nField note. Checked the signage and the paperwork for the Senol reservoir; the licensed storage capacity is listed as 455 megalitres.\n[end S-0a16]\n\n[S-75c0]\nNotice to operators: the licensed storage capacity for the Senol reservoir is 455 megalitres. Please plan accordingly.\n[end S-75c0]\n\nPLATFORM PROVENANCE:\nSource S-4903 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-8a6a claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-75c0.\nSource S-86f8 claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-0a16 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-75c0.\nSource S-75c0 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1482,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 689,
+  "output_tokens": 197,
+  "cost": 5.859e-05,
+  "unit": "credits",
+  "reasoning_tokens": 171,
+  "stop_reason": "end_turn",
+  "response_id": "resp_mpw4hrMzRqIeTEuO7oT2w1Q4EndKjGnU1m89zbDIUssFEVeANcEZL6k-OhBPLEW71Qow9ValjqdIW7WMWQiLN84a89YevELO_rZtHWLflzggvXEUPoeoE1_PSO0wsCYiaq2iQepSEJIjbu3xQ1fqokW2EM1FzZEjqJ_xsyvW5xLIUKf1chTRuNO9wyvCq4JygFbpRXUqMjYvaGxfr1fZRR8yIl6RsxrJv-iHMX6H5IJYu17VRJjOO5T8pWChxVm1pBBpk4pBuunfZRKrRwy-r8pBKSiNrGnmbmnh0hi49UzGk5EZXQy7VumUJYcQUsfp5Ac0d-Ezi7irePeKsjRZQrH74kudydGQfU6cZjEuQcOljHeiFXCsriHMMdAptZGutuo97ebotJllGqjNhLgtAxPT0r--zV9p8k906NPVXefIkuUDSXYG3WyhungwTwvVBrIK4HDrzK9s7OYWm6BFTe2U--AEaEa8uZ7Go_D2235X5RickQkDriTdRRX2Ku81GNMLuijLMs8oN0gBPCb9hlbMPd8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.72,
+  "text": "{\"decision\": \"answer\", \"answer\": 385, \"sources\": [\"S-86f8\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Kaixpel clinic, in beds?\n\nSOURCES:\n\n[S-37b5]\nCommunity note. The Kaixpel clinic runs a volunteer programme and hosts an annual open day.\n[end S-37b5]\n\n[S-5b63]\nSummary entry. Kaixpel clinic. Licensed bed count: 239 beds.\n[end S-5b63]\n\n[S-0133]\nField note. Checked the signage and the paperwork for the Kaixpel clinic; the licensed bed count is listed as 239 beds.\n[end S-0133]\n\nPLATFORM PROVENANCE:\nSource S-37b5 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-5b63 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-0133 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1536,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 516,
+  "output_tokens": 108,
+  "cost": 3.834e-05,
+  "unit": "credits",
+  "reasoning_tokens": 76,
+  "stop_reason": "end_turn",
+  "response_id": "resp_x6dJzycC1OQzocZAnMF5FAO09PFyq1Y_82vMuig_V-qj2Vlgowkfc6miUKPVElZiBOgwYA3YeAfZdpFMthlOwb680xBmIVicf2WSqYlm5zzuxthUowq5uyf_zWQa75GyhCuomablDIoqDKa26uNOFyrB_VmOYXP9O6exmOiTOakJO7e8jyPzFNNevCKU_tYlXTruAX_-tah594pZOVsi24bbKSPYUcbypRj0V-29ROkkzoVxPkjzK9RjRbfVh16zn9srS3eDbFOszihd4k-hevrJGa6WCoezXbVaP9FiqRWec8hyUWZO37RjASqTq-mtVyh-KHvpVAisB3YjsSlBgFxtEIK3QBZxiPMcltj2h46QLBT9p4cZoX0O_xRn0P9Itx0DHbhtT2BnPjiksTxWGWvntpXt7_G1WPBe-eUct6wqstqSDDtnFAog9QoU1q5s0PFNxFMgE86pUPMAXeH3sQeSq6Y6nh5dZoceq9x8bQDpmgxcA5f9wiYzbhoY7x3SPvgWKT395fBY_66AwCiwO4PLRQo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.648,
+  "text": "{\"decision\": \"answer\", \"answer\": 239, \"sources\": [\"S-5b63\", \"S-0133\"]}"
+ }
+}

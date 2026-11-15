@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Rogrined clinic, in beds?\n\nSOURCES:\n\n[S-06ca]\nFacilities note. The Rogrined clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-06ca]\n\n[S-d6dd]\nNotice to operators: the licensed bed count for the Rogrined clinic is 78 beds. Please plan accordingly.\n[end S-d6dd]\n\n[S-7b2a]\nField note. Checked the signage and the paperwork for the Rogrined clinic; the licensed bed count is listed as 90 beds.\n[end S-7b2a]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1840,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 408,
+  "output_tokens": 94,
+  "cost": 3.152e-05,
+  "unit": "credits",
+  "reasoning_tokens": 74,
+  "stop_reason": "end_turn",
+  "response_id": "resp_f-RZWt-7_iB2QmZ78QnlgLlXUPrJ9doY_NXiFfbyMtKbFMn7HimJCIYskuAzxqkVcC07cp11sx1aHrpi08CTq_iUEz4mlIKATVLftHUmt_qh6_bWxqpqy30HOFw5pR4Te-NXE9TK9s9gMbOa4Es4qZjm4fgk8IE9rDK0oUrlKdu_yGO1ZTlf0DU1ht0APhwNL4PoH9LaQAgiqC7UM3WqH1J9bhgRsMKviGTfCopk_TaymTSMhVc-gBJNhSMaT0FwOUOt1GVGoTghAoPlXFeLtcRghBnkAg3n7AgSfpYcMEUXtp9Fjxkf-o369BiRT19H6uoIZ5T6HBQXaWKFujnFlLRjlgKKZ_j3TxEa5Ayg3iyfMqsrUmJX5Zc9jY7H76bRJpOpRbA7_y7JZxVugUbXru7WoqkkUkuHOIOfgYkHynl5Q8KRwzwEVwCkB2GYYtLyxenNuiFiRtTGLx9iDjrJ562JxwfnF2Phh1kbC8zybcs973A6CkonMrFwxWldrG_YV7P_qLjkW6efiLm1OKgf_aAFO4o=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.698,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

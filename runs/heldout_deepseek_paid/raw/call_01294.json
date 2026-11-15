@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Quaustgri clinic, in beds?\n\nSOURCES:\n\n[S-6af3]\nSummary entry. Quaustgri clinic. Licensed bed count: 90 beds.\n[end S-6af3]\n\n[S-b115]\nCommunity bulletin: residents are reminded that the Quaustgri clinic has a licensed bed count of 68 beds.\n[end S-b115]\n\n[S-b763]\nCommunity note. The Quaustgri clinic runs a volunteer programme and hosts an annual open day.\n[end S-b763]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1294,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 389,
+  "output_tokens": 92,
+  "cost": 3.038e-05,
+  "unit": "credits",
+  "reasoning_tokens": 72,
+  "stop_reason": "end_turn",
+  "response_id": "resp_n0gCvm6dAbSkKJVzoMSj0GHyiCOCwvfqvYZa5AqJMXTMTOwRV_YTxGh3ebRw_mPu1hX9C6bNHwnbdXe-zxqIH5wH_NI8qkTpkvEmk4VUmaojXHMC5PNyF_bzuHuWMIiSKhYK6ox7cz-SLhUSmEy8ZwF_8R3RuzHiomqI2iex2bN5ZYn_DSim-9kopFebkGu5Xn-ZLBUcxKRdY7R5z4xA5beO35_HwiaeOiHetVJcRUjrt3rPopY1M_kfhpjdHT9U3wdpdY0ftWTMuEyYsOUnP-Nw5K59_ds4QOzVl8AYOrI2WZMPo_dA6B2eO1gaCEWhwZusefYXc6F446A_D3l9N3JpPY7zGrf1EHtZFqjV7qve4Qz-1X5fP5wlrur2BPSYXxSH7a335bL7Pj-SQoPvMSntqV0f5izwPrf2XL81uhDPFp30wn-ElYEB2BiNXBoj6dZ56cvnxNZKZU45Gzavf_-eXsP5WbkDgi3EiAgTV2NCtI9qt_nfUflu20MkIKI19ESuyOvjjtGvWYE5NT_KniJ9Kt4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.526,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

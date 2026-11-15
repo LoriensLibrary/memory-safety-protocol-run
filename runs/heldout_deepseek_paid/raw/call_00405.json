@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Pelome reservoir, in megalitres?\n\nSOURCES:\n\n[S-68e5]\nBriefing extract. According to our records, the licensed storage capacity of the Pelome reservoir stands at 198 megalitres.\n[end S-68e5]\n\n[S-d9a5]\nMaintenance log. The spillway gates at the Pelome reservoir were serviced during the dry season and the access track was regraded.\n[end S-d9a5]\n\n[S-d66e]\nCommunity bulletin: residents are reminded that the Pelome reservoir has a licensed storage capacity of 198 megalitres.\n[end S-d66e]\n\n[S-b730]\nNotice to operators: the licensed storage capacity for the Pelome reservoir is 162 megalitres. Please plan accordingly.\n[end S-b730]\n\n[S-d24f]\nField note. Checked the signage and the paperwork for the Pelome reservoir; the licensed storage capacity is listed as 198 megalitres.\n[end S-d24f]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-68e5\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-d24f\"}\n{\"source\": \"S-d9a5\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d66e\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-d24f\"}\n{\"source\": \"S-b730\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d24f\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 405,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 743,
+  "output_tokens": 419,
+  "cost": 9.21e-05,
+  "unit": "credits",
+  "reasoning_tokens": 398,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Kzcgv57_4gksKvvdwLCgu-mO8f5HcCfaLwig9y6QcoqPzG5xf0NW5J5jroWf_VifZHDAJT5eFOFwS7mcNsrrRZRNODKeN-HAu6RCPnNYDZUZU5AW3TziR4-i1hcC2ry45AYRMi2yQUqK9PcQVTtwO_BfonSiYXQ7Kzut-OoPN5ckVQySvokp9GGZE7AJYK5n2mFr037qyWpEXb9jXlvUaCqX9-HS88BqlMVK2TxPxUcSN1Yp4aTZPVqh3SwYtg0kW-JKPljLvQQyId3k3lVR7qYtg5ye0W6u5gdt64dt2f0KveOUT4uGOKLZIyhSvmLHNgbK97R7mHH_Z-ACzHZXYyi9mit-mZc4tA7yJqTpdiV9_F4s_gDsXW20IkD01ZlwJz4aAAI0EeM-XklpCDJekSX1rRiG0URYpBALVti1KunoLLmXsweJDAPo-X4jjAoPBYn2H3nZrdwNOufbpkt9Gyqgr2pbtLbqgwrGZLZ70fn8dxeVpuMeVI0iZhh5wJUfSRATEotFPG_t1VTQa6CTr90swaE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.229,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

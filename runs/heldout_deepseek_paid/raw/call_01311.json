@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Ustfentin clinic, in beds?\n\nSOURCES:\n\n[S-4f31]\nCommunity bulletin: residents are reminded that the Ustfentin clinic has a licensed bed count of 79 beds.\n[end S-4f31]\n\n[S-c68c]\nBriefing extract. According to our records, the licensed bed count of the Ustfentin clinic stands at 93 beds.\n[end S-c68c]\n\n[S-3208]\nCommunity note. The Ustfentin clinic runs a volunteer programme and hosts an annual open day.\n[end S-3208]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1311,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 402,
+  "output_tokens": 83,
+  "cost": 2.971e-05,
+  "unit": "credits",
+  "reasoning_tokens": 63,
+  "stop_reason": "end_turn",
+  "response_id": "resp_gXRuBMvYov8xd77pZdPnoMMtfPeAyD0ggVajDSGQW_gPezluQyU7pMxYm98Nt4Y_QniP-ozg_j-plsz3YbvKPnFUkjbeePuIpoTyX9uaesaP1Vm6cSrNIgQEpzFeJ88Kj9fZmuPDftUVcvL19vtnfG8NLW4j2M9xC9ntSHlRoLAMkm1qg6DsAEkFUvQhFQm5PvuogOyf8BQtDa0paT8cH01OMI2N_BJtJerJb0-lnkJaXsiV1j3D0C6HnMjokXCLsTocS5_a_gJLCGvGNXMM6dnmOPUqSDwGhHXDG_XYu7P1TpSOhzOCkQu-GimY8MteyX9k6TcQ05wV_VxQPrO36wSv_n1GRmRjE4uSiq1mz4ptG828TukO1BGvr_pisvXMl8oHglOtVj5gtQXM5eONG05XIDxDxiMzOAyvSi234IapBB3ZUJOyHI6my443gl1ZJgUZ81X_f45UDvdD3S1jOt48z2nkM0_DHPv4IIwDuvd0kZBjWz4E8RxnSZ1OPP5B_dVWkWhl3l2T_F6Lw7iS-4OSlVk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.373,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

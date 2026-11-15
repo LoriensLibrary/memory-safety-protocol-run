@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Pellim bridge, in tonnes?\n\nSOURCES:\n\n[S-42a1]\nNotice to operators: the posted load limit for the Pellim bridge is 65 tonnes. Please plan accordingly.\n[end S-42a1]\n\n[S-7ea7]\nSummary entry. Pellim bridge. Posted load limit: 65 tonnes.\n[end S-7ea7]\n\n[S-9aa9]\nLocal history note. The Pellim bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-9aa9]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-42a1\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7ea7\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-9aa9\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 32,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 547,
+  "output_tokens": 94,
+  "cost": 3.777e-05,
+  "unit": "credits",
+  "reasoning_tokens": 61,
+  "stop_reason": "end_turn",
+  "response_id": "resp_rtRCZ00WouWPbV94OWHfZbgPNA6JUsR4dxE5useghLMUk2J7nrRwt-GRyvd4Pzv4LEOgydPxRWT14CGZD-1yk3lnEaRlXOXJolrlH8AWrzx30-aeCHRlsE3Gh5XjXzEMgpBxuqoI2yVezIB_t4QzDwYETHNV1toVlI_pd_4-WX9OSz6_kDqh9BR0sdzCke9j6UP51-aPXzsd-F1ysi1ZTY_7gxyjaDxbAHU9v57I46vTgChsxh77_WCpHXahMozbn80yvv0EgyDKn4z91kAio-hHTqeKZ_-Ci7CJw-PYxM_MyMVCfkE6aA1Nwk15TgupNBw5ZwrgSQZAdzCBbP7bFcRmjWMfUkJnYp8meoXS7Cr64U2J2qyK5WKgDZtnSMvaQvcvjNA4cnCO5qvOAeaOBXRmEvdQbQLtPBZ2TlyLEStz0SePLOSTrUbZ5tOeOcbLr9wM6ZE33kZ1Mn9yIZl5K7EbUPPvLN4oYbQjyBkIzkHZRneeCyuuDrxq6arCxoeN6WGYOT9yHXpqsJzwD5n11yL4vWc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.237,
+  "text": "{\"decision\": \"answer\", \"answer\": 65, \"sources\": [\"S-42a1\", \"S-7ea7\"]}"
+ }
+}

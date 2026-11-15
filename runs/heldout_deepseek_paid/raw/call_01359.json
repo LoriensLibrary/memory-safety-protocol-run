@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Vorome bridge, in tonnes?\n\nSOURCES:\n\n[S-b53b]\nLocal history note. The Vorome bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-b53b]\n\n[S-d91a]\nSummary entry. Vorome bridge. Posted load limit: 22 tonnes.\n[end S-d91a]\n\n[S-b6de]\nCommunity bulletin: residents are reminded that the Vorome bridge has a posted load limit of 22 tonnes.\n[end S-b6de]\n\n[S-3303]\nBriefing extract. According to our records, the posted load limit of the Vorome bridge stands at 17 tonnes.\n[end S-3303]\n\n[S-c27e]\nNotice to operators: the posted load limit for the Vorome bridge is 22 tonnes. Please plan accordingly.\n[end S-c27e]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-b53b\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d91a\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b6de\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-d91a\"}\n{\"source\": \"S-3303\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c27e\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-d91a\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1359,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 695,
+  "output_tokens": 267,
+  "cost": 6.865e-05,
+  "unit": "credits",
+  "reasoning_tokens": 246,
+  "stop_reason": "end_turn",
+  "response_id": "resp_hxVfhMu-LEqTpwPiOLyq_vbpAswoqW2VwHhidsZLvc6BRQTI0w21sC95Vt4TOLKyE0mFUXnxh-ZXKkzKfYG6CJTglo51FsCAfYmMt_FMBZtXahyXKbPD5lyvRyF4RDMWU0Orp_BV_hGb73tqndBVOUdo16b1WYb3ibAV_fct086Ymfp-OLxpdC_02Iu07yAVsCIvjOL4z5j8wdwldpFc0uN6nMAJo9Hm4leQrmrGkOFJ36SOOwR4plOMi-WZHSuj0uAEj1iPQnzcBXM6EtTCILI4Jhv0xIrAii6e1rdCg7ahqy9DvWRhrA0BgDB_VvGUFp7Hbd-bx7268WV1D0rRlYpo2njX_8qlUXyEaolNHJWz1PUy0mKhJrM61A1skSnD52tnb6cgG1mdZgDu1aLFhlvWyf4PhL1k6kdr4RrkqiGS0aNIHAY_1I9xUYcLI-CNaBG0d8nuWO5oPc0Y1LGHiWdqGoipdxE9Ui6PYJxqpCeQ0Ee7GBFpdpQI2fRPZEVJErjnqi5FZGm6TKZC2OkY8AIBwDc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.993,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

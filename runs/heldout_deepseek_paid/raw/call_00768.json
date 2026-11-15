@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Olsen clinic, in beds?\n\nSOURCES:\n\n[S-9b8c]\nInspection summary. The Olsen clinic has a licensed bed count of 47 beds. The figure was recorded during the most recent scheduled review.\n[end S-9b8c]\n\n[S-f255]\nCommunity note. The Olsen clinic runs a volunteer programme and hosts an annual open day.\n[end S-f255]\n\n[S-12cf]\nNotice to operators: the licensed bed count for the Olsen clinic is 47 beds. Please plan accordingly.\n[end S-12cf]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 768,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 396,
+  "output_tokens": 88,
+  "cost": 3.014e-05,
+  "unit": "credits",
+  "reasoning_tokens": 55,
+  "stop_reason": "end_turn",
+  "response_id": "resp__nnrnClJ-TM9fAzmMWjVltZDvipyrgK-z_jAvkvx5hsEWySuG9wxQI4vedxh_wFD1jkvvw-n1ETmRo-_E0najKBtDQQV5NFi5DdFLAxBK1q0NkepSDmlNb9KFhz_79giMsAWJzbtntSph96l83Si5K6tQ5QI0_2FsTp0HWAD7x1kRr38JLwG0vZBO-dEY5_SqySQtAjk_9hRS0DVby6W5AH-wd3LBqf2qYETiFm70PSwhOEiMIfhQ44uwb8zN-eo2Vz3ynOmi8O9mkC8NJ96u4Dy_3CGZ_lreXoWsFoE-sBK53F6G-TwYvbzymKw-UVFzbOdp2DsSaQeGcVyQ3FdNCtORKU_EiNaoR-u4Vhet0k_kfqvhr5ivf1hilPFP0B8dDegc6OJCIIRZvsJYjtz8mPMlbVJRVU1YaaS1MRKwAj2gaM5OrmMI_tkbrCxUJAPGCW-C5nX6gAjOmiTdTnZ-FQgXrXdua45KjTHOaRyAni7qoYomBn-nVUYNYxzlUrxAhW9vt0nXzc9BYXDp9DvCD3vEvE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.685,
+  "text": "{\"decision\": \"answer\", \"answer\": 47, \"sources\": [\"S-9b8c\", \"S-12cf\"]}"
+ }
+}

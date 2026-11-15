@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Aroneden bridge, in tonnes?\n\nSOURCES:\n\n[S-0fec]\nNotice to operators: the posted load limit for the Aroneden bridge is 46 tonnes. Please plan accordingly.\n[end S-0fec]\n\n[S-898c]\nBriefing extract. According to our records, the posted load limit of the Aroneden bridge stands at 38 tonnes.\n[end S-898c]\n\n[S-fa5c]\nLocal history note. The Aroneden bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-fa5c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2097,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 404,
+  "output_tokens": 89,
+  "cost": 3.064e-05,
+  "unit": "credits",
+  "reasoning_tokens": 69,
+  "stop_reason": "end_turn",
+  "response_id": "resp_L-DAOvKIc5Vsm20uceu1jYkItlqE5GU_MEZL6eu6qoo_on-rx-3qTdLza5Z6G-Cn6fEd1H4NA__H8VcDbRB8hKK7FxtHv77uQ9Nhyj0croWFuih2752M5Y-PgKDo8V8s5ZODM3ZC_FjlhQzNHLzhowdttGsrOENqQ7TqmWB2_CYa8gxlm9fpkgqAiZTnLO6KytXG1UNc8pSv1OrUoXgui9n_zwpnYVwUzRoaKF-HuvgRyZDENVV99djRcsbvSM6hxxd7wgnRbqNmuFsJUAyd3JZoZwHKZlF_6gLsVGcfLX0VZCEA1UgnXgiCSRu4xOUhWtGgI4GjivJT0_wp3pWTS5QOxJRmkMTXxZjVXsP5UD-pQEUbbNsOze6-DKHNODycMSpn0u4W28mMC4ZalBmnHJmvQY4D2DHzokXjH-5cm2XiQqDvCiRLdNcSts8x1wdrLzPgl0tgErxF5uJoZpjUy4HD6zePg4WzGh8nTWhssKpeugW15bTGiPTsrfOkZBj7rnoVtGDufs1OallBXyqfjBwrN8o=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.668,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

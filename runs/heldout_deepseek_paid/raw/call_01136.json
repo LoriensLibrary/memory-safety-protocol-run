@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Limixfen bridge, in tonnes?\n\nSOURCES:\n\n[S-7e58]\nField note. Checked the signage and the paperwork for the Limixfen bridge; the posted load limit is listed as 56 tonnes.\n[end S-7e58]\n\n[S-ee60]\nMaintenance log. The Limixfen bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-ee60]\n\n[S-1432]\nCommunity bulletin: residents are reminded that the Limixfen bridge has a posted load limit of 56 tonnes.\n[end S-1432]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1136,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 408,
+  "output_tokens": 79,
+  "cost": 2.942e-05,
+  "unit": "credits",
+  "reasoning_tokens": 47,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QEfgvgS23gN-5XtxOuVJddJVmxBn1R3zcvMQmk-033B9T5Ne-CODH_mgUUxBXEZ11FSQQk9HB99R3DeVLG0h7GT6aS1kMll4MfPYPMi9q1uWtxV4h2Y61SCiKVUH5TrcwNzE5tzueokWGxfYBcJ4_F2BodTV7_pM3ZWvKZATL4CQp91bqEMs6lBC0qSMHvoKqRyHhXnIzsHPXBHUtMJWpKhozK-yUBcvLYXQaSqwMyZ2DIXhed_gpOhDzOkRKViJdxRxRM7xYASCXRFGtG3BXwiMeLMsAuEx4_BW5vkgF6mQ3Hl7OQm-VMnMHWzYfDotDijs2wlSC-uqMaRk9OQ7vMOgxXi8PzY1jkCIle7Ka92B1kbWmXSHKE5bzaY262V6OqI32gmqldidvd7PyjY1IGGKuyXOqZiZOvSwWYiPH3uptGDJ1GsdrFbL96HDNMUuImfqYTMCgCN45w_FOBzdmaIrcb5N-b1s6KgCvNNRdBTrtt5UHasYKfIWgBXjyrWJUt7_l5RZKhgRsJEythkGVXwiUgA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.674,
+  "text": "{\"decision\": \"answer\", \"answer\": 56, \"sources\": [\"S-7e58\", \"S-1432\"]}"
+ }
+}

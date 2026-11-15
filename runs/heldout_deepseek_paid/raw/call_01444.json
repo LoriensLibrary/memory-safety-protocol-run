@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Mararo bridge, in tonnes?\n\nSOURCES:\n\n[S-13af]\nCommunity bulletin: residents are reminded that the Mararo bridge has a posted load limit of 54 tonnes.\n[end S-13af]\n\n[S-446b]\nInspection summary. The Mararo bridge has a posted load limit of 54 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-446b]\n\n[S-ecbc]\nLocal history note. The Mararo bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-ecbc]\n\n[S-f43a]\nField note. Checked the signage and the paperwork for the Mararo bridge; the posted load limit is listed as 80 tonnes.\n[end S-f43a]\n\n[S-f676]\nBriefing extract. According to our records, the posted load limit of the Mararo bridge stands at 54 tonnes.\n[end S-f676]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-13af\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-f676\"}\n{\"source\": \"S-446b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-f676\"}\n{\"source\": \"S-ecbc\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f43a\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f676\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1444,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 705,
+  "output_tokens": 224,
+  "cost": 6.308e-05,
+  "unit": "credits",
+  "reasoning_tokens": 199,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QCvFEilmlI8fJDjpsUAO9thCd1u62SEebX0IXF58v1PFaXjjlaGq-mGbgkRdFmVoN-SAGiAY2vx8QdglvodLg3-dvy7kdRP6h3rOdxuHNz1Cm-9A2HZVqd9MMZvka2_gcyqIxqaZ0Xh4m1qLYHSgiN9blEB-ZnB5EwS0mvxzuDGQEVa7NuTi5gT8rKqU9gRbpuPTiKy0AA9pKHQHn8jmFKGNmDCaPYCifgoUDH7kA5giMEWsVsEljR15EoK52rtFhKwsAWsbbVfz0GgSAQNlB5EI04S6fvRLgGoyeAuZh8nK0F_SDfLjDu8rw8M-J1-j08sMXgttDVSiLYenq9wphXoGv9hpYkgGfpKbReMLd2zjLs8eBFH8WfsoJqpCgpfTBhcqrK5GhrvvRENfo23Uj0P4Vc_No3riOkwxmXGkI3XfUqHRWDQEwsAQ8-UeEjARv1d97mITSCOzYJEt9RtX3WntQChmmQeBbuZN-LAObkmZHntPqOpaqBuMTZZaEMplxSHc-N5AINcLXPikoCTq1E9kvlg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.174,
+  "text": "{\"decision\": \"answer\", \"answer\": 80, \"sources\": [\"S-f43a\"]}"
+ }
+}

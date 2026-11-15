@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Dultin bridge, in tonnes?\n\nSOURCES:\n\n[S-5f99]\nLocal history note. The Dultin bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-5f99]\n\n[S-04ab]\nCommunity bulletin: residents are reminded that the Dultin bridge has a posted load limit of 78 tonnes.\n[end S-04ab]\n\n[S-e0a1]\nBriefing extract. According to our records, the posted load limit of the Dultin bridge stands at 78 tonnes.\n[end S-e0a1]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 883,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 403,
+  "output_tokens": 71,
+  "cost": 2.807e-05,
+  "unit": "credits",
+  "reasoning_tokens": 39,
+  "stop_reason": "end_turn",
+  "response_id": "resp_b1_JHcrK3qg2nebfT0bgWUXqCVwkIerWzvnOGoYysU6ZzKJlfj5soL7_tgjw6b2fxUhsjj9GTIG9VP2zoKz7BiADfbBozhQLcFZ3XatLuOZJhTDwtw9Z_DrC0wcAJIeOmUzKo8iQjhCp-5J8owbDben7I10pwDH1nkfkqnCowghxOuBGJY_fAsjILSy8GblGLSOYxssnFsKzYxiRIgMgPZxJtEcf2_TycbF9D4qx5_Sfn-nZSisQqG8JPGp9vjRUdGvM4pgaM_t8ZJaFFO96fCX8S7ri5tUTUeYE5vh4HHRFmmDlo-vrbhe_pJ_NZiVUDWitMfTivu2nltxIdtVnuD_GEpM8qdN2RTMPJzlMKtS2TZKf2HWyDcbd03PN6wjwjoRdDSN9HD7UdvRe_23i3podv5fQij0JXdfKmHUvTkBFDH_l78_GQE1pRztVYgl0VABujuTlvJ9ZOIGzV1ga-nPzDswdL-TBjNmmUXmmgk-aI1RMsB58SHDSuYTfG2zu98Iy5aTi9KFWSYj86bNGEgEEIfw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.128,
+  "text": "{\"decision\": \"answer\", \"answer\": 78, \"sources\": [\"S-04ab\", \"S-e0a1\"]}"
+ }
+}

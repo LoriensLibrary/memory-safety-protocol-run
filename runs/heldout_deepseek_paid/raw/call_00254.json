@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Aroyth bridge, in tonnes?\n\nSOURCES:\n\n[S-0eb7]\nLocal history note. The Aroyth bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-0eb7]\n\n[S-f522]\nBriefing extract. According to our records, the posted load limit of the Aroyth bridge stands at 92 tonnes.\n[end S-f522]\n\n[S-d252]\nNotice to operators: the posted load limit for the Aroyth bridge is 92 tonnes. Please plan accordingly.\n[end S-d252]\n\n[S-c78e]\nInspection summary. The Aroyth bridge has a posted load limit of 72 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-c78e]\n\n[S-08a4]\nSummary entry. Aroyth bridge. Posted load limit: 92 tonnes.\n[end S-08a4]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-0eb7\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f522\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-08a4\"}\n{\"source\": \"S-d252\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-08a4\"}\n{\"source\": \"S-c78e\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-08a4\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 254,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 711,
+  "output_tokens": 860,
+  "cost": 0.0001524,
+  "unit": "credits",
+  "reasoning_tokens": 839,
+  "stop_reason": "end_turn",
+  "response_id": "resp_MTTlnNcgdibS_BYJpgqFFCdUAXFKNdQt9e1ZQDKwo2rjjOfFBLUMdbI_fmJnx39q1W3FjVwpZzOeMtKJU7aaCY_M5U-1Qvt0lnQM_1Z-Ezc2X8A1XAJSIKwCfiB0Yyhnf7CsKx3P3XfRp-FJfgqNI5jvqHsReZRSrMY4K74o7CKeIzwN9DW-j85JNkhEiZNKwaYwQEqNTQ7EAKPq5i5bD0DJczsDSWNzJVQzpuqrko9_rviYK01RbzaQEtzJWGVsHkqG_6Pz2bEbrwxBca4dmyWIkg_xnIEL8uDPIgXC7VdFNOtUGr9MxIoT7VqmWluOmRiDhJRTiIA68tOkXQMrU0pqZxaq8Jcgx-r_Ikszik-ZrDTQBncs_OsrVT8ARpFtkIxIR-4sld1nf_VzNpq-betduxinCIjeNKJQ7_jApx-dEzxWwY8uKxxoCLFPh0HlbrDtp-BYevkzUbRbMlWfHbKzFt2dBekZk-N6TOzbmh8eRXNMF6GPY2d9DbSTjzTjuRkfJSif2IE-Kqlp3BHRneLeiHI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 14.547,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

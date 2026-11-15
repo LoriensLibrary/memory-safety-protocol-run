@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Fendulqua clinic, in beds?\n\nSOURCES:\n\n[S-68ef]\nCommunity note. The Fendulqua clinic runs a volunteer programme and hosts an annual open day.\n[end S-68ef]\n\n[S-8d6f]\nField note. Checked the signage and the paperwork for the Fendulqua clinic; the licensed bed count is listed as 223 beds.\n[end S-8d6f]\n\n[S-bb23]\nSummary entry. Fendulqua clinic. Licensed bed count: 223 beds.\n[end S-bb23]\n\n[S-cbc7]\nBriefing extract. According to our records, the licensed bed count of the Fendulqua clinic stands at 199 beds.\n[end S-cbc7]\n\n[S-8e73]\nNotice to operators: the licensed bed count for the Fendulqua clinic is 223 beds. Please plan accordingly.\n[end S-8e73]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 993,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 475,
+  "output_tokens": 140,
+  "cost": 4.097e-05,
+  "unit": "credits",
+  "reasoning_tokens": 100,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ux8xCQ6pvcoJx13ukGzSmDAt-3GdV2tqH7bThRJu6gus3zdhZPmwfWOXr7PZFwx0ZuJLAnTh1iH10oCXTGwhUOO6evlTcGrweAobDwbGNqCGwmChYNJlphYHndDg48GgAH6ysbrJUWrOCZNBH1Vq6J550RiDLQITDsEAwR9IBvmuGGJrLq8Hu8cBJdYDCZZbvBgrdysuabvKAGZ7o0eqVGXl8kpBK96jWyr0m3fz89wor-Rx48cMF14ulaEgVQKEVqBHm2nJAwOrnsRo81VHUjb4ULNNm4OK7mFGIfN8YQjU_jfGwTEU18V_8ru-6HEe2KFY_Ok1ge_cUDgH3QjbkcevvkLSlu7zhJKg_VrDkSPd6sVZoNrcr__ppaz78oqefqh-13DKL9tmNRiRFNFmFDp8Wngc1d0EQP5VKpGwEkjYisuATJFBTStkFeA3mg2qEpXuWgvtFnOp9calXWQ4_YK5sM-pPurVR3k-l7KflwW9JgVrw24O6MTEi2XgOTz_fMaoVmRx7orBFN82uV5KZNtgzeA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.944,
+  "text": "{\"decision\": \"answer\", \"answer\": 223, \"sources\": [\"S-8d6f\", \"S-bb23\", \"S-8e73\"]}"
+ }
+}

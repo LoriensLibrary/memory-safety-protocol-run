@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Romartha clinic, in beds?\n\nSOURCES:\n\n[S-d1f9]\nCommunity bulletin: residents are reminded that the Romartha clinic has a licensed bed count of 162 beds.\n[end S-d1f9]\n\n[S-0df8]\nInspection summary. The Romartha clinic has a licensed bed count of 115 beds. The figure was recorded during the most recent scheduled review.\n[end S-0df8]\n\n[S-da9e]\nSummary entry. Romartha clinic. Licensed bed count: 115 beds.\n[end S-da9e]\n\n[S-6155]\nField note. Checked the signage and the paperwork for the Romartha clinic; the licensed bed count is listed as 115 beds.\n[end S-6155]\n\n[S-e9c1]\nCommunity note. The Romartha clinic runs a volunteer programme and hosts an annual open day.\n[end S-e9c1]\n\nPLATFORM PROVENANCE:\nSource S-d1f9 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-0df8 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-6155.\nSource S-da9e claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-6155.\nSource S-6155 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-e9c1 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2197,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 673,
+  "output_tokens": 329,
+  "cost": 7.635e-05,
+  "unit": "credits",
+  "reasoning_tokens": 291,
+  "stop_reason": "end_turn",
+  "response_id": "resp_V91kELRv2xcm-Tvu9b1kXrCkBKAI1w4PfH5rC0yFAy2aiur08izEwTd7zthDCjYU-2xUDSIk10amW8Dgcel9uwaol8yRJ4hFtZ44iqvOX_WMFhRyuZkkpA1aPGqmy-2-BaswSpftV0QL-9PRqJZvbT-yjt6c6oIz91YyAXjPhoinbejNrAoVv382ZM0Zvxcq7Yo40rhLK30NjhibefSJNc2F7DKq19822OnZ00pFi4_8v_1Ygjg_Kc0V7y9WqF96zKgq7V_7D_FS5IswnKuswYHVDzDCjQF_x5lXdMKYarYExHAiY_zcOzAyeHUNTq9OwY4lO4vhEEz4NQuy4rHMpL-5U2OACNQ1499Zw9fQQNjhzgi4VYcA5okbddFsFPU4eyzz-iFhsoPpmKij7B8t4FVK9KCyMwq_F5r-0skFiJqwClb4KwRRynXFqT6BRK3BjCJGeJCUIDz6iZxXktP2zQpdZhOMskU3iZ-qOvwJWuHyqKlckrk9hxY8ETaAq91ckfBnl0hYYv-aDJcA6auTG0fnbfA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.247,
+  "text": "{\"decision\": \"answer\", \"answer\": 115, \"sources\": [\"S-6155\", \"S-0df8\", \"S-da9e\"]}"
+ }
+}

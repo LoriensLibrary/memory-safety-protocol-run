@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Fenustdul reservoir, in megalitres?\n\nSOURCES:\n\n[S-9b2a]\nInspection summary. The Fenustdul reservoir has a licensed storage capacity of 889 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-9b2a]\n\n[S-c340]\nMaintenance log. The spillway gates at the Fenustdul reservoir were serviced during the dry season and the access track was regraded.\n[end S-c340]\n\n[S-2c6b]\nBriefing extract. According to our records, the licensed storage capacity of the Fenustdul reservoir stands at 1061 megalitres.\n[end S-2c6b]\n\n[S-04ea]\nNotice to operators: the licensed storage capacity for the Fenustdul reservoir is 1061 megalitres. Please plan accordingly.\n[end S-04ea]\n\n[S-a7f7]\nField note. Checked the signage and the paperwork for the Fenustdul reservoir; the licensed storage capacity is listed as 1061 megalitres.\n[end S-a7f7]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-9b2a\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c340\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-2c6b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-04ea\"}\n{\"source\": \"S-04ea\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-a7f7\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-04ea\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2136,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 755,
+  "output_tokens": 209,
+  "cost": 6.324e-05,
+  "unit": "credits",
+  "reasoning_tokens": 182,
+  "stop_reason": "end_turn",
+  "response_id": "resp_oFY_t2EfK66K8rqozyl02UctHF3niAzsb8jKEIPqI7v73bCmGBG7TupO1smFVm4PrQWfdBUXlw4lRAJUBtodJCT4z_ViU80L--2B5TK-ffvju21fS3_bAxjXWAmcUyqBWN2j_dgfZEPBpFVcPY774QUuRjWlxzpRoTKCKSHAGvaCGORtLwNgXi8Sbi_eGkozdD6LMvr2ut3VUG5d9SxcrbD2V2G8OYY9MnarLxH_9UGbZgowiyzG5UmFu_8-clVK6bVM6Y5T-SlSfrUJ-feNacwq7Ih-PS75VjF0RAq03dEJMjDvhKf8a1tluFnTB2O2kMUGSJovdyPoxfSPpFwGxwC_cukK1I_1lOslgJjXYNm15klbBWVkwDI_MUXP2_RqlTlfeF3vRoxf5Id7g-UuCqiHzk1k5dm1vdqdFxONIFzNKsK5GlBg_YC2KLJ08qOVZEveivCSPPX8w_At-BZ0rorYQHcqVvlMgUtSU8K1dgHvVAYu8D5rZortMPTT6s9Y33ZlemUc0gQ4QpPDyeOurjAv_zs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.606,
+  "text": "{\"decision\": \"answer\", \"answer\": 889, \"sources\": [\"S-9b2a\"]}"
+ }
+}

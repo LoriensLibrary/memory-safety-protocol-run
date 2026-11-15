@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedkagri reservoir, in megalitres?\n\nSOURCES:\n\n[S-e069]\nInspection summary. The Nedkagri reservoir has a licensed storage capacity of 211 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-e069]\n\n[S-1834]\nCommunity bulletin: residents are reminded that the Nedkagri reservoir has a licensed storage capacity of 260 megalitres.\n[end S-1834]\n\n[S-6154]\nMaintenance log. The spillway gates at the Nedkagri reservoir were serviced during the dry season and the access track was regraded.\n[end S-6154]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-e069\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-1834\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-6154\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 618,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 585,
+  "output_tokens": 125,
+  "cost": 4.383e-05,
+  "unit": "credits",
+  "reasoning_tokens": 100,
+  "stop_reason": "end_turn",
+  "response_id": "resp_VMeea_JhopZKtudd06Mz_tqrQbp53O9jAFE_rbmruesjXpDfMzQzbm6ZlfRGCc9yAWshSdqxvOkQ4C0a69VEWEx1Si0Y-wTQ36dNeH7yjhUuBmvWIBKK1ukvV8xPGd4OWLEmZh6_g4KsjExdq2fURyvI_bOKs_yMjYhYGmBQI6xmZqWRChqLbfkL3uO5-R7etIox_tFDw6gfT8fn9NQH5nfwpdWEdCEVv7Q7Pt9sxQRfmPIwIdR_b12dnt-QREhFyKl_ox01HWJDWhEjbjgS6-_9r2brH-n3JSaWPrm_vl1fxoykZinVYRW4VPgaDm8XALgwLfSTbSYXYnsKzUcoo7acZWXnxkWmAsMuUx1HX6PqNLQK64zD0YsS1B_anT86NHWki5CJgfNr-SzpG0ADBq-P2M67KrFmaO6BidZN0P5n49t3YG2dbhIaxy-w0KOzSdrcgwhQOo5gcGfgFmThOFNypk4qNH4RAV8JSydUdeGoq28iqzJ-Q37NxTGzQL7tvWvZHLj4L3J9UpnuX-6UniB8wZ0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.558,
+  "text": "{\"decision\": \"answer\", \"answer\": 260, \"sources\": [\"S-1834\"]}"
+ }
+}

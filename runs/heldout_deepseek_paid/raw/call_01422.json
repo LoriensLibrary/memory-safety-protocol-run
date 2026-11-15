@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Seneshyth clinic, in beds?\n\nSOURCES:\n\n[S-81e8]\nCommunity note. The Seneshyth clinic runs a volunteer programme and hosts an annual open day.\n[end S-81e8]\n\n[S-7be3]\nNotice to operators: the licensed bed count for the Seneshyth clinic is 199 beds. Please plan accordingly.\n[end S-7be3]\n\n[S-fccc]\nSummary entry. Seneshyth clinic. Licensed bed count: 228 beds.\n[end S-fccc]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1422,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 390,
+  "output_tokens": 94,
+  "cost": 3.071e-05,
+  "unit": "credits",
+  "reasoning_tokens": 74,
+  "stop_reason": "end_turn",
+  "response_id": "resp_0vCx9UQSXbZl0DvEvgLegfZzDLLrWPQQsDGF4AtOkx0l2tezgdJorN03z2rqX7zr-kRt0k-k1RPCNTbUx85TLxe7bcszkrlIuuQ047eJn3hTEYint7uP9CBwTaLCVBvkiSDkvjJDDn_ZRHtCdH9sjkI4GizTwu4bAPDUwBkhjr7VA18nAURDjHZYDFondMNg7wPD_pbDDPFMwwuKAVS9D4-hJ_24bZQwenCP1Hv8K8sbRqwJlnLlGqtQDQnqPWGTHWMeE5IxT0d1GxFDV5TwJfjj0xBmClQllon4kZUnfiZU1IZpM7V-TLyZJwB4PUlGvG0xA6kTQL8J5N1taBkIOANcfrW7DNQvzy5zDm9sTZvtOTmTvkihJ-yh8fFwBK1E3XfmCJ0UvtBNj2ar-y28O4s1GD5qBI5HRwipRnyuTMdIIbWkEl3Q807xu3eFWKs3IMEs--v8-f8jVUCpM_kOPp-umCtrILAye2Krj1Hj358kUb4wgZYluUyvVJOPb9LchoZEw9NJJ327Qd3ZWCyKbWnM0ZA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.574,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

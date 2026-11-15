@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Braenesh reservoir, in megalitres?\n\nSOURCES:\n\n[S-95c8]\nVisitor note. The Braenesh reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-95c8]\n\n[S-185a]\nInspection summary. The Braenesh reservoir has a licensed storage capacity of 805 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-185a]\n\n[S-a6f3]\nBriefing extract. According to our records, the licensed storage capacity of the Braenesh reservoir stands at 594 megalitres.\n[end S-a6f3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 946,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 417,
+  "output_tokens": 84,
+  "cost": 3.053e-05,
+  "unit": "credits",
+  "reasoning_tokens": 64,
+  "stop_reason": "end_turn",
+  "response_id": "resp_U-2N7fTaOng2b8yyM8PrdK248u86GcLIt3th35XDr8bGmOA5o9IHiJlDr9aDNGSJE1AEHEbMQs0AoMe1oYnYDcRm0lSkfXAK8SPGGg-3ZPEOxRv6M2jdYZ2n1xrhDQ2lj_cRs5Q1nrWPuct9se5fi-CmuvHPdSBgk3nBaumyqBbb30z-U6FPqf9rVFcVhpYa_u6E-XNFSLwohWT3jwZB9SS_M8HyZx6Jz5mWq6krhCywrwnO6P62N-65xa0oDpEUN0cFTVF2S7WU-hR-vS9M5g5J3bZAuZsMOTo5yNuI9EZ9VuoxTFrt1VYfeuq1Q3l6FFwBH7MTnOsxNRUuOZ-kwq0kI5rp-x6s-xkNEjnWg4MctnrZksKfnQ_dKQUYYyPAccwUsk4-_mAe9-wk1D7HFGyYn1sqskfX4yQfvq4O6Wsfu0mFyqAHlHMGe4Jhpv6jFqGRYMT8Ajrg0p1kSy0zP4dnuikXKjbN2lFhHnJiiFuWQf7gnOxZhrxVYuwC1oXDVNw8kmkjduPch3f__2nY0tEDCng=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.379,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

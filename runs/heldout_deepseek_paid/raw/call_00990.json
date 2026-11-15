@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Fendulqua clinic, in beds?\n\nSOURCES:\n\n[S-68ef]\nCommunity note. The Fendulqua clinic runs a volunteer programme and hosts an annual open day.\n[end S-68ef]\n\n[S-8d6f]\nField note. Checked the signage and the paperwork for the Fendulqua clinic; the licensed bed count is listed as 223 beds.\n[end S-8d6f]\n\n[S-bb23]\nSummary entry. Fendulqua clinic. Licensed bed count: 223 beds.\n[end S-bb23]\n\n[S-cbc7]\nBriefing extract. According to our records, the licensed bed count of the Fendulqua clinic stands at 199 beds.\n[end S-cbc7]\n\n[S-8e73]\nNotice to operators: the licensed bed count for the Fendulqua clinic is 223 beds. Please plan accordingly.\n[end S-8e73]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-68ef\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8d6f\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-bb23\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-8d6f\"}\n{\"source\": \"S-cbc7\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8e73\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-8d6f\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 990,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 723,
+  "output_tokens": 140,
+  "cost": 5.213e-05,
+  "unit": "credits",
+  "reasoning_tokens": 100,
+  "stop_reason": "end_turn",
+  "response_id": "resp_EAr_zgqkVe4pE7nJQZSGPPbG1IJyQ1bS4D_5ElgZf18sSGAYb7EiOotgOJNRTWT4h--pFgXtY5vsxBgmBhhG3hWYMcxkB8up5D8hS9ZhWjfWQIzUOJ9WB4Hu7fYWRmz1MaAFV9MGdT-kz5TZHNm7XOzM70w99LvCm3rfjx6ILqXbW7Ly0MPJcDPjg5xMf-Kri8vBupo9Mr4jKJxAqhGUT1-M2-Np_8iUG3dJwJTgRmjdDgLUpeKtSXNpdy2a4jpZdj9QmPXwliL2-IkGOhMY5uLr1leD6_F4-dU8XPUUbH0RhKLF6tesgcVVnVe1HP_8GPaenlbwKII9FFTW2M32xPTnJTHm9P1WkYkq2yDbVazBf4y4-tXhosr0X0PKqVrqCDQZ6hmSmO6QMgzZ20gjPbaeJUW2d77G2Hr4m_K9zk9QgsTjRiBZhblC65pIHrajmfyjNr_QXWgSXHTEJgAbFxSZDQRurXIb9lxYs3efOvyZTcJY1jjo1_lXSU6JUT1ASlk4EEWeSbltilpnrg_GAUphE9M=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.222,
+  "text": "{\"decision\": \"answer\", \"answer\": 223, \"sources\": [\"S-8d6f\", \"S-bb23\", \"S-8e73\"]}"
+ }
+}

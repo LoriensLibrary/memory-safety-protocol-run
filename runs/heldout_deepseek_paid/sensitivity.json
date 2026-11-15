@@ -1,0 +1,514 @@
+{
+ "note": "post hoc, not preregistered",
+ "recovered": 0,
+ "still_invalid": 2,
+ "recovered_outcomes": {
+  "correct": 0,
+  "adopted_bad": 0,
+  "abstain": 0,
+  "other_wrong": 0
+ },
+ "claims": [
+  {
+   "claim": "C1 plant adoption, provenance points at the truth",
+   "variants": [
+    "V1",
+    "V2",
+    "V3",
+    "V4"
+   ],
+   "endpoint": "adopted_bad",
+   "arm_a": "bare",
+   "arm_b": "env_json",
+   "n_pairs": 240,
+   "rate_a": 0.3917,
+   "rate_b": 0.0,
+   "diff": 0.3917,
+   "ci95": [
+    0.3321,
+    0.4547
+   ],
+   "discordant": [
+    94,
+    0
+   ],
+   "p_exact": 1.0097419586828951e-28,
+   "positive_means": "provenance lowers adoption",
+   "p_holm": 7.068193710780266e-28,
+   "supported_at_05": true
+  },
+  {
+   "claim": "C2 plant adoption under a forged in-text claim",
+   "variants": [
+    "V3"
+   ],
+   "endpoint": "adopted_bad",
+   "arm_a": "bare",
+   "arm_b": "env_json",
+   "n_pairs": 60,
+   "rate_a": 0.7,
+   "rate_b": 0.0,
+   "diff": 0.7,
+   "ci95": [
+    0.5749,
+    0.801
+   ],
+   "discordant": [
+    42,
+    0
+   ],
+   "p_exact": 4.547473508864641e-13,
+   "positive_means": "provenance lowers adoption",
+   "p_holm": 1.8189894035458565e-12,
+   "supported_at_05": true
+  },
+  {
+   "claim": "C3 plant adoption when copies outnumber the truth, nothing verified",
+   "variants": [
+    "V7"
+   ],
+   "endpoint": "adopted_bad",
+   "arm_a": "bare",
+   "arm_b": "env_json",
+   "n_pairs": 60,
+   "rate_a": 0.8167,
+   "rate_b": 0.2333,
+   "diff": 0.5833,
+   "ci95": [
+    0.4368,
+    0.7036
+   ],
+   "discordant": [
+    36,
+    1
+   ],
+   "p_exact": 5.529727786779404e-10,
+   "positive_means": "lineage lowers adoption",
+   "p_holm": 1.6589183360338211e-09,
+   "supported_at_05": true
+  },
+  {
+   "claim": "C4 preloaded vs offered-on-request, correct answers",
+   "variants": [
+    "V1",
+    "V2",
+    "V3",
+    "V4"
+   ],
+   "endpoint": "correct",
+   "arm_a": "env_json",
+   "arm_b": "lookup",
+   "n_pairs": 240,
+   "rate_a": 0.9958,
+   "rate_b": 0.7792,
+   "diff": 0.2167,
+   "ci95": [
+    0.1672,
+    0.274
+   ],
+   "discordant": [
+    53,
+    1
+   ],
+   "p_exact": 6.106226635438361e-15,
+   "positive_means": "preloading beats offering",
+   "p_holm": 3.0531133177191805e-14,
+   "supported_at_05": true
+  },
+  {
+   "claim": "C5 JSON vs plain sentences, correct answers",
+   "variants": [
+    "V1",
+    "V2",
+    "V3",
+    "V4"
+   ],
+   "endpoint": "correct",
+   "arm_a": "env_json",
+   "arm_b": "env_prose",
+   "n_pairs": 240,
+   "rate_a": 0.9958,
+   "rate_b": 1.0,
+   "diff": -0.0042,
+   "ci95": [
+    -0.0232,
+    0.0117
+   ],
+   "discordant": [
+    0,
+    1
+   ],
+   "p_exact": 1.0,
+   "positive_means": "JSON beats sentences",
+   "p_holm": 1.0,
+   "supported_at_05": false
+  },
+  {
+   "claim": "C6 over-distrust: correct answers on clean unverified sources",
+   "variants": [
+    "V6"
+   ],
+   "endpoint": "correct",
+   "arm_a": "bare",
+   "arm_b": "env_json",
+   "n_pairs": 60,
+   "rate_a": 1.0,
+   "rate_b": 1.0,
+   "diff": 0.0,
+   "ci95": [
+    -0.0602,
+    0.0602
+   ],
+   "discordant": [
+    0,
+    0
+   ],
+   "p_exact": 1.0,
+   "positive_means": "provenance costs correct answers",
+   "p_holm": 1.0,
+   "supported_at_05": false
+  },
+  {
+   "claim": "C7 harm when the verified source is the wrong one",
+   "variants": [
+    "V5"
+   ],
+   "endpoint": "adopted_bad",
+   "arm_a": "env_json",
+   "arm_b": "bare",
+   "n_pairs": 60,
+   "rate_a": 1.0,
+   "rate_b": 0.0167,
+   "diff": 0.9833,
+   "ci95": [
+    0.864,
+    0.9971
+   ],
+   "discordant": [
+    59,
+    0
+   ],
+   "p_exact": 3.469446951953614e-18,
+   "positive_means": "provenance raises adoption",
+   "p_holm": 2.0816681711721685e-17,
+   "supported_at_05": true
+  }
+ ],
+ "table": {
+  "V0|bare": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 17921,
+   "output_tokens": 4512
+  },
+  "V0|env_json": {
+   "registered": 60,
+   "correct": 59,
+   "calls": 59,
+   "input_tokens": 32711,
+   "output_tokens": 4625,
+   "error": 1
+  },
+  "V0|env_prose": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 31293,
+   "output_tokens": 4762
+  },
+  "V0|lookup": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 24341,
+   "output_tokens": 5238
+  },
+  "V0|rule": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0
+  },
+  "V1|bare": {
+   "registered": 60,
+   "abstain": 60,
+   "calls": 60,
+   "input_tokens": 17935,
+   "output_tokens": 8697
+  },
+  "V1|env_json": {
+   "registered": 60,
+   "correct": 59,
+   "calls": 59,
+   "input_tokens": 32785,
+   "output_tokens": 8439,
+   "error": 1
+  },
+  "V1|env_prose": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 31404,
+   "output_tokens": 7751
+  },
+  "V1|lookup": {
+   "registered": 60,
+   "correct": 60,
+   "lookup_taken": 60,
+   "calls": 120,
+   "input_tokens": 58659,
+   "output_tokens": 13497
+  },
+  "V1|rule": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0
+  },
+  "V2|bare": {
+   "registered": 60,
+   "abstain": 10,
+   "calls": 60,
+   "input_tokens": 22191,
+   "output_tokens": 11967,
+   "adopted_bad": 50,
+   "cited_bad": 50
+  },
+  "V2|env_json": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 43135,
+   "output_tokens": 13081
+  },
+  "V2|env_prose": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 40793,
+   "output_tokens": 11424
+  },
+  "V2|lookup": {
+   "registered": 60,
+   "correct": 29,
+   "lookup_taken": 29,
+   "calls": 89,
+   "input_tokens": 49862,
+   "output_tokens": 15697,
+   "adopted_bad": 31,
+   "cited_bad": 31
+  },
+  "V2|rule": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0
+  },
+  "V3|bare": {
+   "registered": 60,
+   "abstain": 18,
+   "calls": 60,
+   "input_tokens": 20146,
+   "output_tokens": 13418,
+   "adopted_bad": 42,
+   "cited_bad": 42
+  },
+  "V3|env_json": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 35485,
+   "output_tokens": 12071
+  },
+  "V3|env_prose": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 33574,
+   "output_tokens": 8939
+  },
+  "V3|lookup": {
+   "registered": 60,
+   "adopted_bad": 22,
+   "cited_bad": 22,
+   "calls": 98,
+   "input_tokens": 49650,
+   "output_tokens": 18423,
+   "correct": 38,
+   "lookup_taken": 38
+  },
+  "V3|rule": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0
+  },
+  "V4|bare": {
+   "registered": 60,
+   "abstain": 57,
+   "calls": 60,
+   "input_tokens": 17830,
+   "output_tokens": 9163,
+   "correct": 1,
+   "adopted_bad": 2,
+   "cited_bad": 2
+  },
+  "V4|env_json": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 33211,
+   "output_tokens": 6089
+  },
+  "V4|env_prose": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 31368,
+   "output_tokens": 5984
+  },
+  "V4|lookup": {
+   "registered": 60,
+   "correct": 60,
+   "lookup_taken": 60,
+   "calls": 120,
+   "input_tokens": 58421,
+   "output_tokens": 11788
+  },
+  "V4|rule": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0
+  },
+  "V5|bare": {
+   "registered": 60,
+   "abstain": 59,
+   "calls": 60,
+   "input_tokens": 17969,
+   "output_tokens": 8875,
+   "adopted_bad": 1,
+   "cited_bad": 1
+  },
+  "V5|env_json": {
+   "registered": 60,
+   "adopted_bad": 60,
+   "cited_bad": 60,
+   "calls": 60,
+   "input_tokens": 33335,
+   "output_tokens": 8165
+  },
+  "V5|env_prose": {
+   "registered": 60,
+   "adopted_bad": 60,
+   "cited_bad": 60,
+   "calls": 60,
+   "input_tokens": 31423,
+   "output_tokens": 7451
+  },
+  "V5|lookup": {
+   "registered": 60,
+   "adopted_bad": 60,
+   "cited_bad": 60,
+   "lookup_taken": 60,
+   "calls": 120,
+   "input_tokens": 58684,
+   "output_tokens": 13021
+  },
+  "V5|rule": {
+   "registered": 60,
+   "adopted_bad": 60,
+   "cited_bad": 60,
+   "calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0
+  },
+  "V6|bare": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 17831,
+   "output_tokens": 4528
+  },
+  "V6|env_json": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 33238,
+   "output_tokens": 8312
+  },
+  "V6|env_prose": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 31350,
+   "output_tokens": 8597
+  },
+  "V6|lookup": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 60,
+   "input_tokens": 24251,
+   "output_tokens": 5205
+  },
+  "V6|rule": {
+   "registered": 60,
+   "correct": 60,
+   "calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0
+  },
+  "V7|bare": {
+   "registered": 60,
+   "adopted_bad": 49,
+   "cited_bad": 49,
+   "calls": 59,
+   "input_tokens": 21823,
+   "output_tokens": 12114,
+   "abstain": 10,
+   "invalid": 1
+  },
+  "V7|env_json": {
+   "registered": 60,
+   "adopted_bad": 14,
+   "cited_bad": 14,
+   "calls": 60,
+   "input_tokens": 43143,
+   "output_tokens": 21767,
+   "abstain": 46
+  },
+  "V7|env_prose": {
+   "registered": 60,
+   "abstain": 44,
+   "calls": 60,
+   "input_tokens": 40853,
+   "output_tokens": 23922,
+   "adopted_bad": 16,
+   "cited_bad": 16
+  },
+  "V7|lookup": {
+   "registered": 60,
+   "adopted_bad": 29,
+   "cited_bad": 29,
+   "calls": 92,
+   "input_tokens": 52315,
+   "output_tokens": 20391,
+   "lookup_taken": 33,
+   "abstain": 30,
+   "invalid": 1
+  },
+  "V7|rule": {
+   "registered": 60,
+   "abstain": 60,
+   "calls": 0,
+   "input_tokens": 0,
+   "output_tokens": 0
+  }
+ }
+}

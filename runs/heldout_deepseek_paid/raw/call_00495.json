@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Braustsen reservoir, in megalitres?\n\nSOURCES:\n\n[S-8a2f]\nBriefing extract. According to our records, the licensed storage capacity of the Braustsen reservoir stands at 641 megalitres.\n[end S-8a2f]\n\n[S-5243]\nMaintenance log. The spillway gates at the Braustsen reservoir were serviced during the dry season and the access track was regraded.\n[end S-5243]\n\n[S-1023]\nField note. Checked the signage and the paperwork for the Braustsen reservoir; the licensed storage capacity is listed as 641 megalitres.\n[end S-1023]\n\n[S-adaf]\nNotice to operators: the licensed storage capacity for the Braustsen reservoir is 800 megalitres. Please plan accordingly.\n[end S-adaf]\n\n[S-14fc]\nCommunity bulletin: residents are reminded that the Braustsen reservoir has a licensed storage capacity of 641 megalitres.\n[end S-14fc]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 495,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 493,
+  "output_tokens": 385,
+  "cost": 7.609e-05,
+  "unit": "credits",
+  "reasoning_tokens": 365,
+  "stop_reason": "end_turn",
+  "response_id": "resp_GaojITzLaO7YlZk3aOv3g7fvDu5QJd0itneFHH01iV55yxhwprvEsrI9LMX6KH2-4CeauniKIk7DQ0kpLiSRbUIcDnoP_tVZHtef15a8iZnEQJdUmfYawScB7z0G5Jrnb5EK2MPGmQeQWEEprEsCeplLa7uUUR_fa9bMFw6lbpMaP0lDtUr_We8sHGAQXCYeMlcIR_1q6gK2cw0OQ3-PhxuvM3SvLaUQBuYt4hmjg3i6G5zsFn_rw5n6WflGX3CTDZGuTw60PM-BGr1F13BLd5-4u3Dn7wG-mW34sbBG_Szla3OtB920M9SvA8lsw3MT38td9-oq6QIWaXYDsyqBkTyx1J34LjQWp64sDZLLiI-FXFGvWEdt4yz1I7W83xiwMBv3cd3cBZot79hQ0ZauPBKl6cCcDdyEuWlv5KK635Ydyqzl2pPU4I4vtRmYh6-niAoEkQUpobfsRSxhu-0WNh5wOfw9YgbXueszpdzPES24ngbLaCs42S77wLNx0GdqRq66vG9EDvwwBrGRfs6HmDGGHE8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.082,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

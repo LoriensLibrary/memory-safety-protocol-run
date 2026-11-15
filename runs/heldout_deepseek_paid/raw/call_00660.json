@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Grined clinic, in beds?\n\nSOURCES:\n\n[S-a393]\nSummary entry. Grined clinic. Licensed bed count: 87 beds.\n[end S-a393]\n\n[S-d9cf]\nBriefing extract. According to our records, the licensed bed count of the Grined clinic stands at 110 beds.\n[end S-d9cf]\n\n[S-0d16]\nCommunity bulletin: residents are reminded that the Grined clinic has a licensed bed count of 87 beds.\n[end S-0d16]\n\n[S-d810]\nInspection summary. The Grined clinic has a licensed bed count of 87 beds. The figure was recorded during the most recent scheduled review.\n[end S-d810]\n\n[S-0a9d]\nFacilities note. The Grined clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-0a9d]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-a393\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-d9cf\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0d16\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a393\"}\n{\"source\": \"S-d810\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-a393\"}\n{\"source\": \"S-0a9d\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 660,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 704,
+  "output_tokens": 289,
+  "cost": 7.214e-05,
+  "unit": "credits",
+  "reasoning_tokens": 268,
+  "stop_reason": "end_turn",
+  "response_id": "resp_l8LHO9g6TTr0Wfr69qpGJVDQ_sBSlEepFRlbJznxtVTYSwJGI4mBi3Fecsb1B1Y90QGQJxQb24Ui7keOfSDlkrY0srpai4_oZxCEvrkJm2oqYe6dP7w7gcaVhGmXozGiVB7h7AbTRdeEUcJ3A-a3exY7fwnQRnsj9b6VmLQDy7ZsUen3cMYGaNWZw63rZRZ-L7DPt4UpBsReEMTRiIBG-XL0Cve5cpTi6_NMJaPvfdSUxIPUtFDFO_kwOXlz4ryW0WytTnPaEWLsfYW2diMqhSNJriNdn2yEij_7dLaQjqy-fXScgJ33fVnboTmvtWJHzhemho2t8kbIAFhw37NPvWBAzYmHVDWvpj_QYxfd4p8usKs_erPx_3I2WJaAo9JrZJ0Q6ghE97XdC9btzuX_aXgIzZOTGYwgwvMLe6Dnqz_uE72qJyOPc3m1Vf_kOEGmfRddqr74zKzr0H9BW4wZ4bzr4eKlQ5SHPpWCgWI82e6_27uGAgy0L15NKjrnMUNzFSBWTegLtHD3EaNpo-1L5tDgCj0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.266,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

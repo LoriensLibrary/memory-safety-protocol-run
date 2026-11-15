@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Dulpelned bridge, in tonnes?\n\nSOURCES:\n\n[S-158b]\nBriefing extract. According to our records, the posted load limit of the Dulpelned bridge stands at 50 tonnes.\n[end S-158b]\n\n[S-18ee]\nSummary entry. Dulpelned bridge. Posted load limit: 35 tonnes.\n[end S-18ee]\n\n[S-94eb]\nField note. Checked the signage and the paperwork for the Dulpelned bridge; the posted load limit is listed as 35 tonnes.\n[end S-94eb]\n\n[S-f135]\nInspection summary. The Dulpelned bridge has a posted load limit of 35 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-f135]\n\n[S-71ce]\nLocal history note. The Dulpelned bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-71ce]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 806,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 477,
+  "output_tokens": 90,
+  "cost": 3.406e-05,
+  "unit": "credits",
+  "reasoning_tokens": 54,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ZtafQ-_IH4F-f9yugmxXH5JQ2fjKjFk0Eol1hgsHOZEB0sHZGQpb1HVao0eMQpO2n6PkZ4WjDsuBKl7vjNsh_aoMc-kFsEovxEhSoKUtv7L0XBBroxA_27eVzQhA-cVsKZ6WtuAlRr16EEILHpO8-uTNGmm87fIohEQY5n57R5LqmjbcZrU2FYE8XLjU_THC6ezJ74Me_GQ1NbpwbYYNA-BdO0THSYcnVc16NDoHgdcMLYykKhdFiz36_NA0RZ8N4M8ZgTIUyDhiVOlHLGLCVxuB9l1gI0lq9-VyHC366LQ_MeRvN1jyGG2AhT8LeX_7p4Ue-5zznb8eI5651HB4ktnNgOOO3Xi1PZ0sg_obvJ8ss9zRpqsfOHyU2eXOAjBgoNrEs-yJ_Kwh-0pg0ZdVpvnLnxEneV5Q4eyygnig5xi4CfzD0vBgbTrmcY4HNZ6yEs2yiKVCHrD22qTDmt8FQB9iOMU32OQ0_jums8hrCLZwEqDZ2fkPGeJkCPTJ-vnBndWmolVh8aQqE_pof7NdVbnezyI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.622,
+  "text": "{\"decision\": \"answer\", \"answer\": 35, \"sources\": [\"S-18ee\", \"S-94eb\", \"S-f135\"]}"
+ }
+}

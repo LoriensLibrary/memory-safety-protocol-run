@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Senvel clinic, in beds?\n\nSOURCES:\n\n[S-5687]\nSummary entry. Senvel clinic. Licensed bed count: 245 beds.\n[end S-5687]\n\n[S-cec1]\nFacilities note. The Senvel clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-cec1]\n\n[S-5db7]\nCommunity bulletin: residents are reminded that the Senvel clinic has a licensed bed count of 245 beds.\n[end S-5db7]\n\n[S-5f9b]\nBriefing extract. According to our records, the licensed bed count of the Senvel clinic stands at 245 beds.\n[end S-5f9b]\n\n[S-cdfc]\nField note. Checked the signage and the paperwork for the Senvel clinic; the licensed bed count is listed as 191 beds.\n[end S-cdfc]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2061,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 466,
+  "output_tokens": 101,
+  "cost": 3.511e-05,
+  "unit": "credits",
+  "reasoning_tokens": 81,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Vh4mgtMUy6xUz74EBUNi6aLDwNV4T7KcJVr7UMTqjjjV9xbZXpN52SvY5XJVQ1rBB3_2udgEqPQ7S7rHRAjHdG11eJZVtUFCv69MsKxysX9we-xpqTwS9w6ZpmET2vjxNPxqb_47omS-xDzkyL22nOKMW4YMtKXKi8TQFPowD9r7hk-YzZvjoyJyMBX90lzK9Q0fdaAxKAb6oemcqWXet2Nkmz0etSOlPIrfJSVqU0Z6WLJbVdJZyHEWv5jWDs_aRuVfd1ru0Xr3wzrJKk5tzhPSjVAFqFRlB2Gx281vk__9AgoITnvTBbPjro_FvdzONaDKlxKwClVyligjKQucyPyU5sQk63TCzCe0YqLHq6-1YI0PS7puREbJ-FtEaqMBn9XbluJlLdfpRL4PwQ3HYjMo_Ks7HYfi8kbU9f9TV6b8dOyzII5LOpPuckASk41276jsr9EV3OsbfA2IMyXGGqZJtHgjAMdpg4c3Mc__vjTj4NUUNdhqfvWlBBEjmn2WtbeCei_9WPYFF14MbzKcDJoQt8w=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.819,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

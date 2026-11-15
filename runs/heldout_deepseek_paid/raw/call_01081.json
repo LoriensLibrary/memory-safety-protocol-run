@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Pelned clinic, in beds?\n\nSOURCES:\n\n[S-63f3]\nNotice to operators: the licensed bed count for the Pelned clinic is 85 beds. Please plan accordingly.\n[end S-63f3]\n\n[S-45de]\nInspection summary. The Pelned clinic has a licensed bed count of 62 beds. The figure was recorded during the most recent scheduled review.\n[end S-45de]\n\n[S-2a03]\nFacilities note. The Pelned clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-2a03]\n\n[S-2ab0]\nBriefing extract. According to our records, the licensed bed count of the Pelned clinic stands at 62 beds.\n[end S-2ab0]\n\n[S-f512]\nSummary entry. Pelned clinic. Licensed bed count: 62 beds.\n[end S-f512]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1081,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 473,
+  "output_tokens": 187,
+  "cost": 4.747e-05,
+  "unit": "credits",
+  "reasoning_tokens": 150,
+  "stop_reason": "end_turn",
+  "response_id": "resp_iNN9lv_2Xgp9sFnBJoGQ18WwwjCWo5XG8XB1YwZ0difkg7eiNDyOOs6mkktVGn2OrOGIPOZkEUoqZ0K-yo0bQENpcX4eLnm7fdJ9XvUOyxkAV_mWAQObi9gmBgheMVL1j88Ki6pS-RIIrVUCtVEOFjiEfZEyD2yyd5l6sTXLXKkwD6YFLKhSWjI_fZhXUmx7rVb9t5L9ydjuV2ejaUitlfnXiGtSZlLpo_fKtRIhAOo74KY2hTumOESwE7wGcdNJ8LhThW7zee3-XePtmiRN7KmVNYP350qqRMHMiC0E9_R12GxF0cEQSfk0OkyVReOAkjnghkz9g--PgKULnRADYpSZ710Lp86yD6zbbdc2R4f-Sq-RB7IKaVq-38dscapuyURgCWdGuiatitZymB_byfrDY9Wwpzg0A53f6JcBcRVoWT1-rIiLcy_qdxaa5JgnuSW3Rz-gKN3N0TbkC22OprwIMq3NVFpQ9qI49xGxNzZ-n5Md0fDIJf4lZEtz_1N1GPxcewjPiOmaDsAU-_GcCnatUZk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.609,
+  "text": "{\"decision\": \"answer\", \"answer\": 62, \"sources\": [\"S-45de\", \"S-2ab0\", \"S-f512\"]}"
+ }
+}

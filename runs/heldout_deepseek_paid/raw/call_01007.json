@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Olenvel bridge, in tonnes?\n\nSOURCES:\n\n[S-5a28]\nLocal history note. The Olenvel bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-5a28]\n\n[S-5c6e]\nNotice to operators: the posted load limit for the Olenvel bridge is 22 tonnes. Please plan accordingly.\n[end S-5c6e]\n\n[S-0d10]\nSummary entry. Olenvel bridge. Posted load limit: 15 tonnes.\n[end S-0d10]\n\n[S-8602]\nField note. Checked the signage and the paperwork for the Olenvel bridge; the posted load limit is listed as 15 tonnes.\n[end S-8602]\n\n[S-868b]\nInspection summary. The Olenvel bridge has a posted load limit of 15 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-868b]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-5a28\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-5c6e\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0d10\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-868b\"}\n{\"source\": \"S-8602\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-868b\"}\n{\"source\": \"S-868b\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1007,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 724,
+  "output_tokens": 184,
+  "cost": 5.834e-05,
+  "unit": "credits",
+  "reasoning_tokens": 157,
+  "stop_reason": "end_turn",
+  "response_id": "resp_LQGLPwb5UnJjSC76xvyCC58hJnc3uAbWsHIf_qEbnKuhieqwuuoXDoVRT1WB3UzaI0HaRM_-rcE9cZmWAXUxd7nprkcUQxvfu3fcdsXjJ1unRonxzSTHoxz1rVkQ1wOKWpv9MjAZDCjaGefPSBS_J_7svp_jtgEFSF9W2Q3a7OwNPhhRNH-SLuWPczAHQmlPX1RbZgNBCH_4NlwxiX5U7rbeCz_l1IhrHkDvQOJdN8x2OMxLGvAgEi9jyV9kSoIySWI8N2E3WRNiQHAcJlaSXYtU2248Sb97MGGTJwQGbyhZjb31fUAHc9tkg-zPIZKJub44IY_4vdQdqLM8WU6u92VlSX51gRF7NJdx6SNsXhg_-pUuueohkFW0RqaPlo6QP0R0CLYQu4iAEatGJchgnCru4mHsjXyeEc8QyVOs5wmaeIzZ_uEjFlOYzP5YZ0wkfccgdshm7QoLB9GUTrBaj6uYOdLvi-j5x8CTWieX6DbEsEGirCCuMjrkT27Sd5ZMwaVGXeDEcPqyaQssLaJAS2aVHUQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.413,
+  "text": "{\"decision\": \"answer\", \"answer\": 22, \"sources\": [\"S-5c6e\"]}"
+ }
+}

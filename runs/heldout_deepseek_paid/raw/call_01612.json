@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Pelust reservoir, in megalitres?\n\nSOURCES:\n\n[S-0173]\nNotice to operators: the licensed storage capacity for the Pelust reservoir is 378 megalitres. Please plan accordingly.\n[end S-0173]\n\n[S-0975]\nMaintenance log. The spillway gates at the Pelust reservoir were serviced during the dry season and the access track was regraded.\n[end S-0975]\n\n[S-44a1]\nCommunity bulletin: residents are reminded that the Pelust reservoir has a licensed storage capacity of 378 megalitres.\n[end S-44a1]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1612,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 408,
+  "output_tokens": 81,
+  "cost": 2.97e-05,
+  "unit": "credits",
+  "reasoning_tokens": 49,
+  "stop_reason": "end_turn",
+  "response_id": "resp_On54zBDGcDerhGlW1Iy5sjYSn1-unCvSd8cxwR11w7NxfC6zoltKxQHm2-WMt5mfmW3aaVuy2BziE8q7QFnEMGCphKEgeChcuD-l52KwnYYjlS6-pKa2wQ1m2V6eCZ2nPS_l9JKv_cv6WQe0NXlkJyIWZQ7Cq_2hJ6WtSr3x_gbc9YxoWiNqEupcmrzgst_eYZWb6XnksUo3pjhf1qPCOv8l4kdejHSczoTbxnZfd3fx4MXXWK6awxfd0V67fXRdtwC93u_R28zlShwux7RWVC3DmXldqs3hFdmUIZB30hp5EMJP4T34WOYkCy8cg9UyhXjfMSVVRFyp0mZzcWmJk-upPBEquEvqYpSKz8lmZ2jjEJzuYmSusLbbPIirSd-SpdsAz02idJ7lFGk_ioRoxcyQ5-XxP_4TvB0a6rzmv3QrdHzKuHN5hPxw3Iioufqvws3XRr0nlTWHcGsyPhP6kjROumxEiPsT9VX7h7_1-Rib3oKtFMsCgEoqYKooRUnSFH6HA6pSnhkC37ylgTNQxakFPdc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.507,
+  "text": "{\"decision\": \"answer\", \"answer\": 378, \"sources\": [\"S-0173\", \"S-44a1\"]}"
+ }
+}

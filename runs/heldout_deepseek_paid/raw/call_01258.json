@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Eshsen reservoir, in megalitres?\n\nSOURCES:\n\n[S-f90f]\nField note. Checked the signage and the paperwork for the Eshsen reservoir; the licensed storage capacity is listed as 932 megalitres.\n[end S-f90f]\n\n[S-2e32]\nCommunity bulletin: residents are reminded that the Eshsen reservoir has a licensed storage capacity of 827 megalitres.\n[end S-2e32]\n\n[S-badd]\nMaintenance log. The spillway gates at the Eshsen reservoir were serviced during the dry season and the access track was regraded.\n[end S-badd]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1258,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 415,
+  "output_tokens": 155,
+  "cost": 4.037e-05,
+  "unit": "credits",
+  "reasoning_tokens": 135,
+  "stop_reason": "end_turn",
+  "response_id": "resp_4kXz0XQ1MsFu9h40dRPaMqP1woRkGAONYAv7wO47VDLt6GR-FqL23Rj0op7rCj5rL0asLiG0S0l78Lg3w0UEE09hWN3MICjDZ3oNW1LdcUb1CKd301cyxYbl8dkgn2ZtcX6H1-z3zf-gpnc7u2gH3HJNMO1AhgW58lglN5lJOO8kk6---tzVOn31kYJsK81bjcCvRsdiGGzYG0A-126b6s6xn5UbQLfKvNCDJ7PLVcBVxoMxbBNmHl0VJc7HdEJMUXPg1cDMxdIgBLB1P7THkVtDSfG3tivIRLWfKNiVTUt0y2c635NHANzUegmSoqk0UBlH3KvZCNYWY0xT7SLrcCf52tSrS2otDPnAgGdMU2S_LsGbzQauOLfhHid1hSmYWbEK-nIAVKgHP0kXQDcIRBQxx7LgnQwEJ__PqIDzXg-8KtneqX2R5avmnl87rpklcTbXC8wh6HIkLI84WqwC1yPJBk38vL_Gkhxa9aZHuwzM423Fq_qrrJDQP8Nw97huK4wBlOPWTij59zxkAfOELuRa-L0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.932,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

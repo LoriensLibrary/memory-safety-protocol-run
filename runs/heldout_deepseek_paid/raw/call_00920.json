@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ustesh reservoir, in megalitres?\n\nSOURCES:\n\n[S-65cb]\nInspection summary. The Ustesh reservoir has a licensed storage capacity of 648 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-65cb]\n\n[S-52d3]\nMaintenance log. The spillway gates at the Ustesh reservoir were serviced during the dry season and the access track was regraded.\n[end S-52d3]\n\n[S-f365]\nField note. Checked the signage and the paperwork for the Ustesh reservoir; the licensed storage capacity is listed as 648 megalitres.\n[end S-f365]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 920,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 423,
+  "output_tokens": 69,
+  "cost": 2.869e-05,
+  "unit": "credits",
+  "reasoning_tokens": 39,
+  "stop_reason": "end_turn",
+  "response_id": "resp_5Lt591jHDRF-ywUkdADI4OCp2tMXplHi2hLVkBW5GKkDXQcihriQYCIPA3MEy9aVY-uqlDc3g_fyKEfKO0Hm3hIJIL0h8Ma-aO89Xi9jX0ymDaT4cilTzF_BVefTfVCwLPIQCR5htUTDAeCOBchunMs2qtSWcwpHMpvpzYPYih56RsPftWUZS5HvdDt1FD_e27483P57ApTmVYh_3y0ZNc5QhQcKLYzqqZ6kZLp8XyuuG3RqelpUNTdItzfSWHSXvsKx73KsGv20QHCjGMYi63NmjNnIJfkgOS7mI3qOkbDBoF72JE2ooAchlq-R8rNO4Eg5A9qCurZuiD-bcCMJK1CXV_zYQFoxq_TaRD69n3AfkXS_EPFjeK9TvEqTP6YgQIQfDN4euN8kZCKCS6BkkEN_UFFg6wayNYzDaEBiXX54L50Th8oEIL9vKYu9WZQlYQxPgV5faz6sJwoCwMwskWhoJ66oKaXgud5m2HkS5eJJh9zhZw4WQtgzv_9qU1unIRXAQTI-7dus9zi8MfnyPaybbXc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.135,
+  "text": "{\"decision\": \"answer\", \"answer\": 648, \"sources\": [\"S-65cb\", \"S-f365\"]}"
+ }
+}

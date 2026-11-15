@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Thapelgri reservoir, in megalitres?\n\nSOURCES:\n\n[S-9363]\nInspection summary. The Thapelgri reservoir has a licensed storage capacity of 211 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-9363]\n\n[S-5ff9]\nCommunity bulletin: residents are reminded that the Thapelgri reservoir has a licensed storage capacity of 298 megalitres.\n[end S-5ff9]\n\n[S-498e]\nNotice to operators: the licensed storage capacity for the Thapelgri reservoir is 211 megalitres. Please plan accordingly.\n[end S-498e]\n\n[S-0a53]\nSummary entry. Thapelgri reservoir. Licensed storage capacity: 211 megalitres.\n[end S-0a53]\n\n[S-325e]\nMaintenance log. The spillway gates at the Thapelgri reservoir were serviced during the dry season and the access track was regraded.\n[end S-325e]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-9363\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-498e\"}\n{\"source\": \"S-5ff9\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-498e\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0a53\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-498e\"}\n{\"source\": \"S-325e\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1397,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 741,
+  "output_tokens": 240,
+  "cost": 6.694e-05,
+  "unit": "credits",
+  "reasoning_tokens": 202,
+  "stop_reason": "end_turn",
+  "response_id": "resp_aBj13aG7NQbXuZJMhsDI5nRUxtNEsszLiD1ujW5jtHwx_zgA28p5SJvI96gdbFpPpfB6cdIyJQwK36gaQhvu49djx5HCAqrq3CUKo-t9MP8IHRPRDcRqDT9iwpK_hH1i4b5xWAK3a93WAH751VubK6g9iTVXh-UUzPr_ZNl4MJKopJD9aBeDgKm0_MKIqLkTdZvwoqkS9LAywH_w22A3rsudrcIdOMWlKSh9qB9K-Ty9KCyq0y2PsZGS5ZRI6vpMwS82Cx3gnP1uPUvmtagqRmCOs7yqF4W6R2vwA2A9qhLaSatyj2MkPZ-bWWeXBv2zdBFKIxz-Vf8k3WqCtLuj1WNGAzMksn9J-AByK4Gg9XafY4x1MivCdP5WTNELBktk1z-r7TUjhP15TXOKFMUe6FCjYNIlRN7CmklIX5YIqK2vWGmSv0ljoalSJthUAXiU9N6lwMMqd9xK-q48C_7sDden3GsxOKdGkSybdeVo9tKhtOSTnBIJAIZ9NS2OyVpA7TLuSHKwtjnBkKSfzXxBT2NdVXo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.421,
+  "text": "{\"decision\": \"answer\", \"answer\": 211, \"sources\": [\"S-498e\", \"S-9363\", \"S-0a53\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Aroyth bridge, in tonnes?\n\nSOURCES:\n\n[S-0eb7]\nLocal history note. The Aroyth bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-0eb7]\n\n[S-f522]\nBriefing extract. According to our records, the posted load limit of the Aroyth bridge stands at 92 tonnes.\n[end S-f522]\n\n[S-d252]\nNotice to operators: the posted load limit for the Aroyth bridge is 92 tonnes. Please plan accordingly.\n[end S-d252]\n\n[S-c78e]\nInspection summary. The Aroyth bridge has a posted load limit of 72 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-c78e]\n\n[S-08a4]\nSummary entry. Aroyth bridge. Posted load limit: 92 tonnes.\n[end S-08a4]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 257,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 468,
+  "output_tokens": 159,
+  "cost": 4.332e-05,
+  "unit": "credits",
+  "reasoning_tokens": 139,
+  "stop_reason": "end_turn",
+  "response_id": "resp_F10HEj_Cgxo2SxguOBfdXX73WQ4v2iLgpy0wdpm0pDEoLUsce8Gc2HAs2EgUvLlnj-JBuepAeDzpzFztQOID2n5qz_3OQn1Oo0FKaJC66UDVmhEalhpD-4qmKTfrq2pUo0kH1_jfl8Pvpgzg09L_BFvUfqAzmfu1rt-mr5mjSGOhxLauXUXVz26r4ETJ_-rrzKD0RR6XGOiY9ffF0poqO25Xc2mtDT6OUSHcW3_Mv4TFvmSWacP5A0UBPIt1ziyNTdRvaG6qsTLngiK4lV4hWmBAQrI2FDYd3mJBoedDf37ZkYcmii8u5GfqTCJ5JkJV62quLDcnB4UKmg6ZduX7EaM9AWbe5WAwPjUVkPJm4U2svuKEzdCzaZlqyaIwWqdWA0tgU3fBZcoDHA7zCeMAinJsaQKYIqUYJdhzD8uJ7QBk3kwpHPFxUpfY5c2a3vIMkwysoaTxr6fMNVcK5PCzA6GIERGd-i9idpYnOzQXwiFNyQcD-DyzSHRyXL6H9a38d330fu-oKiF6-PyiwcPtiTC0EF4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.271,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

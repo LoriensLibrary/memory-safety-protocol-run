@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Enfenesh bridge, in tonnes?\n\nSOURCES:\n\n[S-83ac]\nSummary entry. Enfenesh bridge. Posted load limit: 84 tonnes.\n[end S-83ac]\n\n[S-5930]\nField note. Checked the signage and the paperwork for the Enfenesh bridge; the posted load limit is listed as 65 tonnes.\n[end S-5930]\n\n[S-3bee]\nBriefing extract. According to our records, the posted load limit of the Enfenesh bridge stands at 65 tonnes.\n[end S-3bee]\n\n[S-e253]\nInspection summary. The Enfenesh bridge has a posted load limit of 65 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-e253]\n\n[S-963a]\nMaintenance log. The Enfenesh bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-963a]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 590,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 475,
+  "output_tokens": 368,
+  "cost": 7.29e-05,
+  "unit": "credits",
+  "reasoning_tokens": 348,
+  "stop_reason": "end_turn",
+  "response_id": "resp_27WeUqpWdfS_ML6P7p-oJW9NF60C5OkKTEbg_nNLwZQafBxGt0BESOg9iAt06aR1nvRGPvy2pMNs-YB4WSwkEqhe4mNa2QbbQJkFgf89vpCTTI9wnDUYdj6eUhLqZNTXMFVrRy48YAgCiisspPCLgvX4dtFoMh9HctEl4BGOEeoCiYpbshdgVFLQxADuxCC1Pj3WU7ag13-Yvx0yZ-bdOZSC4o37HHA1yc7WiUoN70K00GGUAONzKRL4CO3qXu0KmQbCqrl0xcD_GaGuvypLUbIj0WxAJzxKGSI9Y7X6Hg1zZFoAMPEV7Fc7e0kWqGFBFnFNn-IAJIe-TVbLWJ8XSkjEYqYoA6pW7qWzh8r_XOPOW2xAOThF2Ue_E0b4SgEwPG2xbN7gCs2k9EFcsChvMljomYMgo74I8T9ypsOROn97CteSIhsDSeMhgXlp0vtbCLL_nY6pIhvQ3w6Tw1qo0I0-Pe9xlhMkYBjWJ-7OLvZUm68GUIlw7FhoeII8-TAx8WOWKdZtsar29t64HAdtJreGtoU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.071,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

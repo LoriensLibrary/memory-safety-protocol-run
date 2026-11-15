@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Usteshen bridge, in tonnes?\n\nSOURCES:\n\n[S-b9d7]\nMaintenance log. The Usteshen bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-b9d7]\n\n[S-cbe2]\nInspection summary. The Usteshen bridge has a posted load limit of 83 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-cbe2]\n\n[S-506d]\nCommunity bulletin: residents are reminded that the Usteshen bridge has a posted load limit of 83 tonnes.\n[end S-506d]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 224,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 414,
+  "output_tokens": 93,
+  "cost": 3.165e-05,
+  "unit": "credits",
+  "reasoning_tokens": 62,
+  "stop_reason": "end_turn",
+  "response_id": "resp_uCFTzhkZ6sMTLTXb7lZn0_DjhRaUoHb9M3TPm6cexCz_mB9OxdFr_FrY2-MNXna16nw7lGmTYWPSJ2LSia35HYxogXFm_aKVFbSAIJejrn6KA7U_iekBppK71ymbIic4gILJwbH-_hQlorWmwD-HEyOR-wtq4xuHtKW2tt0QT7tcMFWiAUl9NEPjXRWMcmI9g9gqcT-HLk4g8MIm7lwYoPSRzC3IcEBAmFw0S5wg5H-iVyC95TGHqk4S7nFI7uubXj6itSNrpVnJKW6NzGlu5eUbfFtfn_e-ydSOwU_okoBvDX5uZDBUK_GlhLavcAJnLpMzBrscKstCuPm88PoyMN9-EGAkfhhFPG-eA4v9EmPdapDX4Tln1ngEKJV1AYCc4Er8oXhR1mB1JYwe2L77mL2AyEqYhgLLF-PmN1CujCx4DZ3L-hPu1IeJnJU6rGFop3l7HElmrYj8qJ310HCiSfY7X7V5pRMKdkfUIhJtnNLObX7q9Qm24Cl6W4HSYnUo8-4xhY7hj5wAWUXM4Bn6rOICrRw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.848,
+  "text": "{\"decision\": \"answer\", \"answer\": 83, \"sources\": [\"S-cbe2\", \"S-506d\"]}"
+ }
+}

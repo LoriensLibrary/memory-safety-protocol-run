@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Braome clinic, in beds?\n\nSOURCES:\n\n[S-8b06]\nInspection summary. The Braome clinic has a licensed bed count of 71 beds. The figure was recorded during the most recent scheduled review.\n[end S-8b06]\n\n[S-72e5]\nSummary entry. Braome clinic. Licensed bed count: 71 beds.\n[end S-72e5]\n\n[S-6262]\nCommunity note. The Braome clinic runs a volunteer programme and hosts an annual open day.\n[end S-6262]\n\n[S-1078]\nNotice to operators: the licensed bed count for the Braome clinic is 101 beds. Please plan accordingly.\n[end S-1078]\n\n[S-d83b]\nBriefing extract. According to our records, the licensed bed count of the Braome clinic stands at 71 beds.\n[end S-d83b]\n\nPLATFORM PROVENANCE:\nSource S-8b06 claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-72e5 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-8b06.\nSource S-6262 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-1078 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-d83b claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-8b06.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 859,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 666,
+  "output_tokens": 250,
+  "cost": 6.497e-05,
+  "unit": "credits",
+  "reasoning_tokens": 225,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6lmaYAYpwcUA1HHKYIeqaO9uwAZa2RC-fxTQx5AZbrARwmOIjcmRn5pnI5T4DMaj93dzEiMn7rk5R4k2rXj42nxlp2T3Bx20_t1L5zcuSJprrIimiC99Qd1sqZmpKtyE8qNbbfNw5iqfLvAJ6iVX0F_FXTQaJEzlm5j3tWQnVz3fVlcXxmMCPgiSPzUtCatGBOaKS_m8PtO7KMuf4j36sbIbijNgjdRX9MVzrkTmeR3HL_iZEK8s-KMnTJkdQzdhzW3i4EcBaVVPGRTcX0jVjC80fQAwNkM9o7zQ3JnHU91dBeXubY-shTVvg0bhvyLcJS7tKYDe_glzK-A3pMGGicXQjXHBSnlsUfCJoK0HT8Ikr9YAKpmQOp5yuVxCEgnmgbmUoG_P-L67iVgq_ECT6twezB-9Tp0mPiVJxEVkRjPCdVD2gG9Hbia0HccPQMPqoA3ieFLdFkmki5gRKsj2U18Y1scQeVIK49m6qgAbv9-dz46ip8zQV4aUIP2FAAQqUi30cGRBftcJ6Ecm2NVC07yFIzA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.13,
+  "text": "{\"decision\": \"answer\", \"answer\": 101, \"sources\": [\"S-1078\"]}"
+ }
+}

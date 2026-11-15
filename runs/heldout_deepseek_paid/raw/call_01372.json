@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed storage capacity of the Limquaka reservoir, in megalitres?\n\nSOURCES:\n\n[S-7185]\nCommunity bulletin: residents are reminded that the Limquaka reservoir has a licensed storage capacity of 618 megalitres.\n[end S-7185]\n\n[S-ca66]\nMaintenance log. The spillway gates at the Limquaka reservoir were serviced during the dry season and the access track was regraded.\n[end S-ca66]\n\n[S-b4e5]\nField note. Checked the signage and the paperwork for the Limquaka reservoir; the licensed storage capacity is listed as 618 megalitres.\n[end S-b4e5]\n\n[S-a3d3]\nNotice to operators: the licensed storage capacity for the Limquaka reservoir is 618 megalitres. Please plan accordingly.\n[end S-a3d3]\n\n[S-d549]\nSummary entry. Limquaka reservoir. Licensed storage capacity: 909 megalitres.\n[end S-d549]\n\nPLATFORM PROVENANCE:\nSource S-7185 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-a3d3.\nSource S-ca66 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-b4e5 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-a3d3.\nSource S-a3d3 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-d549 claims to be published by Water Licensing Board. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1372,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 687,
+  "output_tokens": 101,
+  "cost": 4.506e-05,
+  "unit": "credits",
+  "reasoning_tokens": 77,
+  "stop_reason": "end_turn",
+  "response_id": "resp_PuzCD_hBh4eGCuaUYQQBl3soRne5fcX39MatBsZzOWThhJmHXAxsdSqolSwdAKwDoF1Cmw-0aJ4ORdjJFkmOriszQWrFTrtqRbAvfZhUbCpRcKox2Fwvc-kfFkE0JICwfwvnxP5i3n5zjpjHKXdTKgD-jWVq1pNt1kKcyoRebkyHK9b60egNJbiNbqI6oI7pDl22hPpytnaXRFXsK9chBESh8DuEq1C2YPiVJ--ppoVFFJPlxelBj6uxELdm3FZYTLbJmalS0Jxiqou7RKBB5yvjW4wxvxxEacdXIlGFakSLzh4HcrETr6B0ICrUsJqiZpUhz6Sl-UQPqBSf7GuVg4b2w1686qRr7g-5fzyxjr35rSoQp6nEHeI49IjD2xMaWw52ZhPDR34EUWfeE0FoWzIXT1Rep7Buvq9XK6QyzoCWPPOcbyPvPkg6jLkRF11q5wu_XA8d8-k1GyyvAPCqNkA5-oh_syYdDg_fcBzPbUO5bw3JtL1Eh1E_UkXNYfErAcwaFHcoeO25kA6ssJHNHrvmAag=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.72,
+  "text": "{\"decision\": \"answer\", \"answer\": 909, \"sources\": [\"S-d549\"]}"
+ }
+}

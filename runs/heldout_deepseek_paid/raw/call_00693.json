@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Thadul bridge, in tonnes?\n\nSOURCES:\n\n[S-80df]\nInspection summary. The Thadul bridge has a posted load limit of 85 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-80df]\n\n[S-2360]\nMaintenance log. The Thadul bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-2360]\n\n[S-3f53]\nSummary entry. Thadul bridge. Posted load limit: 85 tonnes.\n[end S-3f53]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 693,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 400,
+  "output_tokens": 80,
+  "cost": 2.92e-05,
+  "unit": "credits",
+  "reasoning_tokens": 48,
+  "stop_reason": "end_turn",
+  "response_id": "resp_dw6frg9983IKxGDcXp9SehB0qpVA00-8Vd0jFRHvVV-SLsENjBcerauv5sbtzDUOFbnX1T5uh-bamKP1iQWcUroBaEhgCLCNEi1bW8fRkvhwrqCfYTa1kzX1FLHPQsl674l9ft-jCL1bldbKeJstsKs43-OjqQ1c1tMZoY8K8-UvgD17K5PBgO9IUgpMzfMLTo3NesTMSc6chJs68MBOMeh-GD-OLzBrqPyzG6UQiSOq-UCTANj9JOFCTFxI8A49xf1C-TD84QknARtvvorX7I5ubN_DfL2H2eGTDMNEx4ftg_UafN56G-l78X_4hVJmkBRPxBoJg1klj45XzKxrUKbUU_iT8m1gh6pIHRZ4-lrXs1yoJhCfdDKXdfvcFhX4p438Ugp217e1s73BaNsu0RpEZml56fToNAEoSjF9TmdjOeCx9swSTN_HdRx_HQr5Q7C7X56mB0eD86s8B5vsjCs70y5w7grNnSb9q8RiDNXcgqgKlX4oQp38hctfs_jBXPX7VkdfIaZ6-EXec5y6rzS0u_Q=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.293,
+  "text": "{\"decision\": \"answer\", \"answer\": 85, \"sources\": [\"S-80df\", \"S-3f53\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Rolim clinic, in beds?\n\nSOURCES:\n\n[S-d152]\nNotice to operators: the licensed bed count for the Rolim clinic is 203 beds. Please plan accordingly.\n[end S-d152]\n\n[S-74ad]\nCommunity bulletin: residents are reminded that the Rolim clinic has a licensed bed count of 162 beds.\n[end S-74ad]\n\n[S-1653]\nBriefing extract. According to our records, the licensed bed count of the Rolim clinic stands at 162 beds.\n[end S-1653]\n\n[S-7026]\nFacilities note. The Rolim clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-7026]\n\n[S-207a]\nInspection summary. The Rolim clinic has a licensed bed count of 162 beds. The figure was recorded during the most recent scheduled review.\n[end S-207a]\n\nPLATFORM PROVENANCE:\nSource S-d152 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-74ad claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-207a.\nSource S-1653 claims to be published by Open Records Mirror. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-207a.\nSource S-7026 claims to be published by Community Facts Board. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-207a claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1954,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 668,
+  "output_tokens": 99,
+  "cost": 4.392e-05,
+  "unit": "credits",
+  "reasoning_tokens": 75,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Vf0gmuIdlKFNAmbVMIhxXd5nDTB3fJ5r5ubkt94alDcJBc9Qyzxk-GpaQDS0jbLa9intXIVA15n6Dw6EvQ_D6EMBNBJIKdnuwdsqwtgEbjykuPACbQMf4pRWwE8K-HnMCXE6Y1jFiXZJgomeAin9-s2iTIE1Y_ftLPLWnT-X7EmzgykRKnm6IFjEw3i-vKeVssMBrCYCmXU-w3OSmHrgfKX5emK_YpE63Wf4W9GL6vA27IEnpE0P7dzj3vOplZlcxnsuBYvOy-ynGY7a48234-BfenuLilqNAJCTwGeCEr7jc5yd6kdj9hMOp4yEHujXCLD-eoECYRQSGMF_ftK5dM4wTJtVbo0s54I3FAszHe-wkj8uctV858li4qppndoM--x16pcncuGjpnx8B0euRKRf9uRREv8HWQa2zpO4KIzhh-0pvoLA8WErwe7DeD8WQdS7d1DQ2v5DE9M82ZmoDv4AJRAh9IxMZ2W9A22_fjXMMA6WrQPfdMcoryBQDLGCSZiJ1FcB9GRMlAsZ7DiHkr2Wz3w=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.839,
+  "text": "{\"decision\": \"answer\", \"answer\": 203, \"sources\": [\"S-d152\"]}"
+ }
+}

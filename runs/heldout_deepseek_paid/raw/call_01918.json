@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Bragri reservoir, in megalitres?\n\nSOURCES:\n\n[S-c62f]\nNotice to operators: the licensed storage capacity for the Bragri reservoir is 793 megalitres. Please plan accordingly.\n[end S-c62f]\n\n[S-2d68]\nBriefing extract. According to our records, the licensed storage capacity of the Bragri reservoir stands at 793 megalitres.\n[end S-2d68]\n\n[S-db5b]\nField note. Checked the signage and the paperwork for the Bragri reservoir; the licensed storage capacity is listed as 643 megalitres.\n[end S-db5b]\n\n[S-a66f]\nSummary entry. Bragri reservoir. Licensed storage capacity: 793 megalitres.\n[end S-a66f]\n\n[S-a2a6]\nMaintenance log. The spillway gates at the Bragri reservoir were serviced during the dry season and the access track was regraded.\n[end S-a2a6]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1918,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 489,
+  "output_tokens": 147,
+  "cost": 4.258e-05,
+  "unit": "credits",
+  "reasoning_tokens": 109,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3AN0QBXYs1yGnqmH2kceW09lgyLs5Cdv0So6TuoV4tqbQzW6AIgclBVJhcGCHogR04s696vSOxyuPgsCjlwLzuc_bfDdln9xpaJlWgpWOF6PmE8TGd1WTA2N92qKN94RSJ-JUYcSWwH00cHunZ9xkUN_jeQAR4dt98jq8RjlFkvRrpb7XqJUfaPixa_9n4RcqtyQjuAMV2iKRUp8XyjNrEmiCAyYymFA6vovcyX1B0S1BBOzn-qG5Ug-lanYZi1HBytr6hu2U7QCPQw20dc3DpAzbl7OeeG3HZFsGoOk-3BOfcJ7Ol1h6e3fp-m5LksbTcTDTtlZscx9_xF6akYfeD8DdYS5PdZ3mJQYC3oGjQ8os19xsOtEyEF_VRJ4eWHdPisR01nyNm-MEmtWv-6aJIJLWwju7bnAQkE1NyMuBmzNdDOhkt8B2KBfq2-eRJulkYHm76PJtToS4KwrqAcpnq5RtSmG9H5-8HsiWGfZoowwTJV7NyISDPLrGCcWrjwuEekL2D4IlR2Pa-QRWGF2twHvEOI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.504,
+  "text": "{\"decision\": \"answer\", \"answer\": 793, \"sources\": [\"S-c62f\", \"S-2d68\", \"S-a66f\"]}"
+ }
+}

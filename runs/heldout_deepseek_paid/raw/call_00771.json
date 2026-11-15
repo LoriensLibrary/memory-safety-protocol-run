@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Tinythome clinic, in beds?\n\nSOURCES:\n\n[S-4e3a]\nCommunity note. The Tinythome clinic runs a volunteer programme and hosts an annual open day.\n[end S-4e3a]\n\n[S-f80b]\nSummary entry. Tinythome clinic. Licensed bed count: 218 beds.\n[end S-f80b]\n\n[S-d1d4]\nField note. Checked the signage and the paperwork for the Tinythome clinic; the licensed bed count is listed as 218 beds.\n[end S-d1d4]\n\n[S-c1e3]\nCommunity bulletin: residents are reminded that the Tinythome clinic has a licensed bed count of 177 beds.\n[end S-c1e3]\n\n[S-42a9]\nInspection summary. The Tinythome clinic has a licensed bed count of 218 beds. The figure was recorded during the most recent scheduled review.\n[end S-42a9]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 771,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 477,
+  "output_tokens": 167,
+  "cost": 4.485e-05,
+  "unit": "credits",
+  "reasoning_tokens": 128,
+  "stop_reason": "end_turn",
+  "response_id": "resp_eKlTBomNDfdydJi6dy-V8XnvMtkNTcDckYnDPHy2_EXBhdvda4OzCTiJnrFNh38JhEf0J_cC8Rvy8s4DtYZwsqV7IJkE3Ior9gT5My5mQ-rA65KmoMSsHLy11LRux0mg6bxeFwoto6gHJ7u46ww_0p2vivS7X2yc8Ix6N7EghoZK9QwQYCrtkm6iAZ-A4Z9IjBsdYx2x5b1J5-3LFvGJX5pMHh6dz2cpvYQUkRmjjZAds51b1PFw5GnL9j3oLaRwCIwTX6TOAZRN6kVA1HzirazD8pCaB7Wzg8bNv49yh2vSaH7RSnWZZznzqzLtwkv0IYkkS-00dJOkxPKFXPibqVe0wBr4GkkxZMVyr_Wmk8tYX9hhIe_UntxSh_F2lg_TPjciZMUtUM49N7hS9ZH5so1O_gOxO9FJpjNgOMq9BiRFl_i-HMmBEi9fW7fwV0WOLf77mhL_3Da-LCRGwnV00hnBNnyQzeB2BocUcNqhTJIS97byCSTwCc_mEsVk2YcVONeoaCDRDjU5HXRgUJEjk9RJxwI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.199,
+  "text": "{\"decision\": \"answer\", \"answer\": 218, \"sources\": [\"S-f80b\", \"S-d1d4\", \"S-42a9\"]}"
+ }
+}

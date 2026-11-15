@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Velaroome clinic, in beds?\n\nSOURCES:\n\n[S-c898]\nField note. Checked the signage and the paperwork for the Velaroome clinic; the licensed bed count is listed as 174 beds.\n[end S-c898]\n\n[S-372b]\nNotice to operators: the licensed bed count for the Velaroome clinic is 225 beds. Please plan accordingly.\n[end S-372b]\n\n[S-e2f3]\nFacilities note. The Velaroome clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-e2f3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 645,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 404,
+  "output_tokens": 68,
+  "cost": 2.77e-05,
+  "unit": "credits",
+  "reasoning_tokens": 48,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QVEzjgS76X67fVYve18kYUmXHqVGZOWrxxdNImjBFl3eHMFHLO_PdET829o82l6ZU6i4AKVFpapgisJ8rCmMy-t60oA6a72ra4T4Rbxjy-BgVZYFUu5ZjqJtOuz0PbN9y5fm2nSULY2MpLEdlApdI0yhRk0Z6TX1psZkWQ2AC2ZNKN0ELWUc3Fav1rpWB4aEdnmxnMQWXLyZ1Ffy9eSXlNwscherowYU0N2KM5Crsp-ymy8ZDqbN0yY-K144miXAAC4dd-0zppizvFCaTFMEDUqtGf1lgXInGW90uA-lIIdQoiNiTJH_3ghfdWphxlI3bZPevkwT6J6ddZzrK0kury0RGQnSF0lap0Np-LDZeZ6q7qjKttcvWw34pOshJ7vK_5mEa89KsSUFE-AX2l7bKK6DnqbR_RqELUpoKu1q1M8N9mXtZeCcYB5EVvCAdxnUREiEJfft8FSq9cpBFoEiy4M7lfTPFQY8m10Vx2wC2tEhhtwBsCZluFvQRHfqiERTj9VXq6kUGik8LuRI_isKaqWy0UM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.357,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

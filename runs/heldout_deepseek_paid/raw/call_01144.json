@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ustmarro reservoir, in megalitres?\n\nSOURCES:\n\n[S-27e9]\nCommunity bulletin: residents are reminded that the Ustmarro reservoir has a licensed storage capacity of 183 megalitres.\n[end S-27e9]\n\n[S-68db]\nMaintenance log. The spillway gates at the Ustmarro reservoir were serviced during the dry season and the access track was regraded.\n[end S-68db]\n\n[S-403b]\nInspection summary. The Ustmarro reservoir has a licensed storage capacity of 183 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-403b]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1144,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 423,
+  "output_tokens": 73,
+  "cost": 2.926e-05,
+  "unit": "credits",
+  "reasoning_tokens": 41,
+  "stop_reason": "end_turn",
+  "response_id": "resp_VG-XDXzfvpmoncF2XES58YIPVdHugtwfd0b_DTHuUvy6-svZJ7x7v22A_n972LnX7rGUSY56waVX1xgjtoxQd_qFNbXN9BkhjcLtZzeR-8G2ZxT2xil4thCfl9dwgaZ6LsOgkUDIzOVkStV4n15VkboqMPT6Rcw4yj-8EaMMMkbJ7alfoyyEEfh7qHxUanen-Xy74wBFMk2gEq2qVFkWW3afqe1Y859bOsaILBNAEA40h8eOxxU6yyOwCd7z3jBXFfzP5gm4V81lKj8YO-FqliDq1TTiLdhqilalsRjFrCwZ7kmC-FYeL7Te5fqQHqqgrZLuh4wdrgb8LN_bcFBXc3qt1eT5sqqMDotXSPZ-3N9KwoGduqh0I6Fp534oU2YvORWX36tvTydXE2odStTFZ__rFguJjfoieAJAF72P4ocnUzgEdz09K_7rY-3EcFMJVpJyaDkmHRc19LKxuq0XfjyXFiYs3BHakXtXMQlBYS1AnTrzE_O4Ibu1UNgHG0ipad25QKoBBKAlPABWao8QlfOd8F0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.194,
+  "text": "{\"decision\": \"answer\", \"answer\": 183, \"sources\": [\"S-27e9\", \"S-403b\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Marrobra bridge, in tonnes?\n\nSOURCES:\n\n[S-d99e]\nCommunity bulletin: residents are reminded that the Marrobra bridge has a posted load limit of 30 tonnes.\n[end S-d99e]\n\n[S-a1c8]\nNotice to operators: the posted load limit for the Marrobra bridge is 23 tonnes. Please plan accordingly.\n[end S-a1c8]\n\n[S-7a74]\nSummary entry. Marrobra bridge. Posted load limit: 30 tonnes.\n[end S-7a74]\n\n[S-e5bd]\nLocal history note. The Marrobra bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-e5bd]\n\n[S-f1fc]\nBriefing extract. According to our records, the posted load limit of the Marrobra bridge stands at 30 tonnes.\n[end S-f1fc]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-d99e\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-7a74\"}\n{\"source\": \"S-a1c8\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-7a74\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-e5bd\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f1fc\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-7a74\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1774,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 709,
+  "output_tokens": 146,
+  "cost": 5.235e-05,
+  "unit": "credits",
+  "reasoning_tokens": 120,
+  "stop_reason": "end_turn",
+  "response_id": "resp_6Lqe2Ex3Ses6SZiQOpDn18V0V04k78IjV6-Vipc-Y6AATeWYFUFO0j_xWU7gUzeVbCi8bWZQhD1RM0xZnmQhltiyMSh2Fccu0CHtUv3REEe_3UEufvla4SPUFjERHDV1dO8Ohb7PpET8KYG6w0YmyFUUx6e2agsNaUPS1QShiepjxpAbCvlyJBrSNdJ9Wd1PwlFRCsY7FtcmagujZnQUVNKp32JVd6Otw9FXKlhMl6VDdN3PGiUhRiRHJ2RftomIOCjUDTWpmsjmMTHBmlWxxMuPXyxNFZVWOCjY7La-1x4WG-8m-PcBsIpFKBgC3Tr9wdXF9VSlBxTcx5tAb7_YfRbkXGLElv6B0OOAdOA_YFRgnuXYaiafAbOfHQiNMpBqXJ0u3IDNg9VQvKqk9FP68XtQNDUoXMn4lOwmnCM2hH2DzuRODJdBJUoBHWsfRf-NpwIP0KPw3FKiLr7wU79bT4Lgwtx0NsnqTBtfbCWc40-bG4eywoe0xK8XCDKQ6KSagdnJYQfZ3pPZnCC_tgAbErGa7_U=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.712,
+  "text": "{\"decision\": \"answer\", \"answer\": 23, \"sources\": [\"S-a1c8\"]}"
+ }
+}

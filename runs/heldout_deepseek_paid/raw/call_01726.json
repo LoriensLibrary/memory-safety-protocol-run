@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Neddulyth reservoir, in megalitres?\n\nSOURCES:\n\n[S-9090]\nMaintenance log. The spillway gates at the Neddulyth reservoir were serviced during the dry season and the access track was regraded.\n[end S-9090]\n\n[S-9d77]\nCommunity bulletin: residents are reminded that the Neddulyth reservoir has a licensed storage capacity of 588 megalitres.\n[end S-9d77]\n\n[S-6e30]\nInspection summary. The Neddulyth reservoir has a licensed storage capacity of 588 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-6e30]\n\n[S-afaa]\nBriefing extract. According to our records, the licensed storage capacity of the Neddulyth reservoir stands at 588 megalitres.\n[end S-afaa]\n\n[S-a658]\nSummary entry. Neddulyth reservoir. Licensed storage capacity: 499 megalitres.\n[end S-a658]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1726,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 492,
+  "output_tokens": 188,
+  "cost": 4.846e-05,
+  "unit": "credits",
+  "reasoning_tokens": 149,
+  "stop_reason": "end_turn",
+  "response_id": "resp_8JnLIyO42Vjdkt1Qc_EJRLdXF01aHzfNwUY9IYjnVscQ16OMrxg5j9nz2pWgv2LDpBCBGKn5kbDTWBzzCsglSFFPTSsFcXIru-qr1l7oC7syHpVsy22D7RNoLHoLuSNYSPr1vZDElwgygxYyK0p_c49MqCpRkBFKJ3tw2MqnEJLbvdB_Rs9ucsFB5D4_1mVkdRwUYheH4iBqIUMEIvB6KhVKTWM5UsM8ehFgorVVLF2HsQ43grq58jMeBGsIg6E4E8lVUQMb3ssDiey-6neTewsZ-XYC14dAGt2t1nicCa96Tbl2rkSVUCMWYGNqXF56s997f4OWY54W9sdwtL9l8ugFiArgL8mdnnk-XJrHDsYWrDeIgQxxraOiz6UOmy192FjiqJ65dm_2Ffq7NNhAJBbwJUlpbBamrT-hNt5pxRCkylWDZHzfQnz6urq8WbOXiJxVMVqLW3d2tZ-Iz_wvJ8TSGLNzzKczMjyEbINMd1U5Y5rkLX6HJuZKRhuY_JboZ64lhS_9per9uxfad0fqbpzMFXc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.937,
+  "text": " {\"decision\": \"answer\", \"answer\": 588, \"sources\": [\"S-9d77\", \"S-6e30\", \"S-afaa\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Kaen clinic, in beds?\n\nSOURCES:\n\n[S-6c62]\nSummary entry. Kaen clinic. Licensed bed count: 230 beds.\n[end S-6c62]\n\n[S-1780]\nCommunity bulletin: residents are reminded that the Kaen clinic has a licensed bed count of 289 beds.\n[end S-1780]\n\n[S-70b3]\nFacilities note. The Kaen clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-70b3]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 317,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 391,
+  "output_tokens": 136,
+  "cost": 3.664e-05,
+  "unit": "credits",
+  "reasoning_tokens": 116,
+  "stop_reason": "end_turn",
+  "response_id": "resp_n2r_VwxKe-0tN0LIz7LD8qucN_28104fefGEsZDmLxhwkUtEFQylKHnrEJhj-fl7zPa9JpN_E8GVggt6FHxbgPABd88ow4dcipF_pfYqZEUnOf_h6gfuv-R1uKxCgdBWV-DZYXeh-rkUPv2lljbepTJO5baTovE-TIlm2xER3Nmt0TQGnFabz0pncKr8NoheZDfejp2GSsNWnFSJG7Z0CBwtP7_nJnPDqegQwudNA8DtoI5ssflY2gjrE_iocoa2EMUbJnM2GysDBu5eekzRpS8RjvhBbnzHf0lI7ZxWT9tC4LYj5zbejXTq57txFnSx3rbKmAtMx65sNfDW3TRb5DvDbLNkJSWC473Mb8xdD0vgLtBEaBsn-BjzXSy8RorZSpBtM70eeZTJewnVQvuYN-KpjBfUXdD4De4PiRdin165iLvQepYtNpN9QgOkOAU70W6rnnHOKisrEYOW87MGMfa9f3dfyCHV4lumV51Q66kuGMyVoMX-iiaQalxKnkddyC8B3qKj1KWU-F-pqwwMuBs9D2c=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.611,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

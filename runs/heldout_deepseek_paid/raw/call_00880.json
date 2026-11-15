@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Thaome clinic, in beds?\n\nSOURCES:\n\n[S-9438]\nBriefing extract. According to our records, the licensed bed count of the Thaome clinic stands at 103 beds.\n[end S-9438]\n\n[S-5795]\nNotice to operators: the licensed bed count for the Thaome clinic is 127 beds. Please plan accordingly.\n[end S-5795]\n\n[S-59cc]\nField note. Checked the signage and the paperwork for the Thaome clinic; the licensed bed count is listed as 103 beds.\n[end S-59cc]\n\n[S-af11]\nCommunity bulletin: residents are reminded that the Thaome clinic has a licensed bed count of 103 beds.\n[end S-af11]\n\n[S-40f3]\nCommunity note. The Thaome clinic runs a volunteer programme and hosts an annual open day.\n[end S-40f3]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-9438\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-5795\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-59cc\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9438\"}\n{\"source\": \"S-af11\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-9438\"}\n{\"source\": \"S-40f3\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 880,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 709,
+  "output_tokens": 471,
+  "cost": 9.785e-05,
+  "unit": "credits",
+  "reasoning_tokens": 450,
+  "stop_reason": "end_turn",
+  "response_id": "resp_po_YLAZmbMX1ILhpiucO1CSAVbafhQYe9hBk__y2QQO23imRND9vS3J0CeUMok3aKj49UCvOlOQbPcdvJMbLogB8cgVhxTgOciCxseZ-81ix9mJWcwiCON34twXxujUPfhDtxU9oAdCGTMgeMBNNVHersgn9An7ciFc9sXsbUvZX_vvzh9GvfnGH5tHO6vVS-merTDdO6cby3jKlQVVFhVHoTxfCQMhY9JnAYytjV6RwpumbfjjhPNmOWZKlXuKGLY8cvqRr0328YB8h74UHMzfrclbnRdcCG5yEmX7gEEyJEKndjkS-fq6wpcpoC02PRO8tbWA4YvaoUV-SFCaeIeU701uwRUr5L8xT_NGHDtrM61tOErn5C78dyAc7yiF_dhUtzx_DHDidyp9BWDMYpphi6pvKqTqHpeQm9BA7puVK9f-azGeNHJxZFcePkcJ7qf0oxSM_joKcdK3KLBCEJwk8NcPZ28jOf4j2GmeX3JLXfFxYZGNl9M3U6KYOH3-SOa2F3zw3lhCH4joHCTIhV4gm9rA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 5.435,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

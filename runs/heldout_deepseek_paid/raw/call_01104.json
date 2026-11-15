@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Nedaroqua clinic, in beds?\n\nSOURCES:\n\n[S-40b3]\nFacilities note. The Nedaroqua clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-40b3]\n\n[S-ab28]\nInspection summary. The Nedaroqua clinic has a licensed bed count of 55 beds. The figure was recorded during the most recent scheduled review.\n[end S-ab28]\n\n[S-8553]\nField note. Checked the signage and the paperwork for the Nedaroqua clinic; the licensed bed count is listed as 40 beds.\n[end S-8553]\n\n[S-3ad4]\nNotice to operators: the licensed bed count for the Nedaroqua clinic is 40 beds. Please plan accordingly.\n[end S-3ad4]\n\n[S-58b6]\nBriefing extract. According to our records, the licensed bed count of the Nedaroqua clinic stands at 40 beds.\n[end S-58b6]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-40b3\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-ab28\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8553\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-58b6\"}\n{\"source\": \"S-3ad4\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-58b6\"}\n{\"source\": \"S-58b6\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1104,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 730,
+  "output_tokens": 478,
+  "cost": 9.977e-05,
+  "unit": "credits",
+  "reasoning_tokens": 457,
+  "stop_reason": "end_turn",
+  "response_id": "resp_KrVjxI8EiN40dP5znIpqCJMcBiK9EGqj6rTIrcna8ycO98wZo4uyqZQ8qknEJ24Xs9c4jMEbKxu_foaR0Vq3S6vg-YESAYVQ-apazpZEaZ2GN8xksG-v9YSS3NMaNPq8roPGyfzEuhOhH8RYt9NMgoZ-XfqBpujp0iZlNLKD9onqpZ9vXa-w8QM5_Lrdrs6RpI8mBBxzvHGcsVuo_ACRQii8tto7y-RC8LSUp6lCDbxOvtxi2QunKQ4KL1clGj483xR8tRGWW_Pu3CCKrXl-54kljcj0ShwPWm3K0BQMa_SD3M8BFvdq-Uf-XpyDGV6P6piKDrvW9PoGrR_wwYMaPQHpFMlJNMk-syR7mdWr2Ig0mnnLDf1nrmqDj5qcLHbflp_UI1kx95EtECDohEqKVRDxIDj-KZj_SoOqplLn0tJ0Zg84b3oVlGKPy02hzSpDtZiAKXsAIZTtOrI4MdfH6oFSBnH1Pn6yJuD56f7qnNbMKwZvCFoSzbJlWXtzFfEezCU9EGL6OTT735MMU2YQtpPGY3M=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 7.183,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

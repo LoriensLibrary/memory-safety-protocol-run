@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Ustbra reservoir, in megalitres?\n\nSOURCES:\n\n[S-511d]\nSummary entry. Ustbra reservoir. Licensed storage capacity: 911 megalitres.\n[end S-511d]\n\n[S-fa57]\nVisitor note. The Ustbra reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-fa57]\n\n[S-cd15]\nBriefing extract. According to our records, the licensed storage capacity of the Ustbra reservoir stands at 615 megalitres.\n[end S-cd15]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 502,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 399,
+  "output_tokens": 77,
+  "cost": 2.873e-05,
+  "unit": "credits",
+  "reasoning_tokens": 57,
+  "stop_reason": "end_turn",
+  "response_id": "resp_w53Na6v4gWXyZbupHIh5PMLjKJF-24SYxnky95b2XHF8nDwWQOE2j-RofXGU19fjzvwPRd8QyQzwdyJtZFhisMxcy73Biw4JAtPsXrupsH48UlZYEpmJBFFHBe8rFA5wPNcSoWiIsgo5JBKAals3NFbqb3Ajc0ZF9OkYRDKwfWGxNHrRB3NJI8M-JwzRPSiRVd59_WyW_1v1XFB8XSyuos_4CJyC5Xn44KItemWUOhkCV_Uf01kNpuW8lG6tHiR4qC2Sur6x8NNJUHMLkogwC9EaQpaRGllRF2J5RNv4Dcy-P8qFQ42FvQiuSu0UeydnLrXKm0AfVTHvBgGP3A-KDSCbEbYqS3tZXtSiq9-wxsEaFmmEvrWiypdYm695waYuMz4q86vUWO7lsgtOHosl0rb7GUZiRGxXnuYXiKQd9R9q2tpctPFK6vlmeU4SE7ZqJdaORzM8C0UqSKlrvfv7u3P9iPIKG8E9a1O13VqeFQrrmAN-Toj8hoQ0AjCLtgdZ1R6amdhMAsnRYMr1Syvp-YixKWI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.465,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

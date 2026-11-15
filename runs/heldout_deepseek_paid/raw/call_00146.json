@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Enyth bridge, in tonnes?\n\nSOURCES:\n\n[S-ff8e]\nBriefing extract. According to our records, the posted load limit of the Enyth bridge stands at 12 tonnes.\n[end S-ff8e]\n\n[S-5423]\nField note. Checked the signage and the paperwork for the Enyth bridge; the posted load limit is listed as 12 tonnes.\n[end S-5423]\n\n[S-a2c0]\nLocal history note. The Enyth bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-a2c0]\n\n[S-7fef]\nInspection summary. The Enyth bridge has a posted load limit of 12 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-7fef]\n\n[S-037c]\nCommunity bulletin: residents are reminded that the Enyth bridge has a posted load limit of 14 tonnes.\n[end S-037c]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 146,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 479,
+  "output_tokens": 215,
+  "cost": 5.165e-05,
+  "unit": "credits",
+  "reasoning_tokens": 176,
+  "stop_reason": "end_turn",
+  "response_id": "resp_lQfRgbVIapzQfdLKzJ7N6iyMv9uH5e7OTOQcG6hCNVKtH768W0kfHJHQaWPh8aLjeSIuZuVhctK43d-8FrIxRA_xTSXrTuY3oshmQUEorNx-w65AV2nPu3PlA7R014xhvwgb0ckSXyPNk540EpdjL9Wuk4-q8IhxlLrqMTbGnRk-ABseGRCcfFd4x2N-7HAMEDNPCzAzG9it4w4WBDxTN7D7r_aoBulXm_jw6Sp-1r2lFhwf-hkggT_vx93m39o7zMwF_eT-nd18yv--u-JuDKIOlQIFx9IXusRLv4UXZw1xXmy1kY7-1k4HNfQGoU4exnTI5xKOjcu8Lqg_Y6UZJQ5j0dEIq_lS1l0eZUcfCmL4pmNOhUsrAdaS1ROrUHLbD883OwtzgpIKxLsghptY86Zc3kSay2rnQWdStg6raXk8hZiuwHOjehOKwxMGwbxYzgDJTmayLJT9XEgpvCqPY5Mj3xvISfyd-3UySrOUct1AHtFi0QuWRruHaPf18JzffbSmBon1JbSKD5YeKDorTTWltMc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.52,
+  "text": "{\"decision\": \"answer\", \"answer\": 12, \"sources\": [\"S-ff8e\", \"S-5423\", \"S-7fef\"]}"
+ }
+}

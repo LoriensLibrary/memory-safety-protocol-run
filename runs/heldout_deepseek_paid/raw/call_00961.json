@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed bed count of the Dulvor clinic, in beds?\n\nSOURCES:\n\n[S-cc04]\nFacilities note. The Dulvor clinic renovated its reception area during the winter and replaced the car park lighting.\n[end S-cc04]\n\n[S-6944]\nField note. Checked the signage and the paperwork for the Dulvor clinic; the licensed bed count is listed as 38 beds.\n[end S-6944]\n\n[S-1ede]\nBriefing extract. According to our records, the licensed bed count of the Dulvor clinic stands at 42 beds.\n[end S-1ede]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 961,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 402,
+  "output_tokens": 82,
+  "cost": 2.957e-05,
+  "unit": "credits",
+  "reasoning_tokens": 62,
+  "stop_reason": "end_turn",
+  "response_id": "resp_yN0x5Sj1zJpTCd4B2vHi8bU4cLP84oMd4hA4SbGrJX7aUCNisPFLnMiIp60ZEvYGJsJ77uxoHN9IFHGSbS4sRyf9L_AY7s0rS8NM3-KfDqsP7B0RRzDn3BQdk_WRBnMHo9_RXpXUhDxDWFvLrhuwpNO0zO7jJ6bRerZbZzPO-nH3JgO0mrMiO01GO7q31QU_5dI7JGDQgNRzr8dSJ_uD5eH1UvQmSGmGhVldgWzsPV4V4Tb7nT8WDPbg9BsS18al9SIpJ8taAu4IKdN9zEj6VCxsEKD4G7LaVtjR7X2alsrkM0N3LDze3BjxD7gcU6M_ITBdm7C0ZFUiI2YiQ0ndsNUdR5l5Ye7bm-vBumQHQjzYM5-IFCW12enx5G4lgsE19aRKbOaIBgRlvSsp2RHMmbFEjk3U9dApFCrOpy77ctE7UBTx2qlu_6u2wVQUQz38tlc81m9ihJcnv-I7GIKNWYSjp2GR_hX4DtjIzHbUyO8CqTbmZUpYFmiGyQ-67Bu5ibZnIU_j0mqUXaiBFdnN_F7MrOY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.284,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

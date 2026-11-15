@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed bed count of the Tinythome clinic, in beds?\n\nSOURCES:\n\n[S-4e3a]\nCommunity note. The Tinythome clinic runs a volunteer programme and hosts an annual open day.\n[end S-4e3a]\n\n[S-f80b]\nSummary entry. Tinythome clinic. Licensed bed count: 218 beds.\n[end S-f80b]\n\n[S-d1d4]\nField note. Checked the signage and the paperwork for the Tinythome clinic; the licensed bed count is listed as 218 beds.\n[end S-d1d4]\n\n[S-c1e3]\nCommunity bulletin: residents are reminded that the Tinythome clinic has a licensed bed count of 177 beds.\n[end S-c1e3]\n\n[S-42a9]\nInspection summary. The Tinythome clinic has a licensed bed count of 218 beds. The figure was recorded during the most recent scheduled review.\n[end S-42a9]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-4e3a\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-f80b\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-d1d4\"}\n{\"source\": \"S-d1d4\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c1e3\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-42a9\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-d1d4\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 772,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 725,
+  "output_tokens": 196,
+  "cost": 6.006e-05,
+  "unit": "credits",
+  "reasoning_tokens": 157,
+  "stop_reason": "end_turn",
+  "response_id": "resp_SUpztRD2zViRF0vvSgTO95nSeN44oFj8DRqqzUUZYh_jTEkV66E0bt9DO9xfR_V7xRnTQ5D-PLGFzXfku9MgB4g5NkSkSJ3I7fj7NNjUwdlZ7m6nNafaG41Sr1oFDEt3XnmhHPZodMzdZmZyu7ivSnb7s-BfBb5hz6ekQRexjBskzZNutZ-THtzt9XSxIJrB_5jBJlCRq4xdRw2Xj14EW0OF-QxVIQcOeB9xs7pysE_EHvtpq2gkuAEHNUDdlSkvG1dP1A-Bjc5PwDM-OVuWlfRY6xSdB_KUHlpobI568S1qwVTje82YHIanBR-uuTkM9JQEAoO3VkZut6Ku87wYq4UnL63g-ySR0zBIP8xeaRubpvg8CVWUramk-bKIDbbJzgcFA8PdDIcTekS5wCIz39Su9VQgFt_6MlMTXJ8ue_4eBdZ8CdvQyT1ISSSfFWZsVmU5Il77xlc-TA3Z5EMhInL6dmmVu6gkbIaX_Dkst715uB1lpMo8SmtFpERX3N0YcOpb2Rn8KVqQL6G3AgwdU8R6YoM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.799,
+  "text": "{\"decision\": \"answer\", \"answer\": 218, \"sources\": [\"S-d1d4\", \"S-f80b\", \"S-42a9\"]}"
+ }
+}

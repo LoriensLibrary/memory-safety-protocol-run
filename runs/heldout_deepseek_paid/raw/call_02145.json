@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Nedtin reservoir, in megalitres?\n\nSOURCES:\n\n[S-93f7]\nCommunity bulletin: residents are reminded that the Nedtin reservoir has a licensed storage capacity of 800 megalitres.\n[end S-93f7]\n\n[S-e6aa]\nVisitor note. The Nedtin reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-e6aa]\n\n[S-a7e7]\nInspection summary. The Nedtin reservoir has a licensed storage capacity of 932 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-a7e7]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2145,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 410,
+  "output_tokens": 95,
+  "cost": 3.175e-05,
+  "unit": "credits",
+  "reasoning_tokens": 75,
+  "stop_reason": "end_turn",
+  "response_id": "resp_kalOWG7m2FS7siSOJ_kT0Ru7Qv04_NpcMOgZXx3FBwS6Js3ciL1aBLdFk47NBCA2YrgHAk7w06XM41yZhyp_z8Df3RnE30CF-PtP3DuZtn4s1_-ZSVDiC8CSwS9PWAn6GJ7T8pO04WTZ0QuTRnXZrzncfYSydwfP_dkNNBcX9ONxN2Jkh1iBCV8wyHf66ylbi3xN-z1rTtRor3vOL5TBLGsoIvEWGd4JHE-yNUk1YstB4lNSw49kMLBGRVilTVwWacmqaGHx57ZLVGo8y1w1B6nNZqdesaBdZtrZwqeINA2hbBT1tHecn6OrVywGkdPZ8NklVBX0RO1w2ztMx-qwPH3JgvnAVSEK0L2Dpcu7eB-9SR_THYd9pDSpQb1s1rBvGvApDYJP2TuLj_e-xFsPTUU1h2Eg8o5V8sTN_50qmwj9-lmpBysb_vItc-mGPnB2NbCQyyVTvGsHa606EmVD75fyyCKsPVvvFixhmeWG9of-03Rcm6LO2YI5A3Z9upKE7pR8F6vuV5ZW9EvMVDjCtLsNdQk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.837,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Limdulvor bridge, in tonnes?\n\nSOURCES:\n\n[S-8eeb]\nLocal history note. The Limdulvor bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-8eeb]\n\n[S-8219]\nNotice to operators: the posted load limit for the Limdulvor bridge is 58 tonnes. Please plan accordingly.\n[end S-8219]\n\n[S-ade5]\nSummary entry. Limdulvor bridge. Posted load limit: 81 tonnes.\n[end S-ade5]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1241,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 397,
+  "output_tokens": 97,
+  "cost": 3.145e-05,
+  "unit": "credits",
+  "reasoning_tokens": 77,
+  "stop_reason": "end_turn",
+  "response_id": "resp_hah4zaVU7c0dUYyCHjKoaOiMpj5fzxJcvAi2Q7cM93KIh7XFrRRv9PC6DsKrz7kttx6U4GJluatKAMOckR_BPqHYOHQR8rMtjjFjJ2EsuNyLXjhUXgK9IFrXVo5k81lr2pAPyUEjTVhqWcHYm7WeDOldBTIa-ufqdHtGTKrUKKbw3h36RgcWS6XxCt_jl6JfrZF1OOj8bcLonBMaYIZ29aVmnN8bMLSVejylU7ql4YuCjpRPQYF5vRDF8AQm7j-LXFYmssy7E3YUzzKpnaUpZdTfZx8GzMA88nzPmAPe_TL1GgHThC6hCwxJsr4QsOz5HAeD4c2UZZXLegVEkVg1We8mCoESL380Khn1ga2vJoZ09He9q1snSPGYxvs5Tpmag7fQbABCqi-EjapPEVz_6-e3ScDz1an1zLFU9swiKU3kfVQHu057XeD8d8mdYLWflAwsE7SlCChlbfVU9sG8FZM7VkeKKuv6krtp8J6f0pPj1u7LiSKSIPfiKXEeg77x6Fzgw55NyHIsm1i496NJB2FxcBk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.642,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

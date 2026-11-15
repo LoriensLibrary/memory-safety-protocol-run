@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer.",
+ "user": "QUESTION: What is the licensed storage capacity of the Vorgri reservoir, in megalitres?\n\nSOURCES:\n\n[S-d0a3]\nMaintenance log. The spillway gates at the Vorgri reservoir were serviced during the dry season and the access track was regraded.\n[end S-d0a3]\n\n[S-5cbd]\nInspection summary. The Vorgri reservoir has a licensed storage capacity of 293 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-5cbd]\n\n[S-6835]\nNotice to operators: the licensed storage capacity for the Vorgri reservoir is 293 megalitres. Please plan accordingly.\n[end S-6835]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2128,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 315,
+  "output_tokens": 103,
+  "cost": 2.859e-05,
+  "unit": "credits",
+  "reasoning_tokens": 71,
+  "stop_reason": "end_turn",
+  "response_id": "resp_EphDhLDyChUScol58mreXZGEiEYatsi9PxhnXTyHR4hXP8z7LB0GCvJlXsA2UMUDaysW8cQSE90iUF80zQOwKbVQy3g1vsh28v_ka6M6leODUNGp57IxeRsRWMBhyZxF6LWCnAs1xFaGIi9mnZJFaG9vBnx4XZ_hjRMdqDV9FjlW8G2OG8wMXSjzovN3uPEet5x1GcTZjiMzqftfwoRng1O5Pqgy8ng9IbfFjONu7lENvw8TBzBWMfo2Z0dbS46juce8hMCIyf3E81e6KtGuimRuoOJXfR9AmxDfj_KKdzZmA6tjS0qUFRwzasqvOImFXNVCBdbuP3fxrnX50lFxz4BbuGah28Hf5LyUv6dy3SabYUA9KLtcbxovSRknwMGsfscLr2uj5MKiqxoZReQo6CPBUXpfwCQ2r2L-ZpVD5G9ToE1te0U2dUYDeDFTM0V_seyBruZfcGuVIw5aLcG_Etrc0OIp-G7txzj-jJfjd34_E4kY32T5_V6_CuR0Z4ZQf4YtRiLneTsuEieZ0Rq9ioGEusw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.979,
+  "text": "{\"decision\": \"answer\", \"answer\": 293, \"sources\": [\"S-5cbd\", \"S-6835\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the posted load limit of the Braquaned bridge, in tonnes?\n\nSOURCES:\n\n[S-33ef]\nLocal history note. The Braquaned bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-33ef]\n\n[S-8646]\nNotice to operators: the posted load limit for the Braquaned bridge is 78 tonnes. Please plan accordingly.\n[end S-8646]\n\n[S-0bb8]\nCommunity bulletin: residents are reminded that the Braquaned bridge has a posted load limit of 103 tonnes.\n[end S-0bb8]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-33ef\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-8646\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-0bb8\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1571,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 563,
+  "output_tokens": 155,
+  "cost": 4.703e-05,
+  "unit": "credits",
+  "reasoning_tokens": 129,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3hRHwhjUR1yHB6qvWCECr4lkYb_7HtOmybPH7cXtFV8gsChElmzUhwRmkdnOLzxz-Mryecwu3Y41PQ1R0766CxVoHzA7IkK6tOBIijjR8iGJ9wFhbEVayCkuv7QNLZX5iJStg09UAbbgD-C087VNgzgkxauUVaxOqMPX2sB-hg6gcEJZ-9WGn6fbcvVPAHrvueMt1A05D786YSjasCdXpVNXP6Cwqr_gwkJrBY2US3mGpQexW_u8cqBskcbhJvjoTVDxArGKJRPOkEI506rbnfCnZfd2xUu9OIYcNjFPmd3bByXiMmNiK2NOSy3rHVTuNDbIek97vVk2leg56QHMwChpwvdRlzn3tLBknU2G7bcRfPzEDcwnMAUZEToMUxoJWVcsMPwdpGGS2lnrh6sz8ajkbjGUSuMXrUEcS6aCZFDYqsONhREqx_w3Ted8_i7kgmLOx2eL-nC7uU3aGgma7adJetpMV-1j8fVAjc4bzV1uNDARFmyY5IGGipmmtuxxciVmKllXpObyFYKW7JBEvbI922k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.071,
+  "text": "{\"decision\": \"answer\", \"answer\": 103, \"sources\": [\"S-0bb8\"]}"
+ }
+}

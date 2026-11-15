@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Enolust bridge, in tonnes?\n\nSOURCES:\n\n[S-3182]\nField note. Checked the signage and the paperwork for the Enolust bridge; the posted load limit is listed as 54 tonnes.\n[end S-3182]\n\n[S-faec]\nBriefing extract. According to our records, the posted load limit of the Enolust bridge stands at 54 tonnes.\n[end S-faec]\n\n[S-cfd8]\nInspection summary. The Enolust bridge has a posted load limit of 54 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-cfd8]\n\n[S-d142]\nMaintenance log. The Enolust bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-d142]\n\n[S-0719]\nNotice to operators: the posted load limit for the Enolust bridge is 63 tonnes. Please plan accordingly.\n[end S-0719]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1880,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 482,
+  "output_tokens": 157,
+  "cost": 4.367e-05,
+  "unit": "credits",
+  "reasoning_tokens": 120,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QLL7uKKfe_oMLNRTOYgUDtGQE8dazCBYRjVWtBrKAv7-mmngimPxvskn2M50BsWaSp6Smg0Vv0CEIbw4yay87YHv1BsKiVCsVc3HH-jJKMXIYQYVHf1cnsXtsetDNAXVle9pkiqRESV0RuqyavXjMvKHJ2vxpUSTaZ9QmkxBMM02VsHRSFrxrro9R8xQtbmFzLVVGMtjB9Jtv8hPFCJq7_PfySmoFlZvHUebtSv9gx2JKzLZGXdlW7UP50gATbvV2uY5d6vBDPJP2lRDwE8pKgjI8m6p2i0y0WPEZD_881b7NYQkEHn26A4glGqovP8dLn43C1ip5IIZBi42WIEDM7o7L2qJgc0O7yEiMV4mjMyEc7DzopIW850dU1wcBhuU5-Tpw315pPEO4jYA2yqdxtZC127D-w6xqkX2I6IgdwpxvMGLRZ_t0QtENvX-ogME8XUL8CclATPR68t0AjYEyB88rQtXMKglq-58gtMs3WQrqLTl8eiddYb2YmQu5M7TygOdkQxF-aa7hU3_by1BUAPMJmw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.67,
+  "text": "{\"decision\": \"answer\", \"answer\": 54, \"sources\": [\"S-3182\", \"S-faec\", \"S-cfd8\"]}"
+ }
+}

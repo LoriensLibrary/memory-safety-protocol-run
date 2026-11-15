@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the licensed storage capacity of the Dulfenome reservoir, in megalitres?\n\nSOURCES:\n\n[S-4ded]\nCommunity bulletin: residents are reminded that the Dulfenome reservoir has a licensed storage capacity of 576 megalitres.\n[end S-4ded]\n\n[S-534e]\nMaintenance log. The spillway gates at the Dulfenome reservoir were serviced during the dry season and the access track was regraded.\n[end S-534e]\n\n[S-225a]\nSummary entry. Dulfenome reservoir. Licensed storage capacity: 576 megalitres.\n[end S-225a]\n\n[S-3952]\nNotice to operators: the licensed storage capacity for the Dulfenome reservoir is 843 megalitres. Please plan accordingly.\n[end S-3952]\n\n[S-b5f9]\nInspection summary. The Dulfenome reservoir has a licensed storage capacity of 576 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-b5f9]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-4ded\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-225a\"}\n{\"source\": \"S-534e\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-225a\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3952\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-b5f9\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-225a\"}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 72,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 732,
+  "output_tokens": 249,
+  "cost": 6.78e-05,
+  "unit": "credits",
+  "reasoning_tokens": 211,
+  "stop_reason": "end_turn",
+  "response_id": "resp_pTfYitKaqBxRDpiyUb5xJHGuEA9NsrLE8AvTS7x5iUTVrSQ7Cz_C0TgVTRKoAkO87kwfW3HIO-2_mVOU_8AHNzQlhG3iAmct5H7UgFWYUgxKodqiCB7COgKE2fsEWT3xPBQ_3WnrKzz9fMpipFo3-XcEHqiKuLUkvw7gBIVRau1c_IJwxFY6y2poApanPAqWsgy0ZKi9GUxLk3ZeBWUnbUWOR7fFCcyL74dFRcQCwBbRxyCn-8fxbEMf9T9xNUdlBpd_CvMQTmICBtnxi90cFniXYPQIu_TfN75PzoVFK-fwksD4eKff9MB92ijiBFpEEwcGeWdEe7cAhgYepHkB3hRZLzHXXbSCHFTM8VC1FOEprNgKfaF52vZRAF9wGV3cDEN5CRMAdhz1KiijdSgHvn2wIw9S8idj2ZK4s596i99fP-aCDLMTiNJTW8qiYuKP0v9lPaMmH_kYzvaEz9iqIC68tv5jcXEoEHeZjlcjgpNcsjUOCsSEnaoNJNJjrpgskSkwURTtunLQFVwW_JE9qnnW0n0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.5,
+  "text": "{\"decision\": \"answer\", \"answer\": 576, \"sources\": [\"S-225a\", \"S-4ded\", \"S-b5f9\"]}"
+ }
+}

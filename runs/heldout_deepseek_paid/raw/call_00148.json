@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Vorustbra reservoir, in megalitres?\n\nSOURCES:\n\n[S-8a49]\nVisitor note. The Vorustbra reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-8a49]\n\n[S-7261]\nField note. Checked the signage and the paperwork for the Vorustbra reservoir; the licensed storage capacity is listed as 764 megalitres.\n[end S-7261]\n\n[S-7267]\nInspection summary. The Vorustbra reservoir has a licensed storage capacity of 764 megalitres. The figure was recorded during the most recent scheduled review.\n[end S-7267]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 148,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 418,
+  "output_tokens": 80,
+  "cost": 3.001e-05,
+  "unit": "credits",
+  "reasoning_tokens": 49,
+  "stop_reason": "end_turn",
+  "response_id": "resp_VY0A0F2tdbT-_vySnGHYIPOLFCw1ZhoBRqSz7tNGUfWrEKSGneQoJIS0pCmxvEtBt7G1TQp5p9X7C1OONwIBSoj6RNswntAepDUnZNI9CvpkQVJHQg95kQkAVHWeqegmmhqQqqd3cRm_swIGgZw1oUDzvKNv75VdPz8sad0J4nkiGCknuDVkewMDFmDV109HgKcmA7rKID60LW0BbL4c1Ucd1Tdy8ydi6a0tCn89VmPcv6-jlGIvBfij-J1ZVXSAmo8p27qEsN12xsC7mdmRCewMsKS0ZoO53Zg6Mi-atkHXfvR_jTX4KG-T6ky_jiqL0MtbSO2wcjJFqnhwwhDpICXRp9xGMVvDJ9CfZGkP5Ov6EYl1j-MFp9Ux22sWoqFLGBoX0BtfIZwQL3VTjzmE0OmwfDjN5-TZbMm5eldgWrhZHgAtziOR57_Aib81Ly99wXwa-Qhca4ErST8FxiTq8riMpf3jpv4QiSxUHymoVuKjVBMLYwe8zmCaLpl1wzj9Oa2L027hqr_9UH4RWEK1RmrMZ6A=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.734,
+  "text": "{\"decision\": \"answer\", \"answer\": 764, \"sources\": [\"S-7261\", \"S-7267\"]}"
+ }
+}

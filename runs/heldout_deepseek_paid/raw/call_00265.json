@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Velmaresh reservoir, in megalitres?\n\nSOURCES:\n\n[S-c5f6]\nField note. Checked the signage and the paperwork for the Velmaresh reservoir; the licensed storage capacity is listed as 295 megalitres.\n[end S-c5f6]\n\n[S-f9df]\nNotice to operators: the licensed storage capacity for the Velmaresh reservoir is 425 megalitres. Please plan accordingly.\n[end S-f9df]\n\n[S-498a]\nMaintenance log. The spillway gates at the Velmaresh reservoir were serviced during the dry season and the access track was regraded.\n[end S-498a]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 265,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 418,
+  "output_tokens": 82,
+  "cost": 3.029e-05,
+  "unit": "credits",
+  "reasoning_tokens": 62,
+  "stop_reason": "end_turn",
+  "response_id": "resp_9RsRIIqS4dDdMGz1L2cIcItf9fkvOzevJzQ73Ejs9QZoG7D5ih7YP1gADANmaufLQrWXmgVasUt0wXGAVeUpiqLNb0RTcuYU3E72YFX0-WzcN_q-jRr5asxRdqFhQ2KvMbiccArtrdWCKHh41_bQvM63AxPAo1NzLWjMYeMWxjlVS-6yOvJ3ToVIp_A_W34u7WHQFtrVLW6WaG_8cUz8BVjj_frMbykl8xYMgXasTZz63sKhjosf43vQJ-mNEhTol7gU5I0ffdArCLfPBcqZ_7FuIVckbTgQkYPFOcI4Yz9UFDUDSAR4z_REcuWG4ucSHhOdfwTdKQ41gTjRorwO6zeVpPsNgduSpScWF1mMRRbPGQvSOzY3PeIPAbh2APx8q5FYgXhgRgorlv19C0u3hhcJ3ONA1bvgYgO_geb04yKQ0PeDbLAGTnvelb9hByemgCzbkySHyPlLnho5jBVFfGzPlhmzDNfEr-iE2USe89u1t6gpv6n-bY4yM0iTjRTaNs6HXr1GghSugYM3SIz98oPCP4w=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.807,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

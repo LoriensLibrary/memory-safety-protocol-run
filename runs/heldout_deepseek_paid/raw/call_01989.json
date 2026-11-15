@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Limgrifen bridge, in tonnes?\n\nSOURCES:\n\n[S-1f02]\nCommunity bulletin: residents are reminded that the Limgrifen bridge has a posted load limit of 68 tonnes.\n[end S-1f02]\n\n[S-0ec3]\nField note. Checked the signage and the paperwork for the Limgrifen bridge; the posted load limit is listed as 86 tonnes.\n[end S-0ec3]\n\n[S-962b]\nSummary entry. Limgrifen bridge. Posted load limit: 86 tonnes.\n[end S-962b]\n\n[S-2bdd]\nLocal history note. The Limgrifen bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-2bdd]\n\n[S-d6db]\nNotice to operators: the posted load limit for the Limgrifen bridge is 86 tonnes. Please plan accordingly.\n[end S-d6db]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1989,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 475,
+  "output_tokens": 163,
+  "cost": 4.42e-05,
+  "unit": "credits",
+  "reasoning_tokens": 125,
+  "stop_reason": "end_turn",
+  "response_id": "resp_B5ng9mmetFRsg0FmAZWewrwPKTfzLzf-ztlI9OeCaob5GV7t69nXhbdUbhwsJnE1ovT7aLP4SaYiaH3Ddb78HVjIMwfG4Bnt2vIl2ek3goQc9gW_i7Bu58gJG9iDTg8d-799vTNi3knllC218axIh7k36S9ThOPIoOIbm7u-6dqQVb0Mh8oJnxQekRmy3Xf-A_lKWtuM8bGgUaMtgneGwCjBVrdiKmCyXCb74Apn7CdFYPakosbJDXvwS0gmHAbL-Q0TUra9KdSIUMBIm3OrCqmMEfzBlFc8TJQf4M_ucjI7D_MsFhhAJXomqy2mEt3155eQ5s9uoTlA1eZ1hMVOgb8G96pybFdCdvhvdrJFL3sjksJMvbOoBhIR6lvhwxnj08oRYmekmFsZTZLIiEgYPuXgYQlOPNaGFKmmE6R3ejuX3kej4k49QIzNS7sgs5Um_UjKgdz1I2aYYYEEQw0uICHCH5oQ8exBjHD021g41EWkOvrpp_lpc3jJMSQMlVSViwqFo3m4OLSQNwfln-zb8Ic2HHc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.826,
+  "text": "{\"decision\": \"answer\", \"answer\": 86, \"sources\": [\"S-0ec3\", \"S-962b\", \"S-d6db\"]}"
+ }
+}

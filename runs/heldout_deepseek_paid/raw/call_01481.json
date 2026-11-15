@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Senol reservoir, in megalitres?\n\nSOURCES:\n\n[S-4903]\nVisitor note. The Senol reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-4903]\n\n[S-8a6a]\nBriefing extract. According to our records, the licensed storage capacity of the Senol reservoir stands at 455 megalitres.\n[end S-8a6a]\n\n[S-86f8]\nSummary entry. Senol reservoir. Licensed storage capacity: 385 megalitres.\n[end S-86f8]\n\n[S-0a16]\nField note. Checked the signage and the paperwork for the Senol reservoir; the licensed storage capacity is listed as 455 megalitres.\n[end S-0a16]\n\n[S-75c0]\nNotice to operators: the licensed storage capacity for the Senol reservoir is 455 megalitres. Please plan accordingly.\n[end S-75c0]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1481,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 480,
+  "output_tokens": 186,
+  "cost": 4.764e-05,
+  "unit": "credits",
+  "reasoning_tokens": 145,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ucfOt1LFRubmWVbK5vdiB6iEnh26s3jteLwcTlJpavhahUwxdPTTsrkKzSYBYnimbb6ty4CYd9iA5iNz4Zmy42nBqNdB_UZEpEb7gk_1t6MPfpHF_3IAS94PUDA4C4fYefvHPke3e2ryGsIgRKOwXFTKwg_05jVMvdgs1zst3LtLUOJQgyEkVdl001zydgN3cJWOsji7sIVtb03o8QG9VSZrltAbmcPCxRprXSxkfvfCegN62GlgGH18M8h3BNdokcx9jVlcWATjZMFeFW6R62jv7M75g0bT49cMlgvi0enKztD0Oapk-y4zI1sbejOFtTB1Eiim6qggbfLgH5wPckoCYfBL9-L5eIOU_x8xuBkakZ-bEceAd0HC0YF0DVlwtmLJU3C5M9K2wtc7G7YYEAbQsIx9ElOjiEGmlECps2PMHTAX4n7xsuXHRcf_qpn2-u1a-W_-BWf5iH2peCfC7Rj-f2Yl0qgAmR2KXRfFwPmCPnTlld_istvPodAxjCAouWax34n7tGrMJzxrGFXOxhQoz6g=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.659,
+  "text": "{\"decision\": \"answer\", \"answer\": 455, \"sources\": [\"S-8a6a\", \"S-0a16\", \"S-75c0\"]}"
+ }
+}

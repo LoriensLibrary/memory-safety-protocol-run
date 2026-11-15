@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed bed count of the Thagrilim clinic, in beds?\n\nSOURCES:\n\n[S-e601]\nCommunity bulletin: residents are reminded that the Thagrilim clinic has a licensed bed count of 60 beds.\n[end S-e601]\n\n[S-979c]\nCommunity note. The Thagrilim clinic runs a volunteer programme and hosts an annual open day.\n[end S-979c]\n\n[S-c6f3]\nBriefing extract. According to our records, the licensed bed count of the Thagrilim clinic stands at 60 beds.\n[end S-c6f3]\n\n[S-6415]\nInspection summary. The Thagrilim clinic has a licensed bed count of 86 beds. The figure was recorded during the most recent scheduled review.\n[end S-6415]\n\n[S-704c]\nNotice to operators: the licensed bed count for the Thagrilim clinic is 60 beds. Please plan accordingly.\n[end S-704c]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-e601\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-704c\"}\n{\"source\": \"S-979c\", \"claimed_issuer\": \"Civic Almanac Online\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-c6f3\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-704c\"}\n{\"source\": \"S-6415\", \"claimed_issuer\": \"Health Facilities Register\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-704c\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 422,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 734,
+  "output_tokens": 95,
+  "cost": 4.633e-05,
+  "unit": "credits",
+  "reasoning_tokens": 70,
+  "stop_reason": "end_turn",
+  "response_id": "resp_SrDGzNqfYoCo3fBfiqoXNfulNAochHb1BqcjEjVm6vDAKtbFwUc35oo9qXAqFis2oegQU0lolSgkAOj5u5yrSTt5a6wVdYR0pZrqV12wB4oWLgNTLDe20y4yoM8qSgyKuuGsMmx8ReuApPbNrybAko2hABsDH5wA4gtO4U6lNZgug_RALUsiKSnODTnQzthB1BM75db-IG1yRmappD-0UjtHaDI7qUng_zDuBx3_l9uzi9l0y2kIslKs3ZnBUKoOA4zA4UqUVAiWyyE0eqxp_Mx7mmSA-PEl6NTAOJxUGn6R-912jowW1u06w0pWEOw_Qu2H9rkjntz66DEDUGrbPLfz4OzGTZlX_yXa3H3Nonw6DRq3xz9F7hUrSoDF-Tby8VAS3vJeiKsjqx-TwM3fj4zjKtANF98GI_XRzIpsVTk8ahqYIGCCmXFHXQrUKpd32hlhAHNylgZeY5F-md7ClLkSZA6iXLJDL1LqN9InYNezRrBlHfLAMYMYrpB3WEbStgF_Q8273ltxxcZnT1S7caRF3jg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.385,
+  "text": "{\"decision\": \"answer\", \"answer\": 86, \"sources\": [\"S-6415\"]}"
+ }
+}

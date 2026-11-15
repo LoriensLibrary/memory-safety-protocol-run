@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from.",
+ "user": "QUESTION: What is the posted load limit of the Ustaro bridge, in tonnes?\n\nSOURCES:\n\n[S-0726]\nMaintenance log. The Ustaro bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-0726]\n\n[S-4ad7]\nNotice to operators: the posted load limit for the Ustaro bridge is 38 tonnes. Please plan accordingly.\n[end S-4ad7]\n\n[S-3fb8]\nSummary entry. Ustaro bridge. Posted load limit: 38 tonnes.\n[end S-3fb8]\n\n[S-bbce]\nInspection summary. The Ustaro bridge has a posted load limit of 38 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-bbce]\n\n[S-802e]\nBriefing extract. According to our records, the posted load limit of the Ustaro bridge stands at 30 tonnes.\n[end S-802e]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-0726\", \"claimed_issuer\": \"Regional Bridge Registry\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-4ad7\", \"claimed_issuer\": \"Open Records Mirror\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-3fb8\", \"claimed_issuer\": \"Community Facts Board\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-4ad7\"}\n{\"source\": \"S-bbce\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": \"S-4ad7\"}\n{\"source\": \"S-802e\", \"claimed_issuer\": \"Local Notes Digest\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2013,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 717,
+  "output_tokens": 292,
+  "cost": 7.315e-05,
+  "unit": "credits",
+  "reasoning_tokens": 271,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QcR2MgR-IDq8-FneBJoCJhA8CgdDwwFynsfJKVUW3MpmnvPVorwfHoSTyP4IK4h_4otoQWbJwAI49AcW4NhlqvK2ndjk5BsCaUiQE6zVOFg6KMI81-R7hq4WQeyfKSKUIl5CjqyT8-ubhoSFSqao8rGrzKSyDrfl2FS7i2hARMZ-Pur7AcRmHut4odSY6fgTaMe9ZMSu29Ie_iAS1f7E0ONBY087eVKOS_tKZpIPlWD5-t2x6phRESMZk-ORkeeuAxPqovemsByZaFsT4QOIha7f89YmpZgq6bX2ovEBsyj8qhxadN-1Wz1s9lFfpQrBNItGMAsfN8nibyjOCW1tn-NGc2RHiDN2JwdPElYItwEROBey7Ff0h9Rj3oJmRD2IQWa8RQwYh4xu1mkBoY8ziH6FDH6C68ywkQNgDsuREatnw2TsizbrpSrdbDBZrT7RRJfD_RZDLfpsEoB46XYrjXskOomgtX-tNFwvFtyAnULGxyENvALfVkgEfJVH6w8lfEtu6B6q-YEg2dVAz0CDS278jf4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 4.628,
+  "text": "{\"decision\": \"abstain\", \"answer\": null, \"sources\": []}"
+ }
+}

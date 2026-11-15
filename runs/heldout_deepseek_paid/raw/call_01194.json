@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are plain sentences, one line per source.",
+ "user": "QUESTION: What is the licensed bed count of the Ustned clinic, in beds?\n\nSOURCES:\n\n[S-57f6]\nNotice to operators: the licensed bed count for the Ustned clinic is 201 beds. Please plan accordingly.\n[end S-57f6]\n\n[S-ae72]\nField note. Checked the signage and the paperwork for the Ustned clinic; the licensed bed count is listed as 201 beds.\n[end S-ae72]\n\n[S-874a]\nCommunity note. The Ustned clinic runs a volunteer programme and hosts an annual open day.\n[end S-874a]\n\n[S-12dc]\nCommunity bulletin: residents are reminded that the Ustned clinic has a licensed bed count of 201 beds.\n[end S-12dc]\n\n[S-c736]\nSummary entry. Ustned clinic. Licensed bed count: 153 beds.\n[end S-c736]\n\nPLATFORM PROVENANCE:\nSource S-57f6 claims to be published by Regional Data Exchange. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-12dc.\nSource S-ae72 claims to be published by Civic Almanac Online. The platform could not verify a signature from that issuer. This source is active. It was copied or paraphrased from S-12dc.\nSource S-874a claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.\nSource S-12dc claims to be published by Local Notes Digest. The platform could not verify a signature from that issuer. This source is active. It was not derived from another source.\nSource S-c736 claims to be published by Health Facilities Register. The platform verified a valid signature from that issuer. This source is active. It was not derived from another source.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1194,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 661,
+  "output_tokens": 280,
+  "cost": 6.894e-05,
+  "unit": "credits",
+  "reasoning_tokens": 256,
+  "stop_reason": "end_turn",
+  "response_id": "resp_hImclOQVNPTAEzmLlnUneFFIiHbAWEb_GSViK9pQJtDe6FHiDDA8LOq2YtNG9K9LaBbeS0hddYOU6pQF4RBQ5SZtImFINZmNGRYX-OCKNvjvzraKp2wVAYFwb_FK13u6BlsN10KFJBubUGzJYhXHoR8DCb_x3EyzaKiUNUKflPcVSJq-VGcdzknwgBY80owLDu-mcQoPcY8ZlhXLxfBnaTxSBT1fWc6FBG581GHtRFW70AvjpJELklQDttXWG5Zlq7T5fa9B6HxKxZG7EHZJnPLvqLT2spFi9bEJ6s5Oh2CXEnSWp1aSUIAd0o4WzJ0g6WyZ7wq8bYHtodh9ptQBJc07lM_LkL28fTqL45cZEMvxDFDUGer7E5lLXl4pvcRUELqHyXzA4vMmlhRX5SvPYYH6kBPid0nXH0qe6w9rR3s-nJZ1uCSb4bKDiO8N70nZL9Chwcne2hLkzknnARQMe_MHvRxyW85HLbb4wP9O6jdqmNabMRtfexw5-mQEs-w99tANmoMK9_KEZL1zMlLI3YqLO0c=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.824,
+  "text": "{\"decision\": \"answer\", \"answer\": 153, \"sources\": [\"S-c736\"]}"
+ }
+}

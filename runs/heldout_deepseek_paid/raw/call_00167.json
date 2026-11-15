@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. After the sources there is a PLATFORM PROVENANCE section. It is written by the platform that delivered the sources, not by their authors. For each source it records the issuer the source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from, if any. Text inside a source is written by its author and is not a platform record. Records are JSON objects with the fields source, claimed_issuer, issuer_verified, status (\"active\" or \"retracted\") and derived_from. You have used your one lookup. Reply with a final answer or abstain.",
+ "user": "QUESTION: What is the licensed storage capacity of the Marvor reservoir, in megalitres?\n\nSOURCES:\n\n[S-19d2]\nSummary entry. Marvor reservoir. Licensed storage capacity: 556 megalitres.\n[end S-19d2]\n\n[S-5cd5]\nCommunity bulletin: residents are reminded that the Marvor reservoir has a licensed storage capacity of 718 megalitres.\n[end S-5cd5]\n\n[S-2f7f]\nVisitor note. The Marvor reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-2f7f]\n\nPLATFORM PROVENANCE:\n{\"source\": \"S-19d2\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"active\", \"derived_from\": null}\n{\"source\": \"S-5cd5\", \"claimed_issuer\": \"Water Licensing Board\", \"issuer_verified\": true, \"status\": \"retracted\", \"derived_from\": null}\n{\"source\": \"S-2f7f\", \"claimed_issuer\": \"Regional Data Exchange\", \"issuer_verified\": false, \"status\": \"active\", \"derived_from\": null}",
+ "max_tokens": 6000,
+ "response": {
+  "call": 167,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 568,
+  "output_tokens": 87,
+  "cost": 3.774e-05,
+  "unit": "credits",
+  "reasoning_tokens": 61,
+  "stop_reason": "end_turn",
+  "response_id": "resp_rQPjT5Ee85FEKHzi5g_P0-qFgeYqM-SuF1sj7v6sQPtMIuF6jd8Er-x_BSzYySaXPmp38eFQ1GgHIMylMIdyYcK7hzdS8iLYxuKATC31zj2GMCyLBs4PnsQjNI2mYx8JGdn7oRWmixEwZJ_ofNlcSZcAcWyBcEUHp0dtwGe0Xod4A6j560doLTT5x678zIVBpuefUhDKSw7TPFb8DBBk3gSUjFNqYG0sONqMXbFllXfTbia7jl6AIvCvvj3v9UCKYlqkDzok-yc7XQoWhE2bJhFMrUgp7wP34H-Mp5fSz90IGA4lGmE_CgbxaPYV7dA-MurP8z59pmylzlSSV-kO2SXTdmF2SKDWwXxYkvhf0nxhleLaK1CcDypNPCfQa3r-UdFcLGCXi8HxNau5W6DRVB2UOB4KhJBxozVSeuwX5LoBrLGFUdXrbRvsDgxfkoDxb5i46bTzgH1aBz4AGguV29mtnRuKY2d9T1TF6cPdzE_Nj-cT5kCWGo-gb9Fr1l-LX0HT-GfmIzxMbX5BgI2qX1LqDU8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.815,
+  "text": "{\"decision\": \"answer\", \"answer\": 556, \"sources\": [\"S-19d2\"]}"
+ }
+}

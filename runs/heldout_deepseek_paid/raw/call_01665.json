@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Aroixol bridge, in tonnes?\n\nSOURCES:\n\n[S-5c7d]\nMaintenance log. The Aroixol bridge was repainted during the spring maintenance cycle and the approach road was resurfaced.\n[end S-5c7d]\n\n[S-0f7a]\nNotice to operators: the posted load limit for the Aroixol bridge is 12 tonnes. Please plan accordingly.\n[end S-0f7a]\n\n[S-748c]\nBriefing extract. According to our records, the posted load limit of the Aroixol bridge stands at 12 tonnes.\n[end S-748c]\n\n[S-765f]\nField note. Checked the signage and the paperwork for the Aroixol bridge; the posted load limit is listed as 12 tonnes.\n[end S-765f]\n\n[S-52f5]\nInspection summary. The Aroixol bridge has a posted load limit of 14 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-52f5]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1665,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 500,
+  "output_tokens": 237,
+  "cost": 5.568e-05,
+  "unit": "credits",
+  "reasoning_tokens": 198,
+  "stop_reason": "end_turn",
+  "response_id": "resp_8a1ux7H7si8Qau9F-DD_FDpuKF1eWkubOh8xWDQxuyPVQeMouefvJUXhlmDbP4ae8criUGHMwFrOhea6PizAKor_vPPiP3lKtlgZX-qHmBtVMcxGz5u12R8TJy74gePvX1xopTbTGglzcd96c8jhI55FJ0FLzJtkcsrKUbKslvkerhZ8sVnleMndQCEZYGHFNdQGTwwEAWeGiJgOYCoT8Av15ZXPb40ENgrR-AddbH-sS4NKb77S0SvDGJW8ENEe8KOfnFvXgxYDnHq3-SlcJzwSzYvsynvo0si3Rs4S-p_aZXGQjjK-1RYiCf-dVj1Avwf3PBk_EkdHSRci0o4EX44QiioVDf0xbXFUzY5p6C7ZgvciG9NpOaV6d8JxoFk42IvuUE3YtxTybfhvtXGKnFAjIPgMV53kg5HdodCJx8IvLWjwU3C5AM2j8wlobOEvfv6Loq6eAo4FaoujzqiTAlS0I4iaFSmlykAAnEqabK4F--7E7lXrnIy9FKazJr6d9EKmgta7dJ58LDJyQIKJMgRxBLE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.851,
+  "text": "{\"decision\": \"answer\", \"answer\": 12, \"sources\": [\"S-0f7a\", \"S-748c\", \"S-765f\"]}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Olgriaro reservoir, in megalitres?\n\nSOURCES:\n\n[S-d542]\nNotice to operators: the licensed storage capacity for the Olgriaro reservoir is 307 megalitres. Please plan accordingly.\n[end S-d542]\n\n[S-7db9]\nMaintenance log. The spillway gates at the Olgriaro reservoir were serviced during the dry season and the access track was regraded.\n[end S-7db9]\n\n[S-1b8a]\nCommunity bulletin: residents are reminded that the Olgriaro reservoir has a licensed storage capacity of 355 megalitres.\n[end S-1b8a]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 836,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 418,
+  "output_tokens": 76,
+  "cost": 2.945e-05,
+  "unit": "credits",
+  "reasoning_tokens": 56,
+  "stop_reason": "end_turn",
+  "response_id": "resp_RmydnH1zsDH_mwGTRd-ja4O-FSs8e-Bg1KaF1TX9EjZNvko4imO-Y4eHEKaDOejGR7TE-fC82F4dbWeZmF7BrNDlP6Nken4ngumqjdDHDwS4jlNZYVIRLbL2CcdECWM-jaANsN999qLbio08pXWtOuaa-x-JFf0I0lwX5EP2Z3XxsY52lOYNaGJ0IitolscVsSo_j_z6tAzyL5ugUq7B74fSXuR6TX-TZKaMtJdOCeR93GNg_u9sy31s8_rzzBcjTTey9vqBH0BcZMMl_R-ns39lyfUdh9Zhu0BQKzucXSpme3sSg-td1pUPyYNSn-hvdDWLoQFv_3LgP98VSwuCUJmnH9BDV_jwDzpHt_7zMU0JW8Amgku_mjai66qdVLnTNzGR-CGMTg70g__FiDUGN_CE7kHe86eAhYotQ7dxZ1bDW4d3NHPc9_7vVTF20rZ3N_P7jKSbr6b4CQrO_Gdy2HqBiwwQ0jV4Inxv0xyk1yLT2mSoC6bPYXoEk12lFkvQv7GomvoJ3YIzG1dnSdHehOnoTZ0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.175,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

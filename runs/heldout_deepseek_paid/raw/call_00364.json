@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Tinome bridge, in tonnes?\n\nSOURCES:\n\n[S-da5b]\nLocal history note. The Tinome bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-da5b]\n\n[S-60fc]\nCommunity bulletin: residents are reminded that the Tinome bridge has a posted load limit of 66 tonnes.\n[end S-60fc]\n\n[S-8dbe]\nSummary entry. Tinome bridge. Posted load limit: 66 tonnes.\n[end S-8dbe]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 364,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 388,
+  "output_tokens": 67,
+  "cost": 2.684e-05,
+  "unit": "credits",
+  "reasoning_tokens": 35,
+  "stop_reason": "end_turn",
+  "response_id": "resp__n4mf7CZyJ6NGXFnOgsj0rur3tVaRa7wsAGbcfStIFJG34pvlEwIiNTSlOmGGkx-KlNOQV_MBgX6Fz3OGDOcGTqjwoyVhE8FfL4ybQXzgpYtfw6LkENDotFFJlfi0XlWOiMtURij7b8qRolCoPuXJW7xVf094571b-rqHTUae2yqJk1jBieyFDM-I_4xBE-TKS14SsojBI98_F2IvlWeh79a1W7hDNIEUv3FKMX8khNa9YTc4CuxnMzVB4-6Cc7pqJUqR0wfSivAijbEaRTTDvpsyUT3uJKZz6E2ioaaMzr0niTy-sfLfKFCXddHob0V0dl4PG1lARKOpa2Df6EvbaXw-NhGqtmf--1ybh9ot7r3ymXpk9xLX--iV7iFe3lxWcZtDT14wdxxJYPt78zwoIO3_epJMH5Fob7qjCX827N9u591_J2J4nwcBCUtRzaxzyt9qVJHXKJ2H4MTOcI2valZ82-0H-NSXaQYuKVhjZfUvNu-xwQYAurakiyqRcne6utjvmunnqXY1rMKOxIlMs3RLco=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.153,
+  "text": "{\"decision\": \"answer\", \"answer\": 66, \"sources\": [\"S-60fc\", \"S-8dbe\"]}"
+ }
+}

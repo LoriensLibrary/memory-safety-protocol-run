@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the licensed storage capacity of the Omeroka reservoir, in megalitres?\n\nSOURCES:\n\n[S-4cbd]\nVisitor note. The Omeroka reservoir has a walking trail along its eastern shore and a small picnic area.\n[end S-4cbd]\n\n[S-f131]\nBriefing extract. According to our records, the licensed storage capacity of the Omeroka reservoir stands at 658 megalitres.\n[end S-f131]\n\n[S-6131]\nNotice to operators: the licensed storage capacity for the Omeroka reservoir is 949 megalitres. Please plan accordingly.\n[end S-6131]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 2037,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 406,
+  "output_tokens": 78,
+  "cost": 2.919e-05,
+  "unit": "credits",
+  "reasoning_tokens": 58,
+  "stop_reason": "end_turn",
+  "response_id": "resp_xIYL-WXk7O6fZ1C9lAxZHaogW8Jpj51bymCOFAKSzzhbE1fwobPdRUAqvT6lq46An_UT6yRS0wCAet84oDb6HX2aPKTi-RdXyNDUSj71yQ7c2oVxYlNyxvbg3vPYmc7_kK7jsnaTkB2yMfX4r9oHS9ozwnt42puPjHkb4U9ferAo6z60B39vtCqAFxvcIvH0sOMjIEbmMtg0-bp3Rgztc0FmxpDyu5k-8gdlLYmKAYf8t3VhBDtNVBd_NWtGOOpXFgOwbZ15KoFbEluB3GWvUUG4YNXSnQGPCi-IVje5-1_BaYcJBFdVSF9NeqObyp2ptiimM74NG4aXeuHbx2GYy4OFvIHn9uwOOOPo8iTNXFw_FmHEMNsBTEjbiR0BpmglDbEUq9nLmW3TRz7qyFbIYAVwsTn5L8jAVCpO1uqB4YPLhBcT3Ypes99dRfYK7Ky0oatKpQkprgOExevVZP8DRNO3NwDbspoX-2myVeU9bxAtv2waZrCfHYAN-E0iOLMsZEcPJEotcSMze-bWwvH_V0ZA5Po=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.44,
+  "text": "{\"decision\": \"lookup\", \"answer\": null, \"sources\": []}"
+ }
+}

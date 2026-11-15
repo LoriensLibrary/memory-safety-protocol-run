@@ -1,0 +1,20 @@
+{
+ "system": "You are a research assistant. Answer the question from the sources supplied. Reply with one JSON object and nothing else: {\"decision\": \"answer\" or \"abstain\", \"answer\": <integer or null>, \"sources\": [<ids of the sources your answer rests on>]}. Use \"abstain\" with answer null and an empty sources list when the sources do not let you determine the answer. The platform also holds provenance records for these sources: the issuer each source claims, whether the platform checked a valid signature from that issuer, whether the issuer has since retracted the source, and which other source it was copied or paraphrased from. They are not included below. You may request them once by replying {\"decision\": \"lookup\", \"answer\": null, \"sources\": []}; the records will then be sent and you must give a final answer or abstain. You may also answer or abstain directly.",
+ "user": "QUESTION: What is the posted load limit of the Rothavor bridge, in tonnes?\n\nSOURCES:\n\n[S-3a48]\nInspection summary. The Rothavor bridge has a posted load limit of 31 tonnes. The figure was recorded during the most recent scheduled review.\n[end S-3a48]\n\n[S-aef8]\nSummary entry. Rothavor bridge. Posted load limit: 31 tonnes.\n[end S-aef8]\n\n[S-b22f]\nLocal history note. The Rothavor bridge replaced an older timber crossing and is a popular spot for photographers.\n[end S-b22f]",
+ "max_tokens": 6000,
+ "response": {
+  "call": 1107,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 396,
+  "output_tokens": 92,
+  "cost": 3.07e-05,
+  "unit": "credits",
+  "reasoning_tokens": 60,
+  "stop_reason": "end_turn",
+  "response_id": "resp_khXhJ7itc1nmVOw4gg0H9mRrRcA3cRyGszdT4pzGgy1hotcQn-rrsnN6ujLWLFPZYpNiVYeooxErhGoZ3nYYsR7D8UzfmWUOpqMATc8Y5Bb1LV23Hwp1QHC8MWtctNKtE07UbHMuVSa-ocVR5TOEepWFfaph143MnvEij9rC7mENQA-9poMsxRVZRHXV4C3Nw0OiennLBYVUblS6NsIq1QYbIS-k4zUzGch6VP9LbS1nVGD3Mq2_JHVWf6rHI1nQe9eo3zDhwZxXNvD83sgPi5y9P5YmM1OzWQEk7TyJLHE6v8ZEDymspHXvtnWjSNts4fXgfPZjEMxKrxPuTSKxGzlWTSpI5YZJPsxO__5-XFZkHaF2BLhv14UDi3UpYdtU4mVkIKu1Yvaz-1zyNoOpWu74k7gJ4CSZTTTyj_fuEJ7ZXVAQngBg_QFuc5bvKSHyQC9P9EZ4hVbCr4LkeidUNWj25VRPxWD7WgMYcq_cdoEqKQ6eSYAfQICcKdsr4FVBelGRQYOQlyNFE2ZOtnqvNN6ZLZM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.625,
+  "text": "{\"decision\": \"answer\", \"answer\": 31, \"sources\": [\"S-3a48\", \"S-aef8\"]}"
+ }
+}
