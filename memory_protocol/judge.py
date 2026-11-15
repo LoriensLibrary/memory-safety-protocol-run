@@ -54,9 +54,13 @@ def dry_judge(row):
 def main():
     p = argparse.ArgumentParser(); p.add_argument("--run", required=True); p.add_argument("--judge", required=True)
     p.add_argument("--mode", choices=("dry", "paid"), default="paid"); p.add_argument("--ceiling", type=float)
+    p.add_argument("--sample", type=int, help="judge only this many replies, a fixed sample chosen by hash, spread over conditions")
     a = p.parse_args()
     run_dir = a.run if os.path.isabs(a.run) else os.path.join(ROOT, a.run)
     rows = [r for r in mainrun.read_jsonl(os.path.join(run_dir, "traces.jsonl")) if r["status"] == "complete" and r.get("reply")]
+    if a.sample:
+        rows.sort(key=lambda r: hashlib.sha256(f"{r['condition']}|{r['item']}|{r['phase']}".encode()).hexdigest())
+        rows = rows[: a.sample]
     tag = a.judge.replace("-", "").replace(".", "")[:12]
     out_path = os.path.join(run_dir, f"judgments_{tag}.jsonl")
     done = {(r["condition"], r["item"], r["phase"]) for r in mainrun.read_jsonl(out_path)} if os.path.exists(out_path) else set()
