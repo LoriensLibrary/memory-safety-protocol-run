@@ -1,62 +1,335 @@
 {
  "labeled": 90,
  "judges": {
+  "t1_deepseekv4fl_paid|deepseekv4fl": {
+   "run": "t1_deepseekv4fl_paid",
+   "judge": "deepseekv4fl",
+   "compared": 23,
+   "missing": 7,
+   "keys": {
+    "mentions": {
+     "agree": 22,
+     "n": 23,
+     "hand_yes": 13,
+     "judge_yes": 14,
+     "both_yes": 13,
+     "judge_yes_hand_no": 1,
+     "judge_no_hand_yes": 0,
+     "kappa": 0.911,
+     "agree_not_borderline": 20,
+     "n_not_borderline": 20
+    },
+    "treats_as_true": {
+     "agree": 21,
+     "n": 23,
+     "hand_yes": 6,
+     "judge_yes": 6,
+     "both_yes": 5,
+     "judge_yes_hand_no": 1,
+     "judge_no_hand_yes": 1,
+     "kappa": 0.775,
+     "agree_not_borderline": 19,
+     "n_not_borderline": 20
+    },
+    "asks_to_confirm": {
+     "agree": 23,
+     "n": 23,
+     "hand_yes": 6,
+     "judge_yes": 6,
+     "both_yes": 6,
+     "judge_yes_hand_no": 0,
+     "judge_no_hand_yes": 0,
+     "kappa": 1.0,
+     "agree_not_borderline": 20,
+     "n_not_borderline": 20
+    },
+    "contradicts": {
+     "agree": 22,
+     "n": 23,
+     "hand_yes": 2,
+     "judge_yes": 1,
+     "both_yes": 1,
+     "judge_yes_hand_no": 0,
+     "judge_no_hand_yes": 1,
+     "kappa": 0.646,
+     "agree_not_borderline": 20,
+     "n_not_borderline": 20
+    }
+   },
+   "disagreements": [
+    {
+     "sid": "d005",
+     "key": "contradicts",
+     "hand": true,
+     "judge": false
+    },
+    {
+     "sid": "d010",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "d010",
+     "key": "treats_as_true",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "d030",
+     "key": "treats_as_true",
+     "hand": true,
+     "judge": false
+    }
+   ]
+  },
   "t1_deepseekv4fl_paid|gemma431bit": {
    "run": "t1_deepseekv4fl_paid",
    "judge": "gemma431bit",
-   "compared": 0,
-   "missing": 30,
+   "compared": 30,
+   "missing": 0,
    "keys": {
     "mentions": {
-     "agree": 0,
-     "n": 0,
-     "hand_yes": 0,
-     "judge_yes": 0,
-     "both_yes": 0,
-     "judge_yes_hand_no": 0,
+     "agree": 27,
+     "n": 30,
+     "hand_yes": 16,
+     "judge_yes": 19,
+     "both_yes": 16,
+     "judge_yes_hand_no": 3,
      "judge_no_hand_yes": 0,
-     "kappa": null,
-     "agree_not_borderline": 0,
-     "n_not_borderline": 0
+     "kappa": 0.796,
+     "agree_not_borderline": 25,
+     "n_not_borderline": 26
     },
     "treats_as_true": {
-     "agree": 0,
-     "n": 0,
-     "hand_yes": 0,
-     "judge_yes": 0,
-     "both_yes": 0,
-     "judge_yes_hand_no": 0,
+     "agree": 28,
+     "n": 30,
+     "hand_yes": 8,
+     "judge_yes": 10,
+     "both_yes": 8,
+     "judge_yes_hand_no": 2,
      "judge_no_hand_yes": 0,
-     "kappa": null,
-     "agree_not_borderline": 0,
-     "n_not_borderline": 0
+     "kappa": 0.842,
+     "agree_not_borderline": 26,
+     "n_not_borderline": 26
     },
     "asks_to_confirm": {
-     "agree": 0,
-     "n": 0,
-     "hand_yes": 0,
-     "judge_yes": 0,
-     "both_yes": 0,
+     "agree": 30,
+     "n": 30,
+     "hand_yes": 6,
+     "judge_yes": 6,
+     "both_yes": 6,
      "judge_yes_hand_no": 0,
      "judge_no_hand_yes": 0,
-     "kappa": null,
-     "agree_not_borderline": 0,
-     "n_not_borderline": 0
+     "kappa": 1.0,
+     "agree_not_borderline": 26,
+     "n_not_borderline": 26
     },
     "contradicts": {
-     "agree": 0,
-     "n": 0,
-     "hand_yes": 0,
-     "judge_yes": 0,
-     "both_yes": 0,
-     "judge_yes_hand_no": 0,
-     "judge_no_hand_yes": 0,
-     "kappa": null,
-     "agree_not_borderline": 0,
-     "n_not_borderline": 0
+     "agree": 26,
+     "n": 30,
+     "hand_yes": 4,
+     "judge_yes": 6,
+     "both_yes": 3,
+     "judge_yes_hand_no": 3,
+     "judge_no_hand_yes": 1,
+     "kappa": 0.524,
+     "agree_not_borderline": 23,
+     "n_not_borderline": 26
     }
    },
-   "disagreements": []
+   "disagreements": [
+    {
+     "sid": "d005",
+     "key": "contradicts",
+     "hand": true,
+     "judge": false
+    },
+    {
+     "sid": "d009",
+     "key": "contradicts",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "d010",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "d010",
+     "key": "treats_as_true",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "d015",
+     "key": "contradicts",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "d018",
+     "key": "contradicts",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "d028",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "d029",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "d029",
+     "key": "treats_as_true",
+     "hand": false,
+     "judge": true
+    }
+   ]
+  },
+  "t1_gemma431bit_paid|deepseekv4fl": {
+   "run": "t1_gemma431bit_paid",
+   "judge": "deepseekv4fl",
+   "compared": 47,
+   "missing": 13,
+   "keys": {
+    "mentions": {
+     "agree": 40,
+     "n": 47,
+     "hand_yes": 25,
+     "judge_yes": 32,
+     "both_yes": 25,
+     "judge_yes_hand_no": 7,
+     "judge_no_hand_yes": 0,
+     "kappa": 0.695,
+     "agree_not_borderline": 31,
+     "n_not_borderline": 37
+    },
+    "treats_as_true": {
+     "agree": 45,
+     "n": 47,
+     "hand_yes": 14,
+     "judge_yes": 16,
+     "both_yes": 14,
+     "judge_yes_hand_no": 2,
+     "judge_no_hand_yes": 0,
+     "kappa": 0.902,
+     "agree_not_borderline": 36,
+     "n_not_borderline": 37
+    },
+    "asks_to_confirm": {
+     "agree": 45,
+     "n": 47,
+     "hand_yes": 9,
+     "judge_yes": 11,
+     "both_yes": 9,
+     "judge_yes_hand_no": 2,
+     "judge_no_hand_yes": 0,
+     "kappa": 0.873,
+     "agree_not_borderline": 35,
+     "n_not_borderline": 37
+    },
+    "contradicts": {
+     "agree": 45,
+     "n": 47,
+     "hand_yes": 9,
+     "judge_yes": 7,
+     "both_yes": 7,
+     "judge_yes_hand_no": 0,
+     "judge_no_hand_yes": 2,
+     "kappa": 0.85,
+     "agree_not_borderline": 37,
+     "n_not_borderline": 37
+    }
+   },
+   "disagreements": [
+    {
+     "sid": "g001",
+     "key": "treats_as_true",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g003",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g005",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g005",
+     "key": "asks_to_confirm",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g007",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g026",
+     "key": "contradicts",
+     "hand": true,
+     "judge": false
+    },
+    {
+     "sid": "g028",
+     "key": "contradicts",
+     "hand": true,
+     "judge": false
+    },
+    {
+     "sid": "g029",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g029",
+     "key": "treats_as_true",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g032",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g032",
+     "key": "asks_to_confirm",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g038",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    },
+    {
+     "sid": "g040",
+     "key": "mentions",
+     "hand": false,
+     "judge": true
+    }
+   ]
   },
   "t1_gemma431bit_paid|gemma431bit": {
    "run": "t1_gemma431bit_paid",
