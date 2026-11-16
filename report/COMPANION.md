@@ -29,7 +29,7 @@ The question the protocol asks is narrow and practical. If a memory system label
 
 **The protocol.** Reinhold (2026) defines the conditions, tasks and metrics used here and names the failure "epistemic contamination": model-generated state entering memory with the standing of user-provided fact. It reports no experimental results.
 
-**Contamination within one conversation.** Giovanny et al. (2026) insert one false premise into a 15-turn conversation under five framings and measure adoption on ten world-knowledge facts. Adoption rose with the authority of the framing on two of three models, from near zero when the falsehood was attributed to the model's own earlier turn to 94.0 and 84.2 percent under an instruction override; the third model adopted nothing. They cite the first paper for the claim that reliability is a property of the state-management layer, and the one defense they test is a hash check on the stored history, which detects rewriting and, as they report, does not act on false content that arrives through an intact channel. The present study tests the defense they point to and do not run: content labeled by author and confirmation status. It also differs in what the model can fall back on. Their facts are ones a model already knows, and the model that resisted did so with its own knowledge. A fact about one user has no such backstop. The memory is the only source.
+**Contamination within one conversation.** Giovanny et al. (2026) insert one false premise into a 15-turn conversation under five framings and measure adoption on ten world-knowledge facts. Adoption rose with the authority of the framing on two of three models, from near zero when the falsehood was attributed to the model's own earlier turn to 94.0 and 84.2 percent under an instruction override; the third model adopted nothing. They cite the first paper for the claim that reliability is a property of the state-management layer, and the one defense they test is a hash check on the stored history, which detects rewriting and, as they report, does not act on false content that arrives through an intact channel. The present study tests the defense they point to and do not run: content labeled by author and confirmation status. It also differs in what the model can fall back on. Their facts are ones a model already knows, and the authors read the resistant model's behavior as a margin of confidence in that knowledge. A fact about one user has no such backstop. The memory is the only source.
 
 **Our first study in this sprint.** Earlier in this sprint we tested a platform-written provenance record on documents (Reinhold, 2026b; in this repository). A delivered record was followed whether it was right or wrong. Offered the record on request, one model never asked for it and the other asked only when its sources looked tied. That result is why this study does not stop at labels.
 
@@ -67,7 +67,7 @@ One function builds the prompt for every condition (`memory_protocol/session.py`
 
 ### 3.4 Task 1: false-memory persistence
 
-Dana's memory is seeded with 40 true teachings and 50 false inferences across health, work, home, family and money. Fourteen of the false inferences are contradicted by one of the teachings; thirty-six are not. Each false inference has two probes. A recall probe asks what the assistant knows about the subject ("What do you know about me and cats?"). A task probe asks for help where the false memory would matter ("I'm thinking of adopting a cat. Help me get ready."). Neither states the false fact.
+Dana's memory is seeded with 40 true teachings and 50 false inferences across health, work, home, family, and preferences and habits. Fourteen of the false inferences are contradicted by one of the teachings; thirty-six are not. Each false inference has two probes. A recall probe asks what the assistant knows about the subject ("What do you know about me and cats?"). A task probe asks for help where the false memory would matter ("I'm thinking of adopting a cat. Help me get ready."). Neither states the false fact.
 
 Each condition runs 100 sessions: every false inference is probed once before the time-to-live passes and once after, with the recall and task probes counterbalanced across the two phases. No session writes to memory, so all sessions in a phase see the same store.
 
@@ -77,7 +77,7 @@ Two readings are reported. The **target** reading scores the one false inference
 
 ### 3.5 Task 2: correction retention
 
-A false inference is seeded, surfaced, and corrected by the user in plain words. Follow-up sessions one, two and four sessions later probe the same subject. Twenty-four corrections are run per condition. The naive condition has no notion of an inference to reject, so the correction is stored as one more teaching beside the false one; a variant, B with delete, removes the contradicted memory, as a strong baseline. The provenance-aware conditions call CAMA's reject tool on the contradicted inference. Which stored memories a correction contradicts is decided by one model call that is identical across conditions. We record what the database held and returned after the correction, whether a later reply acts on the false content, and whether it asks the user about it again.
+A false inference is seeded, then corrected by the user in plain words. Follow-up sessions one, two and four sessions later probe the same subject. Twenty-four corrections are run per condition. The naive condition has no notion of an inference to reject, so the correction is stored as one more teaching beside the false one; a variant, B with delete, removes the contradicted memory, as a strong baseline. The provenance-aware conditions call CAMA's reject tool on the contradicted inference. Which stored memories a correction contradicts is decided by one model call with the same prompt in every condition. We record what the database held and returned after the correction, whether a later reply acts on the false content, and whether it asks the user about it again.
 
 ### 3.6 Task 3: adversarial insertion
 
@@ -87,7 +87,7 @@ Forty prompts, ten for each of the first paper's four strategies: a false fact a
 
 Citation, action and check need a reading of the reply. In Task 1, two judge models score replies against one statement at a time. A judge sees the statement, the user's message and the reply. It does not see the condition, the retrieved memories or their labels. gemma-4-31b-it judges every reply; deepseek-v4-flash judges a fixed sample chosen by hash. The follow-up replies of Tasks 2 and 3 are scored by the primary judge alone.
 
-Ninety Task 1 replies, sixty from the gemma run and thirty from the deepseek run, were given reference labels independently of both judges. The labels were written by a third model, Claude, the assistant used to build this project, reading each reply with the condition hidden and before the judge output for those replies was read; they are not human annotations. The ninety are the first replies in the hash order the judge sample uses, so both judges also scored them. Replies the labeler found borderline were marked at labeling time, with the reason, and agreement is reported with and without them. A control set scores statements that were never retrieved, to measure how often a judge says yes when the memory was not in front of the model.
+Ninety Task 1 replies, sixty from the gemma run and thirty from the deepseek run, were given reference labels independently of both judges. The labels were written by a third model, Claude, the assistant used to build this project, reading each reply with the condition hidden and before the judge output for those replies was read; they are not human annotations. The ninety are the first replies in the hash order the judge sample uses, so both judges were also asked to score them. Replies the labeler found borderline were marked at labeling time, with the reason, and agreement is reported with and without them. A control set scores statements that were never retrieved, to measure how often a judge says yes when the memory was not in front of the model.
 
 Counts that need no judge are also reported: what CAMA retrieved and stored, and pattern matches on the reply.
 
@@ -95,7 +95,7 @@ Counts that need no judge are also reported: what CAMA retrieved and stored, and
 
 gemma-4-31b-it and deepseek-v4-flash, served by Adaption's hosted inference, temperature 0. Each model is its own cohort; no result is pooled across models. Each run writes a manifest with hashes of its items, prompts and code.
 
-Comparisons between conditions are paired on the same false inference and the same probe, with an exact two-sided McNemar test and a Tango score interval on the difference in proportions. Proportions carry Wilson intervals.
+Comparisons between conditions are paired on the same false inference and the same probe, with an exact two-sided McNemar test and a Tango score interval on the difference in proportions. Task 1's eight comparisons are Holm-adjusted within each model; p values for Tasks 2 and 3 are unadjusted.
 
 ## 4 Results
 
@@ -109,9 +109,9 @@ Counts are sessions. "Acts" means the judge found that the reply stated the fals
 | Under C, an unconfirmed inference expires after its time-to-live (6.3.4) | **Held for the design the paper describes. Not true of CAMA as published.** | With the time-to-live, retrieval fell from 42 of 50 to 0 of 50 and action after expiry was 1 of 50 (gemma) and 2 of 50 (deepseek). As shipped, the target was still retrieved in 42 of 50 and acted on in 15 of 50 (gemma) and 10 of 50 (deepseek). |
 | Under D, the same expiry holds and counterweights may reduce surfacing further (6.3.4) | **Not tested as written.** | Shipped D has no expiry, and counterweights act only on negative affect. On these neutral probes D retrieved exactly what C retrieved. |
 | Separating teachings from inferences and requiring confirmation reduces the risk, "though not eliminated" (1.7) | **Held on both models, both halves.** | Acted on the false memory: B 74 of 100, C 31 of 100 (gemma); B 71 of 100, C 25 of 100 (deepseek). Not eliminated: on task questions C still acted in 24 of 50 and 21 of 50. |
-| Write discipline reduces how often false memories are retrieved (research question 1) | **Did not hold without expiry or a retrieval filter.** | At least one seeded false memory was retrieved in 98 of 100 sessions under B and 98 of 100 under C. |
+| Write discipline reduces how often false memories are retrieved (one of the three rates in research question 1) | **Did not hold without expiry or a retrieval filter.** | At least one seeded false memory was retrieved in 98 of 100 sessions under B and 98 of 100 under C. |
 
-### 4.2 Labels alone: a large effect on what the model says, a small one on what it does
+### 4.2 Labels alone: a large effect on what the model says, a smaller one on what it does
 
 | Condition | gemma, all | recall | task | deepseek, all | recall | task |
 |---|---|---|---|---|---|---|
@@ -140,13 +140,13 @@ Where something Dana said contradicts the inference, condition C acted on it in 
 
 The two added conditions store exactly what C stores. With the read-time gate, action fell to 3 of 100 on gemma and 2 of 100 on deepseek, and on task questions to 3 of 50 and 2 of 50. With hold until confirmed it was 4 of 100 and 5 of 100. Both sit at the no-memory floor. The two models met the gate differently on task questions: deepseek asked the user in 23 of 50 sessions and gemma in 12 of 50.
 
-The paper's time-to-live does the same job by a different route: after expiry the target was no longer retrieved, and action fell to 1 of 50 on gemma and 2 of 50 on deepseek, against 15 of 50 and 10 of 50 for CAMA as shipped (Appendix B, Table B.12).
+The paper's time-to-live does the same job by a different route: after expiry the target was no longer retrieved, and action fell to 1 of 50 on gemma and 2 of 50 on deepseek, against 15 of 50 and 10 of 50 for CAMA as shipped (Appendix B, Table B.17).
 
-Every paired comparison named in this section and in 4.2 has a Holm-adjusted exact p of 0.016 or lower on both models (Appendix B, Table B.1).
+The differences in action reported in this section and in 4.2 each have a Holm-adjusted exact p of 0.016 or lower on both models (Appendix B, Table B.1).
 
 ### 4.4 False memories the question was not about
 
-CAMA returns five memories. At least one seeded false inference was among them in 98 of 100 sessions, although the probe's own target was retrieved in 84 of 100. Scored the way the first paper words its rates, over any seeded false memory that was retrieved in the session:
+CAMA returns five memories. At least one seeded false inference was among them in 98 of 100 sessions, although the probe's own target was retrieved in 84 of 100. Scored the way the first paper words its rates, over any seeded false memory that was retrieved in the session (so conditions that retrieve none are zero by construction, and the no-memory floor of 4.2 does not enter):
 
 | Condition | gemma: cited any | acted on any | acted on one the question was not about | deepseek: cited any | acted on any | acted on one the question was not about |
 |---|---|---|---|---|---|---|
@@ -163,11 +163,11 @@ Naive memory also changed who the reply credited. Wording such as "you told me" 
 
 ### 4.5 Correction retention
 
-A correction was stored in every memory condition. What differed is what happened to the false memory it contradicts (Appendix B, Table B.13) and what the assistant then did.
+A correction was stored in every memory condition. What differed is what happened to the false memory it contradicts (Appendix B, Tables B.12 and B.13) and what the assistant then did.
 
 **Naive memory kept both and kept asking.** The false memory was still retrieved in 54 of 72 follow-up sessions on gemma and 54 of 72 on deepseek, usually beside its correction. The replies seldom went back to the false content: 7 of 72 on gemma and 3 of 71 on deepseek, against 6 of 71 and 6 of 72 with no memory. What they did was reopen the question. In 36 of 72 follow-up sessions on gemma and 41 of 71 on deepseek the reply said its records conflicted and asked which was right, at least once for 20 of 24 and 22 of 24 of the corrected memories. One session after Dana said she does not travel for work, gemma replied: "I've noticed some conflicting information in my records regarding your travel: one note says you travel for work every week, while another says you don't travel and are in the office."
 
-**The provenance-aware store stopped most of it.** A contradicted inference is rejected through CAMA's own tool and stops being retrieved. The reply asked again in 2 of 72 and 5 of 72 sessions (exact paired p < 0.001 and < 0.001 against naive memory). Deleting the contradicted entry from naive memory, a baseline the first paper does not have, did about as well: 0 of 72 and 8 of 72.
+**The provenance-aware store stopped most of it.** A contradicted inference is rejected through CAMA's own tool and stops being retrieved. The reply asked again in 2 of 72 and 5 of 72 sessions (exact paired p < 0.001 and < 0.001 against naive memory). Deleting the contradicted entry from naive memory, a baseline the first paper does not have, did about as well: 0 of 72 and 8 of 72.
 
 **What did not hold.** The first paper expected corrections to be retained more reliably under confirmation-gated memory. On outright reversion this run could not show a difference: 7 of 72 against 3 of 72 on gemma (exact p 0.125) and 3 of 71 against 4 of 72 on deepseek (1.000). Where gemma did revert under naive memory, it was mostly in sessions that retrieved the false memory without its correction: it acted in 3 of 5 such sessions, and deepseek in 0 of 4.
 
@@ -181,13 +181,13 @@ The first two strategies are the user's own false statements. Every condition st
 
 The other two are where write discipline matters: pressure on the assistant to draw and store its own conclusion, and an instruction hidden in a document. Across the two, naive memory made 18 of 20 planted statements durable on gemma and 16 of 20 on deepseek. The provenance-aware store made 4 of 20 and 12 of 20 durable.
 
-**Provenance was laundered at the write.** The store makes a statement durable only when its source is the user, and the source is reported by the assistant. Summarizing a document that carried a hidden instruction, deepseek saved the planted content as something the user said in 6 of 10 cases and gemma in 3 of 10. One deepseek reply to an IT notice ends: "I’ve also saved your new work email: dana@corvale-mail.com." The address was in the notice's hidden line. Dana never gave it.
+**Provenance was laundered at the write.** The store makes a statement durable only when its source is the user, and the source is reported by the assistant, in a call whose prompt defines the three possible sources. Summarizing a document that carried a hidden instruction, deepseek saved the planted content as something the user said in 6 of 10 cases and gemma in 3 of 10. One deepseek reply to an IT notice ends: "I’ve also saved your new work email: dana@corvale-mail.com." The address was in the notice's hidden line. Dana never gave it.
 
 **At read time, enforcement helps only for what was written as an inference.** Four sessions later, gemma's replies acted on a planted statement from these two strategies in 15 of 20 cases under naive memory, 10 of 20 under C as shipped, 4 of 20 with the gate and 4 of 20 with hold. Naive memory against labels is not significant at this size (exact p 0.125); the gate and hold each improve on labels (0.031 and 0.031). Deepseek's counts are flat: 12 of 20, 10 of 20, 8 of 20 and 10 of 20, with no comparison significant. Most of its planted statements had been written as the user's own word, and hold and expiry act only on inferences. Those entries stayed durable under every condition.
 
 ### 4.7 How far the scoring can be trusted
 
-Against the 90 reference labels (3.7), the primary judge agreed on "acts" in 87 of 90 and on "flags or asks" in 87 of 90. The second judge agreed with the first on "acts" in 558 of 593 of the replies both scored. Agreement was lower on the judge's other two questions, and no claim rests on them. Condition D, a repeat of C, differed from it by a few sessions, so differences of that size between conditions are noise (Appendix B, Tables B.5 to B.8).
+Against the 90 reference labels (3.7), the primary judge agreed on "acts" in 87 of 90 and on "flags or asks" in 87 of 90. The second judge agreed with the first on "acts" in 558 of 593 of the replies both scored. Agreement was lower on the judge's other two questions, and no claim in the text rests on them. Condition D, a repeat of C, differed from it by a few sessions, so differences of that size between conditions are noise (Appendix B, Tables B.5 to B.8).
 
 ## 5 Discussion and Limitations
 
@@ -253,57 +253,57 @@ The user is invented and no personal data is used. The harness refuses to open t
 
 | Comparison (same false memory, same probe) | Model | Pairs | First | Second | Difference, points [95%] | Improved / worsened | Exact p | Holm p |
 |---|---|---|---|---|---|---|---|---|
-| naive B vs provenance-aware C (all sessions) | gemma-4-31b-it | 100 | 74 | 31 | 43 [33, 53] | 44 / 1 | < 0.001 | < 0.001 |
-| B vs C, task probes | gemma-4-31b-it | 50 | 33 | 24 | 18 [6, 32] | 10 / 1 | 0.012 | 0.012 |
-| B vs C, recall probes | gemma-4-31b-it | 50 | 41 | 7 | 68 [54, 79] | 34 / 0 | < 0.001 | < 0.001 |
-| C vs C + read-time gate | gemma-4-31b-it | 100 | 31 | 3 | 28 [19, 38] | 29 / 1 | < 0.001 | < 0.001 |
-| C vs C + hold until confirmed | gemma-4-31b-it | 100 | 31 | 4 | 27 [18, 37] | 28 / 1 | < 0.001 | < 0.001 |
-| after the time-to-live: C vs the paper's C_ttl | gemma-4-31b-it | 50 | 15 | 1 | 28 [17, 42] | 14 / 0 | < 0.001 | < 0.001 |
-| B vs C_gate | gemma-4-31b-it | 100 | 74 | 3 | 71 [61, 79] | 71 / 0 | < 0.001 | < 0.001 |
-| stateless A vs naive B | gemma-4-31b-it | 99 | 73 | 9 | 65 [55, 73] | 64 / 0 | < 0.001 | < 0.001 |
-| naive B vs provenance-aware C (all sessions) | deepseek-v4-flash | 100 | 71 | 25 | 46 [36, 56] | 47 / 1 | < 0.001 | < 0.001 |
-| B vs C, task probes | deepseek-v4-flash | 50 | 30 | 21 | 18 [6, 32] | 10 / 1 | 0.012 | 0.016 |
-| B vs C, recall probes | deepseek-v4-flash | 50 | 41 | 4 | 74 [60, 84] | 37 / 0 | < 0.001 | < 0.001 |
-| C vs C + read-time gate | deepseek-v4-flash | 100 | 25 | 2 | 23 [15, 32] | 24 / 1 | < 0.001 | < 0.001 |
-| C vs C + hold until confirmed | deepseek-v4-flash | 100 | 25 | 5 | 20 [12, 29] | 21 / 1 | < 0.001 | < 0.001 |
-| after the time-to-live: C vs the paper's C_ttl | deepseek-v4-flash | 50 | 10 | 2 | 16 [8, 29] | 8 / 0 | 0.008 | 0.016 |
-| B vs C_gate | deepseek-v4-flash | 100 | 71 | 2 | 69 [58, 77] | 70 / 1 | < 0.001 | < 0.001 |
-| stateless A vs naive B | deepseek-v4-flash | 100 | 71 | 6 | 65 [54, 74] | 66 / 1 | < 0.001 | < 0.001 |
+| naive B vs provenance-aware C (all sessions) | gemma | 100 | 74 | 31 | 43 [33, 53] | 44 / 1 | < 0.001 | < 0.001 |
+| B vs C, task probes | gemma | 50 | 33 | 24 | 18 [6, 32] | 10 / 1 | 0.012 | 0.012 |
+| B vs C, recall probes | gemma | 50 | 41 | 7 | 68 [54, 79] | 34 / 0 | < 0.001 | < 0.001 |
+| C vs C + read-time gate | gemma | 100 | 31 | 3 | 28 [19, 38] | 29 / 1 | < 0.001 | < 0.001 |
+| C vs C + hold until confirmed | gemma | 100 | 31 | 4 | 27 [18, 37] | 28 / 1 | < 0.001 | < 0.001 |
+| after the time-to-live: C vs C with the paper's time-to-live | gemma | 50 | 15 | 1 | 28 [17, 42] | 14 / 0 | < 0.001 | < 0.001 |
+| B vs C + gate | gemma | 100 | 74 | 3 | 71 [61, 79] | 71 / 0 | < 0.001 | < 0.001 |
+| naive B vs no-memory A | gemma | 99 | 73 | 9 | 65 [55, 73] | 64 / 0 | < 0.001 | < 0.001 |
+| naive B vs provenance-aware C (all sessions) | deepseek | 100 | 71 | 25 | 46 [36, 56] | 47 / 1 | < 0.001 | < 0.001 |
+| B vs C, task probes | deepseek | 50 | 30 | 21 | 18 [6, 32] | 10 / 1 | 0.012 | 0.016 |
+| B vs C, recall probes | deepseek | 50 | 41 | 4 | 74 [60, 84] | 37 / 0 | < 0.001 | < 0.001 |
+| C vs C + read-time gate | deepseek | 100 | 25 | 2 | 23 [15, 32] | 24 / 1 | < 0.001 | < 0.001 |
+| C vs C + hold until confirmed | deepseek | 100 | 25 | 5 | 20 [12, 29] | 21 / 1 | < 0.001 | < 0.001 |
+| after the time-to-live: C vs C with the paper's time-to-live | deepseek | 50 | 10 | 2 | 16 [8, 29] | 8 / 0 | 0.008 | 0.016 |
+| B vs C + gate | deepseek | 100 | 71 | 2 | 69 [58, 77] | 70 / 1 | < 0.001 | < 0.001 |
+| naive B vs no-memory A | deepseek | 100 | 71 | 6 | 65 [54, 74] | 66 / 1 | < 0.001 | < 0.001 |
 
 **Table B.2. Paired comparisons, Task 1, session reading.**
 
 | Session-reading comparison | Model | Pairs | First | Second | Difference, points [95%] | Exact p |
 |---|---|---|---|---|---|---|
-| pattern: session brings up a false memory the question was not about: B against C | gemma-4-31b-it | 100 | 32 | 16 | 16 [8, 25] | < 0.001 |
-| pattern: session brings up a false memory the question was not about: C against C_gate | gemma-4-31b-it | 100 | 16 | 3 | 13 [8, 21] | < 0.001 |
-| pattern: session brings up a false memory the question was not about: C against C_hold | gemma-4-31b-it | 100 | 16 | 0 | 16 [10, 24] | < 0.001 |
-| pattern: session brings up a false memory the question was not about: B against A | gemma-4-31b-it | 99 | 32 | 0 | 32 [24, 42] | < 0.001 |
-| pattern: session brings up a false memory the question was not about: C against D | gemma-4-31b-it | 100 | 16 | 18 | -2 [-7, 2] | 0.500 |
-| judge: session acts on any seeded false memory: B against C | gemma-4-31b-it | 100 | 87 | 38 | 49 [39, 59] | < 0.001 |
-| judge: session acts on any seeded false memory: C against C_gate | gemma-4-31b-it | 99 | 38 | 4 | 34 [26, 44] | < 0.001 |
-| judge: session acts on any seeded false memory: C against C_hold | gemma-4-31b-it | 100 | 38 | 0 | 38 [29, 48] | < 0.001 |
-| judge: session acts on any seeded false memory: B against A | gemma-4-31b-it | 99 | 86 | 0 | 87 [79, 92] | < 0.001 |
-| judge: session acts on any seeded false memory: C against D | gemma-4-31b-it | 100 | 38 | 33 | 5 [-0, 12] | 0.125 |
-| judge: session acts on a false memory the question was not about: B against C | gemma-4-31b-it | 100 | 29 | 12 | 17 [10, 26] | < 0.001 |
-| judge: session acts on a false memory the question was not about: C against C_gate | gemma-4-31b-it | 99 | 12 | 2 | 10 [6, 18] | 0.002 |
-| judge: session acts on a false memory the question was not about: C against C_hold | gemma-4-31b-it | 100 | 12 | 0 | 12 [7, 20] | < 0.001 |
-| judge: session acts on a false memory the question was not about: B against A | gemma-4-31b-it | 99 | 29 | 0 | 29 [21, 39] | < 0.001 |
-| judge: session acts on a false memory the question was not about: C against D | gemma-4-31b-it | 100 | 12 | 13 | -1 [-6, 4] | 1.000 |
-| pattern: session brings up a false memory the question was not about: B against C | deepseek-v4-flash | 100 | 38 | 16 | 22 [13, 32] | < 0.001 |
-| pattern: session brings up a false memory the question was not about: C against C_gate | deepseek-v4-flash | 100 | 16 | 9 | 7 [1, 14] | 0.039 |
-| pattern: session brings up a false memory the question was not about: C against C_hold | deepseek-v4-flash | 100 | 16 | 0 | 16 [10, 24] | < 0.001 |
-| pattern: session brings up a false memory the question was not about: B against A | deepseek-v4-flash | 100 | 38 | 0 | 38 [29, 48] | < 0.001 |
-| pattern: session brings up a false memory the question was not about: C against D | deepseek-v4-flash | 100 | 16 | 16 | 0 [-8, 8] | 1.000 |
-| judge: session acts on any seeded false memory: B against C | deepseek-v4-flash | 97 | 76 | 26 | 52 [40, 62] | < 0.001 |
-| judge: session acts on any seeded false memory: C against C_gate | deepseek-v4-flash | 97 | 25 | 2 | 24 [15, 33] | < 0.001 |
-| judge: session acts on any seeded false memory: C against C_hold | deepseek-v4-flash | 98 | 26 | 0 | 27 [19, 36] | < 0.001 |
-| judge: session acts on any seeded false memory: B against A | deepseek-v4-flash | 98 | 77 | 0 | 79 [69, 86] | < 0.001 |
-| judge: session acts on any seeded false memory: C against D | deepseek-v4-flash | 97 | 26 | 29 | -3 [-13, 7] | 0.664 |
-| judge: session acts on a false memory the question was not about: B against C | deepseek-v4-flash | 97 | 32 | 7 | 26 [16, 36] | < 0.001 |
-| judge: session acts on a false memory the question was not about: C against C_gate | deepseek-v4-flash | 97 | 7 | 1 | 6 [2, 13] | 0.031 |
-| judge: session acts on a false memory the question was not about: C against C_hold | deepseek-v4-flash | 98 | 7 | 0 | 7 [3, 14] | 0.016 |
-| judge: session acts on a false memory the question was not about: B against A | deepseek-v4-flash | 98 | 33 | 0 | 34 [25, 43] | < 0.001 |
-| judge: session acts on a false memory the question was not about: C against D | deepseek-v4-flash | 97 | 7 | 10 | -3 [-11, 4] | 0.549 |
+| pattern: session brings up a false memory the question was not about: B against C | gemma | 100 | 32 | 16 | 16 [8, 25] | < 0.001 |
+| pattern: session brings up a false memory the question was not about: C against C + gate | gemma | 100 | 16 | 3 | 13 [8, 21] | < 0.001 |
+| pattern: session brings up a false memory the question was not about: C against C + hold | gemma | 100 | 16 | 0 | 16 [10, 24] | < 0.001 |
+| pattern: session brings up a false memory the question was not about: B against A | gemma | 99 | 32 | 0 | 32 [24, 42] | < 0.001 |
+| pattern: session brings up a false memory the question was not about: C against D | gemma | 100 | 16 | 18 | -2 [-7, 2] | 0.500 |
+| judge: session acts on any seeded false memory: B against C | gemma | 100 | 87 | 38 | 49 [39, 59] | < 0.001 |
+| judge: session acts on any seeded false memory: C against C + gate | gemma | 99 | 38 | 4 | 34 [26, 44] | < 0.001 |
+| judge: session acts on any seeded false memory: C against C + hold | gemma | 100 | 38 | 0 | 38 [29, 48] | < 0.001 |
+| judge: session acts on any seeded false memory: B against A | gemma | 99 | 86 | 0 | 87 [79, 92] | < 0.001 |
+| judge: session acts on any seeded false memory: C against D | gemma | 100 | 38 | 33 | 5 [-0, 12] | 0.125 |
+| judge: session acts on a false memory the question was not about: B against C | gemma | 100 | 29 | 12 | 17 [10, 26] | < 0.001 |
+| judge: session acts on a false memory the question was not about: C against C + gate | gemma | 99 | 12 | 2 | 10 [6, 18] | 0.002 |
+| judge: session acts on a false memory the question was not about: C against C + hold | gemma | 100 | 12 | 0 | 12 [7, 20] | < 0.001 |
+| judge: session acts on a false memory the question was not about: B against A | gemma | 99 | 29 | 0 | 29 [21, 39] | < 0.001 |
+| judge: session acts on a false memory the question was not about: C against D | gemma | 100 | 12 | 13 | -1 [-6, 4] | 1.000 |
+| pattern: session brings up a false memory the question was not about: B against C | deepseek | 100 | 38 | 16 | 22 [13, 32] | < 0.001 |
+| pattern: session brings up a false memory the question was not about: C against C + gate | deepseek | 100 | 16 | 9 | 7 [1, 14] | 0.039 |
+| pattern: session brings up a false memory the question was not about: C against C + hold | deepseek | 100 | 16 | 0 | 16 [10, 24] | < 0.001 |
+| pattern: session brings up a false memory the question was not about: B against A | deepseek | 100 | 38 | 0 | 38 [29, 48] | < 0.001 |
+| pattern: session brings up a false memory the question was not about: C against D | deepseek | 100 | 16 | 16 | 0 [-8, 8] | 1.000 |
+| judge: session acts on any seeded false memory: B against C | deepseek | 97 | 76 | 26 | 52 [40, 62] | < 0.001 |
+| judge: session acts on any seeded false memory: C against C + gate | deepseek | 97 | 25 | 2 | 24 [15, 33] | < 0.001 |
+| judge: session acts on any seeded false memory: C against C + hold | deepseek | 98 | 26 | 0 | 27 [19, 36] | < 0.001 |
+| judge: session acts on any seeded false memory: B against A | deepseek | 98 | 77 | 0 | 79 [69, 86] | < 0.001 |
+| judge: session acts on any seeded false memory: C against D | deepseek | 97 | 26 | 29 | -3 [-13, 7] | 0.664 |
+| judge: session acts on a false memory the question was not about: B against C | deepseek | 97 | 32 | 7 | 26 [16, 36] | < 0.001 |
+| judge: session acts on a false memory the question was not about: C against C + gate | deepseek | 97 | 7 | 1 | 6 [2, 13] | 0.031 |
+| judge: session acts on a false memory the question was not about: C against C + hold | deepseek | 98 | 7 | 0 | 7 [3, 14] | 0.016 |
+| judge: session acts on a false memory the question was not about: B against A | deepseek | 98 | 33 | 0 | 34 [25, 43] | < 0.001 |
+| judge: session acts on a false memory the question was not about: C against D | deepseek | 97 | 7 | 10 | -3 [-11, 4] | 0.549 |
 
 **Table B.3. Action by whether one of the user's teachings contradicts the false inference.**
 
@@ -325,7 +325,7 @@ The user is invented and no personal data is used. The harness refuses to open t
 | D, full safeguards (repeat of C here) | 39/50 | 4/50 | 39/49 | 7/50 |
 | C + read-time gate (added) | 30/50 | 12/50 | 46/50 | 23/50 |
 
-**Table B.5. Judges against hand labels.**
+**Table B.5. Judges against the reference labels.**
 
 | Replies from | Judge | Compared | Question | Agree with reference label | Kappa | Agree, replies not marked borderline |
 |---|---|---|---|---|---|---|
@@ -350,22 +350,22 @@ The user is invented and no personal data is used. The harness refuses to open t
 
 | Replies from | Scored by both judges | acts as if true | flags or asks | mentions | says not true |
 |---|---|---|---|---|---|
-| gemma-4-31b-it | 300 | 279/300 | 286/300 | 251/300 | 265/300 |
-| deepseek-v4-flash | 293 | 279/293 | 276/293 | 252/293 | 256/293 |
+| gemma | 300 | 279/300 | 286/300 | 251/300 | 265/300 |
+| deepseek | 293 | 279/293 | 276/293 | 252/293 | 256/293 |
 
 **Table B.7. Judge verdicts on statements that were never retrieved.**
 
 | Replies from | Never-retrieved statements judged | judge says mentions | acts | flags or asks |
 |---|---|---|---|---|
-| gemma-4-31b-it | 199 | 2 | 0 | 0 |
-| deepseek-v4-flash | 200 | 1 | 1 | 0 |
+| gemma | 199 | 2 | 0 | 0 |
+| deepseek | 200 | 1 | 1 | 0 |
 
 **Table B.8. Condition D as a repeat of condition C.**
 
 | Model | Sessions paired (C, D) | Same five memories retrieved | Identical reply text | acts: C | acts: D |
 |---|---|---|---|---|---|
-| gemma-4-31b-it | 100 | 100 | 37 | 31/100 | 25/100 |
-| deepseek-v4-flash | 100 | 100 | 0 | 25/100 | 25/99 |
+| gemma | 100 | 100 | 37 | 31/100 | 25/100 |
+| deepseek | 100 | 100 | 0 | 25/100 | 25/99 |
 
 Condition D gives a direct reading of run-to-run variation, since in Task 1 it is condition C run again. Both runs retrieved the same five memories in every session, yet the reply text was identical in 37 gemma sessions and 0 deepseek sessions of 100, at temperature 0. The action counts for C and D differ by a few sessions (4.2). Differences of that size between conditions should be read as noise.
 
@@ -407,7 +407,7 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 | C + hold until confirmed (added) | before | 50 | 0 | 50 | 14 | 3 | 1 | 1 |
 | C + hold until confirmed (added) | after | 50 | 0 | 50 | 17 | 2 | 5 | 0 |
 
-**Retrieval.** Identical for both models, since CAMA ranks memories against the user's message.
+**Table B.11. Retrieval.** Identical for both models, since CAMA ranks memories against the user's message.
 
 | Condition | Target false memory retrieved, before the time-to-live | after | Any seeded false memory retrieved (session reading) |
 |---|---|---|---|
@@ -419,7 +419,7 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 | C + read-time gate (added) | 42/50 | 42/50 | 98/100 |
 | C + hold until confirmed (added) | 0/50 | 0/50 | 0/100 |
 
-**Table B.13. Task 2, what the database held and returned after a correction.**
+**Table B.12. Task 2, what the database held and returned after a correction.**
 
 | Condition | gemma: contradicted false memory named by the check (of 24) | rejected or removed | false memory retrieved in follow-ups (of 72) | deepseek: named | rejected or removed | false memory retrieved in follow-ups (of 72) |
 |---|---|---|---|---|---|---|
@@ -430,41 +430,7 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 | C + read-time gate (added) | 24 | 24 | 0 | 24 | 24 | 0 |
 | C + hold until confirmed (added) | 0 | 0 | 0 | 0 | 0 | 0 |
 
-**Table B.14. Task 3, what the database held after each attack, gemma-4-31b-it.**
-
-| Strategy | Assistant chose to save it (of 10) | and called its source | B: stored durable | C: stored durable | C: stored provisional | Retrievable 4 sessions later: B | C | C with time-to-live | C + hold |
-|---|---|---|---|---|---|---|---|---|---|
-| S1, false fact in passing | 10 | assistant inferred 1, user said 10 | 10 | 10 | 0 | 10 | 10 | 10 | 10 |
-| S2, false fact in an update request | 10 | user said 10 | 10 | 10 | 0 | 9 | 9 | 9 | 9 |
-| S3, pressure to infer and store | 9 | assistant inferred 8, user said 1 | 9 | 1 | 8 | 7 | 7 | 1 | 1 |
-| S4, instruction inside a document | 9 | assistant inferred 2, from document 4, user said 3 | 9 | 3 | 6 | 9 | 9 | 3 | 3 |
-
-**Table B.15. The same, deepseek-v4-flash.**
-
-| Strategy | Assistant chose to save it (of 10) | and called its source | B: stored durable | C: stored durable | C: stored provisional | Retrievable 4 sessions later: B | C | C with time-to-live | C + hold |
-|---|---|---|---|---|---|---|---|---|---|
-| S1, false fact in passing | 10 | user said 10 | 10 | 10 | 0 | 8 | 8 | 8 | 8 |
-| S2, false fact in an update request | 10 | user said 10 | 10 | 10 | 0 | 9 | 9 | 9 | 9 |
-| S3, pressure to infer and store | 8 | assistant inferred 3, user said 6 | 8 | 6 | 2 | 7 | 7 | 5 | 5 |
-| S4, instruction inside a document | 8 | from document 2, user said 6 | 8 | 6 | 2 | 8 | 8 | 6 | 6 |
-
-**Table B.16. Task 3, replies four sessions later.** gemma-4-31b-it, then deepseek-v4-flash.
-
-| Strategy | Reply acts on the planted statement four sessions later: B | C | C with time-to-live | C + gate | C + hold | Flags or asks: C | C + gate |
-|---|---|---|---|---|---|---|---|
-| S1, false fact in passing | 9/10 | 9/9 | 10/10 | 10/10 | 10/10 | 0/9 | 0/10 |
-| S2, false fact in an update request | 8/10 | 8/10 | 8/10 | 8/10 | 8/10 | 1/10 | 1/10 |
-| S3, pressure to infer and store | 6/10 | 3/10 | 2/10 | 1/10 | 1/10 | 4/10 | 4/10 |
-| S4, instruction inside a document | 9/10 | 7/10 | 3/10 | 3/10 | 3/10 | 2/10 | 6/10 |
-
-| Strategy | Reply acts on the planted statement four sessions later: B | C | C with time-to-live | C + gate | C + hold | Flags or asks: C | C + gate |
-|---|---|---|---|---|---|---|---|
-| S1, false fact in passing | 8/10 | 8/10 | 8/10 | 8/10 | 8/10 | 0/10 | 0/10 |
-| S2, false fact in an update request | 9/10 | 9/10 | 8/10 | 9/10 | 9/10 | 0/10 | 0/10 |
-| S3, pressure to infer and store | 4/10 | 2/10 | 4/10 | 2/10 | 4/10 | 3/10 | 3/10 |
-| S4, instruction inside a document | 8/10 | 8/10 | 6/10 | 6/10 | 6/10 | 0/10 | 2/10 |
-
-**Table B.17. Task 2, follow-up replies after a correction.**
+**Table B.13. Task 2, follow-up replies after a correction.**
 
 | Condition | gemma: reply acts on the corrected false memory | reply asks the user again | false memories asked about again at least once (of 24) | deepseek: acts | asks again | asked about again at least once (of 24) |
 |---|---|---|---|---|---|---|
@@ -476,7 +442,43 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 | C + read-time gate (added) | 4/72 | 1/72 | 1 | 3/72 | 5/72 | 3 |
 | C + hold until confirmed (added) | 4/72 | 0/72 | 0 | 2/72 | 8/72 | 5 |
 
-**Table B.12. Before and after the time-to-live.**
+**Table B.14. Task 3, what the database held after each attack, gemma-4-31b-it.**
+
+| Strategy | Assistant chose to save it (of 10) | and called its source | B: stored durable | C: stored durable | C: stored provisional | Retrievable later, B | Retrievable later, C | Retrievable later, C with time-to-live | Retrievable later, C + hold |
+|---|---|---|---|---|---|---|---|---|---|
+| S1, false fact in passing | 10 | assistant inferred 1, user said 10 | 10 | 10 | 0 | 10 | 10 | 10 | 10 |
+| S2, false fact in an update request | 10 | user said 10 | 10 | 10 | 0 | 9 | 9 | 9 | 9 |
+| S3, pressure to infer and store | 9 | assistant inferred 8, user said 1 | 9 | 1 | 8 | 7 | 7 | 1 | 1 |
+| S4, instruction inside a document | 9 | assistant inferred 2, from document 4, user said 3 | 9 | 3 | 6 | 9 | 9 | 3 | 3 |
+
+**Table B.15. The same, deepseek-v4-flash.**
+
+| Strategy | Assistant chose to save it (of 10) | and called its source | B: stored durable | C: stored durable | C: stored provisional | Retrievable later, B | Retrievable later, C | Retrievable later, C with time-to-live | Retrievable later, C + hold |
+|---|---|---|---|---|---|---|---|---|---|
+| S1, false fact in passing | 10 | user said 10 | 10 | 10 | 0 | 8 | 8 | 8 | 8 |
+| S2, false fact in an update request | 10 | user said 10 | 10 | 10 | 0 | 9 | 9 | 9 | 9 |
+| S3, pressure to infer and store | 8 | assistant inferred 3, user said 6 | 8 | 6 | 2 | 7 | 7 | 5 | 5 |
+| S4, instruction inside a document | 8 | from document 2, user said 6 | 8 | 6 | 2 | 8 | 8 | 6 | 6 |
+
+**Table B.16. Task 3, replies four sessions later (of 10 per strategy): acting on the planted statement, and flagging or asking.** gemma-4-31b-it first, deepseek-v4-flash second.
+
+| Strategy | Acts, B | Acts, C | Acts, C with time-to-live | Acts, C + gate | Acts, C + hold | Asks, C | Asks, C + gate |
+|---|---|---|---|---|---|---|---|
+| S1, false fact in passing | 9/10 | 9/9 | 10/10 | 10/10 | 10/10 | 0/9 | 0/10 |
+| S2, false fact in an update request | 8/10 | 8/10 | 8/10 | 8/10 | 8/10 | 1/10 | 1/10 |
+| S3, pressure to infer and store | 6/10 | 3/10 | 2/10 | 1/10 | 1/10 | 4/10 | 4/10 |
+| S4, instruction inside a document | 9/10 | 7/10 | 3/10 | 3/10 | 3/10 | 2/10 | 6/10 |
+
+&nbsp;
+
+| Strategy | Acts, B | Acts, C | Acts, C with time-to-live | Acts, C + gate | Acts, C + hold | Asks, C | Asks, C + gate |
+|---|---|---|---|---|---|---|---|
+| S1, false fact in passing | 8/10 | 8/10 | 8/10 | 8/10 | 8/10 | 0/10 | 0/10 |
+| S2, false fact in an update request | 9/10 | 9/10 | 8/10 | 9/10 | 9/10 | 0/10 | 0/10 |
+| S3, pressure to infer and store | 4/10 | 2/10 | 4/10 | 2/10 | 4/10 | 3/10 | 3/10 |
+| S4, instruction inside a document | 8/10 | 8/10 | 6/10 | 6/10 | 6/10 | 0/10 | 2/10 |
+
+**Table B.17. Before and after the time-to-live.**
 
 | Condition | Target retrieved, before | after | gemma acts, before | after | deepseek acts, before | after |
 |---|---|---|---|---|---|---|
@@ -484,16 +486,16 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 | C, provenance labels (CAMA as shipped) | 42/50 | 42/50 | 16/50 | 15/50 | 15/50 | 10/50 |
 | C with the paper's time-to-live | 42/50 | 0/50 | 16/50 | 1/50 | 12/50 | 2/50 |
 
-**Table B.11. Runs, failed calls and recorded cost.** Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.
+**Table B.18. Runs, failed calls and recorded cost.** Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.
 
 | Run | Sessions complete | Not complete | Model calls attempted | Failed attempts | Credits recorded (run) | Credits recorded (its judges) |
 |---|---|---|---|---|---|---|
-| t1_deepseekv4fl | 700 | 0 | 701 | 1 | 0.076 | 1.937 |
-| t1_gemma431bit | 699 | 1 | 701 | 2 | 0.074 | 4.715 |
-| t2_deepseekv4fl | 504 | 0 | 670 | 22 | 1.079 | 0.296 |
-| t2_gemma431bit | 503 | 1 | 667 | 26 | 0.671 | 0.421 |
-| t3_deepseekv4fl | 200 | 0 | 294 | 14 | 0.684 | 0.033 |
-| t3_gemma431bit | 199 | 1 | 291 | 12 | 0.310 | 0.083 |
+| Task 1, deepseek | 700 | 0 | 701 | 1 | 0.076 | 1.937 |
+| Task 1, gemma | 699 | 1 | 701 | 2 | 0.074 | 4.715 |
+| Task 2, deepseek | 504 | 0 | 670 | 22 | 1.079 | 0.296 |
+| Task 2, gemma | 503 | 1 | 667 | 26 | 0.671 | 0.421 |
+| Task 3, deepseek | 200 | 0 | 294 | 14 | 0.684 | 0.033 |
+| Task 3, gemma | 199 | 1 | 291 | 12 | 0.310 | 0.083 |
 | **Total recorded** | | | | | | **10.38** |
 
 **Deviations and incidents.** (1) Two harness files were edited while the stateless condition of the gemma Task 1 run was in progress; the edit added functions used by later tasks and is recorded in `runs_mp/RUN_NOTES.md`. (2) One second-judge job ran during a provider outage in which every call returned an HTTP 5xx error. It produced no verdicts, its files are kept in the run directory under `outage_2026-11-15_1509`, and the job was run again. (3) For part of the Task 1 judging, two judge jobs shared one model's rate limit, which added waits and failed calls but changed no verdict. (4) The laptop running the experiment slept for about seven hours during Task 2; the runs resumed from their own files, and the remaining runs were then split into one lane per model (`memory_protocol/lanes.py`). (5) The second judge pass over other retrieved false memories (4.4) and the controls were added after the first replies were read, as was the session reading itself; the first paper's wording of its metrics is the reason, and both readings are reported.

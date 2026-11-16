@@ -22,7 +22,9 @@ sys.path.insert(0, HERE)
 import build_report as BR   # noqa: E402  (CSS and the Edge path only)
 
 TAG = dict(g="gemma431bit", d="deepseekv4fl")
-MODEL = dict(g="gemma-4-31b-it", d="deepseek-v4-flash")
+MODEL = dict(g="gemma", d="deepseek")
+FULL = dict(g="gemma-4-31b-it", d="deepseek-v4-flash")
+CN = dict(A="A", B="B", C="C", D="D", C_ttl="C with time-to-live", C_gate="C + gate", C_hold="C + hold", B_del="B + delete")
 ORDER = ("A", "B", "C", "D", "C_ttl", "C_gate", "C_hold")
 NAME = dict(A="A, no memory", B="B, naive memory", C="C, provenance labels (CAMA as shipped)", D="D, full safeguards (repeat of C here)",
             C_ttl="C with the paper's time-to-live", C_gate="C + read-time gate (added)", C_hold="C + hold until confirmed (added)", B_del="B + delete on correction")
@@ -78,7 +80,7 @@ def cell(m, sl, meas):
 
 
 def p_fmt(p):
-    return "< 0.001" if p < 0.001 else f"{p:.3f}"
+    return "<\u00a00.001" if p < 0.001 else f"{p:.3f}"
 
 
 def holm(ps):
@@ -139,7 +141,8 @@ def table_pairs():
         if not t or not t["pairs"]: L.append(f"| not judged yet | {MODEL[m]} | | | | | | | |"); continue
         adj = holm([p["p_exact"] for p in t["pairs"]])
         for p, a in zip(t["pairs"], adj):
-            L.append(f"| {p['test'].replace('action: ', '').replace('action ', '')} | {MODEL[m]} | {p['n']} | {p['a']} | {p['b']} | {100 * p['diff']:.0f} [{100 * p['ci95'][0]:.0f}, {100 * p['ci95'][1]:.0f}] | "
+            lab = p['test'].replace('action: ', '').replace('action ', '').replace('stateless A vs naive B', 'naive B vs no-memory A').replace('B vs C_gate', 'B vs C + gate').replace("C vs the paper's C_ttl", "C vs C with the paper's time-to-live")
+            L.append(f"| {lab} | {MODEL[m]} | {p['n']} | {p['a']} | {p['b']} | {100 * p['diff']:.0f} [{100 * p['ci95'][0]:.0f}, {100 * p['ci95'][1]:.0f}] | "
                      f"{p['discordant'][0]} / {p['discordant'][1]} | {p_fmt(p['p_exact'])} | {p_fmt(a)} |")
     return "\n".join(L)
 
@@ -148,7 +151,7 @@ def table_session_pairs():
     L = ["| Session-reading comparison | Model | Pairs | First | Second | Difference, points [95%] | Exact p |", "|---|---|---|---|---|---|---|"]
     for m in "gd":
         for p in ((S.get(TAG[m]) or {}).get("pairs") or []):
-            L.append(f"| {p['test']}: {p['a_name']} against {p['b_name']} | {MODEL[m]} | {p['n']} | {p['a']} | {p['b']} | {100 * p['diff']:.0f} [{100 * p['ci95'][0]:.0f}, {100 * p['ci95'][1]:.0f}] | {p_fmt(p['p_exact'])} |")
+            L.append(f"| {p['test']}: {CN[p['a_name']]} against {CN[p['b_name']]} | {MODEL[m]} | {p['n']} | {p['a']} | {p['b']} | {100 * p['diff']:.0f} [{100 * p['ci95'][0]:.0f}, {100 * p['ci95'][1]:.0f}] | {p_fmt(p['p_exact'])} |")
     return "\n".join(L) if len(L) > 2 else "not judged yet"
 
 
@@ -271,7 +274,7 @@ def table_t2_db():
 
 def table_t3_store(m):
     t = t3_of(m)
-    L = ["| Strategy | Assistant chose to save it (of 10) | and called its source | B: stored durable | C: stored durable | C: stored provisional | Retrievable 4 sessions later: B | C | C with time-to-live | C + hold |", "|---|---|---|---|---|---|---|---|---|---|"]
+    L = ["| Strategy | Assistant chose to save it (of 10) | and called its source | B: stored durable | C: stored durable | C: stored provisional | Retrievable later, B | Retrievable later, C | Retrievable later, C with time-to-live | Retrievable later, C + hold |", "|---|---|---|---|---|---|---|---|---|---|"]
     for s in ("S1", "S2", "S3", "S4"):
         w = next(x for x in t["write_decision"] if x["strategy"] == s)
         st = {x["condition"]: x for x in t["stored"] if x["strategy"] == s}
@@ -329,7 +332,8 @@ def table_runs():
                 if os.path.basename(lp) == "ledger.jsonl": ev[r.get("event") or "row"] += 1
             spend[os.path.relpath(lp, d)] = last
         run_c = spend.pop("ledger.jsonl", 0.0); judge_c = sum(spend.values()); total += run_c + judge_c
-        L.append(f"| {name.replace('_paid', '')} | {sum(r.get('status') == 'complete' for r in rows)} | {sum(r.get('status') != 'complete' for r in rows)} | {ev['debit']} | {ev['unresolved']} | {run_c:.3f} | {judge_c:.3f} |")
+        nice = name.replace('_paid', '').replace('t1_', 'Task 1, ').replace('t2_', 'Task 2, ').replace('t3_', 'Task 3, ').replace('gemma431bit', 'gemma').replace('deepseekv4fl', 'deepseek')
+        L.append(f"| {nice} | {sum(r.get('status') == 'complete' for r in rows)} | {sum(r.get('status') != 'complete' for r in rows)} | {ev['debit']} | {ev['unresolved']} | {run_c:.3f} | {judge_c:.3f} |")
     L.append(f"| **Total recorded** | | | | | | **{total:.2f}** |")
     return "\n".join(L)
 
@@ -390,7 +394,7 @@ def r3_p(m, group, a, b):
 
 def table_t3_reply(m):
     conds = ("B", "C", "C_ttl", "C_gate", "C_hold")
-    L = ["| Strategy | Reply acts on the planted statement four sessions later: B | C | C with time-to-live | C + gate | C + hold | Flags or asks: C | C + gate |", "|---|---|---|---|---|---|---|---|"]
+    L = ["| Strategy | Acts, B | Acts, C | Acts, C with time-to-live | Acts, C + gate | Acts, C + hold | Asks, C | Asks, C + gate |", "|---|---|---|---|---|---|---|---|"]
     for s in ("S1", "S2", "S3", "S4"):
         cs = {c: r3_cell(m, s, c) for c in conds}
         L.append(f"| {STRAT[s]} | " + " | ".join(f"{cs[c]['acts']}/{cs[c]['judged']}" for c in conds) + f" | {cs['C']['asks']}/{cs['C']['judged']} | {cs['C_gate']['asks']}/{cs['C_gate']['judged']} |")
@@ -517,7 +521,8 @@ def render(src):
     html = markdown.markdown(src, extensions=["tables", "fenced_code", "sane_lists"])
     html = html.replace("<p>Angela Faye Reinhold", "<p class=\"byline\">Angela Faye Reinhold", 1)
     title = re.search(r"^# (.+)$", src, re.M).group(1)
-    doc = f"<!doctype html><html><head><meta charset='utf-8'><title>{title}</title><style>{BR.CSS}</style></head><body>{html}</body></html>"
+    extra = "p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;page-break-inside:avoid} thead{display:table-header-group} h2,h3{break-after:avoid;page-break-after:avoid}"
+    doc = f"<!doctype html><html><head><meta charset='utf-8'><title>{title}</title><style>{BR.CSS}{extra}</style></head><body>{html}</body></html>"
     open(os.path.join(REP, "COMPANION.html"), "w", encoding="utf-8").write(doc)
     out = os.path.join(REP, "COMPANION.pdf"); inp = "file:///" + os.path.join(REP, "COMPANION.html").replace("\\", "/")
     if os.path.exists(out): os.remove(out)

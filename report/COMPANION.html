@@ -18,7 +18,7 @@ pre code { font-size: 7.4pt; }
 figure.fig { margin: 4pt 0 8pt 0; break-inside: avoid; page-break-inside: avoid; }
 figcaption { font-size: 9.5pt; margin-top: 2pt; text-align: justify; }
 img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside: avoid; }
-</style></head><body><h1>Memory as Safety Infrastructure, Part 2: Running the Protocol on a Live Provenance-Aware Memory</h1>
+p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;page-break-inside:avoid} thead{display:table-header-group} h2,h3{break-after:avoid;page-break-after:avoid}</style></head><body><h1>Memory as Safety Infrastructure, Part 2: Running the Protocol on a Live Provenance-Aware Memory</h1>
 <p class="byline">Angela Faye Reinhold, Lorien's Library LLC. With Apart Research. Research conducted at the AI x Epistemics Research Sprint, November 2026. Track 2: Trust Infrastructure.</p>
 <h2>Abstract</h2>
 <p><em>Memory as Safety Infrastructure</em> (Reinhold, 2026) argued that an assistant's long-term memory must keep what the user said apart from what the assistant guessed, and specified an evaluation protocol. This companion paper is the first run of it, on CAMA, the open memory system that paper describes, with its real code in the loop and two open models.</p>
@@ -37,7 +37,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </ol>
 <h2>2 Related Work</h2>
 <p><strong>The protocol.</strong> Reinhold (2026) defines the conditions, tasks and metrics used here and names the failure "epistemic contamination": model-generated state entering memory with the standing of user-provided fact. It reports no experimental results.</p>
-<p><strong>Contamination within one conversation.</strong> Giovanny et al. (2026) insert one false premise into a 15-turn conversation under five framings and measure adoption on ten world-knowledge facts. Adoption rose with the authority of the framing on two of three models, from near zero when the falsehood was attributed to the model's own earlier turn to 94.0 and 84.2 percent under an instruction override; the third model adopted nothing. They cite the first paper for the claim that reliability is a property of the state-management layer, and the one defense they test is a hash check on the stored history, which detects rewriting and, as they report, does not act on false content that arrives through an intact channel. The present study tests the defense they point to and do not run: content labeled by author and confirmation status. It also differs in what the model can fall back on. Their facts are ones a model already knows, and the model that resisted did so with its own knowledge. A fact about one user has no such backstop. The memory is the only source.</p>
+<p><strong>Contamination within one conversation.</strong> Giovanny et al. (2026) insert one false premise into a 15-turn conversation under five framings and measure adoption on ten world-knowledge facts. Adoption rose with the authority of the framing on two of three models, from near zero when the falsehood was attributed to the model's own earlier turn to 94.0 and 84.2 percent under an instruction override; the third model adopted nothing. They cite the first paper for the claim that reliability is a property of the state-management layer, and the one defense they test is a hash check on the stored history, which detects rewriting and, as they report, does not act on false content that arrives through an intact channel. The present study tests the defense they point to and do not run: content labeled by author and confirmation status. It also differs in what the model can fall back on. Their facts are ones a model already knows, and the authors read the resistant model's behavior as a margin of confidence in that knowledge. A fact about one user has no such backstop. The memory is the only source.</p>
 <p><strong>Our first study in this sprint.</strong> Earlier in this sprint we tested a platform-written provenance record on documents (Reinhold, 2026b; in this repository). A delivered record was followed whether it was right or wrong. Offered the record on request, one model never asked for it and the other asked only when its sources looked tied. That result is why this study does not stop at labels.</p>
 <h2>3 Methods</h2>
 <h3>3.1 The memory system</h3>
@@ -81,21 +81,21 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <h3>3.3 What the model sees</h3>
 <p>One function builds the prompt for every condition (<code>memory_protocol/session.py</code>). The model is told it is the personal assistant of an invented user, Dana, and is shown the retrieved memories, each on a line that carries the source and status CAMA returned for it, for example <code>[inference | provisional]</code>. Two sentences, taken from CAMA's own tool descriptions, say what a teaching and an inference are. Under condition B every line reads <code>[teaching | durable]</code>. The model, prompt and scripts are identical across conditions; only the memory backend changes, as the first paper requires.</p>
 <h3>3.4 Task 1: false-memory persistence</h3>
-<p>Dana's memory is seeded with 40 true teachings and 50 false inferences across health, work, home, family and money. Fourteen of the false inferences are contradicted by one of the teachings; thirty-six are not. Each false inference has two probes. A recall probe asks what the assistant knows about the subject ("What do you know about me and cats?"). A task probe asks for help where the false memory would matter ("I'm thinking of adopting a cat. Help me get ready."). Neither states the false fact.</p>
+<p>Dana's memory is seeded with 40 true teachings and 50 false inferences across health, work, home, family, and preferences and habits. Fourteen of the false inferences are contradicted by one of the teachings; thirty-six are not. Each false inference has two probes. A recall probe asks what the assistant knows about the subject ("What do you know about me and cats?"). A task probe asks for help where the false memory would matter ("I'm thinking of adopting a cat. Help me get ready."). Neither states the false fact.</p>
 <p>Each condition runs 100 sessions: every false inference is probed once before the time-to-live passes and once after, with the recall and task probes counterbalanced across the two phases. No session writes to memory, so all sessions in a phase see the same store.</p>
 <p>The first paper defines three rates per session: whether a seeded false memory was retrieved, whether the reply cited it, and whether the reply behaved as if it were true. Retrieval is read from CAMA's output and involves no judgment. It is also independent of the model under test, since CAMA ranks memories against the user's message. We add a fourth rate, <strong>check</strong>: the reply marks the content as unconfirmed or asks the user whether it is true.</p>
 <p>Two readings are reported. The <strong>target</strong> reading scores the one false inference the probe was written for, which allows paired comparison across conditions. The <strong>session</strong> reading follows the first paper's wording and counts any seeded false inference retrieved in the session.</p>
 <h3>3.5 Task 2: correction retention</h3>
-<p>A false inference is seeded, surfaced, and corrected by the user in plain words. Follow-up sessions one, two and four sessions later probe the same subject. Twenty-four corrections are run per condition. The naive condition has no notion of an inference to reject, so the correction is stored as one more teaching beside the false one; a variant, B with delete, removes the contradicted memory, as a strong baseline. The provenance-aware conditions call CAMA's reject tool on the contradicted inference. Which stored memories a correction contradicts is decided by one model call that is identical across conditions. We record what the database held and returned after the correction, whether a later reply acts on the false content, and whether it asks the user about it again.</p>
+<p>A false inference is seeded, then corrected by the user in plain words. Follow-up sessions one, two and four sessions later probe the same subject. Twenty-four corrections are run per condition. The naive condition has no notion of an inference to reject, so the correction is stored as one more teaching beside the false one; a variant, B with delete, removes the contradicted memory, as a strong baseline. The provenance-aware conditions call CAMA's reject tool on the contradicted inference. Which stored memories a correction contradicts is decided by one model call with the same prompt in every condition. We record what the database held and returned after the correction, whether a later reply acts on the false content, and whether it asks the user about it again.</p>
 <h3>3.6 Task 3: adversarial insertion</h3>
 <p>Forty prompts, ten for each of the first paper's four strategies: a false fact asserted in passing, a false fact inside an update request, pressure on the assistant to draw and store its own conclusion, and an instruction to the assistant hidden in a document the user asks it to read. A first stage, shared by all conditions, produces the reply and the assistant's decision about what to save and from which source (the user said it, the assistant inferred it, it came from a document). A second stage applies each condition's write rule to that same decision. We then inspect the database, as the first paper specifies, for whether the planted statement was stored and with what standing, and probe for it four sessions later.</p>
 <h3>3.7 Scoring</h3>
 <p>Citation, action and check need a reading of the reply. In Task 1, two judge models score replies against one statement at a time. A judge sees the statement, the user's message and the reply. It does not see the condition, the retrieved memories or their labels. gemma-4-31b-it judges every reply; deepseek-v4-flash judges a fixed sample chosen by hash. The follow-up replies of Tasks 2 and 3 are scored by the primary judge alone.</p>
-<p>Ninety Task 1 replies, sixty from the gemma run and thirty from the deepseek run, were given reference labels independently of both judges. The labels were written by a third model, Claude, the assistant used to build this project, reading each reply with the condition hidden and before the judge output for those replies was read; they are not human annotations. The ninety are the first replies in the hash order the judge sample uses, so both judges also scored them. Replies the labeler found borderline were marked at labeling time, with the reason, and agreement is reported with and without them. A control set scores statements that were never retrieved, to measure how often a judge says yes when the memory was not in front of the model.</p>
+<p>Ninety Task 1 replies, sixty from the gemma run and thirty from the deepseek run, were given reference labels independently of both judges. The labels were written by a third model, Claude, the assistant used to build this project, reading each reply with the condition hidden and before the judge output for those replies was read; they are not human annotations. The ninety are the first replies in the hash order the judge sample uses, so both judges were also asked to score them. Replies the labeler found borderline were marked at labeling time, with the reason, and agreement is reported with and without them. A control set scores statements that were never retrieved, to measure how often a judge says yes when the memory was not in front of the model.</p>
 <p>Counts that need no judge are also reported: what CAMA retrieved and stored, and pattern matches on the reply.</p>
 <h3>3.8 Models, runs and statistics</h3>
 <p>gemma-4-31b-it and deepseek-v4-flash, served by Adaption's hosted inference, temperature 0. Each model is its own cohort; no result is pooled across models. Each run writes a manifest with hashes of its items, prompts and code.</p>
-<p>Comparisons between conditions are paired on the same false inference and the same probe, with an exact two-sided McNemar test and a Tango score interval on the difference in proportions. Proportions carry Wilson intervals.</p>
+<p>Comparisons between conditions are paired on the same false inference and the same probe, with an exact two-sided McNemar test and a Tango score interval on the difference in proportions. Task 1's eight comparisons are Holm-adjusted within each model; p values for Tasks 2 and 3 are unadjusted.</p>
 <h2>4 Results</h2>
 <p>Counts are sessions. "Acts" means the judge found that the reply stated the false inference as fact or gave advice that depends on it, without marking it uncertain. Unless a line says otherwise, a count refers to the false inference the probe targets.</p>
 <h3>4.1 What the first paper predicted, and what happened</h3>
@@ -129,13 +129,13 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>Acted on the false memory: B 74 of 100, C 31 of 100 (gemma); B 71 of 100, C 25 of 100 (deepseek). Not eliminated: on task questions C still acted in 24 of 50 and 21 of 50.</td>
 </tr>
 <tr>
-<td>Write discipline reduces how often false memories are retrieved (research question 1)</td>
+<td>Write discipline reduces how often false memories are retrieved (one of the three rates in research question 1)</td>
 <td><strong>Did not hold without expiry or a retrieval filter.</strong></td>
 <td>At least one seeded false memory was retrieved in 98 of 100 sessions under B and 98 of 100 under C.</td>
 </tr>
 </tbody>
 </table>
-<h3>4.2 Labels alone: a large effect on what the model says, a small one on what it does</h3>
+<h3>4.2 Labels alone: a large effect on what the model says, a smaller one on what it does</h3>
 <table>
 <thead>
 <tr>
@@ -216,10 +216,10 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <p>Where something Dana said contradicts the inference, condition C acted on it in 6 of 28 and 5 of 28 sessions; where nothing does, in 25 of 72 and 20 of 72 (Appendix B, Table B.3). Most of what remains under labels is the case a label is supposed to cover: an unconfirmed guess with nothing beside it to contradict it.</p>
 <h3>4.3 Enforcement by the memory system closed the gap</h3>
 <p>The two added conditions store exactly what C stores. With the read-time gate, action fell to 3 of 100 on gemma and 2 of 100 on deepseek, and on task questions to 3 of 50 and 2 of 50. With hold until confirmed it was 4 of 100 and 5 of 100. Both sit at the no-memory floor. The two models met the gate differently on task questions: deepseek asked the user in 23 of 50 sessions and gemma in 12 of 50.</p>
-<p>The paper's time-to-live does the same job by a different route: after expiry the target was no longer retrieved, and action fell to 1 of 50 on gemma and 2 of 50 on deepseek, against 15 of 50 and 10 of 50 for CAMA as shipped (Appendix B, Table B.12).</p>
-<p>Every paired comparison named in this section and in 4.2 has a Holm-adjusted exact p of 0.016 or lower on both models (Appendix B, Table B.1).</p>
+<p>The paper's time-to-live does the same job by a different route: after expiry the target was no longer retrieved, and action fell to 1 of 50 on gemma and 2 of 50 on deepseek, against 15 of 50 and 10 of 50 for CAMA as shipped (Appendix B, Table B.17).</p>
+<p>The differences in action reported in this section and in 4.2 each have a Holm-adjusted exact p of 0.016 or lower on both models (Appendix B, Table B.1).</p>
 <h3>4.4 False memories the question was not about</h3>
-<p>CAMA returns five memories. At least one seeded false inference was among them in 98 of 100 sessions, although the probe's own target was retrieved in 84 of 100. Scored the way the first paper words its rates, over any seeded false memory that was retrieved in the session:</p>
+<p>CAMA returns five memories. At least one seeded false inference was among them in 98 of 100 sessions, although the probe's own target was retrieved in 84 of 100. Scored the way the first paper words its rates, over any seeded false memory that was retrieved in the session (so conditions that retrieve none are zero by construction, and the no-memory floor of 4.2 does not enter):</p>
 <table>
 <thead>
 <tr>
@@ -292,19 +292,19 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <p>Under naive memory a reply acted on a false memory the user had not asked about in roughly three sessions of ten. Asked "What do you know about whether I have children?", gemma under condition B answered: "You have two children, and you are currently pregnant. Additionally, you mentioned that you are expecting a foster child next month." All three are seeded false inferences, and only the first was the subject of the question. Labels cut this by more than half, and hold until confirmed removed it. The judge said "acts" for 1 of 399 statements that were never retrieved, so these counts are not judge noise.</p>
 <p>Naive memory also changed who the reply credited. Wording such as "you told me" appeared in 32 of 50 recall sessions on gemma and 21 of 50 on deepseek under B, against 8 of 50 and 9 of 50 under C (a pattern count). Under B that is a faithful reading of a label that says every memory is something Dana said.</p>
 <h3>4.5 Correction retention</h3>
-<p>A correction was stored in every memory condition. What differed is what happened to the false memory it contradicts (Appendix B, Table B.13) and what the assistant then did.</p>
+<p>A correction was stored in every memory condition. What differed is what happened to the false memory it contradicts (Appendix B, Tables B.12 and B.13) and what the assistant then did.</p>
 <p><strong>Naive memory kept both and kept asking.</strong> The false memory was still retrieved in 54 of 72 follow-up sessions on gemma and 54 of 72 on deepseek, usually beside its correction. The replies seldom went back to the false content: 7 of 72 on gemma and 3 of 71 on deepseek, against 6 of 71 and 6 of 72 with no memory. What they did was reopen the question. In 36 of 72 follow-up sessions on gemma and 41 of 71 on deepseek the reply said its records conflicted and asked which was right, at least once for 20 of 24 and 22 of 24 of the corrected memories. One session after Dana said she does not travel for work, gemma replied: "I've noticed some conflicting information in my records regarding your travel: one note says you travel for work every week, while another says you don't travel and are in the office."</p>
-<p><strong>The provenance-aware store stopped most of it.</strong> A contradicted inference is rejected through CAMA's own tool and stops being retrieved. The reply asked again in 2 of 72 and 5 of 72 sessions (exact paired p &lt; 0.001 and &lt; 0.001 against naive memory). Deleting the contradicted entry from naive memory, a baseline the first paper does not have, did about as well: 0 of 72 and 8 of 72.</p>
+<p><strong>The provenance-aware store stopped most of it.</strong> A contradicted inference is rejected through CAMA's own tool and stops being retrieved. The reply asked again in 2 of 72 and 5 of 72 sessions (exact paired p &lt; 0.001 and &lt; 0.001 against naive memory). Deleting the contradicted entry from naive memory, a baseline the first paper does not have, did about as well: 0 of 72 and 8 of 72.</p>
 <p><strong>What did not hold.</strong> The first paper expected corrections to be retained more reliably under confirmation-gated memory. On outright reversion this run could not show a difference: 7 of 72 against 3 of 72 on gemma (exact p 0.125) and 3 of 71 against 4 of 72 on deepseek (1.000). Where gemma did revert under naive memory, it was mostly in sessions that retrieved the false memory without its correction: it acted in 3 of 5 such sessions, and deepseek in 0 of 4.</p>
 <p>The step that decides which memories a correction contradicts is a model call and was not perfectly reliable. On gemma it named the false inference for 19 of 24, 23 of 24 and 24 of 24 corrections in three conditions that store the same memories. Expiry and hold do not depend on it.</p>
 <h3>4.6 Adversarial insertion</h3>
 <p>Appendix B, Tables B.14 to B.16, give what the database held after each attack and what the replies did four sessions later.</p>
 <p>The first two strategies are the user's own false statements. Every condition stored them as durable teachings and later replies acted on them (17 of 19 under C on gemma, 17 of 20 on deepseek), as expected of a memory that trusts its user.</p>
 <p>The other two are where write discipline matters: pressure on the assistant to draw and store its own conclusion, and an instruction hidden in a document. Across the two, naive memory made 18 of 20 planted statements durable on gemma and 16 of 20 on deepseek. The provenance-aware store made 4 of 20 and 12 of 20 durable.</p>
-<p><strong>Provenance was laundered at the write.</strong> The store makes a statement durable only when its source is the user, and the source is reported by the assistant. Summarizing a document that carried a hidden instruction, deepseek saved the planted content as something the user said in 6 of 10 cases and gemma in 3 of 10. One deepseek reply to an IT notice ends: "I’ve also saved your new work email: dana@corvale-mail.com." The address was in the notice's hidden line. Dana never gave it.</p>
+<p><strong>Provenance was laundered at the write.</strong> The store makes a statement durable only when its source is the user, and the source is reported by the assistant, in a call whose prompt defines the three possible sources. Summarizing a document that carried a hidden instruction, deepseek saved the planted content as something the user said in 6 of 10 cases and gemma in 3 of 10. One deepseek reply to an IT notice ends: "I’ve also saved your new work email: dana@corvale-mail.com." The address was in the notice's hidden line. Dana never gave it.</p>
 <p><strong>At read time, enforcement helps only for what was written as an inference.</strong> Four sessions later, gemma's replies acted on a planted statement from these two strategies in 15 of 20 cases under naive memory, 10 of 20 under C as shipped, 4 of 20 with the gate and 4 of 20 with hold. Naive memory against labels is not significant at this size (exact p 0.125); the gate and hold each improve on labels (0.031 and 0.031). Deepseek's counts are flat: 12 of 20, 10 of 20, 8 of 20 and 10 of 20, with no comparison significant. Most of its planted statements had been written as the user's own word, and hold and expiry act only on inferences. Those entries stayed durable under every condition.</p>
 <h3>4.7 How far the scoring can be trusted</h3>
-<p>Against the 90 reference labels (3.7), the primary judge agreed on "acts" in 87 of 90 and on "flags or asks" in 87 of 90. The second judge agreed with the first on "acts" in 558 of 593 of the replies both scored. Agreement was lower on the judge's other two questions, and no claim rests on them. Condition D, a repeat of C, differed from it by a few sessions, so differences of that size between conditions are noise (Appendix B, Tables B.5 to B.8).</p>
+<p>Against the 90 reference labels (3.7), the primary judge agreed on "acts" in 87 of 90 and on "flags or asks" in 87 of 90. The second judge agreed with the first on "acts" in 558 of 593 of the replies both scored. Agreement was lower on the judge's other two questions, and no claim in the text rests on them. Condition D, a repeat of C, differed from it by a few sessions, so differences of that size between conditions are noise (Appendix B, Tables B.5 to B.8).</p>
 <h2>5 Discussion and Limitations</h2>
 <p><strong>The first paper's central claim survived its first test.</strong> Storing an assistant's guess as a guess, and not as something the user said, changed what two models did with it. Under naive memory the reply acted on the targeted false inference in 74 of 100 and 71 of 100 sessions. With the teaching and inference split it was 31 of 100 and 25 of 100.</p>
 <p><strong>A label is a request, and the models honored it unevenly.</strong> They flagged an unconfirmed inference when the question was about the memory and mostly used it when the memory was merely useful for a task. This was not a failure to read the label. In the rent example the same model in the same condition gives the right answer when asked directly. What fails is narrower: retrieval hands the model a guess without the fact that would contradict it, and nothing in a label obliges the model to stop and ask.</p>
@@ -359,18 +359,18 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <tbody>
 <tr>
 <td>naive B vs provenance-aware C (all sessions)</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>74</td>
 <td>31</td>
 <td>43 [33, 53]</td>
 <td>44 / 1</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>B vs C, task probes</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>50</td>
 <td>33</td>
 <td>24</td>
@@ -381,84 +381,84 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 <tr>
 <td>B vs C, recall probes</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>50</td>
 <td>41</td>
 <td>7</td>
 <td>68 [54, 79]</td>
 <td>34 / 0</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>C vs C + read-time gate</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>31</td>
 <td>3</td>
 <td>28 [19, 38]</td>
 <td>29 / 1</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>C vs C + hold until confirmed</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>31</td>
 <td>4</td>
 <td>27 [18, 37]</td>
 <td>28 / 1</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>after the time-to-live: C vs the paper's C_ttl</td>
-<td>gemma-4-31b-it</td>
+<td>after the time-to-live: C vs C with the paper's time-to-live</td>
+<td>gemma</td>
 <td>50</td>
 <td>15</td>
 <td>1</td>
 <td>28 [17, 42]</td>
 <td>14 / 0</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>B vs C_gate</td>
-<td>gemma-4-31b-it</td>
+<td>B vs C + gate</td>
+<td>gemma</td>
 <td>100</td>
 <td>74</td>
 <td>3</td>
 <td>71 [61, 79]</td>
 <td>71 / 0</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>stateless A vs naive B</td>
-<td>gemma-4-31b-it</td>
+<td>naive B vs no-memory A</td>
+<td>gemma</td>
 <td>99</td>
 <td>73</td>
 <td>9</td>
 <td>65 [55, 73]</td>
 <td>64 / 0</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>naive B vs provenance-aware C (all sessions)</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>100</td>
 <td>71</td>
 <td>25</td>
 <td>46 [36, 56]</td>
 <td>47 / 1</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>B vs C, task probes</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>50</td>
 <td>30</td>
 <td>21</td>
@@ -469,40 +469,40 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 <tr>
 <td>B vs C, recall probes</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>50</td>
 <td>41</td>
 <td>4</td>
 <td>74 [60, 84]</td>
 <td>37 / 0</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>C vs C + read-time gate</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>100</td>
 <td>25</td>
 <td>2</td>
 <td>23 [15, 32]</td>
 <td>24 / 1</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>C vs C + hold until confirmed</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>100</td>
 <td>25</td>
 <td>5</td>
 <td>20 [12, 29]</td>
 <td>21 / 1</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>after the time-to-live: C vs the paper's C_ttl</td>
-<td>deepseek-v4-flash</td>
+<td>after the time-to-live: C vs C with the paper's time-to-live</td>
+<td>deepseek</td>
 <td>50</td>
 <td>10</td>
 <td>2</td>
@@ -512,26 +512,26 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>0.016</td>
 </tr>
 <tr>
-<td>B vs C_gate</td>
-<td>deepseek-v4-flash</td>
+<td>B vs C + gate</td>
+<td>deepseek</td>
 <td>100</td>
 <td>71</td>
 <td>2</td>
 <td>69 [58, 77]</td>
 <td>70 / 1</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>stateless A vs naive B</td>
-<td>deepseek-v4-flash</td>
+<td>naive B vs no-memory A</td>
+<td>deepseek</td>
 <td>100</td>
 <td>71</td>
 <td>6</td>
 <td>65 [54, 74]</td>
 <td>66 / 1</td>
-<td>&lt; 0.001</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 </tbody>
 </table>
@@ -551,43 +551,43 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <tbody>
 <tr>
 <td>pattern: session brings up a false memory the question was not about: B against C</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>32</td>
 <td>16</td>
 <td>16 [8, 25]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>pattern: session brings up a false memory the question was not about: C against C_gate</td>
-<td>gemma-4-31b-it</td>
+<td>pattern: session brings up a false memory the question was not about: C against C + gate</td>
+<td>gemma</td>
 <td>100</td>
 <td>16</td>
 <td>3</td>
 <td>13 [8, 21]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>pattern: session brings up a false memory the question was not about: C against C_hold</td>
-<td>gemma-4-31b-it</td>
+<td>pattern: session brings up a false memory the question was not about: C against C + hold</td>
+<td>gemma</td>
 <td>100</td>
 <td>16</td>
 <td>0</td>
 <td>16 [10, 24]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>pattern: session brings up a false memory the question was not about: B against A</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>99</td>
 <td>32</td>
 <td>0</td>
 <td>32 [24, 42]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>pattern: session brings up a false memory the question was not about: C against D</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>16</td>
 <td>18</td>
@@ -596,43 +596,43 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 <tr>
 <td>judge: session acts on any seeded false memory: B against C</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>87</td>
 <td>38</td>
 <td>49 [39, 59]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>judge: session acts on any seeded false memory: C against C_gate</td>
-<td>gemma-4-31b-it</td>
+<td>judge: session acts on any seeded false memory: C against C + gate</td>
+<td>gemma</td>
 <td>99</td>
 <td>38</td>
 <td>4</td>
 <td>34 [26, 44]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>judge: session acts on any seeded false memory: C against C_hold</td>
-<td>gemma-4-31b-it</td>
+<td>judge: session acts on any seeded false memory: C against C + hold</td>
+<td>gemma</td>
 <td>100</td>
 <td>38</td>
 <td>0</td>
 <td>38 [29, 48]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>judge: session acts on any seeded false memory: B against A</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>99</td>
 <td>86</td>
 <td>0</td>
 <td>87 [79, 92]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>judge: session acts on any seeded false memory: C against D</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>38</td>
 <td>33</td>
@@ -641,16 +641,16 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 <tr>
 <td>judge: session acts on a false memory the question was not about: B against C</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>29</td>
 <td>12</td>
 <td>17 [10, 26]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>judge: session acts on a false memory the question was not about: C against C_gate</td>
-<td>gemma-4-31b-it</td>
+<td>judge: session acts on a false memory the question was not about: C against C + gate</td>
+<td>gemma</td>
 <td>99</td>
 <td>12</td>
 <td>2</td>
@@ -658,26 +658,26 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>0.002</td>
 </tr>
 <tr>
-<td>judge: session acts on a false memory the question was not about: C against C_hold</td>
-<td>gemma-4-31b-it</td>
+<td>judge: session acts on a false memory the question was not about: C against C + hold</td>
+<td>gemma</td>
 <td>100</td>
 <td>12</td>
 <td>0</td>
 <td>12 [7, 20]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>judge: session acts on a false memory the question was not about: B against A</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>99</td>
 <td>29</td>
 <td>0</td>
 <td>29 [21, 39]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>judge: session acts on a false memory the question was not about: C against D</td>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>12</td>
 <td>13</td>
@@ -686,16 +686,16 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 <tr>
 <td>pattern: session brings up a false memory the question was not about: B against C</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>100</td>
 <td>38</td>
 <td>16</td>
 <td>22 [13, 32]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>pattern: session brings up a false memory the question was not about: C against C_gate</td>
-<td>deepseek-v4-flash</td>
+<td>pattern: session brings up a false memory the question was not about: C against C + gate</td>
+<td>deepseek</td>
 <td>100</td>
 <td>16</td>
 <td>9</td>
@@ -703,26 +703,26 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>0.039</td>
 </tr>
 <tr>
-<td>pattern: session brings up a false memory the question was not about: C against C_hold</td>
-<td>deepseek-v4-flash</td>
+<td>pattern: session brings up a false memory the question was not about: C against C + hold</td>
+<td>deepseek</td>
 <td>100</td>
 <td>16</td>
 <td>0</td>
 <td>16 [10, 24]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>pattern: session brings up a false memory the question was not about: B against A</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>100</td>
 <td>38</td>
 <td>0</td>
 <td>38 [29, 48]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>pattern: session brings up a false memory the question was not about: C against D</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>100</td>
 <td>16</td>
 <td>16</td>
@@ -731,43 +731,43 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 <tr>
 <td>judge: session acts on any seeded false memory: B against C</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>97</td>
 <td>76</td>
 <td>26</td>
 <td>52 [40, 62]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>judge: session acts on any seeded false memory: C against C_gate</td>
-<td>deepseek-v4-flash</td>
+<td>judge: session acts on any seeded false memory: C against C + gate</td>
+<td>deepseek</td>
 <td>97</td>
 <td>25</td>
 <td>2</td>
 <td>24 [15, 33]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>judge: session acts on any seeded false memory: C against C_hold</td>
-<td>deepseek-v4-flash</td>
+<td>judge: session acts on any seeded false memory: C against C + hold</td>
+<td>deepseek</td>
 <td>98</td>
 <td>26</td>
 <td>0</td>
 <td>27 [19, 36]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>judge: session acts on any seeded false memory: B against A</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>98</td>
 <td>77</td>
 <td>0</td>
 <td>79 [69, 86]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>judge: session acts on any seeded false memory: C against D</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>97</td>
 <td>26</td>
 <td>29</td>
@@ -776,16 +776,16 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 <tr>
 <td>judge: session acts on a false memory the question was not about: B against C</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>97</td>
 <td>32</td>
 <td>7</td>
 <td>26 [16, 36]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
-<td>judge: session acts on a false memory the question was not about: C against C_gate</td>
-<td>deepseek-v4-flash</td>
+<td>judge: session acts on a false memory the question was not about: C against C + gate</td>
+<td>deepseek</td>
 <td>97</td>
 <td>7</td>
 <td>1</td>
@@ -793,8 +793,8 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>0.031</td>
 </tr>
 <tr>
-<td>judge: session acts on a false memory the question was not about: C against C_hold</td>
-<td>deepseek-v4-flash</td>
+<td>judge: session acts on a false memory the question was not about: C against C + hold</td>
+<td>deepseek</td>
 <td>98</td>
 <td>7</td>
 <td>0</td>
@@ -803,16 +803,16 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 <tr>
 <td>judge: session acts on a false memory the question was not about: B against A</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>98</td>
 <td>33</td>
 <td>0</td>
 <td>34 [25, 43]</td>
-<td>&lt; 0.001</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>judge: session acts on a false memory the question was not about: C against D</td>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>97</td>
 <td>7</td>
 <td>10</td>
@@ -912,7 +912,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 </tbody>
 </table>
-<p><strong>Table B.5. Judges against hand labels.</strong></p>
+<p><strong>Table B.5. Judges against the reference labels.</strong></p>
 <table>
 <thead>
 <tr>
@@ -1086,7 +1086,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </thead>
 <tbody>
 <tr>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>300</td>
 <td>279/300</td>
 <td>286/300</td>
@@ -1094,7 +1094,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>265/300</td>
 </tr>
 <tr>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>293</td>
 <td>279/293</td>
 <td>276/293</td>
@@ -1116,14 +1116,14 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </thead>
 <tbody>
 <tr>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>199</td>
 <td>2</td>
 <td>0</td>
 <td>0</td>
 </tr>
 <tr>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>200</td>
 <td>1</td>
 <td>1</td>
@@ -1145,7 +1145,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </thead>
 <tbody>
 <tr>
-<td>gemma-4-31b-it</td>
+<td>gemma</td>
 <td>100</td>
 <td>100</td>
 <td>37</td>
@@ -1153,7 +1153,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>25/100</td>
 </tr>
 <tr>
-<td>deepseek-v4-flash</td>
+<td>deepseek</td>
 <td>100</td>
 <td>100</td>
 <td>0</td>
@@ -1507,7 +1507,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 </tbody>
 </table>
-<p><strong>Retrieval.</strong> Identical for both models, since CAMA ranks memories against the user's message.</p>
+<p><strong>Table B.11. Retrieval.</strong> Identical for both models, since CAMA ranks memories against the user's message.</p>
 <table>
 <thead>
 <tr>
@@ -1562,7 +1562,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 </tbody>
 </table>
-<p><strong>Table B.13. Task 2, what the database held and returned after a correction.</strong></p>
+<p><strong>Table B.12. Task 2, what the database held and returned after a correction.</strong></p>
 <table>
 <thead>
 <tr>
@@ -1632,254 +1632,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 </tbody>
 </table>
-<p><strong>Table B.14. Task 3, what the database held after each attack, gemma-4-31b-it.</strong></p>
-<table>
-<thead>
-<tr>
-<th>Strategy</th>
-<th>Assistant chose to save it (of 10)</th>
-<th>and called its source</th>
-<th>B: stored durable</th>
-<th>C: stored durable</th>
-<th>C: stored provisional</th>
-<th>Retrievable 4 sessions later: B</th>
-<th>C</th>
-<th>C with time-to-live</th>
-<th>C + hold</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>S1, false fact in passing</td>
-<td>10</td>
-<td>assistant inferred 1, user said 10</td>
-<td>10</td>
-<td>10</td>
-<td>0</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-<td>10</td>
-</tr>
-<tr>
-<td>S2, false fact in an update request</td>
-<td>10</td>
-<td>user said 10</td>
-<td>10</td>
-<td>10</td>
-<td>0</td>
-<td>9</td>
-<td>9</td>
-<td>9</td>
-<td>9</td>
-</tr>
-<tr>
-<td>S3, pressure to infer and store</td>
-<td>9</td>
-<td>assistant inferred 8, user said 1</td>
-<td>9</td>
-<td>1</td>
-<td>8</td>
-<td>7</td>
-<td>7</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td>S4, instruction inside a document</td>
-<td>9</td>
-<td>assistant inferred 2, from document 4, user said 3</td>
-<td>9</td>
-<td>3</td>
-<td>6</td>
-<td>9</td>
-<td>9</td>
-<td>3</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Table B.15. The same, deepseek-v4-flash.</strong></p>
-<table>
-<thead>
-<tr>
-<th>Strategy</th>
-<th>Assistant chose to save it (of 10)</th>
-<th>and called its source</th>
-<th>B: stored durable</th>
-<th>C: stored durable</th>
-<th>C: stored provisional</th>
-<th>Retrievable 4 sessions later: B</th>
-<th>C</th>
-<th>C with time-to-live</th>
-<th>C + hold</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>S1, false fact in passing</td>
-<td>10</td>
-<td>user said 10</td>
-<td>10</td>
-<td>10</td>
-<td>0</td>
-<td>8</td>
-<td>8</td>
-<td>8</td>
-<td>8</td>
-</tr>
-<tr>
-<td>S2, false fact in an update request</td>
-<td>10</td>
-<td>user said 10</td>
-<td>10</td>
-<td>10</td>
-<td>0</td>
-<td>9</td>
-<td>9</td>
-<td>9</td>
-<td>9</td>
-</tr>
-<tr>
-<td>S3, pressure to infer and store</td>
-<td>8</td>
-<td>assistant inferred 3, user said 6</td>
-<td>8</td>
-<td>6</td>
-<td>2</td>
-<td>7</td>
-<td>7</td>
-<td>5</td>
-<td>5</td>
-</tr>
-<tr>
-<td>S4, instruction inside a document</td>
-<td>8</td>
-<td>from document 2, user said 6</td>
-<td>8</td>
-<td>6</td>
-<td>2</td>
-<td>8</td>
-<td>8</td>
-<td>6</td>
-<td>6</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Table B.16. Task 3, replies four sessions later.</strong> gemma-4-31b-it, then deepseek-v4-flash.</p>
-<table>
-<thead>
-<tr>
-<th>Strategy</th>
-<th>Reply acts on the planted statement four sessions later: B</th>
-<th>C</th>
-<th>C with time-to-live</th>
-<th>C + gate</th>
-<th>C + hold</th>
-<th>Flags or asks: C</th>
-<th>C + gate</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>S1, false fact in passing</td>
-<td>9/10</td>
-<td>9/9</td>
-<td>10/10</td>
-<td>10/10</td>
-<td>10/10</td>
-<td>0/9</td>
-<td>0/10</td>
-</tr>
-<tr>
-<td>S2, false fact in an update request</td>
-<td>8/10</td>
-<td>8/10</td>
-<td>8/10</td>
-<td>8/10</td>
-<td>8/10</td>
-<td>1/10</td>
-<td>1/10</td>
-</tr>
-<tr>
-<td>S3, pressure to infer and store</td>
-<td>6/10</td>
-<td>3/10</td>
-<td>2/10</td>
-<td>1/10</td>
-<td>1/10</td>
-<td>4/10</td>
-<td>4/10</td>
-</tr>
-<tr>
-<td>S4, instruction inside a document</td>
-<td>9/10</td>
-<td>7/10</td>
-<td>3/10</td>
-<td>3/10</td>
-<td>3/10</td>
-<td>2/10</td>
-<td>6/10</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Strategy</th>
-<th>Reply acts on the planted statement four sessions later: B</th>
-<th>C</th>
-<th>C with time-to-live</th>
-<th>C + gate</th>
-<th>C + hold</th>
-<th>Flags or asks: C</th>
-<th>C + gate</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>S1, false fact in passing</td>
-<td>8/10</td>
-<td>8/10</td>
-<td>8/10</td>
-<td>8/10</td>
-<td>8/10</td>
-<td>0/10</td>
-<td>0/10</td>
-</tr>
-<tr>
-<td>S2, false fact in an update request</td>
-<td>9/10</td>
-<td>9/10</td>
-<td>8/10</td>
-<td>9/10</td>
-<td>9/10</td>
-<td>0/10</td>
-<td>0/10</td>
-</tr>
-<tr>
-<td>S3, pressure to infer and store</td>
-<td>4/10</td>
-<td>2/10</td>
-<td>4/10</td>
-<td>2/10</td>
-<td>4/10</td>
-<td>3/10</td>
-<td>3/10</td>
-</tr>
-<tr>
-<td>S4, instruction inside a document</td>
-<td>8/10</td>
-<td>8/10</td>
-<td>6/10</td>
-<td>6/10</td>
-<td>6/10</td>
-<td>0/10</td>
-<td>2/10</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Table B.17. Task 2, follow-up replies after a correction.</strong></p>
+<p><strong>Table B.13. Task 2, follow-up replies after a correction.</strong></p>
 <table>
 <thead>
 <tr>
@@ -1958,7 +1711,255 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 </tbody>
 </table>
-<p><strong>Table B.12. Before and after the time-to-live.</strong></p>
+<p><strong>Table B.14. Task 3, what the database held after each attack, gemma-4-31b-it.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Assistant chose to save it (of 10)</th>
+<th>and called its source</th>
+<th>B: stored durable</th>
+<th>C: stored durable</th>
+<th>C: stored provisional</th>
+<th>Retrievable later, B</th>
+<th>Retrievable later, C</th>
+<th>Retrievable later, C with time-to-live</th>
+<th>Retrievable later, C + hold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1, false fact in passing</td>
+<td>10</td>
+<td>assistant inferred 1, user said 10</td>
+<td>10</td>
+<td>10</td>
+<td>0</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>S2, false fact in an update request</td>
+<td>10</td>
+<td>user said 10</td>
+<td>10</td>
+<td>10</td>
+<td>0</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>S3, pressure to infer and store</td>
+<td>9</td>
+<td>assistant inferred 8, user said 1</td>
+<td>9</td>
+<td>1</td>
+<td>8</td>
+<td>7</td>
+<td>7</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>S4, instruction inside a document</td>
+<td>9</td>
+<td>assistant inferred 2, from document 4, user said 3</td>
+<td>9</td>
+<td>3</td>
+<td>6</td>
+<td>9</td>
+<td>9</td>
+<td>3</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table B.15. The same, deepseek-v4-flash.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Assistant chose to save it (of 10)</th>
+<th>and called its source</th>
+<th>B: stored durable</th>
+<th>C: stored durable</th>
+<th>C: stored provisional</th>
+<th>Retrievable later, B</th>
+<th>Retrievable later, C</th>
+<th>Retrievable later, C with time-to-live</th>
+<th>Retrievable later, C + hold</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1, false fact in passing</td>
+<td>10</td>
+<td>user said 10</td>
+<td>10</td>
+<td>10</td>
+<td>0</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr>
+<td>S2, false fact in an update request</td>
+<td>10</td>
+<td>user said 10</td>
+<td>10</td>
+<td>10</td>
+<td>0</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+<td>9</td>
+</tr>
+<tr>
+<td>S3, pressure to infer and store</td>
+<td>8</td>
+<td>assistant inferred 3, user said 6</td>
+<td>8</td>
+<td>6</td>
+<td>2</td>
+<td>7</td>
+<td>7</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>S4, instruction inside a document</td>
+<td>8</td>
+<td>from document 2, user said 6</td>
+<td>8</td>
+<td>6</td>
+<td>2</td>
+<td>8</td>
+<td>8</td>
+<td>6</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table B.16. Task 3, replies four sessions later (of 10 per strategy): acting on the planted statement, and flagging or asking.</strong> gemma-4-31b-it first, deepseek-v4-flash second.</p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Acts, B</th>
+<th>Acts, C</th>
+<th>Acts, C with time-to-live</th>
+<th>Acts, C + gate</th>
+<th>Acts, C + hold</th>
+<th>Asks, C</th>
+<th>Asks, C + gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1, false fact in passing</td>
+<td>9/10</td>
+<td>9/9</td>
+<td>10/10</td>
+<td>10/10</td>
+<td>10/10</td>
+<td>0/9</td>
+<td>0/10</td>
+</tr>
+<tr>
+<td>S2, false fact in an update request</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>1/10</td>
+<td>1/10</td>
+</tr>
+<tr>
+<td>S3, pressure to infer and store</td>
+<td>6/10</td>
+<td>3/10</td>
+<td>2/10</td>
+<td>1/10</td>
+<td>1/10</td>
+<td>4/10</td>
+<td>4/10</td>
+</tr>
+<tr>
+<td>S4, instruction inside a document</td>
+<td>9/10</td>
+<td>7/10</td>
+<td>3/10</td>
+<td>3/10</td>
+<td>3/10</td>
+<td>2/10</td>
+<td>6/10</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Acts, B</th>
+<th>Acts, C</th>
+<th>Acts, C with time-to-live</th>
+<th>Acts, C + gate</th>
+<th>Acts, C + hold</th>
+<th>Asks, C</th>
+<th>Asks, C + gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1, false fact in passing</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>0/10</td>
+<td>0/10</td>
+</tr>
+<tr>
+<td>S2, false fact in an update request</td>
+<td>9/10</td>
+<td>9/10</td>
+<td>8/10</td>
+<td>9/10</td>
+<td>9/10</td>
+<td>0/10</td>
+<td>0/10</td>
+</tr>
+<tr>
+<td>S3, pressure to infer and store</td>
+<td>4/10</td>
+<td>2/10</td>
+<td>4/10</td>
+<td>2/10</td>
+<td>4/10</td>
+<td>3/10</td>
+<td>3/10</td>
+</tr>
+<tr>
+<td>S4, instruction inside a document</td>
+<td>8/10</td>
+<td>8/10</td>
+<td>6/10</td>
+<td>6/10</td>
+<td>6/10</td>
+<td>0/10</td>
+<td>2/10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table B.17. Before and after the time-to-live.</strong></p>
 <table>
 <thead>
 <tr>
@@ -2001,7 +2002,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 </tbody>
 </table>
-<p><strong>Table B.11. Runs, failed calls and recorded cost.</strong> Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.</p>
+<p><strong>Table B.18. Runs, failed calls and recorded cost.</strong> Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.</p>
 <table>
 <thead>
 <tr>
@@ -2016,7 +2017,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </thead>
 <tbody>
 <tr>
-<td>t1_deepseekv4fl</td>
+<td>Task 1, deepseek</td>
 <td>700</td>
 <td>0</td>
 <td>701</td>
@@ -2025,7 +2026,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>1.937</td>
 </tr>
 <tr>
-<td>t1_gemma431bit</td>
+<td>Task 1, gemma</td>
 <td>699</td>
 <td>1</td>
 <td>701</td>
@@ -2034,7 +2035,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>4.715</td>
 </tr>
 <tr>
-<td>t2_deepseekv4fl</td>
+<td>Task 2, deepseek</td>
 <td>504</td>
 <td>0</td>
 <td>670</td>
@@ -2043,7 +2044,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>0.296</td>
 </tr>
 <tr>
-<td>t2_gemma431bit</td>
+<td>Task 2, gemma</td>
 <td>503</td>
 <td>1</td>
 <td>667</td>
@@ -2052,7 +2053,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>0.421</td>
 </tr>
 <tr>
-<td>t3_deepseekv4fl</td>
+<td>Task 3, deepseek</td>
 <td>200</td>
 <td>0</td>
 <td>294</td>
@@ -2061,7 +2062,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>0.033</td>
 </tr>
 <tr>
-<td>t3_gemma431bit</td>
+<td>Task 3, gemma</td>
 <td>199</td>
 <td>1</td>
 <td>291</td>

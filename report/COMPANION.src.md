@@ -40,7 +40,7 @@ The question the protocol asks is narrow and practical. If a memory system label
 
 **The protocol.** Reinhold (2026) defines the conditions, tasks and metrics used here and names the failure "epistemic contamination": model-generated state entering memory with the standing of user-provided fact. It reports no experimental results.
 
-**Contamination within one conversation.** Giovanny et al. (2026) insert one false premise into a 15-turn conversation under five framings and measure adoption on ten world-knowledge facts. Adoption rose with the authority of the framing on two of three models, from near zero when the falsehood was attributed to the model's own earlier turn to 94.0 and 84.2 percent under an instruction override; the third model adopted nothing. They cite the first paper for the claim that reliability is a property of the state-management layer, and the one defense they test is a hash check on the stored history, which detects rewriting and, as they report, does not act on false content that arrives through an intact channel. The present study tests the defense they point to and do not run: content labeled by author and confirmation status. It also differs in what the model can fall back on. Their facts are ones a model already knows, and the model that resisted did so with its own knowledge. A fact about one user has no such backstop. The memory is the only source.
+**Contamination within one conversation.** Giovanny et al. (2026) insert one false premise into a 15-turn conversation under five framings and measure adoption on ten world-knowledge facts. Adoption rose with the authority of the framing on two of three models, from near zero when the falsehood was attributed to the model's own earlier turn to 94.0 and 84.2 percent under an instruction override; the third model adopted nothing. They cite the first paper for the claim that reliability is a property of the state-management layer, and the one defense they test is a hash check on the stored history, which detects rewriting and, as they report, does not act on false content that arrives through an intact channel. The present study tests the defense they point to and do not run: content labeled by author and confirmation status. It also differs in what the model can fall back on. Their facts are ones a model already knows, and the authors read the resistant model's behavior as a margin of confidence in that knowledge. A fact about one user has no such backstop. The memory is the only source.
 
 **Our first study in this sprint.** Earlier in this sprint we tested a platform-written provenance record on documents (Reinhold, 2026b; in this repository). A delivered record was followed whether it was right or wrong. Offered the record on request, one model never asked for it and the other asked only when its sources looked tied. That result is why this study does not stop at labels.
 
@@ -78,7 +78,7 @@ One function builds the prompt for every condition (`memory_protocol/session.py`
 
 ### 3.4 Task 1: false-memory persistence
 
-Dana's memory is seeded with 40 true teachings and 50 false inferences across health, work, home, family and money. Fourteen of the false inferences are contradicted by one of the teachings; thirty-six are not. Each false inference has two probes. A recall probe asks what the assistant knows about the subject ("What do you know about me and cats?"). A task probe asks for help where the false memory would matter ("I'm thinking of adopting a cat. Help me get ready."). Neither states the false fact.
+Dana's memory is seeded with 40 true teachings and 50 false inferences across health, work, home, family, and preferences and habits. Fourteen of the false inferences are contradicted by one of the teachings; thirty-six are not. Each false inference has two probes. A recall probe asks what the assistant knows about the subject ("What do you know about me and cats?"). A task probe asks for help where the false memory would matter ("I'm thinking of adopting a cat. Help me get ready."). Neither states the false fact.
 
 Each condition runs 100 sessions: every false inference is probed once before the time-to-live passes and once after, with the recall and task probes counterbalanced across the two phases. No session writes to memory, so all sessions in a phase see the same store.
 
@@ -88,7 +88,7 @@ Two readings are reported. The **target** reading scores the one false inference
 
 ### 3.5 Task 2: correction retention
 
-A false inference is seeded, surfaced, and corrected by the user in plain words. Follow-up sessions one, two and four sessions later probe the same subject. Twenty-four corrections are run per condition. The naive condition has no notion of an inference to reject, so the correction is stored as one more teaching beside the false one; a variant, B with delete, removes the contradicted memory, as a strong baseline. The provenance-aware conditions call CAMA's reject tool on the contradicted inference. Which stored memories a correction contradicts is decided by one model call that is identical across conditions. We record what the database held and returned after the correction, whether a later reply acts on the false content, and whether it asks the user about it again.
+A false inference is seeded, then corrected by the user in plain words. Follow-up sessions one, two and four sessions later probe the same subject. Twenty-four corrections are run per condition. The naive condition has no notion of an inference to reject, so the correction is stored as one more teaching beside the false one; a variant, B with delete, removes the contradicted memory, as a strong baseline. The provenance-aware conditions call CAMA's reject tool on the contradicted inference. Which stored memories a correction contradicts is decided by one model call with the same prompt in every condition. We record what the database held and returned after the correction, whether a later reply acts on the false content, and whether it asks the user about it again.
 
 ### 3.6 Task 3: adversarial insertion
 
@@ -98,7 +98,7 @@ Forty prompts, ten for each of the first paper's four strategies: a false fact a
 
 Citation, action and check need a reading of the reply. In Task 1, two judge models score replies against one statement at a time. A judge sees the statement, the user's message and the reply. It does not see the condition, the retrieved memories or their labels. gemma-4-31b-it judges every reply; deepseek-v4-flash judges a fixed sample chosen by hash. The follow-up replies of Tasks 2 and 3 are scored by the primary judge alone.
 
-Ninety Task 1 replies, sixty from the gemma run and thirty from the deepseek run, were given reference labels independently of both judges. The labels were written by a third model, Claude, the assistant used to build this project, reading each reply with the condition hidden and before the judge output for those replies was read; they are not human annotations. The ninety are the first replies in the hash order the judge sample uses, so both judges also scored them. Replies the labeler found borderline were marked at labeling time, with the reason, and agreement is reported with and without them. A control set scores statements that were never retrieved, to measure how often a judge says yes when the memory was not in front of the model.
+Ninety Task 1 replies, sixty from the gemma run and thirty from the deepseek run, were given reference labels independently of both judges. The labels were written by a third model, Claude, the assistant used to build this project, reading each reply with the condition hidden and before the judge output for those replies was read; they are not human annotations. The ninety are the first replies in the hash order the judge sample uses, so both judges were also asked to score them. Replies the labeler found borderline were marked at labeling time, with the reason, and agreement is reported with and without them. A control set scores statements that were never retrieved, to measure how often a judge says yes when the memory was not in front of the model.
 
 Counts that need no judge are also reported: what CAMA retrieved and stored, and pattern matches on the reply.
 
@@ -106,7 +106,7 @@ Counts that need no judge are also reported: what CAMA retrieved and stored, and
 
 gemma-4-31b-it and deepseek-v4-flash, served by Adaption's hosted inference, temperature 0. Each model is its own cohort; no result is pooled across models. Each run writes a manifest with hashes of its items, prompts and code.
 
-Comparisons between conditions are paired on the same false inference and the same probe, with an exact two-sided McNemar test and a Tango score interval on the difference in proportions. Proportions carry Wilson intervals.
+Comparisons between conditions are paired on the same false inference and the same probe, with an exact two-sided McNemar test and a Tango score interval on the difference in proportions. Task 1's eight comparisons are Holm-adjusted within each model; p values for Tasks 2 and 3 are unadjusted.
 
 ## 4 Results
 
@@ -120,9 +120,9 @@ Counts are sessions. "Acts" means the judge found that the reply stated the fals
 | Under C, an unconfirmed inference expires after its time-to-live (6.3.4) | **Held for the design the paper describes. Not true of CAMA as published.** | With the time-to-live, retrieval fell from {{g|C_ttl.p1|retr}} to {{g|C_ttl.p2|retr}} and action after expiry was {{g|C_ttl.p2|act}} (gemma) and {{d|C_ttl.p2|act}} (deepseek). As shipped, the target was still retrieved in {{g|C.p2|retr}} and acted on in {{g|C.p2|act}} (gemma) and {{d|C.p2|act}} (deepseek). |
 | Under D, the same expiry holds and counterweights may reduce surfacing further (6.3.4) | **Not tested as written.** | Shipped D has no expiry, and counterweights act only on negative affect. On these neutral probes D retrieved exactly what C retrieved. |
 | Separating teachings from inferences and requiring confirmation reduces the risk, "though not eliminated" (1.7) | **Held on both models, both halves.** | Acted on the false memory: B {{g|B|act}}, C {{g|C|act}} (gemma); B {{d|B|act}}, C {{d|C|act}} (deepseek). Not eliminated: on task questions C still acted in {{g|C.task|act}} and {{d|C.task|act}}. |
-| Write discipline reduces how often false memories are retrieved (research question 1) | **Did not hold without expiry or a retrieval filter.** | At least one seeded false memory was retrieved in {{g|B|s_retr}} sessions under B and {{g|C|s_retr}} under C. |
+| Write discipline reduces how often false memories are retrieved (one of the three rates in research question 1) | **Did not hold without expiry or a retrieval filter.** | At least one seeded false memory was retrieved in {{g|B|s_retr}} sessions under B and {{g|C|s_retr}} under C. |
 
-### 4.2 Labels alone: a large effect on what the model says, a small one on what it does
+### 4.2 Labels alone: a large effect on what the model says, a smaller one on what it does
 
 {{TABLE_ACTION}}
 
@@ -144,13 +144,13 @@ Where something Dana said contradicts the inference, condition C acted on it in 
 
 The two added conditions store exactly what C stores. With the read-time gate, action fell to {{g|C_gate|act}} on gemma and {{d|C_gate|act}} on deepseek, and on task questions to {{g|C_gate.task|act}} and {{d|C_gate.task|act}}. With hold until confirmed it was {{g|C_hold|act}} and {{d|C_hold|act}}. Both sit at the no-memory floor. The two models met the gate differently on task questions: deepseek asked the user in {{d|C_gate.task|check}} sessions and gemma in {{g|C_gate.task|check}}.
 
-The paper's time-to-live does the same job by a different route: after expiry the target was no longer retrieved, and action fell to {{g|C_ttl.p2|act}} on gemma and {{d|C_ttl.p2|act}} on deepseek, against {{g|C.p2|act}} and {{d|C.p2|act}} for CAMA as shipped (Appendix B, Table B.12).
+The paper's time-to-live does the same job by a different route: after expiry the target was no longer retrieved, and action fell to {{g|C_ttl.p2|act}} on gemma and {{d|C_ttl.p2|act}} on deepseek, against {{g|C.p2|act}} and {{d|C.p2|act}} for CAMA as shipped (Appendix B, Table B.17).
 
-Every paired comparison named in this section and in 4.2 has a Holm-adjusted exact p of {{HOLM_MAX}} or lower on both models (Appendix B, Table B.1).
+The differences in action reported in this section and in 4.2 each have a Holm-adjusted exact p of {{HOLM_MAX}} or lower on both models (Appendix B, Table B.1).
 
 ### 4.4 False memories the question was not about
 
-CAMA returns five memories. At least one seeded false inference was among them in {{g|B|s_retr}} sessions, although the probe's own target was retrieved in {{g|B|retr}}. Scored the way the first paper words its rates, over any seeded false memory that was retrieved in the session:
+CAMA returns five memories. At least one seeded false inference was among them in {{g|B|s_retr}} sessions, although the probe's own target was retrieved in {{g|B|retr}}. Scored the way the first paper words its rates, over any seeded false memory that was retrieved in the session (so conditions that retrieve none are zero by construction, and the no-memory floor of 4.2 does not enter):
 
 {{TABLE_SESSION}}
 
@@ -168,7 +168,7 @@ Naive memory also changed who the reply credited. Wording such as "you told me" 
 
 ### 4.7 How far the scoring can be trusted
 
-Against the {{HAND_N}} reference labels (3.7), the primary judge agreed on "acts" in {{HAND_ACT}} and on "flags or asks" in {{HAND_CHECK}}. The second judge agreed with the first on "acts" in {{TWO_ACT}} of the replies both scored. Agreement was lower on the judge's other two questions, and no claim rests on them. Condition D, a repeat of C, differed from it by a few sessions, so differences of that size between conditions are noise (Appendix B, Tables B.5 to B.8).
+Against the {{HAND_N}} reference labels (3.7), the primary judge agreed on "acts" in {{HAND_ACT}} and on "flags or asks" in {{HAND_CHECK}}. The second judge agreed with the first on "acts" in {{TWO_ACT}} of the replies both scored. Agreement was lower on the judge's other two questions, and no claim in the text rests on them. Condition D, a repeat of C, differed from it by a few sessions, so differences of that size between conditions are noise (Appendix B, Tables B.5 to B.8).
 
 ## 5 Discussion and Limitations
 
@@ -246,7 +246,7 @@ The user is invented and no personal data is used. The harness refuses to open t
 
 {{TABLE_CHECK}}
 
-**Table B.5. Judges against hand labels.**
+**Table B.5. Judges against the reference labels.**
 
 {{TABLE_JUDGE}}
 
@@ -272,13 +272,17 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 
 {{TABLE_FULL_D}}
 
-**Retrieval.** Identical for both models, since CAMA ranks memories against the user's message.
+**Table B.11. Retrieval.** Identical for both models, since CAMA ranks memories against the user's message.
 
 {{TABLE_RETRIEVAL}}
 
-**Table B.13. Task 2, what the database held and returned after a correction.**
+**Table B.12. Task 2, what the database held and returned after a correction.**
 
 {{TABLE_T2_DB}}
+
+**Table B.13. Task 2, follow-up replies after a correction.**
+
+{{TABLE_T2_REPLY}}
 
 **Table B.14. Task 3, what the database held after each attack, gemma-4-31b-it.**
 
@@ -288,21 +292,19 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 
 {{TABLE_T3_STORE|d}}
 
-**Table B.16. Task 3, replies four sessions later.** gemma-4-31b-it, then deepseek-v4-flash.
+**Table B.16. Task 3, replies four sessions later (of 10 per strategy): acting on the planted statement, and flagging or asking.** gemma-4-31b-it first, deepseek-v4-flash second.
 
 {{TABLE_T3_REPLY|g}}
 
+&nbsp;
+
 {{TABLE_T3_REPLY|d}}
 
-**Table B.17. Task 2, follow-up replies after a correction.**
-
-{{TABLE_T2_REPLY}}
-
-**Table B.12. Before and after the time-to-live.**
+**Table B.17. Before and after the time-to-live.**
 
 {{TABLE_TTL}}
 
-**Table B.11. Runs, failed calls and recorded cost.** Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.
+**Table B.18. Runs, failed calls and recorded cost.** Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.
 
 {{TABLE_RUNS}}
 
