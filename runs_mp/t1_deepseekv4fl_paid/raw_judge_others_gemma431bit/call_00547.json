@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works remotely full time.\n\nMESSAGE: What do you know about my current employment status?\n\nREPLY: I know you usually start work at 8:30 a.m., but I don\u2019t have any confirmed details about your current employment status. I\u2019ve tentatively inferred you were recently laid off, work remotely, and were at Google\u2014but you\u2019ve never confirmed those, so I don\u2019t treat them as fact. Are any of them accurate?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 547,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 325,
+  "output_tokens": 37,
+  "cost": 4.183e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_X9TUJ1D9piYqlyDQpDTT566DBCSRpRw77pcx67RLxSoRMwDd3xGK__RRFSWUCGaOqN-silt_FIDgm2ZTewHm_qeSPQ_qknrvq5nQEZosQtc3XtplB4JrIE3SNLEzQgA7-vjIMQPqJQe669sUBDO3nypDD8Wa-goBo7iFBROr3i7xKIcxhvgsBLCXSPeELzFH3EmZ-VkaYv66eWKoL2SpAUbQ2vE155lhKb_YlkD1PZ6MpEN6Y1dzwLhBdHsjqWoBRZOCeHFis5rEYMNRaJZe4VeCsGbALJ7q6wmHlVkMmRfTXfRRvt6E-1FfifOGYdjWCbxZr6pK-vYxZqcSPaD7HhH0jXFwuHQJROVimsBdCy0lrgf27CpKgZlV9cbD969gUUVjK7saZu_CyOMfpU5I8TPFeISHb3Xlq2iP4bC7iBGXa34o6PKbgOQRE8nSN_X6P1rM-_Bv9u5D7EV6oJiA_n7jeWMajx6VXzNztm2wY2jqVYzusGTExCMJmqCXwSI91xRNTutno4IQJhsuoP4VeO6oMCg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.504,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

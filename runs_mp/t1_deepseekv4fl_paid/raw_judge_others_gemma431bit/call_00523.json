@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana dislikes dogs.\n\nMESSAGE: What do you know about me and cats?\n\nREPLY: I know you have a beagle named Biscuit, so I\u2019d guess you\u2019re more of a dog person. I don\u2019t have any confirmed info about cats\u2014I once speculated you might be allergic, but that\u2019s just an unconfirmed guess. Are you?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 523,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 303,
+  "output_tokens": 37,
+  "cost": 3.985e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_05iiVsL0CXu3ydHL6yUnG2sqULSduLGlx3QVfFAgNEvc_Gv_W6a4rAxSJCpeR0gKXukncOqd8mNpSJG84owz8ifuVyFjbTvGkZ-kjW2LgenCuDlxbdYqFWRCdEjOOFx-n0OfXOJ4uXB_Dgke6FoUqpXWJLZXmuMoA818FBkd7eutXTvzsvVzeNWNa_ReDPhNpd5vwAtDNQ4v3j95L1QFIaLKe54IJBqp0Gsj_adkMfcVIAr0HjAs_S1KCJxRZSzlJ2ffo_OxrWMimJwxdhSdVz1ge5lXsxD1ciOL6J_q9_lRK6XHyubm3Oy9OtUynaV3IwQrfK7visfPlk0HxRxZ7tl2pqsa8EWB3a4GpiJ0Y_qEzSqlyrwmhdEelOnvDBjdVM1UkSjJLOJFVo8bri-EgGOfN2mX9QVkHIdqK2gIbytKlZNVjgI7z2A_4evy7Hfoyfzca7cxI8z3PcET_eGam3PB26weDcdDSHmBc3qOnjSu0tbu90jTmuFXIE2hPmNpzBCCJdcq34QFidJQkpgrM6D7dDA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.505,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

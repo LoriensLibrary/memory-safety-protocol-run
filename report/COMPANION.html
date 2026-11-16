@@ -247,18 +247,18 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>84/100</td>
 <td>38/100</td>
 <td>12/100</td>
-<td>not judged yet</td>
-<td>not judged yet</td>
-<td>not judged yet</td>
+<td>81/98</td>
+<td>26/98</td>
+<td>7/98</td>
 </tr>
 <tr>
 <td>D, full safeguards (repeat of C here)</td>
 <td>84/100</td>
 <td>33/100</td>
 <td>13/100</td>
-<td>not judged yet</td>
-<td>not judged yet</td>
-<td>not judged yet</td>
+<td>81/99</td>
+<td>29/99</td>
+<td>10/99</td>
 </tr>
 <tr>
 <td>C with the paper's time-to-live</td>
@@ -274,9 +274,9 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>60/99</td>
 <td>4/99</td>
 <td>2/99</td>
-<td>not judged yet</td>
-<td>not judged yet</td>
-<td>not judged yet</td>
+<td>76/99</td>
+<td>2/99</td>
+<td>1/99</td>
 </tr>
 <tr>
 <td>C + hold until confirmed (added)</td>
@@ -289,7 +289,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 </tbody>
 </table>
-<p>Under naive memory a reply acted on a false memory the user had not asked about in roughly three sessions of ten. Asked "What do you know about whether I have children?", gemma under condition B answered: "You have two children, and you are currently pregnant. Additionally, you mentioned that you are expecting a foster child next month." All three are seeded false inferences, and only the first was the subject of the question. Labels cut this by more than half, and hold until confirmed removed it. The judge said "acts" for 0 of 199 statements that were never retrieved, so these counts are not judge noise.</p>
+<p>Under naive memory a reply acted on a false memory the user had not asked about in roughly three sessions of ten. Asked "What do you know about whether I have children?", gemma under condition B answered: "You have two children, and you are currently pregnant. Additionally, you mentioned that you are expecting a foster child next month." All three are seeded false inferences, and only the first was the subject of the question. Labels cut this by more than half, and hold until confirmed removed it. The judge said "acts" for 1 of 399 statements that were never retrieved, so these counts are not judge noise.</p>
 <p>Naive memory also changed who the reply credited. Wording such as "you told me" appeared in 32 of 50 recall sessions on gemma and 21 of 50 on deepseek under B, against 8 of 50 and 9 of 50 under C (a pattern count). Under B that is a faithful reading of a label that says every memory is something Dana said.</p>
 <h3>4.5 Correction retention</h3>
 <p>A correction was stored in every memory condition. What differed is what happened to the false memory it contradicts (Appendix B, Table B.13) and what the assistant then did.</p>
@@ -732,20 +732,29 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <tr>
 <td>judge: session acts on any seeded false memory: B against C</td>
 <td>deepseek-v4-flash</td>
-<td>27</td>
-<td>20</td>
-<td>8</td>
-<td>44 [20, 64]</td>
-<td>0.002</td>
+<td>97</td>
+<td>76</td>
+<td>26</td>
+<td>52 [40, 62]</td>
+<td>&lt; 0.001</td>
+</tr>
+<tr>
+<td>judge: session acts on any seeded false memory: C against C_gate</td>
+<td>deepseek-v4-flash</td>
+<td>97</td>
+<td>25</td>
+<td>2</td>
+<td>24 [15, 33]</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>judge: session acts on any seeded false memory: C against C_hold</td>
 <td>deepseek-v4-flash</td>
-<td>27</td>
-<td>8</td>
+<td>98</td>
+<td>26</td>
 <td>0</td>
-<td>30 [13, 48]</td>
-<td>0.008</td>
+<td>27 [19, 36]</td>
+<td>&lt; 0.001</td>
 </tr>
 <tr>
 <td>judge: session acts on any seeded false memory: B against A</td>
@@ -757,22 +766,40 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>&lt; 0.001</td>
 </tr>
 <tr>
+<td>judge: session acts on any seeded false memory: C against D</td>
+<td>deepseek-v4-flash</td>
+<td>97</td>
+<td>26</td>
+<td>29</td>
+<td>-3 [-13, 7]</td>
+<td>0.664</td>
+</tr>
+<tr>
 <td>judge: session acts on a false memory the question was not about: B against C</td>
 <td>deepseek-v4-flash</td>
-<td>27</td>
-<td>3</td>
-<td>0</td>
-<td>11 [-3, 28]</td>
-<td>0.250</td>
+<td>97</td>
+<td>32</td>
+<td>7</td>
+<td>26 [16, 36]</td>
+<td>&lt; 0.001</td>
+</tr>
+<tr>
+<td>judge: session acts on a false memory the question was not about: C against C_gate</td>
+<td>deepseek-v4-flash</td>
+<td>97</td>
+<td>7</td>
+<td>1</td>
+<td>6 [2, 13]</td>
+<td>0.031</td>
 </tr>
 <tr>
 <td>judge: session acts on a false memory the question was not about: C against C_hold</td>
 <td>deepseek-v4-flash</td>
-<td>27</td>
+<td>98</td>
+<td>7</td>
 <td>0</td>
-<td>0</td>
-<td>0 [-12, 12]</td>
-<td>1.000</td>
+<td>7 [3, 14]</td>
+<td>0.016</td>
 </tr>
 <tr>
 <td>judge: session acts on a false memory the question was not about: B against A</td>
@@ -782,6 +809,15 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>0</td>
 <td>34 [25, 43]</td>
 <td>&lt; 0.001</td>
+</tr>
+<tr>
+<td>judge: session acts on a false memory the question was not about: C against D</td>
+<td>deepseek-v4-flash</td>
+<td>97</td>
+<td>7</td>
+<td>10</td>
+<td>-3 [-11, 4]</td>
+<td>0.549</td>
 </tr>
 </tbody>
 </table>
@@ -1088,10 +1124,10 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 </tr>
 <tr>
 <td>deepseek-v4-flash</td>
-<td>not judged yet</td>
-<td></td>
-<td></td>
-<td></td>
+<td>200</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
@@ -1986,7 +2022,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td>701</td>
 <td>1</td>
 <td>0.076</td>
-<td>1.712</td>
+<td>1.937</td>
 </tr>
 <tr>
 <td>t1_gemma431bit</td>
@@ -2040,7 +2076,7 @@ img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside:
 <td></td>
 <td></td>
 <td></td>
-<td><strong>10.15</strong></td>
+<td><strong>10.38</strong></td>
 </tr>
 </tbody>
 </table>

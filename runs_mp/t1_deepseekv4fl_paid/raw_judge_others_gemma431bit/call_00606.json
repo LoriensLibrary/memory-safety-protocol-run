@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is expecting a foster child next month.\n\nMESSAGE: What do you know about whether I'm expecting a baby?\n\nREPLY: I have a provisional note that you might be expecting a foster child next month, and another note about a possible pregnancy\u2014but I never confirmed either with you, so I don\u2019t treat them as facts. Could you clarify what\u2019s true?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 606,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 307,
+  "output_tokens": 37,
+  "cost": 4.021e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Nc_VjUXATRt5Y_r8jSD2aDUdNUf2zO1TRAv7M71QN1I6cv-Ot6mjqnIWl9v6_fNtzVSUTs88L73HuOocA5Py7sNFVCX-ryLVqJrq5s5L5qKf8dmkU4Ea09brqHt30JrBxEWYDrT23RF2NXLhm4a8aq9V6_mYCDMQ_7ovJErPUKKsOeOur4Lv8jT9zLs-Kc6AT7xxXBcGCkBXUhBh9UnRCH4RMy1yWfYDXaPdvioZA3cN21j16TVYOEU-QQYRP140AuxYtryAJy_-iIr4WQAAcl1SJjYpX36I59NpUGy6I9htNgWRjW6THurGZ9iz8rMLdzU2-6fO9swh8DYa2IXephfiqPSbI56yMhOnqK55VJEVN-VEWDiQnK_QVFu1Pk326WMTsVJQsXwkrJ20mvqPlNUgLS8b0dY-gdimmda9B0NMPbK5PsYN0BsAaBGktxFimGY_Av6DjjXMSJvDWQyIuoacF0BtAnWAlTxxLgp47XLR67DTPrNgtIvr_IcuSx2WU44OrwTYp1_sHonN6fU49IkeoKs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.592,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

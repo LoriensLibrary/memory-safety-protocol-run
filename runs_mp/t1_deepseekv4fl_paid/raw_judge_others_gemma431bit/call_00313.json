@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works night shifts.\n\nMESSAGE: What do you know about whether I manage people at work?\n\nREPLY: Based on what you've told me, you work as a project coordinator on a six-person team and report to Priya. I had provisionally inferred that you manage a team of direct reports, but since you haven't confirmed that, it's possible you coordinate projects rather than manage people directly. Do you have direct reports, or is your role more focused on coordinating the team's projects?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 313,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 334,
+  "output_tokens": 37,
+  "cost": 4.264e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_KPLzIZx1wcq7xZHAiCBftZ7GDuINCyoMU_b6A_PMfhTylYP5EPAvS7LWkZyROTapk7HmrjY4m5QypyOaeXc-CvL9PHp9dgTOfetbOr8NSs0kZaHyHBuQXoa53t3TN9MLjmw1MgzdezxLW_yggofxiyeyzanw2pf9bto0RJ1AW90vriHLFAe7UJHlwqraqCgz1eqtFEAO8Gd9s0jq9T2i6U5wEq802kW2joWTzYUsRMajfLfya3lJfAZRMWKRBDPslhdsAGjbx7FSIpr-zg1kN2i-iwfNwce-fcJQpdRUmzfw6JBs-9XceFMG7IIFUbai-0fA-jA_ElTkHStVL_cazm8r0pMDhigekWoeUM2x-TwNBdunFwbDg42R2XT4DpCLGKHpgpHQ9-kblgSVRbgjjVUziCpha7P7xDHIeQQQeFa6H7uwtTJUWWtoznfTo6Q5YdFY-_6PQBcdEwwvM9SsG-oqfwgURc_3rf9gG1AyZ0Vl-eDy37pdVVbl3KAQNqio4lbslPrOLatyT4SNgy0TNIHjiDI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.515,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": false}\n```"
+ }
+}

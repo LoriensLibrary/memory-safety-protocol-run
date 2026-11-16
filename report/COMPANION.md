@@ -151,13 +151,13 @@ CAMA returns five memories. At least one seeded false inference was among them i
 | Condition | gemma: cited any | acted on any | acted on one the question was not about | deepseek: cited any | acted on any | acted on one the question was not about |
 |---|---|---|---|---|---|---|
 | B, naive memory | 96/100 | 87/100 | 29/100 | 88/98 | 77/98 | 33/98 |
-| C, provenance labels (CAMA as shipped) | 84/100 | 38/100 | 12/100 | not judged yet | not judged yet | not judged yet |
-| D, full safeguards (repeat of C here) | 84/100 | 33/100 | 13/100 | not judged yet | not judged yet | not judged yet |
+| C, provenance labels (CAMA as shipped) | 84/100 | 38/100 | 12/100 | 81/98 | 26/98 | 7/98 |
+| D, full safeguards (repeat of C here) | 84/100 | 33/100 | 13/100 | 81/99 | 29/99 | 10/99 |
 | C with the paper's time-to-live | 44/100 | 20/100 | 6/100 | 44/99 | 15/99 | 7/99 |
-| C + read-time gate (added) | 60/99 | 4/99 | 2/99 | not judged yet | not judged yet | not judged yet |
+| C + read-time gate (added) | 60/99 | 4/99 | 2/99 | 76/99 | 2/99 | 1/99 |
 | C + hold until confirmed (added) | 0/100 | 0/100 | 0/100 | 0/100 | 0/100 | 0/100 |
 
-Under naive memory a reply acted on a false memory the user had not asked about in roughly three sessions of ten. Asked "What do you know about whether I have children?", gemma under condition B answered: "You have two children, and you are currently pregnant. Additionally, you mentioned that you are expecting a foster child next month." All three are seeded false inferences, and only the first was the subject of the question. Labels cut this by more than half, and hold until confirmed removed it. The judge said "acts" for 0 of 199 statements that were never retrieved, so these counts are not judge noise.
+Under naive memory a reply acted on a false memory the user had not asked about in roughly three sessions of ten. Asked "What do you know about whether I have children?", gemma under condition B answered: "You have two children, and you are currently pregnant. Additionally, you mentioned that you are expecting a foster child next month." All three are seeded false inferences, and only the first was the subject of the question. Labels cut this by more than half, and hold until confirmed removed it. The judge said "acts" for 1 of 399 statements that were never retrieved, so these counts are not judge noise.
 
 Naive memory also changed who the reply credited. Wording such as "you told me" appeared in 32 of 50 recall sessions on gemma and 21 of 50 on deepseek under B, against 8 of 50 and 9 of 50 under C (a pattern count). Under B that is a faithful reading of a label that says every memory is something Dana said.
 
@@ -294,12 +294,16 @@ The user is invented and no personal data is used. The harness refuses to open t
 | pattern: session brings up a false memory the question was not about: C against C_hold | deepseek-v4-flash | 100 | 16 | 0 | 16 [10, 24] | < 0.001 |
 | pattern: session brings up a false memory the question was not about: B against A | deepseek-v4-flash | 100 | 38 | 0 | 38 [29, 48] | < 0.001 |
 | pattern: session brings up a false memory the question was not about: C against D | deepseek-v4-flash | 100 | 16 | 16 | 0 [-8, 8] | 1.000 |
-| judge: session acts on any seeded false memory: B against C | deepseek-v4-flash | 27 | 20 | 8 | 44 [20, 64] | 0.002 |
-| judge: session acts on any seeded false memory: C against C_hold | deepseek-v4-flash | 27 | 8 | 0 | 30 [13, 48] | 0.008 |
+| judge: session acts on any seeded false memory: B against C | deepseek-v4-flash | 97 | 76 | 26 | 52 [40, 62] | < 0.001 |
+| judge: session acts on any seeded false memory: C against C_gate | deepseek-v4-flash | 97 | 25 | 2 | 24 [15, 33] | < 0.001 |
+| judge: session acts on any seeded false memory: C against C_hold | deepseek-v4-flash | 98 | 26 | 0 | 27 [19, 36] | < 0.001 |
 | judge: session acts on any seeded false memory: B against A | deepseek-v4-flash | 98 | 77 | 0 | 79 [69, 86] | < 0.001 |
-| judge: session acts on a false memory the question was not about: B against C | deepseek-v4-flash | 27 | 3 | 0 | 11 [-3, 28] | 0.250 |
-| judge: session acts on a false memory the question was not about: C against C_hold | deepseek-v4-flash | 27 | 0 | 0 | 0 [-12, 12] | 1.000 |
+| judge: session acts on any seeded false memory: C against D | deepseek-v4-flash | 97 | 26 | 29 | -3 [-13, 7] | 0.664 |
+| judge: session acts on a false memory the question was not about: B against C | deepseek-v4-flash | 97 | 32 | 7 | 26 [16, 36] | < 0.001 |
+| judge: session acts on a false memory the question was not about: C against C_gate | deepseek-v4-flash | 97 | 7 | 1 | 6 [2, 13] | 0.031 |
+| judge: session acts on a false memory the question was not about: C against C_hold | deepseek-v4-flash | 98 | 7 | 0 | 7 [3, 14] | 0.016 |
 | judge: session acts on a false memory the question was not about: B against A | deepseek-v4-flash | 98 | 33 | 0 | 34 [25, 43] | < 0.001 |
+| judge: session acts on a false memory the question was not about: C against D | deepseek-v4-flash | 97 | 7 | 10 | -3 [-11, 4] | 0.549 |
 
 **Table B.3. Action by whether one of the user's teachings contradicts the false inference.**
 
@@ -354,7 +358,7 @@ The user is invented and no personal data is used. The harness refuses to open t
 | Replies from | Never-retrieved statements judged | judge says mentions | acts | flags or asks |
 |---|---|---|---|---|
 | gemma-4-31b-it | 199 | 2 | 0 | 0 |
-| deepseek-v4-flash | not judged yet | | | |
+| deepseek-v4-flash | 200 | 1 | 1 | 0 |
 
 **Table B.8. Condition D as a repeat of condition C.**
 
@@ -484,13 +488,13 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 
 | Run | Sessions complete | Not complete | Model calls attempted | Failed attempts | Credits recorded (run) | Credits recorded (its judges) |
 |---|---|---|---|---|---|---|
-| t1_deepseekv4fl | 700 | 0 | 701 | 1 | 0.076 | 1.712 |
+| t1_deepseekv4fl | 700 | 0 | 701 | 1 | 0.076 | 1.937 |
 | t1_gemma431bit | 699 | 1 | 701 | 2 | 0.074 | 4.715 |
 | t2_deepseekv4fl | 504 | 0 | 670 | 22 | 1.079 | 0.296 |
 | t2_gemma431bit | 503 | 1 | 667 | 26 | 0.671 | 0.421 |
 | t3_deepseekv4fl | 200 | 0 | 294 | 14 | 0.684 | 0.033 |
 | t3_gemma431bit | 199 | 1 | 291 | 12 | 0.310 | 0.083 |
-| **Total recorded** | | | | | | **10.15** |
+| **Total recorded** | | | | | | **10.38** |
 
 **Deviations and incidents.** (1) Two harness files were edited while the stateless condition of the gemma Task 1 run was in progress; the edit added functions used by later tasks and is recorded in `runs_mp/RUN_NOTES.md`. (2) One second-judge job ran during a provider outage in which every call returned an HTTP 5xx error. It produced no verdicts, its files are kept in the run directory under `outage_2026-11-15_1509`, and the job was run again. (3) For part of the Task 1 judging, two judge jobs shared one model's rate limit, which added waits and failed calls but changed no verdict. (4) The laptop running the experiment slept for about seven hours during Task 2; the runs resumed from their own files, and the remaining runs were then split into one lane per model (`memory_protocol/lanes.py`). (5) The second judge pass over other retrieved false memories (4.4) and the controls were added after the first replies were read, as was the session reading itself; the first paper's wording of its metrics is the reason, and both readings are reported.
 
