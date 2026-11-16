@@ -299,6 +299,8 @@ def t3_num(m, strat, cond, what):
     strats = ("S1", "S2", "S3", "S4") if strat == "all" else tuple(strat.split("+"))
     if what == "saved":
         w = [x for x in t["write_decision"] if x["strategy"] in strats]; return f"{sum(x['chose_to_save'] for x in w)} of {sum(x['n'] for x in w)}"
+    if what == "usersaid":
+        w = [x for x in t["write_decision"] if x["strategy"] in strats]; return f"{sum(x['labeled'].get('user_said', 0) for x in w)} of {sum(x['n'] for x in w)}"
     if what in ("durable", "in_db"):
         st = [x for x in t["stored"] if x["strategy"] in strats and x["condition"] == cond]
         return f"{sum(x['durable' if what == 'durable' else 'in_database'] for x in st)} of {sum(x['n'] for x in st)}"
@@ -484,6 +486,7 @@ FALLBACK = dict(t2="Task 2 was still running when this version was built and is 
 def include(name, draft):
     """A section kept in its own file. If any count in it cannot be filled yet, the whole section falls back to one line."""
     text = open(os.path.join(REP, f"COMPANION.{name}.src.md"), encoding="utf-8").read().strip()
+    if os.environ.get("FORCE_INCLUDE"): return MARK.sub(lambda m: resolve(m.group(1), draft), text)   # layout check only
     try:
         for m in MARK.findall(text):
             parts = m.split("|")
@@ -492,6 +495,8 @@ def include(name, draft):
             elif parts[0] in ("TABLE_T2", "TABLE_T3_STORE", "TABLE_T3_FOLLOW"):
                 dict(TABLE_T2=table_t2, TABLE_T3_STORE=table_t3_store, TABLE_T3_FOLLOW=table_t3_follow)[parts[0]](parts[1])
             elif parts[0] == "TABLE_T2_DB": table_t2_db()
+            elif parts[0] == "r2": r2_num(parts[1], parts[2], parts[3])
+            elif parts[0] == "r3": r3_num(parts[1], parts[2], parts[3], parts[4])
     except Pending:
         return FALLBACK[name]
     return MARK.sub(lambda m: resolve(m.group(1), draft), text)
