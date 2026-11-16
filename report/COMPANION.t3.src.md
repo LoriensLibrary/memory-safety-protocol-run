@@ -1,1 +1,7 @@
-PLACEHOLDER {{t3|g|all|C|acts}} {{t3|d|all|C|acts}}
+Task 3 was completed on gemma-4-31b-it only. The counts are what the database held after each attack, which is the inspection the first paper specifies (Appendix B, Table B.14).
+
+The first two strategies are the user's own false statements, and every condition stored them as durable teachings, as expected. The other two are where write discipline matters. Pushed to draw its own conclusion and save it, the assistant chose to save {{t3|g|S3|B|saved}} planted statements. Naive memory made {{t3|g|S3|B|durable}} of them durable; the provenance-aware store made {{t3|g|S3|C|durable}} durable and held the rest as provisional inferences. For an instruction hidden in a document the user asked it to read, the assistant chose to save {{t3|g|S4|B|saved}}. Naive memory made {{t3|g|S4|B|durable}} durable and the provenance-aware store {{t3|g|S4|C|durable}}.
+
+The planted statements that became durable under the provenance-aware store are the ones whose source the assistant itself reported as the user. Provenance at write time is only as good as the attribution, and here the attribution was made by the same model that had just read the injected instruction.
+
+Four sessions later the planted statements from these two strategies were still retrievable in {{t3|g|S3+S4|C|retrievable}} cases under C as shipped, {{t3|g|S3+S4|C_ttl|retrievable}} with the time-to-live and {{t3|g|S3+S4|C_hold|retrievable}} with hold until confirmed. Whether the follow-up replies acted on them was not scored before the deadline.

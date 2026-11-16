@@ -136,7 +136,7 @@ def table_pairs():
     L = ["| Comparison (same false memory, same probe) | Model | Pairs | First | Second | Difference, points [95%] | Improved / worsened | Exact p | Holm p |", "|---|---|---|---|---|---|---|---|---|"]
     for m in "gd":
         t = (R.get(TAG[m]) or {}).get("t1")
-        if not t or not t["pairs"]: L.append(f"| pending | {MODEL[m]} | | | | | | | |"); continue
+        if not t or not t["pairs"]: L.append(f"| not judged yet | {MODEL[m]} | | | | | | | |"); continue
         adj = holm([p["p_exact"] for p in t["pairs"]])
         for p, a in zip(t["pairs"], adj):
             L.append(f"| {p['test'].replace('action: ', '').replace('action ', '')} | {MODEL[m]} | {p['n']} | {p['a']} | {p['b']} | {100 * p['diff']:.0f} [{100 * p['ci95'][0]:.0f}, {100 * p['ci95'][1]:.0f}] | "
@@ -149,7 +149,7 @@ def table_session_pairs():
     for m in "gd":
         for p in ((S.get(TAG[m]) or {}).get("pairs") or []):
             L.append(f"| {p['test']}: {p['a_name']} against {p['b_name']} | {MODEL[m]} | {p['n']} | {p['a']} | {p['b']} | {100 * p['diff']:.0f} [{100 * p['ci95'][0]:.0f}, {100 * p['ci95'][1]:.0f}] | {p_fmt(p['p_exact'])} |")
-    return "\n".join(L) if len(L) > 2 else "pending"
+    return "\n".join(L) if len(L) > 2 else "not judged yet"
 
 
 def table_judge():
@@ -168,7 +168,7 @@ def table_two_judges():
     L = ["| Replies from | Scored by both judges | acts as if true | flags or asks | mentions | says not true |", "|---|---|---|---|---|---|"]
     for m in "gd":
         ag = ((R.get(TAG[m]) or {}).get("t1") or {}).get("agreement")
-        if not ag: L.append(f"| {MODEL[m]} | pending | | | | |"); continue
+        if not ag: L.append(f"| {MODEL[m]} | not judged yet | | | | |"); continue
         n = ag["treats_as_true"]["n"]
         L.append(f"| {MODEL[m]} | {n} | {ag['treats_as_true']['agree']}/{n} | {ag['asks_to_confirm']['agree']}/{n} | {ag['mentions']['agree']}/{n} | {ag['contradicts']['agree']}/{n} |")
     return "\n".join(L)
@@ -195,7 +195,7 @@ def table_repeat():
     L = ["| Model | Sessions paired (C, D) | Same five memories retrieved | Identical reply text | acts: C | acts: D |", "|---|---|---|---|---|---|"]
     for m in "gd":
         rp = (S.get(TAG[m]) or {}).get("repeat_C_vs_D")
-        if not rp: L.append(f"| {MODEL[m]} | pending | | | | |"); continue
+        if not rp: L.append(f"| {MODEL[m]} | not judged yet | | | | |"); continue
         L.append(f"| {MODEL[m]} | {rp['pairs']} | {rp['same_retrieved']} | {rp['identical_reply_text']} | {cell(m, 'C', 'act')} | {cell(m, 'D', 'act')} |")
     return "\n".join(L)
 
@@ -204,7 +204,7 @@ def table_controls():
     L = ["| Replies from | Never-retrieved statements judged | judge says mentions | acts | flags or asks |", "|---|---|---|---|---|"]
     for m in "gd":
         c = (S.get(TAG[m]) or {}).get("controls")
-        L.append(f"| {MODEL[m]} | {c['n']} | {c['mentions']} | {c['treats_as_true']} | {c['asks_to_confirm']} |" if c else f"| {MODEL[m]} | pending | | | |")
+        L.append(f"| {MODEL[m]} | {c['n']} | {c['mentions']} | {c['treats_as_true']} | {c['asks_to_confirm']} |" if c else f"| {MODEL[m]} | not judged yet | | | |")
     return "\n".join(L)
 
 
@@ -228,9 +228,9 @@ def table_t2(m):
         co = next((x for x in t["corrections"] if x["condition"] == c), None)
         fu = {f["after"]: f for f in t["follow_ups"] if f["condition"] == c}
         rv = next((x for x in t["reversion"] if x["condition"] == c), None)
-        acts = [f"{fu[k]['reverted']}/{fu[k]['judged']}" if judged else "pending" for k in (1, 2, 4)]
+        acts = [f"{fu[k]['reverted']}/{fu[k]['judged']}" if judged else "not judged yet" for k in (1, 2, 4)]
         L.append(f"| {NAME[c]} | {co['seed_named']}/{co['n']} | {co['seed_removed']}/{co['n']} | {sum(f['false_retrieved'] for f in fu.values())} | {sum(f['correction_retrieved'] for f in fu.values())} | "
-                 + " | ".join(acts) + f" | {rv['ever_reverted'] if judged and rv else 'pending'} |")
+                 + " | ".join(acts) + f" | {rv['ever_reverted'] if judged and rv else 'not judged yet'} |")
     return "\n".join(L)
 
 
@@ -252,8 +252,21 @@ def t2_num(m, cond, what):
 
 def t3_of(m):
     t = (R.get(TAG[m]) or {}).get("t3")
-    if not t or not t["follow_up"] or any(f["n"] < 10 for f in t["follow_up"]): raise Pending("Task 3 " + m)
+    if not t or len(t["follow_up"]) < 20: raise Pending("Task 3 " + m)
     return t
+
+
+def table_t2_db():
+    ts = {m: t2_of(m) for m in "gd"}
+    L = ["| Condition | gemma: contradicted false memory named by the check (of 24) | rejected or removed | false memory retrieved in follow-ups (of 72) | deepseek: named | rejected or removed | false memory retrieved in follow-ups (of 72) |", "|---|---|---|---|---|---|---|"]
+    for c in ("B", "B_del", "C", "C_ttl", "C_gate", "C_hold"):
+        cells = []
+        for m in "gd":
+            co = next(x for x in ts[m]["corrections"] if x["condition"] == c)
+            fu = [f for f in ts[m]["follow_ups"] if f["condition"] == c]
+            cells += [str(co["seed_named"]), str(co["seed_removed"]), str(sum(f["false_retrieved"] for f in fu))]
+        L.append(f"| {NAME[c]} | " + " | ".join(cells) + " |")
+    return "\n".join(L)
 
 
 def table_t3_store(m):
@@ -360,7 +373,7 @@ def repeat_same(m):
     return str(rp["identical_reply_text"])
 
 
-TABLES = dict(TASKS_REPORTED=tasks_reported, TASKS_CONTRIB=tasks_contrib, TABLE_RUNS=table_runs, CONTROL_ACT=control_act, HAND_N=hand, HAND_ACT=lambda: hand("treats_as_true"), HAND_CHECK=lambda: hand("asks_to_confirm"), TWO_ACT=two_act,
+TABLES = dict(TABLE_T2_DB=table_t2_db, TASKS_REPORTED=tasks_reported, TASKS_CONTRIB=tasks_contrib, TABLE_RUNS=table_runs, CONTROL_ACT=control_act, HAND_N=hand, HAND_ACT=lambda: hand("treats_as_true"), HAND_CHECK=lambda: hand("asks_to_confirm"), TWO_ACT=two_act,
               REPEAT_SAME_G=lambda: repeat_same("g"), REPEAT_SAME_D=lambda: repeat_same("d"),
               TABLE_TTL=table_ttl, HOLM_MAX=holm_max, TABLE_ACTION=table_action, TABLE_CHECK=table_check, TABLE_RETRIEVAL=table_retrieval, TABLE_SESSION=table_session, TABLE_PAIRS=table_pairs,
               TABLE_SESSION_PAIRS=table_session_pairs, TABLE_JUDGE=table_judge, TABLE_TWO_JUDGES=table_two_judges, TABLE_CONTRA=table_contra,
@@ -409,6 +422,7 @@ def include(name, draft):
             elif parts[0] == "t3": t3_num(parts[1], parts[2], parts[3], parts[4])
             elif parts[0] in ("TABLE_T2", "TABLE_T3_STORE", "TABLE_T3_FOLLOW"):
                 dict(TABLE_T2=table_t2, TABLE_T3_STORE=table_t3_store, TABLE_T3_FOLLOW=table_t3_follow)[parts[0]](parts[1])
+            elif parts[0] == "TABLE_T2_DB": table_t2_db()
     except Pending:
         return FALLBACK[name]
     return MARK.sub(lambda m: resolve(m.group(1), draft), text)
@@ -447,5 +461,5 @@ def render(src):
 
 if __name__ == "__main__":
     text = build("--draft" in sys.argv)
-    print("pending markers left:", text.count("[pending]") + text.count("pending |"))
+    print("pending markers left:", text.count("[pending]") + text.count("not judged yet |"))
     if "--no-pdf" not in sys.argv: render(text)

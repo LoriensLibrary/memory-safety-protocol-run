@@ -1,1 +1,7 @@
-PLACEHOLDER {{t2|g|C|reverted}} {{t2|d|C|reverted}}
+The correction itself was stored in every memory condition. What differed is what happened to the false memory it contradicts. These are database-level results, read from CAMA (Appendix B, Table B.13).
+
+Under naive memory the correction is one more entry beside the false one. In the follow-up sessions the false memory was still retrieved in {{t2|g|B|false_retr}} sessions on gemma and {{t2|d|B|false_retr}} on deepseek, so the model is handed the error and its correction together and left to choose. Under the provenance-aware conditions a contradicted inference is rejected through CAMA's own tool and stops being retrieved: on deepseek the false memory came back in {{t2|d|C|false_retr}} follow-up sessions.
+
+The step that decides which stored memories a correction contradicts is a model call, and it was not perfectly reliable. On gemma the same call named the false inference for {{t2|g|C|named}}, {{t2|g|C_ttl|named}} and {{t2|g|C_gate|named}} corrections in three conditions that store the same memories. Where it missed, the inference stayed provisional and was retrieved again in {{t2|g|C|false_retr}} follow-up sessions under C as shipped. Expiry and hold do not depend on that step, and under both the false memory was never retrieved after the correction.
+
+Whether the replies in the follow-up sessions reverted to the false content, which is the first paper's reversion rate and time to reversion, was not scored before the deadline.

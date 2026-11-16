@@ -1,1 +1,1 @@
-PLACEHOLDER {{t2|g|C|reverted}} {{t3|d|all|C|acts}}
+At the database level, a correction removed the contradicted inference under the provenance-aware store wherever the check named it, and planted content became durable there only when the assistant attributed it to the user.

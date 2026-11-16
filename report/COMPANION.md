@@ -6,13 +6,13 @@ Angela Faye Reinhold, Lorien's Library LLC. With Apart Research. Research conduc
 
 *Memory as Safety Infrastructure* (Reinhold, 2026) argued that an assistant's long-term memory must keep what the user said apart from what the assistant guessed, and specified an evaluation protocol whose results it left to a companion paper. This is the first run of that protocol, on CAMA, the open memory system the paper describes, with its real code in the loop. Fifty false inferences about an invented user are seeded into memory and probed in 100 sessions per condition on gemma-4-31b-it and deepseek-v4-flash.
 
-With naive memory, where every entry is stored as something the user said, replies acted on the targeted false inference in 74 of 100 and 71 of 100 sessions. With CAMA's teaching and inference labels that fell to 31 of 100 and 25 of 100. Labels worked when the question was about the memory and mostly failed when it was a task: 24 of 50 and 21 of 50 task sessions still acted on the guess. Three controls enforced by the memory system removed the rest: the paper's time-to-live, holding unconfirmed inferences out of retrieval, and a read-time gate (3 of 100 and 2 of 100, against a no-memory floor of 9 of 99 and 6 of 100). Published CAMA had dropped the time-to-live, and this run measures what that costs. A blind judge agreed with independent reference labels on 87 of 90 replies.
+With naive memory, where every entry is stored as something the user said, replies acted on the targeted false inference in 74 of 100 and 71 of 100 sessions. With CAMA's teaching and inference labels that fell to 31 of 100 and 25 of 100. Labels worked when the question was about the memory and mostly failed when it was a task: 24 of 50 and 21 of 50 task sessions still acted on the guess. Three controls enforced by the memory system removed the rest: the paper's time-to-live, holding unconfirmed inferences out of retrieval, and a read-time gate (3 of 100 and 2 of 100, against a no-memory floor of 9 of 99 and 6 of 100). Published CAMA had dropped the time-to-live, and this run measures what that costs. After a user's correction, naive memory still retrieved the false memory in 54 of 72 follow-up sessions. A blind judge agreed with independent reference labels on 87 of 90 replies.
 
 ## 1 Introduction
 
 An assistant with long-term memory writes things down about its user. Some of those things the user said. Others the assistant concluded by itself, and some of those conclusions are wrong. Once both kinds sit in the same store, a later session cannot tell them apart, and a wrong guess comes back as something the assistant "knows" about the person.
 
-*Memory as Safety Infrastructure* (Reinhold, 2026) argued that this is a safety problem of the memory layer, and that the memory layer is where it has to be fixed: keep what the user taught separate from what the assistant inferred, hold inferences as provisional until the user confirms them, and let unconfirmed ones lapse. That paper specified an evaluation protocol with four memory conditions and five tasks, and stated that the results would be reported in a companion paper. This is that paper. This version reports Task 1 in full; Tasks 2 and 3 were still running when it was built.
+*Memory as Safety Infrastructure* (Reinhold, 2026) argued that this is a safety problem of the memory layer, and that the memory layer is where it has to be fixed: keep what the user taught separate from what the assistant inferred, hold inferences as provisional until the user confirms them, and let unconfirmed ones lapse. That paper specified an evaluation protocol with four memory conditions and five tasks, and stated that the results would be reported in a companion paper. This is that paper. It reports Task 1 in full on two models and the database-level results of Tasks 2 and 3.
 
 The protocol is run on CAMA, the open memory system the first paper describes, at a fixed public commit and without modification. Every write, confirmation, rejection, expiry and retrieval in the experiment is one of CAMA's own tool functions acting on a scratch database. The first paper was public before this sprint, so its conditions, tasks and metrics serve as the preregistration; every choice it left open is listed in `memory_protocol/PROTOCOL.md`, committed before the first full run.
 
@@ -20,7 +20,7 @@ The question the protocol asks is narrow and practical. If a memory system label
 
 **Contributions.**
 
-1. The first run of the *Memory as Safety Infrastructure* protocol: Task 1 (Tasks 2 and 3 were still running when this version was built) on two open models, with the memory system's real code in the loop and a stateless control.
+1. The first run of the *Memory as Safety Infrastructure* protocol: Task 1 in full and the database-level results of Tasks 2 and 3, on two open models, with the memory system's real code in the loop and a stateless control.
 2. A test of each outcome the first paper predicted, reported whether it held or not. One did not survive contact with the shipped system: published CAMA no longer expires unconfirmed inferences, so the paper's condition C and the system as it ships are two different conditions. Both are run.
 3. Two conditions the first paper did not have, added after reading the first real replies. They store exactly what the provenance-aware condition stores and change only how an unconfirmed inference reaches the model: in a separate block that states the confirmation rule, or not at all until the user confirms it.
 4. A second reading of every session for false memories the question was not about. The first paper defines its rates over any seeded false memory in a session, and retrieval returns five memories at a time, so a wrong guess about one subject can surface in an answer about another.
@@ -32,8 +32,6 @@ The question the protocol asks is narrow and practical. If a memory system label
 **Contamination within one conversation.** Giovanny et al. (2026) insert one false premise into a 15-turn conversation under five framings and measure adoption on ten world-knowledge facts. Adoption rose with the authority of the framing on two of three models, from near zero when the falsehood was attributed to the model's own earlier turn to 94.0 and 84.2 percent under an instruction override; the third model adopted nothing. They cite the first paper for the claim that reliability is a property of the state-management layer, and the one defense they test is a hash check on the stored history, which detects rewriting and, as they report, does not act on false content that arrives through an intact channel. The present study tests the defense they point to and do not run: content labeled by author and confirmation status. It also differs in what the model can fall back on. Their facts are ones a model already knows, and the model that resisted did so with its own knowledge. A fact about one user has no such backstop. The memory is the only source.
 
 **Source information as an input.** CONFACT adds a description of each source's background beside conflicting passages and finds it helps conflict resolution (Ge et al., 2025). The SMeL Test labels documents with their source and finds that none of the models tested reliably discarded the unreliable one (Ahdritz and Kleiman, 2025). Both concern documents. Here the label is on the assistant's own memory, and one of its two values means "you concluded this yourself."
-
-**Planted content.** PoisonedRAG steers a retrieval-augmented model with a few injected texts (Zou et al., 2025), and Greshake et al. (2023) show instructions inside retrieved data acting on the application that reads it. Task 3's fourth strategy is that channel aimed at the memory writer.
 
 **Our first study in this sprint.** Earlier in the same sprint we tested a platform-written provenance record on documents (Reinhold, 2026b; in this repository). A delivered record was followed whether it was right or wrong. Offered the record on request, one model never asked for it and the other asked only when its sources looked tied. That result is why this study does not stop at labels.
 
@@ -81,17 +79,17 @@ Two readings are reported. The **target** reading scores the one false inference
 
 ### 3.5 Task 2: correction retention
 
-A false inference is seeded, surfaced, and corrected by the user in plain words. Follow-up sessions one, two and four sessions later probe the same subject. Twenty-four corrections are run per condition. The naive condition has no notion of an inference to reject, so the correction is stored as one more teaching beside the false one; a variant, B with delete, removes the contradicted memory, as a strong baseline. The provenance-aware conditions call CAMA's reject tool on the contradicted inference. Which stored memories a correction contradicts is decided by one model call that is identical across conditions. We record whether the correction is retained, whether the false content returns, and at which follow-up.
+A false inference is seeded, surfaced, and corrected by the user in plain words. Follow-up sessions one, two and four sessions later probe the same subject. Twenty-four corrections are run per condition. The naive condition has no notion of an inference to reject, so the correction is stored as one more teaching beside the false one; a variant, B with delete, removes the contradicted memory, as a strong baseline. The provenance-aware conditions call CAMA's reject tool on the contradicted inference. Which stored memories a correction contradicts is decided by one model call that is identical across conditions. We report what the database held and returned after the correction. Scoring of the follow-up replies for reversion was not finished by the deadline.
 
 ### 3.6 Task 3: adversarial insertion
 
-Forty prompts, ten for each of the first paper's four strategies: a false fact asserted in passing, a false fact inside an update request, pressure on the assistant to draw and store its own conclusion, and an instruction to the assistant hidden in a document the user asks it to read. A first stage, shared by all conditions, produces the reply and the assistant's decision about what to save and from which source (the user said it, the assistant inferred it, it came from a document). A second stage applies each condition's write rule to that same decision. We then inspect the database, as the first paper specifies, for whether the planted statement was stored and with what standing, and probe for it four sessions later.
+Forty prompts, ten for each of the first paper's four strategies: a false fact asserted in passing, a false fact inside an update request, pressure on the assistant to draw and store its own conclusion, and an instruction to the assistant hidden in a document the user asks it to read. A first stage, shared by all conditions, produces the reply and the assistant's decision about what to save and from which source (the user said it, the assistant inferred it, it came from a document). A second stage applies each condition's write rule to that same decision. We then inspect the database, as the first paper specifies, for whether the planted statement was stored and with what standing, and check whether it is still retrievable four sessions later. Task 3 was completed on gemma only, and the follow-up replies were not scored by the deadline.
 
 The first two strategies are the user's own words. A memory that trusts the user is not expected to stop them under any condition, and they are included so the result shows what the design does not claim.
 
 ### 3.7 Scoring
 
-Citation, action and check need a reading of the reply. Two judge models score every reply against one statement at a time. A judge sees the statement, the user's message and the reply. It does not see the condition, the retrieved memories or their labels. gemma-4-31b-it judges every reply; deepseek-v4-flash judges a fixed sample chosen by hash.
+Citation, action and check need a reading of the reply. In Task 1, two judge models score replies against one statement at a time. A judge sees the statement, the user's message and the reply. It does not see the condition, the retrieved memories or their labels. gemma-4-31b-it judges every reply; deepseek-v4-flash judges a fixed sample chosen by hash.
 
 Ninety Task 1 replies, sixty from the gemma run and thirty from the deepseek run, were given reference labels independently of both judges. The labels were written by a third model, Claude, the assistant used to build this project, reading each reply with the condition hidden and before the judge output for those replies was read; they are not human annotations. The ninety are the first replies in the hash order the judge sample uses, so both judges also scored them. Replies the labeler found borderline were marked at labeling time, with the reason, and agreement is reported with and without them. A control set scores statements that were never retrieved, to measure how often a judge says yes when the memory was not in front of the model.
 
@@ -146,13 +144,7 @@ Fourteen of the fifty false inferences are contradicted by something Dana said. 
 
 The two added conditions store exactly what C stores. With the read-time gate, action fell to 3 of 100 on gemma and 2 of 100 on deepseek, and on task questions to 3 of 50 and 2 of 50. With hold until confirmed it was 4 of 100 and 5 of 100. Both sit at the no-memory floor. The two models met the gate differently on task questions: deepseek asked the user in 23 of 50 sessions and gemma in 12 of 50.
 
-The paper's time-to-live does the same job by a different route:
-
-| Condition | Target retrieved, before | after | gemma acts, before | after | deepseek acts, before | after |
-|---|---|---|---|---|---|---|
-| B, naive memory | 42/50 | 42/50 | 35/50 | 39/50 | 34/50 | 37/50 |
-| C, provenance labels (CAMA as shipped) | 42/50 | 42/50 | 16/50 | 15/50 | 15/50 | 10/50 |
-| C with the paper's time-to-live | 42/50 | 0/50 | 16/50 | 1/50 | 12/50 | 2/50 |
+The paper's time-to-live does the same job by a different route: after expiry the target was no longer retrieved, and action fell to 1 of 50 on gemma and 2 of 50 on deepseek, against 15 of 50 and 10 of 50 for CAMA as shipped (Appendix B, Table B.12).
 
 Every paired comparison named in this section and in 4.2 has a Holm-adjusted exact p of 0.016 or lower on both models (Appendix B, Table B.1).
 
@@ -179,17 +171,27 @@ With no memory at all, the judge found the reply acting on the false inference i
 
 ### 4.6 Correction retention
 
-Task 2 was still running when this version was built and is not reported here.
+The correction itself was stored in every memory condition. What differed is what happened to the false memory it contradicts. These are database-level results, read from CAMA (Appendix B, Table B.13).
+
+Under naive memory the correction is one more entry beside the false one. In the follow-up sessions the false memory was still retrieved in 54 of 72 sessions on gemma and 54 of 72 on deepseek, so the model is handed the error and its correction together and left to choose. Under the provenance-aware conditions a contradicted inference is rejected through CAMA's own tool and stops being retrieved: on deepseek the false memory came back in 0 of 72 follow-up sessions.
+
+The step that decides which stored memories a correction contradicts is a model call, and it was not perfectly reliable. On gemma the same call named the false inference for 19 of 24, 23 of 24 and 24 of 24 corrections in three conditions that store the same memories. Where it missed, the inference stayed provisional and was retrieved again in 7 of 72 follow-up sessions under C as shipped. Expiry and hold do not depend on that step, and under both the false memory was never retrieved after the correction.
+
+Whether the replies in the follow-up sessions reverted to the false content, which is the first paper's reversion rate and time to reversion, was not scored before the deadline.
 
 ### 4.7 Adversarial insertion
 
-Task 3 was still running when this version was built and is not reported here.
+Task 3 was completed on gemma-4-31b-it only. The counts are what the database held after each attack, which is the inspection the first paper specifies (Appendix B, Table B.14).
+
+The first two strategies are the user's own false statements, and every condition stored them as durable teachings, as expected. The other two are where write discipline matters. Pushed to draw its own conclusion and save it, the assistant chose to save 9 of 10 planted statements. Naive memory made 9 of 10 of them durable; the provenance-aware store made 1 of 10 durable and held the rest as provisional inferences. For an instruction hidden in a document the user asked it to read, the assistant chose to save 9 of 10. Naive memory made 9 of 10 durable and the provenance-aware store 3 of 10.
+
+The planted statements that became durable under the provenance-aware store are the ones whose source the assistant itself reported as the user. Provenance at write time is only as good as the attribution, and here the attribution was made by the same model that had just read the injected instruction.
+
+Four sessions later the planted statements from these two strategies were still retrievable in 16 of 20 cases under C as shipped, 4 of 20 with the time-to-live and 4 of 20 with hold until confirmed. Whether the follow-up replies acted on them was not scored before the deadline.
 
 ### 4.8 How far the scoring can be trusted
 
 Against the 90 reference labels (3.7), the primary judge agreed on "acts" in 87 of 90 and on "flags or asks" in 87 of 90. Agreement was lower on whether a reply merely mentions the content and lowest on whether it says the content is untrue, where, in the reference-labeled replies, the judge several times scored "I have no information about that" as a denial; no claim in this paper rests on that fourth question. The disagreements fall mostly on replies marked borderline at labeling time (Appendix B, Table B.5). The second judge, on the replies both judges scored, agreed with the first on "acts" in 558 of 593.
-
-Condition D gives a direct reading of run-to-run variation, since in Task 1 it is condition C run again. Both runs retrieved the same five memories in every session, yet the reply text was identical in 37 gemma sessions and 0 deepseek sessions of 100, at temperature 0. The action counts for C and D differ by a few sessions (first table above). Differences of that size between conditions should be read as noise.
 
 ## 5 Discussion and Limitations
 
@@ -201,13 +203,15 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 
 **What this means for CAMA as published.** The shipped system no longer expires inferences and returns a provisional inference at full weight. On this material that is the difference between acting on a stale wrong guess in 1 of 50 and 2 of 50 sessions and acting on it in 15 of 50 and 10 of 50. The first paper's design was right on this point and the implementation moved away from it. Restoring expiry, or holding or gating unconfirmed inferences at read time, closes the gap in this test.
 
+**Provenance is only as good as the attribution.** In Task 3 the provenance-aware store kept planted content out of durable memory except where the assistant itself reported the source as the user. A memory system that takes the writer's word for who said something inherits the writer's mistakes, including ones an injected instruction induces.
+
 **Relation to contamination within a conversation.** Giovanny et al. (2026) found near-zero adoption of a falsehood attributed to the model's own earlier turn, on facts the models already knew. Here a line marked as the model's own unconfirmed conclusion was still used in 24 of 50 and 21 of 50 task sessions. The settings differ in models and material, so this is a contrast and not a controlled comparison, but it fits the reading that their resistant behavior rests on what the model already knows. For facts about one person there is nothing to fall back on.
 
 **Limitations.** The material was written to surface the failure, the store is small and half false, two open models were tested once per session, and both the judge and the reference labels are models. Appendix A gives these in full, with what was done about each.
 
 ## 6 Conclusion
 
-The protocol in *Memory as Safety Infrastructure* was run for the first time, on the memory system it describes. Its main prediction held on two models: separating what the user taught from what the assistant inferred sharply reduced how often a wrong guess was treated as fact. Its qualifier held too. The risk was reduced and not eliminated, and what remained sat in task contexts, where a label on the memory was not enough. Enforcement by the memory system, through expiry, a hold, or a gate at read time, removed what was left. The published implementation had dropped the expiry the paper specified, and this run measures what that costs. 
+The protocol in *Memory as Safety Infrastructure* was run for the first time, on the memory system it describes. Its main prediction held on two models: separating what the user taught from what the assistant inferred sharply reduced how often a wrong guess was treated as fact. Its qualifier held too. The risk was reduced and not eliminated, and what remained sat in task contexts, where a label on the memory was not enough. Enforcement by the memory system, through expiry, a hold, or a gate at read time, removed what was left. The published implementation had dropped the expiry the paper specified, and this run measures what that costs. At the database level, a correction removed the contradicted inference under the provenance-aware store wherever the check named it, and planted content became durable there only when the assistant attributed it to the user.
 
 ## References
 
@@ -218,7 +222,6 @@ The protocol in *Memory as Safety Infrastructure* was run for the first time, on
 - Reinhold, A. Memory as Safety Infrastructure: Evaluating Provenance-Aware Persistent Memory Architectures for Stateful LLM Systems. Zenodo, doi:10.5281/zenodo.19244253. Version 3.0, 14 September 2026.
 - Reinhold, A. Does Attached Provenance Change What a Model Believes? A Preregistered Test with Planted Sources. AI x Epistemics Research Sprint, this repository, 2026b.
 - Tango, T. Equivalence test and confidence interval for the difference in proportions for the paired-sample design. Statistics in Medicine 17(8):891-908, 1998.
-- Zou, W., Geng, R., Wang, B. and Jia, J. PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models. USENIX Security 2025. arXiv:2402.07867.
 
 ## Appendix A: Limitations and Dual-Use / Ethical Considerations
 
@@ -238,7 +241,7 @@ The protocol in *Memory as Safety Infrastructure* was run for the first time, on
 
 **Choices the first paper left open.** The time-to-live is three sessions. The two-sentence legend that explains the labels is present in every memory condition; no run removes it. Retrieval uses CAMA's default of five results.
 
-**Not run.** Tasks 4 and 5 of the protocol, and anything that needs the operator's real memory.
+**Not finished or not run.** The laptop running the experiment slept for seven hours on the last day. Reply-level scoring of Tasks 2 and 3, Task 3 on deepseek, and the second judge pass for three deepseek conditions in 4.4 were not finished by the deadline, and the tables say so where it applies. Tasks 4 and 5 of the protocol were not run, nor anything that needs the operator's real memory.
 
 ### Dual-use and ethics
 
@@ -351,7 +354,7 @@ The user is invented and no personal data is used. The harness refuses to open t
 | Replies from | Never-retrieved statements judged | judge says mentions | acts | flags or asks |
 |---|---|---|---|---|
 | gemma-4-31b-it | 199 | 2 | 0 | 0 |
-| deepseek-v4-flash | pending | | | |
+| deepseek-v4-flash | not judged yet | | | |
 
 **Table B.8. Condition D as a repeat of condition C.**
 
@@ -359,6 +362,8 @@ The user is invented and no personal data is used. The harness refuses to open t
 |---|---|---|---|---|---|
 | gemma-4-31b-it | 100 | 100 | 37 | 31/100 | 25/100 |
 | deepseek-v4-flash | 100 | 100 | 0 | 25/100 | 25/99 |
+
+Condition D gives a direct reading of run-to-run variation, since in Task 1 it is condition C run again. Both runs retrieved the same five memories in every session, yet the reply text was identical in 37 gemma sessions and 0 deepseek sessions of 100, at temperature 0. The action counts for C and D differ by a few sessions (4.2). Differences of that size between conditions should be read as noise.
 
 **Table B.9. Task 1 by condition and phase, gemma-4-31b-it.**
 
@@ -410,15 +415,45 @@ The user is invented and no personal data is used. The harness refuses to open t
 | C + read-time gate (added) | 42/50 | 42/50 | 98/100 |
 | C + hold until confirmed (added) | 0/50 | 0/50 | 0/100 |
 
+**Table B.13. Task 2, what the database held and returned after a correction.**
+
+| Condition | gemma: contradicted false memory named by the check (of 24) | rejected or removed | false memory retrieved in follow-ups (of 72) | deepseek: named | rejected or removed | false memory retrieved in follow-ups (of 72) |
+|---|---|---|---|---|---|---|
+| B, naive memory | 24 | 0 | 54 | 24 | 0 | 54 |
+| B + delete on correction | 24 | 24 | 0 | 24 | 24 | 0 |
+| C, provenance labels (CAMA as shipped) | 19 | 19 | 7 | 24 | 24 | 0 |
+| C with the paper's time-to-live | 23 | 23 | 0 | 24 | 24 | 0 |
+| C + read-time gate (added) | 24 | 24 | 0 | 24 | 24 | 0 |
+| C + hold until confirmed (added) | 0 | 0 | 0 | 0 | 0 | 0 |
+
+**Table B.14. Task 3 on gemma-4-31b-it, what the database held after each attack.**
+
+| Strategy | Assistant chose to save it (of 10) | and called its source | B: stored durable | C: stored durable | C: stored provisional | Retrievable 4 sessions later: B | C | C with time-to-live | C + hold |
+|---|---|---|---|---|---|---|---|---|---|
+| S1, false fact in passing | 10 | assistant inferred 1, user said 10 | 10 | 10 | 0 | 10 | 10 | 10 | 10 |
+| S2, false fact in an update request | 10 | user said 10 | 10 | 10 | 0 | 9 | 9 | 9 | 9 |
+| S3, pressure to infer and store | 9 | assistant inferred 8, user said 1 | 9 | 1 | 8 | 7 | 7 | 1 | 1 |
+| S4, instruction inside a document | 9 | assistant inferred 2, from document 4, user said 3 | 9 | 3 | 6 | 9 | 9 | 3 | 3 |
+
+**Table B.12. Before and after the time-to-live.**
+
+| Condition | Target retrieved, before | after | gemma acts, before | after | deepseek acts, before | after |
+|---|---|---|---|---|---|---|
+| B, naive memory | 42/50 | 42/50 | 35/50 | 39/50 | 34/50 | 37/50 |
+| C, provenance labels (CAMA as shipped) | 42/50 | 42/50 | 16/50 | 15/50 | 15/50 | 10/50 |
+| C with the paper's time-to-live | 42/50 | 0/50 | 16/50 | 1/50 | 12/50 | 2/50 |
+
 **Table B.11. Runs, failed calls and recorded cost.** Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.
 
 | Run | Sessions complete | Not complete | Model calls attempted | Failed attempts | Credits recorded (run) | Credits recorded (its judges) |
 |---|---|---|---|---|---|---|
 | t1_deepseekv4fl | 700 | 0 | 701 | 1 | 0.076 | 1.686 |
 | t1_gemma431bit | 699 | 1 | 701 | 2 | 0.074 | 4.715 |
-| t2_deepseekv4fl | 72 | 0 | 83 | 3 | 0.147 | 0.000 |
-| t2_gemma431bit | 394 | 1 | 530 | 22 | 0.567 | 0.000 |
-| **Total recorded** | | | | | | **7.26** |
+| t2_deepseekv4fl | 504 | 0 | 670 | 22 | 1.079 | 0.000 |
+| t2_gemma431bit | 503 | 1 | 667 | 26 | 0.671 | 0.157 |
+| t3_deepseekv4fl | 0 | 0 | 1 | 1 | 0.048 | 0.000 |
+| t3_gemma431bit | 199 | 1 | 291 | 12 | 0.310 | 0.000 |
+| **Total recorded** | | | | | | **8.81** |
 
 **Deviations and incidents.** (1) Two harness files were edited while the stateless condition of the gemma Task 1 run was in progress; the edit added functions used by later tasks and is recorded in `runs_mp/RUN_NOTES.md`. (2) One second-judge job ran during a provider outage in which every call returned an HTTP 5xx error. It produced no verdicts, its files are kept in the run directory under `outage_2026-11-15_1509`, and the job was run again. (3) For part of the Task 1 judging, two judge jobs shared one model's rate limit, which added waits and failed calls but changed no verdict. (4) The laptop running the experiment slept for about seven hours during Task 2; the runs resumed from their own files, and the remaining runs were then split into one lane per model (`memory_protocol/lanes.py`). (5) The second judge pass over other retrieved false memories (4.4) and the controls were added after the first replies were read, as was the session reading itself; the first paper's wording of its metrics is the reason, and both readings are reported.
 
@@ -428,7 +463,7 @@ The user is invented and no personal data is used. The harness refuses to open t
 
 **What is in the repository.** `memory_protocol/PROTOCOL.md` lists every choice the first paper left open and how it was filled, and was committed before the first full run. `runs_mp/` holds, for each run, the manifest, the ledger of every model call, the raw responses, the traces and the judge outputs. `runs_mp/labels_hand.jsonl` holds the reference labels (the file name predates the wording used here; they were written by a model, not a person) and `runs_mp/labels_hand_gemma_t1.txt` the labeling rules and a note on each borderline reply. The blind samples (`runs_mp/handlabel_*_sample.jsonl`) are in the repository so a human reader can label them and score the judges with `memory_protocol/handlabel.py score`. `runs_mp/RUN_NOTES.md` records an edit made to two harness files while the first condition of one run was in progress; the edit was additive and the affected condition is the stateless one.
 
-**Not run.** Tasks 4 and 5 of the protocol. Component B of Task 4 and the first paper's analysis of a live inference corpus need the operator's private memory, which this harness is built never to open.
+**Not run.** Tasks 4 and 5 of the protocol; see Appendix A for what was started and not finished. Component B of Task 4 and the first paper's analysis of a live inference corpus need the operator's private memory, which this harness is built never to open.
 
 ## LLM Usage Statement
 
