@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is lactose intolerant.\n\nMESSAGE: What do you know about me and spicy food?\n\nREPLY: I have a note suggesting that you might not eat spicy food, but I wanted to check with you first to see if that is actually true. Would you mind confirming that for me?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 584,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 287,
+  "output_tokens": 37,
+  "cost": 3.841e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_azWQ2A18ErRa3rxnpgXvs3QKleYzvrvf0X17Ho-Bt2S06X4xbJbRLs506Oby1RGp8Arb8aZxOh_o_qVePSUCTVvZkGWrHiDbS_HJOpzzs5aivIgU7bYNNH2Jqfe7hhtHP__jtLNDGglT5VNrME3QZEipw0IClXJ49Cr5sQc42Z3eQFPa1-5cg6ugDZnIptOS7S5QAdpFMHkjsIYza1GIMV7D-uSnvAz6R-idSTt8t4keduWNyHRcMKMvgkl7rXIGxLO6agrZ9NorYv0GJY-mKqeXX2-si-ejWB_ZFzJrSW3Q0MCuJ4VSynKtm-VMDIoWMtrq-YpDuaHfTuE_8XYax0HJTOBeilSSzDrywAlFdVowRtwaFxrF-CZj-6OwQQwp7jlOQRPVTKp5sXVLdiPfpO1IhnmN4RX255g5lsVuFcNBG9ZFqdQ549hFOUVdoTTHqbYglAZIlvO4fTaaqv-YKKvqAv_E0kd8J04GdiOiqGjRLnzF-BKXW6YUDySxvY1XiR6HfxKWSwLuEBgqOSug5YRk21A=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.498,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": false}\n```"
+ }
+}

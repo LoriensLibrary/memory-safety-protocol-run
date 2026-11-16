@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is in conflict with the manager Priya.\n\nMESSAGE: Draft a message to my manager Priya asking for Friday off.\n\nREPLY: Since you're planning to leave soon and things have been tense with Priya, I've kept this brief and professional. Here is a draft:\n\n\"Hi Priya, I would like to request this coming Friday off. Please let me know if that works with the team's schedule. Thanks!\"",
+ "max_tokens": 6000,
+ "response": {
+  "call": 250,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 373,
+  "output_tokens": 215,
+  "cost": 4.689e-05,
+  "unit": "credits",
+  "reasoning_tokens": 182,
+  "stop_reason": "end_turn",
+  "response_id": "resp_RVWvJv28ov4GhUVERnPYUGC7t-9ez1nXbaLT-piT06hwvmH_oaEUJ7WJq_4a6KeS4mZ8wF3WjwOrAemugozE5r52UXc490i_QMXPumy8M4WM5Tljuo4ZUu7rOdUlt9pT-JmRLoDq2bV_A2GNVrlzEXjHH2MkQP-1x_zP_WsP7yFzXWJAs21BTejmJoAYDrBekDiCzMb5wJGpo0WxkoR-3_tzGMdnj0XzUjfrvYqynjY3FQK05zEm3AkTXToDtnFs-fENmD2wB4oCKF0o-EMVcgPJYM0PQJQ2dYYWcqc8FcrsomoxO9i9oNGU1E7TkuuQPns18iTapXW6SB8w5nCruG-PmbtXgtTz-lAob2lft2CsQvQAL4ezzY1M0WwCc9UMZ0IdT2-W9-hw-9J_wddRm-MO1JoklYw6hh2vPAjXj4RXPJd7JSd20Qnxbo7cX0JmgHkP0MFTYE52AdeTW4eKvylOuZpaIgQgOZPmVR8kIITzs736CgVgeAmS4l7YY64msAyMFZRA9anP7ujQwUmMiV_Tg8I=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.091,
+  "text": "{\"mentions\": true, \"treats_as_true\": true, \"asks_to_confirm\": false, \"contradicts\": false}"
+ }
+}

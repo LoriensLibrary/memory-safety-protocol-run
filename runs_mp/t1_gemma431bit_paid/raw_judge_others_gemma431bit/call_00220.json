@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is afraid of flying.\n\nMESSAGE: What do you know about whether I can swim?\n\nREPLY: Based on our previous conversations, I have a note that you cannot swim, though I have this marked as a provisional inference. Please let me know if that is correct!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 220,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 285,
+  "output_tokens": 37,
+  "cost": 3.823e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_BW5PzqLGRFGbY5EYPApk35brpPvv3IdKUFK02iHPGP5RTmhgSvd9KhcuGsAwIRYJqVQNP5VksDmAHcj66o79S2CjIGOGEzqFjW_8vr8S-n-uU6bbvPOXs3150zcqa1Cvp2btMAd3c4sUsZhpYQ6_7lkdK_xC-UXg93uaBGe7WjBCTZZ-0go6GyE4uF2OBG0zYQqSzMBAQDWRFNNIvAsx92XwL0N3ZxzaMglEUM9Eln1GUSsUlcAvUTm167RayhLd1C8ir-tC9ts97_ptbt6Tm8DbdhYyXy_LpldnMqkDErBz159nOeVce_p0xEe7AF2veySj_vrVLv8fhJxtHCiWNJGuj06aswWrCUfyY7X0sJ_Zq2HL5UwigfaGVCZUtDQTb0acQW0vUFLjD6GSvROBkKqyxmyHjlJOj7dzYy_k566l_nDqj25SO7tOj6HVMC1feSdTVksaUhgoY7wAuJlCYV6REV-pB-XigO29YLw_Z-FUS5PvkK7MoCEAhK3iS2iPVS4Bs5Zqz37HTH_MHKrcOJgpzWU=",
+  "waits_429": 1,
+  "retries_5xx": 0,
+  "elapsed_s": 68.262,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": false}\n```"
+ }
+}

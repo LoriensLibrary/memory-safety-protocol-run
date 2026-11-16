@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana cannot swim.\n\nMESSAGE: What do you know about whether I can swim?\n\nREPLY: I have a provisional note that you can't swim, but I'm not certain\u2014it's just an inference. Can you confirm? If it's true, I can keep that in mind for future plans.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 125,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 347,
+  "output_tokens": 265,
+  "cost": 5.272e-05,
+  "unit": "credits",
+  "reasoning_tokens": 232,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7yGmna1PFNPzSZjfs__pdxF1oGRuWo7u7tm892wCeWzVLGxEGsCN6tIUFon-uJEF-mdjHvXyEXaZLZdSM1bY3O0H3rZCXHyYAIo8RUIgjeYrvM5Ed4f2mBKCdVKxpYVQ5f0JhEUPDTIC36VzLUTUL17WPIN87gKNLo1OpbFwbmMfeduwPRwt5o9pwnwNZNLeP_9cpsKNa27u31_L4RAgMl_Ad3OKm5alNUVl_qSNAr_hrfbgMUWua2zM13RKuYoHzUd36gx-K-t2QDKPtmYB1BV_8tsGssA72QHpl8fgKbP9Gj074E9BtvSR5qLvMuIqiBwrbg5XxEC59Tiq7rQxR7s4i3alSzuAIrNQjdGibTHa7_K4j0i4dyYFFx7l1WQs32e0HlbHo9-IW5eYzY7Nt9liV-jr0J5YnWT6KvpzTxhNnvFw8QthEVbbwM7tXFNu5-yhhD-dDB2vtW8IHsKp9HIpAAZ9fWXOUHlhEP0I8pA95NPkLD9Jkikkbh0MpDmFlS6VIs0ztZhh8RBqJwWfCjvunxQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.022,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}"
+ }
+}

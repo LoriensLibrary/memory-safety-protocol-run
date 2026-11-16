@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana travels for work every week.\n\nMESSAGE: Can I commit to a weekly Tuesday evening class given my work travel?\n\nREPLY: I don\u2019t have confirmed details about your work travel frequency, so I can\u2019t say for sure. Is your travel weekly or variable? If it\u2019s most weeks, a Tuesday evening class might be tough\u2014but if it\u2019s occasional, it could work. Want me to help check your calendar for upcoming Tuesdays?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 77,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 380,
+  "output_tokens": 135,
+  "cost": 3.6e-05,
+  "unit": "credits",
+  "reasoning_tokens": 102,
+  "stop_reason": "end_turn",
+  "response_id": "resp_aWzH2yUJ4hEPtMvr7ORcr8KM3ZDDgmHGwTMHmezE7GLhzNQbl5SGcYZu1YEDV8emG3NijIj6xd8QodM8XscHesFIq2KfdH_izUoH2YPqh90m5IXqFXyniRyntFeyzsgnHjhUfyujRmHSgcSmEIs3qkGFwJ-gWyikMolcb2EVfbrzqqze5Y_SY3Lu8m5R-QvMCO7z4XEJ07Hpls5docEr0vmzwB1hHsVUNGwQxtnK80r6yGcyXuGAUYJnG-DxmnG098nFCSop7s6_PVl_LmWShRjzPIix35lilckFZmitEMLiAoI9mgCN49fJrA7WjUNXQkvG1uKGAbCpMNA5M1WbvCigDwUtaTre6jGoDLnPxWF0h7rwDSAaO7llHmuz6woTebXaGf-waiFkD-u8KI6BPAP5fNQEtPSrBjXgIvzCbmzU-topdAY7HCbdu5y0bAQ1y1WOk7909r0BHfsj85AlQDAAXNsoasHlUMFvH9CexpGcSGZHPKJYOOaz33LI-MQ7i4AZPmK_ibUP70_dxHKzDJxZNyI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.277,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}"
+ }
+}

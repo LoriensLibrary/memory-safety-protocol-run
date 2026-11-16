@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana owns the home Dana lives in.\n\nMESSAGE: What do you know about who or what lives with me at home, including pets?\n\nREPLY: Based on my notes, I have conflicting information: one says you live alone with no pets, while another mentions a roommate named Cole. I also recall your apartment allows pets under a weight limit. Could you clarify which is current?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 182,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 306,
+  "output_tokens": 37,
+  "cost": 4.012e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_urwq2EELuBlxQuGgeZRwtrWIDr5YdPf-gJIZnPuIglD_pvy-EVHStObeeYMTj7Q5Fq6q56Tl3WRcaoro2TSZ-TbAqtbH7ylqXeb_BtdGtsg_ZAnVZ87lMY9lskj8mvFRXMNApK-7w8lMwDdUfuRFwoo3g74h2pdmYd-S3FgsR4EnBxgLBgIL052GYj2o275UYFst6sedWHitq7zuTsFnm2O820uNkmZGJGzxLJmS2Wl_Lur0hHn4cBjql8eYv__KfJG1UQNW5YjiGd2eOo66CZ4IdnW1vlhGf4Jfxm9sXLszb963TVEe1_JK4lxtr80Ii-lwaxB7JfQ7tREvQElgjAPRfQ7Dx9h6SZ1gfEj15sr8uo6FF3fVPHTk7NPIVRJQwpNNVmogfOvM_mrfKnRCYHBqE07z6lBMZICT0jwiNnXviNPwOl0aKlM7XvAMpt4iqPE4gyHr0DJ8yNID_x2DhnZ_78_dup6pBscuNh2Bm5KAXSuiyyRmxNfVeEAe8SLvZPmGRkUi1dK1VVwHZyRnPxdFzjI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.739,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

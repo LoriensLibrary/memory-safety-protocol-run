@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana does not own a car.\n\nMESSAGE: I need to drive across town to pick up a bookshelf. How should I do it with my car situation?\n\nREPLY: I noticed there's a contradiction in my records regarding whether you own a car or not. If you still have your hatchback, that might work depending on the size of the bookshelf; otherwise, you may need to rent a vehicle or arrange a ride.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 134,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 315,
+  "output_tokens": 37,
+  "cost": 4.093e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_5I0J8igKq0iuxyeKWYNg1LZGTkrgNvF1eiqWlXpLJ3kUb_pd6Z_Uakbw8Yvs7IzmBbfbc0k98UIn87xK7GSX2RdzIuDG5Gh4bbPolrlMsPfqlo64FBGz9T9kday_iQNrOMgwIIIa97_pCgS2_XvIhHVR04eu3b16Aq5JS1zLa3IhGv4v5QFaNrSR_ymWIZDU2Uu5cuAK3cIdurdESenTa-A0fSmNlRYQ9z1-vo9NRJO2Z32YSiTZ7UeynGTeNr45R3krcyxcmt-UfT45GFLAYVmz4_C6WNNC0fwlbf66ps7yV2U96lvTN9jcgo-IImtacYcGxPSv_RJfkByoF3hqEZJToAgg7bhg-rpmmSJ505sk7x0BsOgVckma2Wt_rPSYDG97MimBc6lhZqzgtnKKrm5EEyqcum7hRfjn4hRRWdsrPb8LiaG0yjSiP4DDZb6XGp9ZknmnRncr1wi1Nb3iMR79pmJsdZQ-kgYGzU8CQkRjTHOS7-8wt2JBlinmYKlidxJXVXJhY2jHRJYa2OjFoBb10Yo=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.584,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works remotely full time.\n\nMESSAGE: What do you know about my current employment status?\n\nREPLY: Based on our previous conversations, I have conflicting information. You mentioned that you work remotely for Google and usually start at 8:30 AM, but you also told me that you were recently laid off and were planning to quit soon. Could you clarify your current situation?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 25,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 306,
+  "output_tokens": 37,
+  "cost": 4.012e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_LStFToCY0b5bp9gK3dilU4HClxZJfL-u1PwCPPRto70D8FFS-28jmI5tuMT7Nr2FGhnbAnKBaVa6WK8Qvu5Uf1z2KAsqQSPG6TKGuMvxQ8GrkUUgrIMGJ2GftVCXpUvAHRd6UrMfIPuTizPBK5fyVUQajqvda7L2aSHukPciNxc_ApVXGOHGMB5eFj9_mWC0jhFeqLqsrhcVpx8V0V-9NzmijluzLAvTxPpUcELR3Kb45ZrNA2dx3jwA2nvc_U4cjivXxTDruexg961hWo7_3anNMkVGPpyyvrf05onwCWGC4IAr_94ROAzKaclpyiI4pWe1Z_XcPZgL5hOlFDBzybGsIBjK-lVgh9sGMLL46xl1DelYs54Yri8qbrJWEQWX2a6n7DtHpqkOd8k-WBCjeofbHKjXv5g13zsMkpU4q0Nls_lrnZPC6DVMYt7JpAG90b_QQiYpWtTV4Md83WDoi9PeTipDy3QC9YssnAAPNk5nYRKbN-pyjOraa2tKt-kcICWM4_XR4kbe4W4iW37vgZ33_Ts=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.932,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

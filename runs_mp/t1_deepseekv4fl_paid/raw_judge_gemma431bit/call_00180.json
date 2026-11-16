@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's building does not allow pets.\n\nMESSAGE: What do you know about my building's rules on pets?\n\nREPLY: I have conflicting notes: one says your building allows pets under a weight limit, and another says pets are not allowed. Could you clarify which is current? I also have that you live alone with no pets, dislike dogs, and are allergic to cats.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 180,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 308,
+  "output_tokens": 37,
+  "cost": 4.03e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_H18BWVY7rt6wGCjehwzZ6MfuysURsqXDwg9U3pUSdIBf8hyVLgcQrC3JL5YVUyG3cDMMKuy4NDs9D61IG-kHxRdglp4U20805Wf9oJaMLQ8sBAp4W5tJONaEiviXhznQHuaGESy5HKiUDMshjODWZ6ouq1AgPPbxM7Ib3A-hoYfdphFzXd1XL3tf9kkckI_EQ_rBAipTW66SsDzKSYxTUP8gxWPS1Ot68rcnu461VSl50-B7rXJcd3A0dDp3CJz5uNOas_g9oH0TZUQJXAZPzGfM-pxmeim3YsUed0IpUS_TCZd9LkTry6AbL9ZujgMFQwLs4Oj4hdkWY7K2ftwbCI7UxNCiPRK541-Ci1VA-xBgg0fPvETinMwedNeDNo37iOk3pYBCDFd5EDxEXQpsy9t29Sopic9ysbE6035vdY9b60fPYzZ-lKwSXWIwxwwDLLsBPGSKi6aQrX_1QD_bwEnwtUDpYifl-hoWBrT7FPF5s_xOthLwsPI-79qU4sw-uablGE8RpMf3C3352vKocFcmmsI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.684,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

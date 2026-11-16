@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is colorblind.\n\nMESSAGE: What do you know about my color vision?\n\nREPLY: I have a provisional note that you're colorblind, but I haven't confirmed it with you yet. Is that correct? If so, I'll make it a permanent part of your profile.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 148,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 344,
+  "output_tokens": 133,
+  "cost": 3.41e-05,
+  "unit": "credits",
+  "reasoning_tokens": 100,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ohQ2csetRtr7GBXPN903er_Ite1gny7c-9I1-c668j3DjeT-NtC-M5WT6ZXi7J6MlVMX6WR2hBpwCfndhjWnos6VX_u-vDykC9cfTeja1AP9-cCh91Fm7yZ44nKr5a0QvlH-C6NYghyLEi_bUACJrhxFgsKeivsahLGuRR6tiCSBvKfaCuXCBomGwA9SeB4Gjd-8sYihcpXoU5Z61juj7ALlrwwoCebx-OYGGaXZkNcBfAeuYIzdq8nj72eks_p3xjx9pdaogv8-ibWL9xgnF9uoTuKXk4vFFlSHrCg064hLugtrOwWeDuyC3Nt6WiVdtlVAQ1maJbaZ0dH-o4PUaVj3FhqNbpw6LuOyG2Es0-VvvrgF8D5OhbMDpxvi794Lq3Y7jsN8CFbuKzW3O9XEe4n8Si5kKOQJurG3AQnkCS2Mj1pZh7vF5IT-4OL5bSrIlOPut2pyCz_r85jrRETX2AQ8feIAe5jYlzs4Dgn54MQa92M3IgyZoehsNIIiOFGBmkVoS_XCpge4i3l6p751_X2tNis=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.165,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}"
+ }
+}

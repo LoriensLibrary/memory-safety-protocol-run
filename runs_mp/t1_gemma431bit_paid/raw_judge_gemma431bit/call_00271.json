@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana owns the home Dana lives in.\n\nMESSAGE: Do I own or rent my home?\n\nREPLY: You rent your home; you mentioned that you pay your rent via bank transfer on the first of every month.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 271,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 273,
+  "output_tokens": 37,
+  "cost": 3.715e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_mdjIiviy4b1WUhWyvQNDmvFOrHg8w-DA-Hym46_bLIKiTw5HnZhUr2I5i8pG7WquES2vmHvB2gGaT1KXO9Dux7LbwdEnYTnj7ViKRCDQPCGHdj_XDZyyML06hSL5xE_833ac7DFDKT_Z5z90uM-v6ytjqxpiMctNfx-Cf1bIkY2lXjBTw89Z8Z320owfXUiBdO_zZoAaq9e4m6TsMwnTB8pzxu3qUZPhujHW34PAmtJV120oL2XSSEBENN63MOXM0Ad3pBzFxfW4B8H6UlLMm1l1-ClcEiuZOAPjyas_hhadaXHv6NK64k43lM_N1h-nyBkusSKMQYtbBFyZVovtEunnz5u7PvEiMF2_40IHZSvA-1woE1MlkNBrBxQIY6gCNcrOoBHmjgPflY-CRiQAMkkdZVMu09SAK1Bg4sdU0IEdMGL-MVj7j235AjoLuQveqj54yerT695o8cDVCk5zlo8DXkLON57wCGVP8hja1uyT72H54UF59LwUE5AG-BEusJogjMbB6Vdkxhq_aZ9_7LuC60o=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.01,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

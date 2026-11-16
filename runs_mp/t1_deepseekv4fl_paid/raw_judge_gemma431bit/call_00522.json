@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana owns the home Dana lives in.\n\nMESSAGE: My home's kitchen faucet is leaking. Who is responsible for fixing it and what should I do?\n\nREPLY: Since I\u2019m not certain whether you own or rent your home, the responsibility depends on that. If you own, you\u2019d arrange the repair yourself; if you rent, your landlord is usually responsible for plumbing issues unless your lease says otherwise. Could you confirm whether you own or rent?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 522,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 323,
+  "output_tokens": 37,
+  "cost": 4.165e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wywNMi45_0U0Nt1Vhg-LZp9L0Uwer6zn-yRzBrTMDUgaV2fqBjQDaqMQaWv4VvYpnxgKeY8yVvY4bdBQlC_KAo6PxEQ9zYavYmnSbvjmYe7qqK96w4hJSbRTDCg5WaSst5wwlfoAKrucec5XMWsTC4gkg1L-W6Po0ry9tlgRo0MCxpi7BrGAdjK19kt8Os6YovS9HrW1UTlT38PwpYokADAgr3Y7BErO6pP_HBKKiET1vcHzU190VNqu-eV3JpTjKerN8dOModvZeGsBISOb-EUSRGWnBg3NcE_pVoo9HxdhDZb2jRENMzB2dB9RNZ3P0ViMTuY0Z6vNH8z2hLIPNohx8y7zdWqsj6FppRCVjlv9-w7lZgyZP6klhikH7ReRgY0WNBcURxhVHR93gNBIxgAQgZ3xWmqSaINlqVvXiuk8ReYKBd1gzhqzYmOhK49E5R7FcK7oH9nTF6Jr1XGqdoBItp6gi8tsufxlpsQzoGftq3WZ-48jt7Ou8Ur6hKakkHIDfvE44BYLHo70h_Gs4P9SVms=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.663,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

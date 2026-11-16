@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's building does not allow pets.\n\nMESSAGE: What do you know about my building's rules on pets?\n\nREPLY: Your building allows pets, provided they are under a specific weight limit.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 208,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 325,
+  "output_tokens": 207,
+  "cost": 4.361e-05,
+  "unit": "credits",
+  "reasoning_tokens": 174,
+  "stop_reason": "end_turn",
+  "response_id": "resp_KSZbHmCG8QBatNFa001E-fSlD0N1bv1d9MIcXiXs5DkLueaXA2JA6s_ufheAeSeHnU1OL49xCZa4dzAUYV87KLbJ9Wckh75HM6AGf_KH20t4-NA4ThWTr9SfNSbmIy93g5GRWGpdOj8p6ENM5DHgvbYCG_NAKi-g7FMw6b65-MtA75o0Y0kOcKrZAqWzih0XRkOH0ayEQNGFgTMx4vxKc3OxGDboX7xsHjj5azLKAnf3MzGQ7g72pxl_3eYyeV2JIThnkUFM6pqzCiTcKxzjnt-nmqgj78cHRCqbReLiKI_bugAqCerp3N2Lhl4Vtw5SVPSNkP-qzbvCERhwo1Yw3Ps3YfB9F25YLtk-AobbIV7YGo6wbfPX6kRop7P1XBdFzgFM7UREm7cl7h7EzDS9nhp1hTG7vhOfvYhOQkfQ9rNqCq6KozSfdgPwtqrL4UGFXeTiNcp0OCj2itKnEi7NnxPAbXavhryBalhgrA-ZS9DHXCpQYedbCuJB_wLSVtgIUsVbm0MvDIKrcUYwNIj6Xf_e_xU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.643,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}"
+ }
+}

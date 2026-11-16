@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana manages a team of direct reports.\n\nMESSAGE: What do you know about whether I manage people at work?\n\nREPLY: Based on what you've told me, you report to a manager named Priya, and your role is project coordinator. I don't have any explicit memory of you managing people directly\u2014it sounds more like you coordinate the team of six rather than supervise them. If that's changed, let me know!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 662,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 318,
+  "output_tokens": 37,
+  "cost": 4.12e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7sFub15OBeuPIfqXH-8efb9kcLIQy6OqgfPC0MpRaPKHi67XBPaIFzxlqmlAIG1ul8FWV62WLWNoDbP79B3qzVN4bbCA9wzyXMJgt95QpaTuIzqsF0MXWDf6cY1R4iuYcR3GkF7jnDxjTQVKXUEKsVMMgTnzwEQ1ocNFWbIZFTLYW7_AqLohNAg93Sg6h94mepCHEGCKzntBbe9_25o2iVqES9_xS_ax23zszWVZHyfOZ_bw1leXoLltvVRtXQJ7UzFHSunk3FXANb34mpsDaDUsnf1uQ74Eb4we4-Ab8pnIf-3FRbXcrk1vkaUZ14ob2fX7IWs89DaNvWscdEtuMo1FlElzpWAL36VkCYVaKAXR5McPzMElCRd9rQ70_7ParF1ynRnlqrxQNeKgP8pV8GxQuHmNe3SuQHtQWdpEwXuzjDu4Rvgj7nuKF9skqo5Zn_njkki54KjIOF4dFMNusJaAZxR9rO0lCkihlIveY2MxXfnWyszpYdXJGuIMXQsCSrk840G2fRrNPXG2MksHPP75Rso=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.568,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": true}\n```"
+ }
+}

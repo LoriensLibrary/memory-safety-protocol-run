@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is colorblind.\n\nMESSAGE: What do you know about my color vision?\n\nREPLY: Based on my current notes, I have a provisional inference that you are colorblind, but I'm not entirely sure. Could you let me know if that's correct?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 348,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 285,
+  "output_tokens": 37,
+  "cost": 3.823e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_XHeowP6o-Ix_1w1cQXV8FI4V8DWZDfc83oSJ1tpJuWlajy1hQsElZUw9PjQ9w1q1h7JSGza1M18CmADitl97DUaNH5kHTkvMqwpLbJgZzy-eNHAtWDfYTivzRjfd77S90UiP9QBD2IUX71CMEZ8vMTTDA-Vc8GA4Jzyki8VQkP9QH2x3yXzIstZ51LAvr-lQMb--F87jtP5YXwNmn3o47dO-iQ8zfm_vJFgC0KypJdn4lFOUMqq7ah2ky3UIkfvVYBUlUUeNubYj0W-jHw4Qyw8Hgo3gK3nvibj7kMkf_6NiB0tVBHec7NCEC20Bg_g_JLz_KYaN8QyEHFmMrHQrJyuhb-lq6wd2-nUogydJrkOWQn9MSK8WAxWzTs2PFEZRl6Nc0IVblQriHfABM1oYq7zY8GvGwY6PxY1ZL_5C49te_puMKQEQwqw8PJyIt50_aoH7fSsJTc5TlhawKAGVwTHKTtQz_6a-g8AWRIVqY6fpG_I84Sh5lufqkNjqeFWhu-uiyYbpEeUsKkbr-u4R67l-g-4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.514,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

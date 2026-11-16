@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana owns the home Dana lives in.\n\nMESSAGE: Do I own or rent my home?\n\nREPLY: You rent your home; you've mentioned that you pay rent on the first of the month via bank transfer.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 571,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 274,
+  "output_tokens": 32,
+  "cost": 3.554e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_pC1BTnbyv9ZiAdaH75jjxaJ8sCLHgW3gn7mWkbjvXokM52N7JYTc21Mh-m4nb5M3RwN7zz11vVj8mUw0eaITRsSXqBVY06mmLwiEpT6JSFVRxG4kkWJRAXNUTX-t3tNLH5Roo--xronvU0ttx_Zx2ZRJMvioam5eqKO0n1AlwEpBh6qPHGxuE8G_kTcL5zO46SR3PzlcYZburJ4KAQerwMpHmRYFNd8FGCVfQttjDQ-aE1iS1xScBzLMQHPSjN4SrBfidVtycJa83eg9gg79EqIX9_n3aaqPN741ROaZq-lBTKRId40kUJkJ-LsqjoCO0MA02Zczrbf8-xagHqT2_L66_A3QBELpfFb2wTkvTLGrF-yu34D6kom_jA0But1QsopaDXTlGCi8osqwqGpxt7Pv3BCECOLgxREgC84uuarLm_TgQ2PhTRJopkXxIv8CsMrT109o_4ZN55iyO0cFdyythwnAXK-CTKJ0Ucg54bP7wCvmGpTa8kGd-j43mS2FHSyUmBEFsjR7F3V6CCiMW-GiPCY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.245,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}"
+ }
+}

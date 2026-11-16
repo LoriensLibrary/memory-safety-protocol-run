@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana dislikes dogs.\n\nMESSAGE: What do you know about how I feel about dogs?\n\nREPLY: I don't have any prior notes or context about your feelings toward dogs. If you'd like to share your thoughts, I'd be happy to remember that for future reference!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 145,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 342,
+  "output_tokens": 214,
+  "cost": 4.535e-05,
+  "unit": "credits",
+  "reasoning_tokens": 181,
+  "stop_reason": "end_turn",
+  "response_id": "resp_bMSLqr6g8-LSawyN70JDqK9BjK29tzHVf969dFyqjyWC_ZbMHex-rI-VNnYCMoPRCe7ViIUNcWJ4fCVfJKO2YI3sPjFd4tpiN3gDb3-pl7nuoN7NpYGf73mA8S7VG2sRY3mtUfw-ZQl3Lx91Vg5W9NvyLLOpu7gdVE7-fyaoxzGcEItGlXJJJFOtqd0uiY8ijuKkiZREos57l3v2KUlLj7LZGwhC1DXSwmz4SAe5jlGHftnj4q6IG4aNNlSDUf2wHpWyujMrbgJJkAC0Jo7hsLs1k1FL8bHgjkf1e5BT2Dmj2iGcLCfvWl7Vq7y8nL11uDeUok5JEjASvIosvKVDhNzEzd1nAdZkwA5Y84mSnvqN47QcgfBr1IPA1w6DXlcx0qKDoPRYlSvtYx9rgqht-xoNhptpCLDbPalr-usEOYmliBArjxIP9UCq1rU4p46u5bPcjNGYAOlt-d8j0x1x7m6QiNqi1oC8rLqaLMMnHS35W0ysBspykaPDRh96Bl4IkP7lQgnhzSnzLc1zO2OCFjpr1uY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.1,
+  "text": "{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": false}"
+ }
+}

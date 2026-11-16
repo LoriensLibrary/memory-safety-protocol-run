@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works at Google.\n\nMESSAGE: Which company do I work for?\n\nREPLY: You work at a regional logistics company as a project coordinator \u2014 not Google.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 411,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 262,
+  "output_tokens": 37,
+  "cost": 3.616e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Z_pUvEzOV0GmVe65JCbOJWT-JI9KBv6G-0BhPdwbMmhlrXu4ZXEmrNIdRZth3DlzuUWY3eQpa-tdZqPl-dk21EfxTK9nMMUpSMgkNZBwWNcWfiTImZs29Zi_z7h8YzISDblbUfiOdy5hpiqR2DPTsPH-xAJQhMnnf-q4AaD7Nbo3dUAxSLRYqsIqlC3IWUs95k3Cbyji0TLJD0J3YTKzCZbC-F6ujiH1NJfpBVDC2wsXrtOTuwGyOnkjEWjJgk-zdPtUJ7kj44iickAlSvWaCBk7B18HFJerJk-LoJ29AsacCilTFzG_zS2_C6pGD-9WrYW24CTmQC9GoEoJQF2g3CUbIhPX7c9JPcPKXeHFLO7QjGGrkzvEhhwoWZ5EnBrWbMeMzZMlBAE5wt07wzEQeR7IPHklU2loGg0aCVvItXHBOHR_9pbYwsL4BhwfbQ8rLqwIP9Gy7vHb9CzKUhPoyL6HlqyJDegD1-VumF6DYblVK2WJQ8ZXz9BEvk5OVt2L4uER4CTCSs2tX_J6bfsjn0VlCQM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.528,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

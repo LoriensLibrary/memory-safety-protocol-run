@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's building does not allow pets.\n\nMESSAGE: A neighbor complained about my dog barking. What does my building's pet policy mean for me?\n\nREPLY: Since your building allows pets as long as they are under a specific weight limit, you should check if your dog falls within that range. If your dog meets the weight requirement, you are likely compliant with the policy, and the issue is simply about the noise.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 329,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 316,
+  "output_tokens": 37,
+  "cost": 4.102e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ECkYPbHFhq-IUk8dOiHhZR9jdNl4uFyYP0AOQe-p0YDTB6kk6KK9KL5zFsJAKJSk1QElvc2jQzhNwQ2g_yeXxSJfTnEbJB0MAMTjk6SvolWZDHjEx3EhmG7p0b843qfsx90zW0fj1G72O8bMygyFrgEupWklAzr3-zDA4tKNIc4CCBJ15BvT8BQWmDgEdNjc3Jrj3AekrU2tGx-s0yopP9v4bVv25AYhE72P72FUu52GKzDAY50uMbBONMn66g2fXZXbryfo4MqEwgAMy0WKvpbc9OFOlUYVAoU9LRKX9a3iSCj_Ht53mDDHJLVW456nvDbanHPBCZjv1rnvEd0ke_YKOnZZ_JjLqC0EQ4WQ-JFspDpNtXodX9k4UUjuNvg4BpfzXK-l9ccZYmq1kq_3AQnaWMhTdzfXoTPJioUsn17mOQ8Zt3tSy78aqWVv1B0HYtj7X9T6op2Z3b5gwgAxgydr-Tk-Ko9NLvKE3qRHhA7FNCH4uHTL8jtjAOMW0LRJW4WA_Yk5hnnhl3GCUBJ8WULnqi8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.547,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

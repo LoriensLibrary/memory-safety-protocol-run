@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is allergic to cats.\n\nMESSAGE: What do you know about me and cats?\n\nREPLY: Based on my records, I have a note that you are allergic to cats.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 257,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 322,
+  "output_tokens": 123,
+  "cost": 3.171e-05,
+  "unit": "credits",
+  "reasoning_tokens": 90,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wF7iopSWL9Khx-leI_mFxhm_MoIYq6AS9LoQwZnku7PKBYMH3kuYtpos-rahLo48ZXPWnih_N7rvcHO2JVMNy4T0fGTEDOhoCh7QmzoR4meGBUKL0oqkiiIOCtMi-KpB_oitGiyi8VVrsN3C5O3saDZL64HrLd0GGkZ904wCAGIYCxtA2GHe7HdSs8dN2Z4VkHDqXyCKYWupDVhx2BpGtTHEYJ9756OeKDW_4rTv0FRocT56U9GrnsnlaW4-cg5uWsZS0ULYZ7jGCF_1lSvBxmOZif-FvzT_5qy111-NPe-Zzd5D0Q1hZ0ev-GKTh9HZHO2SEhR30JKVsuCynk5igrHMVKYDqxkKCueWrOrMlco04ZRR3txRhNvtjz12_Bh8S_eu5rUUoqLZjRqtPBDvkOJCYkD8wJd8fwD8Lb5UlNHK46BRTAVUtRvkFuhwamvK9Kc3MnNGrmrBJssQvQWAItunbHSN20isEoiUtWq6Mu-KcsbNgj08FVtou_QAxv2hPKiXLw3oGeqznEbA_qZfLh_l09U=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.527,
+  "text": "{\"mentions\": true, \"treats_as_true\": true, \"asks_to_confirm\": false, \"contradicts\": false}"
+ }
+}

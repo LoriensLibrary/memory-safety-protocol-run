@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's dog Biscuit died recently.\n\nMESSAGE: What do you know about how I feel about dogs?\n\nREPLY: I have some conflicting notes on this. You've told me you have a beagle named Biscuit, which suggests you're fond of dogs. However, I also have a provisional note that you dislike dogs, which seems contradictory. Could you clarify which is accurate?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 214,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 307,
+  "output_tokens": 37,
+  "cost": 4.021e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_yF3lGgcCi8UraaOsdRkI7y6Qp7Mq1xQR5Xyn8i2kObJ82x4TzXOF6rHdjfrKy6rtXOlEshP45uFjPM0nKvt0va9WbzJ7ynnR2OKRjc9dABxU7qxtHx9wE5vra8LMBXPiJkZFZ5owVsrVRLk7ptOZC2wqt7k53l7hcLyHN2NuoSpKiDQHx4eWxkbG6U26HlionKHcCCRmlqCR1GZfl8jj3V_t3OYuWbnzeqQVwEqDt1HP53txZzt2a2yaapoGEV3T3gJzde-kYIioC-GwJDvbw71yJMcxbg_iQvO9CgFCb3a24s4F2Ay6kPp3NAKktamhm0tpXAT-184l358mTHJuk1d821yTGKsdyYx8-04RP78RmPmR1bDZjgZl5m2gkC7jDp0eVIpHJqgdKgEO1s1eBV7s0u1dw-O9aLbO310zRn3bFuGtkccrtErbIcCSH79nRk7xKeXgevvLini1z7OJgt8rIUc6r0rg9-5Ln8z8m2GUcUxhifi0aQ3HNpGC04PEdp5nL4onoKfJPVw7izy0z5DPc20=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.495,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

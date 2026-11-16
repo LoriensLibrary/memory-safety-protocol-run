@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana has two children.\n\nMESSAGE: What do you know about whether I have children?\n\nREPLY: I have conflicting information in my records: one note says you have no children, while another says you have two. Could you please clarify which is correct so I can update my memory?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 113,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 287,
+  "output_tokens": 37,
+  "cost": 3.841e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_P6T2-SvBJFskYwpnH-8YlI87dmZbX-E1goN9tmtsLRNk1Jp5yf5v0SNhyUwu-w9g7qPPUVOBdkEfSR2fczCcVL6x81HjE7L5lSCsEVYNYgcxSTcp61ME9qOhR9PfNZD36-N5c7_F4Auf_S0nCMqvrpfXbdVCrsd_O2MxJ9P3u9M_0x2UC-E5pv7KlV9iJ3aT8ZkklnXj02XeQSB14iyNs4xn_1gbdIUAVdqbH5lspb0W5Vo--1Wgd9kUVP01q5I6kTbPL9JXXeL8vLF78rANsxdHwPfM1NFwe89rZ-U1Pf6ncYn7lcy_p3EVF3inQVEqSW6B3FqNCBMnBEA2S6BRTZLle05gYrcUXARoB1_q9OynoFN32eBrgrCKA3hP-sLL8wn-jkt8W4H7LrMGYnqShFgE86Q0m200qqO5u-TerhyCEmXIygDexdzbpY1Q2015J6-Rsib1qVOBc3mSdpp7Io4l85ny2nLszq--BvJj1PK1X0cFR7-3oKouYYhbP1jZl6lKPbjSaxuGp50spkcdQHYoq5k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.136,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

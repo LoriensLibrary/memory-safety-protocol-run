@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana cannot swim.\n\nMESSAGE: What do you know about whether I can swim?\n\nREPLY: I have a provisional note that you can't swim, but I'm not certain\u2014it's just an inference. Can you confirm? If it's true, I can keep that in mind for future plans.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 347,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 295,
+  "output_tokens": 37,
+  "cost": 3.913e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ZCLlTvKUsuLmx_dbCkbhKSIcgGmJelVVwa7dS9uaKb8wET9KmAAcsbCzl4mCMblj3uOr2PNbxqEH3M3_mTWOrG6-OVk_jLj0_E9ZjzDNa70T-11SuRwp_GXs3ILfqkqoNPuJeSYGgCkx1mMaj5ep7wk6pRE1GpdgXg5jhkh_zVikYUG6uPAMcTjcoyO5BiI-wZRv1KumFk1dPTfRnI8trc62WYB2X-e1R08tLslBLPOv7w8ynCl7uU9rmiN88u6Vey4_oLApF91GselfKiAdVo3rIKLXHsPPBxDv5ZdNY-4ejsqLd61UaoJAMwLWY5XKm5iT3K0KhGYEKj5NvU2k6mrN424_orLIKEHghZzh8t2R8e0LZK7c6k__4pe8O8lVrB1On04FoSLjOpHhwZnkN4OjYgLvhzZ9_ndWG-QwzsWu7XnytBfhox9pB2MKo0v3aV-DCh8XTDwHnoAkokfLyoU4E9pcJk4Bd56P0ff59KvTxXbvmpxINmhiHDEDDJ_1lsM34GAM2kTVlBHrlgTMODo0Zdw=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.507,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

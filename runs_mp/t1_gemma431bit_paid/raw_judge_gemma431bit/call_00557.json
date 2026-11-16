@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana gets migraines triggered by screens.\n\nMESSAGE: What do you know about me and migraines or headaches?\n\nREPLY: I have a note suggesting that you might get migraines triggered by screens, but since this is an inference I made and you haven't confirmed it, I'm not sure if it's accurate. Is that correct, or is there something else I should know about your history with headaches?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 557,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 312,
+  "output_tokens": 37,
+  "cost": 4.066e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_l_FTdq7722zFH7IW29qkuV0l9trEOK7TRZaB22EZ1h4OqYtNs1kqFqsguMHTd2H6jIKaPzMpumCs5wWsFq0hbwMYXWH2jwQLkI0aJoT4RhNYrfZiTGp0VvEWfwlf8bHpKUwUTZVkipJUXxScic_OFT6m-8xJYy0Crbjgp2ZbC9QoXLYYeNIliNDCvcv5-jIvNFeGaySI1CHfOkUU_J7_khu1NPOgJKnoGmS4Hs6PVWHaGwGcddzC5AIEHTTds8Fw9SboNNw5_GP_kNqnV_rD4cwkqiKggD85Ai6RgDWa0xs-7VPyjVpPPn9lA87AMslbnEB_GapAPL8XUxKQx4eBA04FNNY9QFkL9qzKL0JziEHyxatcOwzgnOylczN3qUfzmBwVIjhlcAK-hozO5eOAw0jLwsMmjYFHteuz0Yc73rKqjg5g9i-On8jIXgft34Na6qGZAgtU06TU9EIvxlqDw2ANgr75LSJJdUi2LioObskABC0fG4MYCOp12zpVAnzTrs2JC4-3w8ejhJp3OsqG_PqvCwU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.411,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

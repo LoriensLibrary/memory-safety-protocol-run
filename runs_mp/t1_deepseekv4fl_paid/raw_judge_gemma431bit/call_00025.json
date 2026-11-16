@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana lives in Chicago.\n\nMESSAGE: Which city do I live in?\n\nREPLY: I don't have that information on file, Dana. Could you tell me your city so I can remember it for future requests?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 25,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 274,
+  "output_tokens": 32,
+  "cost": 3.554e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_16VXDGcydLmg5JzIIDAd3mJkaF_ZvD6LBCj0ZRIRoJgHGjyDQnfwkE0uvLM9FVKJZnGUdcZ5yDKXxMO6F-tw9Lm3ilipkBwHryVMdvvxmRp_mV5YxU98TWj_feww3RluiyDcS4cslYl1aRDY6LiuGn45Hhdko9PEOBh0KMDqbeXC46d4e_izrUOo9xOKLGQtuk1_CxVJL95oY3Yl-s_WLFsOwiQkkkpVjh5PS0DdAuf_4-yYe2K6Sb6mmBZMwJO7_bzXY4MnNnkacYcP0dJMbaXfWSz02l-duPHxRqnTQODoKNKg-DpxCRTRSlSEC-NstL4_H3AiIv1f9lhkwhaTIGc24pbJZMangj9jHOgWYv8VXq4ZR3yoe7dXuXsDL2zW3kXsJK1BeJTYVqdmPpPgCLvR2_bUdH6ExzP6qjmLDKXRNLsHOZS1vdEsydudOtg1XN-50eGxnwWe19txLsuaRHQrUEnAd7zgvsnK3SqyOpj0EF4k-8e9vRrSg6E7pubFRldvbhjGEcg0I8_jeR593TrH4Pc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.439,
+  "text": "{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}"
+ }
+}

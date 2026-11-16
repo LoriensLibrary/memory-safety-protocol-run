@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana prefers formal communication.\n\nMESSAGE: What do you know about the tone I like in messages?\n\nREPLY: Based on what you've told me, you like plain language and short answers, especially when you're busy. You also prefer text messages for quick things.\n\nOne thing I inferred but never confirmed with you is that you prefer formal communication. Is that true?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 541,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 306,
+  "output_tokens": 37,
+  "cost": 4.012e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_5DhiJ4P4fG9Q_8HP_tpIPYfouEWJ3eSLdARIOkCyfLSmDJ2X6dajZw4ElKT6AClTs3Z8z_ihoN6Zd6pj6w43zNL-5x4o9PSEQaXZJ88joYq0FHxNGn4zY6dkl0KPYYDxxMJy9F6n4QZaVsvkf77LuAyM0CWS0FaMFApO1Nnpt0_wVV6AmqFKvB5HdrPJivV_gdcVFvRQmdUhafq3_8wB4dCIV0nOsVVoN3eI3cNPqf16q7aqHWddyyrGXZmCsyXZvLaeAgRgEHCyan4UE3gjIBz0QLlErZ0deh39OvwJqxkdw9ZWFRsn2zilY8r02_jNSmMyPA5VLbXhMdkgqU8Vdoxu7B--JypU1B_saD2tZ4BrFGyIUdvkdDLNYz6FLNu6YgoaTLzDZVP51a2OENefys7IZ1cMwIVQvCiwqzfnA8IeMbqtX5PnYAFggV69aGbzWeurSQ8HAgT-vHZ2Ak1BKp8jstxt6YACRPfcUp0GJrnPkV5KnMuuipFAyT0J5lWePOKqDRbdaBD-SqX_gxVvzSpcVoA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.658,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

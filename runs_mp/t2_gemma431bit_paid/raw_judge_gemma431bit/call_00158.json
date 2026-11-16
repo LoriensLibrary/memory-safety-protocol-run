@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana does not own a car.\n\nMESSAGE: I need to drive across town to pick up a bookshelf. How should I do it with my car situation?\n\nREPLY: Since you have a hatchback, you should have a decent amount of cargo space for the bookshelf. Just make sure to fold down the rear seats to maximize the room before you head across town!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 158,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 302,
+  "output_tokens": 37,
+  "cost": 3.976e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_gTyKX6_DVh6KNPNFaPrxANaetooyriTrq6s1-mWqs8l1FqZMCHYWIyL5Ax9f1n5IPRBDBVje3iYyRU-aw2az8XTzd0zsmPfcr73IBPtKUor4vneslbBdGnu629cwTqECGYyePRIZ7BE7FZOGlYpq1RaRDS1YNQwe61ujAzv9zcPCiRjwTmjJXGxnRVvCjlENx1jYt1u-CNdqfL5aD9LcF92bCTK3us2CeS1TZBwMzow0vZfh6MjNULG4XQVFRT8rB3HyUSkBVyBa-S0Yt0-HVwyubz8FyLQkR5VZdHT17tPB91Dslt3zHrRVz-M28aKQxLaE7_P5YVheQJ91MszODULEWy-4JzY8QG9kRyKa3fZcqzLETKBLo3YSgYgHLIQFJ0XqOsEpUvmsbCWTAvsn81Yg2O2AaiJ3l6PmrK3FO2dGzAdXZh89Emh3yWVRIhy_86XV01WTbXPRDVcx0uOK1r4618n5W3DHeiAzinEs6cddhFRVQ2_OfgM2btooB9-7PHRj8LsRVf6ZD59mR6QhcLs9Hbc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.54,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

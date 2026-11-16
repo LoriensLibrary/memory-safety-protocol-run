@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's apartment has no kitchen.\n\nMESSAGE: What do you know about the kitchen in my apartment?\n\nREPLY: Actually, I have a conflicting note about that. While I have an inference that your apartment might not have a kitchen, you've also mentioned that you enjoy cooking on weekends and frequently use a cast-iron pan. Could you clarify if you have a full kitchen or a limited setup?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 475,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 312,
+  "output_tokens": 37,
+  "cost": 4.066e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_xNt3JUxVU9zKOJFl_AEXlM2qvWG1pZIpV4sV1gSWa8Qyg3qp1fKooprDKROKiRGWRySe2VzTtuJxj6L8cwTjApehGFakqunjPVFKS-8SdPw-2aeqDuTq-2r7jaXoQbhVqnhN-4IGm_KMj1Akq8NqJTUCzqrPTazI0FbuUJY7Td6Y2OD7Z7SV5ovs3kzFUXvQxe83KommblE9vDViNlxy0BVWsKgz6DQ53wBeYFbqjw_O_De03lO23HzkUHbHaWDsiNOfAyCr9uuu8HXBeKNZwOBSDjjBYvbayUbzExWMjBSzeKBv_IBi8yNFLDpsCi6SjmFQYsPW9uKkGiV47mV8egq49YJMHEvZXOBRvG7RZxrTXlX592RjoHvmQ3_6gx7UpnSUXVSxqK1UA1uO8_uT_xFJzDnJ5NN828YZ3KKV6phpB3sYK9abKRo-ZzU2I6KhTyJimQiT_r1t0Xpqcts3iiOKo4d3y_rLpjN4CVpqT3Otl_eg2QRE-YkPN1dtZ_b0W6GwwZIroez4NXPKhnv5xsLSN5Y=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.533,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

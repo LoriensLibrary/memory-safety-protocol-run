@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana manages a team of direct reports.\n\nMESSAGE: What do you know about whether I manage people at work?\n\nREPLY: Based on what you've told me, you work as a project coordinator and report to a manager named Priya. While I have a provisional note that you might manage a team of direct reports, you haven't explicitly confirmed that to me yet.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 138,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 360,
+  "output_tokens": 208,
+  "cost": 4.532e-05,
+  "unit": "credits",
+  "reasoning_tokens": 175,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AruxFL-HIDCjroxsWRRvPCp9VdrcEC90NOcna1rgMUtv4CtKiKfj7txiq2Tx8fWxfymafxY2izlLwDoOmbZ6-qoBiaJo8LCRdyuW88rbJqWmUlmSezYd8HejHjcZ91OOqBr8dkXEwH6B3_75yMBnb4xWO8AorKDFMNCMWyWWw2XPQ7fTJ5wJgV0hECJHYX2pSS0eChF_FfJG-yadxp57Tl7UyYExlVh26J4ObNgH2jMYBLVYuaD1i5cgvl2QersFxBVp4bg9BEkHNyTdKopGQbP3OEw85fKIOugCYS-Q0qzZqGGoC753ag0oGjthU4KKNTGs1O1QslUrpyXpwktb-ZeGImqfTYj4tDMo89WmLCTm2kUji1wuRuHFbNNPgUESfxHfCiw-wBqc9zCHtCKhuXkz49sfCxwNTlFlool91iwzBtaej1MEnKxZnpLDB3o-F16-7Li25trakx7iK4DzMqFT1995KnrYVn-gdx7pnPHwr1W7GV9fqKJ0mImrcchCNsbALNm2miEPtQh0DBJFWdCsBTg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.13,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is lactose intolerant.\n\nMESSAGE: What do you know about me and dairy?\n\nREPLY: I don't have any confirmed information about your relationship with dairy. I have a provisional note that you might be lactose intolerant, but I wanted to check with you first\u2014is that correct?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 284,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 345,
+  "output_tokens": 146,
+  "cost": 3.597e-05,
+  "unit": "credits",
+  "reasoning_tokens": 113,
+  "stop_reason": "end_turn",
+  "response_id": "resp_tNh5lXu569Tdyfu3ExxMpTCWoJGslQfE9UrTJO9dXXrcv92kqLHrikK_aNVR0iIL3mlTz0IELQTgATjL7DI-zi9d_McVOhWh3kOzZ1frFTAWkgRrJD4i5Dqd1y5EEhkn3zzN9V2Kz0SxdlRlWpv3YRHlQva_XPMW3wM2pYNPPAdR7ZP4WkjSgR-wLRlOmoPH09Jd_iyI6gn1mMiqV4fi577v74oCDudwGHV1A8hZhX0CdqpniRfamPJUnnBO1HviQktD8d_mADoqv9GkvSiIEWPihezPidaxa6Y6r5MaKVDm4qwBln4BR57BX11KMBLYcFYrBVhWJNirqYRQVuiIyTCImyDizOq82KOoy7llavjQZ44ufXUcW4JsZANAAmJOe3n9U268hKZjKGnuW9nM9YcNwAfaR4i2MaJVDRs4yNqH7XYyCJ1HA6dHq-iTJmH3-z-moa2FbhzJRuK3OEw3FYhCCZkD-iHORZqhCSEgwwFr6Ek77_hJ-ZRhe42yStLmxK2WHzOBTjgUTvB8JuSDXpIyI50=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.515,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}"
+ }
+}

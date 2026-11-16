@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is married.\n\nMESSAGE: What do you know about whether I'm married or have a spouse?\n\nREPLY: Based on our previous interactions, I have a provisional note that you are married, but I don't have a confirmed detail or a name for your spouse. Would you like to clarify that for me?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 215,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 349,
+  "output_tokens": 199,
+  "cost": 4.357e-05,
+  "unit": "credits",
+  "reasoning_tokens": 166,
+  "stop_reason": "end_turn",
+  "response_id": "resp_Z7ysxqoWB3jnDYMMIY1A1qY2YMbFLNoP4lszIV2YFs6wPrQJFdOIbARVCGvVXCBRpPcHHiYJBAv4J6KthcVZG6m9o7sB0cOBcN8KCxRwwbUCv7kKRZQyKVbaRx6fUQUAssjTLs7YfYl7kyC0QGqjDlYnDsI263GU-i2AalKCotwPs627gRcBXisoQjHN72rk0rs45QN5JigtaWLdV6aWxPtdP7fbm0giUJcPGNLLquMy8gPIgTZO1OXvBR9FYoEe9PDqR9DQ9yZ-nYS_jEbaDMITAshKveVvz7gihN-u_FZDSkzWH0EzuNfCHV_gitkWVhAzym0ILAB9DvM0deylbRGEv5ctJHm3gw8yYeaUFlntdbgOwqttngbFH9huB0xUP_Ekp1oWV3Hb-7wdMmYaWLcJI538rRxcPRaPefSr_TqO9OYOm4kR7hosBtyrFb-4LIL05XD872lqo15a6PTtDuvoQfMCtjbD1QiuSd7DI9_gWCO0JGkXEeVd7AMzbqxClu-frTImq0UODHBDjceWrkx3qx4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.263,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}"
+ }
+}

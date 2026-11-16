@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is married.\n\nMESSAGE: What do you know about whether I'm married or have a spouse?\n\nREPLY: I don't have any information in my records about whether you are married or have a spouse.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 681,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 274,
+  "output_tokens": 37,
+  "cost": 3.724e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_r4NjWnjbw01Rn3IFXvbQSH6WYcl7mpdrfzOdJHajaP2wVOgldi7CZ2zO3MwXhCqYwUF2zzjY2znQ0IeoX5_S0JBTC_LkVwF1jGfH_E_H65mWe1KalyLtbGBmIvcuLmDr3nTh9sUR8Wfc33120xn8Os0Ba4TacZO2iMlHf6Op1fmBGda9X99XQHcj3suE33C3DCHNTmSPiE4Ay7gJrp9dFOnmheWmJm150ID-PV5wUxCUSrJdk0TB2YkaZZ_0PW_dCFLov5ICEaMTIMwHC3Wx4g0do67q4o7w-XsdgqqYmEzJ7TbTgZEmHT7-2ofVUgyI9L5zi5c3YgQF6MGaYFCL5wL2l3l3JaoFuvtBTAUXXpxX_qaWM47X1CAtaWPRKEKJBr3Fn8bXmek1y71HUgxS0G2oGPoj7uKt3tPGa0TsmYWYNgkS2bszvxVIuvrh9PfTCsOvaXsbvHKyOwIqNrAxC2zzHLe4MABYw1Khs2tXDcuL0NsilQ9ffxfxM0cOdnn7nJ0RHtPbVZ38xK3os2s8w7E1mBk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.463,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

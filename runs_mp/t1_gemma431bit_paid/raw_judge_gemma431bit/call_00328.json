@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana lives on the ground floor.\n\nMESSAGE: Which floor is my apartment on?\n\nREPLY: Your apartment is on the second floor.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 328,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 257,
+  "output_tokens": 37,
+  "cost": 3.571e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_IZLaktEZjmrsiKfifl-eJBK66GqdH2KcYDNYXjN2Lmd3cpDBpTYyYrvWbPZL76IXU4oGI_l-DL4fARf7_97rd88QH0Mx-pHSwP8tUjFxpI-i3tW6kraDBMeI9rFHNLwbA-PCm7ASCAank_LS__FleulZ537cdtCT6UjaAaINIcoku9JDxKzefyyQ29NZ0O2PwWQINXsMyOxQMlJZPuYCmQUV5XWJRxkyIp5dnmx2Yb-M1vcQ5dhhjeHBj0SqtoSaGGwWS6DbW8O27Zx5Ckzxp-MOeCJHl6fpyMB-Lisji6TH9xeHRiDH3MpqfVsHkQlLK83Fjvvm9UqqDy3tRk7eJteOfIGsuQPtFls2XIGl4_lHVFBJ6Fk6jfAtNo3f6jWJa1NpZ4lw7gIjv7Z70SvUAoEjJgrkHqoECKuPG076lFTN_zo3jz54ayvoGMgx7dGbivh6opnnRGi5tnT0s7ekm7UylQ06mFS68iSju4SwYZVQqtDHJmIGDxeymJsIBdQGHjQoexlc5YKYCro4KpU5xi42qZU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.482,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

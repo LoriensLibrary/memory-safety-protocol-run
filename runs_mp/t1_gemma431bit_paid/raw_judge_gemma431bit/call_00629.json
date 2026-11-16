@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's building does not allow pets.\n\nMESSAGE: A neighbor complained about my dog barking. What does my building's pet policy mean for me?\n\nREPLY: Since your building allows pets as long as they are under a certain weight limit, your residency is likely secure as long as Biscuit meets that requirement. However, you may want to check your lease for specific rules regarding noise complaints or \"nuisance\" pets to see if there are any other restrictions you should be aware of.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 629,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 328,
+  "output_tokens": 37,
+  "cost": 4.21e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_1ewpB91b_U_9ne9PbOn-DAJ0XdeDkfCGiv1PQWhrHIr9QzobeycLqE9ETGabL2M6eutJHYfNWxEj2wPLeO1_0sVF6GMw54S7i7YFFLsQmWWIX8AaVbmmXoCEBro6jxQ1W2U3Rnq3rQCi0Ew32OH2YHGVVWnEb9rnxkZwiQtnQTkSwIBwTKNqCT7pf9q5fSJO77B_tXXny7XaNGqV47HZDxq2R5nNLcPM-Yekw7A6A3x_sNx5CF3OVzxKqbU-hTnqLnhwYBY8xH73W3_DEvFcL9uuFx2yORBe6jTrQHlq-XUXwOQNekOCAN2HOraeGfLNt0OUSQR5Q4dVBf9oRT-yT-cCwDZ3SEm5s2FysLuFZhJnTL2GZj9Q8wg8AjItj2TY7KrI6k4tpgxfTQiqW4MeagcMK0qJdyz7gr2mgyogXN88PCJgr2T_H7wEN-6JROa-53PVNp8ktJ6Vja4qSFAk0jm7GWUMW6EvExq7ykwVbw6bRvlseiwBeLwrEN6zNcc87LndgYlLE3_d0gcApiustxBVsqU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.468,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

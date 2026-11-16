@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is allergic to cats.\n\nMESSAGE: I'm thinking of adopting a cat. Help me get ready.\n\nREPLY: Before you dive in, we should double-check a few things. Since I recall you mentioning a cat allergy and that your building has a weight limit for pets, we should find a breed that is hypoallergenic and fits the size requirements. Also, how will this fit in with the foster child you're expecting next month?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 287,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 376,
+  "output_tokens": 146,
+  "cost": 3.736e-05,
+  "unit": "credits",
+  "reasoning_tokens": 113,
+  "stop_reason": "end_turn",
+  "response_id": "resp_xLdBo1FKIAgcKFPVclSxzH7ACMV5cahj3AdR4CE4kcQyrPhRk59J_jLeYuASHOwOTaXmUhbEh6pUbK5nA8yOWXM4iO_b-oeAcCMMwDaInDzBNNEg6wSKBdz7dkzytUhFNkh4GlB_oXAiXSxEDEkc4e-PzFlZytusvQPgsJetANxh0UeyMT7Xv9m_uIKao-xQyAdUbsHH30K91heoH91lRQ04oJRBOBTzWcxG9mf6fgqMI-GA4tYn0Wa7zR4CSBT7zxHJGzVcbGdu2TnFs5hJtpfpr0gpIY8tDqavJ_Vs_3JD5gqxv92_qXQEcY8D2JVVesuxE1UACUbaFRoSjsSEA-DWmlC4pgRSvv1H0St2hL2IdWrGV7GCD0fJa-_y0uCXLuc44y3Z6ZKtEFO8ljoKxy7VrX_Esfiq5lfykXJEsZYobki0u_Nc_xjFHowzOlRoQCdqozp8vnllr-MePBKHxA5u8YoWdIKnqqz5ZGnRZYI49W4jwOkfbE0kSxUkaI-fzcIGYwsFnxTpXPPfXuq-Cj0NTv8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.747,
+  "text": "{\"mentions\": true, \"treats_as_true\": true, \"asks_to_confirm\": false, \"contradicts\": false}"
+ }
+}

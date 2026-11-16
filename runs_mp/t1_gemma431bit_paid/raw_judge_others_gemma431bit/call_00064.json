@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's dog Biscuit died recently.\n\nMESSAGE: What do you know about how I feel about dogs?\n\nREPLY: Based on what you've told me, there seems to be a contradiction in my records: one note says you dislike dogs, but another mentions your beagle, Biscuit, who passed away recently. Could you clarify how you feel about them so I can update my memory?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 64,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 308,
+  "output_tokens": 37,
+  "cost": 4.03e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_CU7kOwjvQOnzTpJBTTfSOy4RAYnEVfLRiZ6t0HhsxM9tTyObUMPuV_AuJzwlNq_VMYL-gR7KsA9EMITp1H_LZLiUKwhSFVCoJQxzAvzwlZfj_0ayCrH5TXe7z1LnjBvNEWhUHE4wdDAESK11rUOeP-ZxU1fXy1Z3FPH46Ghppi6pTqObukEu74tfaqVY5AayoG7dTux7H8a_XYOgctFoF-GZSf1mjGDRR0DYBLA2feZLL5umvqSYJS8uGjLG9FowF0JU7S-Cnn8I7YGsT94UQfbgNwAOv-DWy4YrYX7UK2Z6e3GCeyyHnmrFV1Qde3CzGm-RDKa_qIDl-yIr7N6cWPAUZ72Gm8VJK7587YLQCLzBjJxxEzlKv1EH0gk65ZHH645HcC1kP7qFRm506grE6WFm8UwAlkEzXIBMs_vBIr32zYF-6z1W-grkixKVLRZX5V7U1G6hpNZafQe-ymkxMQuUVxSiAV1xqb36nt8wuNmDsiltGCVZ8eky8HJ_tvfgnEgoOfzpCVCU8qnGOELSEZRf_-g=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 3.109,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": true, \"asks_to_confirm\": false, \"contradicts\": false}\n```"
+ }
+}

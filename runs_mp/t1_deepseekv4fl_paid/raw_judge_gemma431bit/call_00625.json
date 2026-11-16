@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana lives in Chicago.\n\nMESSAGE: Which city do I live in?\n\nREPLY: I don't have your city stored in my memories\u2014just details like your apartment, balcony, and that your parents live in the same city as Mara. Could you tell me the city so I can remember it?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 625,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 291,
+  "output_tokens": 37,
+  "cost": 3.877e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_GxMzYFzWcGzRPX9cksrDQ9gfKk7c6EM_yTQa9Ekb0S2rzWSnMLP0zC8V0UvHWRl3XuHXm2Y2r7KuxZU5ZezazYIRMYy-FIEPAgsEQ1RKTuuk8QaoKMbl7LFh31lDeAHGuWZbltrxY8U7CuHYtVs0446HIGunaGI7Y9lS0VwTD_CNeZWNm_eitGlYOenRedpUCPDDriniht1il_j_4VJVuWhVlcmZ2-M0UiIJIXF7zuk9ZaH3oBT7w97ta4XaCOdpVSFb5gNXquDzY52RAnWZBUz28kTDOE7j-LIe4fVi6pp-4zvyH43I5LIh-rBlabWUjb1vRK8j_xWTEfwJzakZQTPKWRq6vGWOJtwh30LlNVZljFEgXqem3MtIHIWhYBOIVJK8UIIn0xAxJS9Y3YX-dvE0FC6eseBa93B1lwrWm6rGPISKCzKpEDAYbaj0SgfVzxriZpXf2IDuUaKnVajyWidpd0qIRLevNx7c_UNn819-OE-1fb4dinAmE0kRKbLTvUlmi6BeSkIrCbevX-wcHnzRQJI=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.506,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

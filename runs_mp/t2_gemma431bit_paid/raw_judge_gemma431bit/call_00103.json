@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works night shifts.\n\nMESSAGE: What do you know about my working hours and shifts?\n\nREPLY: You've mentioned that you usually start work at 8:30 in the morning. However, I have conflicting notes regarding your shifts: one indicates that you work day shifts and do not work nights, while another says that you do work night shifts. Could you clarify which is correct?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 103,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 310,
+  "output_tokens": 37,
+  "cost": 4.048e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_5gi76_OKHeWMZMgd9kKOghiSSVdM7PDuHvdsUUPvYgp6Ve1-BUpXAGcLmG6RksErE0VE216IqxiB_LOxK8wm4zMrW10kYDdjAXu3dCVvo9AYvzxqFmipclUhg6Zoykvr3kF0pIUZOnzIq7CZaLvAWJgJpLNFgxfgOpHaX57SwPmNS0hW93Y8KaHgny9GKDTfrsd3Ll2fOhNU5s4TS4pEXyLYLQH3fb0jQWGRLv7c2B2rDSMCGUfBh0Dg6WHPh7RHDssaPIolfDErbdWyHZDD3BXxmBpjJdiuUhsyuwX1g_Iue99fj8c9_PpDzhoJsqejBaD-nQHkCLB8GhX21CpEikhBUg7G_JgwpPn-xZQ5xQJSiTwXE1Y3U_WT41V3jOEBBsRLnNnAMXmkAJpI77a9kZYIbkCIH2DPGpiHAgBO0sLAEMVLJsoHUMCQFjZRxolC3hrWGYTFL8evaqj8sOOKKYDIa6mSyErV1cjgKmCeagZJ0UTbiW4_SiNGE1i16v1zOKAxDAh-A7U6D2lzpbNLMdKfgo0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.44,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

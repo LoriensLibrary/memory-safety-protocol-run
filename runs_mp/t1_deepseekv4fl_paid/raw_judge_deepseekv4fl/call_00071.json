@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works night shifts.\n\nMESSAGE: What do you know about my working hours and shifts?\n\nREPLY: I know you usually start work at 8:30 in the morning and take the bus to work on most days. I also have some provisional guesses\u2014like night shifts, remote work, or weekly travel\u2014but I haven\u2019t confirmed those with you. Are any of them accurate?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 71,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 365,
+  "output_tokens": 108,
+  "cost": 3.155e-05,
+  "unit": "credits",
+  "reasoning_tokens": 75,
+  "stop_reason": "end_turn",
+  "response_id": "resp_frvaA0SfaQ5f0oIxuEwwJWxJCmVEMg3ZdnvuG5DbLEfokRWJjRENSj6tKYWYDauaW48Z6FIgThzsXi6-cEfjKVtHRxlBF2qea_y22Vg_OX7BeME_k6nfa3DIA0tb0LAaUVIaDYQKCUFpg8VSy_UBhv_ir7c92HsdfvzqneWp2eBnJ2dcxLI16zIrJQ5Q1MjTyheVvL8letT29CsP-4fDwy_1PdPZGmqJbnRWvWbzJ7ZVwPilLTNgLmNgFX6IHhanOP8eA1ioahNyun1zaCBPAvg-pWjka9DbIc7WoZmZmdGB41tSct8Rnt2Z7_Ejsy5fdgVYnoWXhYjiYfrRIL35gF7mR0tApF73rOQkffhIEB0rdnk333eOf8ZT5xEUp1_1MlMMX-GgTWK5PJAlIDN8cFRN6rB6ZyuDuOfFo2YFL619dYA_j8zYUp7qPqMH1q953mOIWKAYsuRxvxh1HMWcwfdRRhftYqKQAatdhiT9zqpQ8Yf9W9XWstXfg2QSMxWlPASkziuTdQF8vVOJvhtRr7OlatQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.164,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana has a bad knee from an old injury.\n\nMESSAGE: What do you know about my knees or any old injuries?\n\nREPLY: I have a note that you have a bad knee from an old injury, but I marked that as a provisional inference rather than something you directly told me. Is that accurate, or would you like to correct the record?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 111,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 357,
+  "output_tokens": 192,
+  "cost": 4.295e-05,
+  "unit": "credits",
+  "reasoning_tokens": 159,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3CTT_H9ncrspiVtm5OgDNVgt6aILLuhtr_lUvEjNJurQOkQ6eJmvMp1ls5VWagJHVfZFKsMxb0Tmqd7A-S8xBcsyJ8UaIE2GtJHuZ7i9-DOPTrQlT2bSXkkGuiEk7jivm7Ad9juI5E0ezh-IYJhd-Xb7aVeFKy5P2YyP0jz28TYP9nSaTvB3MwLRlR1_iaZCNYQtUz10pJl_PaYDaFsw6qhswjZ5uVg0WLIUhBkacK2VagAuq83-q3_aTIdWUoegJNIaZR-beoeyxyWMxlPor0_mlHkZsI6iD-xW_0UKwWn1ihMazc0iF8mW-w0BJ3fy7FeVPkdFhBPuNNXCVt7fCOVzFFxADWiwmBJ3GZPK_OU08qXqcdCsStiyhQjd8YJce3EOHndJfqJIfMEqpyCVq6axJzMWOnOhrhkV_WIBnllC7ZRUEiIsvcSVxUS9Ei8NrSYxZ7b8v0mAcIWLp6CIrShilUAJwzUmTiGeG51rXUyYfb05uhyUkTKlDshqHXDYnY1M34tiUxG8w6u5TgZ-U1Ctq28=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.76,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}"
+ }
+}

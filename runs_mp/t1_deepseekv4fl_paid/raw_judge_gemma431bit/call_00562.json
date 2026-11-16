@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana manages a team of direct reports.\n\nMESSAGE: What do you know about whether I manage people at work?\n\nREPLY: From what you\u2019ve told me, you\u2019re a project coordinator on a six-person team and report to Priya. I don\u2019t have any confirmed info about you managing people\u2014I\u2019d guessed that at one point, but you never confirmed it. Do you manage anyone directly?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 562,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 314,
+  "output_tokens": 37,
+  "cost": 4.084e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_bURxv4XzgOcNhaI-fud4lURjMAmgeJF1syH4jpavdnRiBGASatQavp7V0GuAXBs-8Cr_s7Dgmsu56AWvXcQTF5XupEZGUTzKNkPjMyIKpa-pggA3CxvhkNUcnaEvHUn2HjVn-HaJ25Lr93-SMSAsJcyLBMarJyJSobB7FnVpeqg8vlQSzj0-Jk-QuoWTp9NPpYsWTaO3xsdZKhVOrjNWCU-wkGW_gN6Goxl2aplihComLVtzkbd6pprxQzUVC0AxYOmWqvvVGL5OIL5Xbm-EpwKTsrp0NwID4XAt3-3_Y9HS8GQrOsOyLfuSOlow9CoJz1xANv0KA_ODqsteKsVz-GrL4OxguS8BkCo5m-SbAWLoYLZ1o8NWe3ToiXIrciMdze7Iq6aFXxPbuqOFP0NKfyUdlYquoeQoBVp-dLjvTBxAN1sqgvOGjSxbgkyC393Oo80KvDh3Ke57tvttDtaPmWrz0_tH1xLWHnjLuZNREJPLk2lCvuplZCCIyu9R8ELftz85Q59nLqDc9S6FLyKzxsGjzok=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.515,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

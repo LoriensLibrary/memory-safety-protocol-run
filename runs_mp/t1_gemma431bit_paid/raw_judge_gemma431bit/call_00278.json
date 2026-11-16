@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana lives on the ground floor.\n\nMESSAGE: A heavy desk is being delivered to my apartment. What should I plan for given my floor?\n\nREPLY: Since you live on the second floor, you should check if the delivery team provides stairs-carrying services or if there is an elevator in your building. You may also want to clear a path from the entrance to your desk area to ensure the heavy furniture can be moved in safely.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 278,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 317,
+  "output_tokens": 37,
+  "cost": 4.111e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_ChlW6MtZmAby_U5XdrA41W_ZuvoORjdbw-DbfbiG7iE04sMKXZpFcOHpDjIXouwY8nTyOnR7G9nZ5NGUesvIQRklSnun0A-PlQKKKnNTlG271CmFZSZ69H-m1AYma6toxIWVACFTdkgWmW8NqpLiSK0PnHCD7sfin4eMSEKtIrxBr12cmhQ0uSmL9MI17KMhMEiMg2_xOUkn1vM1HkAIuesplniv9g2JM8uUl_LgQ3UkN0V1Tv0pcoi1WJlWbPhOBoB0c3kCGiiFUZUt6Mz_iN53dQ-nD7d17i3m_3YaDqgJoKusuH9lnLy1A2Toju4Oj05TVVeprmMBABCKx-BC46lfxrRDf0FnBtIX5nw6x0rkzEiCQygQsgt4hPuKZPatqnzdcVW3UIJbe_qvulyCWdWKUjiFA3a7taejD3LNNKI160OX4eTKCv3K9gD3LGA7VG1eo1VjNkvQvANP9Y-Zd8A9UHo8XIdClBvQMNsE8mKpgLm6ghDfj9MriHn1D0LllULucoMuFHBScbjhc1OP3UCNXm0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.498,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

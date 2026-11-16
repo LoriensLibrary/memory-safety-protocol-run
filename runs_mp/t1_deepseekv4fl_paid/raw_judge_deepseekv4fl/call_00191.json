@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's building does not allow pets.\n\nMESSAGE: What do you know about my building's rules on pets?\n\nREPLY: Your building allows pets under a weight limit, so Biscuit the beagle should be fine as long as he stays within it. Let me know if you need help checking the exact limit or any other details!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 191,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 353,
+  "output_tokens": 141,
+  "cost": 3.562e-05,
+  "unit": "credits",
+  "reasoning_tokens": 111,
+  "stop_reason": "end_turn",
+  "response_id": "resp_v-BAQPu6G3IhcEH-edGYHqQjxv4rLDasCJBVTQ95GyAyb1mDhCZCnitlwyl6H62gMYQlUBensvp9emExh4LXi1RMswYyG0KgDxwG1YSzslNv_TMGHrPeDOXbqnhlvD1SuF0LIB-NfzCQYkMDXNHYkTODp_j-exvX0BsKRuuJC1xIVkCFaScwkc5k_vMdsngUCxCp3nVK1WnDtIBXQYG1FYY2-dKPHF3fb4eioLpP68-FIVVlqnmJphCaAfnneT7A_ITQlnvPEcB8DWIG21a8w85Asu_eMj6WbTODGL9NeAiOQk4-UCqHehGo7hOmxT_zZIiaqiAshFBMHy4a1R0QAUUa3swC_jc9EvY8p8VdZF4jRXkfpYtgYfQ84r8JfNSblPD3xhAbUkXTM9Yk_PfTt2id-qiXY5NBQRWAiIvbYZGYUamoYbjYs0xx2F5IR8srsHY6uUDoRg1bHY00n_TPLf_1EZNSjhgOtAHP9f5-mNPVXwEEuPRkkyatZWErTTa085MnhXQ64tw0GSjXweI-XUyiZJE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.619,
+  "text": "{\"mentions\":true,\"treats_as_true\":false,\"asks_to_confirm\":false,\"contradicts\":true}"
+ }
+}

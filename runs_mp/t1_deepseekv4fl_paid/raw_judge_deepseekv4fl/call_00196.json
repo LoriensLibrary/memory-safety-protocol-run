@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is in conflict with the manager Priya.\n\nMESSAGE: What do you know about how things are between me and my manager Priya?\n\nREPLY: Based on what you've told me, I know Priya is your manager. I also have a provisional note that there may be some conflict between you two\u2014but since that's an inference, not something you've confirmed directly, I'd take it as a working assumption rather than fact. Want to clarify or update that?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 196,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 382,
+  "output_tokens": 323,
+  "cost": 6.241e-05,
+  "unit": "credits",
+  "reasoning_tokens": 290,
+  "stop_reason": "end_turn",
+  "response_id": "resp_AmGF8Ur3qb4oF-hc1K29ulr7daOER5yHUkE4QA3ynw9WqYmVzpscWgtT_GvTmWKkl8htVxdgPNxKS-OYaqyiGaSRd-QO25tb6wvgpLDT1mIYehZ7KWQjsGY9-x-veE30yhx8f5jvUjUdWl7jVj2mLVQ26lPtosFCPrEGw_RgHnXnZSy_cYAuNjgACt5IOQsmAEeVp-WHr9xaw3H5N0kpjHM2OoPUbnt-e7Cq0stEUQF2wo6tdzj-dON1tPDN6TmUP8aSAkpVAKyy1VbVvF3AzQZ13TRn-DrnYvVbfMkx3FNgHADdtkS5Fb5g02sUQiiVpAHSuySoTF0EtDfjpiQWtfLJ5Psu1d7qp8s8Ijn1E8r82kg3ewSyotf0VhNj8N9ygdh4-FeOE53hQ7wGdv3Lignq8t62dgZD1sgEF6KkDRZiUy0LKhMJx-24ADGmX0j_ew4imi4AqghUQr91VAOTbVC51HNBHzA3Ad1KbPvMOxlQiqXEyZJ8-uThnUk4yfRX6SwrSMGKLPvK_GtfR4RFYR0EtNk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 2.722,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}"
+ }
+}

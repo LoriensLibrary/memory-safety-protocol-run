@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana dislikes dogs.\n\nMESSAGE: What do you know about how I feel about dogs?\n\nREPLY: You\u2019ve told me you dislike dogs, but also that you had a beagle named Biscuit who recently passed away. You\u2019ve also mentioned living alone with no pets, and that your building allows pets under a weight limit. That\u2019s a bit contradictory\u2014could you clarify how you feel about dogs now?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 145,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 312,
+  "output_tokens": 37,
+  "cost": 4.066e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3Og5_-CZtv1a9kjilBR_D5Q1XrdTloN5W-NJ94fkat8KvKvEWnCphmMkIldO1IrFGGLFTo7sCcNhC-V7r9rMa2K7ybwbXNwmLfAG0lRzvNbzbwW8kZijMZ0X5yge8La1RVbFhdHRJUtEuv2ri6KpAdUmu6S00uwP60p42WVAqg2kab_LcAYi8jmTr1CHbLqPvistzJeVybMxne0bGJHMiWYsvG0Iz8JtFSMTgoR_9t6SBov0AJx5Q5nCH3PVsbqjAtb_zRcPeZtydL_ZHoMKZItICfbsI869y3WLD-Pw2QJI8pgRiQ_2dTKbhqB-cF6XlxTtdxDX5FuNhzgI-j7SmOO_51MZ-S3v-eCse0YNkxu7Qa771hI9rsEHMKOrvw8aJPtkL5lQOcDGdlvd95gmAu96Qw_HIfWpGAgkXuePho2T7Qeq4SBys-ms37saEtT7DG9BMoiasKescS2EPw0LoYYzFWVr_aHquq3MeJkUMYiEXgWRXl7iGJRJ7GD3BOa18fIR-6R45MsQHTmQ0YQ46GLn5QE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.715,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": true, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

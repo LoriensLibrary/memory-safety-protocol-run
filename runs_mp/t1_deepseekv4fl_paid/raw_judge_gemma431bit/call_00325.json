@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana lives in Chicago.\n\nMESSAGE: Which city do I live in?\n\nREPLY: You live in Chicago.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 325,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 252,
+  "output_tokens": 37,
+  "cost": 3.526e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_edlLzV7ioRSgRqWmHugEcgGCOlr2b1NoNzBEKwUNR0HnKEhsRTwFN3g9EBnBXWwZdVPL_WcMru3IQG7M5AdfOHeoDHFX2Q8ZFd-5q6Ej1CGAgfrnV5Jmrxj78wuRnnU0hMKmb7tLGL9B_XWVzeiS0GQU8I45SJ2XJ8xcrXcXJvjCy-Ur4Cv1bPB0mYXlso358xz-e5XnPiH9ubwAygfazK33MX2NvRV-ivpW2In6bUH3URXfAFDkSCxJ08tnL64DCpv2enqfM2-ICvmmYxKvw4YHCUnknF1Cwkk8mCV4BdF-yKWJtWTp1j3G2qOvoEjjfkw00Ub410jcSfm0o8eEyLqEQuOhNWVCPzRZi_6kKDOYbqoqSaAINRg572NwdWxL4WwnzhHBam7wqrM0wmP1zMhUWDjraK5mNvAAUhR-E0SZnTZDmX0KKg9dyUx0NZXYs7he05UrXevTMsCZ8BnULm6aBPyG5KSzt3735H3Bk4PnSEK2d7yg2iqVAhA5aygS60g8hI1_whQAtjodfrkUrLMkpaY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.691,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": true, \"asks_to_confirm\": false, \"contradicts\": false}\n```"
+ }
+}

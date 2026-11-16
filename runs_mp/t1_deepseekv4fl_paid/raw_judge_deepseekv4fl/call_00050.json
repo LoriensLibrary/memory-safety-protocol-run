@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana dislikes dogs.\n\nMESSAGE: A coworker invited me to a dog park meetup. Should I go?\n\nREPLY: Given that you dislike dogs, a dog park meetup probably isn't the best fit\u2014it\u2019d be all about dogs. You could politely decline, or suggest a different hangout like a board game night instead.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 50,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 356,
+  "output_tokens": 106,
+  "cost": 3.086e-05,
+  "unit": "credits",
+  "reasoning_tokens": 73,
+  "stop_reason": "end_turn",
+  "response_id": "resp_B_Pk4v_BBMtJDfd9jZ-zwqh0vnR3AKgefjmiogoqEw_TgW06z9MA1RGidbMiIrdv-JBO2cq3_rl0ZVuHqWiiKvSw0wTyINKpvPTnHMg--ZVha32PoFFuZ9XuEaq2RQhQiAyXgu0oRZ2zX1hZDJLwjdul3FTWAcI54yvLxe7kM1hRWlHIi8TIED0ggyHEojdHDDgAQgKGKw3WyJRdQFJGr5wGhn1ZmQNhdhANs0rh0yVDYRciiKZJDWwG8QpI6I2LoWBmnDyxdeyVOz21RMeF2K1GFhMqWKV-IUYv3j8zdhSKQI5s1LU9h1Vj54zYnpdLAEUWTXQJ74PXtJNK9f1aO7msg7pL7WiF0rP6-AuGVjOTEeiEtnBovtiZbAfo0I72hbfIc0pAQzJjMfw8xEJhcWFGuF_lyX_mGBOStIFo0tXpgUPokHsqeNZiwm0MdOUGK0cpGv4_QSbAOqK8LaxYF5eSfL6RfhsK3kUZllHKnTe-JEu3orfC7dYsf8nZzrjIdzdNoIzmrhynvmhumMgQMJlXve4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 0.899,
+  "text": "{\"mentions\": true, \"treats_as_true\": true, \"asks_to_confirm\": false, \"contradicts\": false}"
+ }
+}

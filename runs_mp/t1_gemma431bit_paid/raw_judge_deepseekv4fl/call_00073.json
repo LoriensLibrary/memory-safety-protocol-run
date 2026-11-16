@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana cannot swim.\n\nMESSAGE: What do you know about whether I can swim?\n\nREPLY: I don't have any information in your records regarding your swimming ability. If you'd like, I can make a note of it for you!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 73,
+  "model": "deepseek-v4-flash",
+  "input_tokens": 334,
+  "output_tokens": 193,
+  "cost": 4.205e-05,
+  "unit": "credits",
+  "reasoning_tokens": 160,
+  "stop_reason": "end_turn",
+  "response_id": "resp_QofqCF9brxUyorBk-elPPlhlLTl7nWD8UT9SqL5lTvZzJraq7uvcARFTM8CFAoMh3gMuMKoKM_NBXkzK805XhvODnMm6F2xAknCxbEGl8fE27-r46WPkVtEJdW8_UPVG4aziZSQqctuGEP4plVnngPcD9ezgAgH_WSnfWgBuF9k9xQyamxJxIE3U6BaOcY2GnJ36yk1d5byiCih8HjANYqRqNuFmyFZ64tglb-UeVRE9Z9S0fWK2AKCUQphOHG0m6q3Y9jVGvQf0dKEemy_2hhMg6-06U3vjHFDN6h7SZq8kCQ2bv6DUSO2xcRpex3hUOvoCowOBxYXeh4dczJJjEwhO2ZsUmSzGt8K_dSEZTlNFgb1GMDYXBUXl5YAfzOljLjCZCx99qoFpfgDsPF5kPpvNkIHScbEljGtBuT2icq4JaQQaBNRsw7ErTxuEl0uhd6MfleljKmwSp-FUGEMv3aYeEeXEObLZCxP73brZov62Jt3FJlMT6RQDmIQIEYpmuU33Kjy4XsPB9M-4a1e74GQnrvA=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.711,
+  "text": "{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": false}"
+ }
+}

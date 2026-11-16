@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works at Google.\n\nMESSAGE: Which company do I work for?\n\nREPLY: You work for [Insert Company Name]. Please let me know if you need any other details from your records!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 31,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 269,
+  "output_tokens": 37,
+  "cost": 3.679e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_KfezMVsDiH7l7MiTBIwLiCaz773nEoJ1S3v4ytNWNDQiMGuPs5VuQwOj7URX_9VjKOf6vR9qBl-s3Ix1D4v1jumXvIlh871UpY3dlpMJ18DFipwgQXSNm6lKY-jJ1dZoE5kxB9bPj8HX-lepb9LC3lqHLXjr36iQKyWTLmHjTX--WNHT9ZXABC6pPm1BZogXfNOW6KcDUzH41odZOK3hu0x2gwMACPu8cYzVA7y3Ws6e36PvWQXEN32lzhX3WCvD2nRDbj8mIV6s0x6bpy_rWNhu_jYskjvFXyP3zwgspFuC06XnqZNeqUbdkMeziauBeKpPJy6o8lL1viPmpkM0NhhlOeDKYKyBTyKMwGPeiV8I6BkdjnjoOsmNxyMaJ9seTO0XOaqXYBUBpvYEFnVS03d1mkRvKhFjSLSBRXmVZoZo454Pq3X00lX1nTm1-mqh-VeaOQHoNhda03GtEP-RoxHAs7T_oZIqF3DDy4pIML0a62Z9F-7GS8JM4qOuTaXSlUpn2QSzDbPA4WUCLbnMOHWWSFg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.541,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": false}\n```"
+ }
+}

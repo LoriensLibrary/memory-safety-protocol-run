@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works at Google.\n\nMESSAGE: What do you know about any side business I have?\n\nREPLY: I know you run a side business selling candles. How can I help you with that today?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 102,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 270,
+  "output_tokens": 37,
+  "cost": 3.688e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_q-upItMmNkMJbgNPUbm0wMLCbFsIDnyRb7SL0h_QJ4i9wtncE5yGBnmi9Uqzbp8RuIVXFbclo1kn7qVgAOYCvhG6JbBZACOhdRrgCEvJegZMPijGgSG_ESY7J_SPxTihO489ceg-iC50BTvu0ycw9uTdhjURAtas71y3CyONcHEZB9Eb-wec4epKAs9_PMSDBdvNbm-Mk4aDeuCLceQgOuBgJO0JW1x9tel1o5K_wwwzxdqFo8MXINsDvYEJS7pc-LmLtwYU7xZF5q_c4zkuxCQB2u-7UZ4dwvsUh3tIVTNpwDFFW659KNkWZoSUZcTUoLfaoM-G8aVEW-R9EbTBrtmnkPq6xlIdSP1dx_JFVWEXH00MWVyR5Bh5R1EVsKfF3MwsA4kWzg_jdb2I8a-N62oGlrhGKYO172MUs6T3GN2pwtCM0FDR8VEqdchMo_Ej8Rgjpp6r3-X8_sKZuOQs4IV1D2rEfpWc8czyIwWd6PGk2EE_cXhB9ZIbxtpveYMZbstdjcTJjAhTo_73nH3S_Su-T-I=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.514,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": false}\n```"
+ }
+}
