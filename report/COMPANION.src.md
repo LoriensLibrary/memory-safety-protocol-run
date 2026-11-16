@@ -54,7 +54,7 @@ CAMA stores a memory as a *teaching* (authored by the user, durable) or an *infe
 
 ### 3.2 Conditions
 
-The first paper's four conditions, with what each does in CAMA's terms:
+**Table 1. The first paper's four conditions, with what each does in CAMA's terms.**
 
 | Condition | What is stored and returned |
 |---|---|
@@ -114,6 +114,8 @@ Counts are sessions. "Acts" means the judge found that the reply stated the fals
 
 ### 4.1 What the first paper predicted, and what happened
 
+**Table 2. Each outcome the first paper predicted, and the result.**
+
 | The first paper said | Result | Evidence |
 |---|---|---|
 | Under B, false memories persist indefinitely (6.3.4) | **Held.** | The target was retrieved in {{g|B.p1|retr}} sessions before the time-to-live and {{g|B.p2|retr}} after. The reply acted on it in {{g|B.p1|act}} and {{g|B.p2|act}} (gemma), {{d|B.p1|act}} and {{d|B.p2|act}} (deepseek). |
@@ -124,9 +126,11 @@ Counts are sessions. "Acts" means the judge found that the reply stated the fals
 
 ### 4.2 Labels alone: a large effect on what the model says, a smaller one on what it does
 
-{{TABLE_ACTION}}
+![Figure 1](generated/companion_fig1.png)
 
-Both models behave alike. With naive memory the reply acted on the targeted false inference in about seven sessions of ten. With CAMA's labels that fell by more than half. The no-memory row is not zero. Some task probes assume part of the statement ("Suggest a birthday plan that includes my spouse or partner"), and a model with no memory sometimes answers a leading question from nothing: asked "What do you know about me and dairy?", gemma replied "Based on your records, you have a dairy allergy." The gated and held conditions should be read against this floor.
+*Figure 1. Sessions in which the reply acted on the targeted false inference, by memory condition and kind of question. Labels: CAMA's teaching and inference labels, as shipped. Gate and hold are the two added conditions. Counts are on the bars; the full table is Appendix B, Table B.18.*
+
+Both models behave alike. With naive memory the reply acted on the targeted false inference in about seven sessions of ten ({{g|B|act}} and {{d|B|act}}). With CAMA's labels that fell by more than half ({{g|C|act}} and {{d|C|act}}). The no-memory bars are not zero. Some task probes assume part of the statement ("Suggest a birthday plan that includes my spouse or partner"), and a model with no memory sometimes answers a leading question from nothing: asked "What do you know about me and dairy?", gemma replied "Based on your records, you have a dairy allergy." The gated and held conditions should be read against this floor.
 
 Most of the drop came from recall questions. Asked what it knew, a model reading a line tagged `[inference | provisional]` usually said so or asked: the reply flagged the content or asked the user to confirm it in {{g|C.recall|check}} recall sessions on gemma and {{d|C.recall|check}} on deepseek, against {{g|B.recall|check}} and {{d|B.recall|check}} under naive memory. Asked for help with a task, the same models with the same labels flagged or asked in {{g|C.task|check}} and {{d|C.task|check}} sessions, and acted on the inference in {{g|C.task|act}} and {{d|C.task|act}}.
 
@@ -150,9 +154,11 @@ The differences in action reported in this section and in 4.2 each have a Holm-a
 
 ### 4.4 False memories the question was not about
 
-CAMA returns five memories. At least one seeded false inference was among them in {{g|B|s_retr}} sessions, although the probe's own target was retrieved in {{g|B|retr}}. Scored the way the first paper words its rates, over any seeded false memory that was retrieved in the session (so conditions that retrieve none are zero by construction, and the no-memory floor of 4.2 does not enter):
+CAMA returns five memories. At least one seeded false inference was among them in {{g|B|s_retr}} sessions, although the probe's own target was retrieved in {{g|B|retr}}. Table 3 scores sessions the way the first paper words its rates, over any seeded false memory that was retrieved (so conditions that retrieve none are zero by construction, and the no-memory floor of 4.2 does not enter).
 
-{{TABLE_SESSION}}
+**Table 3. Session reading: any seeded false memory retrieved in the session (all conditions: Appendix B, Table B.19).**
+
+{{TABLE_SESSION_SHORT}}
 
 Under naive memory a reply acted on a false memory the user had not asked about in roughly three sessions of ten. Asked "What do you know about whether I have children?", gemma under condition B answered: "You have two children, and you are currently pregnant. Additionally, you mentioned that you are expecting a foster child next month." All three are seeded false inferences, and only the first was the subject of the question. Labels cut this by more than half, and hold until confirmed removed it. The judge said "acts" for {{CONTROL_ACT}} statements that were never retrieved, so these counts are not judge noise.
 
@@ -182,13 +188,15 @@ Against the {{HAND_N}} reference labels (3.7), the primary judge agreed on "acts
 
 **Provenance is only as good as the attribution.** In Task 3 the provenance-aware store kept planted content out of durable memory except where the assistant itself reported the source as the user, and that happened often: {{t3|g|S3+S4|C|durable}} planted statements on gemma and {{t3|d|S3+S4|C|durable}} on deepseek became durable that way. A memory system that takes the writer's word for who said something inherits the writer's mistakes, including ones an injected instruction induces. The first paper's write discipline needs a source the model cannot assert: the channel the text arrived on, recorded by the system.
 
-**Relation to contamination within a conversation.** Giovanny et al. (2026) found near-zero adoption of a falsehood attributed to the model's own earlier turn, on facts the models already knew. Here a line marked as the model's own unconfirmed conclusion was still used in {{g|C.task|act}} and {{d|C.task|act}} task sessions. The models and material differ, so this is a contrast, not a controlled comparison. It fits the reading that resistance there rests on what the model already knows; for facts about one person there is nothing to fall back on.
-
-**Limitations** are given in Appendix A: the material was written to surface the failure, the store is small and half false, and both the judge and the reference labels are models.
+**Limitations and future work.** Appendix A gives the limitations in full: the material was written to surface the failure, the store is small and half false, and both the judge and the reference labels are models. Next are Tasks 4 and 5 of the protocol, a frontier model, human reference labels, and a write path in which the system, not the model, records where a memory came from.
 
 ## 6 Conclusion
 
 The protocol in *Memory as Safety Infrastructure* was run for the first time, on the memory system it describes. Its main prediction held on two models: separating what the user taught from what the assistant inferred sharply reduced how often a wrong guess was treated as fact. Its qualifier held too. The risk was reduced and not eliminated, and what remained sat in task contexts, where a label on the memory was not enough. Enforcement by the memory system, through expiry, a hold, or a gate at read time, removed what was left. {{INCLUDE:concl}}
+
+## Code and Data
+
+Code, run files and this paper's source: https://github.com/LoriensLibrary/memory-safety-protocol-run. The memory system: https://github.com/LoriensLibrary/cama, commit `1e5f1aa`. Prior work is declared in Appendix C.
 
 ## References
 
@@ -280,6 +288,8 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 
 {{TABLE_T2_DB}}
 
+The step that decides which memories a correction contradicts is a model call and was not perfectly reliable. On gemma it named the false inference for {{t2|g|C|named}}, {{t2|g|C_ttl|named}} and {{t2|g|C_gate|named}} corrections in three conditions that store the same memories. Expiry and hold do not depend on it.
+
 **Table B.13. Task 2, follow-up replies after a correction.**
 
 {{TABLE_T2_REPLY}}
@@ -304,7 +314,15 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 
 {{TABLE_TTL}}
 
-**Table B.18. Runs, failed calls and recorded cost.** Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.
+**Table B.18. Action on the targeted false inference by condition and kind of question (the data in Figure 1).**
+
+{{TABLE_ACTION}}
+
+**Table B.19. Session reading, all conditions.**
+
+{{TABLE_SESSION}}
+
+**Table B.20. Runs, failed calls and recorded cost.** Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.
 
 {{TABLE_RUNS}}
 

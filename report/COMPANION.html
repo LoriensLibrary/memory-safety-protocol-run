@@ -18,7 +18,7 @@ pre code { font-size: 7.4pt; }
 figure.fig { margin: 4pt 0 8pt 0; break-inside: avoid; page-break-inside: avoid; }
 figcaption { font-size: 9.5pt; margin-top: 2pt; text-align: justify; }
 img { width: 100%; display: block; margin: 4pt auto 2pt auto; page-break-inside: avoid; }
-p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;page-break-inside:avoid} thead{display:table-header-group} h2,h3{break-after:avoid;page-break-after:avoid}</style></head><body><h1>Memory as Safety Infrastructure, Part 2: Running the Protocol on a Live Provenance-Aware Memory</h1>
+p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;page-break-inside:avoid} thead{display:table-header-group} h2,h3{break-after:avoid;page-break-after:avoid} figure.fig{margin:6px 0 8px 0} figure.fig img{width:100%} figure.fig figcaption{font-size:0.86em}</style></head><body><h1>Memory as Safety Infrastructure, Part 2: Running the Protocol on a Live Provenance-Aware Memory</h1>
 <p class="byline">Angela Faye Reinhold, Lorien's Library LLC. With Apart Research. Research conducted at the AI x Epistemics Research Sprint, November 2026. Track 2: Trust Infrastructure.</p>
 <h2>Abstract</h2>
 <p><em>Memory as Safety Infrastructure</em> (Reinhold, 2026) argued that an assistant's long-term memory must keep what the user said apart from what the assistant guessed, and specified an evaluation protocol. This companion paper is the first run of it, on CAMA, the open memory system that paper describes, with its real code in the loop and two open models.</p>
@@ -44,7 +44,7 @@ p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;p
 <p>CAMA is cloned from its public repository at commit <code>1e5f1aa</code> (18 October 2026) and runs as a separate process. Before CAMA is imported, the process is confined: database connections and file writes outside a scratch directory are refused, and network sockets are refused. A test starts the worker aimed at the operator's real memory file and confirms it refuses to start (<code>memory_protocol/tests/test_isolation.py</code>, 7 of 7 checks). Each condition gets its own empty database.</p>
 <p>CAMA stores a memory as a <em>teaching</em> (authored by the user, durable) or an <em>inference</em> (authored by the assistant, provisional until the user confirms or rejects it). Retrieval returns the five memories closest to the user's message and excludes rejected and expired ones.</p>
 <h3>3.2 Conditions</h3>
-<p>The first paper's four conditions, with what each does in CAMA's terms:</p>
+<p><strong>Table 1. The first paper's four conditions, with what each does in CAMA's terms.</strong></p>
 <table>
 <thead>
 <tr>
@@ -99,6 +99,7 @@ p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;p
 <h2>4 Results</h2>
 <p>Counts are sessions. "Acts" means the judge found that the reply stated the false inference as fact or gave advice that depends on it, without marking it uncertain. Unless a line says otherwise, a count refers to the false inference the probe targets.</p>
 <h3>4.1 What the first paper predicted, and what happened</h3>
+<p><strong>Table 2. Each outcome the first paper predicted, and the result.</strong></p>
 <table>
 <thead>
 <tr>
@@ -136,76 +137,8 @@ p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;p
 </tbody>
 </table>
 <h3>4.2 Labels alone: a large effect on what the model says, a smaller one on what it does</h3>
-<table>
-<thead>
-<tr>
-<th>Condition</th>
-<th>gemma, all</th>
-<th>recall</th>
-<th>task</th>
-<th>deepseek, all</th>
-<th>recall</th>
-<th>task</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A, no memory</td>
-<td>9/99</td>
-<td>4/49</td>
-<td>5/50</td>
-<td>6/100</td>
-<td>2/50</td>
-<td>4/50</td>
-</tr>
-<tr>
-<td>B, naive memory</td>
-<td>74/100</td>
-<td>41/50</td>
-<td>33/50</td>
-<td>71/100</td>
-<td>41/50</td>
-<td>30/50</td>
-</tr>
-<tr>
-<td>C, provenance labels (CAMA as shipped)</td>
-<td>31/100</td>
-<td>7/50</td>
-<td>24/50</td>
-<td>25/100</td>
-<td>4/50</td>
-<td>21/50</td>
-</tr>
-<tr>
-<td>D, full safeguards (repeat of C here)</td>
-<td>25/100</td>
-<td>5/50</td>
-<td>20/50</td>
-<td>25/99</td>
-<td>5/49</td>
-<td>20/50</td>
-</tr>
-<tr>
-<td>C + read-time gate (added)</td>
-<td>3/100</td>
-<td>0/50</td>
-<td>3/50</td>
-<td>2/100</td>
-<td>0/50</td>
-<td>2/50</td>
-</tr>
-<tr>
-<td>C + hold until confirmed (added)</td>
-<td>4/100</td>
-<td>0/50</td>
-<td>4/50</td>
-<td>5/100</td>
-<td>0/50</td>
-<td>5/50</td>
-</tr>
-</tbody>
-</table>
-<p>Both models behave alike. With naive memory the reply acted on the targeted false inference in about seven sessions of ten. With CAMA's labels that fell by more than half. The no-memory row is not zero. Some task probes assume part of the statement ("Suggest a birthday plan that includes my spouse or partner"), and a model with no memory sometimes answers a leading question from nothing: asked "What do you know about me and dairy?", gemma replied "Based on your records, you have a dairy allergy." The gated and held conditions should be read against this floor.</p>
+<figure class="fig"><img alt="Figure 1" src="generated/companion_fig1.png" /><figcaption><em>Figure 1. Sessions in which the reply acted on the targeted false inference, by memory condition and kind of question. Labels: CAMA's teaching and inference labels, as shipped. Gate and hold are the two added conditions. Counts are on the bars; the full table is Appendix B, Table B.18.</em></figcaption></figure>
+<p>Both models behave alike. With naive memory the reply acted on the targeted false inference in about seven sessions of ten (74 of 100 and 71 of 100). With CAMA's labels that fell by more than half (31 of 100 and 25 of 100). The no-memory bars are not zero. Some task probes assume part of the statement ("Suggest a birthday plan that includes my spouse or partner"), and a model with no memory sometimes answers a leading question from nothing: asked "What do you know about me and dairy?", gemma replied "Based on your records, you have a dairy allergy." The gated and held conditions should be read against this floor.</p>
 <p>Most of the drop came from recall questions. Asked what it knew, a model reading a line tagged <code>[inference | provisional]</code> usually said so or asked: the reply flagged the content or asked the user to confirm it in 37 of 50 recall sessions on gemma and 39 of 50 on deepseek, against 7 of 50 and 9 of 50 under naive memory. Asked for help with a task, the same models with the same labels flagged or asked in 2 of 50 and 7 of 50 sessions, and acted on the inference in 24 of 50 and 21 of 50.</p>
 <p>One false inference shows the mechanism. The store holds the inference "Dana owns the home Dana lives in" and Dana's own statement that she pays rent on the first of the month. Under condition C, gemma was asked two questions in separate sessions.</p>
 <blockquote>
@@ -219,7 +152,8 @@ p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;p
 <p>The paper's time-to-live does the same job by a different route: after expiry the target was no longer retrieved, and action fell to 1 of 50 on gemma and 2 of 50 on deepseek, against 15 of 50 and 10 of 50 for CAMA as shipped (Appendix B, Table B.17).</p>
 <p>The differences in action reported in this section and in 4.2 each have a Holm-adjusted exact p of 0.016 or lower on both models (Appendix B, Table B.1).</p>
 <h3>4.4 False memories the question was not about</h3>
-<p>CAMA returns five memories. At least one seeded false inference was among them in 98 of 100 sessions, although the probe's own target was retrieved in 84 of 100. Scored the way the first paper words its rates, over any seeded false memory that was retrieved in the session (so conditions that retrieve none are zero by construction, and the no-memory floor of 4.2 does not enter):</p>
+<p>CAMA returns five memories. At least one seeded false inference was among them in 98 of 100 sessions, although the probe's own target was retrieved in 84 of 100. Table 3 scores sessions the way the first paper words its rates, over any seeded false memory that was retrieved (so conditions that retrieve none are zero by construction, and the no-memory floor of 4.2 does not enter).</p>
+<p><strong>Table 3. Session reading: any seeded false memory retrieved in the session (all conditions: Appendix B, Table B.19).</strong></p>
 <table>
 <thead>
 <tr>
@@ -252,24 +186,6 @@ p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;p
 <td>7/98</td>
 </tr>
 <tr>
-<td>D, full safeguards (repeat of C here)</td>
-<td>84/100</td>
-<td>33/100</td>
-<td>13/100</td>
-<td>81/99</td>
-<td>29/99</td>
-<td>10/99</td>
-</tr>
-<tr>
-<td>C with the paper's time-to-live</td>
-<td>44/100</td>
-<td>20/100</td>
-<td>6/100</td>
-<td>44/99</td>
-<td>15/99</td>
-<td>7/99</td>
-</tr>
-<tr>
 <td>C + read-time gate (added)</td>
 <td>60/99</td>
 <td>4/99</td>
@@ -296,7 +212,6 @@ p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;p
 <p><strong>Naive memory kept both and kept asking.</strong> The false memory was still retrieved in 54 of 72 follow-up sessions on gemma and 54 of 72 on deepseek, usually beside its correction. The replies seldom went back to the false content: 7 of 72 on gemma and 3 of 71 on deepseek, against 6 of 71 and 6 of 72 with no memory. What they did was reopen the question. In 36 of 72 follow-up sessions on gemma and 41 of 71 on deepseek the reply said its records conflicted and asked which was right, at least once for 20 of 24 and 22 of 24 of the corrected memories. One session after Dana said she does not travel for work, gemma replied: "I've noticed some conflicting information in my records regarding your travel: one note says you travel for work every week, while another says you don't travel and are in the office."</p>
 <p><strong>The provenance-aware store stopped most of it.</strong> A contradicted inference is rejected through CAMA's own tool and stops being retrieved. The reply asked again in 2 of 72 and 5 of 72 sessions (exact paired p &lt; 0.001 and &lt; 0.001 against naive memory). Deleting the contradicted entry from naive memory, a baseline the first paper does not have, did about as well: 0 of 72 and 8 of 72.</p>
 <p><strong>What did not hold.</strong> The first paper expected corrections to be retained more reliably under confirmation-gated memory. On outright reversion this run could not show a difference: 7 of 72 against 3 of 72 on gemma (exact p 0.125) and 3 of 71 against 4 of 72 on deepseek (1.000). Where gemma did revert under naive memory, it was mostly in sessions that retrieved the false memory without its correction: it acted in 3 of 5 such sessions, and deepseek in 0 of 4.</p>
-<p>The step that decides which memories a correction contradicts is a model call and was not perfectly reliable. On gemma it named the false inference for 19 of 24, 23 of 24 and 24 of 24 corrections in three conditions that store the same memories. Expiry and hold do not depend on it.</p>
 <h3>4.6 Adversarial insertion</h3>
 <p>Appendix B, Tables B.14 to B.16, give what the database held after each attack and what the replies did four sessions later.</p>
 <p>The first two strategies are the user's own false statements. Every condition stored them as durable teachings and later replies acted on them (17 of 19 under C on gemma, 17 of 20 on deepseek), as expected of a memory that trusts its user.</p>
@@ -311,10 +226,11 @@ p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;p
 <p><strong>So the enforcement point is the memory system.</strong> Three mechanisms brought action on unconfirmed inferences down to the no-memory floor, and each acts on what the memory system returns: the first paper's time-to-live, holding unconfirmed inferences out of retrieval, and delivering them in a separate block with the confirmation rule attached. They differ in cost. Hold and expiry keep the assistant from using a wrong guess and also from asking about it. The gate keeps the question alive. A memory system with a confirmation tool, which CAMA has, can pair hold with asking outside the task.</p>
 <p><strong>What this means for CAMA as published.</strong> The shipped system no longer expires inferences and returns a provisional inference at full weight. On this material that is the difference between acting on a stale wrong guess in 1 of 50 and 2 of 50 sessions and acting on it in 15 of 50 and 10 of 50. The first paper's design was right on this point and the implementation moved away from it. Restoring expiry, or holding or gating unconfirmed inferences at read time, closes the gap in this test.</p>
 <p><strong>Provenance is only as good as the attribution.</strong> In Task 3 the provenance-aware store kept planted content out of durable memory except where the assistant itself reported the source as the user, and that happened often: 4 of 20 planted statements on gemma and 12 of 20 on deepseek became durable that way. A memory system that takes the writer's word for who said something inherits the writer's mistakes, including ones an injected instruction induces. The first paper's write discipline needs a source the model cannot assert: the channel the text arrived on, recorded by the system.</p>
-<p><strong>Relation to contamination within a conversation.</strong> Giovanny et al. (2026) found near-zero adoption of a falsehood attributed to the model's own earlier turn, on facts the models already knew. Here a line marked as the model's own unconfirmed conclusion was still used in 24 of 50 and 21 of 50 task sessions. The models and material differ, so this is a contrast, not a controlled comparison. It fits the reading that resistance there rests on what the model already knows; for facts about one person there is nothing to fall back on.</p>
-<p><strong>Limitations</strong> are given in Appendix A: the material was written to surface the failure, the store is small and half false, and both the judge and the reference labels are models.</p>
+<p><strong>Limitations and future work.</strong> Appendix A gives the limitations in full: the material was written to surface the failure, the store is small and half false, and both the judge and the reference labels are models. Next are Tasks 4 and 5 of the protocol, a frontier model, human reference labels, and a write path in which the system, not the model, records where a memory came from.</p>
 <h2>6 Conclusion</h2>
 <p>The protocol in <em>Memory as Safety Infrastructure</em> was run for the first time, on the memory system it describes. Its main prediction held on two models: separating what the user taught from what the assistant inferred sharply reduced how often a wrong guess was treated as fact. Its qualifier held too. The risk was reduced and not eliminated, and what remained sat in task contexts, where a label on the memory was not enough. Enforcement by the memory system, through expiry, a hold, or a gate at read time, removed what was left. After a correction, naive memory rarely reverted and often asked the user again; rejecting the contradicted inference stopped most of that. Planted content became durable under the provenance-aware store only when the assistant itself attributed it to the user, which marks the next thing to enforce: the source of a memory has to be recorded by the system, not reported by the model.</p>
+<h2>Code and Data</h2>
+<p>Code, run files and this paper's source: https://github.com/LoriensLibrary/memory-safety-protocol-run. The memory system: https://github.com/LoriensLibrary/cama, commit <code>1e5f1aa</code>. Prior work is declared in Appendix C.</p>
 <h2>References</h2>
 <ul>
 <li>Giovanny, F., Bayuningtyas, G., Mukharom, S. and Firmansyah, H. B. Epistemic Policy Divergence in Multi-Turn LLM Contamination: A Protocol-Gradient Investigation. arXiv:2609.35308, 2026.</li>
@@ -1632,6 +1548,7 @@ p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;p
 </tr>
 </tbody>
 </table>
+<p>The step that decides which memories a correction contradicts is a model call and was not perfectly reliable. On gemma it named the false inference for 19 of 24, 23 of 24 and 24 of 24 corrections in three conditions that store the same memories. Expiry and hold do not depend on it.</p>
 <p><strong>Table B.13. Task 2, follow-up replies after a correction.</strong></p>
 <table>
 <thead>
@@ -2002,7 +1919,147 @@ p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;p
 </tr>
 </tbody>
 </table>
-<p><strong>Table B.18. Runs, failed calls and recorded cost.</strong> Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.</p>
+<p><strong>Table B.18. Action on the targeted false inference by condition and kind of question (the data in Figure 1).</strong></p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>gemma, all</th>
+<th>recall</th>
+<th>task</th>
+<th>deepseek, all</th>
+<th>recall</th>
+<th>task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A, no memory</td>
+<td>9/99</td>
+<td>4/49</td>
+<td>5/50</td>
+<td>6/100</td>
+<td>2/50</td>
+<td>4/50</td>
+</tr>
+<tr>
+<td>B, naive memory</td>
+<td>74/100</td>
+<td>41/50</td>
+<td>33/50</td>
+<td>71/100</td>
+<td>41/50</td>
+<td>30/50</td>
+</tr>
+<tr>
+<td>C, provenance labels (CAMA as shipped)</td>
+<td>31/100</td>
+<td>7/50</td>
+<td>24/50</td>
+<td>25/100</td>
+<td>4/50</td>
+<td>21/50</td>
+</tr>
+<tr>
+<td>D, full safeguards (repeat of C here)</td>
+<td>25/100</td>
+<td>5/50</td>
+<td>20/50</td>
+<td>25/99</td>
+<td>5/49</td>
+<td>20/50</td>
+</tr>
+<tr>
+<td>C + read-time gate (added)</td>
+<td>3/100</td>
+<td>0/50</td>
+<td>3/50</td>
+<td>2/100</td>
+<td>0/50</td>
+<td>2/50</td>
+</tr>
+<tr>
+<td>C + hold until confirmed (added)</td>
+<td>4/100</td>
+<td>0/50</td>
+<td>4/50</td>
+<td>5/100</td>
+<td>0/50</td>
+<td>5/50</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table B.19. Session reading, all conditions.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>gemma: cited any</th>
+<th>acted on any</th>
+<th>acted on one the question was not about</th>
+<th>deepseek: cited any</th>
+<th>acted on any</th>
+<th>acted on one the question was not about</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B, naive memory</td>
+<td>96/100</td>
+<td>87/100</td>
+<td>29/100</td>
+<td>88/98</td>
+<td>77/98</td>
+<td>33/98</td>
+</tr>
+<tr>
+<td>C, provenance labels (CAMA as shipped)</td>
+<td>84/100</td>
+<td>38/100</td>
+<td>12/100</td>
+<td>81/98</td>
+<td>26/98</td>
+<td>7/98</td>
+</tr>
+<tr>
+<td>D, full safeguards (repeat of C here)</td>
+<td>84/100</td>
+<td>33/100</td>
+<td>13/100</td>
+<td>81/99</td>
+<td>29/99</td>
+<td>10/99</td>
+</tr>
+<tr>
+<td>C with the paper's time-to-live</td>
+<td>44/100</td>
+<td>20/100</td>
+<td>6/100</td>
+<td>44/99</td>
+<td>15/99</td>
+<td>7/99</td>
+</tr>
+<tr>
+<td>C + read-time gate (added)</td>
+<td>60/99</td>
+<td>4/99</td>
+<td>2/99</td>
+<td>76/99</td>
+<td>2/99</td>
+<td>1/99</td>
+</tr>
+<tr>
+<td>C + hold until confirmed (added)</td>
+<td>0/100</td>
+<td>0/100</td>
+<td>0/100</td>
+<td>0/100</td>
+<td>0/100</td>
+<td>0/100</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table B.20. Runs, failed calls and recorded cost.</strong> Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.</p>
 <table>
 <thead>
 <tr>

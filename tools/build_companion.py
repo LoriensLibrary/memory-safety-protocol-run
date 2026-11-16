@@ -134,6 +134,13 @@ def table_session():
     return "\n".join(L)
 
 
+def table_session_short():
+    L = ["| Condition | gemma: cited any | acted on any | acted on one the question was not about | deepseek: cited any | acted on any | acted on one the question was not about |", "|---|---|---|---|---|---|---|"]
+    for c in ("B", "C", "C_gate", "C_hold"):
+        L.append(f"| {NAME[c]} | " + " | ".join(cell(m, c, k) for m in "gd" for k in ("s_cited", "s_act", "s_other")) + " |")
+    return "\n".join(L)
+
+
 def table_pairs():
     L = ["| Comparison (same false memory, same probe) | Model | Pairs | First | Second | Difference, points [95%] | Improved / worsened | Exact p | Holm p |", "|---|---|---|---|---|---|---|---|---|"]
     for m in "gd":
@@ -442,7 +449,7 @@ def repeat_same(m):
     return str(rp["identical_reply_text"])
 
 
-TABLES = dict(TABLE_T2_DB=table_t2_db, TASKS_REPORTED=tasks_reported, TASKS_CONTRIB=tasks_contrib, TABLE_RUNS=table_runs, CONTROL_ACT=control_act, HAND_N=hand, HAND_ACT=lambda: hand("treats_as_true"), HAND_CHECK=lambda: hand("asks_to_confirm"), TWO_ACT=two_act,
+TABLES = dict(TABLE_SESSION_SHORT=table_session_short, TABLE_T2_DB=table_t2_db, TASKS_REPORTED=tasks_reported, TASKS_CONTRIB=tasks_contrib, TABLE_RUNS=table_runs, CONTROL_ACT=control_act, HAND_N=hand, HAND_ACT=lambda: hand("treats_as_true"), HAND_CHECK=lambda: hand("asks_to_confirm"), TWO_ACT=two_act,
               REPEAT_SAME_G=lambda: repeat_same("g"), REPEAT_SAME_D=lambda: repeat_same("d"),
               TABLE_TTL=table_ttl, HOLM_MAX=holm_max, TABLE_ACTION=table_action, TABLE_CHECK=table_check, TABLE_RETRIEVAL=table_retrieval, TABLE_SESSION=table_session, TABLE_PAIRS=table_pairs,
               TABLE_SESSION_PAIRS=table_session_pairs, TABLE_JUDGE=table_judge, TABLE_TWO_JUDGES=table_two_judges, TABLE_CONTRA=table_contra,
@@ -520,8 +527,9 @@ def render(src):
     src = src.replace("\n## Appendix A", "\n<div class=\"appendix-break\"></div>\n\n## Appendix A")
     html = markdown.markdown(src, extensions=["tables", "fenced_code", "sane_lists"])
     html = html.replace("<p>Angela Faye Reinhold", "<p class=\"byline\">Angela Faye Reinhold", 1)
+    html = re.sub(r'<p>(<img[^>]*>)</p>\s*<p><em>(Figure \d\..*?)</em></p>', r'<figure class="fig">\1<figcaption><em>\2</em></figcaption></figure>', html, flags=re.S)
     title = re.search(r"^# (.+)$", src, re.M).group(1)
-    extra = "p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;page-break-inside:avoid} thead{display:table-header-group} h2,h3{break-after:avoid;page-break-after:avoid}"
+    extra = "p:has(+ table){break-after:avoid;page-break-after:avoid} tr{break-inside:avoid;page-break-inside:avoid} thead{display:table-header-group} h2,h3{break-after:avoid;page-break-after:avoid} figure.fig{margin:6px 0 8px 0} figure.fig img{width:100%} figure.fig figcaption{font-size:0.86em}"
     doc = f"<!doctype html><html><head><meta charset='utf-8'><title>{title}</title><style>{BR.CSS}{extra}</style></head><body>{html}</body></html>"
     open(os.path.join(REP, "COMPANION.html"), "w", encoding="utf-8").write(doc)
     out = os.path.join(REP, "COMPANION.pdf"); inp = "file:///" + os.path.join(REP, "COMPANION.html").replace("\\", "/")

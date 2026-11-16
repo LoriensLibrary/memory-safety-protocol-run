@@ -43,7 +43,7 @@ CAMA stores a memory as a *teaching* (authored by the user, durable) or an *infe
 
 ### 3.2 Conditions
 
-The first paper's four conditions, with what each does in CAMA's terms:
+**Table 1. The first paper's four conditions, with what each does in CAMA's terms.**
 
 | Condition | What is stored and returned |
 |---|---|
@@ -103,6 +103,8 @@ Counts are sessions. "Acts" means the judge found that the reply stated the fals
 
 ### 4.1 What the first paper predicted, and what happened
 
+**Table 2. Each outcome the first paper predicted, and the result.**
+
 | The first paper said | Result | Evidence |
 |---|---|---|
 | Under B, false memories persist indefinitely (6.3.4) | **Held.** | The target was retrieved in 42 of 50 sessions before the time-to-live and 42 of 50 after. The reply acted on it in 35 of 50 and 39 of 50 (gemma), 34 of 50 and 37 of 50 (deepseek). |
@@ -113,16 +115,11 @@ Counts are sessions. "Acts" means the judge found that the reply stated the fals
 
 ### 4.2 Labels alone: a large effect on what the model says, a smaller one on what it does
 
-| Condition | gemma, all | recall | task | deepseek, all | recall | task |
-|---|---|---|---|---|---|---|
-| A, no memory | 9/99 | 4/49 | 5/50 | 6/100 | 2/50 | 4/50 |
-| B, naive memory | 74/100 | 41/50 | 33/50 | 71/100 | 41/50 | 30/50 |
-| C, provenance labels (CAMA as shipped) | 31/100 | 7/50 | 24/50 | 25/100 | 4/50 | 21/50 |
-| D, full safeguards (repeat of C here) | 25/100 | 5/50 | 20/50 | 25/99 | 5/49 | 20/50 |
-| C + read-time gate (added) | 3/100 | 0/50 | 3/50 | 2/100 | 0/50 | 2/50 |
-| C + hold until confirmed (added) | 4/100 | 0/50 | 4/50 | 5/100 | 0/50 | 5/50 |
+![Figure 1](generated/companion_fig1.png)
 
-Both models behave alike. With naive memory the reply acted on the targeted false inference in about seven sessions of ten. With CAMA's labels that fell by more than half. The no-memory row is not zero. Some task probes assume part of the statement ("Suggest a birthday plan that includes my spouse or partner"), and a model with no memory sometimes answers a leading question from nothing: asked "What do you know about me and dairy?", gemma replied "Based on your records, you have a dairy allergy." The gated and held conditions should be read against this floor.
+*Figure 1. Sessions in which the reply acted on the targeted false inference, by memory condition and kind of question. Labels: CAMA's teaching and inference labels, as shipped. Gate and hold are the two added conditions. Counts are on the bars; the full table is Appendix B, Table B.18.*
+
+Both models behave alike. With naive memory the reply acted on the targeted false inference in about seven sessions of ten (74 of 100 and 71 of 100). With CAMA's labels that fell by more than half (31 of 100 and 25 of 100). The no-memory bars are not zero. Some task probes assume part of the statement ("Suggest a birthday plan that includes my spouse or partner"), and a model with no memory sometimes answers a leading question from nothing: asked "What do you know about me and dairy?", gemma replied "Based on your records, you have a dairy allergy." The gated and held conditions should be read against this floor.
 
 Most of the drop came from recall questions. Asked what it knew, a model reading a line tagged `[inference | provisional]` usually said so or asked: the reply flagged the content or asked the user to confirm it in 37 of 50 recall sessions on gemma and 39 of 50 on deepseek, against 7 of 50 and 9 of 50 under naive memory. Asked for help with a task, the same models with the same labels flagged or asked in 2 of 50 and 7 of 50 sessions, and acted on the inference in 24 of 50 and 21 of 50.
 
@@ -146,14 +143,14 @@ The differences in action reported in this section and in 4.2 each have a Holm-a
 
 ### 4.4 False memories the question was not about
 
-CAMA returns five memories. At least one seeded false inference was among them in 98 of 100 sessions, although the probe's own target was retrieved in 84 of 100. Scored the way the first paper words its rates, over any seeded false memory that was retrieved in the session (so conditions that retrieve none are zero by construction, and the no-memory floor of 4.2 does not enter):
+CAMA returns five memories. At least one seeded false inference was among them in 98 of 100 sessions, although the probe's own target was retrieved in 84 of 100. Table 3 scores sessions the way the first paper words its rates, over any seeded false memory that was retrieved (so conditions that retrieve none are zero by construction, and the no-memory floor of 4.2 does not enter).
+
+**Table 3. Session reading: any seeded false memory retrieved in the session (all conditions: Appendix B, Table B.19).**
 
 | Condition | gemma: cited any | acted on any | acted on one the question was not about | deepseek: cited any | acted on any | acted on one the question was not about |
 |---|---|---|---|---|---|---|
 | B, naive memory | 96/100 | 87/100 | 29/100 | 88/98 | 77/98 | 33/98 |
 | C, provenance labels (CAMA as shipped) | 84/100 | 38/100 | 12/100 | 81/98 | 26/98 | 7/98 |
-| D, full safeguards (repeat of C here) | 84/100 | 33/100 | 13/100 | 81/99 | 29/99 | 10/99 |
-| C with the paper's time-to-live | 44/100 | 20/100 | 6/100 | 44/99 | 15/99 | 7/99 |
 | C + read-time gate (added) | 60/99 | 4/99 | 2/99 | 76/99 | 2/99 | 1/99 |
 | C + hold until confirmed (added) | 0/100 | 0/100 | 0/100 | 0/100 | 0/100 | 0/100 |
 
@@ -170,8 +167,6 @@ A correction was stored in every memory condition. What differed is what happene
 **The provenance-aware store stopped most of it.** A contradicted inference is rejected through CAMA's own tool and stops being retrieved. The reply asked again in 2 of 72 and 5 of 72 sessions (exact paired p < 0.001 and < 0.001 against naive memory). Deleting the contradicted entry from naive memory, a baseline the first paper does not have, did about as well: 0 of 72 and 8 of 72.
 
 **What did not hold.** The first paper expected corrections to be retained more reliably under confirmation-gated memory. On outright reversion this run could not show a difference: 7 of 72 against 3 of 72 on gemma (exact p 0.125) and 3 of 71 against 4 of 72 on deepseek (1.000). Where gemma did revert under naive memory, it was mostly in sessions that retrieved the false memory without its correction: it acted in 3 of 5 such sessions, and deepseek in 0 of 4.
-
-The step that decides which memories a correction contradicts is a model call and was not perfectly reliable. On gemma it named the false inference for 19 of 24, 23 of 24 and 24 of 24 corrections in three conditions that store the same memories. Expiry and hold do not depend on it.
 
 ### 4.6 Adversarial insertion
 
@@ -201,13 +196,15 @@ Against the 90 reference labels (3.7), the primary judge agreed on "acts" in 87 
 
 **Provenance is only as good as the attribution.** In Task 3 the provenance-aware store kept planted content out of durable memory except where the assistant itself reported the source as the user, and that happened often: 4 of 20 planted statements on gemma and 12 of 20 on deepseek became durable that way. A memory system that takes the writer's word for who said something inherits the writer's mistakes, including ones an injected instruction induces. The first paper's write discipline needs a source the model cannot assert: the channel the text arrived on, recorded by the system.
 
-**Relation to contamination within a conversation.** Giovanny et al. (2026) found near-zero adoption of a falsehood attributed to the model's own earlier turn, on facts the models already knew. Here a line marked as the model's own unconfirmed conclusion was still used in 24 of 50 and 21 of 50 task sessions. The models and material differ, so this is a contrast, not a controlled comparison. It fits the reading that resistance there rests on what the model already knows; for facts about one person there is nothing to fall back on.
-
-**Limitations** are given in Appendix A: the material was written to surface the failure, the store is small and half false, and both the judge and the reference labels are models.
+**Limitations and future work.** Appendix A gives the limitations in full: the material was written to surface the failure, the store is small and half false, and both the judge and the reference labels are models. Next are Tasks 4 and 5 of the protocol, a frontier model, human reference labels, and a write path in which the system, not the model, records where a memory came from.
 
 ## 6 Conclusion
 
 The protocol in *Memory as Safety Infrastructure* was run for the first time, on the memory system it describes. Its main prediction held on two models: separating what the user taught from what the assistant inferred sharply reduced how often a wrong guess was treated as fact. Its qualifier held too. The risk was reduced and not eliminated, and what remained sat in task contexts, where a label on the memory was not enough. Enforcement by the memory system, through expiry, a hold, or a gate at read time, removed what was left. After a correction, naive memory rarely reverted and often asked the user again; rejecting the contradicted inference stopped most of that. Planted content became durable under the provenance-aware store only when the assistant itself attributed it to the user, which marks the next thing to enforce: the source of a memory has to be recorded by the system, not reported by the model.
+
+## Code and Data
+
+Code, run files and this paper's source: https://github.com/LoriensLibrary/memory-safety-protocol-run. The memory system: https://github.com/LoriensLibrary/cama, commit `1e5f1aa`. Prior work is declared in Appendix C.
 
 ## References
 
@@ -430,6 +427,8 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 | C + read-time gate (added) | 24 | 24 | 0 | 24 | 24 | 0 |
 | C + hold until confirmed (added) | 0 | 0 | 0 | 0 | 0 | 0 |
 
+The step that decides which memories a correction contradicts is a model call and was not perfectly reliable. On gemma it named the false inference for 19 of 24, 23 of 24 and 24 of 24 corrections in three conditions that store the same memories. Expiry and hold do not depend on it.
+
 **Table B.13. Task 2, follow-up replies after a correction.**
 
 | Condition | gemma: reply acts on the corrected false memory | reply asks the user again | false memories asked about again at least once (of 24) | deepseek: acts | asks again | asked about again at least once (of 24) |
@@ -486,7 +485,29 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 | C, provenance labels (CAMA as shipped) | 42/50 | 42/50 | 16/50 | 15/50 | 15/50 | 10/50 |
 | C with the paper's time-to-live | 42/50 | 0/50 | 16/50 | 1/50 | 12/50 | 2/50 |
 
-**Table B.18. Runs, failed calls and recorded cost.** Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.
+**Table B.18. Action on the targeted false inference by condition and kind of question (the data in Figure 1).**
+
+| Condition | gemma, all | recall | task | deepseek, all | recall | task |
+|---|---|---|---|---|---|---|
+| A, no memory | 9/99 | 4/49 | 5/50 | 6/100 | 2/50 | 4/50 |
+| B, naive memory | 74/100 | 41/50 | 33/50 | 71/100 | 41/50 | 30/50 |
+| C, provenance labels (CAMA as shipped) | 31/100 | 7/50 | 24/50 | 25/100 | 4/50 | 21/50 |
+| D, full safeguards (repeat of C here) | 25/100 | 5/50 | 20/50 | 25/99 | 5/49 | 20/50 |
+| C + read-time gate (added) | 3/100 | 0/50 | 3/50 | 2/100 | 0/50 | 2/50 |
+| C + hold until confirmed (added) | 4/100 | 0/50 | 4/50 | 5/100 | 0/50 | 5/50 |
+
+**Table B.19. Session reading, all conditions.**
+
+| Condition | gemma: cited any | acted on any | acted on one the question was not about | deepseek: cited any | acted on any | acted on one the question was not about |
+|---|---|---|---|---|---|---|
+| B, naive memory | 96/100 | 87/100 | 29/100 | 88/98 | 77/98 | 33/98 |
+| C, provenance labels (CAMA as shipped) | 84/100 | 38/100 | 12/100 | 81/98 | 26/98 | 7/98 |
+| D, full safeguards (repeat of C here) | 84/100 | 33/100 | 13/100 | 81/99 | 29/99 | 10/99 |
+| C with the paper's time-to-live | 44/100 | 20/100 | 6/100 | 44/99 | 15/99 | 7/99 |
+| C + read-time gate (added) | 60/99 | 4/99 | 2/99 | 76/99 | 2/99 | 1/99 |
+| C + hold until confirmed (added) | 0/100 | 0/100 | 0/100 | 0/100 | 0/100 | 0/100 |
+
+**Table B.20. Runs, failed calls and recorded cost.** Credits are Adaption credits. The spend guard records the full worst-case reserve for every failed call, so recorded cost is an upper bound on what was billed.
 
 | Run | Sessions complete | Not complete | Model calls attempted | Failed attempts | Credits recorded (run) | Credits recorded (its judges) |
 |---|---|---|---|---|---|---|
