@@ -332,6 +332,69 @@ def table_runs():
     return "\n".join(L)
 
 
+RR = load("t23_reply.json")
+
+
+def r2_cond(m, cond):
+    t = (RR.get(TAG[m]) or {}).get("t2")
+    if not t or t["judged"] < 0.97 * t["sessions"]: raise Pending("Task 2 replies not scored " + m)
+    return t["conditions"][cond]
+
+
+def r2_num(m, cond, what):
+    c = r2_cond(m, cond)
+    if what in ("acts", "asks"): return f"{c[what]} of {c['judged']}"
+    if what == "items_asked": return f"{c['items_ever_asked']} of {c['items']}"
+    if what == "items_acted": return f"{c['items_ever_acted']} of {c['items']}"
+    if what == "nocorr_acts": x = c["false_retrieved_without_correction"]; return f"{x['acts']} of {x['judged']}"
+    if what == "both_asks": x = c["false_and_correction_retrieved"]; return f"{x['asks']} of {x['judged']}"
+    raise SystemExit("unknown reply measure " + what)
+
+
+def r2_p(m, measure, a, b):
+    t = (RR.get(TAG[m]) or {}).get("t2")
+    if not t or t["judged"] < 0.97 * t["sessions"]: raise Pending("Task 2 replies not scored " + m)
+    p = next(x for x in t["pairs"] if x["measure"] == measure and x["a_name"] == a and x["b_name"] == b)
+    return p_fmt(p["p_exact"])
+
+
+def table_t2_reply():
+    L = ["| Condition | gemma: reply acts on the corrected false memory | reply asks the user again | false memories asked about again at least once (of 24) | deepseek: acts | asks again | asked about again at least once (of 24) |", "|---|---|---|---|---|---|---|"]
+    for c in T2_ORDER:
+        cells = []
+        for m in "gd":
+            x = r2_cond(m, c); cells += [f"{x['acts']}/{x['judged']}", f"{x['asks']}/{x['judged']}", str(x["items_ever_asked"])]
+        L.append(f"| {NAME[c]} | " + " | ".join(cells) + " |")
+    return "\n".join(L)
+
+
+def r3_cell(m, group, cond):
+    t = (RR.get(TAG[m]) or {}).get("t3")
+    if not t or t["judged"] < 0.97 * t["sessions"] or t["sessions"] < 190: raise Pending("Task 3 replies not scored " + m)
+    return t["cells"][f"{group}|{cond}"]
+
+
+def r3_num(m, group, cond, what):
+    c = r3_cell(m, group, cond)
+    return f"{c[what]} of {c['judged']}"
+
+
+def r3_p(m, group, a, b):
+    t = (RR.get(TAG[m]) or {}).get("t3")
+    if not t or t["judged"] < 0.97 * t["sessions"]: raise Pending("Task 3 replies not scored " + m)
+    p = next(x for x in t["pairs"] if x["group"] == group and x["a_name"] == a and x["b_name"] == b)
+    return p_fmt(p["p_exact"])
+
+
+def table_t3_reply(m):
+    conds = ("B", "C", "C_ttl", "C_gate", "C_hold")
+    L = ["| Strategy | Reply acts on the planted statement four sessions later: B | C | C with time-to-live | C + gate | C + hold | Flags or asks: C | C + gate |", "|---|---|---|---|---|---|---|---|"]
+    for s in ("S1", "S2", "S3", "S4"):
+        cs = {c: r3_cell(m, s, c) for c in conds}
+        L.append(f"| {STRAT[s]} | " + " | ".join(f"{cs[c]['acts']}/{cs[c]['judged']}" for c in conds) + f" | {cs['C']['asks']}/{cs['C']['judged']} | {cs['C_gate']['asks']}/{cs['C_gate']['judged']} |")
+    return "\n".join(L)
+
+
 def tasks_done():
     try:
         for m in "gd": t2_of(m); t3_of(m)
@@ -388,6 +451,12 @@ def resolve(marker, draft):
             raise SystemExit(f"cannot fill {{{{{marker}}}}}: {e}")
     parts = marker.split("|")
     try:
+        if parts[0] == "r2" and len(parts) == 4: return r2_num(parts[1], parts[2], parts[3])          # {{r2|g|B|asks}}
+        if parts[0] == "r2p" and len(parts) == 5: return r2_p(parts[1], parts[2], parts[3], parts[4])  # {{r2p|g|asks|B|C}}
+        if parts[0] == "r3" and len(parts) == 5: return r3_num(parts[1], parts[2], parts[3], parts[4])  # {{r3|g|S3+S4|B|acts}}
+        if parts[0] == "r3p" and len(parts) == 5: return r3_p(parts[1], parts[2], parts[3], parts[4])  # {{r3p|g|S3+S4|B|C}}
+        if parts[0] == "TABLE_T3_REPLY" and len(parts) == 2: return table_t3_reply(parts[1])
+        if parts[0] == "TABLE_T2_REPLY": return table_t2_reply()
         if parts[0] == "t2" and len(parts) == 4: return t2_num(parts[1], parts[2], parts[3])          # {{t2|g|C|named}}
         if parts[0] == "t3" and len(parts) == 5: return t3_num(parts[1], parts[2], parts[3], parts[4])  # {{t3|g|S3+S4|C|durable}}
         if parts[0] in ("TABLE_T2", "TABLE_T3_STORE", "TABLE_T3_FOLLOW") and len(parts) == 2:
