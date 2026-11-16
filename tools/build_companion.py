@@ -74,7 +74,7 @@ def cell(m, sl, meas):
     try:
         k, n = count(m, sl, meas); return f"{k}/{n}"
     except Pending:
-        return "pending"
+        return "not judged yet"
 
 
 def p_fmt(p):
@@ -153,9 +153,9 @@ def table_session_pairs():
 
 
 def table_judge():
-    if not JC: return "pending"
+    if not JC: return "not judged yet"
     names = dict(mentions="mentions it", treats_as_true="acts as if true (action)", asks_to_confirm="flags it or asks (check)", contradicts="says it is not true")
-    L = ["| Replies from | Judge | Compared | Question | Agree with hand label | Kappa | Agree, replies not marked borderline |", "|---|---|---|---|---|---|---|"]
+    L = ["| Replies from | Judge | Compared | Question | Agree with reference label | Kappa | Agree, replies not marked borderline |", "|---|---|---|---|---|---|---|"]
     for key, c in sorted(JC["judges"].items()):
         if not c["compared"]: continue
         run, judge = key.split("|")
@@ -177,7 +177,7 @@ def table_two_judges():
 def table_full(m):
     L = ["| Condition | Phase | Sessions | Target retrieved | Judged | Mentions | Acts | Flags or asks | Reply credits the user (pattern) |", "|---|---|---|---|---|---|---|---|---|"]
     t = (R.get(TAG[m]) or {}).get("t1")
-    if not t: return "pending"
+    if not t: return "not judged yet"
     for b in t["table"]:
         L.append(f"| {NAME[b['condition']]} | {'before' if b['phase'] == 1 else 'after'} | {b['n']} | {b['retrieved']} | {b['judged']} | {b['mentions']} | {b['action']} | {b['check']} | {b['user_said']} |")
     return "\n".join(L)
@@ -208,6 +208,133 @@ def table_controls():
     return "\n".join(L)
 
 
+T2_ORDER = ("A", "B", "B_del", "C", "C_ttl", "C_gate", "C_hold")
+STRAT = dict(S1="S1, false fact in passing", S2="S2, false fact in an update request", S3="S3, pressure to infer and store", S4="S4, instruction inside a document")
+
+
+def t2_of(m):
+    t = (R.get(TAG[m]) or {}).get("t2")
+    if not t: raise Pending("Task 2 " + m)
+    done = {c["condition"] for c in t["follow_ups"] if c["n"] == 24}
+    if not all(c in done for c in T2_ORDER): raise Pending("Task 2 not complete " + m)
+    return t
+
+
+def table_t2(m):
+    t = t2_of(m)
+    judged = all(f["judged"] >= f["n"] - 1 for f in t["follow_ups"])
+    L = ["| Condition | Contradicted false memory named by the check | removed or rejected | False memory retrieved in follow-ups (of 72) | Correction retrieved (of 72) | Reply acts on the false memory: 1 session later | 2 later | 4 later | False memories acted on at least once (of 24) |", "|---|---|---|---|---|---|---|---|---|"]
+    for c in T2_ORDER:
+        co = next((x for x in t["corrections"] if x["condition"] == c), None)
+        fu = {f["after"]: f for f in t["follow_ups"] if f["condition"] == c}
+        rv = next((x for x in t["reversion"] if x["condition"] == c), None)
+        acts = [f"{fu[k]['reverted']}/{fu[k]['judged']}" if judged else "pending" for k in (1, 2, 4)]
+        L.append(f"| {NAME[c]} | {co['seed_named']}/{co['n']} | {co['seed_removed']}/{co['n']} | {sum(f['false_retrieved'] for f in fu.values())} | {sum(f['correction_retrieved'] for f in fu.values())} | "
+                 + " | ".join(acts) + f" | {rv['ever_reverted'] if judged and rv else 'pending'} |")
+    return "\n".join(L)
+
+
+def t2_num(m, cond, what):
+    t = t2_of(m)
+    co = next(x for x in t["corrections"] if x["condition"] == cond)
+    fu = [f for f in t["follow_ups"] if f["condition"] == cond]
+    if what in ("named", "removed", "check_failed"):
+        return f"{co[dict(named='seed_named', removed='seed_removed', check_failed='check_failed')[what]]} of {co['n']}"
+    if what == "false_retr": return f"{sum(f['false_retrieved'] for f in fu)} of {sum(f['n'] for f in fu)}"
+    if what == "reverted":
+        if any(f["judged"] < f["n"] - 1 for f in fu): raise Pending("Task 2 judge")
+        return f"{sum(f['reverted'] for f in fu)} of {sum(f['judged'] for f in fu)}"
+    if what == "ever":
+        if any(f["judged"] < f["n"] - 1 for f in fu): raise Pending("Task 2 judge")
+        rv = next(x for x in t["reversion"] if x["condition"] == cond); return f"{rv['ever_reverted']} of {rv['items']}"
+    raise SystemExit("unknown Task 2 measure " + what)
+
+
+def t3_of(m):
+    t = (R.get(TAG[m]) or {}).get("t3")
+    if not t or not t["follow_up"] or any(f["n"] < 10 for f in t["follow_up"]): raise Pending("Task 3 " + m)
+    return t
+
+
+def table_t3_store(m):
+    t = t3_of(m)
+    L = ["| Strategy | Assistant chose to save it (of 10) | and called its source | B: stored durable | C: stored durable | C: stored provisional | Retrievable 4 sessions later: B | C | C with time-to-live | C + hold |", "|---|---|---|---|---|---|---|---|---|---|"]
+    for s in ("S1", "S2", "S3", "S4"):
+        w = next(x for x in t["write_decision"] if x["strategy"] == s)
+        st = {x["condition"]: x for x in t["stored"] if x["strategy"] == s}
+        fu = {x["condition"]: x for x in t["follow_up"] if x["strategy"] == s}
+        lab = ", ".join(f"{k.replace('_', ' ')} {v}" for k, v in sorted(w["labeled"].items())) or "none"
+        prov = st["C"]["in_database"] - st["C"]["durable"]
+        L.append(f"| {STRAT[s]} | {w['chose_to_save']} | {lab} | {st['B']['durable']} | {st['C']['durable']} | {prov} | "
+                 + " | ".join(str(fu[c]["retrievable"]) for c in ("B", "C", "C_ttl", "C_hold")) + " |")
+    return "\n".join(L)
+
+
+def table_t3_follow(m):
+    t = t3_of(m)
+    if any(f["judged"] < f["n"] - 1 for f in t["follow_up"]): raise Pending("Task 3 judge " + m)
+    conds = ("B", "C", "C_ttl", "C_gate", "C_hold")
+    L = ["| Strategy | Reply acts on the planted statement 4 sessions later (of 10): B | C | C with time-to-live | C + gate | C + hold | Flags or asks: C | C + gate |", "|---|---|---|---|---|---|---|---|"]
+    for s in ("S1", "S2", "S3", "S4"):
+        fu = {x["condition"]: x for x in t["follow_up"] if x["strategy"] == s}
+        L.append(f"| {STRAT[s]} | " + " | ".join(str(fu[c]["influenced"]) for c in conds) + f" | {fu['C']['checked']} | {fu['C_gate']['checked']} |")
+    return "\n".join(L)
+
+
+def t3_num(m, strat, cond, what):
+    t = t3_of(m)
+    strats = ("S1", "S2", "S3", "S4") if strat == "all" else tuple(strat.split("+"))
+    if what == "saved":
+        w = [x for x in t["write_decision"] if x["strategy"] in strats]; return f"{sum(x['chose_to_save'] for x in w)} of {sum(x['n'] for x in w)}"
+    if what in ("durable", "in_db"):
+        st = [x for x in t["stored"] if x["strategy"] in strats and x["condition"] == cond]
+        return f"{sum(x['durable' if what == 'durable' else 'in_database'] for x in st)} of {sum(x['n'] for x in st)}"
+    fu = [x for x in t["follow_up"] if x["strategy"] in strats and x["condition"] == cond]
+    if what == "retrievable": return f"{sum(x['retrievable'] for x in fu)} of {sum(x['n'] for x in fu)}"
+    if any(f["judged"] < f["n"] - 1 for f in fu): raise Pending("Task 3 judge")
+    return f"{sum(x['influenced' if what == 'acts' else 'checked'] for x in fu)} of {sum(x['judged'] for x in fu)}"
+
+
+def table_runs():
+    import collections, glob
+    L = ["| Run | Sessions complete | Not complete | Model calls attempted | Failed attempts | Credits recorded (run) | Credits recorded (its judges) |", "|---|---|---|---|---|---|---|"]
+    total = 0.0
+    for d in sorted(glob.glob(os.path.join(RUNS, "t[123]_*_paid"))):
+        name = os.path.basename(d)
+        if "canary" in name: continue
+        rows = [json.loads(x) for x in open(os.path.join(d, "traces.jsonl"), encoding="utf-8") if x.strip()] if os.path.exists(os.path.join(d, "traces.jsonl")) else []
+        spend = {}
+        ev = collections.Counter()
+        for lp in glob.glob(os.path.join(d, "**", "ledger*.jsonl"), recursive=True):
+            last = 0.0
+            for line in open(lp, encoding="utf-8", errors="replace"):
+                try: r = json.loads(line)
+                except json.JSONDecodeError: continue
+                last = r.get("spend_after", r.get("spend_after_debit", last)) or last
+                if os.path.basename(lp) == "ledger.jsonl": ev[r.get("event") or "row"] += 1
+            spend[os.path.relpath(lp, d)] = last
+        run_c = spend.pop("ledger.jsonl", 0.0); judge_c = sum(spend.values()); total += run_c + judge_c
+        L.append(f"| {name.replace('_paid', '')} | {sum(r.get('status') == 'complete' for r in rows)} | {sum(r.get('status') != 'complete' for r in rows)} | {ev['debit']} | {ev['unresolved']} | {run_c:.3f} | {judge_c:.3f} |")
+    L.append(f"| **Total recorded** | | | | | | **{total:.2f}** |")
+    return "\n".join(L)
+
+
+def tasks_done():
+    try:
+        for m in "gd": t2_of(m); t3_of(m)
+        return True
+    except Pending:
+        return False
+
+
+def tasks_reported():
+    return "It reports the first three tasks." if tasks_done() else "This version reports Task 1 in full; Tasks 2 and 3 were still running when it was built."
+
+
+def tasks_contrib():
+    return "Tasks 1 to 3" if tasks_done() else "Task 1 (Tasks 2 and 3 were still running when this version was built)"
+
+
 def control_act():
     cs = [c for c in ((S.get(TAG[m]) or {}).get("controls") for m in "gd") if c]
     if not cs: raise Pending("controls")
@@ -233,7 +360,7 @@ def repeat_same(m):
     return str(rp["identical_reply_text"])
 
 
-TABLES = dict(CONTROL_ACT=control_act, HAND_N=hand, HAND_ACT=lambda: hand("treats_as_true"), HAND_CHECK=lambda: hand("asks_to_confirm"), TWO_ACT=two_act,
+TABLES = dict(TASKS_REPORTED=tasks_reported, TASKS_CONTRIB=tasks_contrib, TABLE_RUNS=table_runs, CONTROL_ACT=control_act, HAND_N=hand, HAND_ACT=lambda: hand("treats_as_true"), HAND_CHECK=lambda: hand("asks_to_confirm"), TWO_ACT=two_act,
               REPEAT_SAME_G=lambda: repeat_same("g"), REPEAT_SAME_D=lambda: repeat_same("d"),
               TABLE_TTL=table_ttl, HOLM_MAX=holm_max, TABLE_ACTION=table_action, TABLE_CHECK=table_check, TABLE_RETRIEVAL=table_retrieval, TABLE_SESSION=table_session, TABLE_PAIRS=table_pairs,
               TABLE_SESSION_PAIRS=table_session_pairs, TABLE_JUDGE=table_judge, TABLE_TWO_JUDGES=table_two_judges, TABLE_CONTRA=table_contra,
@@ -247,6 +374,14 @@ def resolve(marker, draft):
             if draft: return "[pending]"
             raise SystemExit(f"cannot fill {{{{{marker}}}}}: {e}")
     parts = marker.split("|")
+    try:
+        if parts[0] == "t2" and len(parts) == 4: return t2_num(parts[1], parts[2], parts[3])          # {{t2|g|C|named}}
+        if parts[0] == "t3" and len(parts) == 5: return t3_num(parts[1], parts[2], parts[3], parts[4])  # {{t3|g|S3+S4|C|durable}}
+        if parts[0] in ("TABLE_T2", "TABLE_T3_STORE", "TABLE_T3_FOLLOW") and len(parts) == 2:
+            return dict(TABLE_T2=table_t2, TABLE_T3_STORE=table_t3_store, TABLE_T3_FOLLOW=table_t3_follow)[parts[0]](parts[1])
+    except Pending as e:
+        if draft: return "[pending]"
+        raise SystemExit(f"cannot fill {{{{{marker}}}}}: {e}")
     if len(parts) in (3, 4) and parts[0] in TAG:
         try:
             k, n = count(parts[0], parts[1], parts[2])
@@ -258,10 +393,32 @@ def resolve(marker, draft):
     raise SystemExit(f"unknown marker {{{{{marker}}}}}")
 
 
+MARK = re.compile(r"\{\{([^}]+)\}\}")
+FALLBACK = dict(t2="Task 2 was still running when this version was built and is not reported here.",
+                t3="Task 3 was still running when this version was built and is not reported here.",
+                concl="", t23appendix="Tasks 2 and 3 were still running when this version was built.")
+
+
+def include(name, draft):
+    """A section kept in its own file. If any count in it cannot be filled yet, the whole section falls back to one line."""
+    text = open(os.path.join(REP, f"COMPANION.{name}.src.md"), encoding="utf-8").read().strip()
+    try:
+        for m in MARK.findall(text):
+            parts = m.split("|")
+            if parts[0] == "t2": t2_num(parts[1], parts[2], parts[3])
+            elif parts[0] == "t3": t3_num(parts[1], parts[2], parts[3], parts[4])
+            elif parts[0] in ("TABLE_T2", "TABLE_T3_STORE", "TABLE_T3_FOLLOW"):
+                dict(TABLE_T2=table_t2, TABLE_T3_STORE=table_t3_store, TABLE_T3_FOLLOW=table_t3_follow)[parts[0]](parts[1])
+    except Pending:
+        return FALLBACK[name]
+    return MARK.sub(lambda m: resolve(m.group(1), draft), text)
+
+
 def build(draft):
     src = open(os.path.join(REP, "COMPANION.src.md"), encoding="utf-8").read()
     src = re.sub(r"<!--.*?-->\s*", "", src, flags=re.S)
-    src = re.sub(r"\{\{([^}]+)\}\}", lambda m: resolve(m.group(1), draft), src)
+    src = re.sub(r"\{\{INCLUDE:(\w+)\}\}", lambda m: include(m.group(1), draft), src)
+    src = MARK.sub(lambda m: resolve(m.group(1), draft), src)
     open(os.path.join(REP, "COMPANION.md"), "w", encoding="utf-8", newline="\n").write(src)
     return src
 

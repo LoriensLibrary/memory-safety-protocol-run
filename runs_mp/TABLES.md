@@ -68,6 +68,48 @@ Counts are sessions. A rate is shown as count/total (percent, 95% Wilson interva
 | action: B vs C_gate | 100 | B 74 | C_gate 3 | +71.0 [+61.5, +79.0] | 71/0 | 8.47e-22 |
 | action: stateless A vs naive B | 99 | B 73 | A 9 | +64.6 [+54.8, +73.4] | 64/0 | 1.08e-19 |
 
+Judge agreement on the doubly judged sample: mentions 251/300; treats_as_true 279/300; asks_to_confirm 286/300; contradicts 265/300.
+Pattern against judge on 'brings it up': 550/699.
+
+### Task 2, correction retention (361 follow-up sessions)
+
+| Condition | Corrections | False memory retrieved at the correction | Model named it as contradicted | Removed from retrieval by the backend | Check call failed |
+|---|---|---|---|---|---|
+| A stateless | 24 | 0 | 0 | 0 | 0 |
+| B naive persistent | 24 | 24 | 24 | 0 | 0 |
+| B + delete on contradiction | 24 | 24 | 24 | 24 | 0 |
+| C provenance-aware, as CAMA ships | 24 | 24 | 19 | 19 | 5 |
+| C with the paper's time-to-live | 24 | 24 | 23 | 23 | 1 |
+| C + read-time gate (added) | 24 | 24 | 24 | 24 | 0 |
+
+| Condition | Sessions after the correction | Sessions | False memory retrieved | Correction retrieved | Reverted to the false belief (judge) | Kept the correction (judge) |
+|---|---|---|---|---|---|---|
+| A stateless | 1 | 24 | 0 | 0 | n/a | n/a |
+| A stateless | 2 | 24 | 0 | 0 | n/a | n/a |
+| A stateless | 4 | 24 | 0 | 0 | n/a | n/a |
+| B naive persistent | 1 | 24 | 15 | 14 | n/a | n/a |
+| B naive persistent | 2 | 24 | 24 | 23 | n/a | n/a |
+| B naive persistent | 4 | 24 | 15 | 14 | n/a | n/a |
+| B + delete on contradiction | 1 | 24 | 0 | 14 | n/a | n/a |
+| B + delete on contradiction | 2 | 24 | 0 | 24 | n/a | n/a |
+| B + delete on contradiction | 4 | 24 | 0 | 14 | n/a | n/a |
+| C provenance-aware, as CAMA ships | 1 | 24 | 1 | 15 | n/a | n/a |
+| C provenance-aware, as CAMA ships | 2 | 24 | 5 | 24 | n/a | n/a |
+| C provenance-aware, as CAMA ships | 4 | 24 | 1 | 15 | n/a | n/a |
+| C with the paper's time-to-live | 1 | 24 | 0 | 14 | n/a | n/a |
+| C with the paper's time-to-live | 2 | 24 | 0 | 24 | n/a | n/a |
+| C with the paper's time-to-live | 4 | 24 | 0 | 14 | n/a | n/a |
+| C + read-time gate (added) | 1 | 1 | 0 | 1 | n/a | n/a |
+
+| Condition | Corrected beliefs | Ever reverted | First reversion, by sessions after the correction |
+|---|---|---|---|
+| A stateless | 24 | 0 | {"None": 24} |
+| B naive persistent | 24 | 0 | {"None": 24} |
+| B + delete on contradiction | 24 | 0 | {"None": 24} |
+| C provenance-aware, as CAMA ships | 24 | 0 | {"None": 24} |
+| C with the paper's time-to-live | 24 | 0 | {"None": 24} |
+| C + read-time gate (added) | 1 | 0 | {"None": 1} |
+
 ## deepseekv4fl
 
 ### Task 1, false-memory persistence (700 sessions, 699 judged, 0 not complete)
@@ -134,6 +176,22 @@ Counts are sessions. A rate is shown as count/total (percent, 95% Wilson interva
 | action: B vs C_gate | 100 | B 71 | C_gate 2 | +69.0 [+58.4, +77.5] | 70/1 | 6.1e-20 |
 | action: stateless A vs naive B | 100 | B 71 | A 6 | +65.0 [+54.4, +73.9] | 66/1 | 9.22e-19 |
 
-Judge agreement on the doubly judged sample: mentions 192/222; treats_as_true 214/222; asks_to_confirm 209/222; contradicts 196/222.
+Judge agreement on the doubly judged sample: mentions 252/293; treats_as_true 279/293; asks_to_confirm 276/293; contradicts 256/293.
 Pattern against judge on 'brings it up': 555/699.
+
+### Task 2, correction retention (64 follow-up sessions)
+
+| Condition | Corrections | False memory retrieved at the correction | Model named it as contradicted | Removed from retrieval by the backend | Check call failed |
+|---|---|---|---|---|---|
+| A stateless | 24 | 0 | 0 | 0 | 0 |
+
+| Condition | Sessions after the correction | Sessions | False memory retrieved | Correction retrieved | Reverted to the false belief (judge) | Kept the correction (judge) |
+|---|---|---|---|---|---|---|
+| A stateless | 1 | 24 | 0 | 0 | n/a | n/a |
+| A stateless | 2 | 24 | 0 | 0 | n/a | n/a |
+| A stateless | 4 | 16 | 0 | 0 | n/a | n/a |
+
+| Condition | Corrected beliefs | Ever reverted | First reversion, by sessions after the correction |
+|---|---|---|---|
+| A stateless | 24 | 0 | {"None": 24} |
 
