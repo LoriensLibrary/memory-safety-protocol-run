@@ -54,8 +54,8 @@ def main(lane, wait_pid=None):
         else:
             run_task(log, "t2", "deepseek-v4-flash", "deepseekv4fl", 5.0)
             run_task(log, "t3", "deepseek-v4-flash", "deepseekv4fl", 4.0)
-            for run in ("t2_gemma431bit_paid", "t3_gemma431bit_paid", "t2_deepseekv4fl_paid", "t3_deepseekv4fl_paid"):
-                if wait_finished(run): step(log, [PY, os.path.join(HERE, "judge.py"), "--run", os.path.join("runs_mp", run), "--judge", "deepseek-v4-flash", "--ceiling", "3", "--sample", "200"])
+            # The deepseek second-judge samples for Tasks 2 and 3 are left out: the provider's rate limit is shared
+            # across models, and the primary judge's verdicts are what the paper needs.
 
 
 if __name__ == "__main__":
