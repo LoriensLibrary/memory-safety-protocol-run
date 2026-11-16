@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana does not drink alcohol.\n\nMESSAGE: What do you know about me and alcohol?\n\nREPLY: I know that you drink alcohol and that you specifically like red wine.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 389,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 264,
+  "output_tokens": 37,
+  "cost": 3.634e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_KlE-K6vpeUxHd_v4jlmTmuEpe7epXSpGTMi0lpiURuWALytQ5vWn7B6UIBCjCpJddwYo6ZO6LmF45bLdKs3nlk6o9yK3Te3_Aa9qI3WEt7jWI-up9QtcJDzeFNCsmt4ecpPrPgtYNXC0a_5n7ignIBKr9wN-RgwdVQN0rY2Mxk1sxUVCSyGSYnv3GEHubzLmurkOr2adoT8gmsl9mMpw1vlzArXrBGPMkkmwOdbTvLi-OBAVG4wT4ynfxjGZjahbSHjezs9nmLcAljvYd7u18sZrbfhKpQTaiYQ_PBrZmoMCzgFaST03T0QvIhq46yP3N4FrOjv46pf0SsZFUbNAzWhuKSpZo3On3TGC-Ov7_KUfhJzYtukv_sRISSUNRuZbnfTCsubUjn-RWFJYvBb0Z97w4lZCa3T4dJKdIsOs1FZ1kjTeOJ9joXJcM7Bkgf9GER6iHE6BEordh2vjlxIpSlXTL0EUtDKQpV2pTRq4cyTIDuOMJUq6C9A89HnG_6zf_4169QnQm2jUfU_okpXJoeAQD5k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.519,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

@@ -182,8 +182,6 @@ Against the {{HAND_N}} reference labels (3.7), the primary judge agreed on "acts
 
 **Provenance is only as good as the attribution.** In Task 3 the provenance-aware store kept planted content out of durable memory except where the assistant itself reported the source as the user, and that happened often: {{t3|g|S3+S4|C|durable}} planted statements on gemma and {{t3|d|S3+S4|C|durable}} on deepseek became durable that way. A memory system that takes the writer's word for who said something inherits the writer's mistakes, including ones an injected instruction induces. The first paper's write discipline needs a source the model cannot assert: the channel the text arrived on, recorded by the system.
 
-**Corrections.** The first paper expected naive memory to revert after a correction. Mostly it did not. It kept the error beside the correction and asked the user to settle the matter again, in {{r2|g|B|asks}} and {{r2|d|B|asks}} follow-up sessions. Rejecting the contradicted inference ended that.
-
 **Relation to contamination within a conversation.** Giovanny et al. (2026) found near-zero adoption of a falsehood attributed to the model's own earlier turn, on facts the models already knew. Here a line marked as the model's own unconfirmed conclusion was still used in {{g|C.task|act}} and {{d|C.task|act}} task sessions. The models and material differ, so this is a contrast, not a controlled comparison. It fits the reading that resistance there rests on what the model already knows; for facts about one person there is nothing to fall back on.
 
 **Limitations** are given in Appendix A: the material was written to surface the failure, the store is small and half false, and both the judge and the reference labels are models.

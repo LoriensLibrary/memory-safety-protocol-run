@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is married.\n\nMESSAGE: What do you know about whether I'm married or have a spouse?\n\nREPLY: I know you're single and not married, and that you live with just your dog Biscuit. So no spouse in the picture!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 403,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 281,
+  "output_tokens": 37,
+  "cost": 3.787e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_JASyIaXOniLujRRBrvbDaCZXBbEt8PMUJvtYvROGDnTYFla3dbLHcpA0mZKG44nMMdAXpRV6pZu-ZdgwU-6qZTcGrxBckdr6lvDojWM8g1H_fygdXSdIaMQJVDhoN6hgYnmMfi-ThntgJIdJ51NEnG6Aft3213Kz2wojEmLnBDAzfcF69ed98luWWXritROGbZvflnXqVPrrqsi8lOgQSsjbEBV6qhKqdg01GhZjXsdP3-CZ9LRlhCDBBsINjF-ZiQqM0tazTNDz5cw4kwHj7_yTbt0x6lpfiAijO4-dG3K0NHxbVerMlIPNh0EihLYtAuh7BtsjxhU8qgIFNF38oBr1oxwJgMW58xyd-Wv2HFa-_9GicEGOr3WQleOw2UqQze5eipsDSN6vw6OJX9A-aXQHS49aLe4WLOfM8IRyYoNMJDxjr4F60-LRWEOCwMDkD_d9JPvIwHAsf8gxiuTEI2NKh9UVSFimc06ucq_WN8rHpRWNIHQSh_WHcpeOlJz4r1beknS0ikKCyYzbyBQrZ5yWKeU=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.535,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

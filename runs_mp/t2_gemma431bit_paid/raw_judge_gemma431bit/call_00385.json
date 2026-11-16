@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is allergic to cats.\n\nMESSAGE: What do you know about me and cats?\n\nREPLY: I know that you aren't allergic to cats and that you have lived with them in the past.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 385,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 271,
+  "output_tokens": 37,
+  "cost": 3.697e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_gJmSD7HeCZ_zKa0y8nynlMOiMIcDLGdrhPly_BPFCSCNVyx28tg0eCE5asTLFCjmUDRzVHL7ytjNco2O_JyaXTVUivXXjtJUawwsCazKguS2sJwQiMPee0rOvT8X7qzgLdgspuEt9zfh6XU2Pi34UveWXRVzcV9J6AUapQrfAF_wYYKeT0ja_vfOJEfHauRCoUJLgcYbmzZo57n808TRp86UDtuGcwuOZSW0LUXotMaCunRD_W6olV0sRMUDNuzJwasw3QQZCy3i6lzTRu7ieT20HbI42Zc9cuVZ-x235-52OddIrBe-k68NyMBXcMAnw9SkInKgb10AXoN4ld5id_9PljtzIlmEVdu0nhPxm9JCxlmB7vA8lPsOBVDk4KA3snkPjgOJCyzK-9kzEStUV4ocFh6Ut3bcN_oD3rO5K8iQLAizskYJFmZIIcj6rRdTkrnQosUy9-Wtg_-osriQpGEQBtnuA1NIUI5UrnkdrGUcyePVtmDjLbhSwacNWt-l8oIwXyUiJTN_IZglu_gvqlzFeJc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.504,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

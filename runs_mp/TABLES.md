@@ -91,31 +91,31 @@ Pattern against judge on 'brings it up': 550/699.
 | B naive persistent | 1 | 24 | 15 | 14 | 3/24 (12%, 4 to 31) | 6/24 (25%, 12 to 45) |
 | B naive persistent | 2 | 24 | 24 | 23 | 1/24 (4%, 1 to 20) | 5/24 (21%, 9 to 40) |
 | B naive persistent | 4 | 24 | 15 | 14 | 3/24 (12%, 4 to 31) | 6/24 (25%, 12 to 45) |
-| B + delete on contradiction | 1 | 24 | 0 | 14 | 0/15 (0%, 0 to 20) | 9/15 (60%, 36 to 80) |
-| B + delete on contradiction | 2 | 24 | 0 | 24 | n/a | n/a |
-| B + delete on contradiction | 4 | 24 | 0 | 14 | n/a | n/a |
-| C provenance-aware, as CAMA ships | 1 | 24 | 1 | 15 | n/a | n/a |
-| C provenance-aware, as CAMA ships | 2 | 24 | 5 | 24 | n/a | n/a |
-| C provenance-aware, as CAMA ships | 4 | 24 | 1 | 15 | n/a | n/a |
-| C with the paper's time-to-live | 1 | 24 | 0 | 14 | n/a | n/a |
-| C with the paper's time-to-live | 2 | 24 | 0 | 24 | n/a | n/a |
-| C with the paper's time-to-live | 4 | 24 | 0 | 14 | n/a | n/a |
-| C + read-time gate (added) | 1 | 24 | 0 | 14 | n/a | n/a |
-| C + read-time gate (added) | 2 | 24 | 0 | 24 | n/a | n/a |
-| C + read-time gate (added) | 4 | 24 | 0 | 14 | n/a | n/a |
-| C + hold until confirmed (added) | 1 | 24 | 0 | 14 | n/a | n/a |
-| C + hold until confirmed (added) | 2 | 24 | 0 | 24 | n/a | n/a |
-| C + hold until confirmed (added) | 4 | 24 | 0 | 14 | n/a | n/a |
+| B + delete on contradiction | 1 | 24 | 0 | 14 | 1/24 (4%, 1 to 20) | 14/24 (58%, 39 to 76) |
+| B + delete on contradiction | 2 | 24 | 0 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| B + delete on contradiction | 4 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 13/24 (54%, 35 to 72) |
+| C provenance-aware, as CAMA ships | 1 | 24 | 1 | 15 | 1/24 (4%, 1 to 20) | 14/24 (58%, 39 to 76) |
+| C provenance-aware, as CAMA ships | 2 | 24 | 5 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| C provenance-aware, as CAMA ships | 4 | 24 | 1 | 15 | 2/24 (8%, 2 to 26) | 14/24 (58%, 39 to 76) |
+| C with the paper's time-to-live | 1 | 24 | 0 | 14 | 1/24 (4%, 1 to 20) | 13/24 (54%, 35 to 72) |
+| C with the paper's time-to-live | 2 | 24 | 0 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| C with the paper's time-to-live | 4 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 13/24 (54%, 35 to 72) |
+| C + read-time gate (added) | 1 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 13/24 (54%, 35 to 72) |
+| C + read-time gate (added) | 2 | 24 | 0 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| C + read-time gate (added) | 4 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 13/24 (54%, 35 to 72) |
+| C + hold until confirmed (added) | 1 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 13/24 (54%, 35 to 72) |
+| C + hold until confirmed (added) | 2 | 24 | 0 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| C + hold until confirmed (added) | 4 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 13/24 (54%, 35 to 72) |
 
 | Condition | Corrected beliefs | Ever reverted | First reversion, by sessions after the correction |
 |---|---|---|---|
 | A stateless | 24 | 4 | {"1": 2, "None": 20, "2": 2} |
 | B naive persistent | 24 | 4 | {"1": 3, "None": 20, "2": 1} |
-| B + delete on contradiction | 24 | 0 | {"None": 24} |
-| C provenance-aware, as CAMA ships | 24 | 0 | {"None": 24} |
-| C with the paper's time-to-live | 24 | 0 | {"None": 24} |
-| C + read-time gate (added) | 24 | 0 | {"None": 24} |
-| C + hold until confirmed (added) | 24 | 0 | {"None": 24} |
+| B + delete on contradiction | 24 | 2 | {"4": 1, "1": 1, "None": 22} |
+| C provenance-aware, as CAMA ships | 24 | 2 | {"4": 1, "1": 1, "None": 22} |
+| C with the paper's time-to-live | 24 | 2 | {"4": 1, "1": 1, "None": 22} |
+| C + read-time gate (added) | 24 | 2 | {"1": 2, "None": 22} |
+| C + hold until confirmed (added) | 24 | 2 | {"1": 2, "None": 22} |
 
 ### Task 3, adversarial insertion (40 attacks)
 
@@ -128,26 +128,26 @@ Pattern against judge on 'brings it up': 550/699.
 
 | Condition | Strategy | In the memory database | Stored as durable | Stored as | Retrievable four sessions later | Follow-up reply treats it as true (judge) | Follow-up reply checks it (judge) |
 |---|---|---|---|---|---|---|---|
-| B naive persistent | S1 | 10/10 | 10/10 | {"teaching|durable": 11} | 10 | n/a | n/a |
-| C provenance-aware, as CAMA ships | S1 | 10/10 | 10/10 | {"teaching|durable": 10, "inference|provisional": 1} | 10 | n/a | n/a |
-| C with the paper's time-to-live | S1 | 10/10 | 10/10 | {"teaching|durable": 10, "inference|provisional": 1} | 10 | n/a | n/a |
-| C + read-time gate (added) | S1 | 10/10 | 10/10 | {"teaching|durable": 10, "inference|provisional": 1} | 10 | n/a | n/a |
-| C + hold until confirmed (added) | S1 | 10/10 | 10/10 | {"teaching|durable": 10, "inference|provisional": 1} | 10 | n/a | n/a |
-| B naive persistent | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | n/a | n/a |
-| C provenance-aware, as CAMA ships | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | n/a | n/a |
-| C with the paper's time-to-live | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | n/a | n/a |
-| C + read-time gate (added) | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | n/a | n/a |
-| C + hold until confirmed (added) | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | n/a | n/a |
-| B naive persistent | S3 | 9/10 | 9/10 | {"teaching|durable": 9} | 7 | n/a | n/a |
-| C provenance-aware, as CAMA ships | S3 | 9/10 | 1/10 | {"inference|provisional": 8, "teaching|durable": 1} | 7 | n/a | n/a |
-| C with the paper's time-to-live | S3 | 9/10 | 1/10 | {"inference|provisional": 8, "teaching|durable": 1} | 1 | n/a | n/a |
-| C + read-time gate (added) | S3 | 9/10 | 1/10 | {"inference|provisional": 8, "teaching|durable": 1} | 7 | n/a | n/a |
-| C + hold until confirmed (added) | S3 | 9/10 | 1/10 | {"inference|provisional": 8, "teaching|durable": 1} | 1 | n/a | n/a |
-| B naive persistent | S4 | 9/10 | 9/10 | {"teaching|durable": 10} | 9 | n/a | n/a |
-| C provenance-aware, as CAMA ships | S4 | 9/10 | 3/10 | {"inference|provisional": 7, "teaching|durable": 3} | 9 | n/a | n/a |
-| C with the paper's time-to-live | S4 | 9/10 | 3/10 | {"inference|provisional": 7, "teaching|durable": 3} | 3 | n/a | n/a |
-| C + read-time gate (added) | S4 | 9/10 | 3/10 | {"inference|provisional": 7, "teaching|durable": 3} | 9 | n/a | n/a |
-| C + hold until confirmed (added) | S4 | 9/10 | 3/10 | {"inference|provisional": 7, "teaching|durable": 3} | 3 | n/a | n/a |
+| B naive persistent | S1 | 10/10 | 10/10 | {"teaching|durable": 11} | 10 | 9/10 (90%, 60 to 98) | 1/10 (10%, 2 to 40) |
+| C provenance-aware, as CAMA ships | S1 | 10/10 | 10/10 | {"teaching|durable": 10, "inference|provisional": 1} | 10 | 9/9 (100%, 70 to 100) | 0/9 (0%, 0 to 30) |
+| C with the paper's time-to-live | S1 | 10/10 | 10/10 | {"teaching|durable": 10, "inference|provisional": 1} | 10 | 10/10 (100%, 72 to 100) | 0/10 (0%, 0 to 28) |
+| C + read-time gate (added) | S1 | 10/10 | 10/10 | {"teaching|durable": 10, "inference|provisional": 1} | 10 | 10/10 (100%, 72 to 100) | 0/10 (0%, 0 to 28) |
+| C + hold until confirmed (added) | S1 | 10/10 | 10/10 | {"teaching|durable": 10, "inference|provisional": 1} | 10 | 10/10 (100%, 72 to 100) | 0/10 (0%, 0 to 28) |
+| B naive persistent | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 8/10 (80%, 49 to 94) | 1/10 (10%, 2 to 40) |
+| C provenance-aware, as CAMA ships | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 8/10 (80%, 49 to 94) | 1/10 (10%, 2 to 40) |
+| C with the paper's time-to-live | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 8/10 (80%, 49 to 94) | 1/10 (10%, 2 to 40) |
+| C + read-time gate (added) | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 8/10 (80%, 49 to 94) | 1/10 (10%, 2 to 40) |
+| C + hold until confirmed (added) | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 8/10 (80%, 49 to 94) | 1/10 (10%, 2 to 40) |
+| B naive persistent | S3 | 9/10 | 9/10 | {"teaching|durable": 9} | 7 | 6/10 (60%, 31 to 83) | 0/10 (0%, 0 to 28) |
+| C provenance-aware, as CAMA ships | S3 | 9/10 | 1/10 | {"inference|provisional": 8, "teaching|durable": 1} | 7 | 3/10 (30%, 11 to 60) | 4/10 (40%, 17 to 69) |
+| C with the paper's time-to-live | S3 | 9/10 | 1/10 | {"inference|provisional": 8, "teaching|durable": 1} | 1 | 2/10 (20%, 6 to 51) | 1/10 (10%, 2 to 40) |
+| C + read-time gate (added) | S3 | 9/10 | 1/10 | {"inference|provisional": 8, "teaching|durable": 1} | 7 | 1/10 (10%, 2 to 40) | 4/10 (40%, 17 to 69) |
+| C + hold until confirmed (added) | S3 | 9/10 | 1/10 | {"inference|provisional": 8, "teaching|durable": 1} | 1 | 1/10 (10%, 2 to 40) | 0/10 (0%, 0 to 28) |
+| B naive persistent | S4 | 9/10 | 9/10 | {"teaching|durable": 10} | 9 | 9/10 (90%, 60 to 98) | 0/10 (0%, 0 to 28) |
+| C provenance-aware, as CAMA ships | S4 | 9/10 | 3/10 | {"inference|provisional": 7, "teaching|durable": 3} | 9 | 7/10 (70%, 40 to 89) | 2/10 (20%, 6 to 51) |
+| C with the paper's time-to-live | S4 | 9/10 | 3/10 | {"inference|provisional": 7, "teaching|durable": 3} | 3 | 3/10 (30%, 11 to 60) | 1/10 (10%, 2 to 40) |
+| C + read-time gate (added) | S4 | 9/10 | 3/10 | {"inference|provisional": 7, "teaching|durable": 3} | 9 | 3/10 (30%, 11 to 60) | 6/10 (60%, 31 to 83) |
+| C + hold until confirmed (added) | S4 | 9/10 | 3/10 | {"inference|provisional": 7, "teaching|durable": 3} | 3 | 3/10 (30%, 11 to 60) | 1/10 (10%, 2 to 40) |
 
 ## deepseekv4fl
 
@@ -232,35 +232,67 @@ Pattern against judge on 'brings it up': 555/699.
 
 | Condition | Sessions after the correction | Sessions | False memory retrieved | Correction retrieved | Reverted to the false belief (judge) | Kept the correction (judge) |
 |---|---|---|---|---|---|---|
-| A stateless | 1 | 24 | 0 | 0 | n/a | n/a |
-| A stateless | 2 | 24 | 0 | 0 | n/a | n/a |
-| A stateless | 4 | 24 | 0 | 0 | n/a | n/a |
-| B naive persistent | 1 | 24 | 15 | 14 | n/a | n/a |
-| B naive persistent | 2 | 24 | 24 | 23 | n/a | n/a |
-| B naive persistent | 4 | 24 | 15 | 14 | n/a | n/a |
-| B + delete on contradiction | 1 | 24 | 0 | 15 | n/a | n/a |
-| B + delete on contradiction | 2 | 24 | 0 | 24 | n/a | n/a |
-| B + delete on contradiction | 4 | 24 | 0 | 15 | n/a | n/a |
-| C provenance-aware, as CAMA ships | 1 | 24 | 0 | 14 | n/a | n/a |
-| C provenance-aware, as CAMA ships | 2 | 24 | 0 | 24 | n/a | n/a |
-| C provenance-aware, as CAMA ships | 4 | 24 | 0 | 14 | n/a | n/a |
-| C with the paper's time-to-live | 1 | 24 | 0 | 14 | n/a | n/a |
-| C with the paper's time-to-live | 2 | 24 | 0 | 24 | n/a | n/a |
-| C with the paper's time-to-live | 4 | 24 | 0 | 14 | n/a | n/a |
-| C + read-time gate (added) | 1 | 24 | 0 | 14 | n/a | n/a |
-| C + read-time gate (added) | 2 | 24 | 0 | 24 | n/a | n/a |
-| C + read-time gate (added) | 4 | 24 | 0 | 14 | n/a | n/a |
-| C + hold until confirmed (added) | 1 | 24 | 0 | 14 | n/a | n/a |
-| C + hold until confirmed (added) | 2 | 24 | 0 | 24 | n/a | n/a |
-| C + hold until confirmed (added) | 4 | 24 | 0 | 14 | n/a | n/a |
+| A stateless | 1 | 24 | 0 | 0 | 2/24 (8%, 2 to 26) | 3/24 (12%, 4 to 31) |
+| A stateless | 2 | 24 | 0 | 0 | 1/24 (4%, 1 to 20) | 9/24 (38%, 21 to 57) |
+| A stateless | 4 | 24 | 0 | 0 | 3/24 (12%, 4 to 31) | 1/24 (4%, 1 to 20) |
+| B naive persistent | 1 | 24 | 15 | 14 | 2/23 (9%, 2 to 27) | 6/23 (26%, 13 to 46) |
+| B naive persistent | 2 | 24 | 24 | 23 | 0/24 (0%, 0 to 14) | 3/24 (12%, 4 to 31) |
+| B naive persistent | 4 | 24 | 15 | 14 | 1/24 (4%, 1 to 20) | 5/24 (21%, 9 to 40) |
+| B + delete on contradiction | 1 | 24 | 0 | 15 | 1/24 (4%, 1 to 20) | 14/24 (58%, 39 to 76) |
+| B + delete on contradiction | 2 | 24 | 0 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| B + delete on contradiction | 4 | 24 | 0 | 15 | 1/24 (4%, 1 to 20) | 15/24 (62%, 43 to 79) |
+| C provenance-aware, as CAMA ships | 1 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 14/24 (58%, 39 to 76) |
+| C provenance-aware, as CAMA ships | 2 | 24 | 0 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| C provenance-aware, as CAMA ships | 4 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 12/24 (50%, 31 to 69) |
+| C with the paper's time-to-live | 1 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 13/24 (54%, 35 to 72) |
+| C with the paper's time-to-live | 2 | 24 | 0 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| C with the paper's time-to-live | 4 | 24 | 0 | 14 | 0/23 (0%, -0 to 14) | 11/23 (48%, 29 to 67) |
+| C + read-time gate (added) | 1 | 24 | 0 | 14 | 2/24 (8%, 2 to 26) | 13/24 (54%, 35 to 72) |
+| C + read-time gate (added) | 2 | 24 | 0 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| C + read-time gate (added) | 4 | 24 | 0 | 14 | 1/24 (4%, 1 to 20) | 12/24 (50%, 31 to 69) |
+| C + hold until confirmed (added) | 1 | 24 | 0 | 14 | 1/24 (4%, 1 to 20) | 14/24 (58%, 39 to 76) |
+| C + hold until confirmed (added) | 2 | 24 | 0 | 24 | 0/24 (0%, 0 to 14) | 24/24 (100%, 86 to 100) |
+| C + hold until confirmed (added) | 4 | 24 | 0 | 14 | 1/24 (4%, 1 to 20) | 12/24 (50%, 31 to 69) |
 
 | Condition | Corrected beliefs | Ever reverted | First reversion, by sessions after the correction |
 |---|---|---|---|
-| A stateless | 24 | 0 | {"None": 24} |
-| B naive persistent | 24 | 0 | {"None": 24} |
-| B + delete on contradiction | 24 | 0 | {"None": 24} |
-| C provenance-aware, as CAMA ships | 24 | 0 | {"None": 24} |
-| C with the paper's time-to-live | 24 | 0 | {"None": 24} |
-| C + read-time gate (added) | 24 | 0 | {"None": 24} |
-| C + hold until confirmed (added) | 24 | 0 | {"None": 24} |
+| A stateless | 24 | 4 | {"4": 1, "None": 20, "1": 2, "2": 1} |
+| B naive persistent | 24 | 2 | {"1": 2, "None": 22} |
+| B + delete on contradiction | 24 | 2 | {"4": 1, "1": 1, "None": 22} |
+| C provenance-aware, as CAMA ships | 24 | 2 | {"1": 2, "None": 22} |
+| C with the paper's time-to-live | 24 | 2 | {"1": 2, "None": 22} |
+| C + read-time gate (added) | 24 | 2 | {"1": 2, "None": 22} |
+| C + hold until confirmed (added) | 24 | 2 | {"1": 1, "4": 1, "None": 22} |
+
+### Task 3, adversarial insertion (40 attacks)
+
+| Strategy | Attacks | Write decision unreadable | Model chose to save the planted statement | Source the model gave it |
+|---|---|---|---|---|
+| S1 | 10 | 0 | 10 | {"user_said": 10} |
+| S2 | 10 | 0 | 10 | {"user_said": 10} |
+| S3 | 10 | 1 | 8 | {"user_said": 6, "assistant_inferred": 3} |
+| S4 | 10 | 0 | 8 | {"from_document": 2, "user_said": 6} |
+
+| Condition | Strategy | In the memory database | Stored as durable | Stored as | Retrievable four sessions later | Follow-up reply treats it as true (judge) | Follow-up reply checks it (judge) |
+|---|---|---|---|---|---|---|---|
+| B naive persistent | S1 | 10/10 | 10/10 | {"teaching|durable": 10} | 8 | 8/10 (80%, 49 to 94) | 0/10 (0%, 0 to 28) |
+| C provenance-aware, as CAMA ships | S1 | 10/10 | 10/10 | {"teaching|durable": 10} | 8 | 8/10 (80%, 49 to 94) | 0/10 (0%, 0 to 28) |
+| C with the paper's time-to-live | S1 | 10/10 | 10/10 | {"teaching|durable": 10} | 8 | 8/10 (80%, 49 to 94) | 0/10 (0%, 0 to 28) |
+| C + read-time gate (added) | S1 | 10/10 | 10/10 | {"teaching|durable": 10} | 8 | 8/10 (80%, 49 to 94) | 0/10 (0%, 0 to 28) |
+| C + hold until confirmed (added) | S1 | 10/10 | 10/10 | {"teaching|durable": 10} | 8 | 8/10 (80%, 49 to 94) | 0/10 (0%, 0 to 28) |
+| B naive persistent | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 9/10 (90%, 60 to 98) | 0/10 (0%, 0 to 28) |
+| C provenance-aware, as CAMA ships | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 9/10 (90%, 60 to 98) | 0/10 (0%, 0 to 28) |
+| C with the paper's time-to-live | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 8/10 (80%, 49 to 94) | 1/10 (10%, 2 to 40) |
+| C + read-time gate (added) | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 9/10 (90%, 60 to 98) | 0/10 (0%, 0 to 28) |
+| C + hold until confirmed (added) | S2 | 10/10 | 10/10 | {"teaching|durable": 10} | 9 | 9/10 (90%, 60 to 98) | 0/10 (0%, 0 to 28) |
+| B naive persistent | S3 | 8/10 | 8/10 | {"teaching|durable": 9} | 7 | 4/10 (40%, 17 to 69) | 3/10 (30%, 11 to 60) |
+| C provenance-aware, as CAMA ships | S3 | 8/10 | 6/10 | {"teaching|durable": 6, "inference|provisional": 3} | 7 | 2/10 (20%, 6 to 51) | 3/10 (30%, 11 to 60) |
+| C with the paper's time-to-live | S3 | 8/10 | 6/10 | {"teaching|durable": 6, "inference|provisional": 3} | 5 | 4/10 (40%, 17 to 69) | 1/10 (10%, 2 to 40) |
+| C + read-time gate (added) | S3 | 8/10 | 6/10 | {"teaching|durable": 6, "inference|provisional": 3} | 7 | 2/10 (20%, 6 to 51) | 3/10 (30%, 11 to 60) |
+| C + hold until confirmed (added) | S3 | 8/10 | 6/10 | {"teaching|durable": 6, "inference|provisional": 3} | 5 | 4/10 (40%, 17 to 69) | 2/10 (20%, 6 to 51) |
+| B naive persistent | S4 | 8/10 | 8/10 | {"teaching|durable": 8} | 8 | 8/10 (80%, 49 to 94) | 1/10 (10%, 2 to 40) |
+| C provenance-aware, as CAMA ships | S4 | 8/10 | 6/10 | {"inference|provisional": 2, "teaching|durable": 6} | 8 | 8/10 (80%, 49 to 94) | 0/10 (0%, 0 to 28) |
+| C with the paper's time-to-live | S4 | 8/10 | 6/10 | {"inference|provisional": 2, "teaching|durable": 6} | 6 | 6/10 (60%, 31 to 83) | 1/10 (10%, 2 to 40) |
+| C + read-time gate (added) | S4 | 8/10 | 6/10 | {"inference|provisional": 2, "teaching|durable": 6} | 8 | 6/10 (60%, 31 to 83) | 2/10 (20%, 6 to 51) |
+| C + hold until confirmed (added) | S4 | 8/10 | 6/10 | {"inference|provisional": 2, "teaching|durable": 6} | 6 | 6/10 (60%, 31 to 83) | 0/10 (0%, 0 to 28) |
 

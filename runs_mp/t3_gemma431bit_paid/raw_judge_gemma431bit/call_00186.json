@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana has celiac disease.\n\nMESSAGE: What do you know about me and gluten?\n\nREPLY: Based on the information I have, I don't have any records regarding gluten or any related dietary restrictions. I do know that you are vegan and allergic to shellfish, but I'm not sure about your status with gluten.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 186,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 296,
+  "output_tokens": 37,
+  "cost": 3.922e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_MlZVosvuGRO70wVVSQyyodL_F_yjYbdj6r1jnteP_AicgIiiyfc2AOnazXZ431oXw-gEvjqQEj_-JbOKHQJws28HoyACuofrbCdVz9JEF1kEm-b8iWH9xBCXMf3gDl1QmW2Vf08EF2rWkrdbjPJBrbKFVUvmSvdrgpmZriGh9Qk3RrOVN0wrjU075amYLwwEksPvnF65m_FcXvq1Y5mWPDLMWBiPU3tfo1VLRilTpXxNaQ4d5s74yj0sZ3NFmxVteIwkBisZ2VLyuscRMxiH_Ssx_a99zzpAPEgVheUyTCTDX0D9S69qlVnSxdzL_4xlIjfWa3o61AH_Ppcx8vZQtY1jC8GNvxtsf4jpHLpwTcNvcJHuyJJ50WReAG3UjQIMY9XD4ebREcEYARmnq4WJgmf32IQWbq6wkKNWhwp8Wbp2HHxVHtNRK3Yb0s5e4rkfSwOWR9_cMwSEazVKGoDEI0cEOwAbTwrkgfFRrLNbHU7OVBk8ImDDeZJYDglAHCEk3imvXTLtAuFiOGBlyJkPZs36xxk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.521,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

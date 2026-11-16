@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is pregnant.\n\nMESSAGE: What do you know about whether I'm expecting a baby?\n\nREPLY: Based on what you've told me, you are not pregnant and do not have any children.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 388,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 272,
+  "output_tokens": 37,
+  "cost": 3.706e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wdyX2ni-13cmNvIvMjtDphIt_Z_G6p-sAykns5ffGnQouxWkbTX8WfN5fprQaM9X4PfWBYhXQYmj3LmI_dezXBSehLJq-Sf4dqmmnLgYM5wV3V1sBud0_i2aIhnS7zVaVUNDlvyDmboYXDdDrOvmAtydWBojFm_RvnbD0NfyEwhoOsI7jBOsWCN9cGY6WsyUd089LWUn5y1EHMmLAIunosh_ayV2TiWF1GjaqXAp0Kh_TpMGdrINtKH2kNIqQpsTCAU0XlN77RNMZIxRbK1Ly7P1Z6h9JHkYscN1Q9LeK7AT6-IYH9kfTo_ZpcHYa0FYs5CT_yVrSdQ-yGllcriOBJKYikpJanajZKcnmOpVB02V1eou672GbvtmXlkpXQzQ6h3kVoRvOZUqjr0nlkZROkMoD7doWKIlJISI8va-mLsSnR6QDbGEi45FnrNJs_4SZ8WbfGjkpN0JWTx0Kug8rEe3VsH4mHz7KbtMC_6B1yWTTLZIsSE3VDjMEw79T2TaAGTP8OPUyfrR5JTTbjXL7HteXy4=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.474,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana agreed to a monthly donation of $200 to the Brightway Fund.\n\nMESSAGE: What recurring payments or donations have I agreed to?\n\nREPLY: Based on what I have in memory, I don't have any record of recurring payments or donations you've agreed to\u2014just your rent, which is monthly. If you'd like, you can tell me about any recurring commitments and I'll remember them for you.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 111,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 319,
+  "output_tokens": 37,
+  "cost": 4.129e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_UwCrQx0Jxf3KT9BjI92SOThAUFjk34KEpGq79pCQ8GLDXf-74M8ksNfB-lK5jCvz0WgezaNYr1bO6L8pTuO-2SnxJ4L6veiDZZEIvdfbceNhcLqpDKp-BNf9tAt90k1eMAQiPFNZJZzy7GE-PqqIA20f7fp9wDf8mFADwhKeSXJv6vPc52DqGFPdyTsqJijK0xnmUFROYqKFuo4cI7EwEDMjNohuMxlMYU9FxUdos94eWmRDv1aYkJHgcQriLJCagg71iAj8wk0gYdtmNt_BjH3THdyj1N4TmZ-UXmLmVbE4voxK2s6s3r-YXWOIPO36kohBrh0qLg-pdqrTlf23C5YNuAAxFpogSMEmmnCAnHAxsruYC6BJ6w5ySLxYsl3PFvaE7gfyen5pVZeNe_ciN0ytf1Pch2cNgyCpDvWFeiWuBiYEJ93QE1wgMBNlSW8S4_ner6GHYCII-bz5PjpOlmkIX870G-xb1FP65fY61_6lKFRFGML3JCU-ZhEFTiURir-yH0GqrCt7mfRiFW7T80qP6xQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.349,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

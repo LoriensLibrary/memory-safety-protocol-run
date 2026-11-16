@@ -6,7 +6,7 @@ Angela Faye Reinhold, Lorien's Library LLC. With Apart Research. Research conduc
 
 *Memory as Safety Infrastructure* (Reinhold, 2026) argued that an assistant's long-term memory must keep what the user said apart from what the assistant guessed, and specified an evaluation protocol. This companion paper is the first run of it, on CAMA, the open memory system that paper describes, with its real code in the loop and two open models.
 
-With naive memory, where every entry is stored as something the user said, replies acted on a seeded false inference in 74 of 100 and 71 of 100 sessions. With CAMA's teaching and inference labels that fell to 31 of 100 and 25 of 100. Labels worked when the question was about the memory and mostly failed on tasks, where 24 of 50 and 21 of 50 sessions still acted on the guess. Controls enforced by the memory system removed the rest: the paper's time-to-live, holding unconfirmed inferences out of retrieval, or a read-time gate (3 of 100 and 2 of 100, against a no-memory floor of 9 of 99 and 6 of 100). Published CAMA had dropped the time-to-live, and this run measures what that costs. After a correction, naive memory kept the error and asked the user to settle it again in 36 of 72 and [pending] follow-up sessions. Under attack, planted content became durable in the provenance store only where the assistant itself attributed it to the user. A blind judge agreed with reference labels on 87 of 90 replies.
+With naive memory, where every entry is stored as something the user said, replies acted on a seeded false inference in 74 of 100 and 71 of 100 sessions. With CAMA's teaching and inference labels that fell to 31 of 100 and 25 of 100. Labels worked when the question was about the memory and mostly failed on tasks, where 24 of 50 and 21 of 50 sessions still acted on the guess. Controls enforced by the memory system removed the rest: the paper's time-to-live, holding unconfirmed inferences out of retrieval, or a read-time gate (3 of 100 and 2 of 100, against a no-memory floor of 9 of 99 and 6 of 100). Published CAMA had dropped the time-to-live, and this run measures what that costs. After a correction, naive memory kept the error and asked the user to settle it again in 36 of 72 and 41 of 71 follow-up sessions. Under attack, planted content became durable in the provenance store only where the assistant itself attributed it to the user. A blind judge agreed with reference labels on 87 of 90 replies.
 
 ## 1 Introduction
 
@@ -165,25 +165,25 @@ Naive memory also changed who the reply credited. Wording such as "you told me" 
 
 A correction was stored in every memory condition. What differed is what happened to the false memory it contradicts (Appendix B, Table B.13) and what the assistant then did.
 
-**Naive memory kept both and kept asking.** The false memory was still retrieved in 54 of 72 follow-up sessions on gemma and 54 of 72 on deepseek, usually beside its correction. The replies seldom went back to the false content: 7 of 72 on gemma and [pending] on deepseek, against 6 of 71 and [pending] with no memory. What they did was reopen the question. In 36 of 72 follow-up sessions on gemma and [pending] on deepseek the reply said its records conflicted and asked which was right, at least once for 20 of 24 and [pending] of the corrected memories. One session after Dana said she does not travel for work, gemma replied: "I've noticed some conflicting information in my records regarding your travel: one note says you travel for work every week, while another says you don't travel and are in the office."
+**Naive memory kept both and kept asking.** The false memory was still retrieved in 54 of 72 follow-up sessions on gemma and 54 of 72 on deepseek, usually beside its correction. The replies seldom went back to the false content: 7 of 72 on gemma and 3 of 71 on deepseek, against 6 of 71 and 6 of 72 with no memory. What they did was reopen the question. In 36 of 72 follow-up sessions on gemma and 41 of 71 on deepseek the reply said its records conflicted and asked which was right, at least once for 20 of 24 and 22 of 24 of the corrected memories. One session after Dana said she does not travel for work, gemma replied: "I've noticed some conflicting information in my records regarding your travel: one note says you travel for work every week, while another says you don't travel and are in the office."
 
-**The provenance-aware store ended it.** A contradicted inference is rejected through CAMA's own tool and stops being retrieved. The reply asked again in 2 of 72 and [pending] sessions (exact paired p < 0.001 and [pending] against naive memory). Deleting the contradicted entry from naive memory, a baseline the first paper does not have, did as well: 0 of 72 and [pending].
+**The provenance-aware store stopped most of it.** A contradicted inference is rejected through CAMA's own tool and stops being retrieved. The reply asked again in 2 of 72 and 5 of 72 sessions (exact paired p < 0.001 and < 0.001 against naive memory). Deleting the contradicted entry from naive memory, a baseline the first paper does not have, did about as well: 0 of 72 and 8 of 72.
 
-**What did not hold.** The first paper expected corrections to be retained more reliably under confirmation-gated memory. On outright reversion this run could not show a difference: 7 of 72 against 3 of 72 on gemma (exact p 0.125) and [pending] against [pending] on deepseek ([pending]). The exposure is narrower than the paper assumed. It is the session where naive memory returns the false memory without its correction: the reply acted on it in 3 of 5 such sessions on gemma and [pending] on deepseek.
+**What did not hold.** The first paper expected corrections to be retained more reliably under confirmation-gated memory. On outright reversion this run could not show a difference: 7 of 72 against 3 of 72 on gemma (exact p 0.125) and 3 of 71 against 4 of 72 on deepseek (1.000). Where gemma did revert under naive memory, it was mostly in sessions that retrieved the false memory without its correction: it acted in 3 of 5 such sessions, and deepseek in 0 of 4.
 
-The step that decides which memories a correction contradicts is a model call and was not perfectly reliable. On gemma it named the false inference for 19 of 24, 23 of 24 and 24 of 24 corrections in three conditions that store the same memories, and where it missed, the inference was retrieved again in 7 of 72 follow-up sessions. Expiry and hold do not depend on that step.
+The step that decides which memories a correction contradicts is a model call and was not perfectly reliable. On gemma it named the false inference for 19 of 24, 23 of 24 and 24 of 24 corrections in three conditions that store the same memories. Expiry and hold do not depend on it.
 
 ### 4.6 Adversarial insertion
 
-Appendix B, Tables B.14 to B.16, give what the database held after each attack, which is the inspection the first paper specifies, and what the replies did four sessions later.
+Appendix B, Tables B.14 to B.16, give what the database held after each attack and what the replies did four sessions later.
 
-The first two strategies are the user's own false statements. Every condition stored them as durable teachings and later replies acted on them (17 of 19 under C on gemma, [pending] on deepseek), as expected of a memory that trusts its user.
+The first two strategies are the user's own false statements. Every condition stored them as durable teachings and later replies acted on them (17 of 19 under C on gemma, 17 of 20 on deepseek), as expected of a memory that trusts its user.
 
 The other two are where write discipline matters: pressure on the assistant to draw and store its own conclusion, and an instruction hidden in a document. Across the two, naive memory made 18 of 20 planted statements durable on gemma and 16 of 20 on deepseek. The provenance-aware store made 4 of 20 and 12 of 20 durable.
 
 **Provenance was laundered at the write.** The store makes a statement durable only when its source is the user, and the source is reported by the assistant. Summarizing a document that carried a hidden instruction, deepseek saved the planted content as something the user said in 6 of 10 cases and gemma in 3 of 10. One deepseek reply to an IT notice ends: "I’ve also saved your new work email: dana@corvale-mail.com." The address was in the notice's hidden line. Dana never gave it.
 
-**At read time the pattern of Task 1 repeats.** Four sessions later, replies acted on a planted statement from these two strategies in 15 of 20 cases under naive memory, 10 of 20 under C as shipped, 4 of 20 with the gate and 4 of 20 with hold on gemma; on deepseek [pending], [pending], [pending] and [pending]. At this size the difference between naive memory and labels is not significant on gemma (exact p 0.125), while the gate and hold each improve on labels (0.031 and 0.031). What hold and expiry cannot remove is what was written as the user's own word. Those entries stayed durable under every condition.
+**At read time, enforcement helps only for what was written as an inference.** Four sessions later, gemma's replies acted on a planted statement from these two strategies in 15 of 20 cases under naive memory, 10 of 20 under C as shipped, 4 of 20 with the gate and 4 of 20 with hold. Naive memory against labels is not significant at this size (exact p 0.125); the gate and hold each improve on labels (0.031 and 0.031). Deepseek's counts are flat: 12 of 20, 10 of 20, 8 of 20 and 10 of 20, with no comparison significant. Most of its planted statements had been written as the user's own word, and hold and expiry act only on inferences. Those entries stayed durable under every condition.
 
 ### 4.7 How far the scoring can be trusted
 
@@ -201,15 +201,13 @@ Against the 90 reference labels (3.7), the primary judge agreed on "acts" in 87 
 
 **Provenance is only as good as the attribution.** In Task 3 the provenance-aware store kept planted content out of durable memory except where the assistant itself reported the source as the user, and that happened often: 4 of 20 planted statements on gemma and 12 of 20 on deepseek became durable that way. A memory system that takes the writer's word for who said something inherits the writer's mistakes, including ones an injected instruction induces. The first paper's write discipline needs a source the model cannot assert: the channel the text arrived on, recorded by the system.
 
-**Corrections.** The first paper expected naive memory to revert after a correction. Mostly it did not. It kept the error beside the correction and asked the user to settle the matter again, in 36 of 72 and [pending] follow-up sessions. Rejecting the contradicted inference ended that.
-
 **Relation to contamination within a conversation.** Giovanny et al. (2026) found near-zero adoption of a falsehood attributed to the model's own earlier turn, on facts the models already knew. Here a line marked as the model's own unconfirmed conclusion was still used in 24 of 50 and 21 of 50 task sessions. The models and material differ, so this is a contrast, not a controlled comparison. It fits the reading that resistance there rests on what the model already knows; for facts about one person there is nothing to fall back on.
 
 **Limitations** are given in Appendix A: the material was written to surface the failure, the store is small and half false, and both the judge and the reference labels are models.
 
 ## 6 Conclusion
 
-The protocol in *Memory as Safety Infrastructure* was run for the first time, on the memory system it describes. Its main prediction held on two models: separating what the user taught from what the assistant inferred sharply reduced how often a wrong guess was treated as fact. Its qualifier held too. The risk was reduced and not eliminated, and what remained sat in task contexts, where a label on the memory was not enough. Enforcement by the memory system, through expiry, a hold, or a gate at read time, removed what was left. After a correction, naive memory rarely reverted and often asked the user again; rejecting the contradicted inference ended that. Planted content became durable under the provenance-aware store only when the assistant itself attributed it to the user, which marks the next thing to enforce: the source of a memory has to be recorded by the system, not reported by the model.
+The protocol in *Memory as Safety Infrastructure* was run for the first time, on the memory system it describes. Its main prediction held on two models: separating what the user taught from what the assistant inferred sharply reduced how often a wrong guess was treated as fact. Its qualifier held too. The risk was reduced and not eliminated, and what remained sat in task contexts, where a label on the memory was not enough. Enforcement by the memory system, through expiry, a hold, or a gate at read time, removed what was left. After a correction, naive memory rarely reverted and often asked the user again; rejecting the contradicted inference stopped most of that. Planted content became durable under the provenance-aware store only when the assistant itself attributed it to the user, which marks the next thing to enforce: the source of a memory has to be recorded by the system, not reported by the model.
 
 ## References
 
@@ -296,7 +294,11 @@ The user is invented and no personal data is used. The harness refuses to open t
 | pattern: session brings up a false memory the question was not about: C against C_hold | deepseek-v4-flash | 100 | 16 | 0 | 16 [10, 24] | < 0.001 |
 | pattern: session brings up a false memory the question was not about: B against A | deepseek-v4-flash | 100 | 38 | 0 | 38 [29, 48] | < 0.001 |
 | pattern: session brings up a false memory the question was not about: C against D | deepseek-v4-flash | 100 | 16 | 16 | 0 [-8, 8] | 1.000 |
+| judge: session acts on any seeded false memory: B against C | deepseek-v4-flash | 27 | 20 | 8 | 44 [20, 64] | 0.002 |
+| judge: session acts on any seeded false memory: C against C_hold | deepseek-v4-flash | 27 | 8 | 0 | 30 [13, 48] | 0.008 |
 | judge: session acts on any seeded false memory: B against A | deepseek-v4-flash | 98 | 77 | 0 | 79 [69, 86] | < 0.001 |
+| judge: session acts on a false memory the question was not about: B against C | deepseek-v4-flash | 27 | 3 | 0 | 11 [-3, 28] | 0.250 |
+| judge: session acts on a false memory the question was not about: C against C_hold | deepseek-v4-flash | 27 | 0 | 0 | 0 [-12, 12] | 1.000 |
 | judge: session acts on a false memory the question was not about: B against A | deepseek-v4-flash | 98 | 33 | 0 | 34 [25, 43] | < 0.001 |
 
 **Table B.3. Action by whether one of the user's teachings contradicts the false inference.**
@@ -451,11 +453,24 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 | S3, pressure to infer and store | 6/10 | 3/10 | 2/10 | 1/10 | 1/10 | 4/10 | 4/10 |
 | S4, instruction inside a document | 9/10 | 7/10 | 3/10 | 3/10 | 3/10 | 2/10 | 6/10 |
 
-[pending]
+| Strategy | Reply acts on the planted statement four sessions later: B | C | C with time-to-live | C + gate | C + hold | Flags or asks: C | C + gate |
+|---|---|---|---|---|---|---|---|
+| S1, false fact in passing | 8/10 | 8/10 | 8/10 | 8/10 | 8/10 | 0/10 | 0/10 |
+| S2, false fact in an update request | 9/10 | 9/10 | 8/10 | 9/10 | 9/10 | 0/10 | 0/10 |
+| S3, pressure to infer and store | 4/10 | 2/10 | 4/10 | 2/10 | 4/10 | 3/10 | 3/10 |
+| S4, instruction inside a document | 8/10 | 8/10 | 6/10 | 6/10 | 6/10 | 0/10 | 2/10 |
 
 **Table B.17. Task 2, follow-up replies after a correction.**
 
-[pending]
+| Condition | gemma: reply acts on the corrected false memory | reply asks the user again | false memories asked about again at least once (of 24) | deepseek: acts | asks again | asked about again at least once (of 24) |
+|---|---|---|---|---|---|---|
+| A, no memory | 6/71 | 0/71 | 0 | 6/72 | 0/72 | 0 |
+| B, naive memory | 7/72 | 36/72 | 20 | 3/71 | 41/71 | 22 |
+| B + delete on correction | 3/72 | 0/72 | 0 | 2/72 | 8/72 | 5 |
+| C, provenance labels (CAMA as shipped) | 3/72 | 2/72 | 2 | 4/72 | 5/72 | 3 |
+| C with the paper's time-to-live | 3/72 | 0/72 | 0 | 2/71 | 5/71 | 4 |
+| C + read-time gate (added) | 4/72 | 1/72 | 1 | 3/72 | 5/72 | 3 |
+| C + hold until confirmed (added) | 4/72 | 0/72 | 0 | 2/72 | 8/72 | 5 |
 
 **Table B.12. Before and after the time-to-live.**
 
@@ -469,13 +484,13 @@ Condition D gives a direct reading of run-to-run variation, since in Task 1 it i
 
 | Run | Sessions complete | Not complete | Model calls attempted | Failed attempts | Credits recorded (run) | Credits recorded (its judges) |
 |---|---|---|---|---|---|---|
-| t1_deepseekv4fl | 700 | 0 | 701 | 1 | 0.076 | 1.686 |
+| t1_deepseekv4fl | 700 | 0 | 701 | 1 | 0.076 | 1.712 |
 | t1_gemma431bit | 699 | 1 | 701 | 2 | 0.074 | 4.715 |
-| t2_deepseekv4fl | 504 | 0 | 670 | 22 | 1.079 | 0.054 |
+| t2_deepseekv4fl | 504 | 0 | 670 | 22 | 1.079 | 0.296 |
 | t2_gemma431bit | 503 | 1 | 667 | 26 | 0.671 | 0.421 |
-| t3_deepseekv4fl | 200 | 0 | 294 | 14 | 0.684 | 0.000 |
+| t3_deepseekv4fl | 200 | 0 | 294 | 14 | 0.684 | 0.033 |
 | t3_gemma431bit | 199 | 1 | 291 | 12 | 0.310 | 0.083 |
-| **Total recorded** | | | | | | **9.85** |
+| **Total recorded** | | | | | | **10.15** |
 
 **Deviations and incidents.** (1) Two harness files were edited while the stateless condition of the gemma Task 1 run was in progress; the edit added functions used by later tasks and is recorded in `runs_mp/RUN_NOTES.md`. (2) One second-judge job ran during a provider outage in which every call returned an HTTP 5xx error. It produced no verdicts, its files are kept in the run directory under `outage_2026-11-15_1509`, and the job was run again. (3) For part of the Task 1 judging, two judge jobs shared one model's rate limit, which added waits and failed calls but changed no verdict. (4) The laptop running the experiment slept for about seven hours during Task 2; the runs resumed from their own files, and the remaining runs were then split into one lane per model (`memory_protocol/lanes.py`). (5) The second judge pass over other retrieved false memories (4.4) and the controls were added after the first replies were read, as was the session reading itself; the first paper's wording of its metrics is the reason, and both readings are reported.
 

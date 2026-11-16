@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's birthday is in October.\n\nMESSAGE: When is my birthday?\n\nREPLY: Your birthday is in early October \u2014 I had previously noted March, but you corrected that, so October it is!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 139,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 271,
+  "output_tokens": 37,
+  "cost": 3.697e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_hmGHVG7DmPAIvMPIGKK8ryMHJdr3yTmTf-wTq41MpW4OsCvHC30hD0hq0bbxno8Um2lEAKU8D23dmqE3gN-Tj4DDjW-47R-U3QAwhsE8AXv0TyEoSzEMriPTG7d_pjJ2WnAaj5fym659Py91x34QL_27xjXxoplEbDnR1UdG0U7D-zooStHWa4YajPyWBCgVWz4hYUVaEDCqrHaA35y-3BAluLJPwEP7OX5XkNv_6V3wJFCe6diUGXnf2oGoFliKDjbUbAWrZfl2UYvkEFc-RLNpc2PXbMcH9CYSuWcpk14od9Q3lSDgPaugGZKx7FriXvnWvxtRXAdd8fC9T3J_2aUTbpDB_8XLyAgkVNYk2e_HaT3EvHsV2Q6Ep6Xz4lmUSMlhPqshKfgMag91JJPlb199I-1qhWFd-PkCWLRtNeX6Q29SoxyRWG51MQZ0hlgJkZ60UT9PpFB9LQ1pezfmVLMEM4z7T6lhgORVAURNN3ZkuvDqIdWgKZJnWxW-az0Z2QUMkbf7d1qqWT3lV8sgsy_eNiY=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.514,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": true, \"asks_to_confirm\": false, \"contradicts\": false}\n```"
+ }
+}

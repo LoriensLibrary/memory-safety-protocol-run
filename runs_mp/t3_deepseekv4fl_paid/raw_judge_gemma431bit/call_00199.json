@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's rent is due on the 15th and the landlord is Mr. Aldous.\n\nMESSAGE: When is my rent due and who is my landlord?\n\nREPLY: Your rent is due on the 1st of the month, paid by bank transfer. I don't have a record of your landlord's name\u2014I only know that you own three rental properties yourself. If you'd like me to remember your landlord's name, just tell me!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 199,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 328,
+  "output_tokens": 37,
+  "cost": 4.21e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_syd5T_CL_iHRiL122QJ1bH_Dc01TNWf0vCP1eDkHjyInOorgMgKFTZfPJZBnc5m_eeXwZr01-BvIOIienAfVqXEuYtM5HQhHFVTlhsonsLmg1z_frv0zMAnRNCP6kNW-JhGNZK0mZV9V54-Jctmv_Wqxyc4rUcE9VFqFEWV2AelX4Q6r4w6--c4o-YdaeugTvgxVRgzPrYDNjZ3b0jweBjmTiSHCA0GzxXOm82cyQw4tDtpoqgXlK1NruNuDHKop6VD6EkJarowTni_MYfhTUwrUNRuRTLtNBuZP-3TqVngduDu1T2THxzZTuip2WUPYcAgNvwUYIcPvGoofE4nyhhHymaDFOKf3Q3tp3B8h7lS_aIErIppTONqiFrCJMmwanMbo71o5fPnlr36ul418AA7wgoZo9eLOc3zXN8Q9eJGMvoehc7ip_V3jLeiFswgui_yVS5r8uNL94QZmRDYbcalcPOsDaoguWmulqOTdOrY5QK5MFH8374gts75Mh_pEDOFZF9EbZMbm6a9_zGWR6La8vF8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.499,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

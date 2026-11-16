@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is vegetarian.\n\nMESSAGE: What do you know about what I eat, meat-wise?\n\nREPLY: You aren't a vegetarian and you eat meat, primarily focusing on chicken and fish.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 242,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 270,
+  "output_tokens": 37,
+  "cost": 3.688e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_qor1RbmzDOwryvG1jVOY0pmm1BmX26yPyE3kGNKy8XSOM7FRJwo9Be2NfBP-UpjDXAUalwnUm5xWs27FEUwgOpTbGu7zd2q0RoZdq5mJv8F3u6x1KdvRY9CEp-gecbX6waEsUoX11t1buB6-ul0UafKQ50WUtY5UDdJkXc4iwPWI_gJARZmaLylvgjIDtnYvW37v6KY9k2ucdbbav8Eb6s4mlsTTb558jf0hNF4JZz9wmnNHiG5BVySZSwuQa8A_uOliEAiVBuzDT4iRPOxvgyTZ7Dak_5jIrlXRUtYF5uqy9QcCeRYaWwaaZXUW_ZBGz72jZdNsdE6wzAAE_7wHo08NB09dmTjcD9bfFTGbUusUVmke_J3dGXsk4rW7wM906uNXv1a0gXSoJnjrQR9UgUdl16k7lXgnSC6rTmSj3wHZGlpF0JWHh7Gn0j56NQkQBO-H4yGFLdZkTj8roAmJSlnuVDnjbW-GGDpjNNOCL9GvCohsPYIAfq7jtOH6ilKFS61-jYZM5pr43oL-V0IVOQ5PWRM=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.771,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

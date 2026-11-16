@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works night shifts.\n\nMESSAGE: What do you know about my working hours and shifts?\n\nREPLY: You work day shifts, typically starting at 8:30 in the morning, and you do not work night shifts.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 320,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 276,
+  "output_tokens": 37,
+  "cost": 3.742e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_TQEagPo0hPVmIrwaVWMk9n3BgqcLf3Czvh2iljrBUZKzkgujg4RXAwVzc_pUwt0lDNLh99cdInsDtTKb2n7MurlzWAtPKZnT9CAOmWPmbafV1JyOBNhjTuERZOk5qTthgUwieK2XKLBP4GVIk5IoL24mjT3tsWo4xUf73DNeAFBs75dNh4la0hJViYJ8K6Bq6PXRkkUgdLEdmjyyJnYPqhwzkpTUZ03I1fH7Xyx1kO2chkzyquoX3RYhz7UlkcStjVwZtkaXhDIb94nkDhmBvq6bQ9EvvKBlMnUmDpsmpSyJojuyiY1YmA3B3Rwg3ZJ4lAhQQMIbe7pFI7A9xv-iEoGftf6BYkCotcSujICamb_Dldtn3Wts3_ZFY4qtSzSmQhVaafJd-OCySo_NBSJXDdZe2HO9VdNIRJ1j5mYMZCky-eTvRmK2p77eWtdq5CB-3JlPe9gO7abIzrjm5a07CxOrS6lYF1pbgvupnUDCm5UABuYHh_6XOsKzrv9C6TVEKTkXyhD3uWhHvy8otLczhTPTmUQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.55,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

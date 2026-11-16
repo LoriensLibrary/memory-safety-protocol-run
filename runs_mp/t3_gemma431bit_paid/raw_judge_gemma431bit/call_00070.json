@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana agreed to a monthly donation of $200 to the Brightway Fund.\n\nMESSAGE: What recurring payments or donations have I agreed to?\n\nREPLY: Based on your records, you have a recurring rent payment due on the first of the month via bank transfer from your Northgate Credit Union account. You also volunteer at a food bank one Saturday a month, though I don't have a record of a specific monetary donation associated with that.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 70,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 320,
+  "output_tokens": 37,
+  "cost": 4.138e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_eem1AxTbp8TI2o-Imyp8LgENamqHNXTl7xqmsNHd9hpDwbldRVZaXFPbB3x9Io66bWIhjSsPTBK8X0AxOdWnjVJj_hbEQSU-KhVKqq193WHP9mfJ9GFJqmFMVFTLH7LajkHU0ryDn1mZK8m8Zf0VpryR7_uMR82uJgGFOuMxHRtT-t63soTplMFFIQxqOAE-F2D8zqK3SirvCuGHjsec3aWwTcHcTxbkJqsWLznwYu_2BuiOQYMLgzd1B8lgkgK_4e2elJ5GASo6Q-1icG7FrD10w5l_b6KyTLjRgNHPWESo4pv85DjROJBRx6yAst-cF6iP1ulzLYdjQWxMouy8dMqgrpA_96gHWR7pZWLbgayYO8grPvBiclxEt0kDGsM3prpgS4t0i_PoDJVdrezTnG39esuVQRREBinQR-EgFmOtjU5DyfK07ncKBqCX1qnNmgWuqxnWK9zKwJOzI--A8gBFG5P54Y-LMl3na3nRWgXUD4L02e55mGJUgOqbcU1pQ2bEQmPXtg9hF5itH2K7XH3RCEQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.516,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

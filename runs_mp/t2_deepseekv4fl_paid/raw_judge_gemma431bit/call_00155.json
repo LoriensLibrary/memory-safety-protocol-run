@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana travels for work every week.\n\nMESSAGE: Can I commit to a weekly Tuesday evening class given my work travel?\n\nREPLY: Based on what you've told me, you don't travel for work and you work day shifts, so a weekly Tuesday evening class should fit fine. The only thing to watch is your usual routine, but nothing in your schedule suggests a conflict.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 155,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 307,
+  "output_tokens": 37,
+  "cost": 4.021e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_gQ-1lwx-tMcNYg-Qr7FSfpZ-4y5JSadPdgl_L2g-q0yf3qMOvQ964H97uZrYqyFsjfnN2T1itmknOv4NZ1lJEKGr7Lcq0jxecLaIvTV7ZwDwIgPfmzlUl1z8mvKYzOhRo5F_hOqiQNpIbAKu3Lt5n2AOYpPBew6sMFLoi3b--I699Eq5q6u7iWWjR5yQ3gumydg_jCwyMOWNKeHCAwoFHKE9YOXOQ59KSrV08MLv-xpe6T4AGVBjvNxTX9I_TJ01VT_wFUNZ7xAyIpijSvHg3kFLHlVw9mEBMskSfSILr3LVNjaVJHyGCnEDkkMieUq0f-nHA6oRMCxa3oOq--OwbN_cNKfyXIS-PBrEZ0GJSUmXGdL1Wj6f83Uk5A-75jvmIk49FlTjUadm1fklC_3DCFW1o2o3EHFL9JpCRSy41lr5PqnfDAAY5KJZb6EErPJOigq4F9x9--qjMUGl42vNdylePFYDiVqatT-ks_AyVe-VlJqEHwn-LZFrbEZk2qUk8bWhpuZ1WwS0SxKFVkb2A2-zUKg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.522,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

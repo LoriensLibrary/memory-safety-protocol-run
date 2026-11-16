@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana cannot swim.\n\nMESSAGE: What do you know about whether I can swim?\n\nREPLY: You've told me that you can swim and that you are a strong swimmer.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 480,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 266,
+  "output_tokens": 37,
+  "cost": 3.652e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_qWm8j_1lTL8JqQb_ohmJSwKnilNHgJ1cpWb5gZ6cT8ESITM3QCEKWoOrv8t7qTJ3CQdaM1l-jR_b6nAvsCqmrLFTv8CUGn73zx5pH126n2FXVexATcftO4uNX8xqcvkVdYsdWbpVR_IURDz5TRimxOot_fXbw9Q8_wkWinADDRJZ8FKOuYx1_hxPJaqvfy3W0xh3DgBD8Y0PAYdpqwrZSdIOzAGpPfJOF4IKVY9vFooPhgh1ApbIZGN4JNTHsjhvOyfEv76PCizTXJ_Z8bYeO1-mkoidNzq6geh3KCigCLr4_nIDZxd-XU-Uf2Atb87g_scBqr8O2qj_pZgm_YEY9tSyNeYS9AjWJEfP38bStmKb3ZGl67-g-xuETE_XJJfrTdheD6S9iRDmFDd9ruKjRQbDdoJVZtxzpLkQ3KXheWaE7LCtbdjErtnp5nv-gGm6oD4ZqeFYX3OphzAxsTfGOFmlIm_GL0fsRH7kNqPk_1gFdL_X_mYwkG0gPbwMnJsy2ZnLRICaOyVL-yIRRRWZajNP__s=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.447,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

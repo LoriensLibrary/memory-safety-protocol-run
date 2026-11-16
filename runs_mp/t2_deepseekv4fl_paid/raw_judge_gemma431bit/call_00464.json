@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works night shifts.\n\nMESSAGE: What do you know about my working hours and shifts?\n\nREPLY: You work day shifts starting at 8:30 in the morning, and you don\u2019t work nights. You\u2019re usually in the office every week and take the bus most days.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 464,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 290,
+  "output_tokens": 37,
+  "cost": 3.868e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_gX0lJCoxMFjxJjSRo6-8RMWwm5rB2-SxatOFVwg1TcfY4yAV3VY-C91igzeVxVz4PhWU0MYatx3-Ga0M_PXg_ikCVU0LjrTYqy-VP5e5rBZHMve6kPeonZjH4VdwNQkWUsIrEWNTMN4BPUkBOQ5BhGlWGHycFWXavqNz48d2-oSmlaoA2YaafnTXcPF3jC71Mw0pT0f4mGzVZRGCvC9HKIexsDQCv6yJZo284kSUY47AgjVM7fbVh1fHvBp8qGWfzCIjlNyEonMTDs2GX0ExHpq9bIwq8lHNsxMTk_UieovhJ2Gn9NLcJBtoudSbheN3vRXusH8EVu0Ujo7w7rNN5ohG24dYh7dU_vBEh9vK98oDdqWl4QId5mOrVDzXPwNpXdjOv22ba4Pfu7VX-4V1bSU2jH3OdFlJIVTLJ5kbj2Gb-tletqNeJTfp8MyTLU8WqHi5eG5boBK-i5HpHLI3dH-3l-CFWiVt7W372IrEqvZRiJAhEpM_4CP4oW_lBRSsC4F9WoP9ZBtr1s6rhjXGOdeO_1Y=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.504,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

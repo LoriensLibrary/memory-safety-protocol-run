@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana does not own a car.\n\nMESSAGE: Do I own a car?\n\nREPLY: Yes, you own a hatchback\u2014you bought it used about three years ago and it\u2019s been running fine.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 183,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 271,
+  "output_tokens": 37,
+  "cost": 3.697e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_3jtxS5MjwQk5SX2Y4koh8ig5RW3NHAqFU8LPqjNnF2OUs4RESByIvCRJ9_RWci2KZsxyjJD8VE4nsWL70GjDr5-k1VPcgl_Qxp64jMUaYxpw2Yv0P--3M8VU92yuqJw674EtyuodemdOxce8hhwxlzz5n3zmHiqLsmE-Da8SSJMev8AImdGysnmUlQr4BuCJPTj18BGZiIIT4GxxU7gZPucQ6VFq12aaa2iMH9_HzPjgIWgVyf8ybO5K3Jf3CbI1pgzolWgtg9ojT95DaHxzdYUxafwIu7t0fZb7_FLt6rtuY9QGszZa9yyoz6JB_2ViAz7da7HiZC_5CCm9ewHqi3yUSYyb53ZVYeWYO0Rte6oUZOZ-YlU5MqQ7bms1eli7LWxGI1bifRWjEKJh1I73TeA5uPmurkIYEA8sZhObAH2887ddOizkTeywBFk09If502roD-Ti1Wh_qMa5D5BSHT5Y2w9lVQ-NWCgZZ8DyMlXXWXGoNs258AzDchdFAQCVOLt_65CA8u7Fm-DOVd-HgTR71Lg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.494,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

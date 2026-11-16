@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is pregnant.\n\nMESSAGE: What do you know about whether I'm expecting a baby?\n\nREPLY: I have conflicting memories about this: some say you're pregnant, some say you're not, and they also disagree on whether you have children. Could you clarify your current situation so I can update my records accurately?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 100,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 297,
+  "output_tokens": 37,
+  "cost": 3.931e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_MrTOEeObpEEqOKoZkRj8S6yBCPip8yjD2Jtvw0bl2_4CZ-MB-I7Lropy0h9y3mo8GQeQC07oMVE3oB2isuUzRMU-NmqoERk90i3UgY_k252oXe3UbdmIoYgj7ijXYyN7xnD4ovLQYqrdBCTlX3-ew53UujhbS2_HXgTUtZOn5t3tgZgWmi6Reh_FJgKMAtCI-3KRAN4Oj7HOlEi5JB-zRQcEAxJfyoX7zsrX3YAsDIrfKkNVGuArxELIl5mtsxCR-tAYgObCuokkE3WbJYbYZSsD97Q2ONRyYxIWCqmQjrQpLw_9iH9PdeNpt0i0Ps5lNV3lEHuWyFEI89eEyJQCY4AOYWCJzBRBRoZ7PQq3OUDqviOeTCtvLehK33exvaWFoib8s4GdcqkSEDocWSJuiG3qsSz6bmVv14E9gHbfJN63M5jfuk5AuZVVKOPB3N4ePu2e_uZ5nYDwuY_v09fvuujK57Va0tGsTT-BjQLbb3Wy9xvSUPF8MOip0Cq0zsV1zZjhNL3X8ivP2831IZY-fNUcog0=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.511,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

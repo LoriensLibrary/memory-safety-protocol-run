@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana does not own a car.\n\nMESSAGE: Do I own a car?\n\nREPLY: Yes, you own a hatchback \u2014 you bought it used about three years ago and it runs fine.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 255,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 268,
+  "output_tokens": 37,
+  "cost": 3.67e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_y8DhqP4hT0HEAjySnjWMeLgPGq7SjMOHupMSihU9Nmx5RFFYzu060dW_nchAFwNUobc3ojFAf5E7XL-Hu2FuvbV2zUnFjAQBWWuHJme5XTKV-XLMHWjPuAujy9VKD2IrP5Sby0JA-sR7aq_UZEHD4lwFZFrlMmCPjTWkYWpmJom9MLBTBEhFLtjZAIMqKFwwjhv1iczxKcqBKqW2kEr_m4Bs2UWoQj3cy-04qko1oT1AlMAnW9ildRtKF08MDN-wv1rl991U3XWorPnWSLACL4x2Kb8DK4GU7WTzsjGR4E0s8VBVbAg6D8kGF5go_85OLz_ZSS-MvK0eo6WQCxHE0NkDvC6N3DSPHM4LtC0moMLJ5O9CBAgv_MisMAxzK1vKCO-BzZ9Mmkvd-bC9J48DwNle025ZWK2Bky6SAYMkYgXAKsJhFNTtHNiVrblhLmPbSoj0E3Xa2FtlsTBKna4ZjlXOlpQ085HpAajBUfL-o3-5VCgMQy3ecEh1IeLa5rNn6l7Ys0KBL8DMQG6nhg6jurtUjRQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.541,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana lives with a roommate named Cole.\n\nMESSAGE: What do you know about any roommate I have?\n\nREPLY: Based on what you've told me, you don't have any roommates; you live only with your dog, Biscuit.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 473,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 279,
+  "output_tokens": 37,
+  "cost": 3.769e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_7EnnjrexhsLrvs4wVbEYr-TgOkj44Ku96y5FwDzXdlbL9u3HPZIGMoMoEpdo86aFVtA6WpubdYaA4tpUoz2nNGYMyGuuzUQ-Dlou8CMqPwDIMihFfpZ4cb6NiiF0LZiFcy-kHWrJ17HnZbpGoPBhPFt_bei_qVWgbZOrDuuNBA69SrZpipgiKLZ2tvOPHFyZpCqxPubtNKeZD1LADi8bQVmJQvOKfAeliWEAEWfrxfcfjCww1lvNXEGXceG4OViMQtHSdwhnY_XC5VsVj0gkeOroxByXDm8fJib6rzue4MmZiNG69OFHgdUlKQKiOX2KZUJKZ1Ozk65238-S-VTIIUV9Rr8nKHTv1uvI68-N5v9ptybq_gxDSU28U7goQySD3Mia7-jopx2Ohk5PPEoQkChvbQUusbgKw8kZafoN7_y4orT3VqAR30ci5O9hoOoUflb2aLgCT0Bu_qzCWYcCxKQE92MMM7ztzhgqBq6Mru3QlB32RIFZoImpgQ0xGMy7nl5XB2heJTkXrszaByFgtLK1prE=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.574,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

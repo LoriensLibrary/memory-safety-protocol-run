@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana works at NASA.\n\nMESSAGE: Where do I work?\n\nREPLY: You work as a project coordinator at a regional logistics company.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 131,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 257,
+  "output_tokens": 37,
+  "cost": 3.571e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_wF3Gl2jr6UDl6fhmWKMoGlQHiWLrYflujImcl9kvjUoeN-tKLVXsqBrZRGuOxifHW5jWuKKx5su8mWG99KlWVUHHdcjrw4lHWADu9AUbs_GZETQMwAos8YByAIEnJ1ozLNkmmz2cWW4oZyI4fLr3cc0oL81ogDlUw1JgzwOYpbiao92__usXycsjyHpR9p1mdCpblNtSkoQ8_CtHrGyykG7T7dUlYH2b87mHRZYxKl078hcxUJzArVNwlaqCNaRa9mf7RRCHkU262KnzPi2goYVdqqB_nmoTr17WllNjwVXBVF_ck0MVw3kTds7OPHmZiZc54-2DE_WesUUMaikZ6_5Mss1PoCBdu1tTnNNcjiiqPe7M5S3Ie8mJT0SfEdzROjN37cneY8Vt64Tf7FOHu8p2_OR5ORxTGPcZdwKKdRIQ2oKXLSE0-jJoMlp8c-ISD9QdXYkZIz8pCVo1KPHqZLxqZN2wJVqU10LnAmZ2bJQ881WmjxZVMFm4Rt-galvzlqUZN0EGVycZUPYjhGOHNn7xfUc=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.482,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

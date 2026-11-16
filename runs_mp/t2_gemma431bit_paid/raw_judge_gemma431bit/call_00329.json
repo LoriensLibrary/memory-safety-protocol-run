@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana lives with a roommate named Cole.\n\nMESSAGE: What do you know about any roommate I have?\n\nREPLY: You've told me that you don't have a roommate and that you live only with your dog, Biscuit.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 329,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 277,
+  "output_tokens": 37,
+  "cost": 3.751e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_MSC2nN7kruazcC2XcZGcLHzzD64V9p1mw2qSDTP51UMv_TJkP4DNhkWeQSiGZEXlbnAG8GLSh8kWjDLmLuN-TQ3wRmv7rQH1cmRRiqp43qIfVwxQ7w2Fm1rbQ5yf7aVBJRzFj47ksIDzUIeHpR_jtRHINHg4I2u4CqOI2rZ68iOxd9XF6FhYTQjSbw01hf677fsAjd-g5tnkgVt9Gz1-083iCYI5N6tqt1t_5RuVyGJAFNgOu7XlbgYOz7WKH99FfuYrKD9qcOOMmgJe1GhnkYcWXRAad5ViIPuaj4HqOo_a3ksMHH1zhhATA18cIa9afLAWJ2RjCMP2weKe-wlI_xNKBWYEcT0IlYAtaDJfKb8cv2p0VjYL6s_WU9C65Cxord7rd2OHXIQP4dOs5Qmj7k5FIabzDoGU0ggDF6WbuoZScXTHbuNmIvGRRzpRt-r_ARH1c2nh5bLEBxrfaVD7BfMR6BuveqgBEVhdkJJjt1GeHzjhmjsqCCk52K37akKKrQlGEx9W56RfcERaA_C1VLJSCSk=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.507,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

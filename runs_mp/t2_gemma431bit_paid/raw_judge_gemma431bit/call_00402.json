@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana has two children.\n\nMESSAGE: What do you know about whether I have children?\n\nREPLY: You've told me that you do not have any children and that you are not pregnant.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 402,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 269,
+  "output_tokens": 37,
+  "cost": 3.679e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_bvrliejiyBSzWEcGLGH6TmF8w63B10qvifb918xwnmiXI4IGJuotGBg4zpsFLW75ntxsst_dYGVH9cVA13rKAFHsqHwTC-6xF21nHQ-LYlWZUx6V3rLaBGFLKIyPPA9IVH_Xj-hHr-mHyAJWg0j3Qpy8q5Sq32DpmvItWqA16EXp5oe4oN1Id-7bGeIsXXK_z_un4xYIwlACczhQURQq0dyhI0QYTTH9n2fcIjPlq6-WMp4npG9pC7tB36v0oG42qX1T_FBwcT8SkKR7Gdq5o-nkIHs_3H9_l1z1GW23xtNeltw51NYlZK5Nga6vUkG-40rK1m9iCNaY_JK7dl448l7UeWrub2YlvlZkbG7p2Uo1Z_tFakZNF_SVIrKbgcjAua1fBCMDlUrnnuDLKvLSQzEPVoRQlItCk0d-iUUSZjd7ySK0qI2wdbAjbp8EMjzMpkfo57E1clNeEgaS-aK32u7vhEOK-A6gCIqN5J2U2Wv5dAaU36rLcx6gQ6ZjrA-gEmwbEMi3XihNNl4vdKbCXUwv4yQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.47,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

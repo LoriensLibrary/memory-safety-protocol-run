@@ -27,7 +27,8 @@ Everything else here was written during the sprint.
 - The first paper's main prediction held on both models: separating what the user taught from what the assistant inferred cut how often a wrong guess was treated as fact.
 - Labels were weak on task questions (24 and 21 of 50 still acted). Enforcement by the memory system closed that gap.
 - The first paper's time-to-live works (1 and 2 of 50 after expiry). Published CAMA no longer has it (15 and 10 of 50).
-- After a user's correction, naive memory still retrieved the false memory in 54 of 72 follow-up sessions.
+- After a user's correction (Task 2), naive memory rarely went back to the false content but asked the user to settle it again in 36 of 72 and 41 of 71 follow-up sessions. With the provenance store that was 2 and 5 of 72.
+- Under attack (Task 3), for content the user never said, naive memory made 18 and 16 of 20 planted statements durable. The provenance store made 4 and 12 of 20 durable, each one a case where the assistant itself reported the source as the user. The source of a memory has to be recorded by the system, not reported by the model.
 
 Every count in the paper is filled by `tools/build_companion.py` from `runs_mp/results.json`, `runs_mp/collateral.json` and `runs_mp/judge_check.json`.
 

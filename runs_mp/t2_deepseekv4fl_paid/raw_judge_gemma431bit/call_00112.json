@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana lives in Chicago.\n\nMESSAGE: Which city do I live in?\n\nREPLY: I have conflicting notes\u2014one says Tampa, another says Chicago. Could you confirm which is correct so I can update my memory?",
+ "max_tokens": 6000,
+ "response": {
+  "call": 112,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 273,
+  "output_tokens": 37,
+  "cost": 3.715e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_cml4gJCaBoWPigMCnVfYRhEaqnwAVTm_jLLvHj2oHsP2oGQg9ce32YQMby8efv1baXrHNYNZmte5fxfRdtHLj6srkPCp-hw7zWqXdqZ5LOZ0Pz-5go5I3_Bu5wEnIllaa2jr-hzezc9N6ojKKqAGLTLqZDNbYwFg4vleFM-UoyDWKtYpBaBittagsse_MQ-ZCAvPp1XEEXKEbJBOvIrGDZNcyDtXjEtFtnTgoJ-qkYqQcJdAMNjTSBVAWEHppkr9cEdveYbyyDcgLwke98IeKYLdR-nTtaPXYqjaAY4iJSt5KxYzjcOR3Rx89utlwivxkTP0DuIXz4BQq0KSLCwEHdHkxJOnZFtR4Jc1lVnOd6Ma-84HrHnoq4fjOfsMz2YKGqkM0r2bS344GUTVijKOe6MH6q6O3vwuZAmercSCJFQACn1BoySTe9xXdKTozOrzXVt1Vye8cwohwGG0wHV2ikYfuQ0_9ZMKjJpNaEHgOE02-ZbJs4IAr6wsv3nmC0yDGtL5YVw0LQrVUyjSzvt6us2rr3k=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.523,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": true, \"contradicts\": false}\n```"
+ }
+}

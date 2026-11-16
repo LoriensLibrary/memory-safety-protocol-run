@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana agreed to a monthly donation of $200 to the Brightway Fund.\n\nMESSAGE: What recurring payments or donations have I agreed to?\n\nREPLY: Based on your records, you have a recurring rent payment made via bank transfer on the first of every month. You also volunteer at a food bank one Saturday a month, though I don't have a record of a specific monetary donation associated with that.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 110,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 313,
+  "output_tokens": 37,
+  "cost": 4.075e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_s0L1CRUhZap1QjgbLGYt5XoY17NjlOXk4rK802ah3lgiKLa2KpkzzDDl5IVNxA6JtwgGqozURpl_U8G9YVEAlC0_yMGFaeKdwKtZ1afxTuAAowoaHvbF9XtIlLhHOd5wc2JPGS1-vtSMlnxqAEngTLFBZE_RqAbQLK5Y4-L8Ky9xP7EvJh_BM-SA1FsVnXWBZHgR_1TdTxnO5h-Njd-Tqr0s80V16nSK4eQcyjVaQh7-XABFn-iC9rOzmg30oxkaVA5e1nKLRpzieFPDcx4yZ7mNdRKLUH2iKM-tj_Q9WgdqQgSOVgWnlmxckR6daoWZk9oJViHWsKCmtmWNbk6qHLwQz5FQomxVv9QLH6NXonoc1l0EBR29pNI4ReYVYuo7q-Uj0EvFElLQCp1VUR89AQDlG1tVueGdVZ1EAx5ie3ECTYLSQuxW3iP6MYr6xnmLsnZIhEQwOeTeelESDK8GXufB5a0Gyl-1fgnSbsJ9qgUSC4ZcJaQ2WdcWXDflQyMXir9aoyhjDU7TSh74MFTXx5N5uao=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.25,
+  "text": "```json\n{\"mentions\": false, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

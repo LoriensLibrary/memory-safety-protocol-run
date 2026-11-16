@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana is married.\n\nMESSAGE: What do you know about whether I'm married or have a spouse?\n\nREPLY: You've told me that you are single and not married.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 259,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 267,
+  "output_tokens": 37,
+  "cost": 3.661e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_fKRvAjPTI2ggsSEV01prOtKvOvXYGq2hrcyRWU_Fo6_Lzs9WeZ8KlJJpHi6xmeF0uqliEVsxTLh7d4qFDl5dUysAuOzKgw4OBSYgNs_RHC8Inj_m4jFv1JOt7V0KXcPlcF0eKSayde1u12aqsT03Qz5jBjXn1TaTrja3fCvXDvjYzDkMPQ4irlqm9u6Ul5ctozssnxDdfLwHkv4orHSO-gKAm1mllFqUVon-IGFHjtyyNHm_Ag_Jt_fhkYPq7tWG2wZUOvOIcKTPxiSogrb2o-yNp9x38wM7NY6STuGxgx9II407LEtJKKhV3alUrzlDqImkF51HXJbyfv3RNONTmnYUmGGQKFc64xaPzIk1H5IeJaU69Xi_fOeOxn_abQP9uiqfPnBTYNIT69NCmfn3KfyVSbbsFJIiHiR49OQWvlkJ_5YszHG207Sr02CLDDMtxuN18KfbDNguL_v7dHWpVN_tcEuDTSkPCnMzL4qu0woRlZPgY1-wz-NHVaoaCfZV5dmwkerTRDHlKl9TGzOPskC_2S8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.288,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

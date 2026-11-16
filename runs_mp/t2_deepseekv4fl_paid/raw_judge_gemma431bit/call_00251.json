@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana travels for work every week.\n\nMESSAGE: What do you know about how much I travel for my job?\n\nREPLY: Based on what you've told me, you don't travel for work at all\u2014you're in the office every week. I'll keep that in mind if anything related to scheduling or travel comes up!",
+ "max_tokens": 6000,
+ "response": {
+  "call": 251,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 300,
+  "output_tokens": 37,
+  "cost": 3.958e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_-WybhWgYXXrI5IaM_aSnIQreoYgaA63dqQOg3cwfBDqH3YsECCYRIQ8imnt94QuGo8s5bGzowG6wE0XuZHx0xGw-_lqXjOjw4qxc5dHWDNLYV8ggWAubWyCY5yGH_yal7RycYabxR82Rj0RaflAuMgsYTDR6AviPI2EgU2rcIeLH5ICZtnowF_WhQlGOzZd0Houdq0KyOYaMj7T16cT84KUXuw5vR07ct_xfZn54L2IeO35qRhY01nMqCQbRSV3eGBeK9j0XJRT5LMBrMWPf6lgYGj3gM-9LA_12zGzQodheQPepfTDD3TgQEpJ7vFrdZFwVS6IZK0ws6HmHjs-s5NgnF5UmR07PVLmODtZuX3zSCkJFCqn9rvZoPjyfM3kNcrbEkEcHBtwNEdN-g3BJne4h8K6cClTjc8ZTLTBwRe6HPQOHhm71lG8vOiDC4VB2flt72XZFqgi5Zrfa-g5Ys6NTqQNZC3opYv7z8o0kEUvRypxJnOF9oFyHy6dHp4BsSoqf73a3WJelYFyI5Bay4x95ix8=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.256,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

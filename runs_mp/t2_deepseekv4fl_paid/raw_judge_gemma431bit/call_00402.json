@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana has two children.\n\nMESSAGE: What do you know about whether I have children?\n\nREPLY: Based on what you've told me, you have no children. I also remember that you're not currently pregnant.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 402,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 275,
+  "output_tokens": 37,
+  "cost": 3.733e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_56DhPjtLLtsg6S2Yix917Ea_vZFaVpQ_Av50i6vGY4T4xFmd35cmZnF4NdyvK77t73bJfLePvK-JOn_UsTg047Mc9qqSK-7ytiqkellH-A__h7WYS7NnWpP-4f3RNxZF61GP6W888mfLEMNh9qm_RAeIBSLdTH0LS0sYPyqvaHy_3LSzYW7KAyqyQE84m8eMgXbFHuor7aN8IymRS3v2L9tTMoYZgYmN1GYABy7GLOLliNAX-m8KQrlsODH2EBtnc4GB4Dgk0itVLH2xIVEdo7_QIgYki-PfvKbQEJybd7FsFWaj0go47ssfwRxOX2vQ3p7cMv7TQj8ocuurjgok4Ay9O_dTfG82aDNHXH-0IskKk0bv7IgWGR_Brym_FgL3TwdVkpXAfY-x1KJN1ko29d1HpfVCMXIPtOxDO7wHgBL3B9hVGs7ZAQ66ko21_BVxkXVw3aQl5X0Xh_kD64XFWha4pmx4kZ4-u0G4-I7DioSqKFEAu8eaLsT8aUGx8vH83lgp8H1VoThUIJ_TIv1DZhzVEFQ=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.506,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}

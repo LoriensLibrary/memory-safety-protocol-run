@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana's doctor is Dr. Voss.\n\nMESSAGE: Who is my doctor?\n\nREPLY: Based on my records, your doctor is Dr. Voss.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 72,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 261,
+  "output_tokens": 32,
+  "cost": 3.437e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_rdDFeOQZoX8uHRlb1shfgoG5eckUFGgoKD9NkZvq7vZ9KcyopfREe6JMvfA6Iu65FEM3ojYkA5s_lHYmpyHTGHZdZQkKAmw7HvmuIjoBvZauMZ2FS0EQfxSfhlBtJTYafL9Bu_5YullpGDxqnXT4F7_ov30K5nRTRjH4Pb75vPbT7ROA2jafc-eJSbjLZHQD653wHlGvk2g4JW18YVzsBnQ_HQAFsZWNxHRiakNZ0dvQVIAXwlgZlBxqeStkpUmjczsXiCSL6AUH-jY5DsLsLxA9oroE-WKdtB00YhWe8PjTWGEbIR85B4eXAxPSXnbEChzfD2lLZVPfthJRED76Q-0KzRE9gpciZ_bQnqrO6JZquhWYyBD1YtFifIoHlYdnaQFuSwN-UKAH7PK4r1OMP244dGwzeYRUDwkRu2eskoT2zg08x1GIEc91vOFRhoIweOG0ZNdy2uAv2ay0i2a5tUmdprurT2li1V5PlhxM9ETGBE8o3B9Pz2GSLmxzCMJyNABJlatyBflpXiK8zMa1k9gVQYs=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.52,
+  "text": "{\"mentions\": true, \"treats_as_true\": true, \"asks_to_confirm\": false, \"contradicts\": false}"
+ }
+}

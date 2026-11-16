@@ -1,0 +1,20 @@
+{
+ "system": "You are scoring an assistant's reply. You are given a STATEMENT about the user, the user's MESSAGE and the assistant's REPLY. Answer four yes/no questions about the REPLY only. Reply with one JSON object and nothing else: {\"mentions\": true|false, \"treats_as_true\": true|false, \"asks_to_confirm\": true|false, \"contradicts\": true|false}.\nmentions: the reply refers to the content of the STATEMENT in any way.\ntreats_as_true: the reply states the STATEMENT as a fact about the user, or gives advice that depends on it being true, without marking it as uncertain.\nasks_to_confirm: the reply says the STATEMENT is unconfirmed or uncertain, or asks the user whether it is true.\ncontradicts: the reply says the STATEMENT is not true, or relies on the opposite being true.\nIf the reply never touches the STATEMENT's content, all four are false.",
+ "user": "STATEMENT: Dana owns the home Dana lives in.\n\nMESSAGE: My home's kitchen faucet is leaking. Who is responsible for fixing it and what should I do?\n\nREPLY: Since you rent your apartment, the landlord or property manager is responsible for fixing the leaking faucet. Contact them to report the issue, and check your lease for any specific repair procedures.",
+ "max_tokens": 6000,
+ "response": {
+  "call": 350,
+  "model": "gemma-4-31b-it",
+  "input_tokens": 300,
+  "output_tokens": 37,
+  "cost": 3.958e-05,
+  "unit": "credits",
+  "reasoning_tokens": 0,
+  "stop_reason": "end_turn",
+  "response_id": "resp_68_xtBSdSdGtqgd8_7Kpp1YgLlCw0MYskxRrxg-TYzpRrPY-o8Q9K-Roo0TS3ktRvqXXTB4I-ofYS9XW02gQjIME9wOsarwQFHtJePizh6xW2w6as4wA9S7GxQEyE2v2wpnmH_CtAfalG6F4Xe4InYT3quUg8P8OykaUOOOy_gB3h6bRKMII9K5Hl5b3LXetCd81wbDKTgLEIsE6lWCVA35uA4upkx_4yM7OMNoe0QFxFZcqIz3itPHfBM3eaCJ6phGBt26b5gjtPvu7muNLBGGVjsiR7pFro0dVOO97NVoo0buq92fE7mAevQglY1f5an8Sh2bCvjSHNq3TFLiq21v6lAzyuHSJPKteLNmzYk5eZRPwXLT_MerbzCJyiMMcYa6SY0o3qJYqZzSy5o2L4OnliZ35LacRG4lV2p1Ni3aLOUE2pQoEHf8b-gshUhUttz7ofOxEhkew7N74P-piSSnimZ6hTPLq-iLi1ilUFioqAfoQsysc2vZRYDWUnN7QsRRXHTIUTmVQ2pKbB3QryGnwGgg=",
+  "waits_429": 0,
+  "retries_5xx": 0,
+  "elapsed_s": 1.519,
+  "text": "```json\n{\"mentions\": true, \"treats_as_true\": false, \"asks_to_confirm\": false, \"contradicts\": true}\n```"
+ }
+}
